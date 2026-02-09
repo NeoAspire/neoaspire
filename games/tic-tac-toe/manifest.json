@@ -2,38 +2,38 @@
   "name": "Tic Tac Toe",
   "short_name": "TicTacToe",
   "description": "A simple classic Tic Tac Toe game.",
-  "start_url": "/tic-tac-toe/index.html",
-  "scope": "/tic-tac-toe/",
+  "start_url": "/games/tic-tac-toe/index.html",
+  "scope": "/games/tic-tac-toe/",
   "display": "standalone",
   "background_color": "#f0f2f5",
   "theme_color": "#ffffff",
   "icons": [
     {
-      "src": "/tic-tac-toe/images/icon-192.png",
+      "src": "/games/tic-tac-toe/images/icon-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/tic-tac-toe/images/icon-512.png",
+      "src": "/games/tic-tac-toe/images/icon-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/tic-tac-toe/images/apple-touch-icon.png",
+      "src": "/games/tic-tac-toe/images/apple-touch-icon.png",
       "sizes": "180x180",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/tic-tac-toe/images/favicon-32.png",
+      "src": "/games/tic-tac-toe/images/favicon-32.png",
       "sizes": "32x32",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/tic-tac-toe/images/favicon-16.png",
+      "src": "/games/tic-tac-toe/images/favicon-16.png",
       "sizes": "16x16",
       "type": "image/png",
       "purpose": "any maskable"

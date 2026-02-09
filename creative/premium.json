@@ -1,0 +1,6 @@
+{
+  "force": false,
+  "extensions": ["cdr", "pdf", "psd", "ai", "eps", "svg"],
+  "labels": ["premium", "paid", "pro"],
+  "ids": ["" ]
+}

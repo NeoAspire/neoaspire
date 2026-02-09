@@ -34,7 +34,7 @@ aside a:hover {
 }
 
 aside a.active {
-    background-color: #04AA6D;
+    background-color: #E64A19;
     color: white;
     font-weight: bold;
 }

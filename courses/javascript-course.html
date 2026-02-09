@@ -114,7 +114,6 @@
 
                 </section>
 
-
                 <!-- Introduction to Script Tag -->
                 <section class="content-section" id="introduction-to-script-tag">
                     <h2>Introduction to Script Tag</h2>
@@ -179,7 +178,8 @@
                     <h2>JavaScript Rules</h2>
                     <ul>
                         <li><strong>Case Sensitivity:</strong> JavaScript is case-sensitive. Variables named
-                            <code>myVar</code> and <code>myvar</code> are different.</li>
+                            <code>myVar</code> and <code>myvar</code> are different.
+                        </li>
                         <li><strong>Semicolons:</strong> While not required, semicolons are recommended to end
                             statements.</li>
                         <li><strong>Comments:</strong> Use comments to explain code and improve readability.</li>
@@ -328,7 +328,8 @@
                     </ul>
                     <h2>Variables</h2>
                     <p>Variables are used to store data values. In JavaScript, you can declare variables using
-                        <code>var</code>, <code>let</code>, or <code>const</code>.</p>
+                        <code>var</code>, <code>let</code>, or <code>const</code>.
+                    </p>
                     <pre><code>let age = 25; // Number</code></pre>
                     <pre><code>let name = "Alice"; // String</code></pre>
                     <pre><code>let isStudent = true; // Boolean</code></pre>
@@ -527,8 +528,8 @@ switch (day) {
                         <pre><code>for (let i = 0; i < 5; i++) {
     console.log(i);
 }</code></pre>
-                    <h3>Complete code for practice </h3>
-                    <pre><code>&lt;!DOCTYPE html&gt;
+                        <h3>Complete code for practice </h3>
+                        <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
     &lt;title&gt;JavaScript For Loop Example&lt;/title&gt;
@@ -556,8 +557,8 @@ while (i < 5) {
     console.log(i);
     i++;
 }</code></pre>
-                    <h3>Complete code for practice </h3>
-                    <pre><code>&lt;!DOCTYPE html&gt;
+                        <h3>Complete code for practice </h3>
+                        <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
     &lt;title&gt;JavaScript While Loop Example&lt;/title&gt;
@@ -582,9 +583,10 @@ while (i < 5) {
 
                 <!-- Navigation Buttons -->
                 <section class="navigation">
-                    <button onclick="window.location.href='#css-home'" class="home-btn">Previous</button>
-                    <button onclick="window.location.href='#'" class="next-btn">Next</button>
+                    <button class="previous-btn" id="prev-btn">Previous</button>
+                    <button class="next-btn" id="next-btn">Next</button>
                 </section>
+
 
             </article>
         </section>

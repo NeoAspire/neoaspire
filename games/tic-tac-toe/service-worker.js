@@ -1,12 +1,12 @@
 const CACHE_NAME = "tic-tac-toe-v1";
 
 const FILES_TO_CACHE = [
-  "/tic-tac-toe/",
-  "/tic-tac-toe/index.html",
-  "/tic-tac-toe/manifest.json",
-  "/tic-tac-toe/images/icon-192.png",
-  "/tic-tac-toe/images/icon-512.png",
-  "/tic-tac-toe/images/apple-touch-icon.png"
+  "/games/tic-tac-toe/",
+  "/games/tic-tac-toe/index.html",
+  "/games/tic-tac-toe/manifest.json",
+  "/games/tic-tac-toe/images/icon-192.png",
+  "/games/tic-tac-toe/images/icon-512.png",
+  "/games/tic-tac-toe/images/apple-touch-icon.png"
 ];
 
 /* INSTALL */

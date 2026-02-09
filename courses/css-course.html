@@ -43,6 +43,22 @@
                 <a href="#css-outline">CSS Outline</a>
                 <a href="#css-text">CSS Text</a>
                 <a href="#css-fonts">CSS Fonts</a>
+                <a href="#css-links">CSS Links</a>
+                <a href="#css-lists">CSS Lists</a>
+                <a href="#css-tables">CSS Tables</a>
+                <a href="#css-display">CSS Display</a>
+                <a href="#css-position">CSS Positioning</a>
+                <a href="#css-position-offsets">CSS Position Offsets</a>
+                <a href="#css-z-index">CSS Z-Index</a>
+                <a href="#css-overflow">CSS Overflow</a>
+                <a href="#css-float">CSS Float</a>
+                <a href="#css-opacity">CSS Opacity</a>
+                <a href="#css-navigation-bars">CSS Navigation Bars</a>
+                <a href="#css-dropdowns">CSS Dropdowns</a>
+                <a href="#css-image-gallery">CSS Image Gallery</a>
+                <a href="#css-forms">CSS Forms</a>
+                <a href="#css-website-layouts">CSS Website Layouts</a>
+                <a href="#css-flexbox">CSS Flexbox</a>
                 <a href="#css-grid">CSS Grid</a>
 
             </aside>
@@ -961,9 +977,687 @@ p {
                         </tr>
                     </table>
                     <h2>Example Usage</h2>
-                    
-                    
+                    <pre><code>/* Styling fonts in a heading */
+h1 {
+    font-family: 'Times New Roman', serif;
+    font-size: 36px;
+    font-weight: normal;
+    font-style: oblique;
+}
+                    </code></pre>
+                    <p>These properties can be combined to create complex and visually appealing typography.</p>
+                </section>
+                <!-- CSS Links -->
+                <section class="content-section" id="css-links">
+                    <h2>CSS Links</h2>
+                    <p>CSS links are used to style hyperlinks in HTML documents. You can define different styles for
+                        links in various
+                        states.</p>
+                    <h2>Common Link States</h2>
+                    <table>
+                        <tr>
+                            <th>State</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>:link</td>
+                            <td>Unvisited link</td>
+                            <td>a:link { color: blue; }</td>
+                        </tr>
+                        <tr>
+                            <td>:visited</td>
+                            <td>Visited link</td>
+                            <td>a:visited { color: purple; }</td>
+                        </tr>
+                        <tr>
+                            <td>:hover</td>
+                            <td>Mouse over link</td>
+                            <td>a:hover { color: red; }</td>
+                        </tr>
+                        <tr>
+                            <td>:active</td>
+                            <td>Active link (clicked)</td>
+                            <td>a:active { color: green; }</td>
+                        </tr>
 
+                    </table>
+                    <h2>Example Usage</h2>
+                    <pre><code>/* Styling links in different states */
+                a:link {
+                    color: blue; /* Unvisited link */
+                }
+                a:visited {
+                    color: purple; /* Visited link */
+                }
+                a:hover {
+                    color: red; /* Mouse over link */
+                }
+                a:active {
+                    color: green; /* Active link */
+                }
+                                    </code></pre>
+                    <p>By using these pseudo-classes, you can create interactive and visually appealing links on your
+                        website.</p>
+
+                </section>
+
+                <!-- CSS Lists -->
+                <section class="content-section" id="css-lists">
+                    <h2>CSS Lists</h2>
+                    <p>CSS allows you to style lists in various ways, such as changing the bullet style, size, and
+                        color.</p>
+                    <h2>Common List Properties</h2>
+                    <table>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>list-style-type</td>
+                            <td>Defines the bullet style of a list</td>
+                            <td>list-style-type: circle;</td>
+                        </tr>
+                        <tr>
+                            <td>list-style-position</td>
+                            <td>Defines the position of the bullet relative to the list item text</td>
+                            <td>list-style-position: inside;</td>
+                        </tr>
+                        <tr>
+                            <td>list-style-image</td>
+                            <td>Defines an image to be used as a bullet point</td>
+                            <td>list-style-image: url('bullet.png');</td>
+                        </tr>
+
+                    </table>
+
+                    <h2>Example Usage</h2>
+
+                    <!-- Example of styling a list -->
+                    <pre><code>/* Styling an unordered list */
+ul {
+    list-style-type: square; /* Change bullet style to square */
+    list-style-position: inside; /* Position bullets inside the list item */
+    list-style-image: url('custom-bullet.png'); /* Use a custom image for bullets */
+}
+ol {
+    list-style-type: upper-roman; /* Change bullet style to uppercase Roman numerals */
+    list-style-position: outside; /* Position bullets outside the list item */}
+                    </code></pre>
+                    <p>By using these properties, you can customize the appearance of lists to better fit the design of
+                        your website.</p>
+                </section>
+
+                <!-- CSS Tables -->
+                <section class="content-section" id="css-tables">
+                    <h2>CSS Tables</h2>
+                    <p>CSS allows you to style tables in various ways, such as changing borders, background colors, and
+                        text alignment.</p>
+                    <h2>Common Table Properties</h2>
+                    <table>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>border-collapse</td>
+                            <td>Controls whether table borders are collapsed or separated</td>
+                            <td>border-collapse: collapse;</td>
+                        </tr>
+                        <tr>
+                            <td>border-spacing</td>
+                            <td>Defines the spacing between table cells</td>
+                            <td>border-spacing: 10px 5px;</td>
+                        </tr>
+                        <tr>
+                            <td>caption-side</td>
+                            <td>Defines the position of the table caption relative to the table</td>
+                            <td>caption-side: bottom;</td>
+                        </tr>
+
+                    </table>
+
+                    <!-- Example of styling a table -->
+                    <pre><code>/* Styling a table */
+table {
+    border-collapse: collapse; /* Collapse borders */
+    width: 100%; /* Make table full width */
+}
+th, td {
+    border: 1px solid #ccc; /* Add border to cells */
+    padding: 8px; /* Add padding to cells */
+    text-align: left; /* Align text to the left */
+}
+th {
+    background-color: #f2f2f2; /* Set background color for header cells */
+}
+                    </code></pre>
+
+                </section>
+
+                <!-- CSS Display -->
+                <section class="content-section" id="css-display">
+                    <h2>CSS Display</h2>
+                    <p>The CSS `display` property controls how an element is displayed on a webpage.</p>
+                    <h2>Common Display Values</h2>
+                    <table>
+                        <tr>
+                            <th>Value</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>block</td>
+                            <td>Displays the element as a block-level element (takes up full width)</td>
+                            <td>display: block;</td>
+                        </tr>
+                        <tr>
+                            <td>inline</td>
+                            <td>Displays the element as an inline element (flows with surrounding text)</td>
+                            <td>display: inline;</td>
+                        </tr>
+                        <tr>
+                            <td>none</td>
+                            <td>Hides the element completely (doesn't take up any space)</td>
+                            <td>display: none;</td>
+                        </tr>
+
+                    </table>
+                    <h2>Example Usage</h2>
+                    <pre><code>/* Changing display of an element */
+/* Make a div behave like an inline element */
+div {
+    display: inline;
+}
+/* Hide a paragraph */
+p {
+    display: none;
+}
+                    </code></pre>
+                    <p>By using the `display` property, you can control the layout and visibility of elements on your
+                        webpage.</p>
+
+                </section>
+
+                <!-- CSS Position -->
+                <section class="content-section" id="css-position">
+                    <h2>CSS Position</h2>
+                    <p>The CSS `position` property controls how an element is positioned within the document flow.</p>
+                    <h2>Common Position Values</h2>
+                    <table>
+                        <tr>
+                            <th>Value</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>static</td>
+                            <td>Default position (normal flow)</td>
+                            <td>position: static;</td>
+                        </tr>
+                        <tr>
+                            <td>relative</td>
+                            <td>Positioned relative to its normal position</td>
+                            <td>position: relative;</td>
+                        </tr>
+                        <tr>
+                            <td>absolute</td>
+                            <td>Positioned relative to the nearest positioned ancestor</td>
+                            <td>position: absolute;</td>
+                        </tr>
+                        <tr>
+                            <td>fixed</td>
+                            <td>Positioned relative to the viewport (doesn't move with scrolling)</td>
+                            <td>position: fixed;</td>
+                        </tr>
+
+                    </table>
+                    <h2>Example Usage</h2>
+                    <pre><code>/* Positioning an element */
+/* Make a div positioned relative to its normal position */
+div {
+    position: relative;
+    top: 10px; /* Move down 10px from its normal position */
+    left: 20px; /* Move right 20px from its normal position */
+}
+/* Make a header fixed at the top of the page */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+                    </code></pre>
+                    <p>By using the `position` property, you can create complex layouts and control the placement of
+                        elements on your webpage.</p>
+
+                </section>
+
+                <!-- CSS Position Offsets -->
+                <section class="content-section" id="css-position-offsets">
+                    <h2>CSS Position Offsets</h2>
+                    <p>When using `position: relative`, `absolute`, or `fixed`, you can use the offset properties to
+                        specify how far an element should be moved from its normal position.</p>
+                    <h2>Offset Properties</h2>
+                    <table>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>top</td>
+                            <td>Moves the element down from the top edge of its containing block</td>
+                            <td>top: 10px;</td>
+                        </tr>
+                        <tr>
+                            <td>right</td>
+                            <td>Moves the element left from the right edge of its containing block</td>
+                            <td>right: 20px;</td>
+                        </tr>
+                        <tr>
+                            <td>bottom</td>
+                            <td>Moves the element up from the bottom edge of its containing block</td>
+                            <td>bottom: 15px;</td>
+                        </tr>
+                        <tr>
+                            <td>left</td>
+                            <td>Moves the element right from the left edge of its containing block</td>
+                            <td>left: 30px;</td>
+                        </tr>
+                    </table>
+                    <h2>Example Usage</h2>
+                    <pre><code>/* Using position offsets */
+/* Move a div 10px down and 20px to the right */
+div {
+    position: relative;
+    top: 10px;
+    left: 20px;
+}
+/* Move a header 15px up and 30px to the right */
+header {
+    position: absolute;
+    top: -15px;
+    left: 30px;
+}
+                    </code></pre>
+                    <p>By using these offset properties, you can fine-tune the position of elements on your webpage when
+                        using relative, absolute, or fixed positioning.</p>
+                </section>
+
+                <!-- CSS Z-index -->
+                <section class="content-section" id="css-z-index">
+                    <h2>CSS Z-index</h2>
+                    <p>The CSS `z-index` property controls the stacking order of positioned elements. Elements with a
+                        higher `z-index` value will appear in front of elements with a lower `z-index` value.</p>
+                    <h2>Example Usage</h2>
+                    <pre><code>/* Using z-index to control stacking order */
+/* A div with a higher z-index will appear in front of a div with a lower z-index */
+div.front {
+    position: relative;
+    z-index: 2; /* This div will be in front */
+}
+div.back {
+    position: relative;
+    z-index: 1; /* This div will be behind */
+}
+                    </code></pre>
+                    <p>By using the `z-index` property, you can control which elements appear on top of others when they
+                        overlap.</p>
+                </section>
+
+                <!-- CSS Overflow -->
+                <section class="content-section" id="css-overflow">
+                    <h2>CSS Overflow</h2>
+                    <p>The CSS `overflow` property controls what happens when content overflows the boundaries of its
+                        container.</p>
+                    <h2>Example Usage</h2>
+                    <pre><code>/* Using overflow to control content overflow */
+/* Hide overflow content */
+div {
+    overflow: hidden;
+}
+/* Scroll when content overflows */
+div.scrollable {
+    overflow: auto;
+}
+                    </code></pre>
+                    <p>By using the `overflow` property, you can control how content is displayed when it exceeds the
+                        boundaries of its container.</p>
+                    <h2>CSS Overflow-X and Overflow-Y</h2>
+                    <p>You can also control overflow separately for horizontal and vertical directions using
+                        `overflow-x` and `overflow-y` properties.</p>
+                    <pre><code>/* Control horizontal and vertical overflow separately */
+div {
+    overflow-x: scroll; /* Scroll horizontally when content overflows */
+    overflow-y: hidden; /* Hide vertical overflow */
+}
+                    </code></pre>
+                    <p>By using `overflow-x` and `overflow-y`, you can have more granular control over how content
+                        overflow is handled in different directions.</p>
+                </section>
+
+                <!-- CSS Float -->
+                <section class="content-section" id="css-float">
+                    <h2>CSS Float</h2>
+                    <p>The CSS `float` property is used to position elements in a horizontal line, typically used for
+                        creating layouts with sidebars and content areas.</p>
+                    <h2>Example Usage</h2>
+                    <pre><code>/* Using float to position elements */
+div.left {
+    float: left;
+}
+div.right {
+    float: right;
+}
+div.clear {
+    clear: both;
+}
+                    </code></pre>
+                    <p>By using the `float` property, you can position elements horizontally relative to their
+                        container.</p>
+                </section>
+
+                <!-- CSS Opacity -->
+                <section class="content-section" id="css-opacity">
+                    <h2>CSS Opacity</h2>
+                    <p>The CSS `opacity` property controls the transparency of an element. Values range from 0
+                        (completely transparent) to 1 (completely opaque).</p>
+                    <h2>Example Usage</h2>
+                    <pre><code>/* Using opacity to make an element semi-transparent */
+div.transparent {
+    opacity: 0.5;
+}
+                    </code></pre>
+                    <p>By using the `opacity` property, you can control how transparent or opaque an element appears.
+                    </p>
+                </section>
+
+                <!-- CSS Navigation Bars -->
+                <section class="content-section" id="css-navigation-bars">
+                    <h2>CSS Navigation Bars</h2>
+                    <p>CSS can be used to style navigation bars, which are typically used for website menus.</p>
+                    <h2>Example Usage</h2>
+                    <pre><code>/* Styling a navigation bar */
+nav {
+    background-color: #333;
+    overflow: hidden;
+}
+nav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+nav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+                    </code></pre>
+                    <p>By using CSS, you can create visually appealing and functional navigation bars for your website.
+                    </p>
+                </section>
+
+                <!-- CSS Dropdowns -->
+                <section class="content-section" id="css-dropdowns">
+                    <h2>CSS Dropdowns</h2>
+                    <p>CSS can be used to create dropdown menus, which are commonly used for navigation and user
+                        interface elements.</p>
+                    <h2>Example Usage</h2>
+                    <pre><code>/* Styling a dropdown menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+                    </code></pre>
+                    <p>By using CSS, you can create interactive dropdown menus that enhance the user experience on your
+                        website.</p>
+                </section>
+
+                <!--CSS Image Gallery -->
+                <section class="content-section" id="css-image-gallery">
+                    <h2>CSS Image Gallery</h2>
+                    <p>CSS can be used to create responsive image galleries with hover effects and other visual
+                        enhancements.</p>
+                    <h2>Example Usage</h2>
+                    <pre><code>/* Styling an image gallery */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+.gallery img {
+    width: 100%;
+    height: auto;
+}
+.gallery img:hover {
+    opacity: 0.8;
+}
+                    </code></pre>
+                    <p>By using CSS, you can create visually appealing image galleries that are responsive and
+                        interactive.</p>
+                </section>
+
+                <!-- CSS Forms -->
+                <section class="content-section" id="css-forms">
+                    <h2>CSS Forms</h2>
+                    <p>CSS can be used to style HTML forms, making them more visually appealing and user-friendly.</p>
+                    <h2>Example Usage</h2>
+                    <pre><code>/* Styling a form */
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+input[type=text], input[type=email] {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    cursor: pointer;
+}
+input[type=submit]:hover {
+    background-color: #45a045;
+}
+                    </code></pre>
+                    <p>By using CSS, you can make forms look professional and enhance the user experience.</p>
+                </section>
+
+                <!-- CSS Website Layouts -->
+                <section class="content-section" id="css-website-layouts">
+                    <h2>CSS Website Layouts</h2>
+                    <p>CSS can be used to create various website layouts, such as multi-column layouts, grid layouts,
+                        and flexbox layouts.
+                        A website is often divided into multiple sections, like a top header, navigation menu, main
+                        content, and a footer:</p>
+                    <h2>Layout Structure</h2>
+
+                    <!DOCTYPE html>
+                    <html lang="en">
+
+                    <head>
+                        <meta charset="UTF-8">
+                        <title>Website Layout</title>
+                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+                        <style>
+                            * {
+                                margin: 0;
+                                padding: 0;
+                                box-sizing: border-box;
+                            }
+
+                            body {
+                                background: #ffffff;
+                                font-family: Arial, sans-serif;
+                            }
+
+                            .wrapper {
+                                width: 90%;
+                                margin: 30px auto;
+                            }
+
+                            /* Common box style */
+                            .box {
+                                background: #e6e6e6;
+                                border-radius: 4px;
+                                text-align: center;
+                                padding: 20px;
+                                margin-bottom: 15px;
+                                font-size: 16px;
+                            }
+
+                            /* Header */
+                            .header {
+                                height: 70px;
+                                color: #000;
+                                display: flex;
+                                align-items: center;
+                                /* vertical center */
+                                justify-content: center;
+                                /* horizontal center */
+                            }
+
+                            /* Navigation */
+                            .nav {
+                                height: 60px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
+
+                            /* Content area */
+                            .content-area {
+                                display: grid;
+                                grid-template-columns: 1fr 3fr 1fr;
+                                gap: 15px;
+                                margin-bottom: 15px;
+                            }
+
+                            .sidebar-left,
+                            .sidebar-right {
+                                min-height: 300px;
+                            }
+
+                            .main-content {
+                                min-height: 300px;
+                            }
+
+                            /* Footer */
+                            .footer {
+                                height: 60px;
+                                color: #000;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                            }
+
+                            /* Responsive */
+                            @media (max-width: 768px) {
+                                .content-area {
+                                    grid-template-columns: 1fr;
+                                }
+                            }
+                        </style>
+                    </head>
+
+                    <body>
+
+                        <div class="wrapper">
+
+                            <header class="box header">Header</header>
+
+                            <nav class="box nav">Navigation Menu</nav>
+
+                            <main class="content-area">
+                                <aside class="box sidebar-left">Content</aside>
+                                <section class="box main-content">Main Content</section>
+                                <aside class="box sidebar-right">Content</aside>
+                            </main>
+
+                            <footer class="box footer">Footer</footer>
+
+                        </div>
+
+                    </body>
+
+                    </html>
+
+
+                </section>
+
+                <!-- CSS Flexbox -->
+                <section class="content-section" id="css-flexbox">
+                    <h2>What is CSS Flexbox?</h2>
+                    <p>CSS Flexbox is a layout model that allows you to design flexible and responsive layout structures
+                        without using float or positioning. It makes it easier to align and distribute space among
+                        items in a container, even when their size is unknown.</p>
+                    <h2>Flex Container Properties</h2>
+                    <p>These are applied to the flex container (the parent element).</p>
+                    <table>
+                        <tr>
+                            <th>Property</th>
+                            <th>Description</th>
+                            <th>Example</th>
+                        </tr>
+                        <tr>
+                            <td>display</td>
+                            <td>Defines the container as a flex container</td>
+                            <td>display: flex;</td>
+                        </tr>
+                        <tr>
+                            <td>flex-direction</td>
+                            <td>Defines the direction of the flex items (row, column)</td>
+                            <td>flex-direction: row;</td>
+                        </tr>
+                        <tr>
+                            <td>justify-content</td>
+                            <td>Aligns items horizontally (start, center, space-between)</td>
+                            <td>justify-content: center;</td>
+                        </tr>
+                        <tr>
+                            <td>align-items</td>
+                            <td>Aligns items vertically (start, center, stretch)</td>
+                            <td>align-items: stretch;</td>
+                        </tr>
+
+                    </table>
+
+                    <!-- Example of using Flexbox -->
+                    <pre><code>/* Flex container */
+
+.container {
+    display: flex;
+    flex-direction: row; /* Arrange items in a row */
+    justify-content: space-between; /* Distribute items with space between */
+    align-items: center; /* Align items vertically in the center */
+}
+/* Flex items */
+.item {
+    flex: 1; /* Make items flexible and take equal space */
+    margin: 10px; /* Add some margin between items */
+}
+                    </code></pre>
+                    <p>By using CSS Flexbox, you can create responsive and flexible layouts that adapt to different
+                        screen
+                        sizes and content.</p>
                 </section>
 
                 <!-- CSS Grid -->
@@ -1070,43 +1764,39 @@ p {
                     </ul>
                     <h2>Example</h2>
                     <pre><code>
-                        /* Grid container */
-                        body {
-                        margin: 0;
-                        display: grid;
-                        grid-template-rows: 80px 1fr 60px; /* header, main, footer */
-                        grid-template-areas:
-                        "header"
-                        "main"
-                        "footer";
-                        height: 100vh;
-                        }
-                        /* Semantic areas */
-                        header {
-                        grid-area: header;
-                        }
-                        
-                        main {
-                        grid-area: main;
-                        }
-                        
-                        footer {
-                        grid-area: footer;
-                        }
-                    </code></pre>
-
-
-                </section>
-
-                <!-- Coming Soon -->
-                <section class="content-section" id="comingsoon">
-                    <h2>Coming Soon!</h2>
+/* Grid container */
+body {
+    margin: 0;
+    display: grid;
+    grid-template-rows: 80px 1fr 60px; /* header, main, footer */
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+    height: 100vh;
+}
+/* Semantic areas */
+header {
+        grid-area: header;
+    }
+                                        
+main {
+    grid-area: main;
+    }
+                                        
+footer {
+        grid-area: footer;
+     }
+</code></pre>
+                    <p>By using CSS Grid, you can create complex and responsive layouts with ease, giving you more
+                        control
+                        over the design of your website.</p>
                 </section>
 
                 <!-- Navigation Buttons -->
                 <section class="navigation">
-                    <button onclick="window.location.href='#css-home'" class="home-btn">Previous</button>
-                    <button onclick="window.location.href='#'" class="next-btn">Next</button>
+                    <button class="previous-btn" id="prev-btn">Previous</button>
+                    <button class="next-btn" id="next-btn">Next</button>
                 </section>
 
             </article>
