@@ -1,0 +1,20 @@
+{
+  "Class 9": {
+    "IT (402)": ["Employability Skills PART A", "Subject Specific Skills PART B"]
+  },
+
+  "Class 10": {
+    "Maths": ["All Chapters"],
+    "Science": ["All Chapters"],
+    "IT (402)": ["Employability Skills PART A", "Subject Specific Skills PART B"]
+  },
+
+  "Class 11": {
+    "Web Application (803)": ["Employability Skills PART A", "Subject Specific Skills PART B"]
+  },
+
+  "Class 12": {
+    "Web Application (803)": ["Employability Skills PART A", "Subject Specific Skills PART B"]
+  }
+
+}

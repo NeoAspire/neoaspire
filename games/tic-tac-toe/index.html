@@ -147,6 +147,8 @@
 
     <div class="container">
         <h1>Tic Tac Toe</h1>
+        <!-- INSTALL BUTTON -->
+        <button id="installBtn" style="display: none; margin-bottom: 15px; background-color: #28a745; border: 2px solid #1e7e34;">📲 Install App</button>
         <!-- MODE SELECTION -->
         <div class="mode-select">
             <button onclick="selectMode('PVP')">👥 2 Players</button>
@@ -347,6 +349,38 @@
             navigator.serviceWorker.register("/games/tic-tac-toe/service-worker.js")
                 .then(() => console.log("Service Worker Registered"));
         }
+
+        // PWA INSTALL HANDLER
+        let installPrompt = null;
+        const installButton = document.getElementById('installBtn');
+
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            installPrompt = e;
+            if (installButton) {
+                installButton.style.display = 'block';
+            }
+        });
+
+        if (installButton) {
+            installButton.addEventListener('click', async () => {
+                if (installPrompt) {
+                    installPrompt.prompt();
+                    const { outcome } = await installPrompt.userChoice;
+                    if (outcome === 'accepted') {
+                        installPrompt = null;
+                        installButton.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        window.addEventListener('appinstalled', () => {
+            console.log('App installed successfully');
+            if (installButton) {
+                installButton.style.display = 'none';
+            }
+        });
     </script>
 </body>
 

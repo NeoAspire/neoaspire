@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pay to Download PDF</title>
 
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -270,8 +273,6 @@
       <label>Select Class</label>
       <select name="class" id="classSelect" required>
         <option value="">Select Your Class</option>
-        <option value="Class 9">Class 9</option>
-        <option value="Class 10">Class 10</option>
       </select>
 
       <label>Select Subject</label>
@@ -305,8 +306,10 @@
 
     </form>
   </section>
+
   <!-- JavaScript + Google Apps Script Link Form Submission -->
   <script>
+    
     const scriptURL =
       'https://script.google.com/macros/s/AKfycbxT7q-kz95bnMY24tBcyRTBLrYXDOODtcbvacnG6xBdxwIYKPraC4gw9JMoL9Fe1bLWfw/exec';
 
@@ -354,6 +357,7 @@
       data.fileData = base64;
       data.fileName = fileName;
       data.mimeType = mimeType;
+      data.token = 'neoaspire_form_v1_9F3kL2@2026'; // Add a token for basic verification
 
       fetch(scriptURL, {
         method: 'POST',
@@ -389,49 +393,76 @@
 
   <!-- DEPENDENT DROPDOWNS SCRIPT -->
   <script>
-    const dataMap = {
-      "Class 9": {
-        "Maths": ["All Chapters"],
-        "Science": ["All Chapters"],
-        "IT (402)": ["Employability Skills PART A", "Subject Speciifc Skills PART B"]
-      },
-      "Class 10": {
-        "Maths": ["All Chapters"],
-        "Science": ["All Chapters"],
-        // "Ch-1 Chemical Reactions and Equations", "Ch-2 Acids, Bases and Salts", "Ch-3 Metals and Non-Metals",
-        // "Ch-4 Carbon and its Compounds", "Ch-5 Life Processes", "Ch-6 Control and Coordination",
-        // "Ch-7 How to do Organisms Reproduce?", "Ch-8 Heredity", "Ch-9 Light Reflection and Refraction",
-        // "Ch-10 The Human Eye and The Colourful World", "Ch-11 Electricity", "Ch-12 Magnetic Effects of Electric Current",
-        // "Ch-13 Our Environment"],
-        "IT (402)": ["Employability Skills PART A", "Subject Speciifc Skills PART B"]
+    (async function loadDropdowns() {
+      const paths = [
+        './payments-dropdowns.json',
+        '../payments/payments-dropdowns.json',
+        '/payments/payments-dropdowns.json'
+      ];
+
+      let dataMap = null;
+      for (const p of paths) {
+        try {
+          const res = await fetch(p);
+          if (res && res.ok) {
+            dataMap = await res.json();
+            break;
+          }
+        } catch (e) {
+          // try next path
+        }
       }
-    };
 
-    const classSelect = document.getElementById("classSelect");
-    const subjectSelect = document.getElementById("subjectSelect");
-    const chapterSelect = document.getElementById("chapterSelect");
+      if (!dataMap) {
+        console.warn('payments-dropdowns.json not found; using fallback dataMap');
+        dataMap = {
+          "Class 9": { "Maths": ["All Chapters"], "Science": ["All Chapters"] },
+          "Class 10": { "Maths": ["All Chapters"], "Science": ["All Chapters"] }
+        };
+      }
 
-    classSelect.addEventListener("change", () => {
+      const classSelect = document.getElementById("classSelect");
+      const subjectSelect = document.getElementById("subjectSelect");
+      const chapterSelect = document.getElementById("chapterSelect");
+
+      // Populate class options from JSON keys
+      classSelect.innerHTML = '<option value="">Select Your Class</option>';
+      Object.keys(dataMap).forEach(cls => classSelect.add(new Option(cls, cls)));
+
+      // Reset subject/chapter
       subjectSelect.innerHTML = '<option value="">Select Subject</option>';
+      subjectSelect.disabled = true;
       chapterSelect.innerHTML = '<option value="">Select Chapter</option>';
-      subjectSelect.disabled = false;
       chapterSelect.disabled = true;
 
-      const selectedClass = classSelect.value;
-      if (!selectedClass) return;
+      classSelect.addEventListener("change", () => {
+        subjectSelect.innerHTML = '<option value="">Select Subject</option>';
+        chapterSelect.innerHTML = '<option value="">Select Chapter</option>';
+        subjectSelect.disabled = true;
+        chapterSelect.disabled = true;
 
-      Object.keys(dataMap[selectedClass]).forEach(subject => {
-        subjectSelect.add(new Option(subject, subject));
+        const selectedClass = classSelect.value;
+        if (!selectedClass || !dataMap[selectedClass]) return;
+
+        subjectSelect.disabled = false;
+        Object.keys(dataMap[selectedClass]).forEach(subject => {
+          subjectSelect.add(new Option(subject, subject));
+        });
       });
-    });
 
-    subjectSelect.addEventListener("change", () => {
-      chapterSelect.innerHTML = '<option value="">Select Chapter</option>';
-      chapterSelect.disabled = false;
+      subjectSelect.addEventListener("change", () => {
+        chapterSelect.innerHTML = '<option value="">Select Chapter</option>';
+        chapterSelect.disabled = true;
 
-      const chapters = dataMap[classSelect.value][subjectSelect.value];
-      chapters.forEach(ch => chapterSelect.add(new Option(ch, ch)));
-    });
+        const selectedClass = classSelect.value;
+        const selectedSubject = subjectSelect.value;
+        if (!selectedClass || !selectedSubject) return;
+
+        const chapters = dataMap[selectedClass][selectedSubject] || [];
+        chapters.forEach(ch => chapterSelect.add(new Option(ch, ch)));
+        chapterSelect.disabled = chapters.length === 0;
+      });
+    })();
   </script>
 
   <!-- EMAIL VALIDATION SCRIPT -->
