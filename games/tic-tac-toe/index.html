@@ -167,7 +167,7 @@
 
         /* iOS Install Banner */
         #iosInstallBanner {
-            display: none;
+            display: block;
             position: fixed;
             bottom: 0;
             left: 0;
@@ -212,9 +212,13 @@
     <div class="container">
         <h1>Tic Tac Toe</h1>
 
-        <!-- Andriod Install Button -->
+        <!-- Install Button -->
         <button id="installBtn" title="Install app">
-               ⬇️ Install App
+            <svg class="install-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12c0-4.97-4.03-9-9-9S3 7.03 3 12s4.03 9 9 9m6-9c-2-4-6-7-6-7s-4 3-6 7"></path>
+                <path d="M12 17v4"></path>
+            </svg>
+            Install App
         </button>
 
         <!-- iOS Install Banner -->
@@ -450,7 +454,24 @@
                 return /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent) && !/Edge/.test(navigator.userAgent);
             },
 
-            // Detect if tablet
+            // Detect if Edge browser
+            isEdge() {
+                return /Edg/.test(navigator.userAgent);
+            },
+
+            // Detect if Chrome browser
+            isChrome() {
+                return /Chrome/.test(navigator.userAgent) && !/Edg/.test(navigator.userAgent);
+            },
+
+            // Get browser type
+            getBrowser() {
+                if (this.isEdge()) return 'edge';
+                if (this.isChrome()) return 'chrome';
+                if (this.isSafari()) return 'safari';
+                if (/Firefox/.test(navigator.userAgent)) return 'firefox';
+                return 'unknown';
+            },
             isTablet() {
                 const ua = navigator.userAgent;
                 return /iPad|Android(?!.*Mobile)/.test(ua) || (navigator.maxTouchPoints > 2);
@@ -487,7 +508,7 @@
         // Log device info for debugging
         console.log(`📱 Device: ${DeviceDetector.getDeviceType()}`);
         console.log(`🖥️ OS: ${DeviceDetector.getOS()}`);
-        console.log(`🌐 Browser: ${DeviceDetector.isSafari() ? 'Safari' : 'Other'}`);
+        console.log(`🌐 Browser: ${DeviceDetector.getBrowser()}`);
 
         // ===== INSTALL BUTTON HANDLER =====
         window.addEventListener('beforeinstallprompt', (e) => {
@@ -512,6 +533,11 @@
                         installPrompt = null;
                         installButton.style.display = 'none';
                     }
+                } else if (DeviceDetector.isEdge()) {
+                    // Edge browser instructions (Windows/macOS)
+                    if (DeviceDetector.isDesktop()) {
+                        alert('🌐 Install Tic Tac Toe on Edge:\n\n1. Click the "Install" button (⬇️) in the address bar\n2. Click "Install" in the popup');
+                    }
                 } else if (DeviceDetector.isAndroid()) {
                     // Fallback for Android Chrome without beforeinstallprompt
                     if (DeviceDetector.isMobilePhone()) {
@@ -520,8 +546,8 @@
                         alert('📱 Install Tic Tac Toe on your Tablet:\n\n1. Tap the menu button (⋮)\n2. Select "Add to home screen"\n3. Tap "Add"');
                     }
                 } else if (DeviceDetector.isIOS() && DeviceDetector.isSafari()) {
-                    // iOS Safari instructions
-                    alert('🍎 Install Tic Tac Toe on iOS:\n\n1. Tap the Share button (⬆️)\n2. Scroll and select "Add to Home Screen"\n3. Tap "Add"');
+                    // iOS Safari - show banner instead of alert
+                    showIosBanner();
                 } else if (DeviceDetector.isDesktop()) {
                     // Desktop instructions
                     alert('💻 Install Tic Tac Toe on Desktop:\n\nYour browser will prompt you to install the app automatically.');
@@ -535,6 +561,35 @@
                 installButton.style.display = 'none';
             }
         });
+
+        // ===== iOS SAFARI BANNER =====
+        function showIosBanner() {
+            const iosBanner = document.getElementById('iosInstallBanner');
+            if (iosBanner) {
+                iosBanner.style.display = 'flex';
+                console.log('📱 Showing iOS Safari install banner');
+            }
+        }
+
+        function closeIosBanner() {
+            const iosBanner = document.getElementById('iosInstallBanner');
+            if (iosBanner) {
+                iosBanner.style.display = 'none';
+                // Store that user closed the banner (don't show again this session)
+                sessionStorage.setItem('iosBannerClosed', 'true');
+                console.log('iOS Safari banner closed');
+            }
+        }
+
+        // Auto-show banner for iOS Safari on page load
+        if (DeviceDetector.isIOS() && DeviceDetector.isSafari() && !sessionStorage.getItem('iosBannerClosed')) {
+            // Check if not already installed
+            if (window.navigator.standalone !== true) {
+                setTimeout(() => {
+                    showIosBanner();
+                }, 500);
+            }
+        }
 
         // Log app installation state
         if (window.navigator.standalone === true) {
