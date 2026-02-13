@@ -23,4 +23,4 @@ NeoAspire helps you grow your skills step‑by‑step with free tutorials, video
 - QBank for exam prep and practice questions  
 
 Learn, create, and build your skills with NeoAspire!  
-Visit 👉 [https://www.neoaspire.in](https://www.neoaspire.in)
+Visit 👉 [https://www.neoaspire.in]
