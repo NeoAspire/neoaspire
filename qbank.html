@@ -134,50 +134,84 @@
     <footer id="footer-container">
         <!-- Footer content will be loaded here -->
     </footer>
-
-    <!-- PDF Modal & Payment Script -->
     <script>
-        // Open PDF in modal (for ALL subjects)
-        document.querySelectorAll('.openPdf').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
 
-                const pdfUrl = this.dataset.pdf;
+// ================= PDF MODAL =================
 
-                document.getElementById('pdfModal').style.display = 'block';
-                document.getElementById('pdfPreview').src = pdfUrl;
+// Open PDF
+document.querySelectorAll('.openPdf').forEach(link => {
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
 
-                // Hide payment section initially
-                document.getElementById('payment-section').style.display = 'none';
+        const pdfUrl = this.dataset.pdf;
 
-                // Show payment prompt after 2 seconds
-                setTimeout(() => {
-                    document.getElementById('payment-section').style.display = 'block';
-                }, 2000);
-            });
-        });
+        document.getElementById('pdfModal').style.display = 'block';
+        document.getElementById('pdfPreview').src = pdfUrl;
 
-        // Pay & Download
-        document.getElementById('payButton').addEventListener('click', function () {
-            // Redirect to payment page
-            window.location.href = "/payments/payments.html"; // payment url
-        });
+        document.getElementById('payment-section').style.display = 'none';
 
-        // Close modal
-        document.querySelector('.close').addEventListener('click', function () {
-            document.getElementById('pdfModal').style.display = 'none';
-            document.getElementById('pdfPreview').src = '';
-        });
+        setTimeout(() => {
+            document.getElementById('payment-section').style.display = 'block';
+        }, 2000);
+    });
+});
 
-        // Close modal on outside click
-        window.addEventListener('click', function (event) {
-            if (event.target === document.getElementById('pdfModal')) {
-                document.getElementById('pdfModal').style.display = 'none';
-                document.getElementById('pdfPreview').src = '';
-            }
-        });
-    </script>
+// Pay & Download
+document.getElementById('payButton').addEventListener('click', function () {
+    window.location.href = "/payments/payments.html";
+});
 
+// Close modal
+document.querySelector('.close').addEventListener('click', function () {
+    document.getElementById('pdfModal').style.display = 'none';
+    document.getElementById('pdfPreview').src = '';
+});
+
+// Close modal on outside click
+window.addEventListener('click', function (event) {
+    if (event.target === document.getElementById('pdfModal')) {
+        document.getElementById('pdfModal').style.display = 'none';
+        document.getElementById('pdfPreview').src = '';
+    }
+});
+
+// ================= DROPDOWN =================
+
+document.querySelectorAll(".dropbtn").forEach(button => {
+  button.addEventListener("click", function (e) {
+    e.stopPropagation();
+
+    const dropdown = this.closest(".dropdown");
+    const card = this.closest(".subject-card");
+
+    // Close all dropdowns first
+    document.querySelectorAll(".dropdown").forEach(d => {
+      d.classList.remove("active");
+    });
+
+    document.querySelectorAll(".subject-card").forEach(c => {
+      c.classList.remove("active-card");
+    });
+
+    // Toggle current
+    dropdown.classList.toggle("active");
+    card.classList.toggle("active-card");
+  });
+});
+
+// Close when clicking outside
+document.addEventListener("click", () => {
+  document.querySelectorAll(".dropdown").forEach(d => {
+    d.classList.remove("active");
+  });
+
+  document.querySelectorAll(".subject-card").forEach(c => {
+    c.classList.remove("active-card");
+  });
+});
+
+</script>
+   
 </body>
 
 </html>

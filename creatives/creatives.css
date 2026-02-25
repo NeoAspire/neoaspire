@@ -1,57 +1,39 @@
 /* Creative Hub styles */
 
-:root{
-	--primary:#E64A19; /* main buttons / highlights (orange) */
-	--hero:#4CAF50; /* hero background (green) */
-	--accent:#5b8cff;
-	--muted:#6b7280;
-	--bg:#f8fafc;
-	--card-bg:#ffffff;
-}
-
-/* Hero Section */
-.creations-hero {
-    background-color: var(--hero);
-    color: white;
-    padding: 1.5rem 1rem;
-    text-align: center;
-}
-
-.creations-hero h1 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-}
-
-.creations-hero p {
-    font-size: 1rem;
-    max-width: 600px;
-    margin: 0 auto;
+/* aliases for global design tokens (defined in css/variables.css) */
+:root {
+    --creative-primary: var(--color-primary);
+    --creative-accent: var(--color-dark);
+    --creative-muted: var(--color-text-secondary);
+    --creative-bg: var(--color-bg-light);
+    --creative-card-bg: var(--color-white);
+    --creative-primary-hover: var(--color-primary-hover);
 }
 
 /* Grid */
 .creative-grid {
-    padding: 40px 0;
+    padding: var(--space-xl) 0;
 }
 
 .creative-grid .grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 24px;
+    gap: var(--space-lg);
 }
 
 /* Card - PNGTree style */
 .creative-card {
-    background: #fff;
-    border-radius: 8px;
+    background: var(--creative-card-bg);
+    border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-normal);
     position: relative;
 }
 
 .creative-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+    transform: translateY(calc(-1 * var(--space-sm)));
+    box-shadow: var(--shadow-lg);
 }
 
 /* Thumbnail with overlay */
@@ -96,63 +78,63 @@
 }
 
 .thumb-overlay .download-btn {
-    background: var(--primary);
-    padding: 12px 24px;
+    background: var(--creative-primary);
+    padding: var(--space-sm) var(--space-lg);
     font-weight: 600;
 }
 
 .thumb-overlay .download-btn:hover {
-    background: #d4400f;
+    background: var(--creative-primary-hover);
     transform: scale(1.05);
 }
 
 /* Download count badge */
 .download-count {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: var(--space-sm);
+    right: var(--space-sm);
     background: rgba(0, 0, 0, 0.7);
     color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    font-size: 12px;
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
     font-weight: 500;
 }
 
 /* Card body */
 .card-body {
-    padding: 16px 14px;
+    padding: var(--space-md) var(--space-md);
     text-align: left;
 }
 
 .card-tags {
     display: flex;
-    gap: 6px;
-    margin-bottom: 10px;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-sm);
     flex-wrap: wrap;
 }
 
 .card-tag {
-    background: #f0f0f0;
-    color: #666;
-    padding: 3px 8px;
-    border-radius: 3px;
-    font-size: 11px;
+    background: var(--color-bg-section);
+    color: var(--color-text-secondary);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
     font-weight: 500;
 }
 
 .card-body h3 {
-    font-size: 15px;
-    margin: 0 0 8px;
-    color: #0f172a;
+    font-size: var(--font-size-md);
+    margin: 0 0 var(--space-sm);
+    color: var(--color-heading);
     font-weight: 600;
     line-height: 1.4;
 }
 
 .card-body p {
-    font-size: 12px;
-    color: #999;
-    margin: 0 0 10px;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-muted);
+    margin: 0 0 var(--space-sm);
 }
 
 /* Title+Author */
@@ -160,38 +142,38 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 12px;
-    color: #777;
-    margin-bottom: 10px;
+    font-size: var(--font-size-xs);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-sm);
 }
 
 .card-author {
-    color: var(--muted);
+    color: var(--creative-muted);
 }
 
 /* Button */
 .download-btn {
     display: inline-block;
-    padding: 8px 16px;
-    background: var(--primary);
+    padding: var(--space-sm) var(--space-md);
+    background: var(--creative-primary);
     color: #fff;
-    font-size: 13px;
-    border-radius: 4px;
+    font-size: var(--font-size-sm);
+    border-radius: var(--radius-sm);
     text-decoration: none;
     border: none;
     cursor: pointer;
     font-weight: 600;
-    transition: all 0.2s ease;
+    transition: var(--transition-fast);
 }
 
 .download-btn:hover {
-    background: #d4400f;
+    background: var(--creative-primary-hover);
 }
 
 /* Dark Mode Support */
 .dark-mode .creations-hero {
     background-color: #333;
-    color: #e0e0e0;
+    color: var(--color-white);
 }
 
 .dark-mode .creations-hero h1 {
@@ -204,11 +186,11 @@
 
 .dark-mode .creative-card {
     background: #1f1f1f;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    box-shadow: var(--shadow-md);
 }
 
 .dark-mode .creative-card:hover {
-    box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+    box-shadow: var(--shadow-lg);
 }
 
 .dark-mode .creative-card .thumb {
@@ -240,7 +222,7 @@
 @media (max-width: 768px) {
     .creative-grid .grid {
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        gap: 16px;
+        gap: var(--space-md);
     }
 
     .creative-card .thumb {
@@ -248,16 +230,16 @@
     }
 
     .card-body {
-        padding: 12px 12px;
+        padding: var(--space-md) var(--space-md);
     }
 
     .card-body h3 {
-        font-size: 14px;
+        font-size: var(--font-size-sm);
     }
 
     .download-btn {
-        font-size: 12px;
-        padding: 6px 12px;
+        font-size: var(--font-size-xs);
+        padding: var(--space-xs) var(--space-md);
     }
 }
 
@@ -267,10 +249,10 @@
     }
 
     .creations-hero h1 {
-        font-size: 1.5rem;
+        font-size: var(--font-size-lg);
     }
 
     .creations-hero p {
-        font-size: 0.9rem;
+        font-size: var(--font-size-sm);
     }
 }

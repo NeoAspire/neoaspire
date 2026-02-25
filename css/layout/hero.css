@@ -1,16 +1,19 @@
  /* Hero */
-        .hero {
-            background: #4CAF50;
-            color: white;
-            text-align: center;
-            padding: 1.5rem 2rem;
-        }
+ .hero {
+     background: var(--color-primary);
+     color: var(--color-white);
+     text-align: center;
+     padding: var(--space-lg) var(--space-md);
+     border-radius: var(--radius-md);
+     transition: background var(--transition-normal);
+ }
 
-        .hero h2 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
-        }
+ .hero h2 {
+     font-size: var(--font-size-xl);
+     margin-bottom: var(--space-sm)
+ }
 
-        .hero p {
-            font-size: 1rem;
-        }
+ .hero p {
+     font-size: var(--font-size-md);
+     color: var(--color-primary-light);
+ }

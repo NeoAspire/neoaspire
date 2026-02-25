@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Load optional global premium rules then creations
   // Use multiple fallback paths because pages may be opened from different base URLs
-  const premiumPaths = ['/creative/premium.json', 'creative/premium.json', './creative/premium.json'];
-  const creationsPaths = ['/creative/creations.json', 'creative/creations.json', './creative/creations.json'];
+  const premiumPaths = ['/creatives/premium.json', 'creatives/premium.json', './creatives/premium.json'];
+  const creationsPaths = ['/creatives/creations.json', 'creatives/creations.json', './creatives/creations.json'];
 
   async function tryFetchJson(paths, opts = {}) {
     for (const p of paths) {

@@ -1,19 +1,20 @@
  /* Footer */
  footer {
      grid-area: footer;
-     background: #282A35;
-     color: white;
+     background: var(--color-dark);
+     color: var(--color-white);
      text-align: center;
-     padding: 1em;
+     padding: var(--space-md);
+     transition: background var(--transition-normal);
  }
 
  /* Footer Links */
-    footer a {
-        color: white;
-        text-decoration: none;
-        margin: 0 10px;
-    }
-    footer a:hover {
-        text-decoration: underline;
-    }
+ footer a {
+     color: var(--color-white);
+     text-decoration: none;
+     margin: 0 var(--space-sm);
+ }
+ footer a:hover {
+     text-decoration: underline;
+ }
     

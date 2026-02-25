@@ -1,150 +1,156 @@
-/* Hidden class */
+/* =========================================
+   UTILITIES
+========================================= */
+
 .hidden {
-    display: none;
+  display: none !important;
 }
 
-/* Alert Message Box Styles */
+/* =========================================
+   ALERT MODAL
+========================================= */
+
 #alert-box {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #f9edbe;
-    border: 1px solid #f0c36d;
-    width: 400px;
-    height: 200px;
-    padding: 20px 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    animation: fadeIn 0.5s ease-in-out;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  max-width: 90%;
+  padding: var(--space-lg);
+  background-color: var(--color-primary-light);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  animation: fadeIn var(--transition-normal);
 }
 
-#alert-box .alert-content p {
-    margin: 0;
-    font-size: 1.4rem;
-    color: #333;
+#alert-box p {
+  margin: 0;
+  font-size: var(--font-size-md);
+  color: var(--color-text-primary);
+  line-height: var(--font-size-lg);
 }
 
-#alert-box #alert-close-btn {
-    background-color: #f0c36d;
-    border: none;
-    margin-top: 10px;
-    padding: 15px 20px;
-    border-radius: 3px;
-    cursor: pointer;
-    font-size: 1rem;
+#alert-close-btn {
+  align-self: flex-end;
+  margin: var(--space-sm) 0 0 auto;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-fast);
 }
 
-#alert-box #alert-close-btn:hover {
-    background-color: #e6b24c;
+#alert-close-btn:hover {
+  background-color: var(--color-primary-hover);
 }
 
+/* =========================================
+   YOUTUBE SECTION
+========================================= */
 
-/* Index Page Specific Styles*/
-/* YouTube Link Section */
 .youtube-link {
-    text-align: center;
-    padding: 1rem;
-    background-color: #f9f9f9;
-    border-radius: 0.5rem;
-    margin: 1rem 1rem;
+  text-align: center;
+  padding: var(--space-lg);
+  background-color: var(--color-bg-section);
+  border-radius: var(--radius-md);
+  margin: var(--space-lg);
 }
 
 .youtube-link h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-md);
+  color: var(--color-heading);
 }
 
 .youtube-link p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
-    color: #555;
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-lg);
+  color: var(--color-text-secondary);
 }
 
 .youtube-link button {
-    background: #E64A19;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-md);
+  transition: var(--transition-fast);
 }
 
 .youtube-link button:hover {
-    background: #FF5F1F;
+  background: var(--color-primary-hover);
 }
 
-/*Our Services*/
-.our-services {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-    /*padding: 0.5rem;*/
-    margin: 1rem 1rem;
-    background-color: none;
-} 
+/* =========================================
+   OUR SERVICES
+========================================= */
 
+.our-services {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: var(--space-lg);
+  margin: var(--space-xl);
+}
 
 .our-services h1 {
-    text-align: center;
-    grid-column: 1 / -1;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    background-color: #E64A19;
-    color: white;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: var(--font-size-lg);
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
 }
 
+/* Service Card */
+
 .service-card {
-    background: white;
-    border-radius: 0.5rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.2s ease-in-out;
-    max-width: 300px;
-    height: 12rem;
-    justify-items: center;
-    align-items: center;
-    justify-self: center;
-    align-self: center;
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: var(--space-lg);
+  text-align: center;
+  transition: var(--transition-fast);
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-}
-
-.service-content {
-    padding: 1rem;
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
 }
 
 .service-content h3 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
+  font-size: var(--font-size-md);
+  margin-bottom: var(--space-sm);
+  color: var(--color-heading);
 }
 
 .service-content p {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: #555;
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-md);
+  color: var(--color-text-secondary);
 }
 
 .service-content button {
-    background: #E64A19;
-    color: white;
-    font-size: 1rem;
-    border: none;
-    padding: 8px 12px;
-    border-radius: 4px;
-    cursor: pointer;
+  background: var(--color-secondary);
+  color: var(--color-white);
+  border: none;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-fast);
 }
 
 .service-content button:hover {
-    background: #FF5F1F;
+  background: var(--color-secondary-hover);
 }

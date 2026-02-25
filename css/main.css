@@ -1,4 +1,11 @@
 /* Main CSS File */
+
+/* Importing global variables for large projects */
+@import url('variables.css');
+
+/* Importing button styles */
+@import url('buttons.css');
+
 /* Importing layout styles */
 @import url('layout/grid.css');
 @import url('layout/header.css');
