@@ -1,19 +1,23 @@
 
-let currentIndex = 0; // Global variable for tracking current section
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", function() {
+    let currentIndex = 0;
+
     const links = document.querySelectorAll("aside a");
     const sections = document.querySelectorAll("article .content-section");
     const prevBtn = document.getElementById("prev-btn");
     const nextBtn = document.getElementById("next-btn");
+    const toggleBtn = document.getElementById("menuToggle");
+    const sidebar = document.querySelector("aside");
 
-    console.log("Page loaded");
-    console.log("Found " + sections.length + " sections");
-    console.log("Prev button:", prevBtn);
-    console.log("Next button:", nextBtn);
+    /* ==========================================
+       INITIAL SETUP
+    ========================================== */
 
-    // Hide all sections initially
-    sections.forEach(sec => sec.style.display = "none");
+    // Hide all sections
+    sections.forEach(section => {
+        section.style.display = "none";
+    });
 
     // Show first section by default
     if (sections.length > 0) {
@@ -21,76 +25,145 @@ document.addEventListener("DOMContentLoaded", function() {
         currentIndex = 0;
     }
 
-    // Function to update active class on sidebar links
+    updateActiveLink();
+
+
+    /* ==========================================
+       FUNCTIONS
+    ========================================== */
+
     function updateActiveLink() {
-        if (currentIndex >= 0 && currentIndex < sections.length) {
-            const currentSectionId = sections[currentIndex].id;
-            links.forEach(link => {
-                const linkHref = link.getAttribute("href").substring(1);
-                if (linkHref === currentSectionId) {
-                    link.classList.add("active");
-                } else {
-                    link.classList.remove("active");
-                }
-            });
-        }
+        if (!sections[currentIndex]) return;
+
+        const currentId = sections[currentIndex].id;
+
+        links.forEach(link => {
+            const linkId = link.getAttribute("href").substring(1);
+            link.classList.toggle("active", linkId === currentId);
+        });
     }
 
-    // Function to show a specific section
+    // Show section by index
     function showSection(index) {
         if (index < 0 || index >= sections.length) return;
-        
-        sections.forEach(sec => sec.style.display = "none");
+
+        // Hide completion section if visible
+        const completeSection = document.querySelector(".course-complete");
+        if (completeSection) {
+            completeSection.classList.remove("active");
+        }
+
+        // Restore Next button
+        if (nextBtn) {
+            nextBtn.style.display = "inline-block";
+        }
+
+        // Hide all sections
+        sections.forEach(section => {
+            section.style.display = "none";
+        });
+
+        // Show selected section
         sections[index].style.display = "block";
-        sections[index].scrollIntoView({ behavior: "smooth" });
+        sections[index].scrollIntoView({ behavior: "smooth", block: "start" });
+
         currentIndex = index;
-        updateActiveLink(); // Update active link when showing section
-        console.log("Showing section " + (index + 1));
+        updateActiveLink();
     }
 
-    // Add click event to each aside link
-    links.forEach((link, index) => {
-        link.addEventListener("click", function(e) {
+    /* ==========================================
+       SIDEBAR LINK CLICK
+    ========================================== */
+
+    links.forEach(link => {
+        link.addEventListener("click", function (e) {
             e.preventDefault();
 
-            // Get the target section id
             const targetId = this.getAttribute("href").substring(1);
-            const targetSection = document.getElementById(targetId);
 
-            // Find and show the clicked section
-            if (targetSection) {
-                for (let i = 0; i < sections.length; i++) {
-                    if (sections[i].id === targetId) {
-                        showSection(i);
-                        break;
-                    }
+            sections.forEach((section, index) => {
+                if (section.id === targetId) {
+                    showSection(index);
                 }
+            });
+
+            // Auto close sidebar on mobile
+            if (window.innerWidth <= 900 && sidebar) {
+                sidebar.classList.remove("active");
             }
         });
     });
 
-    // Add functionality for Previous button
+
+    /* ==========================================
+       PREVIOUS BUTTON
+    ========================================== */
+
     if (prevBtn) {
-        prevBtn.addEventListener("click", function() {
-            console.log("Previous clicked, current index: " + currentIndex);
+        prevBtn.addEventListener("click", function () {
+
+            const completeSection = document.querySelector(".course-complete");
+
+            // If completion screen is visible
+            if (completeSection && completeSection.classList.contains("active")) {
+
+                completeSection.classList.remove("active");
+
+                // Show the LAST lesson properly
+                showSection(sections.length - 1);
+
+                return;
+            }
+
+            // Normal backward navigation
             if (currentIndex > 0) {
                 showSection(currentIndex - 1);
             }
         });
     }
 
-    // Add functionality for Next button
+    /* ==========================================
+     NEXT BUTTON
+  ========================================== */
+
     if (nextBtn) {
-        nextBtn.addEventListener("click", function() {
-            console.log("Next clicked, current index: " + currentIndex);
+        nextBtn.addEventListener("click", function () {
+
+            // If NOT last lesson → go next
             if (currentIndex < sections.length - 1) {
                 showSection(currentIndex + 1);
+            }
+
+            // If LAST lesson → show completion screen
+            else {
+
+                // Hide all lesson sections
+                sections.forEach(section => {
+                    section.style.display = "none";
+                });
+
+                // Show completion section
+                const completeSection = document.querySelector(".course-complete");
+                if (completeSection) {
+                    completeSection.classList.add("active");
+                }
+
+                // Optional: disable next button
+                nextBtn.style.display = "none";
             }
         });
     }
 
-    // Set active class on first link initially
-    updateActiveLink();
-});
 
+    /* ==========================================
+       HAMBURGER MENU TOGGLE
+    ========================================== */
+
+    if (toggleBtn && sidebar) {
+        toggleBtn.addEventListener("click", function () {
+            sidebar.classList.toggle("active");
+        });
+    }
+
+});
 

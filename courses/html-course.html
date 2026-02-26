@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML</title>
+    <title>Learn HTML</title>
     <!-- Main CSS -->
     <link rel="stylesheet" href="/css/main.css">
     <!-- Favicon -->
@@ -22,10 +22,10 @@
 
     <!-- Main Content -->
     <main>
-        <section class="aside-article-container">
-
+        <section class="aside-container">
+            <button class="menu-toggle" id="menuToggle">☰ Learn HTML</button>
             <aside>
-                <h2 id="html-home">LEARN HTML</h2>
+                <h2 id="html-home">Learn HTML</h2>
                 <a href="#html-intro">HTML Introduction</a>
                 <a href="#html-elements">HTML Elements</a>
                 <a href="#html5-semantics">HTML5 Semantics</a>
@@ -485,7 +485,7 @@
 &lt;/head&gt;
 &lt;body&gt;
     &lt;p style="color: blue; font-size: 20px; font-family: Verdana;"&gt;This is a blue text in Verdana font.&lt;/p&gt;
-    &lt;p style="color: green; font-size: 18px; font-family: 'Times New Roman';"&gt;This is a green text in Times New Roman font.&lt;/p&gt;
+    &lt;p style="color: green; font-size: 18px; font-family: 'Times New Roman';"&gt; This is a green text in Times New Roman font.&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;
                     </code></pre>
@@ -953,8 +953,9 @@
                         <li><strong>title</strong>: Adds a tooltip that appears when hovering over the image.</li>
                     </ul>
                     <h2>Example:</h2>
-                    <pre><code>&lt;img src="https://example.com/image.jpg" alt="Example Image" width="300" height="200" title="This is an example image"&gt;</code></pre>
-                <h3>Complete code for practice</h3>
+                    <pre><code>&lt;img src="https://example.com/image.jpg" alt="Example Image" width="300" 
+                        height="200" title="This is an example image"&gt;</code></pre>
+                    <h3>Complete code for practice</h3>
                     <pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -963,7 +964,8 @@
 &lt;/head&gt;
 &lt;body&gt;
     &lt;h2&gt;HTML Images&lt;/h2&gt;
-    &lt;img src="https://via.placeholder.com/300x200" alt="Placeholder Image" width="300" height="200" title="This is a placeholder image"&gt;
+    &lt;img src="https://via.placeholder.com/300x200" alt="Placeholder Image" width="300" 
+    height="200" title="This is a placeholder image"&gt;
 &lt;/body&gt;
 &lt;/html&gt;
                     </code></pre>
@@ -1021,7 +1023,7 @@
         &lt;td&gt;25&lt;/td&gt; 
     &lt;/tr&gt;
 &lt;/table&gt;</code></pre>
-                <h3>Complete code for practice</h3>
+                    <h3>Complete code for practice</h3>
                     <pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1136,10 +1138,11 @@
     &lt;label for="email"&gt;Email:&lt;/label&gt;
     &lt;input type="email" id="email" name="email" placeholder="Enter your email"&gt;&lt;br&gt;&lt;br&gt;
     &lt;label for="message"&gt;Message:&lt;/label&gt;&lt;br&gt;
-    &lt;textarea id="message" name="message" rows="4" cols="30" placeholder="Type your message here"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+    &lt;textarea id="message" name="message" rows="4" cols="30" 
+    placeholder="Type your message here"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
     &lt;input type="submit" value="Submit"&gt;
 &lt;/form&gt;</code></pre>
-                <h3>Complete code for practice</h3>
+                    <h3>Complete code for practice</h3>
                     <pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1186,7 +1189,7 @@
                     </ul>
                     <h2>Example:</h2>
                     <pre><code>&lt;iframe src="https://www.example.com" width="600" height="400" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
-                <h3>Complete code for practice</h3>
+                    <h3>Complete code for practice</h3>
                     <pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1238,7 +1241,7 @@
     &lt;source src="movie.mp4" type="video/mp4"&gt;
     Your browser does not support the video element.
 &lt;/video&gt;</code></pre>
-                <h3>Complete code for practice</h3>
+                    <h3>Complete code for practice</h3>
                     <pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1336,7 +1339,7 @@
 &lt;p&gt;It&apos;s a beautiful day!&lt;/p&gt;
 &lt;p&gt;This&nbsp;is&nbsp;a&nbsp;non-breaking&nbsp;space.&lt;/p&gt;
 &lt;p&gt;&amp;copy; 2024 My Website&lt;/p&gt;</code></pre>
-                <h3>Complete code for practice</h3>
+                    <h3>Complete code for practice</h3>
                     <pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1507,7 +1510,7 @@ background-image: radial-gradient(circle, blue, green);</code></pre>
 &lt;p style="background-color: #FFFF00;"&gt;This paragraph has a yellow background.&lt;/p&gt;
 &lt;div style="border: 2px solid rgb(0, 255, 0);"&gt;This div has a green border.&lt;/div&gt;
 &lt;span style="color: hsl(240, 100%, 50%);"&gt;This text is blue using HSL.&lt;/span&gt;</code></pre>
-                <h3>Complete code for practice</h3>
+                    <h3>Complete code for practice</h3>
                     <pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
@@ -1523,6 +1526,16 @@ background-image: radial-gradient(circle, blue, green);</code></pre>
 &lt;/body&gt;
 &lt;/html&gt;
                     </code></pre>
+                </section>
+
+                <!-- Course Completion Section -->
+                <section class="course-complete">
+                    <h1>🎉 Course Completed!</h1>
+                    <p>Congratulations! You’ve successfully finished this course.</p>
+
+                    <div class="completion-actions">
+                        <a href="/courses/" class="btn-outline">Explore More Courses</a>
+                    </div>
                 </section>
 
                 <!-- Navigation Buttons -->
