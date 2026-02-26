@@ -38,7 +38,7 @@
 
 /* Thumbnail with overlay */
 .creative-card .thumb {
-    background: linear-gradient(135deg, #f6f7f9 0%, #e8eaeg 100%);
+    background: linear-gradient(135deg, #f6f7f9 0%, #e8eaef 100%);
     height: 220px;
     display: flex;
     align-items: center;
