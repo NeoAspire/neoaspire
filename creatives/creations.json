@@ -2,15 +2,15 @@
     {
   "id": "ribbon-design",
   "title": "Ribbon Design",
-  "thumb": "./creatives/assets/jpg/ribbon.jpg",
+  "thumb": "/creatives/assets/jpg/ribbon.jpg",
   "author": "NeoAspire",
   "category": "Graphics",
   "downloads": 1240,
   "tags": ["ribbon", "graphic", "design", "jpeg"],
   "files": [
-    { "label": "JPG", "url": "creatives/assets/jpg/ribbon.jpg" },
-    { "label": "PNG", "url": "creatives/assets/png/ribbon.png" },
-    { "label": "PSD", "url": "creatives/assets/psd/ribbon.psd" }
+    { "label": "JPG", "url": "/creatives/assets/jpg/ribbon.jpg" },
+    { "label": "PNG", "url": "/creatives/assets/png/ribbon.png" },
+    { "label": "PSD", "url": "/creatives/assets/psd/ribbon.psd" }
   ]
 },
  {
