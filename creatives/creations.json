@@ -2,7 +2,7 @@
     {
   "id": "ribbon-design",
   "title": "Ribbon Design",
-  "thumb": "creatives/assets/jpg/ribbon.jpg",
+  "thumb": "./creatives/assets/jpg/ribbon.jpg",
   "author": "NeoAspire",
   "category": "Graphics",
   "downloads": 1240,
