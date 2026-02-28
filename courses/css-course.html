@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
     <!-- Link to external JS for layout (e.g., hamburger menu) -->
     <script src="/js/base.js"></script>
-    <script src="/js/html-css.js"></script>
+    <script src="/js/course-page.js"></script>
 </head>
 
 <body>
@@ -25,7 +25,7 @@
         <section class="aside-container">
             <button class="menu-toggle" id="menuToggle">☰ Learn CSS</button>
             <aside>
-                <h2 id="css-home">Learn CSS</h2>
+                <h2>Learn CSS</h2>
                 <a href="#css-intro">CSS Introduction</a>
                 <a href="#css-syntax">CSS Syntax</a>
                 <a href="#css-selectors">CSS Selectors</a>
@@ -65,58 +65,125 @@
             <article>
                 <!-- CSS Introduction -->
                 <section class="content-section" id="css-intro">
-                    <h2>What is CSS?</h2>
-                    <p>CSS (Cascading Style Sheets) is a language used to style and design web pages. It controls how
-                        HTML elements look, including:</p>
+                    <h2>Introduction to CSS</h2>
+
+                    <p>
+                        CSS (Cascading Style Sheets) is a styling language used to design and control
+                        the appearance of web pages. While HTML provides the structure of a webpage,
+                        CSS makes it visually appealing and well-organized.
+                    </p>
+
+                    <h3>What CSS Can Control</h3>
                     <ul>
-                        <li>Colors</li>
-                        <li>Fonts and text size</li>
-                        <li>Layouts and spacing</li>
+                        <li>Text colors and font styles</li>
+                        <li>Font sizes and spacing</li>
+                        <li>Layouts and positioning</li>
                         <li>Backgrounds and images</li>
-                        <li>Animations and effects</li>
+                        <li>Animations and visual effects</li>
                     </ul>
-                    <p>In short: HTML is the structure of a webpage, and CSS makes it look beautiful.</p>
-                    <h2>Why CSS is Important</h2>
+
+                    <h3>Why CSS is Important</h3>
                     <ol>
-                        <li>Separation of content and design – keeps HTML clean.</li>
-                        <li>Consistency – style multiple pages the same way.</li>
-                        <li>Responsive design – works for desktop, tablet, and mobile.</li>
-                        <li>User experience – makes websites attractive and readable.</li>
+                        <li><strong>Separation of Content and Design</strong> – Keeps HTML clean and structured.</li>
+                        <li><strong>Consistency</strong> – Apply the same design across multiple pages.</li>
+                        <li><strong>Responsive Design</strong> – Create layouts for desktop, tablet, and mobile.</li>
+                        <li><strong>User Experience</strong> – Improve readability and visual appeal.</li>
                     </ol>
+
+                    <h3>Real-World Example</h3>
+                    <p>
+                        Without CSS, websites would look plain and unformatted.
+                        CSS allows developers to create modern, professional interfaces.
+                    </p>
+
+                    <pre><code>
+h1 {
+    color: blue;
+    font-size: 32px;
+}
+    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a CSS rule for <code>body</code> and change the background color.</li>
+                            <li>Change the text color of <code>h1</code>.</li>
+                            <li>Increase the font size of <code>p</code> elements.</li>
+                        </ul>
+                    </div>
                 </section>
 
                 <!-- CSS Syntax -->
                 <section class="content-section" id="css-syntax">
                     <h2>CSS Syntax</h2>
-                    <p>CSS is made up of rules that tell the browser how to style HTML elements. Each rule consists of a
-                        selector and a declaration block.</p>
-                    <h2>Example of CSS Syntax</h2>
+
+                    <p>
+                        CSS is made up of rules that tell the browser how to style HTML elements.
+                        Each rule consists of a selector and a declaration block.
+                    </p>
+
+                    <h3>Basic Structure</h3>
+
                     <pre><code>
 /* This is a CSS rule */
 selector {
-    property: value; /* Declaration */
-    property2: value2; /* Another Declaration */
-}   
-                    </code></pre>
-                    <h2>Components Explained</h2>
+    property: value;
+    property2: value2;
+}
+    </code></pre>
+
+                    <h3>Selector</h3>
+                    <p>
+                        The selector specifies which HTML elements the rule applies to.
+                        Examples include:
+                    </p>
+
                     <ul>
-                        <li><strong>Selector:</strong> Specifies which HTML elements the rule applies to (e.g., h1,
-                            .class, #id).</li>
-                        <li><strong>Declaration Block:</strong> Contains one or more declarations enclosed in curly
-                            braces { }.</li>
-                        <li><strong>Declaration:</strong> Consists of a property and a value, separated by a colon (:).
-                            Each declaration ends with a semicolon (;).</li>
+                        <li><code>h1</code> – Selects all &lt;h1&gt; elements</li>
+                        <li><code>.class</code> – Selects elements with a class</li>
+                        <li><code>#id</code> – Selects an element with an ID</li>
                     </ul>
-                    <h2>Example Explained</h2>
+
+                    <h3>Declaration Block</h3>
+                    <p>
+                        The declaration block is enclosed in curly braces <code>{ }</code>
+                        and contains one or more declarations.
+                    </p>
+
+                    <h3>Declaration</h3>
+                    <p>
+                        A declaration consists of a property and a value,
+                        separated by a colon <code>:</code> and ending with a semicolon <code>;</code>.
+                    </p>
+
                     <pre><code>
-/* Style all h1 elements */
 h1 {
-    color: blue; /* Set text color to blue */
-    font-size: 24px; /* Set font size to 24 pixels */
-}   
-                    </code></pre>
-                    <p>In this example, the selector is <code>h1</code>, and the declaration block contains two
-                        declarations: <code>color: blue;</code> and <code>font-size: 24px;</code>.</p>
+    color: blue;
+    font-size: 24px;
+}
+    </code></pre>
+
+                    <h3>Example Explained</h3>
+                    <p>
+                        In the example above:
+                    </p>
+
+                    <ul>
+                        <li><strong>Selector:</strong> <code>h1</code></li>
+                        <li><strong>Property:</strong> <code>color</code> and <code>font-size</code></li>
+                        <li><strong>Values:</strong> <code>blue</code> and <code>24px</code></li>
+                    </ul>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a CSS rule for <code>p</code> that changes text color.</li>
+                            <li>Set the font size to 18px.</li>
+                            <li>Add a background color.</li>
+                        </ul>
+                    </div>
                 </section>
 
                 <!-- CSS Selectors -->

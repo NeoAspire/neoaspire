@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
     <!-- Link to external JS for layout (e.g., hamburger menu) -->
     <script src="/js/base.js"></script>
-    <script src="/js/html-css.js"></script>
+    <script src="/js/course-page.js"></script>
 </head>
 
 <body>
@@ -25,10 +25,13 @@
         <section class="aside-container">
             <button class="menu-toggle" id="menuToggle">☰ Learn Excel</button>
             <aside>
-                <h2 id="excel-home">Learn Excel</h2>
+                <h2>Learn Excel</h2>
                 <a href="#intro-excel">Introduction</a>
+                <a href="#getting-started">Getting Started</a>
+                <a href="#practice-exercise">Practice Exercise</a>
 
             </aside>
+
             <article>
                 <!-- Introduction -->
                 <section class="content-section" id="intro-excel">
@@ -43,6 +46,46 @@
                         <li>Pivot tables for summarizing data</li>
                         <li>Macros for automating repetitive tasks</li>
                     </ul>
+                </section>
+
+                <!-- Getting Started Section -->
+                <section class="content-section" id="getting-started">
+                    <h2>Getting Started with Excel</h2>
+                    <p>To get started with Excel, you can follow these steps:</p>
+                    <ol>
+                        <li><b>Open Excel:</b> Launch the Excel application on your computer.</li>
+                        <li><b>Create a New Workbook:</b> Click on "File" > "New" to create a new workbook.</li>
+                        <li><b>Familiarize Yourself with the Interface:</b> Explore the ribbon, formula bar, and worksheet area.</li>
+                        <li><b>Enter Data:</b> Click on a cell and start typing to enter data. Press "Enter" to move to the next cell.</li>
+                        <li><b>Use Formulas:</b> Start a formula with "=" and use built-in functions like SUM, AVERAGE, etc., to perform calculations.</li>
+                        <li><b>Save Your Workbook:</b> Click on "File" > "Save As" to save your workbook to your desired location.</li>
+                    </ol>
+                </section>
+
+                <!-- Practice Exercise Section -->
+                <section class="content-section" id="practice-exercise">
+                    <h2>Practice Exercise</h2>
+                    <p>Try creating a simple budget spreadsheet to practice your Excel skills. Include categories such as Income, Expenses, and Savings, and use formulas to calculate totals.</p>  
+                    <h3>Example:</h3>
+                    <table>
+                        <tr>
+                            <th>Category</th>
+                            <th>Amount</th>
+                        </tr>
+                        <tr>
+                            <td>Income</td>
+                            <td>$5000</td>
+                        </tr>
+                        <tr>
+                            <td>Expenses</td>
+                            <td>$3000</td>
+                        </tr>
+                        <tr>
+                            <td>Savings</td>
+                            <td>=B2-B3</td>
+                        </tr>
+                    </table>
+
                 </section>
 
                 <!-- Course Completion Section -->
