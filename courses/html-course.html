@@ -24,31 +24,49 @@
     <main>
         <section class="aside-container">
             <button class="menu-toggle" id="menuToggle">☰ Learn HTML</button>
+
             <!-- Sidebar Navigation -->
             <aside>
                 <h2>Learn HTML</h2>
+
+                <!-- Foundation -->
+                <h3>Foundation</h3>
                 <a href="#html-intro">HTML Introduction</a>
+                <a href="#html-structure">HTML Structure</a>
                 <a href="#html-elements">HTML Elements</a>
-                <a href="#html5-semantics">HTML5 Semantics</a>
                 <a href="#html-attributes">HTML Attributes</a>
                 <a href="#html-headings">HTML Headings</a>
                 <a href="#html-paragraphs">HTML Paragraphs</a>
-                <a href="#html-fonts">HTML Fonts</a>
                 <a href="#html-text-formatting">HTML Text Formatting</a>
+                <a href="#html-comments">HTML Comments</a>
+                <a href="#html-colors">HTML Colors</a>
+                <a href="#html-entities">HTML Entities</a>
+
+                <!-- Content -->
+                <h3>Content</h3>
                 <a href="#html-lists">HTML Lists</a>
-                <a href="#html-empty-tags">HTML Empty Tags</a>
                 <a href="#html-links">HTML Links</a>
                 <a href="#html-images">HTML Images</a>
+
+                <!-- Layout -->
+                <h3>Layout</h3>
+                <a href="#html5-semantics">HTML5 Semantics</a>
                 <a href="#html-tables">HTML Tables</a>
-                <a href="#html-forms">HTML Forms</a>
                 <a href="#html-iframes">HTML Iframes</a>
                 <a href="#html-media">HTML Media</a>
-                <a href="#html-entities">HTML Entities</a>
-                <a href="#html-colors">HTML Colors</a>
+
+                <!-- Advanced -->
+                <h3>Advanced</h3>
+                <a href="#html-forms">HTML Forms</a>
+                <a href="#html-form-input-types">Form Input Types</a>
+                <a href="#html-form-validation">HTML Validation</a>
+
             </aside>
 
             <!-- Article Content -->
             <article>
+                <!-- Foundation -->
+
                 <!-- HTML Introduction -->
                 <section class="content-section" id="html-intro">
 
@@ -126,38 +144,91 @@
 
                 </section>
 
-               <!-- HTML Elements -->
-<section class="content-section" id="html-elements">
+                <!-- HTML Structure -->
+                <section class="content-section" id="html-structure">
+                    <h2>HTML Document Structure</h2>
 
-    <h2>HTML Elements</h2>
+                    <p>
+                        The structure of an HTML document is defined by a hierarchy of elements.
+                        This structure ensures that content is organized and displayed correctly
+                        in web browsers.
+                    </p>
 
-    <p>
-        HTML elements are the building blocks of a web page.
-        They define the structure and content displayed in the browser.
-        Most elements consist of an opening tag, content, and a closing tag.
-    </p>
+                    <h3>Key Structural Elements</h3>
+                    <ul>
+                        <li><code>&lt;!DOCTYPE html&gt;</code> – Declares the document type and version.</li>
+                        <li><code>&lt;html&gt;</code> – Root element that wraps the entire webpage.</li>
+                        <li><code>&lt;head&gt;</code> – Contains metadata, title, and links to stylesheets.</li>
+                        <li><code>&lt;title&gt;</code> – Sets the title shown in the browser tab.</li>
+                        <li><code>&lt;body&gt;</code> – Contains all visible webpage content.</li>
+                    </ul>
 
-    <h3>Basic Structure Elements</h3>
-    <ul>
-        <li><code>&lt;!DOCTYPE html&gt;</code> – Declares the HTML document type.</li>
-        <li><code>&lt;html&gt;</code> – Root element that wraps the entire webpage.</li>
-        <li><code>&lt;head&gt;</code> – Contains metadata, title, and links to stylesheets.</li>
-        <li><code>&lt;title&gt;</code> – Sets the title shown in the browser tab.</li>
-        <li><code>&lt;body&gt;</code> – Contains all visible webpage content.</li>
-    </ul>
+                    <h3>Complete Example of HTML Structure</h3>
 
-    <h3>Content Elements</h3>
-    <ul>
-        <li><code>&lt;h1&gt; to &lt;h6&gt;</code> – Heading tags for different levels.</li>
-        <li><code>&lt;p&gt;</code> – Defines a paragraph.</li>
-        <li><code>&lt;a&gt;</code> – Creates a hyperlink.</li>
-        <li><code>&lt;img&gt;</code> – Embeds an image.</li>
-        <li><code>&lt;div&gt;</code> – Container element for grouping content.</li>
-    </ul>
+                    <pre><code>
+&lt;!DOCTYPE html&gt;   
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My First Webpage&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Welcome to My Webpage&lt;/h1&gt;
+    &lt;p&gt;This is a simple HTML document structure.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
 
-    <h3>Example of HTML Elements</h3>
+                    <h3>Best Practices for HTML Structure</h3>
+                    <ul>
+                        <li>Always start with the correct <code>&lt;!DOCTYPE&gt;</code> declaration.</li>
+                        <li>Use semantic elements to improve accessibility and SEO.</li>
+                        <li>Keep the structure organized and logical.</li>
+                        <li>Validate your HTML to ensure it follows standards.</li>
+                    </ul>
 
-    <pre><code>
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a new HTML document with the correct structure.</li>
+                            <li>Add a title and some content inside the body.</li>
+                            <li>Validate your HTML using an online validator tool.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- HTML Elements -->
+                <section class="content-section" id="html-elements">
+
+                    <h2>HTML Elements</h2>
+
+                    <p>
+                        HTML elements are the building blocks of a web page.
+                        They define the structure and content displayed in the browser.
+                        Most elements consist of an opening tag, content, and a closing tag.
+                    </p>
+
+                    <h3>Basic Structure Elements</h3>
+                    <ul>
+                        <li><code>&lt;!DOCTYPE html&gt;</code> – Declares the HTML document type.</li>
+                        <li><code>&lt;html&gt;</code> – Root element that wraps the entire webpage.</li>
+                        <li><code>&lt;head&gt;</code> – Contains metadata, title, and links to stylesheets.</li>
+                        <li><code>&lt;title&gt;</code> – Sets the title shown in the browser tab.</li>
+                        <li><code>&lt;body&gt;</code> – Contains all visible webpage content.</li>
+                    </ul>
+
+                    <h3>Content Elements</h3>
+                    <ul>
+                        <li><code>&lt;h1&gt; to &lt;h6&gt;</code> – Heading tags for different levels.</li>
+                        <li><code>&lt;p&gt;</code> – Defines a paragraph.</li>
+                        <li><code>&lt;a&gt;</code> – Creates a hyperlink.</li>
+                        <li><code>&lt;img&gt;</code> – Embeds an image.</li>
+                        <li><code>&lt;div&gt;</code> – Container element for grouping content.</li>
+                    </ul>
+
+                    <h3>Example of HTML Elements</h3>
+
+                    <pre><code>
 &lt;body&gt;
     &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
     &lt;p&gt;This is a simple paragraph.&lt;/p&gt;
@@ -166,348 +237,251 @@
 &lt;/body&gt;
     </code></pre>
 
-    <h3>Understanding Elements</h3>
-    <p>
-        Most HTML elements follow this structure:
-    </p>
+                    <h3>Understanding Elements</h3>
+                    <p>
+                        Most HTML elements follow this structure:
+                    </p>
 
-    <pre><code>
+                    <pre><code>
 &lt;tagname&gt; Content goes here &lt;/tagname&gt;
     </code></pre>
 
-    <p>
-        Some elements like <code>&lt;img&gt;</code> do not have closing tags.
-        These are called <strong>self-closing elements</strong>.
-    </p>
+                    <p>
+                        Some elements like <code>&lt;img&gt;</code> do not have closing tags.
+                        These are called <strong>self-closing elements</strong>.
+                    </p>
 
-    <!-- Practice Task -->
-    <div class="practice-box">
-        <h3>🎯 Practice Task</h3>
-        <ul>
-            <li>Create a webpage using <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, and <code>&lt;a&gt;</code>.</li>
-            <li>Add an image using the <code>&lt;img&gt;</code> tag.</li>
-            <li>Wrap everything inside a <code>&lt;div&gt;</code> container.</li>
-        </ul>
-    </div>
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a webpage using <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, and
+                                <code>&lt;a&gt;</code>.</li>
+                            <li>Add an image using the <code>&lt;img&gt;</code> tag.</li>
+                            <li>Wrap everything inside a <code>&lt;div&gt;</code> container.</li>
+                        </ul>
+                    </div>
 
-</section>
+                </section>
 
-               <!-- HTML5 Semantic Elements -->
-<section class="content-section" id="html5-semantics">
+                <!-- HTML Attributes -->
+                <section class="content-section" id="html-attributes">
 
-    <h2>HTML5 Semantic Elements</h2>
+                    <h2>HTML Attributes</h2>
 
-    <p>
-        HTML5 introduced semantic elements that provide meaning and structure
-        to web content. These elements describe the role of content clearly,
-        improving accessibility, SEO, and maintainability.
-    </p>
+                    <p>
+                        HTML attributes provide additional information about an element.
+                        They are written inside the opening (start) tag and usually appear as
+                        <strong>name="value"</strong> pairs.
+                    </p>
 
-    <!-- ================= STRUCTURAL ================= -->
-    <h3>1️⃣ Structural Semantic Elements</h3>
-    <ul>
-        <li><code>&lt;header&gt;</code> – Introductory content or navigation.</li>
-        <li><code>&lt;footer&gt;</code> – Footer information like copyright.</li>
-        <li><code>&lt;nav&gt;</code> – Navigation links.</li>
-        <li><code>&lt;main&gt;</code> – Main unique content of the page.</li>
-        <li><code>&lt;section&gt;</code> – Thematic grouping of content.</li>
-        <li><code>&lt;article&gt;</code> – Independent self-contained content.</li>
-        <li><code>&lt;aside&gt;</code> – Sidebar or related content.</li>
-    </ul>
+                    <h3>Key Rules</h3>
+                    <ul>
+                        <li>Attributes are always placed in the start tag.</li>
+                        <li>They usually follow the format: <code>name="value"</code>.</li>
+                        <li>Some attributes (like <code>disabled</code>) do not require a value.</li>
+                        <li>Attributes control behavior, appearance, identification, and metadata.</li>
+                    </ul>
 
-    <!-- ================= TEXT SEMANTICS ================= -->
-    <h3>2️⃣ Text & Metadata Semantics</h3>
-    <ul>
-        <li><code>&lt;mark&gt;</code> – Highlights important text.</li>
-        <li><code>&lt;time&gt;</code> – Represents date or time.</li>
-        <li><code>&lt;address&gt;</code> – Contact information.</li>
-        <li><code>&lt;abbr&gt;</code> – Abbreviation with description.</li>
-        <li><code>&lt;cite&gt;</code> – Title of a work.</li>
-        <li><code>&lt;figure&gt;</code> – Media container.</li>
-        <li><code>&lt;figcaption&gt;</code> – Caption for figure.</li>
-    </ul>
+                    <h3>General Syntax</h3>
 
-    <!-- ================= FORM SEMANTICS ================= -->
-    <h3>3️⃣ Form & Data Semantics</h3>
-    <ul>
-        <li><code>&lt;label&gt;</code> – Label for input fields.</li>
-        <li><code>&lt;input&gt;</code> – User input control.</li>
-        <li><code>&lt;textarea&gt;</code> – Multi-line text input.</li>
-        <li><code>&lt;select&gt;</code> – Dropdown list.</li>
-        <li><code>&lt;option&gt;</code> – Option inside dropdown.</li>
-        <li><code>&lt;datalist&gt;</code> – Suggested input values.</li>
-        <li><code>&lt;output&gt;</code> – Displays calculation result.</li>
-        <li><code>&lt;button&gt;</code> – Clickable button.</li>
-    </ul>
-
-    <!-- ================= MEDIA SEMANTICS ================= -->
-    <h3>4️⃣ Media Elements</h3>
-    <ul>
-        <li><code>&lt;audio&gt;</code> – Embeds audio player.</li>
-        <li><code>&lt;video&gt;</code> – Embeds video player.</li>
-        <li><code>&lt;source&gt;</code> – Multiple media sources.</li>
-        <li><code>&lt;track&gt;</code> – Subtitles and captions.</li>
-        <li><code>&lt;picture&gt;</code> – Responsive image container.</li>
-    </ul>
-
-    <!-- ================= TABLE SEMANTICS ================= -->
-    <h3>5️⃣ Table Elements</h3>
-    <ul>
-        <li><code>&lt;table&gt;</code> – Defines a table.</li>
-        <li><code>&lt;caption&gt;</code> – Table title.</li>
-        <li><code>&lt;thead&gt;</code> – Table header section.</li>
-        <li><code>&lt;tbody&gt;</code> – Table body section.</li>
-        <li><code>&lt;tfoot&gt;</code> – Table footer section.</li>
-        <li><code>&lt;tr&gt;</code> – Table row.</li>
-        <li><code>&lt;th&gt;</code> – Header cell.</li>
-        <li><code>&lt;td&gt;</code> – Data cell.</li>
-    </ul>
-
-    <!-- ================= EXAMPLE ================= -->
-    <h3>Example of Semantic Structure</h3>
-
-    <pre><code>
-&lt;header&gt;
-    &lt;h1&gt;My Blog&lt;/h1&gt;
-&lt;/header&gt;
-
-&lt;main&gt;
-    &lt;article&gt;
-        &lt;h2&gt;Blog Post Title&lt;/h2&gt;
-        &lt;p&gt;This is the article content.&lt;/p&gt;
-    &lt;/article&gt;
-&lt;/main&gt;
-
-&lt;footer&gt;
-    &lt;p&gt;© 2026 My Website&lt;/p&gt;
-&lt;/footer&gt;
-    </code></pre>
-
-    <!-- ================= BENEFITS ================= -->
-    <h3>Key Benefits of Semantic HTML5</h3>
-    <ol>
-        <li><strong>Accessibility</strong> – Screen readers understand content better.</li>
-        <li><strong>SEO</strong> – Search engines index content properly.</li>
-        <li><strong>Maintainability</strong> – Code becomes cleaner and readable.</li>
-        <li><strong>Standardization</strong> – Follows modern web development practices.</li>
-    </ol>
-
-    <!-- Practice Task -->
-    <div class="practice-box">
-        <h3>🎯 Practice Task</h3>
-        <ul>
-            <li>Create a layout using <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, and <code>&lt;footer&gt;</code>.</li>
-            <li>Add an <code>&lt;article&gt;</code> inside <code>&lt;main&gt;</code>.</li>
-            <li>Add a <code>&lt;nav&gt;</code> section with three links.</li>
-        </ul>
-    </div>
-
-</section>
-
-<!-- HTML Attributes -->
-<section class="content-section" id="html-attributes">
-
-    <h2>HTML Attributes</h2>
-
-    <p>
-        HTML attributes provide additional information about an element.
-        They are written inside the opening (start) tag and usually appear as
-        <strong>name="value"</strong> pairs.
-    </p>
-
-    <h3>Key Rules</h3>
-    <ul>
-        <li>Attributes are always placed in the start tag.</li>
-        <li>They usually follow the format: <code>name="value"</code>.</li>
-        <li>Some attributes (like <code>disabled</code>) do not require a value.</li>
-        <li>Attributes control behavior, appearance, identification, and metadata.</li>
-    </ul>
-
-    <h3>General Syntax</h3>
-
-    <pre><code>
+                    <pre><code>
 &lt;tagname attribute="value"&gt; Content &lt;/tagname&gt;
     </code></pre>
 
-    <h3>Common HTML Attributes</h3>
+                    <h3>Common HTML Attributes</h3>
 
-    <div class="table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>Attribute</th>
-                    <th>Used In</th>
-                    <th>Description</th>
-                    <th>Example</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>href</strong></td>
-                    <td>&lt;a&gt;, &lt;link&gt;</td>
-                    <td>Specifies the destination URL.</td>
-                    <td><code>&lt;a href="about.html"&gt;About&lt;/a&gt;</code></td>
-                </tr>
-                <tr>
-                    <td><strong>src</strong></td>
-                    <td>&lt;img&gt;, &lt;script&gt;, &lt;iframe&gt;</td>
-                    <td>Defines the source file.</td>
-                    <td><code>&lt;img src="photo.jpg" alt="Profile"&gt;</code></td>
-                </tr>
-                <tr>
-                    <td><strong>alt</strong></td>
-                    <td>&lt;img&gt;</td>
-                    <td>Alternative text for accessibility.</td>
-                    <td><code>&lt;img src="logo.png" alt="Company Logo"&gt;</code></td>
-                </tr>
-                <tr>
-                    <td><strong>id</strong></td>
-                    <td>Any</td>
-                    <td>Unique identifier (used in CSS/JS).</td>
-                    <td><code>&lt;p id="intro"&gt;Hello&lt;/p&gt;</code></td>
-                </tr>
-                <tr>
-                    <td><strong>class</strong></td>
-                    <td>Any</td>
-                    <td>Groups elements for styling or scripting.</td>
-                    <td><code>&lt;p class="highlight"&gt;Text&lt;/p&gt;</code></td>
-                </tr>
-                <tr>
-                    <td><strong>title</strong></td>
-                    <td>Any</td>
-                    <td>Tooltip text shown on hover.</td>
-                    <td><code>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</code></td>
-                </tr>
-                <tr>
-                    <td><strong>target</strong></td>
-                    <td>&lt;a&gt;</td>
-                    <td>Specifies where to open the link.</td>
-                    <td><code>&lt;a href="site.html" target="_blank"&gt;Open&lt;/a&gt;</code></td>
-                </tr>
-                <tr>
-                    <td><strong>type</strong></td>
-                    <td>&lt;input&gt;, &lt;button&gt;</td>
-                    <td>Defines the type of element.</td>
-                    <td><code>&lt;input type="email"&gt;</code></td>
-                </tr>
-                <tr>
-                    <td><strong>placeholder</strong></td>
-                    <td>&lt;input&gt;, &lt;textarea&gt;</td>
-                    <td>Displays hint text inside input fields.</td>
-                    <td><code>&lt;input placeholder="Enter email"&gt;</code></td>
-                </tr>
-                <tr>
-                    <td><strong>disabled</strong></td>
-                    <td>&lt;input&gt;, &lt;button&gt;</td>
-                    <td>Disables user interaction.</td>
-                    <td><code>&lt;button disabled&gt;Submit&lt;/button&gt;</code></td>
-                </tr>
-                <tr>
-                    <td><strong>readonly</strong></td>
-                    <td>&lt;input&gt;</td>
-                    <td>Makes input uneditable.</td>
-                    <td><code>&lt;input value="View Only" readonly&gt;</code></td>
-                </tr>
-                <tr>
-                    <td><strong>name</strong></td>
-                    <td>Form elements</td>
-                    <td>Identifies data when a form is submitted.</td>
-                    <td><code>&lt;input name="username"&gt;</code></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Attribute</th>
+                                    <th>Used In</th>
+                                    <th>Description</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>href</strong></td>
+                                    <td>&lt;a&gt;, &lt;link&gt;</td>
+                                    <td>Specifies the destination URL.</td>
+                                    <td><code>&lt;a href="about.html"&gt;About&lt;/a&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>src</strong></td>
+                                    <td>&lt;img&gt;, &lt;script&gt;, &lt;iframe&gt;</td>
+                                    <td>Defines the source file.</td>
+                                    <td><code>&lt;img src="photo.jpg" alt="Profile"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>alt</strong></td>
+                                    <td>&lt;img&gt;</td>
+                                    <td>Alternative text for accessibility.</td>
+                                    <td><code>&lt;img src="logo.png" alt="Company Logo"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>id</strong></td>
+                                    <td>Any</td>
+                                    <td>Unique identifier (used in CSS/JS).</td>
+                                    <td><code>&lt;p id="intro"&gt;Hello&lt;/p&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>class</strong></td>
+                                    <td>Any</td>
+                                    <td>Groups elements for styling or scripting.</td>
+                                    <td><code>&lt;p class="highlight"&gt;Text&lt;/p&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>title</strong></td>
+                                    <td>Any</td>
+                                    <td>Tooltip text shown on hover.</td>
+                                    <td><code>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>target</strong></td>
+                                    <td>&lt;a&gt;</td>
+                                    <td>Specifies where to open the link.</td>
+                                    <td><code>&lt;a href="site.html" target="_blank"&gt;Open&lt;/a&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>type</strong></td>
+                                    <td>&lt;input&gt;, &lt;button&gt;</td>
+                                    <td>Defines the type of element.</td>
+                                    <td><code>&lt;input type="email"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>placeholder</strong></td>
+                                    <td>&lt;input&gt;, &lt;textarea&gt;</td>
+                                    <td>Displays hint text inside input fields.</td>
+                                    <td><code>&lt;input placeholder="Enter email"&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>disabled</strong></td>
+                                    <td>&lt;input&gt;, &lt;button&gt;</td>
+                                    <td>Disables user interaction.</td>
+                                    <td><code>&lt;button disabled&gt;Submit&lt;/button&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>readonly</strong></td>
+                                    <td>&lt;input&gt;</td>
+                                    <td>Makes input uneditable.</td>
+                                    <td><code>&lt;input value="View Only" readonly&gt;</code></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>name</strong></td>
+                                    <td>Form elements</td>
+                                    <td>Identifies data when a form is submitted.</td>
+                                    <td><code>&lt;input name="username"&gt;</code></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-    <h3>Best Practices</h3>
-    <ul>
-        <li>Always include <code>alt</code> text for images.</li>
-        <li>Use <code>id</code> only once per page.</li>
-        <li>Prefer CSS instead of inline <code>style</code> attributes.</li>
-        <li>Use semantic and meaningful class names.</li>
-        <li>Always use lowercase for attribute names (HTML5 standard).</li>
-    </ul>
+                    <h3>Best Practices</h3>
+                    <ul>
+                        <li>Always include <code>alt</code> text for images.</li>
+                        <li>Use <code>id</code> only once per page.</li>
+                        <li>Prefer CSS instead of inline <code>style</code> attributes.</li>
+                        <li>Use semantic and meaningful class names.</li>
+                        <li>Always use lowercase for attribute names (HTML5 standard).</li>
+                    </ul>
 
-    <!-- Practice Task -->
-    <div class="practice-box">
-        <h3>🎯 Practice Task</h3>
-        <ul>
-            <li>Create a link that opens in a new tab.</li>
-            <li>Add an image with proper <code>src</code> and <code>alt</code>.</li>
-            <li>Create a form input with <code>placeholder</code> and <code>required</code> attributes.</li>
-            <li>Use both <code>id</code> and <code>class</code> on different elements.</li>
-        </ul>
-    </div>
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a link that opens in a new tab.</li>
+                            <li>Add an image with proper <code>src</code> and <code>alt</code>.</li>
+                            <li>Create a form input with <code>placeholder</code> and <code>required</code> attributes.
+                            </li>
+                            <li>Use both <code>id</code> and <code>class</code> on different elements.</li>
+                        </ul>
+                    </div>
 
-</section>
+                </section>
 
-<!-- HTML Headings -->
-<section class="content-section" id="html-headings">
+                <!-- HTML Headings -->
+                <section class="content-section" id="html-headings">
 
-    <h2>HTML Headings</h2>
+                    <h2>HTML Headings</h2>
 
-    <p>
-        HTML headings are used to define titles and subtitles on a webpage.
-        They create a clear content structure, improve readability, and are
-        essential for both <strong>SEO</strong> and <strong>accessibility</strong>.
-    </p>
+                    <p>
+                        HTML headings are used to define titles and subtitles on a webpage.
+                        They create a clear content structure, improve readability, and are
+                        essential for both <strong>SEO</strong> and <strong>accessibility</strong>.
+                    </p>
 
-    <p>
-        There are six levels of headings:
-        from <code>&lt;h1&gt;</code> (highest importance)
-        to <code>&lt;h6&gt;</code> (lowest importance).
-    </p>
+                    <p>
+                        There are six levels of headings:
+                        from <code>&lt;h1&gt;</code> (highest importance)
+                        to <code>&lt;h6&gt;</code> (lowest importance).
+                    </p>
 
-    <h3>Heading Levels</h3>
+                    <h3>Heading Levels</h3>
 
-    <div class="table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>Syntax</th>
-                    <th>Rendered Output</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><code>&lt;h1&gt;This is Heading 1&lt;/h1&gt;</code></td>
-                    <td><h1>This is Heading 1</h1></td>
-                </tr>
-                <tr>
-                    <td><code>&lt;h2&gt;This is Heading 2&lt;/h2&gt;</code></td>
-                    <td><h2>This is Heading 2</h2></td>
-                </tr>
-                <tr>
-                    <td><code>&lt;h3&gt;This is Heading 3&lt;/h3&gt;</code></td>
-                    <td><h3>This is Heading 3</h3></td>
-                </tr>
-                <tr>
-                    <td><code>&lt;h4&gt;This is Heading 4&lt;/h4&gt;</code></td>
-                    <td><h4>This is Heading 4</h4></td>
-                </tr>
-                <tr>
-                    <td><code>&lt;h5&gt;This is Heading 5&lt;/h5&gt;</code></td>
-                    <td><h5>This is Heading 5</h5></td>
-                </tr>
-                <tr>
-                    <td><code>&lt;h6&gt;This is Heading 6&lt;/h6&gt;</code></td>
-                    <td><h6>This is Heading 6</h6></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Syntax</th>
+                                    <th>Rendered Output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>&lt;h1&gt;This is Heading 1&lt;/h1&gt;</code></td>
+                                    <td>
+                                        <h1>This is Heading 1</h1>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;h2&gt;This is Heading 2&lt;/h2&gt;</code></td>
+                                    <td>
+                                        <h2>This is Heading 2</h2>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;h3&gt;This is Heading 3&lt;/h3&gt;</code></td>
+                                    <td>
+                                        <h3>This is Heading 3</h3>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;h4&gt;This is Heading 4&lt;/h4&gt;</code></td>
+                                    <td>
+                                        <h4>This is Heading 4</h4>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;h5&gt;This is Heading 5&lt;/h5&gt;</code></td>
+                                    <td>
+                                        <h5>This is Heading 5</h5>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;h6&gt;This is Heading 6&lt;/h6&gt;</code></td>
+                                    <td>
+                                        <h6>This is Heading 6</h6>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-    <h3>How Headings Work</h3>
+                    <h3>How Headings Work</h3>
 
-    <ul>
-        <li><strong>&lt;h1&gt;</strong> is usually used for the main title of the page.</li>
-        <li><strong>&lt;h2&gt;</strong> is used for major sections.</li>
-        <li><strong>&lt;h3&gt;–&lt;h6&gt;</strong> are used for sub-sections.</li>
-        <li>Headings should follow a logical order (do not skip levels).</li>
-    </ul>
+                    <ul>
+                        <li><strong>&lt;h1&gt;</strong> is usually used for the main title of the page.</li>
+                        <li><strong>&lt;h2&gt;</strong> is used for major sections.</li>
+                        <li><strong>&lt;h3&gt;–&lt;h6&gt;</strong> are used for sub-sections.</li>
+                        <li>Headings should follow a logical order (do not skip levels).</li>
+                    </ul>
 
-    <h3>Complete Code for Practice</h3>
+                    <h3>Complete Code for Practice</h3>
 
-    <pre><code>
+                    <pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -526,86 +500,89 @@
 &lt;/html&gt;
     </code></pre>
 
-    <h3>Best Practices</h3>
-    <ul>
-        <li>Use only one <code>&lt;h1&gt;</code> per page (for the main title).</li>
-        <li>Do not skip heading levels (e.g., avoid jumping from <code>&lt;h1&gt;</code> to <code>&lt;h4&gt;</code>).</li>
-        <li>Use headings for structure — not just for styling.</li>
-        <li>Use CSS to control size and appearance, not heading level.</li>
-    </ul>
+                    <h3>Best Practices</h3>
+                    <ul>
+                        <li>Use only one <code>&lt;h1&gt;</code> per page (for the main title).</li>
+                        <li>Do not skip heading levels (e.g., avoid jumping from <code>&lt;h1&gt;</code> to
+                            <code>&lt;h4&gt;</code>).</li>
+                        <li>Use headings for structure — not just for styling.</li>
+                        <li>Use CSS to control size and appearance, not heading level.</li>
+                    </ul>
 
-    <!-- Practice Task -->
-    <div class="practice-box">
-        <h3>🎯 Practice Task</h3>
-        <ul>
-            <li>Create a webpage with one <code>&lt;h1&gt;</code> title.</li>
-            <li>Add two <code>&lt;h2&gt;</code> section headings.</li>
-            <li>Add at least one <code>&lt;h3&gt;</code> under each section.</li>
-            <li>Ensure the heading hierarchy is logically structured.</li>
-        </ul>
-    </div>
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a webpage with one <code>&lt;h1&gt;</code> title.</li>
+                            <li>Add two <code>&lt;h2&gt;</code> section headings.</li>
+                            <li>Add at least one <code>&lt;h3&gt;</code> under each section.</li>
+                            <li>Ensure the heading hierarchy is logically structured.</li>
+                        </ul>
+                    </div>
 
-</section>       
-              <!-- HTML Paragraphs -->
-<section class="content-section" id="html-paragraphs">
+                </section>
 
-    <h2>HTML Paragraphs</h2>
+                <!-- HTML Paragraphs -->
+                <section class="content-section" id="html-paragraphs">
 
-    <p>
-        In HTML, the <code>&lt;p&gt;</code> tag is used to define a paragraph of text.
-        Paragraphs automatically include spacing before and after the content,
-        making text easier to read and visually separated.
-    </p>
+                    <h2>HTML Paragraphs</h2>
 
-    <h3>Basic Syntax</h3>
+                    <p>
+                        In HTML, the <code>&lt;p&gt;</code> tag is used to define a paragraph of text.
+                        Paragraphs automatically include spacing before and after the content,
+                        making text easier to read and visually separated.
+                    </p>
 
-    <div class="table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>Syntax</th>
-                    <th>Rendered Output</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <code>&lt;p&gt;This is a paragraph of text.&lt;/p&gt;</code>
-                    </td>
-                    <td>
-                        <p>This is a paragraph of text.</p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                    <h3>Basic Syntax</h3>
 
-    <h3>How Paragraphs Work</h3>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Syntax</th>
+                                    <th>Rendered Output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <code>&lt;p&gt;This is a paragraph of text.&lt;/p&gt;</code>
+                                    </td>
+                                    <td>
+                                        <p>This is a paragraph of text.</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-    <ul>
-        <li>Each <code>&lt;p&gt;</code> element creates a new block of text.</li>
-        <li>Browsers automatically add margin (spacing) around paragraphs.</li>
-        <li>Multiple spaces inside a paragraph are treated as a single space.</li>
-        <li>Pressing <strong>Enter</strong> in HTML code does not create a new paragraph — you must use a new <code>&lt;p&gt;</code> tag.</li>
-    </ul>
+                    <h3>How Paragraphs Work</h3>
 
-    <h3>Line Break vs Paragraph</h3>
+                    <ul>
+                        <li>Each <code>&lt;p&gt;</code> element creates a new block of text.</li>
+                        <li>Browsers automatically add margin (spacing) around paragraphs.</li>
+                        <li>Multiple spaces inside a paragraph are treated as a single space.</li>
+                        <li>Pressing <strong>Enter</strong> in HTML code does not create a new paragraph — you must use
+                            a new <code>&lt;p&gt;</code> tag.</li>
+                    </ul>
 
-    <p>
-        If you only need a line break inside a paragraph (not a new paragraph),
-        use the <code>&lt;br&gt;</code> tag.
-    </p>
+                    <h3>Line Break vs Paragraph</h3>
 
-    <pre><code>
+                    <p>
+                        If you only need a line break inside a paragraph (not a new paragraph),
+                        use the <code>&lt;br&gt;</code> tag.
+                    </p>
+
+                    <pre><code>
 &lt;p&gt;
 This is line one.&lt;br&gt;
 This is line two.
 &lt;/p&gt;
     </code></pre>
 
-    <h3>Complete Code for Practice</h3>
+                    <h3>Complete Code for Practice</h3>
 
-    <pre><code>
+                    <pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -620,310 +597,183 @@ This is line two.
 &lt;/html&gt;
     </code></pre>
 
-    <h3>Best Practices</h3>
+                    <h3>Best Practices</h3>
 
-    <ul>
-        <li>Use paragraphs to group related text content.</li>
-        <li>Do not use multiple <code>&lt;br&gt;</code> tags to create spacing — use CSS instead.</li>
-        <li>Keep paragraphs short for better readability.</li>
-        <li>Use semantic HTML structure along with headings.</li>
-    </ul>
+                    <ul>
+                        <li>Use paragraphs to group related text content.</li>
+                        <li>Do not use multiple <code>&lt;br&gt;</code> tags to create spacing — use CSS instead.</li>
+                        <li>Keep paragraphs short for better readability.</li>
+                        <li>Use semantic HTML structure along with headings.</li>
+                    </ul>
 
-    <!-- Practice Task -->
-    <div class="practice-box">
-        <h3>🎯 Practice Task</h3>
-        <ul>
-            <li>Create a webpage with three separate paragraphs.</li>
-            <li>Add a line break inside one paragraph using <code>&lt;br&gt;</code>.</li>
-            <li>Observe the spacing difference between paragraphs and line breaks.</li>
-        </ul>
-    </div>
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a webpage with three separate paragraphs.</li>
+                            <li>Add a line break inside one paragraph using <code>&lt;br&gt;</code>.</li>
+                            <li>Observe the spacing difference between paragraphs and line breaks.</li>
+                        </ul>
+                    </div>
 
-</section>
+                </section>
 
-<!-- HTML Fonts -->
-<section class="content-section" id="html-fonts">
+                <!-- HTML Text Formatting -->
+                <section class="content-section" id="html-text-formatting">
 
-    <h2>Fonts in HTML</h2>
+                    <h2>HTML Text Formatting</h2>
 
-    <p>
-        In older versions of HTML (before HTML5), the 
-        <code>&lt;font&gt;</code> tag was used to change text color, size, 
-        and typeface directly within HTML.
-    </p>
+                    <p>
+                        HTML provides various text formatting elements to style content
+                        such as bold, italic, highlighted, inserted, deleted, subscript,
+                        superscript, and code text.
+                    </p>
 
-    <p>
-        However, the <code>&lt;font&gt;</code> tag is now <strong>deprecated</strong> 
-        in HTML5. Modern web development uses <strong>CSS</strong> to control 
-        fonts and styling.
-    </p>
+                    <p>
+                        Some formatting tags are purely <strong>visual</strong>,
+                        while others are <strong>semantic</strong> (they add meaning
+                        and improve accessibility and SEO).
+                    </p>
 
-    <h3>1️⃣ Older Method (Deprecated)</h3>
+                    <h3>Common Text Formatting Tags</h3>
 
-    <div class="table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>Syntax (Old HTML)</th>
-                    <th>Rendered Output</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <code>
-&lt;p&gt;
-  &lt;font color="red" size="5" face="Arial"&gt;
-    This is styled text
-  &lt;/font&gt;
-&lt;/p&gt;
-                        </code>
-                    </td>
-                    <td>
-                        <p>
-                            <font color="red" size="5" face="Arial">
-                                This is styled text
-                            </font>
-                        </p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tag</th>
+                                    <th>Example</th>
+                                    <th>Description</th>
+                                    <th>Type</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>&lt;b&gt;</code></td>
+                                    <td><b>Bold text</b></td>
+                                    <td>Displays bold text (visual only)</td>
+                                    <td>Visual</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;strong&gt;</code></td>
+                                    <td><strong>Important text</strong></td>
+                                    <td>Indicates important content</td>
+                                    <td>Semantic</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;i&gt;</code></td>
+                                    <td><i>Italic text</i></td>
+                                    <td>Displays italic text (visual only)</td>
+                                    <td>Visual</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;em&gt;</code></td>
+                                    <td><em>Emphasized text</em></td>
+                                    <td>Indicates emphasized content</td>
+                                    <td>Semantic</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;u&gt;</code></td>
+                                    <td><u>Underlined</u></td>
+                                    <td>Underlines text</td>
+                                    <td>Visual</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;mark&gt;</code></td>
+                                    <td><mark>Highlighted</mark></td>
+                                    <td>Highlights text</td>
+                                    <td>Semantic</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;small&gt;</code></td>
+                                    <td><small>Small text</small></td>
+                                    <td>Displays smaller text</td>
+                                    <td>Semantic</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;del&gt;</code></td>
+                                    <td><del>Deleted text</del></td>
+                                    <td>Represents removed content</td>
+                                    <td>Semantic</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;ins&gt;</code></td>
+                                    <td><ins>Inserted text</ins></td>
+                                    <td>Represents newly added content</td>
+                                    <td>Semantic</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;sub&gt;</code></td>
+                                    <td>H<sub>2</sub>O</td>
+                                    <td>Subscript text</td>
+                                    <td>Semantic</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;sup&gt;</code></td>
+                                    <td>2<sup>5</sup></td>
+                                    <td>Superscript text</td>
+                                    <td>Semantic</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;code&gt;</code></td>
+                                    <td><code>console.log("Hello");</code></td>
+                                    <td>Inline code snippet</td>
+                                    <td>Semantic</td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;pre&gt;</code></td>
+                                    <td>
+                                        <pre>Preserves spaces and line breaks</pre>
+                                    </td>
+                                    <td>Preformatted text block</td>
+                                    <td>Semantic</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-    <p><strong>Why it’s not recommended:</strong></p>
-    <ul>
-        <li>Mixes content with presentation.</li>
-        <li>Hard to maintain and update.</li>
-        <li>Not supported in modern HTML standards.</li>
-    </ul>
+                    <h3>Visual vs Semantic Tags</h3>
 
-    <h3>2️⃣ Modern Method (Using CSS – Recommended)</h3>
+                    <ul>
+                        <li><strong>Visual tags</strong> change appearance only (<code>&lt;b&gt;</code>,
+                            <code>&lt;i&gt;</code>, <code>&lt;u&gt;</code>).</li>
+                        <li><strong>Semantic tags</strong> add meaning and improve accessibility
+                            (<code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, etc.).</li>
+                        <li>Screen readers recognize semantic tags and adjust reading tone accordingly.</li>
+                    </ul>
 
-    <div class="table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>Syntax (HTML5 + CSS)</th>
-                    <th>Rendered Output</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <code>
-&lt;p style="color: red; font-size: 24px; font-family: Arial;"&gt;
-  This is styled text
-&lt;/p&gt;
-                        </code>
-                    </td>
-                    <td>
-                        <p style="color: red; font-size: 24px; font-family: Arial;">
-                            This is styled text
-                        </p>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                    <h3>Comparison Example</h3>
 
-    <h3>Common CSS Font Properties</h3>
-    <ul>
-        <li><code>color</code> – Sets text color.</li>
-        <li><code>font-size</code> – Controls text size.</li>
-        <li><code>font-family</code> – Defines the typeface.</li>
-        <li><code>font-weight</code> – Sets boldness.</li>
-        <li><code>font-style</code> – Controls italic styling.</li>
-    </ul>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Syntax</th>
+                                    <th>Rendered Output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>&lt;p&gt;&lt;b&gt;Bold&lt;/b&gt; vs &lt;strong&gt;Strong&lt;/strong&gt;&lt;/p&gt;</code>
+                                    </td>
+                                    <td>
+                                        <p><b>Bold</b> vs <strong>Strong</strong></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>&lt;p&gt;&lt;i&gt;Italic&lt;/i&gt; vs &lt;em&gt;Emphasized&lt;/em&gt;&lt;/p&gt;</code>
+                                    </td>
+                                    <td>
+                                        <p><i>Italic</i> vs <em>Emphasized</em></p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-    <h3>Complete Example (Modern Way)</h3>
+                    <h3>Complete Example</h3>
 
-    <pre><code>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;HTML Fonts Example&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-    &lt;p style="color: blue; font-size: 20px; font-family: Verdana;"&gt;
-        This is blue text in Verdana.
-    &lt;/p&gt;
-
-    &lt;p style="color: green; font-size: 18px; font-family: 'Times New Roman';"&gt;
-        This is green text in Times New Roman.
-    &lt;/p&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-    </code></pre>
-
-    <h3>Best Practices</h3>
-    <ul>
-        <li>Use CSS instead of the <code>&lt;font&gt;</code> tag.</li>
-        <li>Avoid inline styles in large projects — use external CSS files.</li>
-        <li>Keep content (HTML) and design (CSS) separate.</li>
-        <li>Use web-safe fonts or Google Fonts for better compatibility.</li>
-    </ul>
-
-    <!-- Practice Task -->
-    <div class="practice-box">
-        <h3>🎯 Practice Task</h3>
-        <ul>
-            <li>Create two paragraphs with different font families.</li>
-            <li>Change the font size and color using CSS.</li>
-            <li>Do NOT use the <code>&lt;font&gt;</code> tag.</li>
-        </ul>
-    </div>
-
-</section>
-
-<!-- HTML Text Formatting -->
-<section class="content-section" id="html-text-formatting">
-
-    <h2>HTML Text Formatting</h2>
-
-    <p>
-        HTML provides various text formatting elements to style content
-        such as bold, italic, highlighted, inserted, deleted, subscript,
-        superscript, and code text.
-    </p>
-
-    <p>
-        Some formatting tags are purely <strong>visual</strong>,
-        while others are <strong>semantic</strong> (they add meaning
-        and improve accessibility and SEO).
-    </p>
-
-    <h3>Common Text Formatting Tags</h3>
-
-    <div class="table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>Tag</th>
-                    <th>Example</th>
-                    <th>Description</th>
-                    <th>Type</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><code>&lt;b&gt;</code></td>
-                    <td><b>Bold text</b></td>
-                    <td>Displays bold text (visual only)</td>
-                    <td>Visual</td>
-                </tr>
-                <tr>
-                    <td><code>&lt;strong&gt;</code></td>
-                    <td><strong>Important text</strong></td>
-                    <td>Indicates important content</td>
-                    <td>Semantic</td>
-                </tr>
-                <tr>
-                    <td><code>&lt;i&gt;</code></td>
-                    <td><i>Italic text</i></td>
-                    <td>Displays italic text (visual only)</td>
-                    <td>Visual</td>
-                </tr>
-                <tr>
-                    <td><code>&lt;em&gt;</code></td>
-                    <td><em>Emphasized text</em></td>
-                    <td>Indicates emphasized content</td>
-                    <td>Semantic</td>
-                </tr>
-                <tr>
-                    <td><code>&lt;u&gt;</code></td>
-                    <td><u>Underlined</u></td>
-                    <td>Underlines text</td>
-                    <td>Visual</td>
-                </tr>
-                <tr>
-                    <td><code>&lt;mark&gt;</code></td>
-                    <td><mark>Highlighted</mark></td>
-                    <td>Highlights text</td>
-                    <td>Semantic</td>
-                </tr>
-                <tr>
-                    <td><code>&lt;small&gt;</code></td>
-                    <td><small>Small text</small></td>
-                    <td>Displays smaller text</td>
-                    <td>Semantic</td>
-                </tr>
-                <tr>
-                    <td><code>&lt;del&gt;</code></td>
-                    <td><del>Deleted text</del></td>
-                    <td>Represents removed content</td>
-                    <td>Semantic</td>
-                </tr>
-                <tr>
-                    <td><code>&lt;ins&gt;</code></td>
-                    <td><ins>Inserted text</ins></td>
-                    <td>Represents newly added content</td>
-                    <td>Semantic</td>
-                </tr>
-                <tr>
-                    <td><code>&lt;sub&gt;</code></td>
-                    <td>H<sub>2</sub>O</td>
-                    <td>Subscript text</td>
-                    <td>Semantic</td>
-                </tr>
-                <tr>
-                    <td><code>&lt;sup&gt;</code></td>
-                    <td>2<sup>5</sup></td>
-                    <td>Superscript text</td>
-                    <td>Semantic</td>
-                </tr>
-                <tr>
-                    <td><code>&lt;code&gt;</code></td>
-                    <td><code>console.log("Hello");</code></td>
-                    <td>Inline code snippet</td>
-                    <td>Semantic</td>
-                </tr>
-                <tr>
-                    <td><code>&lt;pre&gt;</code></td>
-                    <td><pre>Preserves spaces and line breaks</pre></td>
-                    <td>Preformatted text block</td>
-                    <td>Semantic</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <h3>Visual vs Semantic Tags</h3>
-
-    <ul>
-        <li><strong>Visual tags</strong> change appearance only (<code>&lt;b&gt;</code>, <code>&lt;i&gt;</code>, <code>&lt;u&gt;</code>).</li>
-        <li><strong>Semantic tags</strong> add meaning and improve accessibility (<code>&lt;strong&gt;</code>, <code>&lt;em&gt;</code>, etc.).</li>
-        <li>Screen readers recognize semantic tags and adjust reading tone accordingly.</li>
-    </ul>
-
-    <h3>Comparison Example</h3>
-
-    <div class="table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>Syntax</th>
-                    <th>Rendered Output</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><code>&lt;p&gt;&lt;b&gt;Bold&lt;/b&gt; vs &lt;strong&gt;Strong&lt;/strong&gt;&lt;/p&gt;</code></td>
-                    <td><p><b>Bold</b> vs <strong>Strong</strong></p></td>
-                </tr>
-                <tr>
-                    <td><code>&lt;p&gt;&lt;i&gt;Italic&lt;/i&gt; vs &lt;em&gt;Emphasized&lt;/em&gt;&lt;/p&gt;</code></td>
-                    <td><p><i>Italic</i> vs <em>Emphasized</em></p></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-
-    <h3>Complete Example</h3>
-
-    <pre><code>
+                    <pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -941,93 +791,480 @@ This is line two.
 &lt;/html&gt;
     </code></pre>
 
-    <h3>Best Practices</h3>
+                    <h3>Best Practices</h3>
 
-    <ul>
-        <li>Prefer semantic tags over purely visual tags.</li>
-        <li>Do not use formatting tags for layout design — use CSS.</li>
-        <li>Use <code>&lt;pre&gt;</code> for code blocks that need preserved formatting.</li>
-        <li>Use <code>&lt;code&gt;</code> for inline code snippets.</li>
-    </ul>
+                    <ul>
+                        <li>Prefer semantic tags over purely visual tags.</li>
+                        <li>Do not use formatting tags for layout design — use CSS.</li>
+                        <li>Use <code>&lt;pre&gt;</code> for code blocks that need preserved formatting.</li>
+                        <li>Use <code>&lt;code&gt;</code> for inline code snippets.</li>
+                    </ul>
 
-    <!-- Practice Task -->
-    <div class="practice-box">
-        <h3>🎯 Practice Task</h3>
-        <ul>
-            <li>Create a paragraph with both <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code>.</li>
-            <li>Write a chemical formula using <code>&lt;sub&gt;</code>.</li>
-            <li>Write a math expression using <code>&lt;sup&gt;</code>.</li>
-            <li>Add an inline JavaScript code snippet using <code>&lt;code&gt;</code>.</li>
-        </ul>
-    </div>
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a paragraph with both <code>&lt;strong&gt;</code> and <code>&lt;em&gt;</code>.
+                            </li>
+                            <li>Write a chemical formula using <code>&lt;sub&gt;</code>.</li>
+                            <li>Write a math expression using <code>&lt;sup&gt;</code>.</li>
+                            <li>Add an inline JavaScript code snippet using <code>&lt;code&gt;</code>.</li>
+                        </ul>
+                    </div>
 
-</section>
+                </section>
 
-<!-- HTML Lists -->
-<section class="content-section" id="html-lists">
+                <!-- Comments -->
+                <section class="content-section" id="html-comments">
 
-    <h2>HTML Lists</h2>
+                    <h2>HTML Comments</h2>
 
-    <p>
-        HTML lists are used to display related items in an organized format.
-        There are three main types of lists:
-    </p>
+                    <p>
+                        HTML comments are used to add notes or explanations within the HTML code.
+                        They are not displayed in the browser and are only visible in the source code.
+                    </p>
 
-    <ul>
-        <li><strong>Ordered List</strong> (&lt;ol&gt;)</li>
-        <li><strong>Unordered List</strong> (&lt;ul&gt;)</li>
-        <li><strong>Description List</strong> (&lt;dl&gt;)</li>
-    </ul>
+                    <h3>Syntax for Comments</h3>
 
-    <!-- Ordered List -->
-    <h3>1️⃣ Ordered List (&lt;ol&gt;)</h3>
+                    <pre><code>
+&lt;!-- This is a comment in HTML --&gt;
+    </code></pre>
 
-    <p>
-        An ordered list displays items with numbers or letters.
-        Each item is defined using the <code>&lt;li&gt;</code> tag.
-    </p>
+                    <h3>Use Cases for Comments</h3>
+                    <ul>
+                        <li>Explaining complex code sections.</li>
+                        <li>Leaving notes for other developers.</li>
+                        <li>Temporarily disabling code during development.</li>
+                    </ul>
 
-    <div class="table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>Syntax</th>
-                    <th>Rendered Output</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-<code>
+                    <h3>Example of Comments</h3>
+
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;HTML Comments Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;!-- This is the main heading --&gt;
+    &lt;h1&gt;Welcome to My Website&lt;/h1&gt;
+    &lt;!-- This paragraph introduces the site --&gt;
+    &lt;p&gt;This is a simple webpage created for learning HTML.&lt;/p&gt;
+    &lt;!-- The following link goes to the about page --&gt;
+    &lt;a href="about.html"&gt;About Us&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+
+                    <h3>Best Practices</h3>
+                    <ul>
+                        <li>Use comments to improve code readability.</li>
+                        <li>Avoid over-commenting — only add comments where necessary.</li>
+                        <li>Do not include sensitive information in comments.</li>
+                        <li>Use comments to explain the "why" behind code decisions, not just the "what".</li>
+                    </ul>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Add comments to a sample HTML page explaining each section.</li>
+                            <li>Use comments to temporarily disable a piece of code and observe the change.</li>
+                            <li>Review the source code in your browser to see the comments you added.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                 <!-- HTML Colors -->
+                <section class="content-section" id="html-colors">
+                    <h2>HTML Colors</h2>
+
+                    <p>
+                        In HTML and CSS, colors can be applied to text, backgrounds, borders, and other elements.
+                        Colors may be defined using color names, hexadecimal values, RGB, HSL, and modern CSS techniques
+                        such as gradients and variables.
+                    </p>
+
+                    <!-- Methods to Specify Colors -->
+                    <h3>Common Methods to Specify Colors</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Color Names</td>
+                                <td>Predefined color keywords such as <code>red</code>, <code>blue</code>, or
+                                    <code>green</code>.</td>
+                                <td><code>color: red;</code></td>
+                            </tr>
+                            <tr>
+                                <td>Hexadecimal (HEX)</td>
+                                <td>Six-digit hexadecimal codes prefixed with <code>#</code>.</td>
+                                <td><code>color: #FF0000;</code></td>
+                            </tr>
+                            <tr>
+                                <td>RGB</td>
+                                <td>Defines colors using Red, Green, Blue values (0–255).</td>
+                                <td><code>color: rgb(255, 0, 0);</code></td>
+                            </tr>
+                            <tr>
+                                <td>HSL</td>
+                                <td>Defines colors using Hue, Saturation, and Lightness.</td>
+                                <td><code>color: hsl(0, 100%, 50%);</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Color Reference Table -->
+                    <h3>Basic Color Reference</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Preview</th>
+                                <th>Name</th>
+                                <th>HEX</th>
+                                <th>RGB</th>
+                                <th>HSL</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="background-color: red; width: 60px;"></td>
+                                <td>Red</td>
+                                <td>#FF0000</td>
+                                <td>rgb(255, 0, 0)</td>
+                                <td>hsl(0, 100%, 50%)</td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: green;"></td>
+                                <td>Green</td>
+                                <td>#00FF00</td>
+                                <td>rgb(0, 255, 0)</td>
+                                <td>hsl(120, 100%, 50%)</td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: blue;"></td>
+                                <td>Blue</td>
+                                <td>#0000FF</td>
+                                <td>rgb(0, 0, 255)</td>
+                                <td>hsl(240, 100%, 50%)</td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: yellow;"></td>
+                                <td>Yellow</td>
+                                <td>#FFFF00</td>
+                                <td>rgb(255, 255, 0)</td>
+                                <td>hsl(60, 100%, 50%)</td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: black;"></td>
+                                <td>Black</td>
+                                <td>#000000</td>
+                                <td>rgb(0, 0, 0)</td>
+                                <td>hsl(0, 0%, 0%)</td>
+                            </tr>
+                            <tr>
+                                <td style="background-color: white; border: 1px solid #ccc;"></td>
+                                <td>White</td>
+                                <td>#FFFFFF</td>
+                                <td>rgb(255, 255, 255)</td>
+                                <td>hsl(0, 0%, 100%)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Gradients -->
+                    <h3>CSS Gradients</h3>
+
+                    <p>
+                        Gradients create smooth transitions between two or more colors.
+                        They are defined using the <code>linear-gradient()</code> and
+                        <code>radial-gradient()</code> functions.
+                    </p>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Preview</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="background: linear-gradient(to right, red, yellow); height: 40px;"></td>
+                                <td>Linear gradient from red to yellow</td>
+                            </tr>
+                            <tr>
+                                <td style="background: linear-gradient(to right, blue, green); height: 40px;"></td>
+                                <td>Linear gradient from blue to green</td>
+                            </tr>
+                            <tr>
+                                <td style="background: radial-gradient(circle, purple, pink); height: 40px;"></td>
+                                <td>Radial gradient from purple to pink</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Gradient Syntax Example</h4>
+                    <pre><code>/* Linear Gradient */
+background-image: linear-gradient(to right, red, yellow);
+
+/* Radial Gradient */
+background-image: radial-gradient(circle, blue, green);</code></pre>
+
+                    <!-- Applying Colors -->
+                    <h3>Applying Colors to Elements</h3>
+
+                    <pre><code>&lt;h1 style="color: blue;"&gt;Blue Heading&lt;/h1&gt;
+
+&lt;p style="background-color: #FFFF00;"&gt;
+  Paragraph with yellow background
+&lt;/p&gt;
+
+&lt;div style="border: 2px solid rgb(0, 255, 0);"&gt;
+  Div with green border
+&lt;/div&gt;
+
+&lt;span style="color: hsl(240, 100%, 50%);"&gt;
+  Blue text using HSL
+&lt;/span&gt;</code></pre>
+
+                    <!-- Practice Code -->
+                    <h3>Complete Code for Practice</h3>
+
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;HTML Colors Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h2&gt;HTML Colors Demonstration&lt;/h2&gt;
+
+    &lt;h1 style="color: blue;"&gt;This is a blue heading&lt;/h1&gt;
+
+    &lt;p style="background-color: #FFFF00;"&gt;
+        This paragraph has a yellow background.
+    &lt;/p&gt;
+
+    &lt;div style="border: 2px solid rgb(0, 255, 0);"&gt;
+        This div has a green border.
+    &lt;/div&gt;
+
+    &lt;span style="color: hsl(240, 100%, 50%);"&gt;
+        This text is blue using HSL.
+    &lt;/span&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+
+                    <p>
+                        ✅ Best Practice: For maintainability and scalability, define colors in
+                        external CSS files or use CSS variables instead of inline styles.
+                    </p>
+                </section>
+                
+                <!-- HTML Entities -->
+                <section class="content-section" id="html-entities">
+                    <h2>HTML Entities</h2>
+
+                    <p>
+                        HTML entities are special character codes used to display reserved
+                        characters, symbols, and characters that are not easily typed on a keyboard.
+                        They are especially useful when you need to display characters that have
+                        a specific meaning in HTML (such as <code>&lt;</code> and <code>&gt;</code>).
+                    </p>
+
+                    <p>
+                        An entity begins with an ampersand (<code>&amp;</code>) and ends with a
+                        semicolon (<code>;</code>).
+                    </p>
+
+                    <!-- Common Entities -->
+                    <h3>Common HTML Entities</h3>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Entity</th>
+                                <th>Description</th>
+                                <th>Rendered Output</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>&amp;lt;</code></td>
+                                <td>Less-than symbol</td>
+                                <td>&lt;</td>
+                            </tr>
+                            <tr>
+                                <td><code>&amp;gt;</code></td>
+                                <td>Greater-than symbol</td>
+                                <td>&gt;</td>
+                            </tr>
+                            <tr>
+                                <td><code>&amp;amp;</code></td>
+                                <td>Ampersand symbol</td>
+                                <td>&amp;</td>
+                            </tr>
+                            <tr>
+                                <td><code>&amp;quot;</code></td>
+                                <td>Double quotation mark</td>
+                                <td>"</td>
+                            </tr>
+                            <tr>
+                                <td><code>&amp;apos;</code></td>
+                                <td>Single quotation mark</td>
+                                <td>'</td>
+                            </tr>
+                            <tr>
+                                <td><code>&amp;nbsp;</code></td>
+                                <td>Non-breaking space</td>
+                                <td>Prevents automatic line breaks</td>
+                            </tr>
+                            <tr>
+                                <td><code>&amp;copy;</code></td>
+                                <td>Copyright symbol</td>
+                                <td>©</td>
+                            </tr>
+                            <tr>
+                                <td><code>&amp;reg;</code></td>
+                                <td>Registered trademark symbol</td>
+                                <td>®</td>
+                            </tr>
+                            <tr>
+                                <td><code>&amp;euro;</code></td>
+                                <td>Euro currency symbol</td>
+                                <td>€</td>
+                            </tr>
+                            <tr>
+                                <td><code>&amp;trade;</code></td>
+                                <td>Trademark symbol</td>
+                                <td>™</td>
+                            </tr>
+                            <tr>
+                                <td><code>&amp;hellip;</code></td>
+                                <td>Ellipsis symbol</td>
+                                <td>…</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Example -->
+                    <h3>Example Usage</h3>
+                    <pre><code>&lt;p&gt;5 &amp;lt; 10 and 10 &amp;gt; 5&lt;/p&gt;
+&lt;p&gt;Use &amp;amp; to represent an ampersand.&lt;/p&gt;
+&lt;p&gt;He said, &amp;quot;Hello!&amp;quot;&lt;/p&gt;
+&lt;p&gt;It&apos;s a beautiful day!&lt;/p&gt;
+&lt;p&gt;This&nbsp;is&nbsp;a&nbsp;non-breaking&nbsp;space.&lt;/p&gt;
+&lt;p&gt;&amp;copy; 2024 My Website&lt;/p&gt;</code></pre>
+
+                    <!-- Complete Practice Code -->
+                    <h3>Complete Code for Practice</h3>
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;HTML Entities Example&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+    &lt;h2&gt;HTML Entities Demonstration&lt;/h2&gt;
+
+    &lt;p&gt;5 &amp;lt; 10 and 10 &amp;gt; 5&lt;/p&gt;
+    &lt;p&gt;Use &amp;amp; to represent an ampersand.&lt;/p&gt;
+    &lt;p&gt;He said, &amp;quot;Hello!&amp;quot;&lt;/p&gt;
+    &lt;p&gt;It&apos;s a beautiful day!&lt;/p&gt;
+    &lt;p&gt;This&nbsp;is&nbsp;a&nbsp;non-breaking&nbsp;space.&lt;/p&gt;
+    &lt;p&gt;&amp;copy; 2024 My Website&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+
+                    <p>
+                        ✅ Best Practice: Always use entities when displaying reserved HTML characters
+                        such as <code>&lt;</code>, <code>&gt;</code>, and <code>&amp;</code>
+                        inside your code examples.
+                    </p>
+                </section>
+
+                <!-- Content -->
+
+                <!-- HTML Lists -->
+                <section class="content-section" id="html-lists">
+
+                    <h2>HTML Lists</h2>
+
+                    <p>
+                        HTML lists are used to display related items in an organized format.
+                        There are three main types of lists:
+                    </p>
+
+                    <ul>
+                        <li><strong>Ordered List</strong> (&lt;ol&gt;)</li>
+                        <li><strong>Unordered List</strong> (&lt;ul&gt;)</li>
+                        <li><strong>Description List</strong> (&lt;dl&gt;)</li>
+                    </ul>
+
+                    <!-- Ordered List -->
+                    <h3>1️⃣ Ordered List (&lt;ol&gt;)</h3>
+
+                    <p>
+                        An ordered list displays items with numbers or letters.
+                        Each item is defined using the <code>&lt;li&gt;</code> tag.
+                    </p>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Syntax</th>
+                                    <th>Rendered Output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <code>
 &lt;ol&gt;
   &lt;li&gt;HTML&lt;/li&gt;
   &lt;li&gt;CSS&lt;/li&gt;
   &lt;li&gt;JavaScript&lt;/li&gt;
 &lt;/ol&gt;
 </code>
-                    </td>
-                    <td>
-                        <ol>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>JavaScript</li>
-                        </ol>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                                    </td>
+                                    <td>
+                                        <ol>
+                                            <li>HTML</li>
+                                            <li>CSS</li>
+                                            <li>JavaScript</li>
+                                        </ol>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-    <h4>Numbering Types</h4>
-    <ul>
-        <li><code>type="1"</code> → 1, 2, 3 (default)</li>
-        <li><code>type="A"</code> → A, B, C</li>
-        <li><code>type="a"</code> → a, b, c</li>
-        <li><code>type="I"</code> → I, II, III</li>
-        <li><code>type="i"</code> → i, ii, iii</li>
-    </ul>
+                    <h4>Numbering Types</h4>
+                    <ul>
+                        <li><code>type="1"</code> → 1, 2, 3 (default)</li>
+                        <li><code>type="A"</code> → A, B, C</li>
+                        <li><code>type="a"</code> → a, b, c</li>
+                        <li><code>type="I"</code> → I, II, III</li>
+                        <li><code>type="i"</code> → i, ii, iii</li>
+                    </ul>
 
-    <pre><code>
+                    <pre><code>
 &lt;ol type="A"&gt;
   &lt;li&gt;Apple&lt;/li&gt;
   &lt;li&gt;Banana&lt;/li&gt;
@@ -1035,82 +1272,82 @@ This is line two.
 &lt;/ol&gt;
     </code></pre>
 
-    <!-- Unordered List -->
-    <h3>2️⃣ Unordered List (&lt;ul&gt;)</h3>
+                    <!-- Unordered List -->
+                    <h3>2️⃣ Unordered List (&lt;ul&gt;)</h3>
 
-    <p>
-        An unordered list displays items using bullet points.
-    </p>
+                    <p>
+                        An unordered list displays items using bullet points.
+                    </p>
 
-    <div class="table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>Syntax</th>
-                    <th>Rendered Output</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-<code>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Syntax</th>
+                                    <th>Rendered Output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <code>
 &lt;ul&gt;
   &lt;li&gt;Milk&lt;/li&gt;
   &lt;li&gt;Bread&lt;/li&gt;
   &lt;li&gt;Butter&lt;/li&gt;
 &lt;/ul&gt;
 </code>
-                    </td>
-                    <td>
-                        <ul>
-                            <li>Milk</li>
-                            <li>Bread</li>
-                            <li>Butter</li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                                    </td>
+                                    <td>
+                                        <ul>
+                                            <li>Milk</li>
+                                            <li>Bread</li>
+                                            <li>Butter</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-    <h4>Bullet Styles (Using CSS)</h4>
-    <ul>
-        <li><code>disc</code> (default)</li>
-        <li><code>circle</code></li>
-        <li><code>square</code></li>
-    </ul>
+                    <h4>Bullet Styles (Using CSS)</h4>
+                    <ul>
+                        <li><code>disc</code> (default)</li>
+                        <li><code>circle</code></li>
+                        <li><code>square</code></li>
+                    </ul>
 
-    <pre><code>
+                    <pre><code>
 &lt;ul style="list-style-type: square;"&gt;
   &lt;li&gt;Item 1&lt;/li&gt;
   &lt;li&gt;Item 2&lt;/li&gt;
 &lt;/ul&gt;
     </code></pre>
 
-    <!-- Description List -->
-    <h3>3️⃣ Description List (&lt;dl&gt;)</h3>
+                    <!-- Description List -->
+                    <h3>3️⃣ Description List (&lt;dl&gt;)</h3>
 
-    <p>
-        A description list is used to define terms and their descriptions.
-    </p>
+                    <p>
+                        A description list is used to define terms and their descriptions.
+                    </p>
 
-    <ul>
-        <li><code>&lt;dt&gt;</code> → Defines the term</li>
-        <li><code>&lt;dd&gt;</code> → Defines the description</li>
-    </ul>
+                    <ul>
+                        <li><code>&lt;dt&gt;</code> → Defines the term</li>
+                        <li><code>&lt;dd&gt;</code> → Defines the description</li>
+                    </ul>
 
-    <div class="table-wrapper">
-        <table>
-            <thead>
-                <tr>
-                    <th>Syntax</th>
-                    <th>Rendered Output</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-<code>
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Syntax</th>
+                                    <th>Rendered Output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <code>
 &lt;dl&gt;
   &lt;dt&gt;HTML&lt;/dt&gt;
   &lt;dd&gt;HyperText Markup Language&lt;/dd&gt;
@@ -1119,24 +1356,24 @@ This is line two.
   &lt;dd&gt;Cascading Style Sheets&lt;/dd&gt;
 &lt;/dl&gt;
 </code>
-                    </td>
-                    <td>
-                        <dl>
-                            <dt>HTML</dt>
-                            <dd>HyperText Markup Language</dd>
-                            <dt>CSS</dt>
-                            <dd>Cascading Style Sheets</dd>
-                        </dl>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+                                    </td>
+                                    <td>
+                                        <dl>
+                                            <dt>HTML</dt>
+                                            <dd>HyperText Markup Language</dd>
+                                            <dt>CSS</dt>
+                                            <dd>Cascading Style Sheets</dd>
+                                        </dl>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
 
-    <!-- Complete Example -->
-    <h3>Complete Code for Practice</h3>
+                    <!-- Complete Example -->
+                    <h3>Complete Code for Practice</h3>
 
-    <pre><code>
+                    <pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -1170,172 +1407,69 @@ This is line two.
 &lt;/html&gt;
     </code></pre>
 
-    <!-- Best Practices -->
-    <h3>Best Practices</h3>
-    <ul>
-        <li>Use ordered lists when sequence matters.</li>
-        <li>Use unordered lists for general grouping.</li>
-        <li>Use description lists for definitions or key-value pairs.</li>
-        <li>Avoid using lists purely for layout design.</li>
-    </ul>
+                    <!-- Best Practices -->
+                    <h3>Best Practices</h3>
+                    <ul>
+                        <li>Use ordered lists when sequence matters.</li>
+                        <li>Use unordered lists for general grouping.</li>
+                        <li>Use description lists for definitions or key-value pairs.</li>
+                        <li>Avoid using lists purely for layout design.</li>
+                    </ul>
 
-    <!-- Practice Task -->
-    <div class="practice-box">
-        <h3>🎯 Practice Task</h3>
-        <ul>
-            <li>Create an ordered list with Roman numerals.</li>
-            <li>Create an unordered list with square bullets.</li>
-            <li>Create a description list defining three web technologies.</li>
-        </ul>
-    </div>
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create an ordered list with Roman numerals.</li>
+                            <li>Create an unordered list with square bullets.</li>
+                            <li>Create a description list defining three web technologies.</li>
+                        </ul>
+                    </div>
 
-</section>
+                </section>
 
-<!-- HTML Empty (Void) Elements -->
-<section class="content-section" id="html-empty-tags">
-    <h2>HTML Empty (Void) Elements</h2>
+                <!-- HTML Links -->
+                <section class="content-section" id="html-links">
+                    <h2>HTML Links</h2>
 
-    <p>
-        In HTML, <strong>empty elements</strong> (also known as <em>void elements</em>) 
-        are elements that do not contain content and therefore do not require a closing tag.
-    </p>
+                    <p>
+                        The <code>&lt;a&gt;</code> (anchor) tag is used to create hyperlinks.
+                        Links allow users to navigate between web pages, download files,
+                        send emails, make phone calls, or jump to specific sections within a page.
+                    </p>
 
-    <table class="styled-table">
-        <thead>
-            <tr>
-                <th>Tag</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>&lt;br&gt;</code></td>
-                <td>Inserts a <strong>line break</strong> within text.</td>
-            </tr>
-            <tr>
-                <td><code>&lt;hr&gt;</code></td>
-                <td>Creates a <strong>horizontal rule</strong> to separate content.</td>
-            </tr>
-            <tr>
-                <td><code>&lt;img&gt;</code></td>
-                <td>Embeds an <strong>image</strong> in the document.</td>
-            </tr>
-            <tr>
-                <td><code>&lt;input&gt;</code></td>
-                <td>Defines an <strong>input field</strong> in a form (text, checkbox, radio, etc.).</td>
-            </tr>
-            <tr>
-                <td><code>&lt;meta&gt;</code></td>
-                <td>Provides <strong>metadata</strong> about the HTML document (inside the <code>&lt;head&gt;</code> section).</td>
-            </tr>
-            <tr>
-                <td><code>&lt;link&gt;</code></td>
-                <td>Links <strong>external resources</strong> such as CSS stylesheets.</td>
-            </tr>
-            <tr>
-                <td><code>&lt;source&gt;</code></td>
-                <td>Specifies <strong>media sources</strong> for <code>&lt;audio&gt;</code> or <code>&lt;video&gt;</code> elements.</td>
-            </tr>
-            <tr>
-                <td><code>&lt;area&gt;</code></td>
-                <td>Defines a clickable <strong>area inside an image map</strong>.</td>
-            </tr>
-            <tr>
-                <td><code>&lt;base&gt;</code></td>
-                <td>Specifies a <strong>base URL</strong> for all relative links in the document.</td>
-            </tr>
-            <tr>
-                <td><code>&lt;col&gt;</code></td>
-                <td>Defines a <strong>column</strong> inside a <code>&lt;colgroup&gt;</code> in a table.</td>
-            </tr>
-            <tr>
-                <td><code>&lt;embed&gt;</code></td>
-                <td>Embeds <strong>external content</strong> such as media or plugins.</td>
-            </tr>
-            <tr>
-                <td><code>&lt;param&gt;</code></td>
-                <td>Defines <strong>parameters</strong> for embedded plugins.</td>
-            </tr>
-            <tr>
-                <td><code>&lt;track&gt;</code></td>
-                <td>Specifies <strong>text tracks</strong> (subtitles, captions) for media elements.</td>
-            </tr>
-            <tr>
-                <td><code>&lt;wbr&gt;</code></td>
-                <td>Suggests a <strong>word break opportunity</strong> within long words.</td>
-            </tr>
-        </tbody>
-    </table>
+                    <!-- Basic Syntax -->
+                    <h3>Basic Syntax</h3>
+                    <pre><code>&lt;a href="URL"&gt;Link Text&lt;/a&gt;</code></pre>
 
-    <h3>Complete Code for Practice</h3>
-
-    <pre><code>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;HTML Empty Elements Example&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-    &lt;h2&gt;Using Empty Elements&lt;/h2&gt;
-
-    &lt;p&gt;
-        This is the first line.&lt;br&gt;
-        This is the second line after a line break.
-    &lt;/p&gt;
-
-    &lt;hr&gt;
-
-    &lt;img src="https://via.placeholder.com/150" 
-         alt="Sample Placeholder Image"&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-    </code></pre>
-</section>
-
-<!-- HTML Links -->
-<section class="content-section" id="html-links">
-    <h2>HTML Links</h2>
-
-    <p>
-        The <code>&lt;a&gt;</code> (anchor) tag is used to create hyperlinks.
-        Links allow users to navigate between web pages, download files,
-        send emails, make phone calls, or jump to specific sections within a page.
-    </p>
-
-    <!-- Basic Syntax -->
-    <h3>Basic Syntax</h3>
-    <pre><code>&lt;a href="URL"&gt;Link Text&lt;/a&gt;</code></pre>
-
-    <!-- Open in New Tab -->
-    <h3>Open Link in a New Tab</h3>
-    <p>
-        Use the <code>target="_blank"</code> attribute to open a link in a new tab.
-        For security and performance reasons, always include 
-        <code>rel="noopener noreferrer"</code>.
-    </p>
-    <pre><code>&lt;a href="https://www.example.com" target="_blank" rel="noopener noreferrer"&gt;
+                    <!-- Open in New Tab -->
+                    <h3>Open Link in a New Tab</h3>
+                    <p>
+                        Use the <code>target="_blank"</code> attribute to open a link in a new tab.
+                        For security and performance reasons, always include
+                        <code>rel="noopener noreferrer"</code>.
+                    </p>
+                    <pre><code>&lt;a href="https://www.example.com" target="_blank" rel="noopener noreferrer"&gt;
     Visit Example.com
 &lt;/a&gt;</code></pre>
 
-    <!-- Email Link -->
-    <h3>Link to an Email Address</h3>
-    <pre><code>&lt;a href="mailto:info@example.com"&gt;Send Email&lt;/a&gt;</code></pre>
+                    <!-- Email Link -->
+                    <h3>Link to an Email Address</h3>
+                    <pre><code>&lt;a href="mailto:info@example.com"&gt;Send Email&lt;/a&gt;</code></pre>
 
-    <!-- Phone Link -->
-    <h3>Link to a Phone Number</h3>
-    <pre><code>&lt;a href="tel:+1234567890"&gt;Call Us&lt;/a&gt;</code></pre>
+                    <!-- Phone Link -->
+                    <h3>Link to a Phone Number</h3>
+                    <pre><code>&lt;a href="tel:+1234567890"&gt;Call Us&lt;/a&gt;</code></pre>
 
-    <!-- Internal Page Link -->
-    <h3>Link to a Section Within the Same Page</h3>
-    <p>
-        To link to a specific section, use the <code>id</code> attribute on the target element.
-    </p>
-    <pre><code>&lt;a href="#section-id"&gt;Go to Section&lt;/a&gt;</code></pre>
+                    <!-- Internal Page Link -->
+                    <h3>Link to a Section Within the Same Page</h3>
+                    <p>
+                        To link to a specific section, use the <code>id</code> attribute on the target element.
+                    </p>
+                    <pre><code>&lt;a href="#section-id"&gt;Go to Section&lt;/a&gt;</code></pre>
 
-    <h3>Complete Code for Practice</h3>
-    <pre><code>
+                    <h3>Complete Code for Practice</h3>
+                    <pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -1377,55 +1511,55 @@ This is line two.
 &lt;/body&gt;
 &lt;/html&gt;
     </code></pre>
-</section>
+                </section>
 
-<!-- HTML Images -->
-<section class="content-section" id="html-images">
-    <h2>HTML Images</h2>
+                <!-- HTML Images -->
+                <section class="content-section" id="html-images">
+                    <h2>HTML Images</h2>
 
-    <p>
-        In HTML, images are embedded using the <code>&lt;img&gt;</code> element. 
-        The <code>&lt;img&gt;</code> tag is a <strong>void (empty) element</strong>, 
-        meaning it does not require a closing tag.
-    </p>
+                    <p>
+                        In HTML, images are embedded using the <code>&lt;img&gt;</code> element.
+                        The <code>&lt;img&gt;</code> tag is a <strong>void (empty) element</strong>,
+                        meaning it does not require a closing tag.
+                    </p>
 
-    <p>
-        At minimum, the <code>&lt;img&gt;</code> element requires the 
-        <code>src</code> and <code>alt</code> attributes.
-    </p>
+                    <p>
+                        At minimum, the <code>&lt;img&gt;</code> element requires the
+                        <code>src</code> and <code>alt</code> attributes.
+                    </p>
 
-    <!-- Basic Syntax -->
-    <h3>Basic Syntax</h3>
-    <pre><code>&lt;img src="image-url" alt="description"&gt;</code></pre>
+                    <!-- Basic Syntax -->
+                    <h3>Basic Syntax</h3>
+                    <pre><code>&lt;img src="image-url" alt="description"&gt;</code></pre>
 
-    <!-- Image Attributes -->
-    <h3>Common Attributes</h3>
-    <ul>
-        <li>
-            <strong>src</strong> — Specifies the path to the image file 
-            (absolute URL or local file path).
-        </li>
-        <li>
-            <strong>alt</strong> — Provides alternative text for accessibility 
-            and is displayed if the image fails to load.
-        </li>
-        <li>
-            <strong>width</strong> — Sets the width of the image 
-            (in pixels or percentage).
-        </li>
-        <li>
-            <strong>height</strong> — Sets the height of the image 
-            (in pixels or percentage).
-        </li>
-        <li>
-            <strong>title</strong> — Displays additional information as a tooltip 
-            when the user hovers over the image.
-        </li>
-    </ul>
+                    <!-- Image Attributes -->
+                    <h3>Common Attributes</h3>
+                    <ul>
+                        <li>
+                            <strong>src</strong> — Specifies the path to the image file
+                            (absolute URL or local file path).
+                        </li>
+                        <li>
+                            <strong>alt</strong> — Provides alternative text for accessibility
+                            and is displayed if the image fails to load.
+                        </li>
+                        <li>
+                            <strong>width</strong> — Sets the width of the image
+                            (in pixels or percentage).
+                        </li>
+                        <li>
+                            <strong>height</strong> — Sets the height of the image
+                            (in pixels or percentage).
+                        </li>
+                        <li>
+                            <strong>title</strong> — Displays additional information as a tooltip
+                            when the user hovers over the image.
+                        </li>
+                    </ul>
 
-    <!-- Example -->
-    <h3>Example</h3>
-    <pre><code>
+                    <!-- Example -->
+                    <h3>Example</h3>
+                    <pre><code>
 &lt;img src="https://example.com/image.jpg" 
      alt="Example Image"
      width="300"
@@ -1433,8 +1567,8 @@ This is line two.
      title="This is an example image"&gt;
     </code></pre>
 
-    <h3>Complete Code for Practice</h3>
-    <pre><code>
+                    <h3>Complete Code for Practice</h3>
+                    <pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -1453,22 +1587,137 @@ This is line two.
 &lt;/body&gt;
 &lt;/html&gt;
     </code></pre>
-</section>
+                </section>
 
-<!-- HTML Tables -->
-<section class="content-section" id="html-tables">
-    <h2>HTML Tables</h2>
+                <!-- Layout -->
 
-    <p>
-        In HTML, tables are used to display data in a structured format using 
-        rows and columns. The primary elements used to create tables are 
-        <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>, 
-        <code>&lt;th&gt;</code>, and <code>&lt;td&gt;</code>.
-    </p>
+                <!-- HTML5 Semantic Elements -->
+                <section class="content-section" id="html5-semantics">
 
-    <!-- Basic Syntax -->
-    <h3>Basic Structure</h3>
-    <pre><code>&lt;table&gt;
+                    <h2>HTML5 Semantic Elements</h2>
+
+                    <p>
+                        HTML5 introduced semantic elements that provide meaning and structure
+                        to web content. These elements describe the role of content clearly,
+                        improving accessibility, SEO, and maintainability.
+                    </p>
+
+                    <!-- ================= STRUCTURAL ================= -->
+                    <h3>1️⃣ Structural Semantic Elements</h3>
+                    <ul>
+                        <li><code>&lt;header&gt;</code> – Introductory content or navigation.</li>
+                        <li><code>&lt;footer&gt;</code> – Footer information like copyright.</li>
+                        <li><code>&lt;nav&gt;</code> – Navigation links.</li>
+                        <li><code>&lt;main&gt;</code> – Main unique content of the page.</li>
+                        <li><code>&lt;section&gt;</code> – Thematic grouping of content.</li>
+                        <li><code>&lt;article&gt;</code> – Independent self-contained content.</li>
+                        <li><code>&lt;aside&gt;</code> – Sidebar or related content.</li>
+                    </ul>
+
+                    <!-- ================= TEXT SEMANTICS ================= -->
+                    <h3>2️⃣ Text & Metadata Semantics</h3>
+                    <ul>
+                        <li><code>&lt;mark&gt;</code> – Highlights important text.</li>
+                        <li><code>&lt;time&gt;</code> – Represents date or time.</li>
+                        <li><code>&lt;address&gt;</code> – Contact information.</li>
+                        <li><code>&lt;abbr&gt;</code> – Abbreviation with description.</li>
+                        <li><code>&lt;cite&gt;</code> – Title of a work.</li>
+                        <li><code>&lt;figure&gt;</code> – Media container.</li>
+                        <li><code>&lt;figcaption&gt;</code> – Caption for figure.</li>
+                    </ul>
+
+                    <!-- ================= FORM SEMANTICS ================= -->
+                    <h3>3️⃣ Form & Data Semantics</h3>
+                    <ul>
+                        <li><code>&lt;label&gt;</code> – Label for input fields.</li>
+                        <li><code>&lt;input&gt;</code> – User input control.</li>
+                        <li><code>&lt;textarea&gt;</code> – Multi-line text input.</li>
+                        <li><code>&lt;select&gt;</code> – Dropdown list.</li>
+                        <li><code>&lt;option&gt;</code> – Option inside dropdown.</li>
+                        <li><code>&lt;datalist&gt;</code> – Suggested input values.</li>
+                        <li><code>&lt;output&gt;</code> – Displays calculation result.</li>
+                        <li><code>&lt;button&gt;</code> – Clickable button.</li>
+                    </ul>
+
+                    <!-- ================= MEDIA SEMANTICS ================= -->
+                    <h3>4️⃣ Media Elements</h3>
+                    <ul>
+                        <li><code>&lt;audio&gt;</code> – Embeds audio player.</li>
+                        <li><code>&lt;video&gt;</code> – Embeds video player.</li>
+                        <li><code>&lt;source&gt;</code> – Multiple media sources.</li>
+                        <li><code>&lt;track&gt;</code> – Subtitles and captions.</li>
+                        <li><code>&lt;picture&gt;</code> – Responsive image container.</li>
+                    </ul>
+
+                    <!-- ================= TABLE SEMANTICS ================= -->
+                    <h3>5️⃣ Table Elements</h3>
+                    <ul>
+                        <li><code>&lt;table&gt;</code> – Defines a table.</li>
+                        <li><code>&lt;caption&gt;</code> – Table title.</li>
+                        <li><code>&lt;thead&gt;</code> – Table header section.</li>
+                        <li><code>&lt;tbody&gt;</code> – Table body section.</li>
+                        <li><code>&lt;tfoot&gt;</code> – Table footer section.</li>
+                        <li><code>&lt;tr&gt;</code> – Table row.</li>
+                        <li><code>&lt;th&gt;</code> – Header cell.</li>
+                        <li><code>&lt;td&gt;</code> – Data cell.</li>
+                    </ul>
+
+                    <!-- ================= EXAMPLE ================= -->
+                    <h3>Example of Semantic Structure</h3>
+
+                    <pre><code>
+&lt;header&gt;
+    &lt;h1&gt;My Blog&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;article&gt;
+        &lt;h2&gt;Blog Post Title&lt;/h2&gt;
+        &lt;p&gt;This is the article content.&lt;/p&gt;
+    &lt;/article&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+    &lt;p&gt;© 2026 My Website&lt;/p&gt;
+&lt;/footer&gt;
+    </code></pre>
+
+                    <!-- ================= BENEFITS ================= -->
+                    <h3>Key Benefits of Semantic HTML5</h3>
+                    <ol>
+                        <li><strong>Accessibility</strong> – Screen readers understand content better.</li>
+                        <li><strong>SEO</strong> – Search engines index content properly.</li>
+                        <li><strong>Maintainability</strong> – Code becomes cleaner and readable.</li>
+                        <li><strong>Standardization</strong> – Follows modern web development practices.</li>
+                    </ol>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a layout using <code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>, and
+                                <code>&lt;footer&gt;</code>.</li>
+                            <li>Add an <code>&lt;article&gt;</code> inside <code>&lt;main&gt;</code>.</li>
+                            <li>Add a <code>&lt;nav&gt;</code> section with three links.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- HTML Tables -->
+                <section class="content-section" id="html-tables">
+                    <h2>HTML Tables</h2>
+
+                    <p>
+                        In HTML, tables are used to display data in a structured format using
+                        rows and columns. The primary elements used to create tables are
+                        <code>&lt;table&gt;</code>, <code>&lt;tr&gt;</code>,
+                        <code>&lt;th&gt;</code>, and <code>&lt;td&gt;</code>.
+                    </p>
+
+                    <!-- Basic Syntax -->
+                    <h3>Basic Structure</h3>
+                    <pre><code>&lt;table&gt;
     &lt;tr&gt;
         &lt;th&gt;Header 1&lt;/th&gt;
         &lt;th&gt;Header 2&lt;/th&gt;
@@ -1480,30 +1729,31 @@ This is line two.
 &lt;/table&gt;
 </code></pre>
 
-    <!-- Table Elements & Attributes -->
-    <h3>Important Table Elements</h3>
-    <ul>
-        <li><strong>&lt;table&gt;</strong> — Defines the table container.</li>
-        <li><strong>&lt;tr&gt;</strong> — Defines a table row.</li>
-        <li><strong>&lt;th&gt;</strong> — Defines a header cell (bold and centered by default).</li>
-        <li><strong>&lt;td&gt;</strong> — Defines a standard data cell.</li>
-        <li><strong>&lt;caption&gt;</strong> — Adds a title or description for the table.</li>
-        <li><strong>&lt;thead&gt;</strong>, <strong>&lt;tbody&gt;</strong>, 
-            <strong>&lt;tfoot&gt;</strong> — Group table header, body, and footer content 
-            for better structure and styling.</li>
-        <li><strong>colspan</strong> — Merges multiple columns into one cell.</li>
-        <li><strong>rowspan</strong> — Merges multiple rows into one cell.</li>
-    </ul>
+                    <!-- Table Elements & Attributes -->
+                    <h3>Important Table Elements</h3>
+                    <ul>
+                        <li><strong>&lt;table&gt;</strong> — Defines the table container.</li>
+                        <li><strong>&lt;tr&gt;</strong> — Defines a table row.</li>
+                        <li><strong>&lt;th&gt;</strong> — Defines a header cell (bold and centered by default).</li>
+                        <li><strong>&lt;td&gt;</strong> — Defines a standard data cell.</li>
+                        <li><strong>&lt;caption&gt;</strong> — Adds a title or description for the table.</li>
+                        <li><strong>&lt;thead&gt;</strong>, <strong>&lt;tbody&gt;</strong>,
+                            <strong>&lt;tfoot&gt;</strong> — Group table header, body, and footer content
+                            for better structure and styling.
+                        </li>
+                        <li><strong>colspan</strong> — Merges multiple columns into one cell.</li>
+                        <li><strong>rowspan</strong> — Merges multiple rows into one cell.</li>
+                    </ul>
 
-    <p>
-        ⚠️ Attributes such as <code>border</code>, <code>cellpadding</code>, 
-        <code>cellspacing</code>, <code>align</code>, and <code>bgcolor</code> 
-        are deprecated in HTML5. Use CSS for styling instead.
-    </p>
+                    <p>
+                        ⚠️ Attributes such as <code>border</code>, <code>cellpadding</code>,
+                        <code>cellspacing</code>, <code>align</code>, and <code>bgcolor</code>
+                        are deprecated in HTML5. Use CSS for styling instead.
+                    </p>
 
-    <!-- Example -->
-    <h3>Example (Modern HTML5 Approach)</h3>
-    <pre><code>&lt;table class="styled-table"&gt;
+                    <!-- Example -->
+                    <h3>Example (Modern HTML5 Approach)</h3>
+                    <pre><code>&lt;table class="styled-table"&gt;
     &lt;caption&gt;User Information&lt;/caption&gt;
     &lt;thead&gt;
         &lt;tr&gt;
@@ -1524,8 +1774,8 @@ This is line two.
 &lt;/table&gt;
 </code></pre>
 
-    <h3>Complete Code for Practice</h3>
-    <pre><code>
+                    <h3>Complete Code for Practice</h3>
+                    <pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -1576,194 +1826,60 @@ This is line two.
 &lt;/body&gt;
 &lt;/html&gt;
     </code></pre>
-</section>
+                </section>
 
-<!-- HTML Forms -->
-<section class="content-section" id="html-forms">
-    <h2>HTML Forms</h2>
+                <!-- HTML Iframes -->
+                <section class="content-section" id="html-iframes">
+                    <h2>HTML Iframes</h2>
 
-    <p>
-        In HTML, forms are used to collect user input and submit it to a server 
-        for processing. The primary element used to create a form is the 
-        <code>&lt;form&gt;</code> tag, along with various input elements such as 
-        <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>, 
-        <code>&lt;select&gt;</code>, and <code>&lt;button&gt;</code>.
-    </p>
+                    <p>
+                        The <code>&lt;iframe&gt;</code> (Inline Frame) element is used to embed
+                        another HTML document within the current page. It creates a rectangular
+                        area where external content such as websites, videos, maps, or other
+                        documents can be displayed.
+                    </p>
 
-    <!-- Basic Syntax -->
-    <h3>Basic Structure</h3>
-    <pre><code>&lt;form action="submit-url" method="post"&gt;
-    &lt;label for="name"&gt;Name:&lt;/label&gt;
-    &lt;input type="text" id="name" name="name"&gt;
-    &lt;button type="submit"&gt;Submit&lt;/button&gt;
-&lt;/form&gt;
-</code></pre>
+                    <!-- Basic Syntax -->
+                    <h3>Basic Syntax</h3>
+                    <pre><code>&lt;iframe src="url" width="600" height="400"&gt;&lt;/iframe&gt;</code></pre>
 
-    <!-- Common Input Attributes -->
-    <h3>Common Form Attributes</h3>
-    <table class="styled-table">
-        <thead>
-            <tr>
-                <th>Attribute</th>
-                <th>Applicable Elements</th>
-                <th>Description</th>
-                <th>Example</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><strong>type</strong></td>
-                <td>&lt;input&gt;</td>
-                <td>Specifies the type of input (text, password, email, checkbox, radio, submit, etc.).</td>
-                <td><code>&lt;input type="email" name="useremail"&gt;</code></td>
-            </tr>
-            <tr>
-                <td><strong>placeholder</strong></td>
-                <td>&lt;input&gt;, &lt;textarea&gt;</td>
-                <td>Provides a hint describing the expected value.</td>
-                <td><code>&lt;input type="text" placeholder="Enter your name"&gt;</code></td>
-            </tr>
-            <tr>
-                <td><strong>value</strong></td>
-                <td>&lt;input&gt;, &lt;button&gt;</td>
-                <td>Sets the default value or button label.</td>
-                <td><code>&lt;input type="submit" value="Send"&gt;</code></td>
-            </tr>
-            <tr>
-                <td><strong>required</strong></td>
-                <td>&lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;</td>
-                <td>Makes the field mandatory before submission.</td>
-                <td><code>&lt;input type="text" required&gt;</code></td>
-            </tr>
-            <tr>
-                <td><strong>disabled</strong></td>
-                <td>&lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;</td>
-                <td>Disables the element so it cannot be edited.</td>
-                <td><code>&lt;input type="text" disabled&gt;</code></td>
-            </tr>
-            <tr>
-                <td><strong>readonly</strong></td>
-                <td>&lt;input&gt;, &lt;textarea&gt;</td>
-                <td>Makes the input non-editable but still selectable.</td>
-                <td><code>&lt;input type="text" value="Read only" readonly&gt;</code></td>
-            </tr>
-            <tr>
-                <td><strong>maxlength</strong></td>
-                <td>&lt;input&gt;, &lt;textarea&gt;</td>
-                <td>Limits the number of characters allowed.</td>
-                <td><code>&lt;input type="text" maxlength="10"&gt;</code></td>
-            </tr>
-            <tr>
-                <td><strong>name</strong></td>
-                <td>All form elements</td>
-                <td>Identifies form data when submitted to the server.</td>
-                <td><code>&lt;input type="text" name="username"&gt;</code></td>
-            </tr>
-        </tbody>
-    </table>
+                    <!-- Common Attributes -->
+                    <h3>Common Attributes</h3>
+                    <ul>
+                        <li>
+                            <strong>src</strong> — Specifies the URL of the page or resource to embed.
+                        </li>
+                        <li>
+                            <strong>width</strong> — Sets the width of the iframe (pixels or percentage).
+                        </li>
+                        <li>
+                            <strong>height</strong> — Sets the height of the iframe (pixels or percentage).
+                        </li>
+                        <li>
+                            <strong>title</strong> — Provides an accessible description of the iframe content
+                            (recommended for accessibility).
+                        </li>
+                        <li>
+                            <strong>allowfullscreen</strong> — Allows the embedded content to be displayed in fullscreen
+                            mode.
+                        </li>
+                        <li>
+                            <strong>loading</strong> — Controls loading behavior (<code>lazy</code> or
+                            <code>eager</code>).
+                        </li>
+                        <li>
+                            <strong>referrerpolicy</strong> — Controls how much referrer information is sent.
+                        </li>
+                    </ul>
 
-    <!-- Example -->
-    <h3>Example</h3>
-    <pre><code>&lt;form action="/submit" method="post"&gt;
-    &lt;label for="username"&gt;Username:&lt;/label&gt;
-    &lt;input type="text" id="username" name="username" 
-           placeholder="Enter your username" required&gt;
+                    <p>
+                        ⚠️ The <code>frameborder</code> attribute is deprecated in HTML5.
+                        Use CSS (e.g., <code>border: none;</code>) instead.
+                    </p>
 
-    &lt;label for="email"&gt;Email:&lt;/label&gt;
-    &lt;input type="email" id="email" name="email" 
-           placeholder="Enter your email" required&gt;
-
-    &lt;label for="message"&gt;Message:&lt;/label&gt;
-    &lt;textarea id="message" name="message" rows="4"
-              placeholder="Type your message here"&gt;&lt;/textarea&gt;
-
-    &lt;button type="submit"&gt;Submit&lt;/button&gt;
-&lt;/form&gt;
-</code></pre>
-
-    <h3>Complete Code for Practice</h3>
-    <pre><code>
-&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-&lt;head&gt;
-    &lt;title&gt;HTML Forms Example&lt;/title&gt;
-&lt;/head&gt;
-&lt;body&gt;
-
-    &lt;h2&gt;HTML Forms Demonstration&lt;/h2&gt;
-
-    &lt;form action="/submit" method="post"&gt;
-
-        &lt;label for="username"&gt;Username:&lt;/label&gt;&lt;br&gt;
-        &lt;input type="text" id="username" name="username"
-               placeholder="Enter your username" required&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;label for="email"&gt;Email:&lt;/label&gt;&lt;br&gt;
-        &lt;input type="email" id="email" name="email"
-               placeholder="Enter your email" required&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;label for="message"&gt;Message:&lt;/label&gt;&lt;br&gt;
-        &lt;textarea id="message" name="message" rows="4"
-                  placeholder="Type your message here"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
-
-        &lt;button type="submit"&gt;Submit&lt;/button&gt;
-
-    &lt;/form&gt;
-
-&lt;/body&gt;
-&lt;/html&gt;
-    </code></pre>
-</section>
-
-<!-- HTML Iframes -->
-<section class="content-section" id="html-iframes">
-    <h2>HTML Iframes</h2>
-
-    <p>
-        The <code>&lt;iframe&gt;</code> (Inline Frame) element is used to embed 
-        another HTML document within the current page. It creates a rectangular 
-        area where external content such as websites, videos, maps, or other 
-        documents can be displayed.
-    </p>
-
-    <!-- Basic Syntax -->
-    <h3>Basic Syntax</h3>
-    <pre><code>&lt;iframe src="url" width="600" height="400"&gt;&lt;/iframe&gt;</code></pre>
-
-    <!-- Common Attributes -->
-    <h3>Common Attributes</h3>
-    <ul>
-        <li>
-            <strong>src</strong> — Specifies the URL of the page or resource to embed.
-        </li>
-        <li>
-            <strong>width</strong> — Sets the width of the iframe (pixels or percentage).
-        </li>
-        <li>
-            <strong>height</strong> — Sets the height of the iframe (pixels or percentage).
-        </li>
-        <li>
-            <strong>title</strong> — Provides an accessible description of the iframe content (recommended for accessibility).
-        </li>
-        <li>
-            <strong>allowfullscreen</strong> — Allows the embedded content to be displayed in fullscreen mode.
-        </li>
-        <li>
-            <strong>loading</strong> — Controls loading behavior (<code>lazy</code> or <code>eager</code>).
-        </li>
-        <li>
-            <strong>referrerpolicy</strong> — Controls how much referrer information is sent.
-        </li>
-    </ul>
-
-    <p>
-        ⚠️ The <code>frameborder</code> attribute is deprecated in HTML5. 
-        Use CSS (e.g., <code>border: none;</code>) instead.
-    </p>
-
-    <!-- Example -->
-    <h3>Example (Modern HTML5 Approach)</h3>
-    <pre><code>&lt;iframe 
+                    <!-- Example -->
+                    <h3>Example (Modern HTML5 Approach)</h3>
+                    <pre><code>&lt;iframe 
     src="https://www.example.com"
     width="600"
     height="400"
@@ -1773,8 +1889,8 @@ This is line two.
 &lt;/iframe&gt;
 </code></pre>
 
-    <h3>Complete Code for Practice</h3>
-    <pre><code>
+                    <h3>Complete Code for Practice</h3>
+                    <pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -1800,66 +1916,70 @@ This is line two.
 &lt;/body&gt;
 &lt;/html&gt;
     </code></pre>
-</section>
+                </section>
 
-<!-- HTML Media -->
-<section class="content-section" id="html-media">
-    <h2>HTML Media Elements</h2>
+                <!-- HTML Media -->
+                <section class="content-section" id="html-media">
+                    <h2>HTML Media Elements</h2>
 
-    <p>
-        HTML5 provides built-in support for embedding multimedia content directly 
-        into web pages using the <code>&lt;audio&gt;</code> and 
-        <code>&lt;video&gt;</code> elements. These elements allow developers 
-        to add sound and video without requiring external plugins.
-    </p>
+                    <p>
+                        HTML5 provides built-in support for embedding multimedia content directly
+                        into web pages using the <code>&lt;audio&gt;</code> and
+                        <code>&lt;video&gt;</code> elements. These elements allow developers
+                        to add sound and video without requiring external plugins.
+                    </p>
 
-    <!-- Audio Element -->
-    <h3>Audio Element</h3>
-    <p>
-        The <code>&lt;audio&gt;</code> element is used to embed sound content such as music, podcasts, or sound effects.
-    </p>
+                    <!-- Audio Element -->
+                    <h3>Audio Element</h3>
+                    <p>
+                        The <code>&lt;audio&gt;</code> element is used to embed sound content such as music, podcasts,
+                        or sound effects.
+                    </p>
 
-    <pre><code>&lt;audio controls&gt;
+                    <pre><code>&lt;audio controls&gt;
     &lt;source src="audio-file.mp3" type="audio/mpeg"&gt;
     &lt;source src="audio-file.ogg" type="audio/ogg"&gt;
     Your browser does not support the audio element.
 &lt;/audio&gt;
 </code></pre>
 
-    <!-- Video Element -->
-    <h3>Video Element</h3>
-    <p>
-        The <code>&lt;video&gt;</code> element is used to embed video files 
-        such as tutorials, presentations, or media clips.
-    </p>
+                    <!-- Video Element -->
+                    <h3>Video Element</h3>
+                    <p>
+                        The <code>&lt;video&gt;</code> element is used to embed video files
+                        such as tutorials, presentations, or media clips.
+                    </p>
 
-    <pre><code>&lt;video width="640" height="360" controls&gt;
+                    <pre><code>&lt;video width="640" height="360" controls&gt;
     &lt;source src="video-file.mp4" type="video/mp4"&gt;
     &lt;source src="video-file.webm" type="video/webm"&gt;
     Your browser does not support the video element.
 &lt;/video&gt;
 </code></pre>
 
-    <!-- Common Attributes -->
-    <h3>Common Media Attributes</h3>
-    <ul>
-        <li><strong>controls</strong> — Displays playback controls (play, pause, volume, etc.).</li>
-        <li><strong>autoplay</strong> — Automatically starts playback when the page loads.</li>
-        <li><strong>loop</strong> — Replays the media continuously.</li>
-        <li><strong>muted</strong> — Mutes the media by default (often required with autoplay).</li>
-        <li><strong>preload</strong> — Specifies how media should be loaded (<code>none</code>, <code>metadata</code>, <code>auto</code>).</li>
-        <li><strong>width</strong> and <strong>height</strong> — Define the dimensions of the video player.</li>
-        <li><strong>poster</strong> (video only) — Displays an image before the video starts playing.</li>
-    </ul>
+                    <!-- Common Attributes -->
+                    <h3>Common Media Attributes</h3>
+                    <ul>
+                        <li><strong>controls</strong> — Displays playback controls (play, pause, volume, etc.).</li>
+                        <li><strong>autoplay</strong> — Automatically starts playback when the page loads.</li>
+                        <li><strong>loop</strong> — Replays the media continuously.</li>
+                        <li><strong>muted</strong> — Mutes the media by default (often required with autoplay).</li>
+                        <li><strong>preload</strong> — Specifies how media should be loaded (<code>none</code>,
+                            <code>metadata</code>, <code>auto</code>).</li>
+                        <li><strong>width</strong> and <strong>height</strong> — Define the dimensions of the video
+                            player.</li>
+                        <li><strong>poster</strong> (video only) — Displays an image before the video starts playing.
+                        </li>
+                    </ul>
 
-    <p>
-        ⚠️ Best Practice: Always include multiple <code>&lt;source&gt;</code> 
-        formats to ensure cross-browser compatibility.
-    </p>
+                    <p>
+                        ⚠️ Best Practice: Always include multiple <code>&lt;source&gt;</code>
+                        formats to ensure cross-browser compatibility.
+                    </p>
 
-    <!-- Example -->
-    <h3>Example (Modern Implementation)</h3>
-    <pre><code>&lt;audio controls preload="metadata"&gt;
+                    <!-- Example -->
+                    <h3>Example (Modern Implementation)</h3>
+                    <pre><code>&lt;audio controls preload="metadata"&gt;
     &lt;source src="song.mp3" type="audio/mpeg"&gt;
     Your browser does not support the audio element.
 &lt;/audio&gt;
@@ -1870,9 +1990,9 @@ This is line two.
 &lt;/video&gt;
 </code></pre>
 
-    <!-- Complete Practice Code -->
-    <h3>Complete Code for Practice</h3>
-    <pre><code>
+                    <!-- Complete Practice Code -->
+                    <h3>Complete Code for Practice</h3>
+                    <pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
@@ -1904,329 +2024,256 @@ This is line two.
 &lt;/body&gt;
 &lt;/html&gt;
     </code></pre>
-</section>
+                </section>
 
-<!-- HTML Entities -->
-<section class="content-section" id="html-entities">
-    <h2>HTML Entities</h2>
+                <!-- Advanced -->
+     
+                <!-- HTML Forms -->
+                <section class="content-section" id="html-forms">
+                    <h2>HTML Forms</h2>
 
-    <p>
-        HTML entities are special character codes used to display reserved 
-        characters, symbols, and characters that are not easily typed on a keyboard. 
-        They are especially useful when you need to display characters that have 
-        a specific meaning in HTML (such as <code>&lt;</code> and <code>&gt;</code>).
-    </p>
+                    <p>
+                        In HTML, forms are used to collect user input and submit it to a server
+                        for processing. The primary element used to create a form is the
+                        <code>&lt;form&gt;</code> tag, along with various input elements such as
+                        <code>&lt;input&gt;</code>, <code>&lt;textarea&gt;</code>,
+                        <code>&lt;select&gt;</code>, and <code>&lt;button&gt;</code>.
+                    </p>
 
-    <p>
-        An entity begins with an ampersand (<code>&amp;</code>) and ends with a 
-        semicolon (<code>;</code>).
-    </p>
+                    <!-- Basic Syntax -->
+                    <h3>Basic Structure</h3>
+                    <pre><code>&lt;form action="submit-url" method="post"&gt;
+    &lt;label for="name"&gt;Name:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name"&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
 
-    <!-- Common Entities -->
-    <h3>Common HTML Entities</h3>
+                    <!-- Common Input Attributes -->
+                    <h3>Common Form Attributes</h3>
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Attribute</th>
+                                <th>Applicable Elements</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>type</strong></td>
+                                <td>&lt;input&gt;</td>
+                                <td>Specifies the type of input (text, password, email, checkbox, radio, submit, etc.).
+                                </td>
+                                <td><code>&lt;input type="email" name="useremail"&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>placeholder</strong></td>
+                                <td>&lt;input&gt;, &lt;textarea&gt;</td>
+                                <td>Provides a hint describing the expected value.</td>
+                                <td><code>&lt;input type="text" placeholder="Enter your name"&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>value</strong></td>
+                                <td>&lt;input&gt;, &lt;button&gt;</td>
+                                <td>Sets the default value or button label.</td>
+                                <td><code>&lt;input type="submit" value="Send"&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>required</strong></td>
+                                <td>&lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;</td>
+                                <td>Makes the field mandatory before submission.</td>
+                                <td><code>&lt;input type="text" required&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>disabled</strong></td>
+                                <td>&lt;input&gt;, &lt;select&gt;, &lt;textarea&gt;</td>
+                                <td>Disables the element so it cannot be edited.</td>
+                                <td><code>&lt;input type="text" disabled&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>readonly</strong></td>
+                                <td>&lt;input&gt;, &lt;textarea&gt;</td>
+                                <td>Makes the input non-editable but still selectable.</td>
+                                <td><code>&lt;input type="text" value="Read only" readonly&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>maxlength</strong></td>
+                                <td>&lt;input&gt;, &lt;textarea&gt;</td>
+                                <td>Limits the number of characters allowed.</td>
+                                <td><code>&lt;input type="text" maxlength="10"&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><strong>name</strong></td>
+                                <td>All form elements</td>
+                                <td>Identifies form data when submitted to the server.</td>
+                                <td><code>&lt;input type="text" name="username"&gt;</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Entity</th>
-                <th>Description</th>
-                <th>Rendered Output</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>&amp;lt;</code></td>
-                <td>Less-than symbol</td>
-                <td>&lt;</td>
-            </tr>
-            <tr>
-                <td><code>&amp;gt;</code></td>
-                <td>Greater-than symbol</td>
-                <td>&gt;</td>
-            </tr>
-            <tr>
-                <td><code>&amp;amp;</code></td>
-                <td>Ampersand symbol</td>
-                <td>&amp;</td>
-            </tr>
-            <tr>
-                <td><code>&amp;quot;</code></td>
-                <td>Double quotation mark</td>
-                <td>"</td>
-            </tr>
-            <tr>
-                <td><code>&amp;apos;</code></td>
-                <td>Single quotation mark</td>
-                <td>'</td>
-            </tr>
-            <tr>
-                <td><code>&amp;nbsp;</code></td>
-                <td>Non-breaking space</td>
-                <td>Prevents automatic line breaks</td>
-            </tr>
-            <tr>
-                <td><code>&amp;copy;</code></td>
-                <td>Copyright symbol</td>
-                <td>©</td>
-            </tr>
-            <tr>
-                <td><code>&amp;reg;</code></td>
-                <td>Registered trademark symbol</td>
-                <td>®</td>
-            </tr>
-            <tr>
-                <td><code>&amp;euro;</code></td>
-                <td>Euro currency symbol</td>
-                <td>€</td>
-            </tr>
-            <tr>
-                <td><code>&amp;trade;</code></td>
-                <td>Trademark symbol</td>
-                <td>™</td>
-            </tr>
-            <tr>
-                <td><code>&amp;hellip;</code></td>
-                <td>Ellipsis symbol</td>
-                <td>…</td>
-            </tr>
-        </tbody>
-    </table>
+                    <!-- Example -->
+                    <h3>Example</h3>
+                    <pre><code>&lt;form action="/submit" method="post"&gt;
+    &lt;label for="username"&gt;Username:&lt;/label&gt;
+    &lt;input type="text" id="username" name="username" 
+           placeholder="Enter your username" required&gt;
 
-    <!-- Example -->
-    <h3>Example Usage</h3>
-    <pre><code>&lt;p&gt;5 &amp;lt; 10 and 10 &amp;gt; 5&lt;/p&gt;
-&lt;p&gt;Use &amp;amp; to represent an ampersand.&lt;/p&gt;
-&lt;p&gt;He said, &amp;quot;Hello!&amp;quot;&lt;/p&gt;
-&lt;p&gt;It&apos;s a beautiful day!&lt;/p&gt;
-&lt;p&gt;This&nbsp;is&nbsp;a&nbsp;non-breaking&nbsp;space.&lt;/p&gt;
-&lt;p&gt;&amp;copy; 2024 My Website&lt;/p&gt;</code></pre>
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" 
+           placeholder="Enter your email" required&gt;
 
-    <!-- Complete Practice Code -->
-    <h3>Complete Code for Practice</h3>
-    <pre><code>
+    &lt;label for="message"&gt;Message:&lt;/label&gt;
+    &lt;textarea id="message" name="message" rows="4"
+              placeholder="Type your message here"&gt;&lt;/textarea&gt;
+
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
+
+                    <h3>Complete Code for Practice</h3>
+                    <pre><code>
 &lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;HTML Entities Example&lt;/title&gt;
+    &lt;title&gt;HTML Forms Example&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
 
-    &lt;h2&gt;HTML Entities Demonstration&lt;/h2&gt;
+    &lt;h2&gt;HTML Forms Demonstration&lt;/h2&gt;
 
-    &lt;p&gt;5 &amp;lt; 10 and 10 &amp;gt; 5&lt;/p&gt;
-    &lt;p&gt;Use &amp;amp; to represent an ampersand.&lt;/p&gt;
-    &lt;p&gt;He said, &amp;quot;Hello!&amp;quot;&lt;/p&gt;
-    &lt;p&gt;It&apos;s a beautiful day!&lt;/p&gt;
-    &lt;p&gt;This&nbsp;is&nbsp;a&nbsp;non-breaking&nbsp;space.&lt;/p&gt;
-    &lt;p&gt;&amp;copy; 2024 My Website&lt;/p&gt;
+    &lt;form action="/submit" method="post"&gt;
+
+        &lt;label for="username"&gt;Username:&lt;/label&gt;&lt;br&gt;
+        &lt;input type="text" id="username" name="username"
+               placeholder="Enter your username" required&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;label for="email"&gt;Email:&lt;/label&gt;&lt;br&gt;
+        &lt;input type="email" id="email" name="email"
+               placeholder="Enter your email" required&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;label for="message"&gt;Message:&lt;/label&gt;&lt;br&gt;
+        &lt;textarea id="message" name="message" rows="4"
+                  placeholder="Type your message here"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+
+        &lt;button type="submit"&gt;Submit&lt;/button&gt;
+
+    &lt;/form&gt;
 
 &lt;/body&gt;
 &lt;/html&gt;
     </code></pre>
+                </section>
 
-    <p>
-        ✅ Best Practice: Always use entities when displaying reserved HTML characters 
-        such as <code>&lt;</code>, <code>&gt;</code>, and <code>&amp;</code> 
-        inside your code examples.
-    </p>
-</section>
+                <!-- HTML Forms Input Types -->
+                <section class="content-section" id="html-form-input-types">
+                    <h2>HTML Form Input Types</h2>
 
- <!-- HTML Colors -->
-<section class="content-section" id="html-colors">
-    <h2>HTML Colors</h2>
+                    <p>
+                        The <code>&lt;input&gt;</code> element in HTML supports a wide variety of
+                        input types that allow developers to create interactive and user-friendly
+                        forms. Each input type provides specific functionality and user interface
+                        features.
+                    </p>
 
-    <p>
-        In HTML and CSS, colors can be applied to text, backgrounds, borders, and other elements.
-        Colors may be defined using color names, hexadecimal values, RGB, HSL, and modern CSS techniques
-        such as gradients and variables.
-    </p>
+                    <!-- List of Input Types -->
+                    <h3>Common Input Types</h3>
+                    <table class="styled-table">
+                        <thead>
+                            <tr>
+                                <th>Input Type</th>
+                                <th>Description</th>
+                                <th>Example</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>text</code></td>
+                                <td>Single-line text input for general use.</td>
+                                <td><code>&lt;input type="text" name="username"&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>password</code></td>
+                                <td>Single-line text input that masks the entered characters.</td>
+                                <td><code>&lt;input type="password" name="password"&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>email</code></td>
+                                <td>Input for email addresses with built-in validation.</td>
+                                <td><code>&lt;input type="email" name="useremail"&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>number</code></td>
+                                <td>Input for numeric values with optional min, max, and step attributes.</td>
+                                <td><code>&lt;input type="number" name="age" min="0" max="120"&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>checkbox</code></td>
+                                <td>A box that can be checked or unchecked to represent a boolean choice.</td>
+                                <td><code>&lt;input type="checkbox" name="subscribe"&gt;</code></td>
+                            </tr>
+                            <tr>
+                                <td><code>radio</code></td>
+                                <td>A circular button that allows selection of one option from a group.</td>
+                                <td><code>&lt;input type="radio" name="gender" value="male"&gt;</code></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
 
-    <!-- Methods to Specify Colors -->
-    <h3>Common Methods to Specify Colors</h3>
+                <!-- HTML Forms Validation -->
+                <section class="content-section" id="html-form-validation">
+                    <h2>HTML Form Validation</h2>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Method</th>
-                <th>Description</th>
-                <th>Example</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Color Names</td>
-                <td>Predefined color keywords such as <code>red</code>, <code>blue</code>, or <code>green</code>.</td>
-                <td><code>color: red;</code></td>
-            </tr>
-            <tr>
-                <td>Hexadecimal (HEX)</td>
-                <td>Six-digit hexadecimal codes prefixed with <code>#</code>.</td>
-                <td><code>color: #FF0000;</code></td>
-            </tr>
-            <tr>
-                <td>RGB</td>
-                <td>Defines colors using Red, Green, Blue values (0–255).</td>
-                <td><code>color: rgb(255, 0, 0);</code></td>
-            </tr>
-            <tr>
-                <td>HSL</td>
-                <td>Defines colors using Hue, Saturation, and Lightness.</td>
-                <td><code>color: hsl(0, 100%, 50%);</code></td>
-            </tr>
-        </tbody>
-    </table>
+                    <p>
+                        HTML5 introduced built-in form validation features that allow developers
+                        to validate user input before it is submitted to the server. This helps
+                        improve user experience and reduce server load by catching errors on the
+                        client side.
+                    </p>
 
-    <!-- Color Reference Table -->
-    <h3>Basic Color Reference</h3>
+                    <!-- Validation Attributes -->
+                    <h3>Common Validation Attributes</h3>
+                    <ul>
+                        <li><strong>required</strong> — Makes a field mandatory.</li>
+                        <li><strong>pattern</strong> — Specifies a regular expression that the input must match.</li>
+                        <li><strong>min</strong> and <strong>max</strong> — Define minimum and maximum values for numeric inputs.</li>
+                        <li><strong>step</strong> — Specifies the increment step for numeric inputs.</li>
+                        <li><strong>maxlength</strong> — Limits the number of characters allowed in text inputs.</li>
+                        <li><strong>type-specific validation</strong> — Certain input types (e.g., email, url) have built-in validation rules.</li>
+                    </ul>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Preview</th>
-                <th>Name</th>
-                <th>HEX</th>
-                <th>RGB</th>
-                <th>HSL</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td style="background-color: red; width: 60px;"></td>
-                <td>Red</td>
-                <td>#FF0000</td>
-                <td>rgb(255, 0, 0)</td>
-                <td>hsl(0, 100%, 50%)</td>
-            </tr>
-            <tr>
-                <td style="background-color: green;"></td>
-                <td>Green</td>
-                <td>#00FF00</td>
-                <td>rgb(0, 255, 0)</td>
-                <td>hsl(120, 100%, 50%)</td>
-            </tr>
-            <tr>
-                <td style="background-color: blue;"></td>
-                <td>Blue</td>
-                <td>#0000FF</td>
-                <td>rgb(0, 0, 255)</td>
-                <td>hsl(240, 100%, 50%)</td>
-            </tr>
-            <tr>
-                <td style="background-color: yellow;"></td>
-                <td>Yellow</td>
-                <td>#FFFF00</td>
-                <td>rgb(255, 255, 0)</td>
-                <td>hsl(60, 100%, 50%)</td>
-            </tr>
-            <tr>
-                <td style="background-color: black;"></td>
-                <td>Black</td>
-                <td>#000000</td>
-                <td>rgb(0, 0, 0)</td>
-                <td>hsl(0, 0%, 0%)</td>
-            </tr>
-            <tr>
-                <td style="background-color: white; border: 1px solid #ccc;"></td>
-                <td>White</td>
-                <td>#FFFFFF</td>
-                <td>rgb(255, 255, 255)</td>
-                <td>hsl(0, 0%, 100%)</td>
-            </tr>
-        </tbody>
-    </table>
+                    <!-- Example -->
+                    <h3>Example of Form Validation</h3>
+                    <pre><code>&lt;form action="/submit" method="post"&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;&lt;br&gt;&lt;br&gt;
+    &lt;label for="age"&gt;Age:&lt;/label&gt;
+    &lt;input type="number" id="age" name="age" min="0" max="120" required&gt;&lt;br&gt;&lt;br&gt;
+    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+&lt;/form&gt;
+</code></pre>
 
-    <!-- Gradients -->
-    <h3>CSS Gradients</h3>
-
-    <p>
-        Gradients create smooth transitions between two or more colors.
-        They are defined using the <code>linear-gradient()</code> and 
-        <code>radial-gradient()</code> functions.
-    </p>
-
-    <table>
-        <thead>
-            <tr>
-                <th>Preview</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td style="background: linear-gradient(to right, red, yellow); height: 40px;"></td>
-                <td>Linear gradient from red to yellow</td>
-            </tr>
-            <tr>
-                <td style="background: linear-gradient(to right, blue, green); height: 40px;"></td>
-                <td>Linear gradient from blue to green</td>
-            </tr>
-            <tr>
-                <td style="background: radial-gradient(circle, purple, pink); height: 40px;"></td>
-                <td>Radial gradient from purple to pink</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h4>Gradient Syntax Example</h4>
-    <pre><code>/* Linear Gradient */
-background-image: linear-gradient(to right, red, yellow);
-
-/* Radial Gradient */
-background-image: radial-gradient(circle, blue, green);</code></pre>
-
-    <!-- Applying Colors -->
-    <h3>Applying Colors to Elements</h3>
-
-    <pre><code>&lt;h1 style="color: blue;"&gt;Blue Heading&lt;/h1&gt;
-
-&lt;p style="background-color: #FFFF00;"&gt;
-  Paragraph with yellow background
-&lt;/p&gt;
-
-&lt;div style="border: 2px solid rgb(0, 255, 0);"&gt;
-  Div with green border
-&lt;/div&gt;
-
-&lt;span style="color: hsl(240, 100%, 50%);"&gt;
-  Blue text using HSL
-&lt;/span&gt;</code></pre>
-
-    <!-- Practice Code -->
-    <h3>Complete Code for Practice</h3>
-
-    <pre><code>
-&lt;!DOCTYPE html&gt;
+                    <h3>Complete Code for Practice</h3>
+                    <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html&gt;
 &lt;head&gt;
-    &lt;title&gt;HTML Colors Example&lt;/title&gt;
+    &lt;title&gt;HTML Form Validation Example&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
-
-    &lt;h2&gt;HTML Colors Demonstration&lt;/h2&gt;
-
-    &lt;h1 style="color: blue;"&gt;This is a blue heading&lt;/h1&gt;
-
-    &lt;p style="background-color: #FFFF00;"&gt;
-        This paragraph has a yellow background.
-    &lt;/p&gt;
-
-    &lt;div style="border: 2px solid rgb(0, 255, 0);"&gt;
-        This div has a green border.
-    &lt;/div&gt;
-
-    &lt;span style="color: hsl(240, 100%, 50%);"&gt;
-        This text is blue using HSL.
-    &lt;/span&gt;
-
+    &lt;h2&gt;HTML Form Validation Demonstration&lt;/h2&gt;
+    &lt;form action="/submit" method="post"&gt;
+        &lt;label for="email"&gt;Email:&lt;/label&gt;&lt;br&gt;
+        &lt;input type="email" id="email" name="email" required&gt;&lt;br&gt;&lt;br&gt;
+        &lt;label for="age"&gt;Age:&lt;/label&gt;&lt;br&gt;
+        &lt;input type="number" id="age" name="age" min="0" max="120" required&gt;&lt;br&gt;&lt;br&gt;
+        &lt;button type="submit"&gt;Submit&lt;/button&gt;
+    &lt;/form&gt;
 &lt;/body&gt;
 &lt;/html&gt;
     </code></pre>
-
-    <p>
-        ✅ Best Practice: For maintainability and scalability, define colors in 
-        external CSS files or use CSS variables instead of inline styles.
-    </p>
-</section>
+                </section>
 
                 <!-- Course Completion Section -->
                 <section class="course-complete">
