@@ -26,14 +26,19 @@
             <button class="menu-toggle" id="menuToggle">☰ Learn CSS</button>
             <aside>
                 <h2>Learn CSS</h2>
+                <!-- LEVEL 0 Foundation -->
+                 <h3>Foundation</h3>
                 <a href="#css-intro">CSS Introduction</a>
                 <a href="#css-syntax">CSS Syntax</a>
-                <a href="#css-selectors">CSS Selectors</a>
-                <a href="#universal-selector">Universal Selector</a>
                 <a href="#css-howto">How to add CSS</a>
                 <a href="#css-comments">CSS Comments</a>
                 <a href="#css-errors">CSS Errors</a>
+                <a href="#css-selectors">CSS Selectors</a>
+                <a href="#universal-selector">Universal Selector</a>
                 <a href="#css-colors">CSS Colors</a>
+
+                <!-- LEVEL 1 Box Model & Styling -->
+                <h3>Box Model & Styling</h3>
                 <a href="#css-backgrounds">CSS Backgrounds</a>
                 <a href="#css-borders">CSS Borders</a>
                 <a href="#css-margins">CSS Margins</a>
@@ -46,6 +51,9 @@
                 <a href="#css-links">CSS Links</a>
                 <a href="#css-lists">CSS Lists</a>
                 <a href="#css-tables">CSS Tables</a>
+
+                <!-- LEVEL 2 Layout Fundamentals -->
+                <h3>Layout Fundamentals</h3>
                 <a href="#css-display">CSS Display</a>
                 <a href="#css-position">CSS Positioning</a>
                 <a href="#css-position-offsets">CSS Position Offsets</a>
@@ -53,11 +61,17 @@
                 <a href="#css-overflow">CSS Overflow</a>
                 <a href="#css-float">CSS Float</a>
                 <a href="#css-opacity">CSS Opacity</a>
+
+                <!-- LEVEL 3 UI Components -->
+                <h3>UI Components</h3>
                 <a href="#css-navigation-bars">CSS Navigation Bars</a>
                 <a href="#css-dropdowns">CSS Dropdowns</a>
                 <a href="#css-image-gallery">CSS Image Gallery</a>
                 <a href="#css-forms">CSS Forms</a>
                 <a href="#css-website-layouts">CSS Website Layouts</a>
+
+                <!-- LEVEL 4 Modern CSS (Advanced) -->
+                <h3>Modern CSS (Advanced)</h3>
                 <a href="#css-flexbox">CSS Flexbox</a>
                 <a href="#css-grid">CSS Grid</a>
 
@@ -65,6 +79,7 @@
 
             <!-- Main content will be loaded here -->
             <article>
+                <!-- Level 0 Foundation -->
                 <!-- CSS Introduction -->
                 <section class="content-section" id="css-intro">
                     <h2>Introduction to CSS</h2>
@@ -186,191 +201,6 @@ h1 {
                             <li>Add a background color.</li>
                         </ul>
                     </div>
-                </section>
-
-                <!-- CSS Selectors -->
-                <section class="content-section" id="css-selectors">
-                    <h2>CSS Selectors</h2>
-
-                    <p>
-                        CSS selectors are used to target HTML elements so they can be styled.
-                        A selector defines <strong>which elements</strong> a CSS rule applies to.
-                    </p>
-
-                    <h3>Basic Selector Structure</h3>
-
-                    <pre><code>
-selector {
-    property: value;
-}
-    </code></pre>
-
-                    <p>
-                        The selector comes before the curly braces and determines which
-                        HTML elements will receive the styling.
-                    </p>
-
-                    <h3>Types of Selectors</h3>
-
-                    <h4>1️⃣ Element Selector</h4>
-                    <p>
-                        Selects all elements of a specific type.
-                    </p>
-
-                    <pre><code>
-p {
-    color: green;
-}
-    </code></pre>
-
-                    <ul>
-                        <li><strong>Selector:</strong> <code>p</code></li>
-                        <li>Applies to all &lt;p&gt; elements</li>
-                    </ul>
-
-                    <h4>2️⃣ Class Selector</h4>
-                    <p>
-                        Selects elements with a specific class attribute.
-                        Class selectors start with a dot (<code>.</code>).
-                    </p>
-
-                    <pre><code>
-.my-class {
-    font-weight: bold;
-}
-    </code></pre>
-
-                    <ul>
-                        <li><strong>Selector:</strong> <code>.my-class</code></li>
-                        <li>Applies to all elements with class="my-class"</li>
-                    </ul>
-
-                    <h4>3️⃣ ID Selector</h4>
-                    <p>
-                        Selects a single element with a specific ID.
-                        ID selectors start with a hash (<code>#</code>).
-                    </p>
-
-                    <pre><code>
-#my-id {
-    background-color: yellow;
-}
-    </code></pre>
-
-                    <ul>
-                        <li><strong>Selector:</strong> <code>#my-id</code></li>
-                        <li>Applies to the element with id="my-id"</li>
-                    </ul>
-
-                    <h4>4️⃣ Universal Selector</h4>
-                    <p>
-                        Selects all elements on the page.
-                    </p>
-
-                    <pre><code>
-* {
-    margin: 0;
-    padding: 0;
-}
-    </code></pre>
-
-                    <ul>
-                        <li><strong>Selector:</strong> <code>*</code></li>
-                        <li>Applies to all HTML elements</li>
-                    </ul>
-
-                    <!-- Practice Task -->
-                    <div class="practice-box">
-                        <h3>🎯 Practice Task</h3>
-                        <ul>
-                            <li>Create a class selector that changes text color to red.</li>
-                            <li>Create an ID selector that adds a background color.</li>
-                            <li>Use the universal selector to remove default margin.</li>
-                        </ul>
-                    </div>
-                </section>
-
-                <!-- Universal Selector -->
-                <section class="content-section" id="universal-selector">
-                    <h2>Universal Selector</h2>
-
-                    <p>
-                        In CSS, the <code>*</code> symbol is called the <strong>Universal Selector</strong>.
-                        It selects <strong>all HTML elements</strong> on a page.
-                    </p>
-
-                    <h3>Basic Syntax</h3>
-
-                    <pre><code>
-* {
-    property: value;
-}
-    </code></pre>
-
-                    <p>
-                        Any style defined inside the curly braces will apply to every element.
-                    </p>
-
-                    <h3>Common Example (CSS Reset)</h3>
-
-                    <pre><code>
-/* Remove default spacing and set box model */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-    </code></pre>
-
-                    <h3>Explanation</h3>
-
-                    <ul>
-                        <li><strong>margin: 0;</strong> – Removes default outer spacing.</li>
-                        <li><strong>padding: 0;</strong> – Removes default inner spacing.</li>
-                        <li><strong>box-sizing: border-box;</strong> – Includes padding and border inside width and
-                            height calculations.</li>
-                    </ul>
-
-                    <p>
-                        This combination is widely used as a <strong>CSS reset</strong> to ensure consistent layout
-                        behavior across browsers.
-                    </p>
-
-                    <h3>Another Example</h3>
-
-                    <pre><code>
-/* Apply global font styling */
-* {
-    font-family: Arial, sans-serif;
-}
-    </code></pre>
-
-                    <h3>When to Use</h3>
-
-                    <ul>
-                        <li>Creating a CSS reset.</li>
-                        <li>Applying consistent box-sizing across the project.</li>
-                        <li>Setting global base styles like font-family.</li>
-                    </ul>
-
-                    <h3>⚠ Important Note</h3>
-
-                    <p>
-                        The universal selector affects every element on the page.
-                        Overusing it may reduce performance and override more specific styles.
-                        Use it mainly for resets and foundational styling.
-                    </p>
-
-                    <!-- Practice Task -->
-                    <div class="practice-box">
-                        <h3>🎯 Practice Task</h3>
-                        <ul>
-                            <li>Use the universal selector to remove default margin and padding.</li>
-                            <li>Add a global font style using <code>font-family</code>.</li>
-                            <li>Test what happens if you apply a background color globally.</li>
-                        </ul>
-                    </div>
-
                 </section>
 
                 <!-- How to Add CSS -->
@@ -634,6 +464,191 @@ h1 {
 
                 </section>
 
+                <!-- CSS Selectors -->
+                <section class="content-section" id="css-selectors">
+                    <h2>CSS Selectors</h2>
+
+                    <p>
+                        CSS selectors are used to target HTML elements so they can be styled.
+                        A selector defines <strong>which elements</strong> a CSS rule applies to.
+                    </p>
+
+                    <h3>Basic Selector Structure</h3>
+
+                    <pre><code>
+selector {
+    property: value;
+}
+    </code></pre>
+
+                    <p>
+                        The selector comes before the curly braces and determines which
+                        HTML elements will receive the styling.
+                    </p>
+
+                    <h3>Types of Selectors</h3>
+
+                    <h4>1️⃣ Element Selector</h4>
+                    <p>
+                        Selects all elements of a specific type.
+                    </p>
+
+                    <pre><code>
+p {
+    color: green;
+}
+    </code></pre>
+
+                    <ul>
+                        <li><strong>Selector:</strong> <code>p</code></li>
+                        <li>Applies to all &lt;p&gt; elements</li>
+                    </ul>
+
+                    <h4>2️⃣ Class Selector</h4>
+                    <p>
+                        Selects elements with a specific class attribute.
+                        Class selectors start with a dot (<code>.</code>).
+                    </p>
+
+                    <pre><code>
+.my-class {
+    font-weight: bold;
+}
+    </code></pre>
+
+                    <ul>
+                        <li><strong>Selector:</strong> <code>.my-class</code></li>
+                        <li>Applies to all elements with class="my-class"</li>
+                    </ul>
+
+                    <h4>3️⃣ ID Selector</h4>
+                    <p>
+                        Selects a single element with a specific ID.
+                        ID selectors start with a hash (<code>#</code>).
+                    </p>
+
+                    <pre><code>
+#my-id {
+    background-color: yellow;
+}
+    </code></pre>
+
+                    <ul>
+                        <li><strong>Selector:</strong> <code>#my-id</code></li>
+                        <li>Applies to the element with id="my-id"</li>
+                    </ul>
+
+                    <h4>4️⃣ Universal Selector</h4>
+                    <p>
+                        Selects all elements on the page.
+                    </p>
+
+                    <pre><code>
+* {
+    margin: 0;
+    padding: 0;
+}
+    </code></pre>
+
+                    <ul>
+                        <li><strong>Selector:</strong> <code>*</code></li>
+                        <li>Applies to all HTML elements</li>
+                    </ul>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a class selector that changes text color to red.</li>
+                            <li>Create an ID selector that adds a background color.</li>
+                            <li>Use the universal selector to remove default margin.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Universal Selector -->
+                <section class="content-section" id="universal-selector">
+                    <h2>Universal Selector</h2>
+
+                    <p>
+                        In CSS, the <code>*</code> symbol is called the <strong>Universal Selector</strong>.
+                        It selects <strong>all HTML elements</strong> on a page.
+                    </p>
+
+                    <h3>Basic Syntax</h3>
+
+                    <pre><code>
+* {
+    property: value;
+}
+    </code></pre>
+
+                    <p>
+                        Any style defined inside the curly braces will apply to every element.
+                    </p>
+
+                    <h3>Common Example (CSS Reset)</h3>
+
+                    <pre><code>
+/* Remove default spacing and set box model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+    </code></pre>
+
+                    <h3>Explanation</h3>
+
+                    <ul>
+                        <li><strong>margin: 0;</strong> – Removes default outer spacing.</li>
+                        <li><strong>padding: 0;</strong> – Removes default inner spacing.</li>
+                        <li><strong>box-sizing: border-box;</strong> – Includes padding and border inside width and
+                            height calculations.</li>
+                    </ul>
+
+                    <p>
+                        This combination is widely used as a <strong>CSS reset</strong> to ensure consistent layout
+                        behavior across browsers.
+                    </p>
+
+                    <h3>Another Example</h3>
+
+                    <pre><code>
+/* Apply global font styling */
+* {
+    font-family: Arial, sans-serif;
+}
+    </code></pre>
+
+                    <h3>When to Use</h3>
+
+                    <ul>
+                        <li>Creating a CSS reset.</li>
+                        <li>Applying consistent box-sizing across the project.</li>
+                        <li>Setting global base styles like font-family.</li>
+                    </ul>
+
+                    <h3>⚠ Important Note</h3>
+
+                    <p>
+                        The universal selector affects every element on the page.
+                        Overusing it may reduce performance and override more specific styles.
+                        Use it mainly for resets and foundational styling.
+                    </p>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Use the universal selector to remove default margin and padding.</li>
+                            <li>Add a global font style using <code>font-family</code>.</li>
+                            <li>Test what happens if you apply a background color globally.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
                 <!-- CSS Colors -->
                 <section class="content-section" id="css-colors">
 
@@ -737,6 +752,7 @@ button {
 
                 </section>
 
+                <!-- Level 1 Box Model & Styling -->
                 <!-- CSS Backgrounds -->
                 <section class="content-section" id="css-backgrounds">
 
@@ -2201,6 +2217,7 @@ caption {
 
                 </section>
 
+                <!-- Level 2 Layout Fundamentals -->
                 <!-- CSS Display -->
                 <section class="content-section" id="css-display">
 
@@ -3153,6 +3170,7 @@ nav {
 
                 </section>
 
+                <!-- Level 3 UI Components -->
                 <!-- CSS Navigation Bars -->
                 <section class="content-section" id="css-navigation-bars">
 
@@ -4076,6 +4094,7 @@ body {
 
                 </section>
 
+                <!-- Level 4 Modern CSS (Advanced) -->
                 <!-- CSS FLEXBOX -->
                 <section class="content-section" id="css-flexbox">
 

@@ -6,6 +6,12 @@
      padding: var(--space-lg) var(--space-md);
      border-radius: var(--radius-md);
      transition: background var(--transition-normal);
+     margin: 0 var(--space-xs);
+ }
+
+ .hero h1{
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--space-sm);
  }
 
  .hero h2 {

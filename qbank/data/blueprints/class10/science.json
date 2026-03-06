@@ -1,0 +1,167 @@
+{
+  "class": "10",
+  "subject": "Science",
+  "session": "2025-26",
+  "subject_code": "086",
+  "maximum_marks": 80,
+  "time": "3 Hours",
+  "sections": [
+    {
+      "subject": "Biology",
+      "section": "A",
+      "question_range": "1-9",
+      "question_type": "MCQ / Assertion-Reason",
+      "no_of_questions": 9,
+      "marks_per_question": 1,
+      "total_marks": 9,
+      "details": {
+        "mcq": "1-7",
+        "assertion_reason": "8-9"
+      }
+    },
+    {
+      "subject": "",
+      "section": "",
+      "question_range": "10-12",
+      "question_type": "Very Short Answer (VSA)",
+      "no_of_questions": 3,
+      "marks_per_question": 2,
+      "total_marks": 6
+    },
+    {
+      "subject": "",
+      "section": "",
+      "question_range": "13-14",
+      "question_type": "Short Answer (SA)",
+      "no_of_questions": 2,
+      "marks_per_question": 3,
+      "total_marks": 6
+    },
+    {
+      "subject": "",
+      "section": "",
+      "question_range": "15",
+      "question_type": "Long Answer (LA)",
+      "no_of_questions": 1,
+      "marks_per_question": 4,
+      "total_marks": 4
+    },
+    {
+      "subject": "",
+      "section": "",
+      "question_range": "16",
+      "question_type": "Case Study",
+      "no_of_questions": 1,
+      "marks_per_question": 5,
+      "total_marks": 5,
+      "details": {
+        "total_marks": 30
+      }
+    },
+    {
+      "subject": "Chemistry",
+      "section": "B",
+      "question_range": "17-24",
+      "question_type": "MCQ / Assertion-Reason",
+      "no_of_questions": 8,
+      "marks_per_question": 1,
+      "total_marks": 8,
+      "details": {
+        "mcq": "17-23",
+        "assertion_reason": "24"
+      }
+    },
+    {
+      "subject": "",
+      "section": "",
+      "question_range": "25",
+      "question_type": "Very Short Answer (VSA)",
+      "no_of_questions": 1,
+      "marks_per_question": 2,
+      "total_marks": 2
+    },
+    {
+      "subject": "",
+      "section": "",
+      "question_range": "26-27",
+      "question_type": "Short Answer (SA)",
+      "no_of_questions": 2,
+      "marks_per_question": 3,
+      "total_marks": 6
+    },
+    {
+      "subject": "",
+      "section": "",
+      "question_range": "28",
+      "question_type": "Long Answer (LA)",
+      "no_of_questions": 1,
+      "marks_per_question": 4,
+      "total_marks": 4
+    },
+    {
+      "subject": "",
+      "section": "",
+      "question_range": "29",
+      "question_type": "Case Study",
+      "no_of_questions": 1,
+      "marks_per_question": 5,
+      "total_marks": 5,
+      "details": {
+        "total_marks": 25
+      }
+    },
+    {
+      "subject": "Physics",
+      "section": "C",
+      "question_range": "30-32",
+      "question_type": "MCQ / Assertion-Reason",
+      "no_of_questions": 3,
+      "marks_per_question": 1,
+      "total_marks": 3,
+      "details": {
+        "mcq": "30-31",
+        "assertion_reason": "32"
+      }
+    },
+    {
+      "subject": "",
+      "section": "",
+      "question_range": "33-34",
+      "question_type": "Very Short Answer (VSA)",
+      "no_of_questions": 2,
+      "marks_per_question": 2,
+      "total_marks": 4
+    },
+    {
+      "subject": "",
+      "section": "",
+      "question_range": "35-37",
+      "question_type": "Short Answer (SA)",
+      "no_of_questions": 3,
+      "marks_per_question": 3,
+      "total_marks": 9
+    },
+    {
+      "subject": "",
+      "section": "",
+      "question_range": "38",
+      "question_type": "Long Answer (LA)",
+      "no_of_questions": 1,
+      "marks_per_question": 4,
+      "total_marks": 4
+    },
+    {
+      "subject": "",
+      "section": "",
+      "question_range": "39",
+      "question_type": "Case Study",
+      "no_of_questions": 1,
+      "marks_per_question": 5,
+      "total_marks": 5,
+      "details": {
+        "total_marks": 25
+      }
+    }
+  ],
+  "total_questions": 39
+}

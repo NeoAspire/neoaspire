@@ -1,0 +1,64 @@
+{
+  "class": "10",
+  "subject": "Mathematics Standard",
+  "session": "2025-26",
+  "subject_code": "041",
+  "maximum_marks": 80,
+  "time": "3 Hours",
+  "sections": [
+    {
+      "section": "A",
+      "question_range": "1-20",
+      "question_type": "MCQ / Assertion-Reason",
+      "no_of_questions": 20,
+      "marks_per_question": 1,
+      "total_marks": 20,
+      "details": {
+        "mcq": "1-18",
+        "assertion_reason": "19-20"
+      }
+    },
+    {
+      "section": "B",
+      "question_range": "21-25",
+      "question_type": "Very Short Answer (VSA)",
+      "no_of_questions": 5,
+      "marks_per_question": 2,
+      "total_marks": 10
+    },
+    {
+      "section": "C",
+      "question_range": "26-31",
+      "question_type": "Short Answer (SA)",
+      "no_of_questions": 6,
+      "marks_per_question": 3,
+      "total_marks": 18
+    },
+    {
+      "section": "D",
+      "question_range": "32-35",
+      "question_type": "Long Answer (LA)",
+      "no_of_questions": 4,
+      "marks_per_question": 5,
+      "total_marks": 20
+    },
+    {
+      "section": "E",
+      "question_range": "36-38",
+      "question_type": "Case Study",
+      "no_of_questions": 3,
+      "marks_per_question": 4,
+      "total_marks": 12,
+      "details": {
+        "sub parts of the values of 1, 1 and 2 marks each respectively": "36-38"
+      }
+    }
+  ],
+  "internal_choice": {
+    "section_b": "2 Questions",
+    "section_c": "2 Questions",
+    "section_d": "2 Questions",
+    "section_e": "All 2 mark questions"
+  },
+  "total_questions": 38
+}

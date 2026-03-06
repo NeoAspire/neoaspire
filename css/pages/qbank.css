@@ -1,9 +1,73 @@
+
+/* =========================================
+   BLUEPRINT SECTION – HERO & ACTIONS
+========================================= */
+ /* Hero */
+ .hero-qbank {
+     background: var(--color-primary);
+     color: var(--color-white);
+     text-align: center;
+     padding: var(--space-sm) var(--space-xs);
+     border-radius: var(--radius-md);
+     transition: background var(--transition-normal);
+     margin: 0 var(--space-xs);
+ }
+
+ .hero-qbank h2 {
+     font-size: var(--font-size-xl);
+     margin-bottom: var(--space-xs);
+ }
+
+ .hero-qbank p {
+     font-size: var(--font-size-md);
+     color: var(--color-primary-light);
+ }
+
+ .hero-qbank-actions {
+  margin-top: var(--space-xs);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.hero-qbank-btn {
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+/* Primary Button */
+.hero-qbank-btn.primary {
+  background: var(--color-white);
+  color: var(--color-primary);
+}
+
+.hero-qbank-btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Secondary Button */
+.hero-qbank-btn.secondary {
+  background: transparent;
+  border: 2px solid var(--color-white);
+  color: var(--color-white);
+}
+
+.hero-qbank-btn.secondary:hover {
+  background: rgba(255,255,255,0.15);
+}
+
 /* =========================================
    QBANK SECTION – COMPLETE PROFESSIONAL CSS
 ========================================= */
 
 .qbank-section {
   margin: var(--space-xl) auto;
+  margin-top: var(--space-lg);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

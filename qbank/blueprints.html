@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exam Blueprint | Neoaspire</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/qbank/css/blueprints.css">
+<link rel="icon" type="image/png" href="/images/favicon/favicon.png">
+<script src="/js/base.js"></script>
+
+
+</head>
+
+<body>
+
+<header id="header-container"></header>
+
+<main>
+<!-- Blueprint Hero Section -->
+<section class="hero">
+      <h1>CBSE Exam Pattern, Blueprint & Marking Scheme</h1>
+<p>Access class-wise and subject-wise exam patterns, chapter-wise marks distribution, and official marking guidelines.</p>
+</section>
+
+<!-- Blueprint Filter Section -->
+<section class="blueprint-filter-section">
+
+<div class="filter-card">
+
+<div class="filter-group">
+<select id="classFilter">
+<option value="">Choose Class</option>
+</select>
+</div>
+
+<div class="filter-group">
+<select id="subjectFilter">
+<option value="">Choose Subject</option>
+</select>
+</div>
+
+<div class="filter-group filter-btn">
+<button onclick="loadBlueprint()">View Blueprint</button>
+</div>
+
+</div>
+
+</section>
+
+<!-- Blueprint Result Section -->
+<section class="blueprint-result-section">
+        <div id="blueprint-content" class="hidden"></div>
+</section>
+
+</main>
+
+<footer id="footer-container"></footer>
+
+<!-- JS Files -->
+<script src="/qbank/js/filter.js"></script>
+<script src="/qbank/js/blueprint.js"></script>
+
+</body>
+</html>

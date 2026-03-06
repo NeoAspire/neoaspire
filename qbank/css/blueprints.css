@@ -1,0 +1,272 @@
+```css
+/* ================================
+          FILTER SECTION
+================================ */
+
+.blueprint-filter-section {
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--color-bg-light);
+    margin: 0 var(--space-xl);
+}
+
+/* Filter Card */
+
+.filter-card {
+    background: var(--color-white);
+    padding: var(--space-md);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    gap: var(--space-lg);
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+/* Filter Field */
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    min-width: 200px;
+}
+
+/* Select Dropdown */
+
+.filter-group select {
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-border);
+    font-size: var(--font-size-md);
+    background: var(--color-bg-light);
+    transition: var(--transition-fast);
+}
+
+.filter-group select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(236, 97, 27, 0.15);
+}
+
+/* Button */
+
+.filter-btn button {
+    padding: var(--space-sm) var(--space-xl);
+    border-radius: var(--radius-md);
+    background: var(--color-primary);
+    color: white;
+    font-size: var(--font-size-md);
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition-fast);
+}
+
+.filter-btn button:hover {
+    background: var(--color-primary-hover);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+
+/* ================================
+          RESULT SECTION
+================================ */
+
+.blueprint-result-section {
+    padding: var(--space-xs) var(--space-sm);
+    background: var(--color-bg-light);
+    margin: 0 var(--space-xl);
+}
+
+#blueprint-content {
+    background: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+}
+
+
+/* Heading */
+
+#blueprint-content h2 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-sm);
+    color: var(--color-heading);
+}
+
+#blueprint-content p {
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+}
+
+
+/* ================================
+        BLUEPRINT META CARDS
+================================ */
+
+.blueprint-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-md);
+    margin-bottom: var(--space-lg);
+}
+
+.meta-box {
+    background: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    padding: var(--space-md);
+    border-radius: var(--radius-md);
+    text-align: center;
+    transition: var(--transition-fast);
+}
+
+.meta-box:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-sm);
+}
+
+.meta-title {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-xs);
+}
+
+.meta-value {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--color-heading);
+}
+
+
+/* ================================
+          TABLE STYLING
+================================ */
+
+.blueprint-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: var(--space-md);
+    font-size: var(--font-size-md);
+}
+
+.blueprint-table th,
+.blueprint-table td {
+    padding: var(--space-sm) var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.blueprint-table th {
+    background: var(--color-primary-light);
+    color: var(--color-heading);
+    text-align: left;
+    font-weight: 600;
+    position: sticky;
+    top: 0;
+}
+
+.blueprint-table tr:hover {
+    background: var(--color-bg-section);
+    transition: var(--transition-fast);
+}
+
+
+/* ================================
+        TOTAL QUESTIONS
+================================ */
+
+.total-questions {
+    margin-top: var(--space-md);
+    font-weight: 600;
+    color: var(--color-heading);
+}
+
+/* ================================
+        BREAKDOWN ROW
+================================ */
+
+.details-row td{
+background: var(--color-bg-light);
+font-size: var(--font-size-sm);
+text-align: left;
+padding-left: var(--space-lg);
+color: var(--color-text-secondary);
+}
+
+
+/* ================================
+        INTERNAL CHOICE BOX
+================================ */
+
+.internal-choice{
+margin-top: var(--space-md);
+padding: var(--space-md);
+background: var(--color-bg-light);
+border: 1px solid var(--color-border);
+border-radius: var(--radius-md);
+box-shadow: var(--shadow-sm);
+}
+
+.internal-choice h3::before{
+content: "📌 ";
+}
+
+.internal-choice h3{
+margin-bottom: var(--space-sm);
+font-size: var(--font-size-md);
+color: var(--color-heading);
+}
+
+.internal-choice p{
+font-size: var(--font-size-sm);
+line-height: 1.6;
+color: var(--color-text-secondary);
+}
+
+.choice-list{
+margin:0;
+padding-left:var(--space-xl);
+font-size: var(--font-size-sm);
+line-height:1.6;
+color: var(--color-text-secondary);
+}
+
+
+/* ================================
+        BLUEPRINT MESSAGE
+================================ */
+
+.blueprint-message {
+    padding: var(--space-xl);
+    text-align: center;
+    background: var(--color-bg-light);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+.blueprint-message h3 {
+    color: var(--color-primary);
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-sm);
+}
+
+.blueprint-message p {
+    color: var(--color-text-secondary);
+    font-size: var(--font-size-md);
+}
+
+
+/* ================================
+            UTILITIES
+================================ */
+
+.hidden {
+    display: none;
+}
+```
