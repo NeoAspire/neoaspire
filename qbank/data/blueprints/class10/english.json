@@ -1,0 +1,130 @@
+{
+  "class": "10",
+  "subject": "English",
+  "session": "2025-26",
+  "subject_code": "184",
+  "maximum_marks": 80,
+  "time": "3 Hours",
+  "sections": [
+    {
+      "section": "A",
+      "subject": "Reading Skills",
+      "question_range": "1",
+      "question_type": "Reading Comprehension Passage 1",
+      "no_of_questions": 8,
+      "marks_per_question": 1.25,
+      "total_marks": 10
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "2",
+      "question_type": "Reading Comprehension Passage 2",
+      "no_of_questions": 9,
+      "marks_per_question": 1.11,
+      "total_marks": 10
+    },
+    {
+      "section": "B",
+      "subject": "Grammar",
+      "question_range": "3",
+      "question_type": "Grammar (Attempt any 10 out of 12)",
+      "no_of_questions": 10,
+      "marks_per_question": 1,
+      "total_marks": 10,
+      "details": {
+        "total_questions_given": 12,
+        "attempt": 10
+      }
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "4",
+      "question_type": "Letter Writing",
+      "no_of_questions": 1,
+      "marks_per_question": 5,
+      "total_marks": 5,
+      "details": {
+        "internal_choice": "Formal Letter / Letter to Editor"
+      }
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "5",
+      "question_type": "Analytical Paragraph Writing",
+      "no_of_questions": 1,
+      "marks_per_question": 5,
+      "total_marks": 5,
+      "details": {
+        "internal_choice": "Paragraph Analysis / Decision Based Writing"
+      }
+    },
+    {
+      "section": "C",
+      "subject": "Literature",
+      "question_range": "6",
+      "question_type": "Extract Based Question",
+      "no_of_questions": 1,
+      "marks_per_question": 5,
+      "total_marks": 5,
+      "details": {
+        "internal_choice": "Two Extracts (Attempt One)"
+      }
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "7",
+      "question_type": "Poetry Extract",
+      "no_of_questions": 1,
+      "marks_per_question": 5,
+      "total_marks": 5,
+      "details": {
+        "internal_choice": "Two Extracts (Attempt One)"
+      }
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "8",
+      "question_type": "Short Answer Questions",
+      "no_of_questions": 4,
+      "marks_per_question": 3,
+      "total_marks": 12,
+      "details": {
+        "total_questions_given": 5,
+        "attempt": 4
+      }
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "9",
+      "question_type": "Long Answer Question",
+      "no_of_questions": 1,
+      "marks_per_question": 6,
+      "total_marks": 6
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "10",
+      "question_type": "Long Answer Question",
+      "no_of_questions": 1,
+      "marks_per_question": 6,
+      "total_marks": 6
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "11",
+      "question_type": "Long Answer Question",
+      "no_of_questions": 1,
+      "marks_per_question": 6,
+      "total_marks": 6
+    }
+  ],
+  "total_questions": 11
+}

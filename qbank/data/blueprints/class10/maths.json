@@ -55,10 +55,11 @@
     }
   ],
   "internal_choice": {
-    "section_b": "2 Questions",
-    "section_c": "2 Questions",
-    "section_d": "2 Questions",
-    "section_e": "All 2 mark questions"
+    "section_a": "No internal choice",
+    "section_b": "Internal choice in 2 questions",
+    "section_c": "Internal choice in 2 questions",
+    "section_d": "Internal choice in 2 questions",
+    "section_e": "Internal choice in all 2-mark questions"
   },
   "total_questions": 38
 }
