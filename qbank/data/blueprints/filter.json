@@ -4,21 +4,56 @@
       "id": "10",
       "name": "Class 10",
       "subjects": [
-        { "id": "english", "name": "English" },
-        { "id": "maths", "name": "Mathematics" },
-        { "id": "science", "name": "Science" },
-        { "id": "social", "name": "Social Science" }
+        {
+          "id": "english",
+          "name": "English"
+        },
+        {
+          "id": "hindi",
+          "name": "Hindi"
+        },
+        {
+          "id": "maths",
+          "name": "Mathematics"
+        },
+        {
+          "id": "punjabi",
+          "name": "Punjabi"
+        },
+        {
+          "id": "science",
+          "name": "Science"
+        },
+        {
+          "id": "social-science",
+          "name": "Social Science"
+        }
       ]
     },
     {
       "id": "12",
       "name": "Class 12",
       "subjects": [
-        { "id": "english", "name": "English" },
-        { "id": "maths", "name": "Mathematics" },
-        { "id": "physics", "name": "Physics" },
-        { "id": "chemistry", "name": "Chemistry" },
-        { "id": "biology", "name": "Biology" }
+        {
+          "id": "english",
+          "name": "English"
+        },
+        {
+          "id": "maths",
+          "name": "Mathematics"
+        },
+        {
+          "id": "physics",
+          "name": "Physics"
+        },
+        {
+          "id": "chemistry",
+          "name": "Chemistry"
+        },
+        {
+          "id": "biology",
+          "name": "Biology"
+        }
       ]
     }
   ]

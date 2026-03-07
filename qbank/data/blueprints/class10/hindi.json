@@ -1,0 +1,47 @@
+{
+  "class": "10",
+  "subject": "Hindi Course-B",
+  "session": "2025-26",
+  "subject_code": "085",
+  "maximum_marks": 80,
+  "time": "3 Hours",
+  "sections": [
+    {
+      "section": "A",
+      "subject": "अपठित बोध",
+      "question_range": "1-2",
+      "question_type": "Reading Comprehension",
+      "no_of_questions": 2,
+      "marks_per_question": 7,
+      "total_marks": 14
+    },
+    {
+      "section": "B",
+      "subject": "व्यावहारिक व्याकरण",
+      "question_range": "3-6",
+      "question_type": "Grammar",
+      "no_of_questions": 4,
+      "marks_per_question": 4,
+      "total_marks": 16
+    },
+    {
+      "section": "C",
+      "subject": "पाठ्यपुस्तक एवं पूरक पाठ्यपुस्तक",
+      "question_range": "7-11",
+      "question_type": "Literature",
+      "no_of_questions": 5,
+      "marks_per_question": 5,
+      "total_marks": 28
+    },
+    {
+      "section": "D",
+      "subject": "रचनात्मक लेखन",
+      "question_range": "12-16",
+      "question_type": "Writing Skills",
+      "no_of_questions": 5,
+      "marks_per_question": 5,
+      "total_marks": 22
+    }
+  ],
+  "total_questions": 16
+}

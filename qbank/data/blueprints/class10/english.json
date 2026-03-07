@@ -102,10 +102,14 @@
       "section": "",
       "subject": "",
       "question_range": "9",
-      "question_type": "Long Answer Question",
-      "no_of_questions": 1,
-      "marks_per_question": 6,
-      "total_marks": 6
+      "question_type": "Short Answer Question",
+      "no_of_questions": 2,
+      "marks_per_question": 3,
+      "total_marks": 6,
+      "details": {
+        "total_questions_given": 3,
+        "attempt": 2
+      }
     },
     {
       "section": "",
@@ -114,7 +118,11 @@
       "question_type": "Long Answer Question",
       "no_of_questions": 1,
       "marks_per_question": 6,
-      "total_marks": 6
+      "total_marks": 6,
+      "details": {
+        "total_questions_given": 2,
+        "attempt": 1
+      }
     },
     {
       "section": "",
@@ -123,8 +131,12 @@
       "question_type": "Long Answer Question",
       "no_of_questions": 1,
       "marks_per_question": 6,
-      "total_marks": 6
+      "total_marks": 6,
+      "details": {
+        "total_questions_given": 2,
+        "attempt": 1
     }
+  }
   ],
   "total_questions": 11
 }

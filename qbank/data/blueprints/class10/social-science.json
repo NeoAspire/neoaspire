@@ -1,0 +1,185 @@
+{
+  "class": "10",
+  "subject": "Social Science",
+  "session": "2025-26",
+  "subject_code": "087",
+  "maximum_marks": 80,
+  "time": "3 Hours",
+  "sections": [
+    {
+      "section": "A",
+      "subject": "History",
+      "question_range": "1-4",
+      "question_type": "MCQ",
+      "no_of_questions": 4,
+      "marks_per_question": 1,
+      "total_marks": 4
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "5",
+      "question_type": "Very Short Answer (VSA)",
+      "no_of_questions": 1,
+      "marks_per_question": 2,
+      "total_marks": 2
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "6",
+      "question_type": "Short Answer (SA)",
+      "no_of_questions": 1,
+      "marks_per_question": 3,
+      "total_marks": 3
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "7",
+      "question_type": "Long Answer (LA)",
+      "no_of_questions": 1,
+      "marks_per_question": 5,
+      "total_marks": 5
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "8",
+      "question_type": "Case Based Question (CBQ)",
+      "no_of_questions": 1,
+      "marks_per_question": 4,
+      "total_marks": 4
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "9",
+      "question_type": "Map Skill Based",
+      "no_of_questions": 1,
+      "marks_per_question": 2,
+      "total_marks": 2
+    },
+
+    {
+      "section": "B",
+      "subject": "Geography",
+      "question_range": "10-15",
+      "question_type": "MCQ",
+      "no_of_questions": 6,
+      "marks_per_question": 1,
+      "total_marks": 6
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "16",
+      "question_type": "Very Short Answer (VSA)",
+      "no_of_questions": 1,
+      "marks_per_question": 2,
+      "total_marks": 2
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "17",
+      "question_type": "Long Answer (LA)",
+      "no_of_questions": 1,
+      "marks_per_question": 5,
+      "total_marks": 5
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "18",
+      "question_type": "Case Based Question (CBQ)",
+      "no_of_questions": 1,
+      "marks_per_question": 4,
+      "total_marks": 4
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "19",
+      "question_type": "Map Skill Based",
+      "no_of_questions": 1,
+      "marks_per_question": 3,
+      "total_marks": 3
+    },
+
+    {
+      "section": "C",
+      "subject": "Political Science",
+      "question_range": "20-23",
+      "question_type": "MCQ / Assertion-Reason",
+      "no_of_questions": 4,
+      "marks_per_question": 1,
+      "total_marks": 4
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "24-25",
+      "question_type": "Very Short Answer (VSA)",
+      "no_of_questions": 2,
+      "marks_per_question": 2,
+      "total_marks": 4
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "26",
+      "question_type": "Short Answer (SA)",
+      "no_of_questions": 1,
+      "marks_per_question": 3,
+      "total_marks": 3
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "27",
+      "question_type": "Long Answer (LA)",
+      "no_of_questions": 1,
+      "marks_per_question": 5,
+      "total_marks": 5
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "28",
+      "question_type": "Case Based Question (CBQ)",
+      "no_of_questions": 1,
+      "marks_per_question": 4,
+      "total_marks": 4
+    },
+
+    {
+      "section": "D",
+      "subject": "Economics",
+      "question_range": "29-34",
+      "question_type": "MCQ",
+      "no_of_questions": 6,
+      "marks_per_question": 1,
+      "total_marks": 6
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "35-37",
+      "question_type": "Short Answer (SA)",
+      "no_of_questions": 3,
+      "marks_per_question": 3,
+      "total_marks": 9
+    },
+    {
+      "section": "",
+      "subject": "",
+      "question_range": "38",
+      "question_type": "Long Answer (LA)",
+      "no_of_questions": 1,
+      "marks_per_question": 5,
+      "total_marks": 5
+    }
+  ],
+  "total_questions": 38
+}
