@@ -1,0 +1,76 @@
+{
+    "class": "10",
+    "subject": "Information Technology",
+    "subject_code": "402",
+    "session": "2025-26",
+    "maximum_marks": 50,
+    "time": "2 Hours",
+    "sections": [
+        {
+            "section": "A",
+            "subject": "Employability Skills",
+            "question_range": "1",
+            "question_type": "MCQ / Objective",
+            "no_of_questions": 4,
+            "marks_per_question": 1,
+            "total_marks": 4,
+            "details": {
+                "sub_questions": 6,
+                "marks_per_sub_question": 1,
+                "internal_choice":"Attempt any 4 out of 6 sub-questions in each question"
+            }
+        },
+        {
+            "section": "",
+            "subject": "Subject Specific Skills",
+            "question_range": "2-5",
+            "question_type": "MCQ / Objective",
+            "no_of_questions": 20,
+            "marks_per_question": 1,
+            "total_marks": 20,
+            "details": {
+                "sub_questions_per_question": 6,
+                "marks_per_sub_question": 1,
+                "questions": "Q2-Q5",
+                "internal_choice": "Attempt any 5 out of 6 sub-questions in each question"
+            }
+        },
+        {
+            "section": "B",
+            "subject": "Employability Skills",
+            "question_range": "6-10",
+            "question_type": "Subjective",
+            "no_of_questions": 3,
+            "marks_per_question": 2,
+            "total_marks": 6,
+            "details": {
+                "internal_choice": "Attempt any 3 out of 5 questions"
+            }
+        },
+        {
+            "section": "",
+            "subject": "Subject Specific Skills",
+            "question_range": "11-16",
+            "question_type": "Subjective",
+            "no_of_questions": 4,
+            "marks_per_question": 2,
+            "total_marks": 8,
+            "details": {
+                "internal_choice": "Attempt any 4 out of 6 questions"
+            }
+        },
+        {
+            "section": "",
+            "subject": "",
+            "question_range": "17",
+            "question_type": "Case Study / Subjective",
+            "no_of_questions": 3,
+            "marks_per_question": 4,
+            "total_marks": 12,
+            "details": {
+                "internal_choice": "Attempt any 3 out of 5 questions"
+            }
+        }
+    ],
+    "total_questions": 21
+}

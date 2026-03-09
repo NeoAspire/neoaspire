@@ -12,6 +12,10 @@
           "id": "hindi",
           "name": "Hindi"
         },
+         {
+          "id": "IT-402",
+          "name": "Information Technology (402)"
+        },
         {
           "id": "maths",
           "name": "Mathematics"

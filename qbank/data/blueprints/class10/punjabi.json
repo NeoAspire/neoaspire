@@ -1,0 +1,71 @@
+{
+  "class": "10",
+  "subject": "Punjabi",
+  "session": "2025-26",
+  "subject_code": "004",
+  "maximum_marks": 80,
+  "time": "3 Hours",
+  "sections": [
+    {
+      "section": "A",
+      "subject": "Reading Skill",
+      "question_range": "1-2",
+      "question_type": "Comprehension / Poem Based Questions",
+      "no_of_questions": 10,
+      "marks_per_question": 1,
+      "total_marks": 10,
+      "details": {
+        "mcq": "1 (6x1)",
+        "short_answer": "2 (4x1)"
+      }
+    },
+    {
+      "section": "B",
+      "subject": "Grammar",
+      "question_range": "3-7",
+      "question_type": "MCQ / Short Grammar Questions",
+      "no_of_questions": 5,
+      "marks_per_question": "",
+      "total_marks": 12,
+      "details": {
+        "samasi_shabad": "3 (2x1)",
+        "bahu_arthak_shabad": "4 (2x1)",
+        "kriya_visheshan": "5 (2x1)",
+        "agetar_pichetar": "6 (2)",
+        "muhavare": "7 (4x1)"
+      }
+    },
+    {
+      "section": "C",
+      "subject": "Writing Skill",
+      "question_range": "8-10",
+      "question_type": "Essay / Letter / Picture Description",
+      "no_of_questions": 3,
+      "marks_per_question": "",
+      "total_marks": 18,
+      "details": {
+        "essay": "8 (8 marks)",
+        "letter": "9 (6 marks)",
+        "picture_description": "10 (4 marks)"
+      }
+    },
+    {
+      "section": "D",
+      "subject": "Textbook Based Questions",
+      "question_range": "11-16",
+      "question_type": "MCQ / Short / Long Answer",
+      "no_of_questions": 6,
+      "marks_per_question": "",
+      "total_marks": 40,
+      "details": {
+        "mcq_story_prose": "11 (5x1)",
+        "mcq_poem_drama": "12 (5x1)",
+        "very_short_answer": "13 (4x1)",
+        "short_answer": "14 (7x2)",
+        "long_answer": "15 (2x4)",
+        "drama_long_answer": "16 (1x4)"
+      }
+    }
+  ],
+  "total_questions": 16
+}

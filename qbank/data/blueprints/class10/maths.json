@@ -15,7 +15,8 @@
       "total_marks": 20,
       "details": {
         "mcq": "1-18",
-        "assertion_reason": "19-20"
+        "assertion_reason": "19-20",
+        "internal_choice": "No internal choice"
       }
     },
     {
@@ -24,7 +25,10 @@
       "question_type": "Very Short Answer (VSA)",
       "no_of_questions": 5,
       "marks_per_question": 2,
-      "total_marks": 10
+      "total_marks": 10,
+      "details": {
+        "internal_choice": "Internal choice in 2 questions"
+      }
     },
     {
       "section": "C",
@@ -32,7 +36,10 @@
       "question_type": "Short Answer (SA)",
       "no_of_questions": 6,
       "marks_per_question": 3,
-      "total_marks": 18
+      "total_marks": 18,
+      "details": {
+        "internal_choice": "Internal choice in 2 questions"
+      }
     },
     {
       "section": "D",
@@ -40,7 +47,10 @@
       "question_type": "Long Answer (LA)",
       "no_of_questions": 4,
       "marks_per_question": 5,
-      "total_marks": 20
+      "total_marks": 20,
+      "details": {
+        "internal_choice": "Internal choice in 2 questions"
+      }
     },
     {
       "section": "E",
@@ -50,16 +60,10 @@
       "marks_per_question": 4,
       "total_marks": 12,
       "details": {
-        "sub parts of the values of 1, 1 and 2 marks each respectively": "36-38"
+        "sub_parts": "1, 1 and 2 marks each",
+        "internal_choice": "Internal choice in all 2-mark questions"
       }
     }
   ],
-  "internal_choice": {
-    "section_a": "No internal choice",
-    "section_b": "Internal choice in 2 questions",
-    "section_c": "Internal choice in 2 questions",
-    "section_d": "Internal choice in 2 questions",
-    "section_e": "Internal choice in all 2-mark questions"
-  },
   "total_questions": 38
 }
