@@ -16,13 +16,17 @@
 @import url('themes/dark.css');
 
 /* Importing page-specific styles */
-@import url('pages/index.css');
-@import url('pages/about.css');
-@import url('pages/courses.css');
-@import url('pages/contact-us.css');
-@import url('pages/course-page.css');
-@import url('pages/downloads.css');
-@import url('pages/qbank.css');
+@import url('/css/pages/index.css');
+@import url('/css/pages/about.css');
+@import url('/courses/css/courses.css');
+@import url('/css/pages/contact-us.css');
+@import url('/courses/css/course-page.css');
+@import url('/css/pages/downloads.css');
+@import url('/question-bank/css/qbank.css');
+@import url('/question-bank/css/blueprints.css');
+
+/* Coming Soon */
+@import url('/css/pages/coming-soon.css');
 
 /* Importing responsive styles */
 @import url('responsive/pages-responsive.css');

@@ -1,0 +1,39 @@
+
+
+/* Coming Soon Page */
+.coming-soon-container {
+    display: flex;
+    justify-content: center;   /* horizontal center */
+    align-items: center;       /* vertical center */
+    height: 100vh;             /* full viewport height */
+    text-align: center;
+    padding: var(--space-lg);
+    background: var(--color-bg-section);
+}
+
+.coming-soon-content h1 {
+    font-size: var(--font-size-2xl);
+    color: var(--color-primary);
+    margin-bottom: var(--space-md);
+}
+
+.coming-soon-content p {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-lg);
+}
+
+.coming-soon-content .btn-home {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    transition: background-color var(--transition-fast);
+}
+
+.coming-soon-content .btn-home:hover {
+    background-color: var(--color-primary-hover);
+}

@@ -1,4 +1,4 @@
-fetch("/qbank/data/blueprints/filter.json")
+fetch("/question-paper-generator/blueprints/filter.json")
     .then(res => res.json())
     .then(data => {
 

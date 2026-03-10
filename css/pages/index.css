@@ -62,7 +62,7 @@
   padding: var(--space-lg);
   background-color: var(--color-bg-section);
   border-radius: var(--radius-md);
-  margin: var(--space-lg);
+  margin: var(--space-md);
 }
 
 .youtube-link h1 {
@@ -73,7 +73,7 @@
 
 .youtube-link p {
   font-size: var(--font-size-md);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
   color: var(--color-text-secondary);
 }
 
@@ -99,8 +99,8 @@
 .our-services {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: var(--space-lg);
-  margin: var(--space-xl);
+  gap: var(--space-md);
+  margin: var(--space-md);
 }
 
 .our-services h1 {
@@ -109,7 +109,7 @@
   font-size: var(--font-size-lg);
   background-color: var(--color-primary);
   color: var(--color-white);
-  padding: var(--space-md);
+  padding: var(--space-sm);
   border-radius: var(--radius-md);
 }
 
@@ -137,6 +137,7 @@
 
 .service-content p {
   font-size: var(--font-size-sm);
+  line-height: var(--space-md);
   margin-bottom: var(--space-md);
   color: var(--color-text-secondary);
 }

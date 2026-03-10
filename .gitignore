@@ -1,7 +1,6 @@
 # ==============================
 # Secrets and sensitive files
 # ==============================
-secrets/                 # Entire secrets folder
 payments.html             # Payment page
 config.json               # API or script URLs
 .env
