@@ -1,0 +1,22 @@
+  {
+    "subjects": [
+
+      {"id": "art-craft", "name": "Art and Craft"},
+      {"id": "computer", "name": "Computer"},
+      {"id": "english", "name": "English"},
+      {"id": "general-knowledge", "name": "General Knowledge"},
+      {"id": "hindi", "name": "Hindi"},
+      {"id": "IT-402", "name": "Information Technology (402)"},
+      {"id": "math", "name": "Mathematics"},
+      {"id": "moral-science", "name": "Moral Science"},
+      {"id": "punjabi", "name": "Punjabi"},
+      {"id": "science", "name": "Science"},
+      {"id": "social-science", "name": "Social Science"},
+
+      {"id": "accountancy", "name": "Accountancy"},
+      {"id": "biology", "name": "Biology"},
+      {"id": "chemistry", "name": "Chemistry"},
+      {"id": "physics", "name": "Physics"}
+
+    ]
+  }

@@ -22,8 +22,8 @@
 @import url('/css/pages/contact-us.css');
 @import url('/courses/css/course-page.css');
 @import url('/css/pages/downloads.css');
-@import url('/question-bank/css/qbank.css');
-@import url('/question-bank/css/blueprints.css');
+@import url('/q-bank/css/qbank.css');
+@import url('/q-bank/css/blueprints.css');
 
 /* Coming Soon */
 @import url('/css/pages/coming-soon.css');

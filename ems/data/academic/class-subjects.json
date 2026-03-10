@@ -1,0 +1,49 @@
+{
+    "class_subjects": [
+        {"class_id": "9", "subject_id": "math"},
+        {
+            "class_id": "9",
+            "subject_id": "science"
+        },
+        {
+            "class_id": "9",
+            "subject_id": "english"
+        },
+        {
+            "class_id": "9",
+            "subject_id": "social_science"
+        },
+        {
+            "class_id": "10",
+            "subject_id": "math"
+        },
+        {
+            "class_id": "10",
+            "subject_id": "science"
+        },
+        {
+            "class_id": "10",
+            "subject_id": "english"
+        },
+        {
+            "class_id": "10",
+            "subject_id": "social_science"
+        },
+        {
+            "class_id": "11M",
+            "subject_id": "physics"
+        },
+        {
+            "class_id": "11M",
+            "subject_id": "chemistry"
+        },
+        {
+            "class_id": "11M",
+            "subject_id": "biology"
+        },
+        {
+            "class_id": "11M",
+            "subject_id": "english"
+        }
+    ]
+}

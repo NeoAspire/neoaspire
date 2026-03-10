@@ -10,7 +10,7 @@ alert("Please select Class and Subject");
 return;
 }
 
-const path = `/question-paper-generator/blueprints/class${classValue}/${subjectValue}.json`;
+const path = `/ems/data/blueprints/class${classValue}/${subjectValue}.json`;
 
 fetch(path)
 
