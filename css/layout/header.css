@@ -195,6 +195,7 @@ header nav {
         display: none;
         flex-direction: column;
         position: absolute;
+        font-size: var(--font-size-sm);
         top: 65px;
         right: 20px;
         background: var(--color-dark);

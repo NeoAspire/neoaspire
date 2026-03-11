@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus | Neoaspire EMS</title>
+    <!-- Main CSS OF Exam Management System -->
+    <link rel="stylesheet" href="/ems/assests/css/main.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/ems/assests/images/favicon/favicon.png">
+    <!--Toggle navigation menu Humburger -->
+    <script src="/ems/assests/js/menu-toggle.js" defer></script>
+</head>
+
+<body>
+
+
+
+    <!-- HEADER -->
+    <header class="ems-header">
+
+        <div class="ems-header-left">
+
+            <a href="/ems/" class="ems-logo">
+                <img src="/ems/assests/images/logo/logo.png" alt="Logo">
+                <span>NeoAspire <strong>EMS</strong></span>
+            </a>
+
+
+            <nav class="ems-nav" id="emsNav">
+                <a href="/ems/dashboard/" class="nav-item active">Dashboard</a>
+                <a href="/ems/coming-soon.html" class="nav-item">Syllabus</a>
+                <a href="/ems/coming-soon.html" class="nav-item">Blueprint</a>
+                <a href="/ems/coming-soon.html" class="nav-item">QP Generator</a>
+            </nav>
+
+        </div>
+
+        <div class="ems-header-right">
+            <button class="btn-secondary">Help</button>
+            <div class="user-badge">Guest</div>
+        </div>
+        <!-- HAMBURGER -->
+        <button class="menu-toggle" id="menuToggle">
+            ☰
+        </button>
+
+    </header>
+
+    <!-- Main Content for Syllabus -->
+    <main class="ems-main">
+        <h1>Syllabus Management</h1>
+        <p>Here you can create, edit, and update syllabus for all classes.</p>
+
+        <!-- Example: Add new syllabus button -->
+        <a href="/ems/syllabus/new" class="btn-primary">Add New Syllabus</a>
+
+        <!-- Optional: Table of existing syllabus -->
+        <table class="table-syllabus">
+            <thead>
+                <tr>
+                    <th>Class</th>
+                    <th>Subject</th>
+                    <th>Last Updated</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Class 11</td>
+                    <td>Mathematics</td>
+                    <td>10 Mar 2026</td>
+                    <td>
+                        <a href="#" class="btn-secondary">Edit</a>
+                        <a href="#" class="btn-secondary">Delete</a>
+                    </td>
+                </tr>
+                <!-- More rows -->
+            </tbody>
+        </table>
+    </main>
+
+</body>
+
+</html>
