@@ -54,3 +54,11 @@ margin-bottom: var(--space-sm);
 padding-left:20px;
 color: var(--color-text-secondary);
 }
+.career-card ul li{
+margin-bottom:6px;
+}
+
+.career-card p{
+font-size:14px;
+color:var(--color-text-secondary);
+}
