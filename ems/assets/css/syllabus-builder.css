@@ -1,0 +1,110 @@
+/* ===============================
+   SYLLABUS BUILDER
+================================ */
+
+.syllabus-builder{
+    max-width:700px;
+    margin:var(--space-xl) auto;
+    padding:var(--space-xl);
+    background:var(--color-white);
+    border-radius:var(--radius-lg);
+    box-shadow:var(--shadow-md);
+}
+
+/* Heading */
+
+.syllabus-builder h1{
+    font-size:var(--font-size-xl);
+    color:var(--color-heading);
+    margin-bottom:var(--space-lg);
+}
+
+
+/* ===============================
+   FORM GROUP
+================================ */
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:var(--space-lg);
+}
+
+.form-group label{
+    font-size:var(--font-size-sm);
+    color:var(--color-text-secondary);
+    margin-bottom:var(--space-xs);
+}
+
+
+/* ===============================
+   INPUT + SELECT
+================================ */
+
+.form-group input,
+.form-group select{
+
+    padding:10px 12px;
+
+    font-size:var(--font-size-md);
+    font-family:var(--font-primary);
+
+    border:1px solid var(--color-border);
+    border-radius:var(--radius-md);
+
+    background:var(--color-white);
+
+    transition:var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group select:focus{
+
+    outline:none;
+
+    border-color:var(--color-primary);
+
+    box-shadow:0 0 0 2px var(--color-primary-light);
+
+}
+
+
+/* ===============================
+   BUTTON
+================================ */
+
+.btn-primary{
+
+    background:var(--color-primary);
+    color:var(--color-white);
+
+    border:none;
+    border-radius:var(--radius-md);
+
+    padding:10px 16px;
+
+    font-size:var(--font-size-md);
+    font-weight:500;
+
+    cursor:pointer;
+
+    transition:var(--transition-fast);
+}
+
+.btn-primary:hover{
+    background:var(--color-primary-hover);
+}
+
+
+/* ===============================
+   RESPONSIVE
+================================ */
+
+@media (max-width:768px){
+
+    .syllabus-builder{
+        margin:var(--space-lg);
+        padding:var(--space-lg);
+    }
+
+}

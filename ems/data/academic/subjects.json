@@ -1,9 +1,9 @@
-  {
-    "subjects": [
+[
 
       {"id": "art-craft", "name": "Art and Craft"},
       {"id": "computer", "name": "Computer"},
       {"id": "english", "name": "English"},
+      {"id": "evs", "name": "Environmental Studies"},
       {"id": "general-knowledge", "name": "General Knowledge"},
       {"id": "hindi", "name": "Hindi"},
       {"id": "IT-402", "name": "Information Technology (402)"},
@@ -18,5 +18,5 @@
       {"id": "chemistry", "name": "Chemistry"},
       {"id": "physics", "name": "Physics"}
 
-    ]
-  }
+]
+  

@@ -5,17 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syllabus | Neoaspire EMS</title>
+   
     <!-- Main CSS OF Exam Management System -->
-    <link rel="stylesheet" href="/ems/assests/css/main.css">
+    <link rel="stylesheet" href="/ems/assets/css/main.css">
+    
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/ems/assests/images/favicon/favicon.png">
-    <!--Toggle navigation menu Humburger -->
-    <script src="/ems/assests/js/menu-toggle.js" defer></script>
+    <link rel="icon" type="image/png" href="/ems/assets/images/favicon/favicon.png">
+  
+    <!-- Main JS OF Exam Management System -->
+    <script type="module" src="/ems/assets/js/main.js" defer></script>
 </head>
 
 <body>
-
-
 
     <!-- HEADER -->
     <header class="ems-header">
@@ -23,7 +24,7 @@
         <div class="ems-header-left">
 
             <a href="/ems/" class="ems-logo">
-                <img src="/ems/assests/images/logo/logo.png" alt="Logo">
+                <img src="/ems/assets/images/logo/logo.png" alt="Logo">
                 <span>NeoAspire <strong>EMS</strong></span>
             </a>
 
@@ -50,37 +51,48 @@
 
     <!-- Main Content for Syllabus -->
     <main class="ems-main">
-        <h1>Syllabus Management</h1>
-        <p>Here you can create, edit, and update syllabus for all classes.</p>
+        <section class="syllabus-builder">
 
-        <!-- Example: Add new syllabus button -->
-        <a href="/ems/syllabus/new" class="btn-primary">Add New Syllabus</a>
+            <h1>Syllabus Builder</h1>
 
-        <!-- Optional: Table of existing syllabus -->
-        <table class="table-syllabus">
-            <thead>
-                <tr>
-                    <th>Class</th>
-                    <th>Subject</th>
-                    <th>Last Updated</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Class 11</td>
-                    <td>Mathematics</td>
-                    <td>10 Mar 2026</td>
-                    <td>
-                        <a href="#" class="btn-secondary">Edit</a>
-                        <a href="#" class="btn-secondary">Delete</a>
-                    </td>
-                </tr>
-                <!-- More rows -->
-            </tbody>
-        </table>
+            <form id="syllabusForm">
+
+                <div class="form-group">
+                    <label for="schoolName">School Name</label>
+                    <input type="text" id="schoolName" placeholder="Enter School Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="session">Session</label>
+                    <select id="session" required>
+                        <option value="">Select Session</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="classSelect">Class</label>
+                    <select id="classSelect" required>
+                        <option value="">Select Class</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="subjectSelect">Subject</label>
+                    <select id="subjectSelect" required>
+                        <option value="">Select Subject</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    Start Building Syllabus
+                </button>
+
+            </form>
+        </section>
+
     </main>
 
 </body>
+
 
 </html>

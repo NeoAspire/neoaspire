@@ -1,0 +1,56 @@
+/* Career Guidance */
+
+.career-guidance{
+padding: var(--space-lg);
+background: var(--color-bg-light);
+}
+
+.career-guidance h1{
+text-align:center;
+font-size: var(--font-size-2xl);
+margin-bottom: var(--space-md);
+}
+
+.career-guidance p{
+text-align:center;
+color: var(--color-text-secondary);
+margin-bottom: var(--space-xl);
+}
+
+.career-section{
+margin-top: var(--space-lg);
+}
+
+.career-section h2{
+margin-bottom: var(--space-lg);
+color: var(--color-heading);
+}
+
+.career-grid{
+display:grid;
+grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+gap: var(--space-md);
+}
+
+.career-card{
+background: var(--color-white);
+padding: var(--space-lg);
+border-radius: var(--radius-lg);
+box-shadow: var(--shadow-sm);
+transition: var(--transition-normal);
+}
+
+.career-card:hover{
+transform: translateY(-5px);
+box-shadow: var(--shadow-md);
+}
+
+.career-card h3{
+color: var(--color-primary);
+margin-bottom: var(--space-sm);
+}
+
+.career-card ul{
+padding-left:20px;
+color: var(--color-text-secondary);
+}

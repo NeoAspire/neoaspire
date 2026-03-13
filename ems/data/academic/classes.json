@@ -1,5 +1,4 @@
-{
-  "classes": [
+[
 
     {"id": "1", "name": "Class 1"},
     {"id": "2", "name": "Class 2"},
@@ -20,5 +19,4 @@
     {"id": "12M", "name": "Class 12 Medical"},
     {"id": "12N", "name": "Class 12 Non-Medical"}
     
-  ]
-}
+]

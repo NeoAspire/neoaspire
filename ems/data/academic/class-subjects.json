@@ -1,49 +1,156 @@
-{
-    "class_subjects": [
-        {"class_id": "9", "subject_id": "math"},
+[
+    {
+        "class_id": "1",
+        "class_name": "Class 1",
+        "subjects": [
+            "english",
+            "evs",
+            "hindi",
+            "math",
+            "punjabi",
+            "art-craft",
+            "general-knowledge",
+            "moral-science"
+        ]
+    },
+    {
+        "class_id": "2",
+        "class_name": "Class 2",
+        "subjects": [
+            "english",
+            "evs",
+            "hindi",
+            "math",
+            "punjabi",
+            "art-craft",
+            "general-knowledge",
+            "moral-science"
+        ]
+    },
+    {
+        "class_id": "3",
+        "class_name": "Class 3",
+        "subjects": [
+            "english",
+            "hindi",
+            "math",
+            "punjabi",
+            "science",
+            "social-science",
+            "art-craft",
+            "computer",
+            "general-knowledge",
+            "moral-science"
+        ]
+    },
+    {
+        "class_id": "4",
+        "class_name": "Class 4",
+        "subjects": [
+            "english",
+            "hindi",
+            "math",
+            "punjabi",
+            "science",
+            "social-science",
+            "art-craft",
+            "computer",
+            "general-knowledge",
+            "moral-science"
+        ]
+    },
+    {
+        "class_id": "5",
+        "class_name": "Class 5",
+        "subjects": [
+            "english",
+            "hindi",
+            "math",
+            "punjabi",
+            "science",
+            "social-science",
+            "art-craft",
+            "computer",
+            "general-knowledge",
+            "moral-science"
+        ]
+    },
+    {
+        "class_id": "6",
+        "class_name": "Class 6",
+        "subjects": [
+            "english",
+            "hindi",
+            "math",
+            "punjabi",
+            "science",
+            "social-science",
+            "art-craft",
+            "computer",
+            "general-knowledge",
+            "moral-science"
+        ]
+    },
+    {
+        "class_id": "7",
+        "class_name": "Class 7",
+        "subjects": [
+            "english",
+            "hindi",
+            "math",
+            "punjabi",
+            "science",
+            "social-science",
+            "art-craft",
+            "computer",
+            "general-knowledge",
+            "moral-science"
+        ]
+    },
+    {
+        "class_id": "8",
+        "class_name": "Class 8",
+        "subjects": [
+            "english",
+            "hindi",
+            "math",
+            "punjabi",
+            "science",
+            "social-science",
+            "art-craft",
+            "computer",
+            "general-knowledge",
+            "moral-science"
+        ]
+    },
+    {
+        "class_id": "9",
+        "class_name": "Class 9",
+        "subjects": [
+            "english",
+            "hindi",
+            "math",
+            "punjabi",
+            "science",
+            "social-science",
+            "art-craft",
+            "IT-402",
+            "moral-science"
+        ]
+    },
         {
-            "class_id": "9",
-            "subject_id": "science"
-        },
-        {
-            "class_id": "9",
-            "subject_id": "english"
-        },
-        {
-            "class_id": "9",
-            "subject_id": "social_science"
-        },
-        {
-            "class_id": "10",
-            "subject_id": "math"
-        },
-        {
-            "class_id": "10",
-            "subject_id": "science"
-        },
-        {
-            "class_id": "10",
-            "subject_id": "english"
-        },
-        {
-            "class_id": "10",
-            "subject_id": "social_science"
-        },
-        {
-            "class_id": "11M",
-            "subject_id": "physics"
-        },
-        {
-            "class_id": "11M",
-            "subject_id": "chemistry"
-        },
-        {
-            "class_id": "11M",
-            "subject_id": "biology"
-        },
-        {
-            "class_id": "11M",
-            "subject_id": "english"
-        }
-    ]
-}
+        "class_id": "10",
+        "class_name": "Class 10",
+        "subjects": [
+            "english",
+            "hindi",
+            "math",
+            "punjabi",
+            "science",
+            "social-science",
+            "art-craft",
+            "IT-402",
+            "moral-science"
+        ]
+    }
+]

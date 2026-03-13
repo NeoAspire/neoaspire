@@ -1,0 +1,18 @@
+[
+  {
+    "id": "pre_mid",
+    "name": "Pre Mid Term"
+  },
+  {
+    "id": "mid",
+    "name": "Mid Term"
+  },
+  {
+    "id": "post_mid",
+    "name": "Post Mid Term"
+  },
+  {
+    "id": "final",
+    "name": "Final Term"
+  }
+]
