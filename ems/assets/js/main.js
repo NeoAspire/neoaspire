@@ -1,25 +1,62 @@
 /* ===============================
    NEOASPIRE EMS - MAIN JS
-   Robust Module Loader
+   Scalable Module Loader
 ================================ */
 
-const modules = [
-   // Critical UI Components modules
-  "./ui/menu-toggle.js",
-  // Modules
-  "./modules/syllabus-builder.js",
+// Global modules (load everywhere)
+const coreModules = [
+  "./ui/menu-toggle.js"
 ];
 
-Promise.allSettled(modules.map(path => import(path)))
-  .then(results => {
-    results.forEach((res, i) => {
-      if (res.status === "fulfilled") {
-        console.log(`${modules[i]} loaded successfully`);
-      } else {
-        console.error(`${modules[i]} failed to load`, res.reason);
-      }
-    });
+// Feature modules
+const featureModules = [
+  "./modules/syllabus-builder.js"
+];
 
-    // Safe to initialize the app now
-    console.log("All modules attempted. EMS can now start safely.");
+// Combine all modules
+const modules = [...coreModules, ...featureModules];
+
+// Load modules safely
+async function loadModules() {
+
+  const results = await Promise.allSettled(
+    modules.map(path => import(path))
+  );
+
+  results.forEach((res, i) => {
+
+    const modulePath = modules[i];
+
+    if (res.status === "fulfilled") {
+
+      console.log(`✔ ${modulePath} loaded`);
+
+      const module = res.value;
+
+      // Auto initialize module if init() exists
+      if (typeof module.init === "function") {
+
+        try {
+          module.init();
+        } catch (err) {
+          console.error(`Init error in ${modulePath}`, err);
+        }
+
+      }
+
+    }
+
+    else {
+
+      console.error(`✖ ${modulePath} failed`, res.reason);
+
+    }
+
   });
+
+  console.log("EMS initialization complete");
+
+}
+
+// Start app after DOM ready
+document.addEventListener("DOMContentLoaded", loadModules);

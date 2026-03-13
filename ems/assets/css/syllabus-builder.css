@@ -36,6 +36,13 @@
     margin-bottom:var(--space-xs);
 }
 
+/* ===============================
+   UTILITY CLASSES
+================================ */
+
+.u-hidden {
+    display:none;
+}
 
 /* ===============================
    INPUT + SELECT
@@ -68,7 +75,20 @@
 
 }
 
+.checkbox-group{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:8px;
+margin-top:6px;
+}
 
+.checkbox-group label{
+display:flex;
+align-items:center;
+gap:6px;
+font-weight:normal;
+cursor:pointer;
+}
 /* ===============================
    BUTTON
 ================================ */
