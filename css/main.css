@@ -19,12 +19,12 @@
 @import url('pages/index.css');
 @import url('pages/about.css');
 @import url('courses/css/courses.css');
-@import url('css/pages/contact-us.css');
+@import url('pages/contact-us.css');
 @import url('courses/css/course-page.css');
 @import url('pages/downloads.css');
-@import url('q-bank/css/qbank.css');
+@import url('qbank.css');
 @import url('q-bank/css/blueprints.css');
-@import url('css/pages/career-guidance.css');
+@import url('pages/career-guidance.css');
 
 /* Coming Soon */
 @import url('pages/coming-soon.css');
