@@ -18,12 +18,8 @@
 /* Importing page-specific styles */
 @import url('./pages/index.css');
 @import url('./pages/about.css');
-@import url('../courses/css/courses.css');
 @import url('./pages/contact-us.css');
-@import url('../courses/css/course-page.css');
 @import url('./pages/downloads.css');
-@import url('../q-bank/css/qbank.css');
-@import url('../q-bank/css/blueprints.css');
 @import url('./pages/career-guidance.css');
 
 /* Coming Soon */

@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const img = document.createElement('img');
       img.alt = item.title || 'creation';
-      img.src = item.thumb || '/images/favicon/favicon.png';
+      img.src = item.thumb || '../images/favicon/favicon.png';
       thumbContainer.appendChild(img);
 
       // Download count badge: combine server baseline with per-browser delta

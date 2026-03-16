@@ -1,7 +1,7 @@
 // layout.js
 export async function init() {
     try {
-        const response = await fetch('base.html'); // adjust path if needed
+        const response = await fetch('../base.html'); // adjust path if needed
         const text = await response.text();
         const parser = new DOMParser();
         const doc = parser.parseFromString(text, 'text/html');

@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layout | Neoaspire</title>
-    <!-- Main CSS -->
+      <!-- Main CSS of Neoaspire Website -->
     <link rel="stylesheet" href="./css/main.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="./images/favicon/favicon.png">
-    <!-- Dark Mode Script -->
+    <!-- Dark Mode Script of Neoaspire Website-->
     <script  type= "module" src="./js/dark-mode.js" defer></script>
     
 </head>
@@ -19,7 +19,7 @@
     <header id="site-header">
         <!-- Logo and Site Name -->
         <a href="./index.html" class="logo">
-            <img src="./images/favicon/logo.png" alt="Site Logo">
+            <img src="/images/favicon/logo.png" alt="Site Logo">
             <h1>NeoAspire</h1>
         </a>
         <!--Navbar Menu -->
@@ -31,16 +31,16 @@
             </button>
 
             <ul class="nav-links">
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./about.html">About</a></li>
-                <li><a href="./ems/" class="nav-link" data-tooltip="Exam Management System">EMS</a></li>
-                <li><a href="./q-bank/" class="nav-link" data-tooltip="Question Bank">Q_Bank</a></li>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/ems/" class="nav-link" data-tooltip="Exam Management System">EMS</a></li>
+                <li><a href="/q-bank/" class="nav-link" data-tooltip="Question Bank">Q_Bank</a></li>
                 <!-- Career Guidance Tab -->
-                <li><a href="./career-guidance.html">Career Guidance</a></li>
-                <li><a href="./courses/">Courses</a></li>
-                <li><a href="./creatives/">Creatives</a></li>
-                <li><a href="./downloads.html">Downloads</a></li>
-                <li><a href="./contact-us.html">Contact Us</a></li>
+                <li><a href="/career-guidance.html">Career Guidance</a></li>
+                <li><a href="/courses/">Courses</a></li>
+                <li><a href="/creatives/">Creatives</a></li>
+                <li><a href="/downloads.html">Downloads</a></li>
+                <li><a href="/contact-us.html">Contact Us</a></li>
             </ul>
 
             <button class="dark-mode-button" id="dark-mode-toggle" aria-label="Toggle Dark Mode">
@@ -63,36 +63,9 @@
         </p>
     </footer>
 
-    <!-- Script to load hamburger -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const hamburger = document.querySelector('.nav-hamburger');
-            const navLinks = document.querySelector('.nav-links');
-            if (hamburger && navLinks) {
-                hamburger.addEventListener('click', function () {
-                    navLinks.classList.toggle('show');
-                });
-                document.addEventListener('click', function (e) {
-                    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
-                        navLinks.classList.remove('show');
-                    }
-                });
-            }
-        });
-    </script>
 
-    <!-- Script to handle dynamic fiscal year display -->
-    <script>
-        const startYear = 2025; // Year your project/company started
-        const currentYear = new Date().getFullYear();
 
-        // Show only last two digits of current year if different from start year
-        const displayYear = (currentYear === startYear)
-            ? startYear
-            : `${startYear} - ${currentYear.toString().slice(-0)}`;
 
-        document.getElementById("fiscal-year").textContent = displayYear;
-    </script>
 
 
 </body>
