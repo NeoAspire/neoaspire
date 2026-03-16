@@ -6,14 +6,14 @@ console.log("main.js loaded");
 // Global modules
 const coreModules = [
   "./base.js", // <-- Header JS
-   "./alertmsg.js", // <-- alert message JS 
+  "./alertmsg.js", // <-- alert message JS 
+  "./dark-mode.js" // <- dark mode JS
 ];
 
 // Page specific modules
 const pageModules = {
-  "syllabus-builder": "./modules/syllabus/syllabus-builder.js",
   blueprint: "./modules/blueprint/blueprint-builder.js",
-  questionPaper: "./modules/question-paper/question-paper-generator.js"
+  "syllabus-builder": "./modules/syllabus/syllabus-builder.js"
 };
 
 // Detect page

@@ -4,7 +4,7 @@
 
 // Global modules
 const coreModules = [
-  "./ui/menu-toggle.js",
+  "./ui/menu-toggle.js"
 ];
 
 // Page specific modules

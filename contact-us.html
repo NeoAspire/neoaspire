@@ -5,15 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Neoaspire</title>
-     <!-- Main CSS -->
-    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./css/main.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon/favicon.png">
-    <!-- Link to external JS for layout (e.g., hamburger menu) -->
-    <script src="js/base.js"></script>
+    <link rel="icon" type="image/png" href="./images/favicon/favicon.png">
+    <!-- Main JS of Neoaspire Webiste -->
+    <script type="module" src="./js/main.js" defer></script>
+
 </head>
 
-<body>
+<body data-page="contact-us">
 
     <!-- Header -->
     <header id="header-container">
@@ -26,7 +28,7 @@
             <h1>Get in Touch with NeoApsire</h1>
             <p>Have questions? We’re here to help. Fill out the form below or reach us directly.</p>
         </section>
-        
+
         <section class="contactus-section">
             <h2>Contact Us</h2>
             <form id="myForm" method="POST">
@@ -37,7 +39,8 @@
                 <input type="email" id="email" name="email" placeholder="Your email address" required>
 
                 <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit mobile number" required>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit mobile number"
+                    required>
 
                 <label for="message">Message</label>
                 <textarea id="message" name="message" rows="5" placeholder="Write your message here..."
@@ -53,30 +56,30 @@
         <!-- Footer content will be loaded here -->
     </footer>
 
-<!-- Google Apps Script Form Submission -->
-<script>
-    const scriptURL = 'https://script.google.com/macros/s/AKfycbz0lC9yH75Ak2ytX7NgUSQlD41jPmgQu90jZzd7n8Xk8ttgQBBp-fJeK3kSi3akPJnT-A/exec';
-    const form = document.getElementById('myForm');
+    <!-- Google Apps Script Form Submission -->
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbz0lC9yH75Ak2ytX7NgUSQlD41jPmgQu90jZzd7n8Xk8ttgQBBp-fJeK3kSi3akPJnT-A/exec';
+        const form = document.getElementById('myForm');
 
-    form.addEventListener('submit', e => {
-    e.preventDefault();
+        form.addEventListener('submit', e => {
+            e.preventDefault();
 
-    const button = form.querySelector('button');
-    button.disabled = true;
-    button.textContent = 'Sending...';
+            const button = form.querySelector('button');
+            button.disabled = true;
+            button.textContent = 'Sending...';
 
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-        .then(() => {
-            alert('Thank you for contacting us! We will get back to you soon.');
-            form.reset();
-        })
-        .catch(error => alert('Submission failed'))
-        .finally(() => {
-            button.disabled = false;
-            button.textContent = 'Submit';
+            fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                .then(() => {
+                    alert('Thank you for contacting us! We will get back to you soon.');
+                    form.reset();
+                })
+                .catch(error => alert('Submission failed'))
+                .finally(() => {
+                    button.disabled = false;
+                    button.textContent = 'Submit';
+                });
         });
-});
-</script>
+    </script>
 
 </body>
 
