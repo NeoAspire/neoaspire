@@ -1,10 +1,11 @@
-// JavaScript for Alert Message Box
-window.addEventListener("load", function()
-{
+// alertmsg.js
+export function init() {
     const alertBox = document.getElementById("alert-box");
     const closeBtn = document.getElementById("alert-close-btn");
-    closeBtn.addEventListener("click", function()
-    {
+
+    if (!alertBox || !closeBtn) return; // Exit if elements are missing
+
+    closeBtn.addEventListener("click", function () {
         alertBox.style.display = "none";
     });
-});
+}

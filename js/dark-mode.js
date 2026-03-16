@@ -1,6 +1,9 @@
-document.addEventListener('DOMContentLoaded', function () {
+// darkmode.js
+export function init() {
     const toggleButton = document.getElementById('dark-mode-toggle');
     const body = document.body;
+
+    if (!toggleButton) return; // Exit if toggle button not present
 
     // Initialize mode and icon
     if (localStorage.getItem('dark-mode') === 'enabled') {
@@ -10,15 +13,16 @@ document.addEventListener('DOMContentLoaded', function () {
         toggleButton.textContent = '🌙';  // Moon icon in light mode
     }
 
+    // Toggle dark mode on click
     toggleButton.addEventListener('click', function () {
         body.classList.toggle('dark-mode');
 
         if (body.classList.contains('dark-mode')) {
             localStorage.setItem('dark-mode', 'enabled');
-            toggleButton.textContent = '☀️';  // Show sun when dark mode is active
+            toggleButton.textContent = '☀️';
         } else {
             localStorage.setItem('dark-mode', 'disabled');
-            toggleButton.textContent = '🌙';  // Show moon when light mode is active
+            toggleButton.textContent = '🌙';
         }
     });
-});
+}
