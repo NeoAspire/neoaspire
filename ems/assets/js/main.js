@@ -1,22 +1,28 @@
 /* ===============================
    NEOASPIRE EMS - MAIN JS
-   Scalable Module Loader
 ================================ */
 
-// Global modules (load everywhere)
+// Global modules
 const coreModules = [
-  "./ui/menu-toggle.js"
+  "./ui/menu-toggle.js",
 ];
 
-// Feature modules
-const featureModules = [
-  "./modules/syllabus-builder.js"
+// Page specific modules
+const pageModules = {
+  "syllabus-builder": "./modules/syllabus/syllabus-builder.js",
+  blueprint: "./modules/blueprint/blueprint-builder.js",
+  questionPaper: "./modules/question-paper/question-paper-generator.js"
+};
+
+// Detect page
+const page = document.body.dataset.page;
+
+// Build module list
+const modules = [
+  ...coreModules,
+  ...(pageModules[page] ? [pageModules[page]] : [])
 ];
 
-// Combine all modules
-const modules = [...coreModules, ...featureModules];
-
-// Load modules safely
 async function loadModules() {
 
   const results = await Promise.allSettled(
@@ -33,7 +39,6 @@ async function loadModules() {
 
       const module = res.value;
 
-      // Auto initialize module if init() exists
       if (typeof module.init === "function") {
 
         try {
@@ -44,9 +49,7 @@ async function loadModules() {
 
       }
 
-    }
-
-    else {
+    } else {
 
       console.error(`✖ ${modulePath} failed`, res.reason);
 
@@ -54,9 +57,6 @@ async function loadModules() {
 
   });
 
-  console.log("EMS initialization complete");
-
 }
 
-// Start app after DOM ready
 document.addEventListener("DOMContentLoaded", loadModules);
