@@ -40,7 +40,7 @@ async function router() {
     const path = ROUTES[page] || ROUTES.home;
 
     try {
-        const response = await fetch(path);
+        const response = await fetch(`${PATHS.base}${path}`);
         const html = await response.text();
 
         const doc = new DOMParser().parseFromString(html, 'text/html');

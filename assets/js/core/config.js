@@ -14,9 +14,9 @@ export const APP_CONFIG = Object.freeze({
 ========================= */
 export const PATHS = Object.freeze({
 
-    base: location.pathname.includes('/neoaspire-staging/')
-    ? '/neoaspire-staging/'
-    : '/' ,                   // root path
+base: window.location.hostname.includes('github.io')
+    ? `/${window.location.pathname.split('/')[1]}/`
+    : '/',       // root path
 
     partials: "/partials/",         // header/footer folder
     assets: "/assets/",
@@ -29,6 +29,7 @@ export const PATHS = Object.freeze({
    Routes (for router.js)
 ========================= */
 export const ROUTES = Object.freeze({
+home: "index.html",
 about: "pages/about.html",
 career: "pages/career-guidance.html",
 comingSoon: "pages/coming-soon.html",
