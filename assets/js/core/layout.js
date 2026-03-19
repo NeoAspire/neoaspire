@@ -5,12 +5,10 @@ import { PATHS, APP_CONFIG } from './config.js';
 export async function init() {
 
     try {
-        const depth = window.location.pathname.split('/').length - 2;
-        const base = '../'.repeat(depth);
 
         const [headerRes, footerRes] = await Promise.all([
-            fetch(`${base}partials/header.html`),
-            fetch(`${base}partials/footer.html`)
+            fetch(`${PATHS.base}${PATHS.partials}header.html`),
+            fetch(`${PATHS.base}${PATHS.partials}footer.html`)
         ]);
 
         const [headerHTML, footerHTML] = await Promise.all([
