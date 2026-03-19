@@ -14,29 +14,29 @@ export const APP_CONFIG = Object.freeze({
 ========================= */
 export const PATHS = Object.freeze({
 
-base: window.location.hostname.includes('github.io')
-    ? `/${window.location.pathname.split('/')[1]}/`
-    : '/',       // root path
+    base: window.location.hostname.includes('github.io')
+        ? `/${window.location.pathname.split('/')[1]}/`
+        : '/',       // root path
 
-    partials: "/partials/",         // header/footer folder
-    assets: "/assets/",
-    images: "/assets/images/",
-    css: "/assets/css/",
-    js: "/assets/js/"
+    partials: "partials/",                   // header/footer folder
+    assets: "assets/",
+    images: "assets/images/",
+    css: "assets/css/",
+    js: "assets/js/"
 });
 
 /* =========================
    Routes (for router.js)
 ========================= */
 export const ROUTES = Object.freeze({
-home: "index.html",
-about: "pages/about.html",
-career: "pages/career-guidance.html",
-comingSoon: "pages/coming-soon.html",
-contact: "pages/contact-us.html",
-downloads: "pages/downloads.html",
-privacyPolicy: "legal/privacy-policy.html",
-termsOfService: "legal/terms-of-service.html"
+    home: "index.html",
+    about: "pages/about.html",
+    career: "pages/career-guidance.html",
+    comingSoon: "pages/coming-soon.html",
+    contact: "pages/contact-us.html",
+    downloads: "pages/downloads.html",
+    privacyPolicy: "legal/privacy-policy.html",
+    termsOfService: "legal/terms-of-service.html"
 });
 
 /* =========================
@@ -80,7 +80,7 @@ export const MODULE_PATHS = Object.freeze({
     ems: "/ems/",
     games: "/games/",
     legal: "/legal/",
-    qbank: "/qbank/"   
+    qbank: "/qbank/"
 });
 
 /* =========================
