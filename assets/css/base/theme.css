@@ -1,0 +1,47 @@
+/* =========================================================
+   THEME SYSTEM (LIGHT + DARK)
+   Only overrides variables (NO component styling)
+========================================================= */
+
+/* ==========================================
+   DEFAULT (LIGHT THEME)
+========================================== */
+:root {
+  --color-bg-light: #F9FAFB;
+  --color-bg-section: #F3F4F6;
+  --color-white: #FFFFFF;
+
+  --color-text-primary: #111827;
+  --color-text-secondary: #6B7280;
+  --color-text-muted: #9CA3AF;
+
+  --color-border: #E5E7EB;
+
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.10);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================
+   DARK THEME
+========================================== */
+[data-theme="dark"] {
+
+  /* BACKGROUNDS */
+  --color-bg-light: #111827;
+  --color-bg-section: #1F2937;
+  --color-white: #1F2937;
+
+  /* TEXT */
+  --color-text-primary: #F9FAFB;
+  --color-text-secondary: #D1D5DB;
+  --color-text-muted: #9CA3AF;
+
+  /* BORDER */
+  --color-border: #374151;
+
+  /* SHADOWS (lighter for dark UI) */
+  --shadow-sm: 0 1px 3px rgba(255, 255, 255, 0.05);
+  --shadow-md: 0 4px 8px rgba(255, 255, 255, 0.08);
+  --shadow-lg: 0 10px 20px rgba(255, 255, 255, 0.12);
+}

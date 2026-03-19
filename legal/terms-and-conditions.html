@@ -7,83 +7,17 @@
     <title>Terms & Conditions | Neoaspire</title>
 
     <!-- Main CSS of Neoaspire Website -->
-    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../assets/css/main.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../images/favicon/favicon.png">
+    <link rel="icon" type="image/png" href="../assets/images/favicon/favicon.png">
     <!-- Main JS of Neoaspire Website -->
-    <script type="module" src="../js/main.js"></script>
-
-    <style>
-        :root {
-            --primary: #E64A19;
-            --text: #1f2937;
-            --muted: #6b7280;
-            --bg: #f8fafc;
-            --card: #ffffff;
-        }
-
-        body {
-            margin: 0;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: var(--bg);
-            color: var(--text);
-        }
-
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 40px 20px;
-        }
-
-        .card {
-            background: var(--card);
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
-        }
-
-        h1 {
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        h2 {
-            margin-top: 30px;
-            font-size: 1.2rem;
-        }
-
-        /* ✅ Scoped paragraph styling (footer-safe) */
-        /* Content readability */
-
-        main {
-            line-height: 1.7;
-        }
-
-        main p {
-            color: var(--text);
-            margin: 10px 0;
-        }
-
-        .muted {
-            color: var(--muted);
-            font-size: 0.9rem;
-        }
-
-        main a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-
-        main a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <script type="module" src="../assets/js/main.js"></script>
 </head>
 
-<body>
+<body data-page="terms-and-conditions">
 
     <!-- Header -->
-    <header id="header-container"></header>
+    <header id="site-header"></header>
 
     <!-- Main Content -->
     <main>
@@ -138,7 +72,7 @@
                 <h2>7. Privacy</h2>
                 <p>
                     Your use of Neoaspire is also governed by our
-                    <a href="./privacy-policy.html">Privacy Policy</a>.
+                    <a href="./privacy-policy.html" class="email-link">Privacy Policy</a>.
                 </p>
 
                 <h2>8. Service Modifications</h2>
@@ -155,7 +89,7 @@
                 <h2>10. Contact</h2>
                 <p>
                     For any questions regarding these Terms & Conditions, contact us at:<br>
-                    <strong>Email:</strong> neoaspire9@gmail.com
+                    <strong>Email:</strong>  <a href="mailto:neoaspire9@gmail.com" class="email-link">neoaspire9@gmail.com</a>
                 </p>
 
             </div>
@@ -163,7 +97,7 @@
     </main>
 
     <!-- Footer -->
-    <footer id="footer-container"></footer>
+    <footer id="site-footer"></footer>
 
 </body>
 

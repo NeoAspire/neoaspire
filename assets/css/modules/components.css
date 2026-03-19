@@ -1,0 +1,234 @@
+/* =========================================================
+   PROFESSIONAL COMPONENTS.CSS
+   Style for buttons, inputs, cards, hero
+   ========================================================= */
+
+/* ==========================================
+   HERO COMPONENT
+========================================== */
+.hero {
+    background: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    padding: var(--space-lg) var(--space-md);
+    border-radius: var(--radius-md);
+    margin: 0 ;
+    transition: background var(--transition-normal);
+}
+
+.hero h1,
+.hero h2 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-sm);
+}
+
+.hero p {
+    font-size: var(--font-size-md);
+    color: var(--color-white);
+    opacity: 0.9;
+}
+
+/* ==========================================
+   BASE BUTTON
+========================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-xs);
+
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-sm);
+
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid transparent;
+
+    transition:
+        background-color var(--transition-fast),
+        color var(--transition-fast),
+        border-color var(--transition-fast),
+        transform var(--transition-fast),
+        box-shadow var(--transition-fast);
+
+    will-change: transform;
+}
+
+/* ==========================================
+   ACCESSIBILITY
+========================================== */
+.btn:focus-visible {
+    outline: 2px solid var(--color-secondary);
+    outline-offset: 2px;
+}
+
+/* Press effect */
+.btn:active {
+    transform: translateY(1px);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Disabled */
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ==========================================
+   PRIMARY BUTTON
+========================================== */
+.btn-primary {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ==========================================
+   SECONDARY BUTTON
+========================================== */
+.btn-secondary {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-secondary-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ==========================================
+   OUTLINE BUTTON
+========================================== */
+.btn-outline {
+    background: transparent;
+    border: 1px solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+.btn-outline:hover {
+    background-color: var(--color-primary-light);
+    transform: translateY(-2px);
+}
+
+/* ==========================================
+   GHOST BUTTON
+========================================== */
+.btn-ghost {
+    background: transparent;
+    color: var(--color-primary);
+}
+
+.btn-ghost:hover {
+    background-color: var(--color-bg-section);
+}
+
+/* ==========================================
+   DANGER BUTTON (USING VARIABLES)
+========================================== */
+.btn-danger {
+    background-color: var(--color-error);
+    color: var(--color-white);
+}
+
+.btn-danger:hover {
+    background-color: var(--color-error-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ==========================================
+   SUCCESS BUTTON (ADDED)
+========================================== */
+.btn-success {
+    background-color: var(--color-success);
+    color: var(--color-white);
+}
+
+.btn-success:hover {
+    background-color: var(--color-success-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ==========================================
+   WARNING BUTTON (ADDED)
+========================================== */
+.btn-warning {
+    background-color: var(--color-warning);
+    color: var(--color-white);
+}
+
+.btn-warning:hover {
+    background-color: var(--color-warning-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ==========================================
+   SIZE VARIANTS
+========================================== */
+.btn-sm {
+    padding: var(--space-xs) var(--space-sm);
+    font-size: var(--font-size-xs);
+}
+
+.btn-lg {
+    padding: var(--space-md) var(--space-lg);
+    font-size: var(--font-size-md);
+}
+
+/* ==========================================
+   FULL WIDTH
+========================================== */
+.btn-block {
+    width: 100%;
+}
+
+/* ==========================================
+   ICON BUTTON SUPPORT
+========================================== */
+.btn-icon {
+    padding: var(--space-sm);
+    width: 40px;
+    height: 40px;
+}
+
+/* ==========================================
+   LOADING STATE (ADVANCED)
+========================================== */
+.btn.loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.btn.loading::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--color-white);
+    border-top-color: transparent;
+    border-radius: 50%;
+    position: absolute;
+    animation: spin 0.6s linear infinite;
+}
+
+/* Spinner animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}

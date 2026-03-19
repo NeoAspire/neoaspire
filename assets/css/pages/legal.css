@@ -1,0 +1,86 @@
+/* =========================================================
+   LEGAL PAGES CSS (Scoped)
+   Applies only to privacy-policy & terms-and-conditions
+========================================================= */
+/* Apply only inside MAIN (not header/footer) */
+
+body[data-page="privacy-policy"] main,
+body[data-page="terms-and-conditions"] main {
+  line-height: var(--line-height-lg);
+  font-size: var(--font-size-md);
+  color: var(--color-text-primary);
+}
+
+/* Container */
+body[data-page="privacy-policy"] main .container,
+body[data-page="terms-and-conditions"] main .container {
+  max-width: 900px;
+  margin-inline: auto;
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+/* Card */
+body[data-page="privacy-policy"] main .card,
+body[data-page="terms-and-conditions"] main .card {
+  background-color: var(--color-white);
+  padding: var(--space-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Headings ONLY inside main */
+body[data-page="privacy-policy"] main h1,
+body[data-page="terms-and-conditions"] main h1 {
+  color: var(--color-primary);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  margin-bottom: var(--space-sm);
+}
+
+body[data-page="privacy-policy"] main h2,
+body[data-page="terms-and-conditions"] main h2 {
+  margin-top: var(--space-xl);
+  font-size: var(--font-size-lg);
+  color: var(--color-heading);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Content */
+body[data-page="privacy-policy"] main p,
+body[data-page="privacy-policy"] main li,
+body[data-page="terms-and-conditions"] main p,
+body[data-page="terms-and-conditions"] main li {
+  margin-block: var(--space-sm) 0;
+  color: var(--color-text-secondary);
+}
+
+body[data-page="privacy-policy"] main ul,
+body[data-page="terms-and-conditions"] main ul {
+  padding-inline-start: var(--space-md);
+}
+
+body[data-page="privacy-policy"] main ul li::marker,
+body[data-page="terms-and-conditions"] main ul li::marker {
+  color: var(--color-primary);
+}
+
+/* Muted */
+body[data-page="privacy-policy"] main .muted,
+body[data-page="terms-and-conditions"] main .muted {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+/* Email link */
+body[data-page="privacy-policy"] main .email-link,
+body[data-page="terms-and-conditions"] main .email-link {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-medium);
+  transition: color var(--transition-fast);
+}
+
+body[data-page="privacy-policy"] main .email-link:hover,
+body[data-page="terms-and-conditions"] main .email-link:hover {
+  color: var(--color-primary-hover);
+  text-decoration: underline;
+}

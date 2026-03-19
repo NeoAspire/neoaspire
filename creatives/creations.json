@@ -1,30 +1,50 @@
 [
+  {
+    "id": "ribbon-design",
+    "title": "Ribbon Design",
+    "thumb": "./assets/jpg/ribbon.jpg",
+    "author": "NeoAspire",
+    "downloads": 1240,
+    "files": [
+      {
+        "label": "JPG",
+        "url": "./assets/jpg/ribbon.jpg",
+        "premium": false
+      },
+      {
+        "label": "PNG",
+        "url": "./assets/png/ribbon.png",
+        "premium": true
+      },
+      {
+        "label": "PSD",
+        "url": "./assets/psd/ribbon.psd",
+        "premium": true
+      }
+    ]
+  },
     {
-  "id": "ribbon-design",
-  "title": "Ribbon Design",
-  "thumb": "/creatives/assets/jpg/ribbon.jpg",
-  "author": "NeoAspire",
-  "category": "Graphics",
-  "downloads": 1240,
-  "tags": ["ribbon", "graphic", "design", "jpeg"],
-  "files": [
-    { "label": "JPG", "url": "/creatives/assets/jpg/ribbon.jpg" },
-    { "label": "PNG", "url": "/creatives/assets/png/ribbon.png" },
-    { "label": "PSD", "url": "/creatives/assets/psd/ribbon.psd" }
-  ]
-},
- {
-  "id": "badge-logo",
-  "title": "Badge Logo",
-  "thumb": "/creatives/assets/jpg/badge-logo.jpg",
-  "author": "NeoAspire",
-  "category": "Graphics",
-  "downloads": 1130,
-  "tags": ["badge", "logo", "graphic", "design"],
-  "files": [
-    { "label": "JPG", "url": "/creatives/assets/jpg/badge-logo.jpg" },
-    { "label": "PNG", "url": "/creatives/assets/png/badge-logo.png" },
-    { "label": "PSD", "url": "/creatives/assets/psd/badge-logo.psd" }
-  ]
-}
+    "id": "ribbon-design",
+    "title": "Ribbon Design",
+    "thumb": "./assets/jpg/badge-logo.jpg",
+    "author": "NeoAspire",
+    "downloads": 1240,
+    "files": [
+      {
+        "label": "JPG",
+        "url": "./assets/jpg/badge-logo.jpg",
+        "premium": false
+      },
+      {
+        "label": "PNG",
+        "url": "./assets/png/badge-logo.png",
+        "premium": true
+      },
+      {
+        "label": "PSD",
+        "url": "./assets/psd/badge-logo.psd",
+        "premium": true
+      }
+    ]
+  }
 ]
