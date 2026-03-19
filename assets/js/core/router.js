@@ -55,12 +55,15 @@ async function router() {
 
 /* Get page from URL */
 
-
 function getPageFromURL() {
     const base = PATHS.base;
-    const path = location.pathname
-        .replace(base, '')
-        .replace('/', '');
+
+    let path = location.pathname.replace(base, '');
+
+    // remove trailing slash
+    if (path.endsWith('/')) {
+        path = path.slice(0, -1);
+    }
 
     return path || 'home';
 }

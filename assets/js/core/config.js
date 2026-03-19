@@ -75,12 +75,12 @@ export const ENV_CONFIG = Object.freeze({
    Module Paths
 ========================= */
 export const MODULE_PATHS = Object.freeze({
-    courses: "/courses/",
-    creatives: "/creatives/",
-    ems: "/ems/",
-    games: "/games/",
-    legal: "/legal/",
-    qbank: "/qbank/"
+    courses: "courses/",
+    creatives: "creatives/",
+    ems: "ems/",
+    games: "games/",
+    legal: "legal/",
+    qbank: "qbank/"
 });
 
 /* =========================
@@ -90,7 +90,7 @@ export const API_CONFIG = Object.freeze({
     baseURL:
         window.location.hostname === "localhost"
             ? "http://localhost:3000"
-            : window.location.hostname.includes("staging")
+            : window.location.hostname.includes("neoaspire-staging")
                 ? "https://staging.api.neoaspire.in"
                 : "https://api.neoaspire.in",
 
