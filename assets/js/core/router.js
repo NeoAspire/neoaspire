@@ -1,6 +1,6 @@
 // router.js → SPA navigation using data-page + config
 
-import { ROUTES } from './config.js';
+import { ROUTES, PATHS } from './config.js';
 
 export function initRouter() {
 
@@ -23,8 +23,13 @@ export function initRouter() {
 }
 
 /* Navigate using page key */
+
 function navigateTo(page) {
-    history.pushState({ page }, '', `/${page}`);
+    history.pushState(
+        { page },
+        '',
+        `${PATHS.base}${page}`
+    );
     router();
 }
 
@@ -49,7 +54,13 @@ async function router() {
 }
 
 /* Get page from URL */
+
+
 function getPageFromURL() {
-    const path = location.pathname.replace('/', '');
+    const base = PATHS.base;
+    const path = location.pathname
+        .replace(base, '')
+        .replace('/', '');
+
     return path || 'home';
 }

@@ -13,7 +13,11 @@ export const APP_CONFIG = Object.freeze({
    Base Paths
 ========================= */
 export const PATHS = Object.freeze({
-    base: "/",                      // root path
+
+    base: location.pathname.includes('/neoaspire-staging/')
+    ? '/neoaspire-staging/'
+    : '/' ,                   // root path
+
     partials: "/partials/",         // header/footer folder
     assets: "/assets/",
     images: "/assets/images/",
@@ -25,14 +29,13 @@ export const PATHS = Object.freeze({
    Routes (for router.js)
 ========================= */
 export const ROUTES = Object.freeze({
-    home: "index.html",
-    about: "/pages/about.html",
-    career: "/pages/career-guidance.html",
-    comingSoon: "/pages/coming-soon.html",
-    contact: "/pages/contact-us.html",
-    downloads: "/pages/downloads.html",
-    privacyPolicy: "/legal/privacy-policy.html",
-    termsOfService: "/legal/terms-of-service.html"
+about: "pages/about.html",
+career: "pages/career-guidance.html",
+comingSoon: "pages/coming-soon.html",
+contact: "pages/contact-us.html",
+downloads: "pages/downloads.html",
+privacyPolicy: "legal/privacy-policy.html",
+termsOfService: "legal/terms-of-service.html"
 });
 
 /* =========================
