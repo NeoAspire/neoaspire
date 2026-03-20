@@ -1,4 +1,8 @@
-fetch("../../ems/data/blueprints/filter.json")
+import { PATHS, MODULE_PATHS } from '../../assets/js/core/config.js';    // config.js path
+
+fetch(`${PATHS.base}${MODULE_PATHS.ems}data/blueprints/filter.json`) 
+
+
     .then(res => res.json())
     .then(data => {
 
@@ -37,4 +41,5 @@ fetch("../../ems/data/blueprints/filter.json")
 
         });
 
-    });
+    })
+    .catch(err => console.error("Filter JSON load error:", err));

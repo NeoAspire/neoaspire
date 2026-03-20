@@ -14,7 +14,7 @@ const coreModules = [
 // Page-specific modules
 const pageModules = {
   home: "./core/alertmsg.js",
-    
+  
     "syllabus-builder": "./modules/syllabus/syllabus-builder.js"
 };
 

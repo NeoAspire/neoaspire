@@ -80,7 +80,7 @@ export const MODULE_PATHS = Object.freeze({
     ems: "ems/",
     games: "games/",
     legal: "legal/",
-    qbank: "qbank/"
+    qbank: "q-bank/"
 });
 
 /* =========================

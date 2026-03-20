@@ -17,6 +17,7 @@ export async function init() {
         ]);
 
         document.getElementById('site-header').innerHTML = headerHTML;
+        fixPaths();
         document.getElementById('site-footer').innerHTML = footerHTML;
 
         initHamburgerMenu();
@@ -77,5 +78,18 @@ function initDarkModeToggle() {
             toggle.textContent = '🌙';
             localStorage.setItem('darkMode', 'disabled');
         }
+    });
+}
+
+function fixPaths() {
+
+    // Fix links
+    document.querySelectorAll('[data-href]').forEach(link => {
+        link.setAttribute('href', PATHS.base + link.dataset.href);
+    });
+
+    // Fix images
+    document.querySelectorAll('[data-src]').forEach(img => {
+        img.setAttribute('src', PATHS.base + img.dataset.src);
     });
 }
