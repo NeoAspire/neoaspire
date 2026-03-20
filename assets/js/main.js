@@ -13,9 +13,11 @@ const coreModules = [
 
 // Page-specific modules
 const pageModules = {
-  home: "./core/alertmsg.js",
-  
-    "syllabus-builder": "./modules/syllabus/syllabus-builder.js"
+    home: "./core/alertmsg.js",
+    blueprints: [
+        "../../q-bank/js/filter.js",
+        "../../q-bank/js/blueprint.js"
+    ]
 };
 
 // Detect page
@@ -24,7 +26,11 @@ const page = document.body.dataset.page;
 // Build module list dynamically
 const modules = [
     ...coreModules,
-    ...(pageModules[page] ? [pageModules[page]] : [])
+    ...(Array.isArray(pageModules[page])
+        ? pageModules[page]
+        : pageModules[page]
+        ? [pageModules[page]]
+        : [])
 ];
 
 // Load modules
