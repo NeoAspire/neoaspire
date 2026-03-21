@@ -13,7 +13,9 @@ export const APP_CONFIG = Object.freeze({
    Base Paths
 ========================= */
 export const EMS_CONFIG = Object.freeze({
-    base: "/ems/",
+    base: window.location.pathname.includes('/ems/')
+    ? '/ems/'
+    : '/',
     partials: "partials/",
     assets: "assets/",
     js: "assets/js/",

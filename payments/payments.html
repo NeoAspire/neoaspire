@@ -6,216 +6,216 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pay to Download PDF | Neoaspire</title>
 
-    <!-- Main CSS of Neoaspire Website -->
-    <link rel="stylesheet" href="../assets/css/main.css">
+  <!-- Main CSS of Neoaspire Website -->
+  <link rel="stylesheet" href="../assets/css/main.css">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../assets/images/favicon/favicon.png">
-  
-  <!-- Main JS of Neoaspire Website -->
-    <script type="module" src="../assets/js/main.js"></script>
 
-<style>
-  /* ================================
+  <!-- Main JS of Neoaspire Website -->
+  <script type="module" src="../assets/js/main.js"></script>
+
+  <style>
+    /* ================================
    PAGE BACKGROUND
 ================================ */
-body {
-  background: var(--color-bg-light);
-  padding: var(--space-md);
-}
+    body {
+      background: var(--color-bg-light);
+      padding: var(--space-md);
+    }
 
-/* ================================
+    /* ================================
    ALERT BOX (MODAL STYLE)
 ================================ */
-#alert-box {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+    #alert-box {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
 
-  background: var(--color-white);
-  border: 1px solid var(--color-border);
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
 
-  width: 320px;
-  padding: var(--space-lg);
+      width: 320px;
+      padding: var(--space-lg);
 
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
 
-  z-index: var(--z-index-modal);
+      z-index: var(--z-index-modal);
 
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-md);
 
-  animation: fadeIn 0.3s ease;
-}
+      animation: fadeIn 0.3s ease;
+    }
 
-#alert-box p {
-  font-size: var(--font-size-md);
-  color: var(--color-text-primary);
-}
+    #alert-box p {
+      font-size: var(--font-size-md);
+      color: var(--color-text-primary);
+    }
 
-#alert-close-btn {
-  background: var(--color-warning);
-  color: var(--color-white);
+    #alert-close-btn {
+      background: var(--color-warning);
+      color: var(--color-white);
 
-  padding: 10px;
-  border-radius: var(--radius-md);
-  font-size: var(--font-size-sm);
+      padding: 10px;
+      border-radius: var(--radius-md);
+      font-size: var(--font-size-sm);
 
-  transition: var(--transition-fast);
-}
+      transition: var(--transition-fast);
+    }
 
-#alert-close-btn:hover {
-  background: var(--color-warning-hover);
-}
+    #alert-close-btn:hover {
+      background: var(--color-warning-hover);
+    }
 
-/* ================================
+    /* ================================
    PAYMENT BOX (CARD DESIGN)
 ================================ */
-.payment-box {
-  max-width: 520px;
-  margin: var(--space-xl) auto;
+    .payment-box {
+      max-width: 520px;
+      margin: var(--space-xl) auto;
 
-  background: var(--color-white);
-  padding: var(--space-xl);
+      background: var(--color-white);
+      padding: var(--space-xl);
 
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
 
-  text-align: center;
-}
+      text-align: center;
+    }
 
-.payment-box h1 {
-  font-size: var(--font-size-xl);
-  color: var(--color-heading);
-  margin-bottom: var(--space-sm);
-}
+    .payment-box h1 {
+      font-size: var(--font-size-xl);
+      color: var(--color-heading);
+      margin-bottom: var(--space-sm);
+    }
 
-.payment-box p {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-}
+    .payment-box p {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+    }
 
-/* ================================
+    /* ================================
    QR IMAGE
 ================================ */
-.qr {
-  width: 220px;
-  margin: var(--space-lg) auto;
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
-}
+    .qr {
+      width: 220px;
+      margin: var(--space-lg) auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
+    }
 
-/* ================================
+    /* ================================
    PRICE CARD
 ================================ */
-.price-card {
-  background: var(--color-bg-section);
-  border: 1px solid var(--color-border);
+    .price-card {
+      background: var(--color-bg-section);
+      border: 1px solid var(--color-border);
 
-  border-radius: var(--radius-lg);
-  padding: var(--space-lg);
+      border-radius: var(--radius-lg);
+      padding: var(--space-lg);
 
-  margin: var(--space-lg) 0;
-}
+      margin: var(--space-lg) 0;
+    }
 
-.price {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-bold);
-  color: var(--color-primary);
-}
+    .price {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-bold);
+      color: var(--color-primary);
+    }
 
-.price-note {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-secondary);
-}
+    .price-note {
+      font-size: var(--font-size-sm);
+      color: var(--color-text-secondary);
+    }
 
-/* ================================
+    /* ================================
    FORM
 ================================ */
-form {
-  max-width: 520px;
-  margin: auto;
-}
+    form {
+      max-width: 520px;
+      margin: auto;
+    }
 
-form label {
-  display: block;
-  margin-top: var(--space-md);
-  font-weight: var(--font-weight-semibold);
-  font-size: var(--font-size-sm);
-}
+    form label {
+      display: block;
+      margin-top: var(--space-md);
+      font-weight: var(--font-weight-semibold);
+      font-size: var(--font-size-sm);
+    }
 
-form input,
-form select {
-  width: 100%;
-  padding: 12px;
-  margin-top: 6px;
+    form input,
+    form select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
 
-  border-radius: var(--radius-md);
-  border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--color-border);
 
-  font-size: var(--font-size-sm);
-}
+      font-size: var(--font-size-sm);
+    }
 
-/* ================================
+    /* ================================
    BUTTON
 ================================ */
-button {
-  width: 100%;
-  margin-top: var(--space-lg);
+    button {
+      width: 100%;
+      margin-top: var(--space-lg);
 
-  background: var(--color-primary);
-  color: var(--color-white);
+      background: var(--color-primary);
+      color: var(--color-white);
 
-  padding: 12px;
-  border-radius: var(--radius-md);
+      padding: 12px;
+      border-radius: var(--radius-md);
 
-  font-size: var(--font-size-md);
-  font-weight: var(--font-weight-semibold);
+      font-size: var(--font-size-md);
+      font-weight: var(--font-weight-semibold);
 
-  transition: var(--transition-normal);
-}
+      transition: var(--transition-normal);
+    }
 
-button:hover {
-  background: var(--color-primary-hover);
-}
+    button:hover {
+      background: var(--color-primary-hover);
+    }
 
-/* ================================
+    /* ================================
    TEXT HELPERS
 ================================ */
-small {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
-}
+    small {
+      font-size: var(--font-size-xs);
+      color: var(--color-text-muted);
+    }
 
-.important {
-  margin-top: var(--space-md);
-  font-weight: var(--font-weight-semibold);
-  color: var(--color-success);
-}
+    .important {
+      margin-top: var(--space-md);
+      font-weight: var(--font-weight-semibold);
+      color: var(--color-success);
+    }
 
-.note {
-  font-size: var(--font-size-xs);
-  color: var(--color-success);
-  margin-top: var(--space-xs);
-}
+    .note {
+      font-size: var(--font-size-xs);
+      color: var(--color-success);
+      margin-top: var(--space-xs);
+    }
 
-/* ================================
+    /* ================================
    MOBILE
 ================================ */
-@media (max-width: 480px) {
+    @media (max-width: 480px) {
 
-  .payment-box {
-    padding: var(--space-md);
-  }
+      .payment-box {
+        padding: var(--space-md);
+      }
 
-  .price {
-    font-size: var(--font-size-xl);
-  }
-}
-</style>
+      .price {
+        font-size: var(--font-size-xl);
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -315,7 +315,8 @@ small {
   </section>
 
   <!-- JavaScript + Google Apps Script Link Form Submission -->
-  <script>
+  <script type="module">
+    import { PATHS } from '../assets/js/core/config.js'; // config paths
     
     const scriptURL =
       'https://script.google.com/macros/s/AKfycbxT7q-kz95bnMY24tBcyRTBLrYXDOODtcbvacnG6xBdxwIYKPraC4gw9JMoL9Fe1bLWfw/exec';
@@ -381,7 +382,9 @@ small {
 
             // Redirect AFTER user clicks OK
             form.reset();
-            window.location.href = "../qbank.html";
+            // use your router
+            history.pushState({ page: 'qbank' }, '', `${PATHS.base}q-bank/`);
+            window.dispatchEvent(new PopStateEvent('popstate'));
 
           }
           else {

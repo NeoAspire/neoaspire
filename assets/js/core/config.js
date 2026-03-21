@@ -37,7 +37,9 @@ export const ROUTES = Object.freeze({
     downloads: "pages/downloads.html",
     privacyPolicy: "legal/privacy-policy.html",
     termsOfService: "legal/terms-of-service.html",
-    payments: "payments/payments.html"
+    payments: "payments/payments.html",
+    qbank: "q-bank/index.html" 
+
 });
 
 /* =========================
