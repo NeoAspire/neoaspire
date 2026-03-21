@@ -1,0 +1,173 @@
+/* ===============================
+   EMS DASHBOARD HEADER
+================================ */
+
+.ems-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--space-md) var(--space-xl);
+    background: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+
+}
+
+/* LEFT SIDE */
+
+.ems-header-left {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+}
+
+/* LOGO IMAGE */
+
+.ems-logo img {
+    height: 32px;
+    width: auto;
+}
+
+/* LOGO */
+
+.ems-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--color-heading);
+    text-decoration: none;
+}
+
+.ems-logo span {
+    color: var(--color-primary);
+}
+
+/* NAVIGATION */
+
+.ems-nav {
+    display: flex;
+    gap: var(--space-lg);
+}
+
+.nav-item {
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    padding: 6px 10px;
+    border-radius: var(--radius-sm);
+    transition: var(--transition-fast);
+}
+
+.nav-item:hover {
+    background: var(--color-bg-section);
+    color: var(--color-heading);
+}
+
+/* ACTIVE NAV */
+
+.nav-item.active {
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+/* RIGHT SIDE */
+
+.ems-header-right {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+/* BUTTON */
+
+.btn-secondary {
+    background: var(--color-secondary);
+    color: var(--color-white);
+    border: none;
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+    transition: var(--transition-normal);
+}
+
+.btn-secondary:hover {
+    background: var(--color-secondary-hover);
+}
+
+/* USER BADGE */
+
+.user-badge {
+    background: var(--color-primary-light);
+    color: var(--color-primary);
+    padding: 6px 12px;
+    font-size: var(--font-size-sm);
+    border-radius: var(--radius-md);
+    font-weight: 600;
+}
+
+/* ==============================
+   Dashboard Main Section
+============================== */
+
+.ems-main {
+    padding: var(--space-lg);
+    background-color: var(--color-bg-light);
+    min-height: calc(100vh - 80px);
+    /* header height */
+    font-family: var(--font-primary);
+}
+
+/* ====== Dashboard Modules ====== */
+.dashboard-modules {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--space-lg);
+}
+
+.module-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    padding: var(--space-md);
+    text-align: center;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.module-card h3 {
+    font-size: var(--font-size-lg);
+    color: var(--color-heading);
+    margin-bottom: var(--space-sm);
+}
+
+.module-card p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+}
+
+.module-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ====== Buttons ====== */
+.btn-primary {
+    display: inline-block;
+    padding: var(--space-sm) var(--space-md);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color var(--transition-fast);
+}
+
+.btn-primary:hover {
+    background-color: var(--color-primary-hover);
+}
+

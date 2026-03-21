@@ -17,12 +17,6 @@ MAIN CSS (Master File)
 
 
 /* ===== PAGES ===== */
-@import url('./pages/index.css'); 
-@import url('./pages/legal.css');      
-@import url('./pages/about.css');
-@import url('./pages/contact-us.css');
-@import url('./pages/downloads.css');
-@import url('./pages/career-guidance.css');
 @import url('./pages/coming-soon.css');
 
 

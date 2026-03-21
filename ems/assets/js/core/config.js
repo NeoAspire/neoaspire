@@ -1,4 +1,4 @@
-// config.js → Global app configuration (ES2025)
+// config.js → Global EMS app configuration (ES2025)
 
 /* =========================
    App Info
@@ -12,31 +12,27 @@ export const APP_CONFIG = Object.freeze({
 /* =========================
    Base Paths
 ========================= */
-export const PATHS = Object.freeze({
-
-    base: window.location.hostname.includes('github.io')
-        ? `/${window.location.pathname.split('/')[1]}/`
-        : '/',       // root path
-
-    partials: "partials/",                   // header/footer folder
+export const EMS_CONFIG = Object.freeze({
+    base: "/ems/",
+    partials: "partials/",
     assets: "assets/",
-    images: "assets/images/",
+    js: "assets/js/",
     css: "assets/css/",
-    js: "assets/js/"
+
+    routes: {
+        dashboard: "/ems/dashboard/index.html"
+    }
 });
 
 /* =========================
    Routes (for router.js)
 ========================= */
-export const ROUTES = Object.freeze({
-    home: "index.html",
-    about: "pages/about.html",
-    career: "pages/career-guidance.html",
-    comingSoon: "pages/coming-soon.html",
-    contact: "pages/contact-us.html",
-    downloads: "pages/downloads.html",
-    privacyPolicy: "legal/privacy-policy.html",
-    termsOfService: "legal/terms-of-service.html"
+export const EMS_ROUTES = Object.freeze({
+    landing: "index.html",
+    dashboard: "dashboard/index.html",
+    syllabus: "modules/syllabus/index.html",
+    qpGenerator: "modules/qp-generator/index.html",
+    comingSoon: "coming-soon.html"
 });
 
 /* =========================
@@ -80,7 +76,6 @@ export const MODULE_PATHS = Object.freeze({
     ems: "ems/",
     games: "games/",
     legal: "legal/",
-    payments: "payments.html",
     qbank: "q-bank/"
 });
 

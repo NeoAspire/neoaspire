@@ -1,7 +1,35 @@
-/* ===============================
-   EMS DASHBOARD HEADER
-================================ */
+/* =========================================================
+   HEADER, FOOTER, SIDEBAR LAYOUT.CSS
+   ========================================================= */
+   
+/* =========================================================
+   GLOBAL LAYOUT SYSTEM (GRID STRUCTURE)
+========================================================= */
 
+body {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+
+    background-color: var(--color-bg-light);
+    color: var(--color-text-primary);
+
+    font-family: var(--font-primary);
+}
+
+/* Main area */
+main {
+    grid-area: main;
+}
+
+   /* =========================================
+   HEADER LAYOUT
+========================================= */
 .ems-header {
     display: flex;
     justify-content: space-between;
@@ -14,6 +42,7 @@
 
 }
 
+
 /* LEFT SIDE */
 
 .ems-header-left {
@@ -21,6 +50,10 @@
     align-items: center;
     gap: var(--space-xl);
 }
+
+/* =========================================
+   LOGO
+========================================= */
 
 /* LOGO IMAGE */
 
@@ -44,6 +77,7 @@
 .ems-logo span {
     color: var(--color-primary);
 }
+
 
 /* NAVIGATION */
 
@@ -73,6 +107,7 @@
     color: var(--color-primary);
     font-weight: 600;
 }
+
 
 /* RIGHT SIDE */
 
@@ -110,67 +145,6 @@
     font-weight: 600;
 }
 
-/* ==============================
-   Dashboard Main Section
-============================== */
-
-.ems-main {
-    padding: var(--space-lg);
-    background-color: var(--color-bg-light);
-    min-height: calc(100vh - 80px);
-    /* header height */
-    font-family: var(--font-primary);
-}
-
-/* ====== Dashboard Modules ====== */
-.dashboard-modules {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: var(--space-lg);
-}
-
-.module-card {
-    background-color: var(--color-white);
-    border-radius: var(--radius-md);
-    box-shadow: var(--shadow-sm);
-    padding: var(--space-md);
-    text-align: center;
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.module-card h3 {
-    font-size: var(--font-size-lg);
-    color: var(--color-heading);
-    margin-bottom: var(--space-sm);
-}
-
-.module-card p {
-    font-size: var(--font-size-sm);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-md);
-}
-
-.module-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-}
-
-/* ====== Buttons ====== */
-.btn-primary {
-    display: inline-block;
-    padding: var(--space-sm) var(--space-md);
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    border-radius: var(--radius-sm);
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color var(--transition-fast);
-}
-
-.btn-primary:hover {
-    background-color: var(--color-primary-hover);
-}
-
 
 /* ===============================
    HAMBURGER BUTTON
@@ -189,7 +163,6 @@
 /* ===============================
    MOBILE NAVIGATION HUMBURGER
 ================================ */
-
 @media (max-width:768px) {
 
     .menu-toggle {
@@ -198,32 +171,29 @@
     }
 
     .ems-nav {
+        display: none !important;   /* 🔥 FORCE HIDE */
         position: absolute;
         top: 70px;
-        /* below header */
         right: 0;
         width: 220px;
         background: var(--color-white);
         border: 1px solid var(--color-border);
         border-radius: var(--radius-md);
         box-shadow: var(--shadow-md);
-        display: none;
         flex-direction: column;
         padding: var(--space-md);
         z-index: 999;
     }
 
     .ems-nav.show {
-        display: flex;
+        display: flex !important;   /* 🔥 FORCE SHOW */
     }
 
     .nav-item {
         padding: 10px 0;
         width: 100%;
     }
-
 }
-
 /* ==================================
    RESPONSIVE DESIGN
 ================================== */
@@ -249,42 +219,6 @@
     }
 
 }
-
-
-/* ===== Small Tablets / Large Phones (768px) ===== */
-
-@media (max-width: 768px) {
-
-    .ems-header {
-        padding: var(--space-md) var(--space-lg);
-    }
-
-    .ems-header-left {
-        width: 100%;
-        justify-content: space-between;
-    }
-
-    .ems-nav {
-        width: 100%;
-        flex-wrap: wrap;
-        gap: var(--space-sm);
-    }
-
-    .nav-item {
-        padding: 6px 8px;
-        font-size: var(--font-size-sm);
-    }
-
-    .ems-header-right {
-        margin-top: var(--space-sm);
-    }
-
-    .dashboard-modules {
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    }
-
-}
-
 
 /* ===== Mobile (480px) ===== */
 
@@ -318,3 +252,47 @@
     }
 
 }
+
+
+/* =========================================
+   FOOTER LAYOUT
+========================================= */
+footer {
+    grid-area: footer;
+    background: var(--color-dark);
+    color: var(--color-white);
+    text-align: center;
+    padding: var(--space-sm) var(--space-md); /* Increased vertical padding for better breathing room */
+    transition: background var(--transition-normal);
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separation */
+}
+
+/* Footer Navigation/Links */
+footer nav {
+    margin-bottom: var(--space-md);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-md); /* Using gap instead of margins for better consistency */
+}
+
+footer a {
+    color: var(--color-white);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    transition: color var(--transition-fast);
+}
+
+footer a:hover {
+    color: var(--color-primary); /* Use your brand color on hover instead of just underline */
+    text-decoration: none; 
+}
+
+/* Copyright & Muted Text */
+footer p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted); /* Uses your muted variable */
+    margin-top: var(--space-md);
+    line-height: var(--line-height-md);
+}
+

@@ -6,209 +6,216 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pay to Download PDF | Neoaspire</title>
 
+    <!-- Main CSS of Neoaspire Website -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="./images/favicon/favicon.png">
+  
+  <!-- Main JS of Neoaspire Website -->
+    <script type="module" src="../assets/js/main.js"></script>
 
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f6f9;
-      margin: 0;
-      padding: 15px;
-      /* mobile spacing */
-    }
+<style>
+  /* ================================
+   PAGE BACKGROUND
+================================ */
+body {
+  background: var(--color-bg-light);
+  padding: var(--space-md);
+}
 
-    /* Alert Message Box Styles */
-    #alert-box {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #f9edbe;
-      border: 1px solid #f0c36d;
-      width: 300px;
-      height: 300px;
-      padding: 20px 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-      z-index: 1000;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      animation: fadeIn 0.5s ease-in-out;
-    }
+/* ================================
+   ALERT BOX (MODAL STYLE)
+================================ */
+#alert-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 
-    #alert-box .alert-content p {
-      margin: 0;
-      font-size: 1rem;
-      color: #333;
-    }
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
 
-    #alert-box #alert-close-btn {
-      background-color: #f0c36d;
-      border: none;
-      margin-top: 10px;
-      padding: 15px 20px;
-      border-radius: 3px;
-      cursor: pointer;
-      font-size: 1rem;
-    }
+  width: 320px;
+  padding: var(--space-lg);
 
-    #alert-box #alert-close-btn:hover {
-      background-color: #e6b24c;
-    }
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
 
-    /* FORM STYLES */
-    form {
-      background: transparent;
-      /* remove white box */
-      padding: 0;
-      border-radius: 0;
-      max-width: 100%;
-      margin: 0 auto;
-      box-sizing: border-box;
-      box-shadow: none;
-    }
+  z-index: var(--z-index-modal);
 
-    form label {
-      margin-top: 14px;
-      font-size: 16px;
-      font-weight: bold;
-      margin-top: 10px;
-      display: block;
-    }
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
 
-    form input,
-    form select,
-    form button {
-      width: 100%;
-      width: 100%;
-      padding: 12px;
-      margin-top: 6px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-size: 16px;
-      box-sizing: border-box;
-    }
+  animation: fadeIn 0.3s ease;
+}
 
-    select {
-      background-color: #fff;
-      cursor: pointer;
-    }
+#alert-box p {
+  font-size: var(--font-size-md);
+  color: var(--color-text-primary);
+}
 
-    small {
-      font-size: 12px;
-      color: #666;
-    }
+#alert-close-btn {
+  background: var(--color-warning);
+  color: var(--color-white);
 
-    button {
-      background: #E64A19;
-      color: white;
-      border: none;
-      font-size: 16px;
-      margin-top: 15px;
-      cursor: pointer;
-    }
+  padding: 10px;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
 
-    button:hover {
-      background: #FF5F1F;
-    }
+  transition: var(--transition-fast);
+}
 
-    /* PAYMENT BOX STYLES */
-    .payment-box,
-    form {
-      width: 100%;
-      max-width: 520px;
-      /* desktop width */
-    }
+#alert-close-btn:hover {
+  background: var(--color-warning-hover);
+}
 
-    .payment-box {
-      width: 100%;
-      max-width: 520px;
-      /* desktop width */
-      margin: 30px auto;
-      background: #fff;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
+/* ================================
+   PAYMENT BOX (CARD DESIGN)
+================================ */
+.payment-box {
+  max-width: 520px;
+  margin: var(--space-xl) auto;
 
+  background: var(--color-white);
+  padding: var(--space-xl);
 
-    .payment-box h1 {
-      margin-bottom: 10px;
-      color: #222;
-    }
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
 
-    .payment-box p {
-      color: #555;
-      font-size: 14px;
-    }
+  text-align: center;
+}
 
-    .qr {
-      width: 220px;
-      margin: 20px auto;
-      border-radius: 10px;
-      border: 1px solid #ddd;
-    }
+.payment-box h1 {
+  font-size: var(--font-size-xl);
+  color: var(--color-heading);
+  margin-bottom: var(--space-sm);
+}
 
-    /* PRICE DETAILS */
-    .price-card {
-      background: linear-gradient(135deg, #eef6ff, #ffffff);
-      border: 1px solid #d6e8ff;
-      border-radius: 14px;
-      padding: 18px 15px;
-      margin: 20px 0;
-      text-align: center;
-    }
+.payment-box p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
 
-    .price {
-      font-size: 34px;
-      font-weight: bold;
-      color: #0d6efd;
-      margin-bottom: 4px;
-    }
+/* ================================
+   QR IMAGE
+================================ */
+.qr {
+  width: 220px;
+  margin: var(--space-lg) auto;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
 
-    .price-note {
-      font-size: 13px;
-      color: #444;
-      margin-top: 4px;
-    }
+/* ================================
+   PRICE CARD
+================================ */
+.price-card {
+  background: var(--color-bg-section);
+  border: 1px solid var(--color-border);
 
-    .important {
-      margin-top: 15px;
-      font-weight: bold;
-      color: green
-    }
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
 
-    .note {
-      font-size: 13px;
-      color: #555;
-      margin-top: 6px;
-      text-align: left;
-      color: green;
-    }
+  margin: var(--space-lg) 0;
+}
 
-    /* RESPONSIVE STYLES */
-    @media (max-width: 480px) {
-      .payment-box {
-        padding: 18px;
-      }
+.price {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
 
-      form {
-        padding: 0;
-      }
+.price-note {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
 
-      .price {
-        font-size: 24px;
-      }
+/* ================================
+   FORM
+================================ */
+form {
+  max-width: 520px;
+  margin: auto;
+}
 
-      button {
-        font-size: 16px;
-      }
-    }
-  </style>
+form label {
+  display: block;
+  margin-top: var(--space-md);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-sm);
+}
+
+form input,
+form select {
+  width: 100%;
+  padding: 12px;
+  margin-top: 6px;
+
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+
+  font-size: var(--font-size-sm);
+}
+
+/* ================================
+   BUTTON
+================================ */
+button {
+  width: 100%;
+  margin-top: var(--space-lg);
+
+  background: var(--color-primary);
+  color: var(--color-white);
+
+  padding: 12px;
+  border-radius: var(--radius-md);
+
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-semibold);
+
+  transition: var(--transition-normal);
+}
+
+button:hover {
+  background: var(--color-primary-hover);
+}
+
+/* ================================
+   TEXT HELPERS
+================================ */
+small {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.important {
+  margin-top: var(--space-md);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-success);
+}
+
+.note {
+  font-size: var(--font-size-xs);
+  color: var(--color-success);
+  margin-top: var(--space-xs);
+}
+
+/* ================================
+   MOBILE
+================================ */
+@media (max-width: 480px) {
+
+  .payment-box {
+    padding: var(--space-md);
+  }
+
+  .price {
+    font-size: var(--font-size-xl);
+  }
+}
+</style>
 </head>
 
 <body>
