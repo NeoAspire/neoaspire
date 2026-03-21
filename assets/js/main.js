@@ -8,7 +8,7 @@ console.log("main.js loaded");
 const coreModules = [
     "./core/layout.js",    // layout module
     "./core/alertmsg.js",  // alert messages
-    "./core/darkmode.js"   // extra dark mode functionality
+  //  "./core/darkmode.js"   // extra dark mode functionality
 ];
 
 // Page-specific modules

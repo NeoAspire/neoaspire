@@ -16,13 +16,18 @@ export async function init() {
             footerRes.text()
         ]);
 
-        document.getElementById('site-header').innerHTML = headerHTML;
-        fixPaths();
-        document.getElementById('site-footer').innerHTML = footerHTML;
+        // ✅ SAFE INJECTION
 
+        const header = document.getElementById('site-header');
+        if (header) header.innerHTML = headerHTML;
+
+        const footer = document.getElementById('site-footer');
+        if (footer) footer.innerHTML = footerHTML;
+
+        fixPaths();
         initHamburgerMenu();
         initFiscalYear();
-        initDarkModeToggle();
+        //  initDarkModeToggle();
 
     } catch (err) {
         console.error('Layout load error:', err);
@@ -58,6 +63,7 @@ function initFiscalYear() {
 }
 
 // Dark mode toggle button
+/*
 function initDarkModeToggle() {
     const toggle = document.getElementById('dark-mode-toggle');
     if (!toggle) return;
@@ -80,7 +86,7 @@ function initDarkModeToggle() {
         }
     });
 }
-
+*/
 function fixPaths() {
 
     // Fix links

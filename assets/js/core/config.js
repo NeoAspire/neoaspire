@@ -36,7 +36,8 @@ export const ROUTES = Object.freeze({
     contact: "pages/contact-us.html",
     downloads: "pages/downloads.html",
     privacyPolicy: "legal/privacy-policy.html",
-    termsOfService: "legal/terms-of-service.html"
+    termsOfService: "legal/terms-of-service.html",
+    payments: "payments/payments.html"
 });
 
 /* =========================
@@ -80,7 +81,6 @@ export const MODULE_PATHS = Object.freeze({
     ems: "ems/",
     games: "games/",
     legal: "legal/",
-    payments: "payments.html",
     qbank: "q-bank/"
 });
 
