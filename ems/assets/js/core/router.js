@@ -1,6 +1,6 @@
 // EMS router.js → SPA navigation using data-page + config
 
-import { EMS_ROUTES, EMS_CONFIG } from './config.js';
+import { EMS_ROUTES, EMS_CONFIG, } from './config.js';
 
 export function initEMSRouter() {
 

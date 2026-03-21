@@ -13,9 +13,11 @@ export const APP_CONFIG = Object.freeze({
    Base Paths
 ========================= */
 export const EMS_CONFIG = Object.freeze({
-    base: window.location.pathname.includes('/ems/')
-    ? '/ems/'
-    : '/',
+  
+    base: window.location.hostname.includes("github.io")
+    ? `/${window.location.pathname.split('/')[1]}/ems/`
+    : '/ems/',      // root path
+
     partials: "partials/",
     assets: "assets/",
     js: "assets/js/",
@@ -72,7 +74,7 @@ export const ENV_CONFIG = Object.freeze({
 /* =========================
    Module Paths
 ========================= */
-export const MODULE_PATHS = Object.freeze({
+export const EMS_MODULE_PATHS = Object.freeze({
     courses: "courses/",
     creatives: "creatives/",
     ems: "ems/",
