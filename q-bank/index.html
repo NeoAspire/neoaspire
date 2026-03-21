@@ -5,17 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Question Bank | Neoaspire</title>
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Main CSS of Neoaspire Website -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <!-- Page Specific CSS -->
+     <link rel="stylesheet" href="./css/qbank.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
-    <!-- Link to external JS for layout (e.g., hamburger menu) -->
-    <script src="/js/base.js"></script>
+    <link rel="icon" type="image/png" href="../assets/images/favicon/favicon.png">
+    <!-- Main JS of Neoaspire Website -->
+    <script type="module" src="../assets/js/main.js"></script>
+
 </head>
 
-<body>
+<body data-page="qbank">
     <!-- Header -->
-    <header id="header-container">
+    <header id="site-header">
         <!-- Header content will be loaded here -->
     </header>
 
@@ -28,7 +32,7 @@
             <p>Access Question Bank PDFs and Exam Blueprints</p>
 
             <div class="hero-qbank-actions">
-                <a href="/q-bank/blueprints.html" class="hero-qbank-btn secondary">
+                <a href="./blueprints.html" class="hero-qbank-btn secondary">
                     📘 View CBSE Blueprints
                 </a>
             </div>
@@ -138,7 +142,7 @@
     </main>
 
     <!-- Footer -->
-    <footer id="footer-container">
+    <footer id="site-footer">
         <!-- Footer content will be loaded here -->
     </footer>
     <script>
@@ -165,7 +169,7 @@
 
         // Pay & Download
         document.getElementById('payButton').addEventListener('click', function () {
-            window.location.href = "/payments/payments.html";
+            window.location.href = "../payments/payments.html";
         });
 
         // Close modal

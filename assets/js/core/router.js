@@ -1,0 +1,69 @@
+// router.js → SPA navigation using data-page + config
+
+import { ROUTES, PATHS } from './config.js';
+
+export function initRouter() {
+
+    // Handle link clicks
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('[data-link]');
+        if (!link) return;
+
+        e.preventDefault();
+
+        const page = link.dataset.page;
+        navigateTo(page);
+    });
+
+    // Back / Forward support
+    window.addEventListener('popstate', router);
+
+    // Initial load
+    router();
+}
+
+/* Navigate using page key */
+
+export function navigateTo(page) {
+    history.pushState(
+        { page },
+        '',
+        `${PATHS.base}${page}`
+    );
+    router();
+}
+
+/* Load page */
+async function router() {
+    const page = history.state?.page || getPageFromURL();
+
+    const path = ROUTES[page] || ROUTES.home;
+
+    try {
+        const response = await fetch(`${PATHS.base}${path}`);
+        const html = await response.text();
+
+        const doc = new DOMParser().parseFromString(html, 'text/html');
+        const content = doc.querySelector('main').innerHTML;
+
+        document.querySelector('main').innerHTML = content;
+
+    } catch (err) {
+        console.error('Router error:', err);
+    }
+}
+
+/* Get page from URL */
+
+function getPageFromURL() {
+    const base = PATHS.base;
+
+    let path = location.pathname.replace(base, '');
+
+    // remove trailing slash
+    if (path.endsWith('/')) {
+        path = path.slice(0, -1);
+    }
+
+    return path || 'home';
+}

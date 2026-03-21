@@ -5,19 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn Python | Neoaspire</title>
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Main CSS of Neoaspire Website -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="./css/course-page.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
-    <!-- Link to external JS for layout (e.g., hamburger menu) -->
-    <script src="/js/base.js"></script>
-    <!-- Page Specific JavaScript -->
-    <script src="/courses/js/course-page.js"></script>
+    <link rel="icon" type="image/png" href="../assets/images/favicon/favicon.png">
+    <!-- Main JS of Neoaspire Website -->
+    <script type="module" src="../assets/js/main.js"></script>
+    <!-- Page Specific JS -->
+    <script type="module" src="./js/course-page.js"></script>
+
 </head>
 
-<body>
+<body data-page="python-course">
     <!-- Header -->
-    <header id="header-container">
+    <header id="site-header">
         <!-- Header content will be loaded here -->
     </header>
 
@@ -34,8 +38,12 @@
                 <!-- Introduction -->
                 <section class="content-section" id="intro-python">
                     <h2>Introduction to Python</h2>
-                    <p>Python is a high-level, interpreted programming language known for its simplicity and readability. It is widely used in web development, data science, artificial intelligence, and automation.</p>
-                    <p>Python supports multiple programming paradigms including procedural, object-oriented, and functional programming. It has a large standard library and a vibrant community of developers.</p>
+                    <p>Python is a high-level, interpreted programming language known for its simplicity and
+                        readability. It is widely used in web development, data science, artificial intelligence, and
+                        automation.</p>
+                    <p>Python supports multiple programming paradigms including procedural, object-oriented, and
+                        functional programming. It has a large standard library and a vibrant community of developers.
+                    </p>
                     <p><b>Key features of Python include:</b></p>
                     <ul>
                         <li>Simple and readable syntax</li>
@@ -48,12 +56,19 @@
 
                 <!-- Course Completion Section -->
                 <section class="course-complete">
+                    <h1>🚧 Coming Soon!</h1>
+                    <p>
+                        This course content is currently under development.<br>
+                        Stay tuned — exciting lessons are on the way!
+                    </p>
+                    <!--
                     <h1>🎉 Course Completed!</h1>
                     <p>Congratulations! You’ve successfully finished this course.</p>
-
+                -->
                     <div class="completion-actions">
-                        <a href="/courses/" class="btn-outline">Explore More Courses</a>
+                        <a href="index.html" class="btn-outline">Explore More Courses</a>
                     </div>
+                
                 </section>
 
                 <!-- Navigation Buttons -->
@@ -69,7 +84,7 @@
     </main>
 
     <!-- Footer -->
-    <footer id="footer-container">
+    <footer id="site-footer">
         <!-- Footer content will be loaded here -->
     </footer>
 </body>

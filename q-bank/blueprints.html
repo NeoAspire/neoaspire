@@ -5,17 +5,20 @@
 <title>Exam Blueprint | Neoaspire</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="/css/main.css">
-<link rel="stylesheet" href="/q-bank/css/blueprints.css">
-<link rel="icon" type="image/png" href="/images/favicon/favicon.png">
-<script src="/js/base.js"></script>
-
-
+   <!-- Main CSS of Neoaspire Website -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <!-- Page Specific CSS -->
+     <link rel="stylesheet" href="./css/blueprints.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/images/favicon/favicon.png">
+    <!-- Main JS of Neoaspire Website -->
+    <script type="module" src="../assets/js/main.js"></script>
+  
 </head>
 
-<body>
+<body data-page="blueprints">
 
-<header id="header-container"></header>
+<header id="site-header"></header>
 
 <main>
 <!-- Blueprint Hero Section -->
@@ -42,7 +45,7 @@
 </div>
 
 <div class="filter-group filter-btn">
-<button onclick="loadBlueprint()">View Blueprint</button>
+<button id="viewBlueprintBtn">View Blueprint</button>
 </div>
 
 </div>
@@ -56,11 +59,7 @@
 
 </main>
 
-<footer id="footer-container"></footer>
-
-<!-- JS Files -->
-<script src="/q-bank/js/filter.js"></script>
-<script src="/q-bank/js/blueprint.js"></script>
+<footer id="site-footer"></footer>
 
 </body>
 </html>

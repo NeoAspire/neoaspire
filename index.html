@@ -5,17 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Main CSS of Neoaspire Website -->
+    <link rel="stylesheet" href="./assets/css/main.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/favicon/favicon.png">
-    <!-- Link to external JS for layout (e.g., hamburger menu) -->
-    <script src="/js/base.js"></script>
-    <script src="js/alertmsg.js"></script>
+    <link rel="icon" type="image/png" href="./assets/images/favicon/favicon.png">
+    <!-- Main JS of Neoaspire Website -->
+    <script type="module" src="./assets/js/main.js"></script>
 
 </head>
 
-<body>
+<body data-page="home">
     <!-- Alert Message Box -->
     <div id="alert-box" style="display: flex;">
         <div class="alert-content">
@@ -27,7 +27,7 @@
     </div>
 
     <!-- Header -->
-    <header id="header-container">
+    <header id="site-header">
         <!-- Header content will be loaded here -->
     </header>
 
@@ -60,7 +60,7 @@
                         Manage the complete assessment workflow with tools for
                         syllabus creation, blueprint design, and automated question paper generation.
                     </p>
-                    <button onclick="window.location.href='/ems/'">Explore EMS</button>
+                    <button onclick="window.location.href='./ems/'">Explore EMS</button>
                 </div>
             </div>
 
@@ -70,7 +70,7 @@
                     <h3>Question Bank</h3>
                     <p>Practice questions and model papers in Mathematics, Science, Social Science,IT and more for exam
                         prep.</p>
-                    <button onclick="window.location.href='/q-bank/'">Explore QBank</button>
+                    <button onclick="window.location.href='./q-bank/'">Explore QBank</button>
                 </div>
             </div>
             <!-- Career Guidance Card -->
@@ -81,18 +81,38 @@
                         Explore the best career options after Class 10 and Class 12.
                         Learn about streams, professional courses, and future career paths.
                     </p>
-                    <button onclick="window.location.href='/career-guidance.html'">
+                    <button onclick="window.location.href='./pages/career-guidance.html'">
                         Explore Careers
                     </button>
                 </div>
             </div>
+
             <!-- Courses Card -->
             <div class="service-card" data-category="web">
                 <div class="service-content">
                     <h3>Courses</h3>
                     <p>Explore our comprehensive course offerings in web development, programming, data science, and
                         design.</p>
-                    <button onclick="window.location.href='/courses/'">Explore Courses</button>
+                    <button onclick="window.location.href='./courses/'">Explore Courses</button>
+                </div>
+            </div>
+
+            <!--Punjabi  (Maa Boli: Sadi Pehchan) -->
+            <div class="service-card" data-category="language">
+                <div class="service-content">
+                    <h3>
+                        📖 Punjabi Course <br>
+                        ਪੰਜਾਬੀ ਕੋਰਸ (ਮਾਂ ਬੋਲੀ: ਸਾਡੀ ਪਛਾਣ)
+                    </h3>
+
+                    <p>
+                        Learn Punjabi from basics to advanced.<br>
+                        ਆਪਣੀ ਮਾਂ ਬੋਲੀ ਸਿੱਖੋ ਅਤੇ ਆਪਣੀਆਂ ਜੜ੍ਹਾਂ ਨਾਲ ਜੁੜੋ।
+                    </p>
+
+                    <button onclick="window.location.href='./courses/maa-boli-course.html'">
+                        Start Learning
+                    </button>
                 </div>
             </div>
 
@@ -102,7 +122,7 @@
                     <h3>Creatives</h3>
                     <p>Explore our creative tools, resources, and projects designed to inspire and enhance your learning
                         journey.</p>
-                    <button onclick="window.location.href='/creatives/index.html'">Explore Creatives</button>
+                    <button onclick="window.location.href='./creatives/'">Explore Creatives</button>
                 </div>
             </div>
 
@@ -112,7 +132,7 @@
                     <h3>Downloads</h3>
                     <p>Access our downloadable software, tools, utilities, and educational resources—designed to boost
                         productivity and learning.</p>
-                    <button onclick="window.location.href='downloads.html'">Explore Downloads</button>
+                    <button onclick="window.location.href='./pages/downloads.html'">Explore Downloads</button>
                 </div>
             </div>
 
@@ -125,15 +145,17 @@
                 <div class="service-content">
                     <h3>Tic-Tac-Toe</h3>
                     <p>Play Tic-Tac-Toe with friends or against the computer.</p>
-                    <button onclick="window.location.href='games/tic-tac-toe/'">Explore Game</button>
+                    <button onclick="window.location.href='./games/tic-tac-toe/'">Explore Game</button>
                 </div>
             </div>
 
     </main>
+
     <!-- Footer -->
-    <footer id="footer-container">
+    <footer id="site-footer">
         <!-- Footer content will be loaded here -->
     </footer>
+
 </body>
 
 </html>

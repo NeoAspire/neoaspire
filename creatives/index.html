@@ -5,42 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creatives | Neoaspire</title>
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="/css/main.css">
-    <!-- Creative Hub specific CSS -->
-    <link rel="stylesheet" href="/creatives/creatives.css">
+      <!-- Main CSS of Neoaspire Website -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="./creatives.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
-    <!-- Link to external JS for layout (e.g., hamburger menu) -->
-    <script src="/js/base.js"></script>
+    <link rel="icon" type="image/png" href="../assets/images/favicon/favicon.png">
+    <!-- Main JS of Neoaspire Website -->
+    <script type="module" src="../assets/js/main.js"></script>
+<!-- Page Specific JS -->
+     
 </head>
 
-<body>
+<body data-page="creatives">
     <!-- Header -->
-    <header id="header-container">
+    <header id="site-header">
         <!-- Header content will be loaded here -->
     </header>
 
     <!-- Main -->
     <main>
-        <section class="hero">
-                <h2>Creatives — Free Downloads</h2>
-                <p>Discover a collection of free resources, including icons, templates, and design assets, to fuel your
-                    creativity and enhance your projects.</p>
+        <!-- Hero -->
+    <section class="hero">
+            <h2>Creatives — Free Downloads</h2>
+            <p>Discover a collection of free resources, including icons, templates, and design assets, to fuel your
+                creativity and enhance your projects.</p>
         </section>
 
-        <section id="creations-gallery" class="container">
-            <!-- Gallery cards will be rendered here by creations.js -->
-        </section>
-        
-        <!-- Link to external JS for rendering creations -->
-        <script src="/creatives/creations.js" defer></script>
+  <!-- ✅ CARDS -->
+  <section id="creations-gallery" class="container">
+    <!-- Cards will come from JS -->
+  </section>
+
     </main>
 
     <!-- Footer -->
-    <footer id="footer-container">
+    <footer id="site-footer">
         <!-- Footer content will be loaded here -->
     </footer>
+
+   <script src="./creations.js" defer></script>
 </body>
 
 </html>

@@ -5,19 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn CSS | Neoaspire</title>
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="/css/main.css">
+
+    <!-- Main CSS of Neoaspire Website -->
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="./css/course-page.css">
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/images/favicon/favicon.png">
-    <!-- Link to external JS for layout (e.g., hamburger menu) -->
-    <script src="/js/base.js"></script>
-    <!-- Page Specific JavaScript -->
-    <script src="/courses/js/course-page.js"></script>
+    <link rel="icon" type="image/png" href="../assets/images/favicon/favicon.png">
+    <!-- Main JS of Neoaspire Website -->
+    <script type="module" src="../assets/js/main.js"></script>
+    <!-- Page Specific JS -->
+    <script type="module" src="./js/course-page.js"></script>
+
 </head>
 
-<body>
+<body data-page="css-course">
     <!-- Header -->
-    <header id="header-container">
+    <header id="site-header">
         <!-- Header content will be loaded here -->
     </header>
 
@@ -28,7 +32,7 @@
             <aside>
                 <h2>Learn CSS</h2>
                 <!-- LEVEL 0 Foundation -->
-                 <h3>Foundation</h3>
+                <h3>Foundation</h3>
                 <a href="#css-intro">CSS Introduction</a>
                 <a href="#css-syntax">CSS Syntax</a>
                 <a href="#css-howto">How to add CSS</a>
@@ -3185,8 +3189,8 @@ nav {
 
                     <h3>Basic HTML Structure</h3>
 
-<div class="code-block">
-<pre><code class="language-html">
+                    <div class="code-block">
+                        <pre><code class="language-html">
 &lt;nav class="navbar"&gt;
     &lt;div class="logo"&gt;MySite&lt;/div&gt;
     &lt;ul class="nav-links"&gt;
@@ -3197,7 +3201,7 @@ nav {
     &lt;/ul&gt;
 &lt;/nav&gt;
 </code></pre>
-</div>
+                    </div>
 
                     <h3>Modern Flexbox Styling</h3>
 
@@ -3314,9 +3318,9 @@ nav {
                     <!-- BASIC HTML STRUCTURE -->
                     <h3>Basic HTML Structure</h3>
 
-                  <div class="code-wrapper">
-    <div class="code-header">HTML - Dropdown Navbar</div>
-<pre><code class="language-html">
+                    <div class="code-wrapper">
+                        <div class="code-header">HTML - Dropdown Navbar</div>
+                        <pre><code class="language-html">
 &lt;nav class="navbar"&gt;
     &lt;ul class="nav-links"&gt;
         &lt;li class="dropdown"&gt;
@@ -3330,7 +3334,7 @@ nav {
     &lt;/ul&gt;
 &lt;/nav&gt;
 </code></pre>
-</div>
+                    </div>
 
                     <p>
                         The dropdown is structured using nested unordered lists.
@@ -3509,11 +3513,11 @@ nav {
                     <h3>Basic HTML Structure</h3>
 
                     <div class="code-block">
-    <div class="code-header">
-        <span>HTML – Image Gallery Structure</span>
-    </div>
+                        <div class="code-header">
+                            <span>HTML – Image Gallery Structure</span>
+                        </div>
 
-<pre><code class="language-html">
+                        <pre><code class="language-html">
 &lt;div class="gallery"&gt;
     &lt;div class="gallery-item"&gt;
         &lt;img src="img1.jpg" alt="Gallery Image 1"&gt;
@@ -3529,7 +3533,7 @@ nav {
     &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-</div>
+                    </div>
                     <!-- =========================
          GALLERY CONTAINER STYLING
     ========================== -->
@@ -3694,12 +3698,12 @@ nav {
     ========================== -->
                     <h3>Basic HTML Structure</h3>
 
-  <div class="code-block">
-    <div class="code-header">
-        <span>HTML – Form Example</span>
-    </div>
+                    <div class="code-block">
+                        <div class="code-header">
+                            <span>HTML – Form Example</span>
+                        </div>
 
-<pre><code class="language-html">
+                        <pre><code class="language-html">
 &lt;form class="form-container"&gt;
 
     &lt;div class="form-group"&gt;
@@ -3722,7 +3726,7 @@ nav {
 &lt;/form&gt;
 </code></pre>
 
-</div>
+                    </div>
 
                     <p>
                         The form is structured using reusable class-based architecture.
@@ -3920,8 +3924,8 @@ nav {
                     <h3>Basic HTML Layout Structure</h3>
 
                     <div class="code-container">
-  
-<pre><code class="language-html">
+
+                        <pre><code class="language-html">
 &lt;div class="wrapper"&gt;
 
     &lt;header class="header"&gt;Header&lt;/header&gt;
@@ -3938,7 +3942,7 @@ nav {
 
 &lt;/div&gt;
 </code></pre>
-</div>
+                    </div>
 
                     <p>
                         Semantic HTML elements like <strong>&lt;header&gt;</strong>,
@@ -4111,15 +4115,15 @@ body {
                     <h3>Basic HTML Structure</h3>
 
                     <div class="code-box">
-    <div class="code-title">HTML – Flexbox Example</div>
-<pre><code class="language-html">
+                        <div class="code-title">HTML – Flexbox Example</div>
+                        <pre><code class="language-html">
 &lt;div class="flex-container"&gt;
     &lt;div class="flex-item"&gt;Item 1&lt;/div&gt;
     &lt;div class="flex-item"&gt;Item 2&lt;/div&gt;
     &lt;div class="flex-item"&gt;Item 3&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-</div>
+                    </div>
 
                     <p>
                         The parent element becomes a <strong>flex container</strong>,
@@ -4309,9 +4313,9 @@ body {
                     <h3>Basic HTML Structure</h3>
 
                     <div class="code-block">
-  
 
-<pre><code class="language-html">
+
+                        <pre><code class="language-html">
 &lt;div class="grid-container"&gt;
     &lt;div class="grid-item"&gt;Header&lt;/div&gt;
     &lt;div class="grid-item"&gt;Sidebar&lt;/div&gt;
@@ -4320,7 +4324,7 @@ body {
 &lt;/div&gt;
 </code></pre>
 
-</div>
+                    </div>
 
                     <p>
                         The parent element becomes a <strong>grid container</strong>,
@@ -4549,7 +4553,7 @@ footer {
                     <p>Congratulations! You’ve successfully finished this course.</p>
 
                     <div class="completion-actions">
-                        <a href="/courses/" class="btn-outline">Explore More Courses</a>
+                        <a href="index.html" class="btn-outline">Explore More Courses</a>
                     </div>
                 </section>
 
@@ -4565,7 +4569,7 @@ footer {
     </main>
 
     <!-- Footer -->
-    <footer id="footer-container">
+    <footer id="site-footer">
         <!-- Footer content will be loaded here -->
     </footer>
 </body>

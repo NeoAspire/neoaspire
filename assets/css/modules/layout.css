@@ -1,0 +1,250 @@
+/* =========================================================
+   HEADER, FOOTER, SIDEBAR LAYOUT.CSS
+   ========================================================= */
+   
+/* =========================================================
+   GLOBAL LAYOUT SYSTEM (GRID STRUCTURE)
+========================================================= */
+
+body {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+
+    background-color: var(--color-bg-light);
+    color: var(--color-text-primary);
+
+    font-family: var(--font-primary);
+}
+
+/* Main area */
+main {
+    grid-area: main;
+}
+
+   /* =========================================
+   HEADER LAYOUT
+========================================= */
+header {
+    grid-area: header;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background: var(--color-dark);
+    color: var(--color-white);
+    padding: var(--space-sm) var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background var(--transition-normal);
+    z-index: var(--z-index-modal); /* Linked to variables */
+}
+
+/* =========================================
+   LOGO
+========================================= */
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xs); /* Linked to variables */
+    text-decoration: none;
+}
+
+header .logo img {
+    max-width: 150px;
+    max-height: 40px;
+    object-fit: contain;
+    border-radius: var(--radius-md); /* Linked to variables */
+}
+
+header .logo h1 {
+    font-size: var(--font-size-lg); /* Linked to variables (approx 1.5rem) */
+    font-weight: var(--font-weight-bold);
+    color: var(--color-white);
+}
+
+/* =========================================
+   NAVIGATION (DESKTOP)
+========================================= */
+header nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+}
+
+.nav-links {
+    display: flex;
+    gap: var(--space-md);
+}
+
+.nav-links a {
+    display: block;
+    color: var(--color-white);
+    font-weight: var(--font-weight-semibold);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-fast);
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.1); 
+    /* Tip: You could also use var(--color-primary) here for brand consistency */
+}
+
+/* =========================================
+   NAV LINK TOOLTIP
+========================================= */
+.nav-link {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip box */
+.nav-link::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 110%; 
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    font-size: var(--font-size-xs);
+    padding: var(--space-xs) var(--space-sm);
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--transition-fast);
+    z-index: var(--z-index-tooltip);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Tooltip Arrow */
+.nav-link::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+    border-width: 5px;
+    border-style: solid;
+    border-color: var(--color-dark) transparent transparent transparent;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.nav-link:hover::after,
+.nav-link:hover::before {
+    opacity: 1;
+}
+
+/* =========================================
+   HAMBURGER ICON
+========================================= */
+.nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    background: none;
+    cursor: pointer;
+    gap: var(--space-xs);
+}
+
+.nav-hamburger span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background-color: var(--color-white);
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-fast);
+}
+
+/* =========================================
+   MOBILE STYLES
+========================================= */
+@media (max-width: 768px) { /* Note: Consider using var(--breakpoint-md) here if your pre-processor allows */
+    
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%; /* Sits exactly at the bottom of the header */
+        right: var(--space-md);
+        background: var(--color-dark);
+        width: 200px;
+        border-radius: var(--radius-md);
+        box-shadow: var(--shadow-lg);
+        padding: var(--space-xs) 0;
+        animation: fadeIn var(--transition-normal);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: var(--space-sm);
+        border-bottom: 1px solid var(--color-border);; /* Subtle divider */
+        border-radius: 0;
+    }
+
+    .nav-hamburger {
+        display: flex;
+    }
+}
+
+/* =========================================
+   FOOTER LAYOUT
+========================================= */
+footer {
+    grid-area: footer;
+    background: var(--color-dark);
+    color: var(--color-white);
+    text-align: center;
+    padding: var(--space-sm) var(--space-md); /* Increased vertical padding for better breathing room */
+    transition: background var(--transition-normal);
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separation */
+}
+
+/* Footer Navigation/Links */
+footer nav {
+    margin-bottom: var(--space-md);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: var(--space-md); /* Using gap instead of margins for better consistency */
+}
+
+footer a {
+    color: var(--color-white);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-medium);
+    transition: color var(--transition-fast);
+}
+
+footer a:hover {
+    color: var(--color-primary); /* Use your brand color on hover instead of just underline */
+    text-decoration: none; 
+}
+
+/* Copyright & Muted Text */
+footer p {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted); /* Uses your muted variable */
+    margin-top: var(--space-md);
+    line-height: var(--line-height-md);
+}
+
+/* =========================================
+   DARK MODE SUPPORT
+========================================= */
+body.dark-mode footer {
+    background: #000000; /* Slightly darker for true dark mode */
+}

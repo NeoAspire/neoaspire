@@ -10,7 +10,7 @@
      padding: var(--space-sm) var(--space-xs);
      border-radius: var(--radius-md);
      transition: background var(--transition-normal);
-     margin: 0 var(--space-xs);
+     margin: 0;
  }
 
  .hero-qbank h2 {

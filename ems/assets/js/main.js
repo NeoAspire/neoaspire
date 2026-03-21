@@ -1,62 +1,49 @@
 /* ===============================
-   NEOASPIRE EMS - MAIN JS
+MAIN JS (Master File) of EXAM MANAGEMENT SYSTEM
 ================================ */
 
-// Global modules
+console.log("main.js loaded");
+
+// Global modules (core)
 const coreModules = [
-  "./ui/menu-toggle.js",
+    "./core/config.js", 
+    "./core/layout.js",    // layout module
+    "./core/router.js"
 ];
 
-// Page specific modules
+// Page-specific modules
 const pageModules = {
-  "syllabus-builder": "./modules/syllabus/syllabus-builder.js",
-  blueprint: "./modules/blueprint/blueprint-builder.js",
-  questionPaper: "./modules/question-paper/question-paper-generator.js"
+ 
+ 
 };
 
 // Detect page
 const page = document.body.dataset.page;
 
-// Build module list
+// Build module list dynamically
 const modules = [
-  ...coreModules,
-  ...(pageModules[page] ? [pageModules[page]] : [])
+    ...coreModules,
+    ...(Array.isArray(pageModules[page])
+        ? pageModules[page]
+        : pageModules[page]
+        ? [pageModules[page]]
+        : [])
 ];
 
+// Load modules
 async function loadModules() {
+    const results = await Promise.allSettled(modules.map(path => import(path)));
 
-  const results = await Promise.allSettled(
-    modules.map(path => import(path))
-  );
-
-  results.forEach((res, i) => {
-
-    const modulePath = modules[i];
-
-    if (res.status === "fulfilled") {
-
-      console.log(`✔ ${modulePath} loaded`);
-
-      const module = res.value;
-
-      if (typeof module.init === "function") {
-
-        try {
-          module.init();
-        } catch (err) {
-          console.error(`Init error in ${modulePath}`, err);
+    results.forEach((res, i) => {
+        const path = modules[i];
+        if (res.status === "fulfilled") {
+            const mod = res.value;
+            if (mod.initEMSLayout) mod.initEMSLayout();
+            console.log(`✔ ${path} loaded`);
+        } else {
+            console.error(`✖ ${path} failed`, res.reason);
         }
-
-      }
-
-    } else {
-
-      console.error(`✖ ${modulePath} failed`, res.reason);
-
-    }
-
-  });
-
+    });
 }
 
 document.addEventListener("DOMContentLoaded", loadModules);

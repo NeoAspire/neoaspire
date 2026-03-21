@@ -36,12 +36,29 @@
 /* Select Dropdown */
 
 .filter-group select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--radius-md);
     border: 1px solid var(--color-border);
     font-size: var(--font-size-md);
     background: var(--color-bg-light);
     transition: var(--transition-fast);
+    cursor: pointer;
+
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg fill='%23666' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.5 7l4.5 5 4.5-5z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right var(--space-sm) center;
+    background-size: 12px;
+    padding-right: 2.5rem;
+}
+
+/* Hover state */
+.filter-group select:hover {
+    border-color: var(--color-primary);
+    background: var(--color-primary-light);
 }
 
 .filter-group select:focus {

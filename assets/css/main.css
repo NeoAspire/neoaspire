@@ -1,0 +1,30 @@
+/* ===============================
+MAIN CSS (Master File) 
+================================ */
+
+/* ===== BASE ===== */
+@import url('./base/variables.css');    /* Design tokens */
+@import url('./base/reset.css');        /* Reset defaults */
+@import url('./base/theme.css');        /* Light/Dark theme */
+
+
+/* ===== LAYOUT ===== */
+@import url('./modules/layout.css');    /* Grid, header, footer */
+
+
+/* ===== COMPONENTS ===== */
+@import url('./modules/components.css'); /* Buttons, hero, cards */
+
+
+/* ===== PAGES ===== */
+@import url('./pages/index.css'); 
+@import url('./pages/legal.css');      
+@import url('./pages/about.css');
+@import url('./pages/contact-us.css');
+@import url('./pages/downloads.css');
+@import url('./pages/career-guidance.css');
+@import url('./pages/coming-soon.css');
+
+
+/* ===== RESPONSIVE ===== */
+@import url('./base/responsive.css');          /* Global responsive */

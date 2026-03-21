@@ -1,15 +1,24 @@
 /* ===============================
-   NEOASPIRE EMS - MAIN CSS
-   Loads all modules
+MAIN CSS (Master File) 
 ================================ */
 
-/* Importing global variables for large projects from Root Website*/
-@import url('/css/variables.css');
+/* ===== BASE ===== */
+@import url('./base/variables.css');    /* Design tokens */
+@import url('./base/reset.css');        /* Reset defaults */
+@import url('./base/theme.css');        /* Light/Dark theme */
 
-/* Importing layout styles from Root Website */
-@import url('/ems/assets/css/layout.css');
 
-/* Importing page-specific styles from Exam Management System (EMS) */
-@import url('/ems/assets/css/ems-landing.css');
-@import url('/ems/assets/css/dashboard.css');
-@import url('/ems/assets/css/syllabus-builder.css');
+/* ===== LAYOUT ===== */
+@import url('./modules/layout.css');    /* Grid, header, footer */
+
+
+/* ===== COMPONENTS ===== */
+@import url('./modules/components.css'); /* Buttons, hero, cards */
+
+
+/* ===== PAGES ===== */
+@import url('./pages/coming-soon.css');
+
+
+/* ===== RESPONSIVE ===== */
+@import url('./base/responsive.css');          /* Global responsive */
