@@ -24,7 +24,7 @@ export function initRouter() {
 
 /* Navigate using page key */
 
-function navigateTo(page) {
+export function navigateTo(page) {
     history.pushState(
         { page },
         '',

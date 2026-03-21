@@ -218,7 +218,8 @@
   </style>
 </head>
 
-<body>
+<body data-page="payments">
+  <main>
   <!-- Alert Message Box -->
   <section id="alert-box" style="display: flex;">
     <div class="alert-content">
@@ -265,6 +266,7 @@
     <!-- PAYMENT DETAILS FORM -->
 
     <form id="myForm" method="POST" enctype="multipart/form-data">
+      
 
       <!-- FormSubmit settings -->
       <input type="hidden" name="_subject" value="PDF Payment Verification">
@@ -313,10 +315,11 @@
 
     </form>
   </section>
-
+</main>
   <!-- JavaScript + Google Apps Script Link Form Submission -->
   <script type="module">
     import { PATHS } from '../assets/js/core/config.js'; // config paths
+    import { navigateTo } from '../assets/js/core/router.js';
     
     const scriptURL =
       'https://script.google.com/macros/s/AKfycbxT7q-kz95bnMY24tBcyRTBLrYXDOODtcbvacnG6xBdxwIYKPraC4gw9JMoL9Fe1bLWfw/exec';
@@ -375,6 +378,7 @@
         .then(res => res.json())
         .then(response => {
           if (response.status === 'success') {
+
             alert(
               'Success! Data submitted.\n' +
               'You will receive the PDF link via email after verification.'
@@ -382,10 +386,7 @@
 
             // Redirect AFTER user clicks OK
             form.reset();
-            // use your router
-            history.pushState({ page: 'qbank' }, '', `${PATHS.base}q-bank/`);
-            window.dispatchEvent(new PopStateEvent('popstate'));
-
+            window.location.href = `${PATHS.base}q-bank/index.html`;
           }
           else {
             alert('Error: ' + response.message);
