@@ -15,6 +15,7 @@
   <!-- Main JS of Neoaspire Website -->
   <script type="module" src="../assets/js/main.js"></script>
 
+  <!-- My Style -->
   <style>
     /* ================================
    PAGE BACKGROUND
@@ -70,6 +71,50 @@
     #alert-close-btn:hover {
       background: var(--color-warning-hover);
     }
+
+/* ================================
+   SUCCESS BOX (MODAL STYLE)
+================================ */
+#success-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+
+  width: 320px;
+  padding: var(--space-lg);
+
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+
+  z-index: var(--z-index-modal);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+
+  animation: fadeIn 0.3s ease;
+
+  text-align: center; /* ✅ centers text */
+}
+
+#success-ok-btn {
+  background: var(--color-success);
+  color: var(--color-white);
+
+  padding: 10px;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+
+  transition: var(--transition-fast);
+}
+
+#success-ok-btn:hover {
+  background: var(--color-success-hover);
+}
 
     /* ================================
    PAYMENT BOX (CARD DESIGN)
@@ -216,111 +261,124 @@
       }
     }
   </style>
+
 </head>
 
 <body data-page="payments">
   <main>
-  <!-- Alert Message Box -->
-  <section id="alert-box" style="display: flex;">
-    <div class="alert-content">
-      <p>
-        🎁 <strong>Free Access Available!</strong><br>
-        Get free access to the <strong>PDF of Important Questions</strong> while our payment system is being set
-        up.<br><br>
+    <!-- Alert Message Box -->
+    <section id="alert-box" style="display: flex;">
+      <div class="alert-content">
+        <p>
+          🎁 <strong>Free Access Available!</strong><br>
+          Get free access to the <strong>PDF of Important Questions</strong> while our payment system is being set
+          up.<br><br>
 
-        📝 <strong>How to get access:</strong><br>
-        • Fill the form below<br>
-        • Select <strong>₹99</strong> as the payment amount<br>
-        • Enter <strong>any UTR number</strong> (for now)<br><br>
+          📝 <strong>How to get access:</strong><br>
+          • Fill the form below<br>
+          • Select <strong>₹99</strong> as the payment amount<br>
+          • Enter <strong>any UTR number</strong> (for now)<br><br>
 
-        ⏳ This free access is temporary and will be disabled once the payment system goes live.
-      </p>
+          ⏳ This free access is temporary and will be disabled once the payment system goes live.
+        </p>
 
 
-      <button id="alert-close-btn">Close</button>
-    </div>
-  </section>
-
-  <!-- PAYMENT SECTION -->
-  <section class="payment-box">
-    <h1>Pay to Download PDF</h1>
-    <p>Scan the QR code using any UPI app and complete the payment.</p>
-
-    <img src="#" alt="UPI QR Code" class="qr">
-
-    <!-- PRICE DETAILS -->
-
-    <section class="price-card">
-      <div class="price">₹99</div>
-      <div class="price-note"><strong>Per Subject</strong></div>
-      <div class="price-note">✔ Separate payment for each subject</div>
-      <div class="price-note">⏳ 3 months view-only access</div>
-      <div class="price-note">🚫 Print & download disabled</div>
-      <div class="important">Important:</div>
-      <div class="note">
-        ✔ After payment, fill in the form below with accurate details including UTR.<br>
-        ✔ You will receive the PDF link via email after verification (may take up to 24 hours).<br>
+        <button id="alert-close-btn">Close</button>
       </div>
     </section>
 
-    <!-- PAYMENT DETAILS FORM -->
+    <!-- SUCCESS BOX -->
+    <section id="success-box" style="display: none;">
+      <div class="alert-content">
+        <p>
+          ✅ Payment submitted successfully!<br>
+           After payment verification, the PDF link will be sent to your email within 24 hours.
+        </p>
+        <button id="success-ok-btn">OK</button>
+      </div>
+    </section>
 
-    <form id="myForm" method="POST" enctype="multipart/form-data">
-      
+    <!-- PAYMENT SECTION -->
+    <section class="payment-box">
+      <h1>Pay to Download PDF</h1>
+      <p>Scan the QR code using any UPI app and complete the payment.</p>
 
-      <!-- FormSubmit settings -->
-      <input type="hidden" name="_subject" value="PDF Payment Verification">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
+      <img src="#" alt="UPI QR Code" class="qr">
 
-      <label>Your Name</label>
-      <input type="text" name="name" placeholder="Enter your name" required>
+      <!-- PRICE DETAILS -->
 
-      <label>Email Address</label>
-      <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+      <section class="price-card">
+        <div class="price">₹99</div>
+        <div class="price-note"><strong>Per Subject</strong></div>
+        <div class="price-note">✔ Separate payment for each subject</div>
+        <div class="price-note">⏳ 3 months view-only access</div>
+        <div class="price-note">🚫 Print & download disabled</div>
+        <div class="important">Important:</div>
+        <div class="note">
+          ✔ After payment, fill in the form below with accurate details including UTR.<br>
+          ✔ You will receive the PDF link via email after verification (may take up to 24 hours).<br>
+        </div>
+      </section>
 
-      <label>Select Class</label>
-      <select name="class" id="classSelect" required>
-        <option value="">Select Your Class</option>
-      </select>
+      <!-- PAYMENT DETAILS FORM -->
 
-      <label>Select Subject</label>
-      <select name="subject" id="subjectSelect" required disabled>
-        <option value="">Select Subject</option>
-      </select>
+      <form id="myForm" method="POST" enctype="multipart/form-data">
 
-      <label>Select Chapter</label>
-      <select name="chapter" id="chapterSelect" required disabled>
-        <option value="">Select Chapter</option>
-      </select>
 
-      <!-- ✅ Amount Paid BEFORE UTR -->
-      <label>Amount Paid (₹)</label>
-      <select name="amount_paid" id="amountSelect" required>
-        <option value="">Select Amount</option>
-        <option value="₹99">₹99</option>
-        <option value="₹199">₹199</option>
-      </select>
-      <small>Enter the exact amount you paid</small>
+        <!-- FormSubmit settings -->
+        <input type="hidden" name="_subject" value="PDF Payment Verification">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
 
-      <label>UPI Transaction ID (UTR)</label>
-      <input type="text" name="utr" placeholder="Example: 325487XXXX" required pattern="[A-Za-z0-9]{8,20}">
-      <small>UTR is available in your payment app</small>
+        <label>Your Name</label>
+        <input type="text" name="name" placeholder="Enter your name" required>
 
-      <label>Payment Screenshot (Optional)</label>
-      <input type="file" name="screenshot" accept=".jpg,.jpeg,.png">
-      <small>Upload only if available. Max size: 5 MB</small>
+        <label>Email Address</label>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
 
-      <button type="submit">Submit Payment Details</button>
+        <label>Select Class</label>
+        <select name="class" id="classSelect" required>
+          <option value="">Select Your Class</option>
+        </select>
 
-    </form>
-  </section>
-</main>
+        <label>Select Subject</label>
+        <select name="subject" id="subjectSelect" required disabled>
+          <option value="">Select Subject</option>
+        </select>
+
+        <label>Select Chapter</label>
+        <select name="chapter" id="chapterSelect" required disabled>
+          <option value="">Select Chapter</option>
+        </select>
+
+        <!-- ✅ Amount Paid BEFORE UTR -->
+        <label>Amount Paid (₹)</label>
+        <select name="amount_paid" id="amountSelect" required>
+          <option value="">Select Amount</option>
+          <option value="₹99">₹99</option>
+          <option value="₹199">₹199</option>
+        </select>
+        <small>Enter the exact amount you paid</small>
+
+        <label>UPI Transaction ID (UTR)</label>
+        <input type="text" name="utr" placeholder="Example: 325487XXXX" required pattern="[A-Za-z0-9]{8,20}">
+        <small>UTR is available in your payment app</small>
+
+        <label>Payment Screenshot (Optional)</label>
+        <input type="file" name="screenshot" accept=".jpg,.jpeg,.png">
+        <small>Upload only if available. Max size: 5 MB</small>
+
+        <button type="submit">Submit Payment Details</button>
+
+      </form>
+    </section>
+  </main>
+
   <!-- JavaScript + Google Apps Script Link Form Submission -->
   <script type="module">
     import { PATHS } from '../assets/js/core/config.js'; // config paths
     import { navigateTo } from '../assets/js/core/router.js';
-    
+
     const scriptURL =
       'https://script.google.com/macros/s/AKfycbxT7q-kz95bnMY24tBcyRTBLrYXDOODtcbvacnG6xBdxwIYKPraC4gw9JMoL9Fe1bLWfw/exec';
 
@@ -379,16 +437,20 @@
         .then(response => {
           if (response.status === 'success') {
 
-            alert(
-              'Success! Data submitted.\n' +
-              'You will receive the PDF link via email after verification.'
-            );
-
-            // Redirect AFTER user clicks OK
             form.reset();
-            window.location.href = `${PATHS.base}q-bank/index.html`;
-          }
-          else {
+
+            // SHOW SUCCESS BOX
+            const successBox = document.getElementById("success-box");
+            const okBtn = document.getElementById("success-ok-btn");
+
+            successBox.style.display = "flex";
+
+            // REDIRECT ONLY AFTER CLICK
+            okBtn.onclick = () => {
+              window.location.href = `${PATHS.base}q-bank/index.html`;
+            };
+
+          } else {
             alert('Error: ' + response.message);
           }
         })
