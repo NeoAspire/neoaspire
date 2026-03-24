@@ -1,6 +1,6 @@
 /* =========================================================
-   PROFESSIONAL COMPONENTS.CSS
-   Style for buttons, inputs, cards, hero
+   PROFESSIONAL COMPONENTS.CSS (CLEAN)
+   Only UI Components (No Layout / No Theme)
    ========================================================= */
 
 /* ==========================================
@@ -12,7 +12,7 @@
     text-align: center;
     padding: var(--space-lg) var(--space-md);
     border-radius: var(--radius-md);
-    margin: 0 ;
+    margin: 0;
     transition: background var(--transition-normal);
 }
 
@@ -29,189 +29,44 @@
 }
 
 /* ==========================================
-   BASE BUTTON
+   BUTTONS
 ========================================== */
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: var(--space-xs);
-
     padding: var(--space-sm) var(--space-md);
     border-radius: var(--radius-md);
-
-    font-family: var(--font-primary);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
-    line-height: var(--line-height-sm);
-
-    text-decoration: none;
     cursor: pointer;
     border: 1px solid transparent;
-
-    transition:
-        background-color var(--transition-fast),
-        color var(--transition-fast),
-        border-color var(--transition-fast),
-        transform var(--transition-fast),
-        box-shadow var(--transition-fast);
-
-    will-change: transform;
+    transition: all var(--transition-fast);
 }
 
-/* ==========================================
-   ACCESSIBILITY
-========================================== */
-.btn:focus-visible {
-    outline: 2px solid var(--color-secondary);
-    outline-offset: 2px;
-}
+.btn-primary { background: var(--color-primary); color: var(--color-white); }
+.btn-primary:hover { background: var(--color-primary-hover); }
 
-/* Press effect */
-.btn:active {
-    transform: translateY(1px);
-    box-shadow: var(--shadow-sm);
-}
+.btn-secondary { background: var(--color-secondary); color: var(--color-white); }
+.btn-secondary:hover { background: var(--color-secondary-hover); }
 
-/* Disabled */
-.btn:disabled,
-.btn.disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-    pointer-events: none;
-}
+.btn-outline { background: transparent; border: 1px solid var(--color-primary); color: var(--color-primary); }
+.btn-outline:hover { background: var(--color-primary-light); }
 
-/* ==========================================
-   PRIMARY BUTTON
-========================================== */
-.btn-primary {
-    background-color: var(--color-primary);
-    color: var(--color-white);
-    padding: var(--space-sm);
-    border-radius: var(--radius-lg);
-}
+.btn-ghost { background: transparent; color: var(--color-primary); }
+.btn-ghost:hover { background: var(--color-bg-section); }
 
-.btn-primary:hover {
-    background-color: var(--color-primary-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
+.btn-danger { background: var(--color-error); color: var(--color-white); }
+.btn-success { background: var(--color-success); color: var(--color-white); }
+.btn-warning { background: var(--color-warning); color: var(--color-white); }
 
-/* ==========================================
-   SECONDARY BUTTON
-========================================== */
-.btn-secondary {
-    background-color: var(--color-secondary);
-    color: var(--color-white);
-}
+.btn-sm { padding: var(--space-xs) var(--space-sm); font-size: var(--font-size-xs); }
+.btn-lg { padding: var(--space-md) var(--space-lg); font-size: var(--font-size-md); }
 
-.btn-secondary:hover {
-    background-color: var(--color-secondary-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
+.btn-block { width: 100%; }
 
-/* ==========================================
-   OUTLINE BUTTON
-========================================== */
-.btn-outline {
-    background: transparent;
-    border: 1px solid var(--color-primary);
-    color: var(--color-primary);
-    padding: var(--space-xs);
-}
-
-.btn-outline:hover {
-    background-color: var(--color-primary-light);
-    transform: translateY(-2px);
-}
-
-/* ==========================================
-   GHOST BUTTON
-========================================== */
-.btn-ghost {
-    background: transparent;
-    color: var(--color-primary);
-}
-
-.btn-ghost:hover {
-    background-color: var(--color-bg-section);
-}
-
-/* ==========================================
-   DANGER BUTTON (USING VARIABLES)
-========================================== */
-.btn-danger {
-    background-color: var(--color-error);
-    color: var(--color-white);
-}
-
-.btn-danger:hover {
-    background-color: var(--color-error-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-/* ==========================================
-   SUCCESS BUTTON (ADDED)
-========================================== */
-.btn-success {
-    background-color: var(--color-success);
-    color: var(--color-white);
-}
-
-.btn-success:hover {
-    background-color: var(--color-success-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-/* ==========================================
-   WARNING BUTTON (ADDED)
-========================================== */
-.btn-warning {
-    background-color: var(--color-warning);
-    color: var(--color-white);
-}
-
-.btn-warning:hover {
-    background-color: var(--color-warning-hover);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-/* ==========================================
-   SIZE VARIANTS
-========================================== */
-.btn-sm {
-    padding: var(--space-xs) var(--space-sm);
-    font-size: var(--font-size-xs);
-}
-
-.btn-lg {
-    padding: var(--space-md) var(--space-lg);
-    font-size: var(--font-size-md);
-}
-
-/* ==========================================
-   FULL WIDTH
-========================================== */
-.btn-block {
-    width: 100%;
-}
-
-/* ==========================================
-   ICON BUTTON SUPPORT
-========================================== */
-.btn-icon {
-    padding: var(--space-sm);
-    width: 40px;
-    height: 40px;
-}
-
-/* ==========================================
-   LOADING STATE (ADVANCED)
-========================================== */
+/* Loading */
 .btn.loading {
     position: relative;
     pointer-events: none;
@@ -229,9 +84,245 @@
     animation: spin 0.6s linear infinite;
 }
 
-/* Spinner animation */
 @keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+    to { transform: rotate(360deg); }
+}
+
+/* ==========================================
+   FORMS / INPUTS
+========================================== */
+.form-group {
+    margin-bottom: var(--space-md);
+}
+
+.form-label {
+    display: block;
+    margin-bottom: var(--space-xs);
+    font-size: var(--font-size-sm);
+}
+
+.form-input,
+.form-textarea,
+.form-select {
+    width: 100%;
+    padding: var(--space-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-sm);
+    background: var(--color-white);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+    outline: none;
+    border-color: var(--color-secondary);
+}
+
+/* ==========================================
+   CARD
+========================================== */
+.card {
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: all var(--transition-fast);
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.card-body {
+    padding: var(--space-md);
+}
+
+.card-title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+}
+
+.card-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-secondary);
+}
+
+/* ==========================================
+   TABLE
+========================================== */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--font-size-sm);
+}
+
+.table th,
+.table td {
+    padding: var(--space-sm);
+    border: 1px solid var(--color-border);
+}
+
+.table th {
+    background: var(--color-bg-section);
+}
+
+.table tr:hover {
+    background: var(--color-bg-light);
+}
+
+/* ==========================================
+   MODAL
+========================================== */
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: var(--z-index-modal);
+}
+
+.modal-content {
+    background: var(--color-white);
+    padding: var(--space-lg);
+    border-radius: var(--radius-lg);
+    width: 90%;
+    max-width: 400px;
+}
+
+/* ==========================================
+   BADGE
+========================================== */
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: var(--font-size-xs);
+    border-radius: var(--radius-sm);
+}
+
+.badge-success { background: #ECFDF5; color: var(--color-success); }
+.badge-error { background: #FEF2F2; color: var(--color-error); }
+
+/* ==========================================
+   LOADER
+========================================== */
+.loader {
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--color-border);
+    border-top: 4px solid var(--color-primary);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: auto;
+}
+
+/* ==========================================
+   TABS
+========================================== */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.tab {
+    padding: var(--space-sm) var(--space-md);
+    cursor: pointer;
+}
+
+.tab.active {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+}
+
+/* ==========================================
+   SEARCH BAR
+========================================== */
+.search-bar {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.search-input {
+    flex: 1;
+    padding: var(--space-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+}
+
+/* ==========================================
+   TOOLTIP
+========================================== */
+.tooltip {
+    position: relative;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-dark);
+    color: var(--color-white);
+    padding: var(--space-xs);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-xs);
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+}
+
+/* ==========================================
+   PAGINATION
+========================================== */
+.pagination {
+    display: flex;
+    gap: var(--space-xs);
+}
+
+.page-item {
+    padding: var(--space-xs) var(--space-sm);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+}
+
+.page-item.active {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* ==========================================
+   DROPDOWN
+========================================== */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--color-white);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    display: none;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-item {
+    display: block;
+    padding: var(--space-sm);
+}
+
+.dropdown-item:hover {
+    background: var(--color-bg-section);
 }

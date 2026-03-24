@@ -6,58 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syllabus | Neoaspire EMS</title>
 
-    <!-- ===============================
-         Main CSS of Exam Management System
-    =============================== -->
+     <!-- Main CSS OF Exam Management System -->
     <link rel="stylesheet" href="../../assets/css/main.css">
+    
+   <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="../../assets/css/pages/syllabus-builder.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.png">
 
+    <!-- CORE JS -->
+    <script type="module" src="/core/js/index.js"></script>
+
     <!-- Load html2pdf.js library first -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
-    <!-- Main JS of Exam Management System -->
-    <script type="module" src="../../assets/js/main.js" ></script>
 </head>
 
-<body data-page="syllabus-builder">
+<body data-app=ems data-page="syllabusBuilder">
 
-    <!-- ===============================
-         HEADER
-         =============================== -->
-    <header class="ems-header">
-
-        <!-- Left section: Logo + Navigation -->
-        <div class="ems-header-left">
-            <a href="/ems/" class="ems-logo">
-                <img src="/ems/assets/images/logo/logo.png" alt="Logo">
-                <span>NeoAspire <strong>EMS</strong></span>
-            </a>
-
-            <nav class="ems-nav" id="emsNav">
-                <a href="/ems/dashboard/" class="nav-item active">Dashboard</a>
-                <a href="/ems/coming-soon.html" class="nav-item">Syllabus</a>
-                <a href="/ems/coming-soon.html" class="nav-item">Blueprint</a>
-                <a href="/ems/coming-soon.html" class="nav-item">QP Generator</a>
-            </nav>
-        </div>
-
-        <!-- Right section: Help + User Badge -->
-        <div class="ems-header-right">
-            <button class="btn-secondary">Help</button>
-            <div class="user-badge">Guest</div>
-        </div>
-
-        <!-- Hamburger Menu for mobile -->
-        <button class="menu-toggle" id="menuToggle">☰</button>
-
+    <!-- HEADER -->
+    <header class="ems-header" id="header-container">
+        <!-- Dashboard Header Here -->
     </header>
 
     <!-- ===============================
          MAIN CONTENT: Syllabus Builder
          =============================== -->
-    <main class="ems-main">
+    <main>
         <section class="syllabus-builder">
 
             <h1>Syllabus Builder</h1>

@@ -4,18 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Header Preview</title>
-    <!-- Main CSS of Neoaspire Website -->
-    <link rel="stylesheet" href="../assets/css/main.css">
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../assets/images/favicon/favicon.png">
-    <!-- Main JS of Neoaspire Website -->
-    <script type="module" src="../assets/js/main.js"></script>
+    <link rel="icon" type="image/png" href="/assets/images/favicon/favicon.png">
+
+    <!-- CORE JS -->
+    <script type="module" src="/core/js/index.js"></script>
 
 </head>
-<body>
-    <!-- Inject header for preview -->
-     <header id="site-header"></header>
-       <!-- Inject footer for preview -->
-    <footer id="site-footer"></footer>
+
+<body data-app="main" data-page="preview">
+
+    <!-- ✅ MUST MATCH YOUR LOADER -->
+    <header id="header-container"></header>
+
+    <!-- Page Content (optional) -->
+    <main>
+        <h2>Preview Page</h2>
+    </main>
+
+    <!-- ✅ MUST MATCH YOUR LOADER -->
+    <footer id="footer-container"></footer>
+
 </body>
 </html>
