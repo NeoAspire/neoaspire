@@ -37,7 +37,7 @@ export async function fetchHTML(url, timeout = 8000) {
         // 3. Timeout controller
         const controller = new AbortController();
         const timeoutId = setTimeout(() => controller.abort(), timeout);
-
+       
         // 4. Fetch request
         const res = await fetch(url, { signal: controller.signal });
         clearTimeout(timeoutId);
@@ -63,3 +63,4 @@ export async function fetchHTML(url, timeout = 8000) {
         return `<p style="color:red;">Failed to load component</p>`;
     }
 }
+

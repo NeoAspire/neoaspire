@@ -1,40 +1,26 @@
 // CONFIG
 
-// Detects base path based on where the app is running
-
-const getBasePath = () => {
-    // Works for GitHub Pages, local, and custom domains
-    const path = window.location.pathname;
-
-    // If hosted inside a repo like /neoaspire-staging/
-    if (path.includes("neoaspire-staging")) {
-        return "/neoaspire-staging/";
-    }
-
-    // Local or production root domain
-    return "/";
-};
+const BASE_URL = location.hostname.includes("github.io")
+    ? "/neoaspire-staging"
+    : "";
 
 // MAIN CONFIG OBJECT
 export const CONFIG = {
 
-    // Base URL used for all dynamic paths
-    BASE_URL: getBasePath(),
-    
     // App-specific file paths (IMPORTANT: keep relative paths)
     APPS: {
         main: {
-            header: '/partials/header.html',
-            footer: '/partials/footer.html'
+            header: `${BASE_URL}/partials/header.html`,
+            footer: `${BASE_URL}/partials/footer.html`
         },
-        
+
         ems: {
-            header: '/ems/partials/header.html',
-            footer: '/ems/partials/footer.html'
+            header: `${BASE_URL}/ems/partials/header.html`,
+            footer: `${BASE_URL}/ems/partials/footer.html`
         }
     },
 
-     // Alert messages for different apps/pages
+    // Alert messages for different apps/pages
     ALERTS: {
         main: {
             home: {
