@@ -1,14 +1,11 @@
-// CONFIG
-
 // ===============================
 // CONFIG (Environment + Paths)
 // ===============================
 
-// Detect base path (GitHub Pages vs Local)
-    const BASE_URL = (() => {
+// Detect BASE URL (GitHub repo vs domain vs local)
+const BASE_URL = (() => {
     const repo = "neoaspire-staging";
 
-    // If running on github.io AND inside repo path
     if (
         location.hostname.includes("github.io") &&
         location.pathname.startsWith(`/${repo}`)
@@ -16,29 +13,26 @@
         return `/${repo}`;
     }
 
-    // Custom domain OR local
-    return "";
+    return ""; // custom domain or localhost
 })();
 
 // Build full path safely
 export const path = (p = "/") => {
-    if (!p.startsWith("/")) p = "/" + p;   // ensure leading slash
+    if (!p.startsWith("/")) p = "/" + p;
     return BASE_URL + p;
 };
 
 // ===============================
-// AUTO LINK RESOLVER (KEY FIX)
+// LINK RESOLVER (Fix <a href>)
 // ===============================
 
 export function resolveLinks(root = document) {
     root.querySelectorAll("a[href]").forEach(link => {
 
-        // Prevent double processing
         if (link.dataset.resolved) return;
 
         const href = link.getAttribute("href");
 
-        // Skip special/external links
         if (
             !href ||
             href.startsWith("http") ||
@@ -47,16 +41,57 @@ export function resolveLinks(root = document) {
             href.startsWith("tel:")
         ) return;
 
-        // Fix path using BASE_URL
         link.href = path(href);
-
-        // Mark as processed
         link.dataset.resolved = "true";
     });
 }
 
+// ===============================
+// ASSET RESOLVER (Fix CSS + JS)
+// ===============================
 
+export function resolveAssets(root = document) {
+
+    // Fix CSS
+    root.querySelectorAll("link[href]").forEach(link => {
+
+        if (link.dataset.resolved) return;
+
+        const href = link.getAttribute("href");
+
+        if (!href || href.startsWith("http")) return;
+
+        link.href = path(href);
+        link.dataset.resolved = "true";
+    });
+
+    // Fix JS
+    root.querySelectorAll("script[src]").forEach(script => {
+
+        if (script.dataset.resolved) return;
+
+        const src = script.getAttribute("src");
+
+        if (!src || src.startsWith("http")) return;
+
+        script.src = path(src);
+        script.dataset.resolved = "true";
+    });
+}
+
+// ===============================
+// MASTER RESOLVER (RUN THIS)
+// ===============================
+
+export function resolveAll(root = document) {
+    resolveLinks(root);
+    resolveAssets(root);
+}
+
+// ===============================
 // MAIN CONFIG OBJECT
+// ===============================
+
 export const CONFIG = {
 
     APPS: {
@@ -88,15 +123,14 @@ Stay tuned! 🚀`,
                 message: "📘 Blueprint viewer Ready!",
                 type: "warning"
             }
-
         },
+
         ems: {
             dashboard: {
                 message: "📊 EMS Dashboard Loaded!",
                 type: "success"
             }
         }
-
     }
 
 };
