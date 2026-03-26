@@ -55,7 +55,6 @@ function showPageAlert() {
 // SAFE INIT
 function init() {
     loadLayout();
-    loadPageScript();
     loadModules();
         // ✅ Show alert AFTER everything loads
     setTimeout(showPageAlert, 200);

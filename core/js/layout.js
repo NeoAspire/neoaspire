@@ -2,6 +2,7 @@
 
 import { CONFIG } from './config.js';
 import { fetchHTML} from './utils.js';
+import { loadPageScript } from './loader.js';
 
 // LOAD HEADER AND FOOTER
 export async function loadLayout() {
@@ -29,6 +30,10 @@ export async function loadLayout() {
     if (footerContainer) {
         footerContainer.innerHTML = footerHTML;
     }
+
+    // ✅ Load the page-specific JS AFTER header/footer
+    loadPageScript();
+
 }
 
 // HAMBURGER TOGGLE MENU

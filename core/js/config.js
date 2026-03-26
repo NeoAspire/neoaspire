@@ -1,26 +1,28 @@
 // CONFIG
 
+// Sets base path based on environment (GitHub vs local/production)
 const BASE_URL = location.hostname.includes("github.io")
     ? "/neoaspire-staging"
     : "";
 
+//Utility: builds full URL using BASE_URL + filePath
+export const path = (p) => `${BASE_URL}${p}`;
+
 // MAIN CONFIG OBJECT
 export const CONFIG = {
 
-    // App-specific file paths (IMPORTANT: keep relative paths)
     APPS: {
         main: {
-            header: `${BASE_URL}/partials/header.html`,
-            footer: `${BASE_URL}/partials/footer.html`
+            header: path('/partials/header.html'),
+            footer: path('/partials/footer.html')
         },
 
         ems: {
-            header: `${BASE_URL}/ems/partials/header.html`,
-            footer: `${BASE_URL}/ems/partials/footer.html`
+            header: path('/ems/partials/header.html'),
+            footer: path('/ems/partials/footer.html')
         }
     },
 
-    // Alert messages for different apps/pages
     ALERTS: {
         main: {
             home: {
@@ -31,22 +33,22 @@ Stay tuned! 🚀`,
                 duration: 5000
             },
             about: {
-                message: "👋 Welcome to about Page!",
+                message: "",
                 type: "info"
+            },
+            blueprints: {
+                message: "📘 Blueprint viewer Ready!",
+                type: "warning"
             }
+
         },
         ems: {
             dashboard: {
                 message: "📊 EMS Dashboard Loaded!",
                 type: "success"
             }
-        },
-        qbank: {
-            blueprints: {
-                message: "📘 Blueprint Editor Ready!",
-                type: "warning"
-            }
         }
+
     }
 
 };

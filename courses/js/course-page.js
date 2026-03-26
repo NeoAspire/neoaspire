@@ -1,4 +1,5 @@
-
+//COURSE PAGE JS
+console.log("loading course page js")
 document.addEventListener("DOMContentLoaded", function () {
 
     let currentIndex = 0;

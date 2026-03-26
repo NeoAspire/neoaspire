@@ -13,3 +13,4 @@ export function loadPageScript() {
 
     document.body.appendChild(script);
 }
+
