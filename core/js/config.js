@@ -1,12 +1,49 @@
 // CONFIG
 
-// Sets base path based on environment (GitHub vs local/production)
+// ===============================
+// CONFIG (Environment + Paths)
+// ===============================
+
+// Detect base path (GitHub Pages vs Local)
 const BASE_URL = location.hostname.includes("github.io")
     ? "/neoaspire-staging"
     : "";
 
-//Utility: builds full URL using BASE_URL + filePath
-export const path = (p) => `${BASE_URL}${p}`;
+// Build full path safely
+export const path = (p = "/") => {
+    if (!p.startsWith("/")) p = "/" + p;   // ensure leading slash
+    return BASE_URL + p;
+};
+
+// ===============================
+// AUTO LINK RESOLVER (KEY FIX)
+// ===============================
+
+export function resolveLinks(root = document) {
+    root.querySelectorAll("a[href]").forEach(link => {
+
+        // Prevent double processing
+        if (link.dataset.resolved) return;
+
+        const href = link.getAttribute("href");
+
+        // Skip special/external links
+        if (
+            !href ||
+            href.startsWith("http") ||
+            href.startsWith("#") ||
+            href.startsWith("mailto:") ||
+            href.startsWith("tel:")
+        ) return;
+
+        // Fix path using BASE_URL
+        link.href = path(href);
+
+        // Mark as processed
+        link.dataset.resolved = "true";
+    });
+}
+
 
 // MAIN CONFIG OBJECT
 export const CONFIG = {
