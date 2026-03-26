@@ -5,9 +5,20 @@
 // ===============================
 
 // Detect base path (GitHub Pages vs Local)
-const BASE_URL = location.hostname.includes("github.io")
-    ? "/neoaspire-staging"
-    : "";
+    const BASE_URL = (() => {
+    const repo = "neoaspire-staging";
+
+    // If running on github.io AND inside repo path
+    if (
+        location.hostname.includes("github.io") &&
+        location.pathname.startsWith(`/${repo}`)
+    ) {
+        return `/${repo}`;
+    }
+
+    // Custom domain OR local
+    return "";
+})();
 
 // Build full path safely
 export const path = (p = "/") => {
