@@ -11,7 +11,7 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="../assets/images/favicon/favicon.png">
-
+  
   <!-- My Style -->
   <style>
     /* ================================
@@ -373,9 +373,7 @@
 
   <!-- JavaScript + Google Apps Script Link Form Submission -->
   <script type="module">
-    import { PATHS } from '../assets/js/core/config.js'; // config paths
-    import { navigateTo } from '../assets/js/core/router.js';
-
+ 
     const scriptURL =
       'https://script.google.com/macros/s/AKfycbxT7q-kz95bnMY24tBcyRTBLrYXDOODtcbvacnG6xBdxwIYKPraC4gw9JMoL9Fe1bLWfw/exec';
 
@@ -444,7 +442,7 @@
 
             // REDIRECT ONLY AFTER CLICK
             okBtn.onclick = () => {
-              window.location.href = `${PATHS.base}qbank/index.html`;
+              window.location.href = `../qbank/index.html`;
             };
 
           } else {

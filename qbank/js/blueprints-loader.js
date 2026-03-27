@@ -32,10 +32,11 @@ let classSubjectMap = [];
    LOAD JSON
 ========================= */
 async function loadJSON(url) {
-    const res = await fetch(path(url));
+    const res = await fetch(url);
     if (!res.ok) throw new Error(`Failed to load ${url}`);
     return res.json();
 }
+
 
 
 /* =========================
@@ -133,18 +134,17 @@ function loadBlueprint() {
         return;
     }
 
-    const path = `/ems/data/blueprints/class${classValue}/${subjectValue}.json`;
+    const blueprintPath = path(`/ems/data/blueprints/class${classValue}/${subjectValue}.json`);
 
-    console.log("Loading:", path); // DEBUG
+    console.log("Loading:", blueprintPath);
 
-    fetch(path)
+    fetch(blueprintPath)
         .then(res => {
             if (!res.ok) throw new Error("Blueprint not found");
             return res.json();
         })
         .then(data => displayBlueprint(data))
         .catch(err => {
-
             console.error(err);
 
             const container = document.getElementById("blueprint-content");
@@ -158,7 +158,6 @@ function loadBlueprint() {
             `;
         });
 }
-
 
 /* =========================
    DISPLAY BLUEPRINT

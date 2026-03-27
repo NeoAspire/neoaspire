@@ -77,6 +77,19 @@ export function resolveAssets(root = document) {
         script.src = path(src);
         script.dataset.resolved = "true";
     });
+
+    // Fix IMAGES
+root.querySelectorAll("img[src]").forEach(img => {
+
+    if (img.dataset.resolved) return;
+
+    const src = img.getAttribute("src");
+
+    if (!src || src.startsWith("http") || src.startsWith("data:")) return;
+
+    img.src = path(src);
+    img.dataset.resolved = "true";
+});
 }
 
 // ===============================
