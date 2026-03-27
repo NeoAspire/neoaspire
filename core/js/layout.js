@@ -15,7 +15,7 @@ function loadCoreAssets() {
 
     if (!layout) return;
 
-    // Prevent duplicate CSS
+    // Load CSS
     if (layout.css && !document.querySelector(`link[href="${layout.css}"]`)) {
         const link = document.createElement('link');
         link.rel = 'stylesheet';
@@ -23,12 +23,12 @@ function loadCoreAssets() {
         document.head.appendChild(link);
     }
 
-    // Prevent duplicate CSS
-    if (layout.css && !document.querySelector(`link[href="${layout.css}"]`)) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = layout.css;
-        document.head.appendChild(link);
+    // Load JS (index.js)
+     if (layout.js && !document.querySelector(`script[src="${layout.js}"]`)) {
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.src = layout.js; // dynamically resolved via path()
+        document.head.appendChild(script);
     }
 }
 
@@ -38,7 +38,7 @@ function loadCoreAssets() {
 
 export async function loadLayout() {
     // Load app-specific CSS/JS first
-    loadCoreAssets();
+    loadCoreAssets();    // load main.css + index.js
 
     const app = document.body.dataset.app || 'main';
     const layout = CONFIG.APPS[app];
