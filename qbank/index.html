@@ -149,42 +149,48 @@
 
         // ================= PDF MODAL =================
 
-        // Open PDF
-        document.querySelectorAll('.openPdf').forEach(link => {
-            link.addEventListener('click', function (e) {
-                e.preventDefault();
+const modal = document.getElementById('pdfModal');
+const pdfPreview = document.getElementById('pdfPreview');
+const paymentSection = document.getElementById('payment-section');
+const payButton = document.getElementById('payButton');
+const closeBtn = modal.querySelector('.close');
 
-                const pdfUrl = this.dataset.pdf;
+// Open PDF
+document.querySelectorAll('.openPdf').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        const pdfUrl = link.dataset.pdf;
+        if (!pdfUrl || pdfUrl === "#") return; // skip "Coming Soon"
 
-                document.getElementById('pdfModal').style.display = 'block';
-                document.getElementById('pdfPreview').src = pdfUrl;
+        pdfPreview.src = pdfUrl;
+        paymentSection.style.display = 'none';
+        modal.classList.add('active');
 
-                document.getElementById('payment-section').style.display = 'none';
+        setTimeout(() => {
+            paymentSection.style.display = 'block';
+        }, 2000);
+    });
+});
 
-                setTimeout(() => {
-                    document.getElementById('payment-section').style.display = 'block';
-                }, 2000);
-            });
-        });
+// Pay & Download
+payButton.addEventListener('click', () => {
+    window.location.href = "../payments/payments.html";
+});
 
-        // Pay & Download
-        document.getElementById('payButton').addEventListener('click', function () {
-            window.location.href = "../payments/payments.html";
-        });
+// Close modal
+closeBtn.addEventListener('click', () => {
+    modal.classList.remove('active');
+    pdfPreview.src = '';
+});
 
-        // Close modal
-        document.querySelector('.close').addEventListener('click', function () {
-            document.getElementById('pdfModal').style.display = 'none';
-            document.getElementById('pdfPreview').src = '';
-        });
+// Close modal on outside click
+window.addEventListener('click', e => {
+    if (e.target === modal) {
+        modal.classList.remove('active');
+        pdfPreview.src = '';
+    }
+});
 
-        // Close modal on outside click
-        window.addEventListener('click', function (event) {
-            if (event.target === document.getElementById('pdfModal')) {
-                document.getElementById('pdfModal').style.display = 'none';
-                document.getElementById('pdfPreview').src = '';
-            }
-        });
 
         // ================= DROPDOWN =================
 
