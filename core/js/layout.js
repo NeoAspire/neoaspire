@@ -1,8 +1,9 @@
 // LAYOUT JS
 
 import { CONFIG } from './config.js';
-import { fetchHTML} from './utils.js';
+import { fetchHTML } from './utils.js';
 import { loadPageScript } from './loader.js';
+import { resolveLinks, resolveAssets } from './config.js';
 
 // LOAD HEADER AND FOOTER
 export async function loadLayout() {
@@ -15,20 +16,30 @@ export async function loadLayout() {
     }
 
     const [headerHTML, footerHTML] = await Promise.all([
-    fetchHTML(layout.header),
-    fetchHTML(layout.footer)
-]);
+        fetchHTML(layout.header),
+        fetchHTML(layout.footer)
+    ]);
     const headerContainer = document.getElementById('header-container');
     const footerContainer = document.getElementById('footer-container');
 
-        if (headerContainer) {
+    if (headerContainer) {
         headerContainer.innerHTML = headerHTML;
+
+        // ✅ Fix all relative <a> and <img>/<script>/<link> paths in the header
+        resolveLinks(headerContainer);
+        resolveAssets(headerContainer);
+
         initHamburger();     // ✅ works for all apps
         setActiveNav();      // ✅ highlight active link
+
     }
 
     if (footerContainer) {
         footerContainer.innerHTML = footerHTML;
+
+        // ✅ Fix all relative links/assets in footer
+        resolveLinks(footerContainer);
+        resolveAssets(footerContainer);
     }
 
     // ✅ Load the page-specific JS AFTER header/footer

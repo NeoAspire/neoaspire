@@ -1,11 +1,17 @@
 <!-- header.html → Global Header (Neoaspire) -->
 <header id="header-container">
 <!-- Logo -->
- <a href="../" class="logo">
-    <img src="../assets/images/logo/logo.png" alt="NeoAspire Logo">
+ <!--
+ <a href="/" class="logo">
+    <img src="/assets/images/logo/logo.png" alt="NeoAspire Logo">
     <span>NeoAspire</span>
 </a>
+-->
 
+<a href="./" class="logo">
+    <img src="/assets/images/logo/logo.png" alt="NeoAspire Logo">
+    <span>NeoAspire</span>
+</a>
 
 <!-- Navigation -->
 <nav class="navbar" aria-label="Main Navigation">
@@ -16,18 +22,32 @@
     </button>
 
     <!-- Nav Links -->
-    <ul class="nav-links">
-        <li> <a href="../">Home</a></li>
-         <li> <a href="../pages/about.html">About</a></li>
-         <li> <a href="../ems/" data-app="ems">EMS</a></li>
+   <!--
+        <ul class="nav-links">
+        <li> <a href="/">Home</a></li>
+         <li> <a href="/pages/about.html">About</a></li>
+         <li> <a href="/ems/" data-app="ems">EMS</a></li>
         <li> <a href="../qbank/">QBank</a></li>
-         <li> <a href="../courses/" >Courses</a></li>
-        <li>  <a href="../creatives/">Creatives</a></li>
-         <li> <a href="../pages/career-guidance.html">Career Guidance</a></li>
-         <li> <a href="../pages/downloads.html">Downloads</a></li>
-         <li> <a href="../pages/contact-us.html">Contact Us</a></li>
+         <li> <a href="/courses/" >Courses</a></li>
+        <li>  <a href="/creatives/">Creatives</a></li>
+         <li> <a href="/pages/career-guidance.html">Career Guidance</a></li>
+         <li> <a href="/pages/downloads.html">Downloads</a></li>
+         <li> <a href="/pages/contact-us.html">Contact Us</a></li>
 
-    </ul>
+    </ul> 
+-->
+    <ul class="nav-links">
+    <li><a href="./" class="nav-item" data-page="home">Home</a></li>
+    <li><a href="./pages/about.html" class="nav-item" data-page="about">About</a></li>
+    <li><a href="./ems/" class="nav-item" data-app="ems" data-page="landing">EMS</a></li>
+    <li><a href="./qbank/" class="nav-item" data-page="qbank">QBank</a></li>
+    <li><a href="./courses/" class="nav-item" data-page="courses">Courses</a></li>
+    <li><a href="./creatives/" class="nav-item" data-page="creatives">Creatives</a></li>
+    <li><a href="./pages/career-guidance.html" class="nav-item" data-page="career-guidance">Career Guidance</a></li>
+    <li><a href="./pages/downloads.html" class="nav-item" data-page="downloads">Downloads</a></li>
+    <li><a href="./pages/contact-us.html" class="nav-item" data-page="contact-us">Contact Us</a></li>
+</ul>
 
 </nav>
 </header>
+
