@@ -126,8 +126,9 @@ Stay tuned! 🚀`,
                 type: "info"
             },
             blueprints: {
-                message: "📘 Blueprint viewer Ready!",
-                type: "warning"
+                message: "📘 Blueprint viewer Ready",
+                type: "warning",
+                duration: 1000
             }
         },
 

@@ -1,21 +1,21 @@
-
+import { path } from "../../core/js/config.js";
 /* =========================
    FILTER CONFIG (CONTROL UI)
 ========================= */
 const FILTER_CONFIG = {
-    classes: ["9","10"],
+    classes: ["9", "10"],
 
     subjects: {
-        "1": ["english","evs","hindi","math","punjabi","art-craft","general-knowledge","moral-science"],
-        "2": ["english","evs","hindi","math","punjabi","art-craft","general-knowledge","moral-science"],
-        "3": ["english","hindi","math","punjabi","science","social-science","art-craft","computer","general-knowledge","moral-science"],
-        "4": ["english","hindi","math","punjabi","science","social-science","art-craft","computer","general-knowledge","moral-science"],
-        "5": ["english","hindi","math","punjabi","science","social-science","art-craft","computer","general-knowledge","moral-science"],
-        "6": ["english","hindi","math","punjabi","science","social-science","art-craft","computer","general-knowledge","moral-science"],
-        "7": ["english","hindi","math","punjabi","science","social-science","art-craft","computer","general-knowledge","moral-science"],
-        "8": ["english","hindi","math","punjabi","science","social-science","art-craft","computer","general-knowledge","moral-science"],
-        "9": ["english","hindi","math","punjabi","science","social-science","IT-402"],
-        "10": ["english","hindi","math","punjabi","science","social-science","IT-402"]
+        "1": ["english", "evs", "hindi", "math", "punjabi", "art-craft", "general-knowledge", "moral-science"],
+        "2": ["english", "evs", "hindi", "math", "punjabi", "art-craft", "general-knowledge", "moral-science"],
+        "3": ["english", "hindi", "math", "punjabi", "science", "social-science", "art-craft", "computer", "general-knowledge", "moral-science"],
+        "4": ["english", "hindi", "math", "punjabi", "science", "social-science", "art-craft", "computer", "general-knowledge", "moral-science"],
+        "5": ["english", "hindi", "math", "punjabi", "science", "social-science", "art-craft", "computer", "general-knowledge", "moral-science"],
+        "6": ["english", "hindi", "math", "punjabi", "science", "social-science", "art-craft", "computer", "general-knowledge", "moral-science"],
+        "7": ["english", "hindi", "math", "punjabi", "science", "social-science", "art-craft", "computer", "general-knowledge", "moral-science"],
+        "8": ["english", "hindi", "math", "punjabi", "science", "social-science", "art-craft", "computer", "general-knowledge", "moral-science"],
+        "9": ["english", "hindi", "math", "punjabi", "science", "social-science", "IT-402"],
+        "10": ["english", "hindi", "math", "punjabi", "science", "social-science", "IT-402"]
     }
 };
 
@@ -31,9 +31,9 @@ let classSubjectMap = [];
 /* =========================
    LOAD JSON
 ========================= */
-async function loadJSON(path) {
-    const res = await fetch(path);
-    if (!res.ok) throw new Error(`Failed to load ${path}`);
+async function loadJSON(url) {
+    const res = await fetch(path(url));
+    if (!res.ok) throw new Error(`Failed to load ${url}`);
     return res.json();
 }
 
@@ -45,9 +45,9 @@ async function initBlueprintPage() {
 
     try {
 
-        classesData = await loadJSON('/ems/data/academic/classes.json');
-        subjectsData = await loadJSON('/ems/data/academic/subjects.json');
-        classSubjectMap = await loadJSON('/ems/data/academic/class-subjects.json');
+        classesData = await loadJSON(path('/ems/data/academic/classes.json'));
+        subjectsData = await loadJSON(path('/ems/data/academic/subjects.json'));
+        classSubjectMap = await loadJSON(path('/ems/data/academic/class-subjects.json'));
 
         const classSelect = document.getElementById("classFilter");
         const subjectSelect = document.getElementById("subjectFilter");
@@ -214,7 +214,7 @@ function displayBlueprint(data) {
         if (section.details) {
 
             let details = Object.entries(section.details)
-                .map(([k,v]) => `${k.replace("_"," ")} (${v})`)
+                .map(([k, v]) => `${k.replace("_", " ")} (${v})`)
                 .join(" | ");
 
             html += `

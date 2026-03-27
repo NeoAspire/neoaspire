@@ -122,12 +122,14 @@ header nav {
 /* =========================================
    NAV LINK TOOLTIP
 ========================================= */
+/*
 .nav-link {
     position: relative;
     display: inline-block;
 }
-
+*/
 /* Tooltip box */
+/*
 .nav-link::after {
     content: attr(data-tooltip);
     position: absolute;
@@ -146,8 +148,9 @@ header nav {
     z-index: var(--z-index-tooltip);
     box-shadow: var(--shadow-sm);
 }
-
+*/
 /* Tooltip Arrow */
+/*
 .nav-link::before {
     content: "";
     position: absolute;
@@ -165,7 +168,7 @@ header nav {
 .nav-link:hover::before {
     opacity: 1;
 }
-
+*/
 /* =========================================
    HAMBURGER ICON (MENU TOGGLE)
 ========================================= */
@@ -231,14 +234,13 @@ footer {
     background: var(--color-dark);
     color: var(--color-white);
     text-align: center;
-    padding: var(--space-sm) var(--space-md); /* Increased vertical padding for better breathing room */
+    padding: var(--space-xs) var(--space-sm); /* Increased vertical padding for better breathing room */
     transition: background var(--transition-normal);
     border-top: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separation */
 }
 
 /* Footer Navigation/Links */
 footer nav {
-    margin-bottom: var(--space-md);
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -279,7 +281,6 @@ footer a:focus {
 footer p {
     font-size: var(--font-size-sm);
     color: var(--color-text-muted); /* Uses your muted variable */
-    margin-top: var(--space-md);
     line-height: var(--line-height-md);
 }
 
