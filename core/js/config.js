@@ -94,18 +94,24 @@ export function resolveAll(root = document) {
 
 export const CONFIG = {
 
+    // APP WISE HEADER AND FOOTER
     APPS: {
         main: {
             header: path('/partials/header.html'),
-            footer: path('/partials/footer.html')
+            footer: path('/partials/footer.html'),
+            css: path('/assets/css/main.css'),       // main app CSS
+            js: path('/core/js/index.js')            // core JS
         },
 
         ems: {
             header: path('/ems/partials/header.html'),
-            footer: path('/ems/partials/footer.html')
+            footer: path('/ems/partials/footer.html'),
+            css: path('/ems/assets/css/main.css'),    // EMS app CSS
+            js: path('/core/js/index.js')        // EMS app JS if different
         }
     },
 
+    // APP PAGE WISE ALERTS
     ALERTS: {
         main: {
             home: {

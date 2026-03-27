@@ -1,12 +1,45 @@
 // LAYOUT JS
 
 import { CONFIG } from './config.js';
+import { resolveLinks, resolveAssets } from './config.js';
 import { fetchHTML } from './utils.js';
 import { loadPageScript } from './loader.js';
-import { resolveLinks, resolveAssets } from './config.js';
+import { path } from './config.js';
 
+// ===============================
+// DYNAMIC CORE ASSETS (CSS + JS) PER APP
+// ===============================
+function loadCoreAssets() {
+    const app = document.body.dataset.app || 'main';
+    const layout = CONFIG.APPS[app];
+
+    if (!layout) return;
+
+// Load CSS for this app only
+    if (layout.css) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = layout.css;
+        document.head.appendChild(link);
+    }
+
+    // Load JS for this app only
+    if (layout.js) {
+        const script = document.createElement('script');
+        script.type = 'module';
+        script.src = layout.js;
+        document.head.appendChild(script);
+    }
+}
+
+// ===============================
 // LOAD HEADER AND FOOTER
+// ===============================
+
 export async function loadLayout() {
+      // Load app-specific CSS/JS first
+    loadCoreAssets();
+    
     const app = document.body.dataset.app || 'main';
     const layout = CONFIG.APPS[app];
 
