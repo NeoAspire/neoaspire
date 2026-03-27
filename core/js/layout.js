@@ -1,13 +1,13 @@
-// LAYOUT JS
+// ===============================
+// LAYOUT.JS (Production-ready)
+// ===============================
 
-import { CONFIG } from './config.js';
-import { resolveLinks, resolveAssets } from './config.js';
+import { CONFIG, path, resolveLinks, resolveAssets } from './config.js';
 import { fetchHTML } from './utils.js';
 import { loadPageScript } from './loader.js';
-import { path } from './config.js';
 
 // ===============================
-// DYNAMIC CORE ASSETS (CSS + JS) PER APP
+// DYNAMIC LOAD APP-SPECIFIC CSS + JS
 // ===============================
 function loadCoreAssets() {
     const app = document.body.dataset.app || 'main';
@@ -15,20 +15,20 @@ function loadCoreAssets() {
 
     if (!layout) return;
 
-// Load CSS for this app only
-    if (layout.css) {
+    // Prevent duplicate CSS
+    if (layout.css && !document.querySelector(`link[href="${layout.css}"]`)) {
         const link = document.createElement('link');
         link.rel = 'stylesheet';
         link.href = layout.css;
         document.head.appendChild(link);
     }
 
-    // Load JS for this app only
-    if (layout.js) {
-        const script = document.createElement('script');
-        script.type = 'module';
-        script.src = layout.js;
-        document.head.appendChild(script);
+    // Prevent duplicate CSS
+    if (layout.css && !document.querySelector(`link[href="${layout.css}"]`)) {
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = layout.css;
+        document.head.appendChild(link);
     }
 }
 
@@ -37,9 +37,9 @@ function loadCoreAssets() {
 // ===============================
 
 export async function loadLayout() {
-      // Load app-specific CSS/JS first
+    // Load app-specific CSS/JS first
     loadCoreAssets();
-    
+
     const app = document.body.dataset.app || 'main';
     const layout = CONFIG.APPS[app];
 
@@ -47,37 +47,45 @@ export async function loadLayout() {
         console.warn('No layout found for app:', app);
         return;
     }
+    try {
+        // Fetch header and footer concurrently
+        const [headerHTML, footerHTML] = await Promise.all([
+            fetchHTML(layout.header),
+            fetchHTML(layout.footer)
+        ]);
+        const headerContainer = document.getElementById('header-container');
+        const footerContainer = document.getElementById('footer-container');
 
-    const [headerHTML, footerHTML] = await Promise.all([
-        fetchHTML(layout.header),
-        fetchHTML(layout.footer)
-    ]);
-    const headerContainer = document.getElementById('header-container');
-    const footerContainer = document.getElementById('footer-container');
 
-    if (headerContainer) {
-        headerContainer.innerHTML = headerHTML;
+        // Inject header
+        if (headerContainer) {
+            headerContainer.innerHTML = headerHTML;
 
-        // ✅ Fix all relative <a> and <img>/<script>/<link> paths in the header
-        resolveLinks(headerContainer);
-        resolveAssets(headerContainer);
+            // ✅ Fix all relative <a> and <img>/<script>/<link> paths in the header
+            resolveLinks(headerContainer);
+            resolveAssets(headerContainer);
 
-        initHamburger();     // ✅ works for all apps
-        setActiveNav();      // ✅ highlight active link
+            initHamburger();     // ✅ works for all apps
+            setActiveNav();      // ✅ highlight active link
+
+        }
+
+        // Inject footer
+        if (footerContainer) {
+            footerContainer.innerHTML = footerHTML;
+
+            // ✅ Fix all relative links/assets in footer
+            resolveLinks(footerContainer);
+            resolveAssets(footerContainer);
+        }
+
+        // ✅ Load the page-specific JS AFTER header/footer
+        loadPageScript();
 
     }
-
-    if (footerContainer) {
-        footerContainer.innerHTML = footerHTML;
-
-        // ✅ Fix all relative links/assets in footer
-        resolveLinks(footerContainer);
-        resolveAssets(footerContainer);
+    catch (err) {
+        console.error('❌ Failed to load layout:', err);
     }
-
-    // ✅ Load the page-specific JS AFTER header/footer
-    loadPageScript();
-
 }
 
 // HAMBURGER TOGGLE MENU
