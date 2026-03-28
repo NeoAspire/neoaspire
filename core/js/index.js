@@ -1,7 +1,7 @@
 // INDEX JS (CORE FILE)
 
 import { loadLayout } from "./layout.js";
-import { CONFIG } from "./config.js";
+import { CONFIG, path } from "./config.js";
 import { showAlert } from "./alertmsg.js";
 
 
@@ -26,7 +26,7 @@ async function loadModules() {
     if (modules.length === 0) return;
 
     const results = await Promise.allSettled(
-     modules.map(p => import(new URL(p, import.meta.url)))
+    modules.map(p => import(path(p)))
     );
 
     results.forEach((res, i) => {
