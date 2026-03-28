@@ -119,7 +119,7 @@ export const CONFIG = {
         ems: {
             header: path('/ems/partials/header.html'),
             footer: path('/ems/partials/footer.html'),
-            css: path('/ems/assets/css/main.css'),    // EMS app CSS
+           // css: path('/ems/assets/css/main.css'),    // EMS app CSS
             js: path('/core/js/index.js')        // EMS app JS if different
         }
     },
@@ -163,7 +163,7 @@ Stay tuned! 🚀`,
             // blueprints: ["/qbank/js/blueprints-loader.js"]
         },
         ems: {
-            syllabusBuilder: ["/ems/assets/js/modules/syllabus/syllabus-builder.js"]
+           // syllabusBuilder: ["/ems/assets/js/modules/syllabus/syllabus-builder.js"]
         }
     }
 };

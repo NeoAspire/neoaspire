@@ -13,6 +13,7 @@ MAIN CSS (Master File)
 
 /* ===== LAYOUT ===== */
 @import url('./modules/layout.css');    /* Grid, header, footer */
+/* ===== FROM CORE ===== */
 @import url('../../core/css/alertmsg.css'); /* Alert Message */
 
 
