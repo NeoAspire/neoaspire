@@ -1,56 +1,48 @@
 // ===============================
-// ERP GLOBAL PDF EXPORT MODULE
+//  GLOBAL PDF EXPORT MODULE
 // CSS is separated in /ems/assets/css/pdf-export.css
 // ===============================
-
+import { path } from '../../../../../../core/js/config.js';
+const cssPath = path('/ems/assets/css/pages/pdf-export.css');
 /**
  * Open a PDF preview window before downloading
  * @param {string} contentHTML - Full HTML content to show in preview
  * @param {string} [filename="document.pdf"] - PDF filename when downloaded
  */
-export function previewERP_PDF(contentHTML, filename = "document.pdf") {
+export function previewPDF(contentHTML, filename = "document.pdf") {
   if (!contentHTML) {
     alert("No content to preview");
     return;
   }
 
-  // -------------------------------
-  // Open a new window for preview
-  // -------------------------------
   const previewWindow = window.open("", "_blank", "width=900,height=700");
+
+  // Prepare all pages HTML
+  const pagesHTML = Array.isArray(contentHTML)
+    ? contentHTML.map(page => `<div class="pdf-page">${page}</div>`).join('')
+    : `<div class="pdf-page">${typeof contentHTML === "object" ? contentHTML.body || contentHTML : contentHTML}</div>`;
 
   previewWindow.document.write(`
     <html>
       <head>
         <title>PDF Preview</title>
-        <link rel="stylesheet" href="/ems/assets/css/pdf-export.css">
+        <link rel="stylesheet" href="${cssPath}">
       </head>
-  
-       <body>
-   <div class="pdf-wrapper">
-
-          <!-- PAGE 1+: Header + Content together -->
-          <div class="pdf-page">
-            <div class="pdf-header-area">
-              ${typeof contentHTML === "object" ? contentHTML.header || "" : ""}
-            </div>
-
-            <div id="pdfContent">
-              ${typeof contentHTML === "object" ? contentHTML.body || contentHTML : contentHTML}
-            </div>
-          </div>
-
-   <!-- Download Button -->
-          <div class="download-btn-wrapper">
-            <button id="downloadBtn" data-html2canvas-ignore="true">Download PDF</button>
-          </div>
+      <body>
+        <!-- PDF content wrapper (only pages) -->
+        <div class="pdf-wrapper">
+          ${pagesHTML}
         </div>
 
-  <!-- html2pdf.js Library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+        <!-- Download Button OUTSIDE the wrapper -->
+        <div class="download-btn-wrapper">
+          <button id="downloadBtn" data-html2canvas-ignore="true">Download PDF</button>
+        </div>
 
-  <script>
-document.getElementById('downloadBtn').addEventListener('click', () => {
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+        <script>
+          const wrapper = previewWindow.document.querySelector('.pdf-wrapper');
+          document.getElementById('downloadBtn').addEventListener('click', () => {
             html2pdf()
               .set({
                 margin: [8,10,8,10],
@@ -59,21 +51,18 @@ document.getElementById('downloadBtn').addEventListener('click', () => {
                 jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
                 pagebreak: { mode: ['css','legacy'] }
               })
-              .from(document.querySelector('.pdf-wrapper'))
+              .from(wrapper) // EXPORT ONLY wrapper, button is not included
               .save();
           });
-</script>
-
-</body>
-
+        </script>
+      </body>
     </html>
   `);
 
   previewWindow.document.close();
 }
-
 /**
- * Generate PDF for any ERP module/page
+ * Generate PDF for any module/page
  * @param {Object} options
  * @param {string|string[]|HTMLElement[]} [options.pageId] - DOM ID(s) or HTMLElements to export
  * @param {string} [options.filename="document.pdf"] - PDF file name
@@ -83,7 +72,7 @@ document.getElementById('downloadBtn').addEventListener('click', () => {
  * @param {string} [options.format="a4"] - PDF page format
  * @param {string} [options.orientation="portrait"] - PDF orientation
  */
-export async function exportERP_PDF(options = {}) {
+export async function exportPDF(options = {}) {
   const {
     pageId,
     filename = "document.pdf",
@@ -135,7 +124,7 @@ export async function exportERP_PDF(options = {}) {
     // Build final HTML layout
     // -------------------------------
     const layout = `
-      <link rel="stylesheet" href="/ems/assets/css/pdf-export.css">
+    <link rel="stylesheet" href="${cssPath}">
       <div class="pdf-wrapper">
         ${extraHTML}
         ${htmlContent}
@@ -167,26 +156,26 @@ export async function exportERP_PDF(options = {}) {
       .save();
 
   } catch (err) {
-    if (window.erpLogger) window.erpLogger("PDF_EXPORT_ERROR", err);
+    if (window.Logger) window.Logger("PDF_EXPORT_ERROR", err);
     else console.error("PDF Export Error:", err);
   }
 }
 
 /**
- * Attach ERP PDF export to a button
+ * Attach  PDF export to a button
  * @param {string} buttonId - DOM ID of the button
- * @param {Object} options - Options to pass to exportERP_PDF
+ * @param {Object} options - Options to pass to exportPDF
  */
-export function initERP_PDFButton(buttonId, options = {}) {
+export function initPDFButton(buttonId, options = {}) {
   const btn = document.getElementById(buttonId);
   if (!btn) return;
-  btn.addEventListener("click", () => exportERP_PDF(options));
+  btn.addEventListener("click", () => exportPDF(options));
 }
 
 /**
- * Attach multiple ERP PDF export buttons at once
+ * Attach multiple  PDF export buttons at once
  * @param {Array<{id:string,options:Object}>} buttonConfigs
  */
-export function initERP_PDFButtons(buttonConfigs = []) {
-  buttonConfigs.forEach(cfg => initERP_PDFButton(cfg.id, cfg.options));
+export function initPDFButtons(buttonConfigs = []) {
+  buttonConfigs.forEach(cfg => initPDFButton(cfg.id, cfg.options));
 }

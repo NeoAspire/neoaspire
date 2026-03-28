@@ -2,13 +2,14 @@
 // LAYOUT.JS (Production-ready)
 // ===============================
 
-import { CONFIG, path, resolveLinks, resolveAssets } from './config.js';
+import { CONFIG, resolveLinks, resolveAssets } from './config.js';
 import { fetchHTML } from './utils.js';
 import { loadPageScript } from './loader.js';
 
 // ===============================
 // DYNAMIC LOAD APP-SPECIFIC CSS + JS
 // ===============================
+
 function loadCoreAssets() {
     const app = document.body.dataset.app || 'main';
     const layout = CONFIG.APPS[app];
@@ -22,14 +23,14 @@ function loadCoreAssets() {
         link.href = layout.css;
         document.head.appendChild(link);
     }
-
+/*
     // Load JS (index.js)
      if (layout.js && !document.querySelector(`script[src="${layout.js}"]`)) {
         const script = document.createElement('script');
         script.type = 'module';
         script.src = layout.js; // dynamically resolved via path()
         document.head.appendChild(script);
-    }
+    }*/
 }
 
 // ===============================

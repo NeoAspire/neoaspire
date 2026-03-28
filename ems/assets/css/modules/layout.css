@@ -31,7 +31,7 @@ main {
    HEADER LAYOUT
 ========================================= */
 .ems-header {
-       display: flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: var(--space-md) var(--space-xl);
@@ -312,4 +312,3 @@ footer p {
     margin-top: var(--space-md);
     line-height: var(--line-height-md);
 }
-

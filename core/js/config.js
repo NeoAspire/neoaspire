@@ -47,7 +47,7 @@ export function resolveLinks(root = document) {
 }
 
 // ===============================
-// ASSET RESOLVER (Fix CSS + JS)
+// ASSET RESOLVER (Fix CSS + JS + Images)
 // ===============================
 
 export function resolveAssets(root = document) {
@@ -151,6 +151,19 @@ Stay tuned! 🚀`,
                 type: "success"
             }
         }
-    }
+    },
 
+
+
+// ===============================
+    // APP PAGE WISE MODULE PATHS
+    // ===============================
+    MODULES: {
+        main: {
+             blueprints: ["/qbank/js/blueprints-loader.js"]
+        },
+        ems: {
+            syllabusBuilder: ["/ems/assets/js/modules/syllabus/syllabus-builder.js"]
+        }
+    }
 };

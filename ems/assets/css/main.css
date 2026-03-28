@@ -2,15 +2,17 @@
 MAIN CSS (Master File) 
 ================================ */
 
+/* ===== FROM CORE ===== */
+@import url('/core/css/variables.css');    /* Design tokens */
+@import url('/core/css/reset.css');        /* Reset defaults */
+
 /* ===== BASE ===== */
-@import url('./base/variables.css');    /* Design tokens */
-@import url('./base/reset.css');        /* Reset defaults */
 @import url('./base/theme.css');        /* Light/Dark theme */
 
 
 /* ===== LAYOUT ===== */
 @import url('./modules/layout.css');    /* Grid, header, footer */
-@import url('../../../core/css/alertmsg.css');
+@import url('/core/css/alertmsg.css');
 
 
 /* ===== COMPONENTS ===== */
@@ -22,4 +24,4 @@ MAIN CSS (Master File)
 
 
 /* ===== RESPONSIVE ===== */
-@import url('./base/responsive.css');          /* Global responsive */
+@import url('/core/css/responsive.css');          /* Global responsive */

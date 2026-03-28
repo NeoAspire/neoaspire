@@ -1,5 +1,5 @@
 /* ===============================
-   ERP PDF EXPORT STYLES
+    PDF EXPORT STYLES
    Professional look & clean hierarchy
 =============================== */
 
@@ -37,13 +37,13 @@ body {
 
 /* A4 page simulation for preview */
 .pdf-page {
-  width: 794px;        /* A4 width */
-  min-height: 1123px;  /* A4 height */
+  width: 794px;
+  height: 1123px; /* fixed, not min-height */
+  margin: 10px auto;
+  padding: 20px;
   background: white;
-  padding: 5px 40px 5px 40px;
-  margin-bottom: 5px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
   box-sizing: border-box;
-  box-shadow: none;
 }
 
 #pdfContent{
@@ -146,7 +146,6 @@ body {
 --------------------------------- */
 button#downloadBtn {
   display: inline-block;
-  margin: 20px auto;
   padding: 10px 25px;
   font-size: var(--font-size-md, 16px);
   font-weight: 600;
@@ -165,23 +164,32 @@ button#downloadBtn:hover {
 /* Center Download Button */
 .download-btn-wrapper {
   text-align: center;
-  margin-top: 20px;
-  display:none;
+   margin: 20px auto 40px auto;
 }
 /* SHOW button in preview screen only */
 @media screen {
-  .download-btn-wrapper{
-    display:flex;
-    justify-content:center;
-    margin-top:20px;
+  .pdf-page {
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
   }
 }
 /* -------------------------------
    Page Break for Multi-page PDF
 --------------------------------- */
 
-.pdf-page{
+.pdf-page {
   page-break-after: always;
+  page-break-inside: avoid; /* prevent splitting inside a page */
+}
+
+.pdf-exam, .pdf-subject {
+  page-break-inside: avoid; /* keep exam header and subjects together */
+}
+
+ul, li {
+  page-break-inside: auto;
+  break-inside: auto;
 }
 /* -------------------------------
    Extra Data Section (optional top info)
@@ -220,19 +228,12 @@ li {
 }
 
 @media print {
-
-  body {
-    background: white;
-  }
-
-  .pdf-wrapper {
-    padding: 0;
-    background: white;
-  }
-
   .pdf-page {
-    box-shadow: none;
+    width: auto;
+    height: auto;
     margin: 0;
+    box-shadow: none;
+    page-break-after: always;
+    display: none;
   }
-
 }

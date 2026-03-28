@@ -1,23 +1,32 @@
 // INDEX JS (CORE FILE)
 
 import { loadLayout } from "./layout.js";
-import { loadPageScript } from "./loader.js";
 import { CONFIG } from "./config.js";
 import { showAlert } from "./alertmsg.js";
-import { fetchHTML } from "./utils.js";
 
-console.log("🚀 Neoaspire main.js loaded");
+
+console.log("🚀 Neoaspire index.js loaded");
 
 const page = document.body.dataset.page;
 
 const pageModules = {
     home: [],
     dashboard: [],
-    blueprints: []
+    blueprints: [],
+    syllabusBuilder: []
 };
 // LOAD MODULES
+// ===============================
+// LOAD MODULES DYNAMICALLY FROM CONFIG
+// ===============================
 async function loadModules() {
-    const modules = pageModules[page] || [];
+    const app = document.body.dataset.app || "main";
+    const page = document.body.dataset.page;
+
+    // Get module paths for current app and page
+    const modules = CONFIG.MODULES?.[app]?.[page] || [];
+
+    if (modules.length === 0) return;
 
     const results = await Promise.allSettled(
         modules.map(path => import(path))
@@ -25,10 +34,11 @@ async function loadModules() {
 
     results.forEach((res, i) => {
         if (res.status === "fulfilled") {
+            // Call init() if exported
             res.value.init?.();
             console.log(`✔ Loaded: ${modules[i]}`);
         } else {
-            console.error(`✖ Failed: ${modules[i]}`);
+            console.error(`✖ Failed: ${modules[i]}`, res.reason);
         }
     });
 }
@@ -37,7 +47,6 @@ async function loadModules() {
 function showPageAlert() {
     const app = document.body.dataset.app || "main";
     const page = document.body.dataset.page;
-
     const appAlerts = CONFIG.ALERTS?.[app];   
 
     if (appAlerts && appAlerts[page]) {
