@@ -160,7 +160,7 @@ Stay tuned! 🚀`,
     // ===============================
     MODULES: {
         main: {
-             blueprints: ["/qbank/js/blueprints-loader.js"]
+            // blueprints: ["/qbank/js/blueprints-loader.js"]
         },
         ems: {
             syllabusBuilder: ["/ems/assets/js/modules/syllabus/syllabus-builder.js"]

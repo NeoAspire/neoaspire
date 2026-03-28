@@ -15,7 +15,7 @@ const pageModules = {
     blueprints: [],
     syllabusBuilder: []
 };
-// LOAD MODULES
+
 // ===============================
 // LOAD MODULES DYNAMICALLY FROM CONFIG
 // ===============================
