@@ -2,7 +2,7 @@
 //  GLOBAL PDF EXPORT MODULE
 // CSS is separated in /ems/assets/css/pdf-export.css
 // ===============================
-import { path } from '../../../../../../core/js/config.js';
+import { path } from '../../../../../core/js/config.js';
 const cssPath = path('/ems/assets/css/pages/pdf-export.css');
 /**
  * Open a PDF preview window before downloading
