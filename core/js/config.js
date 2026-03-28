@@ -112,7 +112,6 @@ export const CONFIG = {
         main: {
             header: path('/partials/header.html'),
             footer: path('/partials/footer.html'),
-          //   js: path('/core/js/index.js')            // core JS
         },
 
         ems: {

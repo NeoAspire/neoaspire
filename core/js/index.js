@@ -10,9 +10,6 @@ console.log("🚀 Neoaspire index.js loaded");
 const page = document.body.dataset.page;
 
 const pageModules = {
-    home: [],
-    dashboard: [],
-    blueprints: [],
     syllabusBuilder: []
 };
 
@@ -29,7 +26,7 @@ async function loadModules() {
     if (modules.length === 0) return;
 
     const results = await Promise.allSettled(
-        modules.map(path => import(path))
+     modules.map(p => import(new URL(p, import.meta.url)))
     );
 
     results.forEach((res, i) => {
