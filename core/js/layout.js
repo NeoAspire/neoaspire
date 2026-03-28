@@ -7,39 +7,10 @@ import { fetchHTML } from './utils.js';
 import { loadPageScript } from './loader.js';
 
 // ===============================
-// DYNAMIC LOAD APP-SPECIFIC CSS + JS
-// ===============================
-
-/* function loadCoreAssets() {
-    const app = document.body.dataset.app || 'main';
-    const layout = CONFIG.APPS[app];
-
-    if (!layout) return; */
-/*
-    // Load CSS
-    if (layout.css && !document.querySelector(`link[href="${layout.css}"]`)) {
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = layout.css;
-        document.head.appendChild(link);
-    } */
-/*
-    // Load JS (index.js)
-     if (layout.js && !document.querySelector(`script[src="${layout.js}"]`)) {
-        const script = document.createElement('script');
-        script.type = 'module';
-        script.src = layout.js; // dynamically resolved via path()
-        document.head.appendChild(script);
-    }
-} */
-
-// ===============================
 // LOAD HEADER AND FOOTER
 // ===============================
 
 export async function loadLayout() {
-    // Load app-specific CSS/JS first
-  //  loadCoreAssets();    // load main.css + index.js
 
     const app = document.body.dataset.app || 'main';
     const layout = CONFIG.APPS[app];
