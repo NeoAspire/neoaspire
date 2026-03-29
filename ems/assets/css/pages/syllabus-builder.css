@@ -89,6 +89,13 @@
     accent-color: var(--color-primary);
     cursor: pointer;
 }
+input[type="checkbox"] {
+    appearance: checkbox !important;
+    -webkit-appearance: checkbox !important;
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
 
 /* -------------------------------
    UTILITY CLASSES

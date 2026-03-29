@@ -7,28 +7,28 @@
     <title>Learn UI Design | Neoaspire</title>
 
       <!-- Main CSS of Neoaspire Website -->
-    <link rel="stylesheet" href="../assets/css/main.css">
+   <link rel="stylesheet" href="../assets/css/main.css"> 
     <!-- Page Specific CSS -->
     <link rel="stylesheet" href="./css/course-page.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../assets/images/favicon/favicon.png">
-    <!-- Main JS of Neoaspire Website -->
-    <script type="module" src="../assets/js/main.js"></script>
+    <!-- CORE JS -->
+    <script type="module" src="../core/js/index.js"></script>
     <!-- Page Specific JS -->
     <script type="module" src="./js/course-page.js"></script>
     
 </head>
 
-<body data-page="photoshop-course">
+<body data-app="main" data-page="photoshop-course">
     <!-- Header -->
-    <header id="site-header">
+    <header id="header-container">
         <!-- Header content will be loaded here -->
     </header>
 
     <!-- Main Content -->
     <main>
         <section class="aside-container">
-            <button class="menu-toggle" id="menuToggle">☰ Photoshop UI Design</button>
+            <button class="menu-toggle-course" id="menuToggle">☰ Photoshop UI Design</button>
             <aside>
                 <h2>Photoshop UI Design</h2>
                 <a href="#intro-photoshop">Introduction</a>
@@ -63,15 +63,15 @@
                     <p>Congratulations! You’ve successfully finished this course.</p>
                 -->
                     <div class="completion-actions">
-                        <a href="index.html" class="btn-outline">Explore More Courses</a>
+                        <a href="index.html" class="btn btn-outline">Explore More Courses</a>
                     </div>
                 
                 </section>
 
                 <!-- Navigation Buttons -->
                 <section class="navigation">
-                    <button class="previous-btn" id="prev-btn">Previous</button>
-                    <button class="next-btn" id="next-btn">Next</button>
+                    <button class="btn btn-primary" id="prev-btn">Previous</button>
+                    <button class="btn btn-primary" id="next-btn">Next</button>
                 </section>
 
 
@@ -81,7 +81,7 @@
     </main>
 
     <!-- Footer -->
-    <footer id="site-footer">
+    <footer id="footer-container">
         <!-- Footer content will be loaded here -->
     </footer>
 </body>

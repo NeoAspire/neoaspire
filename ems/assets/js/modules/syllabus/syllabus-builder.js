@@ -1,16 +1,19 @@
 // ===============================
 // SYLLABUS BUILDER MODULE
 // ===============================
+import { path } from '../../../../../core/js/config.js';
 
-// Import ERP PDF module for PDF preview/download
-import { previewERP_PDF } from '/ems/assets/js/services/export/pdf-export.js';
+// Import  PDF module for PDF preview/download
+ import { previewPDF } from '../../services/export/pdf-export.js';
 
 console.log("SYLLABUS BUILDER MODULE LOADED");
 
 // ===============================
 // INIT ENTRY POINT
 // ===============================
+
 export function init() {
+  console.log("💡 Syllabus Builder INIT called");
   const form = document.getElementById("syllabusForm");
   if (!form) return;
   initSyllabusBuilder();
@@ -24,13 +27,14 @@ async function initSyllabusBuilder() {
     // -------------------------------
     // Load JSON Data
     // -------------------------------
-    const [sessions, classes, subjects, mapping, examTypes] = await Promise.all([
-      loadJSON("/ems/data/academic/sessions.json"),
-      loadJSON("/ems/data/academic/classes.json"),
-      loadJSON("/ems/data/academic/subjects.json"),
-      loadJSON("/ems/data/academic/class-subjects.json"),
-      loadJSON("/ems/data/academic/exam-types.json")
-    ]);
+    
+const [sessions, classes, subjects, mapping, examTypes] = await Promise.all([
+  loadJSON(path("/ems/data/academic/sessions.json")),
+  loadJSON(path("/ems/data/academic/classes.json")),
+  loadJSON(path("/ems/data/academic/subjects.json")),
+  loadJSON(path("/ems/data/academic/class-subjects.json")),
+  loadJSON(path("/ems/data/academic/exam-types.json"))
+]);
 
     // -------------------------------
     // DOM ELEMENTS
@@ -242,12 +246,13 @@ async function initSyllabusBuilder() {
 
       // Populate exam types dynamically
       examTypes.forEach(exam => {
-        if (!document.querySelector(`input[name="examType"][value="${exam.id}"]`)) {
-          const inputId = `exam-${exam.id}`;
-          const label = document.createElement("label");
+        const inputId = `exam-${exam.id}`;
 
+        if (!document.querySelector(`input[name="examType"][value="${exam.id}"]`)) {
+          const label = document.createElement("label");
+          label.setAttribute("for", inputId);
  
-          label.innerHTML = `<input type="checkbox" name="examType" value="${exam.id}">${exam.name}`;
+          label.innerHTML = `<input type="checkbox" id="${inputId}" name="examType" value="${exam.id}">${exam.name}`;
           examTypeContainer.appendChild(label);
         }
       });
@@ -267,60 +272,51 @@ async function initSyllabusBuilder() {
     // ===============================
     // PDF CONTENT GENERATOR WITH HEADER
     // ===============================
-    function getPDFContent() {
-      const schoolName = document.getElementById("schoolName").value || "N/A";
-      const schoolAddress = document.getElementById("schoolAddress").value || "N/A";
-      const session = document.getElementById("session").selectedOptions[0]?.text || "N/A";
-      const className = document.getElementById("classSelect").selectedOptions[0]?.text || "N/A";
+function getPDFContent() {
+  const schoolName = document.getElementById("schoolName").value || "N/A";
+  const schoolAddress = document.getElementById("schoolAddress").value || "N/A";
+  const session = document.getElementById("session").selectedOptions[0]?.text || "N/A";
+  const className = document.getElementById("classSelect").selectedOptions[0]?.text || "N/A";
 
-      const selectedExams = document.querySelectorAll('input[name="examType"]:checked');
-      const selectedSubjects = document.querySelectorAll('input[name="subject"]:checked');
+  const selectedExams = document.querySelectorAll('input[name="examType"]:checked');
+  const selectedSubjects = document.querySelectorAll('input[name="subject"]:checked');
 
-      if (!selectedExams.length || !selectedSubjects.length) return "<p>No content to export</p>";
+  if (!selectedExams.length || !selectedSubjects.length) return "<p>No content to export</p>";
 
-      let html = `
-        <div class="pdf-header">
-          <h1>${schoolName}</h1>
-          <p>${schoolAddress}</p>
-          <p>${session} | ${className}</p>
-          <hr>
-        </div>`;
+  let html = "";
 
-      selectedExams.forEach(exam => {
-        const examId = exam.value;
-        const examName = exam.parentElement.textContent.trim();
-        html += `<div class="pdf-exam"><h2>${examName}</h2>`;
+  selectedExams.forEach(exam => {
+    const examId = exam.value;
+    const examName = exam.parentElement.textContent.trim();
 
-        selectedSubjects.forEach(sub => {
-          const subjectId = sub.value;
-          const subjectName = sub.parentElement.textContent.trim();
-          const chapters = document.querySelector(`input[name="chapters-${examId}-${subjectId}"]`)?.value || "N/A";
-          const tables = document.querySelector(`input[name="tables-${examId}-${subjectId}"]`)?.value || "";
+    // Wrap each exam in a separate page
+    html += `<div class="pdf-page">
+               <div class="pdf-header">
+                 <h1>${schoolName}</h1>
+                 <p>${schoolAddress}</p>
+                 <p><strong>${session} | ${className}</strong></p>
+                 <hr>
+                 <h2>${examName}</h2>
+               </div>`;
 
-          html += `<div class="pdf-subject">
-            <h3>${subjectName}</h3>
-            <div class="pdf-chapters">
-           
-              <ul>
-  ${chapters
-              .split(";")
-              .map(ch => ch.trim())
-              .filter(ch => ch) // remove empty strings
-              .map(ch => `<li>${ch}</li>`)
-              .join("")}
-</ul>
+    selectedSubjects.forEach(sub => {
+      const subjectId = sub.value;
+      const subjectName = sub.parentElement.textContent.trim();
+      const chapters = document.querySelector(`input[name="chapters-${examId}-${subjectId}"]`)?.value || "N/A";
+      const tables = document.querySelector(`input[name="tables-${examId}-${subjectId}"]`)?.value || "";
 
-            </div>
-            ${tables ? `<div>Tables: ${tables}</div>` : ""}
-          </div>`;
-        });
+      html += `<div class="pdf-subject">
+                 <h3>${subjectName}</h3>
+                 <ul>${chapters.split(";").map(ch => `<li>${ch.trim()}</li>`).join("")}</ul>
+                 ${tables ? `<p>Tables: ${tables}</p>` : ""}
+               </div>`;
+    });
 
-        html += `</div>`; // close exam
-      });
+    html += "</div>"; // close pdf-page
+  });
 
-      return html;
-    }
-
+  return html;
+}
     // ===============================
     // INITIALIZE PDF DOWNLOAD BUTTON
     // ===============================
@@ -330,7 +326,7 @@ async function initSyllabusBuilder() {
         alert("Please select subjects and exams first!");
         return;
       }
-      previewERP_PDF(pdfContent, "Syllabus.pdf");
+      previewPDF(pdfContent, "Syllabus.pdf");
     });
 
     // ===============================

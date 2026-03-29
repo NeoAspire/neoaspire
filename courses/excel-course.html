@@ -12,23 +12,23 @@
     <link rel="stylesheet" href="./css/course-page.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../assets/images/favicon/favicon.png">
-    <!-- Main JS of Neoaspire Website -->
-    <script type="module" src="../assets/js/main.js"></script>
+    <!-- CORE JS -->
+    <script type="module" src="../core/js/index.js"></script>
     <!-- Page Specific JS -->
     <script type="module" src="./js/course-page.js"></script>
     
 </head>
 
-<body data-page="excel-course">
+<body data-app="main" data-page="excel-course">
     <!-- Header -->
-    <header id="site-header">
+    <header id="header-container">
         <!-- Header content will be loaded here -->
     </header>
 
     <!-- Main Content -->
     <main>
         <section class="aside-container">
-            <button class="menu-toggle" id="menuToggle">☰ Learn Excel</button>
+            <button class="menu-toggle-course" id="menuToggle">☰ Learn Excel</button>
             <aside>
                 <h2>Learn Excel</h2>
                 <a href="#intro-excel">Introduction</a>
@@ -105,15 +105,15 @@
                     <p>Congratulations! You’ve successfully finished this course.</p>
                 -->
                     <div class="completion-actions">
-                        <a href="index.html" class="btn-outline">Explore More Courses</a>
+                        <a href="index.html" class="btn btn-outline">Explore More Courses</a>
                     </div>
                 
                 </section>
 
                 <!-- Navigation Buttons -->
                 <section class="navigation">
-                    <button class="previous-btn" id="prev-btn">Previous</button>
-                    <button class="next-btn" id="next-btn">Next</button>
+                    <button class="btn btn-primary" id="prev-btn">Previous</button>
+                    <button class="btn btn-primary" id="next-btn">Next</button>
                 </section>
 
 
@@ -123,7 +123,7 @@
     </main>
 
     <!-- Footer -->
-    <footer id="site-footer">
+    <footer id="footer-container">
         <!-- Footer content will be loaded here -->
     </footer>
 </body>
