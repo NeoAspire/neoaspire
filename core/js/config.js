@@ -145,6 +145,10 @@ Stay tuned! 🚀`,
             dashboard: {
                 message: "📊 EMS Dashboard Loaded!",
                 type: "success"
+            },
+            syllabusBuilder: {
+                message: "🛠️ Syllabus Builder PDF Generator under development",
+                type: "success"
             }
         }
     },
