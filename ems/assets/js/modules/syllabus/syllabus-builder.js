@@ -2,16 +2,13 @@
 // SYLLABUS BUILDER MODULE
 // ===============================
 import { path } from '../../../../../core/js/config.js';
-
-// Import  PDF module for PDF preview/download
- import { previewPDF } from '../../services/export/pdf-export.js';
+import { generatePDF } from '../../../../../core/pdf/pdfGenerator.js'; // universal PDF engine
 
 console.log("SYLLABUS BUILDER MODULE LOADED");
 
 // ===============================
 // INIT ENTRY POINT
 // ===============================
-
 export function init() {
   console.log("💡 Syllabus Builder INIT called");
   const form = document.getElementById("syllabusForm");
@@ -25,238 +22,80 @@ export function init() {
 async function initSyllabusBuilder() {
   try {
     // -------------------------------
-    // Load JSON Data
+    // LOAD JSON DATA
     // -------------------------------
-    
-const [sessions, classes, subjects, mapping, examTypes] = await Promise.all([
-  loadJSON(path("/ems/data/academic/sessions.json")),
-  loadJSON(path("/ems/data/academic/classes.json")),
-  loadJSON(path("/ems/data/academic/subjects.json")),
-  loadJSON(path("/ems/data/academic/class-subjects.json")),
-  loadJSON(path("/ems/data/academic/exam-types.json"))
-]);
+    const [sessions, classes, subjects, mapping, examTypes] = await Promise.all([
+      loadJSON(path("/ems/data/academic/sessions.json")),
+      loadJSON(path("/ems/data/academic/classes.json")),
+      loadJSON(path("/ems/data/academic/subjects.json")),
+      loadJSON(path("/ems/data/academic/class-subjects.json")),
+      loadJSON(path("/ems/data/academic/exam-types.json"))
+    ]);
 
     // -------------------------------
     // DOM ELEMENTS
     // -------------------------------
-    const sessionSelect = document.getElementById("session");
-    const classSelect = document.getElementById("classSelect");
-    const subjectContainer = document.getElementById("subjectContainer");
-    const examTypeGroup = document.getElementById("examTypeGroup");
-    const examTypeContainer = document.getElementById("examTypeContainer");
-    const classGroup = document.getElementById("classGroup");
-    const subjectGroup = document.getElementById("subjectGroup");
-    const syllabusDetails = document.getElementById("syllabusDetails");
-    const syllabusPreview = document.getElementById("syllabusPreview");
+    const DOM = {
+      sessionSelect: document.getElementById("session"),
+      classSelect: document.getElementById("classSelect"),
+      subjectContainer: document.getElementById("subjectContainer"),
+      examTypeGroup: document.getElementById("examTypeGroup"),
+      examTypeContainer: document.getElementById("examTypeContainer"),
+      classGroup: document.getElementById("classGroup"),
+      subjectGroup: document.getElementById("subjectGroup"),
+      syllabusDetails: document.getElementById("syllabusDetails"),
+      syllabusPreview: document.getElementById("syllabusPreview"),
+      previewContent: document.getElementById("previewContent"),
+      schoolName: document.getElementById("schoolName"),
+      schoolAddress: document.getElementById("schoolAddress")
+    };
 
-    if (!sessionSelect || !classSelect) return;
+    if (!DOM.sessionSelect || !DOM.classSelect) return;
 
     // ===============================
     // LOAD SESSION OPTIONS
     // ===============================
-    sessions.forEach(s => {
-      const option = document.createElement("option");
-      option.value = s.id;
-      option.textContent = s.name;
-      sessionSelect.appendChild(option);
-    });
+    populateSelect(DOM.sessionSelect, sessions);
 
     // ===============================
     // SESSION CHANGE → LOAD CLASSES
     // ===============================
-    sessionSelect.addEventListener("change", () => {
-      const selectedSession = sessionSelect.value;
-
-      // Reset
-      classSelect.innerHTML = '<option value="">Select Class</option>';
-      subjectContainer.innerHTML = "";
-      examTypeContainer.innerHTML = "";
-      subjectGroup?.classList.add("u-hidden");
-      examTypeGroup.classList.add("u-hidden");
-
+    DOM.sessionSelect.addEventListener("change", () => {
+      resetSelection();
+      const selectedSession = DOM.sessionSelect.value;
       if (!selectedSession) {
-        classGroup?.classList.add("u-hidden");
+        DOM.classGroup?.classList.add("u-hidden");
         return;
       }
-
-      classGroup?.classList.remove("u-hidden");
-
-      // Populate classes
-      classes.forEach(c => {
-        const option = document.createElement("option");
-        option.value = c.id;
-        option.textContent = c.name;
-        classSelect.appendChild(option);
-      });
+      DOM.classGroup?.classList.remove("u-hidden");
+      populateSelect(DOM.classSelect, classes);
     });
 
     // ===============================
     // CLASS CHANGE → LOAD SUBJECTS
     // ===============================
-    classSelect.addEventListener("change", () => {
-      subjectContainer.innerHTML = "";
-      examTypeContainer.innerHTML = "";
-      subjectGroup?.classList.remove("u-hidden");
-      examTypeGroup.classList.add("u-hidden");
-
-      const selectedClass = classSelect.value;
+    DOM.classSelect.addEventListener("change", () => {
+      resetSubjectsAndExams();
+      const selectedClass = DOM.classSelect.value;
       const classData = mapping.find(c => c.class_id === selectedClass);
       if (!classData) return;
-
-      // Populate subjects as checkboxes
-      classData.subjects.forEach(subjectId => {
-        const subject = subjects.find(s => s.id === subjectId);
-        if (!subject) return;
-        const inputId = `subject-${subject.id}`;
-
-        const label = document.createElement("label");
-        label.setAttribute("for", inputId);
-        label.innerHTML = `
-          <input type="checkbox" id="${inputId}" name="subject" value="${subject.id}">
-          ${subject.name}
-        `;
-        subjectContainer.appendChild(label);
-      });
-    });
-
-    // ===============================
-    // RENDER EXAM DETAIL BLOCKS
-    // ===============================
-    function renderExamBlocks() {
-      const selectedSubjects = Array.from(document.querySelectorAll('input[name="subject"]:checked'));
-      const selectedExams = Array.from(document.querySelectorAll('input[name="examType"]:checked'));
-
-      // Preserve previously entered values
-      const savedValues = {};
-      document.querySelectorAll("#syllabusDetails input").forEach(input => {
-        savedValues[input.name] = input.value;
-      });
-
-      syllabusDetails.innerHTML = "";
-
-      selectedExams.forEach(exam => {
-        const examId = exam.value;
-        const examName = exam.parentElement.textContent.trim();
-        const div = document.createElement("div");
-        div.className = "exam-detail";
-        div.id = `detail-${examId}`;
-
-        let subjectsHTML = "";
-        selectedSubjects.forEach(sub => {
-          const subjectId = sub.value;
-          const subjectName = sub.parentElement.textContent.trim();
-          const chaptersName = `chapters-${examId}-${subjectId}`;
-          const tablesName = `tables-${examId}-${subjectId}`;
-          const chaptersValue = savedValues[chaptersName] || "";
-          const tablesValue = savedValues[tablesName] || "";
-
-          subjectsHTML += `
-            <div class="subject-block">
-              <h4>${subjectName}</h4>
-              <div class="form-group">
-                <label>Chapters</label>
-                <input type="text" name="${chaptersName}" value="${chaptersValue}" placeholder="Ex: 1,2,3 or 1 to 4">
-              </div>
-              ${subjectName.toLowerCase() === "maths" ? `
-              <div class="form-group">
-                <label>Tables</label>
-                <input type="text" name="${tablesName}" value="${tablesValue}" placeholder="Ex: 2 to 13">
-              </div>` : ""}
-            </div>
-          `;
-        });
-
-        div.innerHTML = `<h3>${examName}</h3>${subjectsHTML}`;
-        syllabusDetails.appendChild(div);
-      });
-    }
-
-    // ===============================
-    // LIVE PREVIEW
-    // ===============================
-    function updatePreview() {
-      const selectedSubjects = document.querySelectorAll('input[name="subject"]:checked');
-      const selectedExams = document.querySelectorAll('input[name="examType"]:checked');
-      const previewContent = document.getElementById("previewContent");
-
-      if (!selectedSubjects.length || !selectedExams.length) {
-        syllabusPreview.classList.add("u-hidden");
-        previewContent.innerHTML = "";
-        return;
-      }
-
-      syllabusPreview.classList.remove("u-hidden");
-
-      let html = "";
-
-      selectedExams.forEach(exam => {
-        const examId = exam.value;
-        const examName = exam.parentElement.textContent.trim();
-        html += `<div class="preview-exam"><h3>📘 ${examName}</h3>`;
-
-        selectedSubjects.forEach(sub => {
-          const subjectId = sub.value;
-          const subjectName = sub.parentElement.textContent.trim();
-          const chapters = document.querySelector(`input[name="chapters-${examId}-${subjectId}"]`)?.value || "";
-          const tables = document.querySelector(`input[name="tables-${examId}-${subjectId}"]`)?.value || "";
-
-          const chapterList = chapters
-            ? `<ul class="preview-chapters">${chapters.split(";").map(ch => `<li>${ch.trim()}</li>`).join("")}</ul>`
-            : "<p>No chapters listed</p>";
-
-          const tableList = tables ? `<p><strong>Tables:</strong> ${tables}</p>` : "";
-
-          html += `<div class="preview-subject">
-                     <h5>${subjectName}</h5>
-                     ${chapterList}
-                     ${tableList}
-                   </div>`;
-        });
-
-        html += "</div>";
-      });
-
-      previewContent.innerHTML = html;
-    }
-
-    // -------------------------------
-    // SYLLABUS DETAILS INPUT LISTENER
-    // -------------------------------
-    syllabusDetails.addEventListener("input", (e) => {
-      if (e.target.name && (e.target.name.startsWith("chapters-") || e.target.name.startsWith("tables-"))) {
-        updatePreview();
-      }
+      populateSubjects(classData.subjects);
     });
 
     // ===============================
     // SUBJECT SELECTION → SHOW EXAMS
     // ===============================
-    subjectContainer.addEventListener("change", () => {
-      const selectedSubjects = document.querySelectorAll('input[name="subject"]:checked');
-
+    DOM.subjectContainer.addEventListener("change", () => {
+      const selectedSubjects = getChecked('subject');
       if (!selectedSubjects.length) {
-        examTypeGroup.classList.add("u-hidden");
-        examTypeContainer.innerHTML = "";
-        document.querySelectorAll(".exam-detail").forEach(div => div.remove());
+        DOM.examTypeGroup.classList.add("u-hidden");
+        DOM.examTypeContainer.innerHTML = "";
+        DOM.syllabusDetails.innerHTML = "";
         updatePreview();
         return;
       }
-
-      examTypeGroup.classList.remove("u-hidden");
-
-      // Populate exam types dynamically
-      examTypes.forEach(exam => {
-        const inputId = `exam-${exam.id}`;
-
-        if (!document.querySelector(`input[name="examType"][value="${exam.id}"]`)) {
-          const label = document.createElement("label");
-          label.setAttribute("for", inputId);
- 
-          label.innerHTML = `<input type="checkbox" id="${inputId}" name="examType" value="${exam.id}">${exam.name}`;
-          examTypeContainer.appendChild(label);
-        }
-      });
-
+      DOM.examTypeGroup.classList.remove("u-hidden");
+      populateExamTypes();
       renderExamBlocks();
       updatePreview();
     });
@@ -264,61 +103,27 @@ const [sessions, classes, subjects, mapping, examTypes] = await Promise.all([
     // ===============================
     // EXAM TYPE SELECTION → SHOW CHAPTERS & TABLES
     // ===============================
-    examTypeContainer.addEventListener("change", () => {
+    DOM.examTypeContainer.addEventListener("change", () => {
       renderExamBlocks();
       updatePreview();
     });
 
     // ===============================
-    // PDF CONTENT GENERATOR WITH HEADER
+    // SYLLABUS DETAILS INPUT LISTENER
     // ===============================
-function getPDFContent() {
-  const schoolName = document.getElementById("schoolName").value || "N/A";
-  const schoolAddress = document.getElementById("schoolAddress").value || "N/A";
-  const session = document.getElementById("session").selectedOptions[0]?.text || "N/A";
-  const className = document.getElementById("classSelect").selectedOptions[0]?.text || "N/A";
-
-  const selectedExams = document.querySelectorAll('input[name="examType"]:checked');
-  const selectedSubjects = document.querySelectorAll('input[name="subject"]:checked');
-
-  if (!selectedExams.length || !selectedSubjects.length) return "<p>No content to export</p>";
-
-  let html = "";
-
-  selectedExams.forEach(exam => {
-    const examId = exam.value;
-    const examName = exam.parentElement.textContent.trim();
-
-    // Wrap each exam in a separate page
-    html += `<div class="pdf-page">
-               <div class="pdf-header">
-                 <h1>${schoolName}</h1>
-                 <p>${schoolAddress}</p>
-                 <p><strong>${session} | ${className}</strong></p>
-                 <hr>
-                 <h2>${examName}</h2>
-               </div>`;
-
-    selectedSubjects.forEach(sub => {
-      const subjectId = sub.value;
-      const subjectName = sub.parentElement.textContent.trim();
-      const chapters = document.querySelector(`input[name="chapters-${examId}-${subjectId}"]`)?.value || "N/A";
-      const tables = document.querySelector(`input[name="tables-${examId}-${subjectId}"]`)?.value || "";
-
-      html += `<div class="pdf-subject">
-                 <h3>${subjectName}</h3>
-                 <ul>${chapters.split(";").map(ch => `<li>${ch.trim()}</li>`).join("")}</ul>
-                 ${tables ? `<p>Tables: ${tables}</p>` : ""}
-               </div>`;
+    DOM.syllabusDetails.addEventListener("input", (e) => {
+      if (e.target.name?.startsWith("chapters-") || e.target.name?.startsWith("tables-")) {
+        updatePreview();
+      }
     });
 
-    html += "</div>"; // close pdf-page
-  });
-
-  return html;
-}
     // ===============================
-    // INITIALIZE PDF DOWNLOAD BUTTON
+    // INITIAL LIVE PREVIEW
+    // ===============================
+    updatePreview();
+
+    // ===============================
+    // PDF DOWNLOAD BUTTON
     // ===============================
     document.getElementById("downloadPdf").addEventListener("click", () => {
       const pdfContent = getPDFContent();
@@ -326,13 +131,198 @@ function getPDFContent() {
         alert("Please select subjects and exams first!");
         return;
       }
-      previewPDF(pdfContent, "Syllabus.pdf");
+
+      const tempDiv = document.createElement("div");
+      tempDiv.id = "pdf-temp-content";
+      tempDiv.innerHTML = pdfContent;
+      document.body.appendChild(tempDiv);
+
+      generatePDF({
+        contentId: "pdf-temp-content",
+        mode: "basic",
+        title: `${DOM.schoolName.value || "School"} Syllabus`
+      });
+
+      setTimeout(() => tempDiv.remove(), 1000);
     });
 
     // ===============================
-    // INITIAL LIVE PREVIEW
+    // -------------------------------HELPER FUNCTIONS-------------------------------
     // ===============================
-    updatePreview();
+
+    function populateSelect(selectEl, items) {
+      selectEl.innerHTML = '<option value="">Select</option>';
+      items.forEach(item => {
+        const opt = document.createElement("option");
+        opt.value = item.id;
+        opt.textContent = item.name;
+        selectEl.appendChild(opt);
+      });
+    }
+
+    function resetSelection() {
+      DOM.classSelect.innerHTML = '<option value="">Select Class</option>';
+      resetSubjectsAndExams();
+      DOM.classGroup?.classList.add("u-hidden");
+    }
+
+    function resetSubjectsAndExams() {
+      DOM.subjectContainer.innerHTML = "";
+      DOM.examTypeContainer.innerHTML = "";
+      DOM.subjectGroup?.classList.add("u-hidden");
+      DOM.examTypeGroup.classList.add("u-hidden");
+      DOM.syllabusDetails.innerHTML = "";
+    }
+
+    function populateSubjects(subjectIds) {
+      DOM.subjectGroup?.classList.remove("u-hidden");
+      subjectIds.forEach(id => {
+        const sub = subjects.find(s => s.id === id);
+        if (!sub) return;
+        const inputId = `subject-${sub.id}`;
+        const label = document.createElement("label");
+        label.setAttribute("for", inputId);
+        label.innerHTML = `<input type="checkbox" id="${inputId}" name="subject" value="${sub.id}">${sub.name}`;
+        DOM.subjectContainer.appendChild(label);
+      });
+    }
+
+    function populateExamTypes() {
+      examTypes.forEach(exam => {
+        if (!document.querySelector(`input[name="examType"][value="${exam.id}"]`)) {
+          const inputId = `exam-${exam.id}`;
+          const label = document.createElement("label");
+          label.setAttribute("for", inputId);
+          label.innerHTML = `<input type="checkbox" id="${inputId}" name="examType" value="${exam.id}">${exam.name}`;
+          DOM.examTypeContainer.appendChild(label);
+        }
+      });
+    }
+
+    function getChecked(type) {
+      return Array.from(document.querySelectorAll(`input[name="${type}"]:checked`));
+    }
+
+    function renderExamBlocks() {
+      const selectedSubjects = getChecked('subject');
+      const selectedExams = getChecked('examType');
+
+      const savedValues = {};
+      DOM.syllabusDetails.querySelectorAll("input").forEach(input => savedValues[input.name] = input.value);
+      DOM.syllabusDetails.innerHTML = "";
+
+      selectedExams.forEach(exam => {
+        const examId = exam.value;
+        const examName = exam.parentElement.textContent.trim();
+        const div = document.createElement("div");
+        div.className = "exam-detail";
+        div.id = `detail-${examId}`;
+        div.innerHTML = selectedSubjects.map(sub => createSubjectBlock(sub, examId, savedValues)).join("");
+        div.innerHTML = `<h3>${examName}</h3>` + div.innerHTML;
+        DOM.syllabusDetails.appendChild(div);
+      });
+    }
+
+    function createSubjectBlock(subjectEl, examId, savedValues = {}) {
+      const subjectId = subjectEl.value;
+      const subjectName = subjectEl.parentElement.textContent.trim();
+      const chaptersName = `chapters-${examId}-${subjectId}`;
+      const tablesName = `tables-${examId}-${subjectId}`;
+      const chaptersValue = savedValues[chaptersName] || "";
+      const tablesValue = savedValues[tablesName] || "";
+
+      return `
+        <div class="subject-block">
+          <h4>${subjectName}</h4>
+          <div class="form-group">
+            <label>Chapters</label>
+            <input type="text" name="${chaptersName}" value="${chaptersValue}" placeholder="Ex: 1,2,3 or 1 to 4">
+          </div>
+          ${subjectName.toLowerCase() === "maths" ? `
+          <div class="form-group">
+            <label>Tables</label>
+            <input type="text" name="${tablesName}" value="${tablesValue}" placeholder="Ex: 2 to 13">
+          </div>` : ""}
+        </div>
+      `;
+    }
+
+    function updatePreview() {
+      const selectedSubjects = getChecked('subject');
+      const selectedExams = getChecked('examType');
+
+      if (!selectedSubjects.length || !selectedExams.length) {
+        DOM.syllabusPreview.classList.add("u-hidden");
+        DOM.previewContent.innerHTML = "";
+        return;
+      }
+
+      DOM.syllabusPreview.classList.remove("u-hidden");
+
+      DOM.previewContent.innerHTML = selectedExams.map(exam => {
+        const examId = exam.value;
+        const examName = exam.parentElement.textContent.trim();
+        const subjectsHTML = selectedSubjects.map(sub => createPreviewSubject(sub, examId)).join("");
+        return `<div class="preview-exam"><h3>📘 ${examName}</h3>${subjectsHTML}</div>`;
+      }).join("");
+    }
+
+    function createPreviewSubject(subjectEl, examId) {
+      const subjectId = subjectEl.value;
+      const subjectName = subjectEl.parentElement.textContent.trim();
+      const chapters = document.querySelector(`input[name="chapters-${examId}-${subjectId}"]`)?.value || "";
+      const tables = document.querySelector(`input[name="tables-${examId}-${subjectId}"]`)?.value || "";
+      const chapterList = chapters ? `<ul class="preview-chapters">${chapters.split(";").map(ch => `<li>${ch.trim()}</li>`).join("")}</ul>` : "<p>No chapters listed</p>";
+      const tableList = tables ? `<p><strong>Tables:</strong> ${tables}</p>` : "";
+      return `<div class="preview-subject"><h5>${subjectName}</h5>${chapterList}${tableList}</div>`;
+    }
+
+  // GET PDF CONTENT BASED ON CURRENT SELECTIONS
+function getPDFContent() {
+  const selectedExams = getChecked('examType');
+  const selectedSubjects = getChecked('subject');
+
+  if (!selectedExams.length || !selectedSubjects.length) {
+    return "<p>No content to export</p>";
+  }
+
+  let html = `
+    <div class="header">
+      <h2>${DOM.schoolName.value || "N/A"}</h2>
+      <p class="address">${DOM.schoolAddress.value || "N/A"}</p>
+      <p class="meta">
+        ${DOM.sessionSelect.selectedOptions[0]?.text || "N/A"} | 
+        ${DOM.classSelect.selectedOptions[0]?.text || "N/A"}
+      </p>
+    </div>
+  `;
+
+  selectedExams.forEach(exam => {
+    const examId = exam.value;
+    const examName = exam.parentElement.textContent.trim();
+
+    html += `
+      <div class="pdf-exam">
+        <h2>${examName}</h2>
+        ${selectedSubjects.map(sub => createPDFSubject(sub, examId)).join("")}
+      </div>
+    `;
+  });
+
+  return html;
+}
+
+    function createPDFSubject(subjectEl, examId) {
+      const subjectId = subjectEl.value;
+      const subjectName = subjectEl.parentElement.textContent.trim();
+      const chapters = document.querySelector(`input[name="chapters-${examId}-${subjectId}"]`)?.value || "N/A";
+      const tables = document.querySelector(`input[name="tables-${examId}-${subjectId}"]`)?.value || "";
+      return `<div class="pdf-subject" avoid-break>
+      <h3>${subjectName}</h3>
+      <ul>${chapters.split(";").map(ch => `<li>${ch.trim()}</li>`).join("")}</ul>
+      ${tables ? `<p>Tables: ${tables}</p>` : ""}
+      </div>`;
+    }
 
   } catch (err) {
     console.error("Syllabus Builder Error:", err);

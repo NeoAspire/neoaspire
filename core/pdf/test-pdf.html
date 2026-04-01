@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF Test</title>
+</head>
+<body>
+
+  <h1>PDF Engine Test</h1>
+
+<button id="btnBasic">Basic</button>
+<button id="btnERP">ERP</button>
+<button id="btnAdvanced">Advanced</button>
+
+  <div id="testContent">
+    <h2>Student Report</h2>
+    <p>This is test content.</p>
+
+    <table border="1" width="100%">
+      <tr><th>Name</th><th>Marks</th></tr>
+      <tr><td>Raman</td><td>85</td></tr>
+      <tr><td>Simran</td><td>92</td></tr>
+    </table>
+
+    <div id="long"></div>
+  </div>
+
+
+<!-- Import your engine -->
+<script type="module">
+  import { generatePDF } from './pdfGenerator.js';
+
+  // Basic PDF
+  document.getElementById("btnBasic").onclick = () => {
+    generatePDF({
+      contentId: "testContent",
+      mode: "basic",
+      title: "Basic PDF"
+    });
+  };
+
+  // ERP PDF
+  document.getElementById("btnERP").onclick = () => {
+    generatePDF({
+      contentId: "testContent",
+      mode: "erp",
+      data: { school: "ABC School", meta: "Class 10 | 2025-26" },
+      title: "ERP PDF"
+    });
+  };
+
+  // Advanced PDF (pagination)
+  document.getElementById("btnAdvanced").onclick = () => {
+    generatePDF({
+      contentId: "testContent",
+      mode: "advanced",
+      data: { school: "ABC School", meta: "Class 10 | 2025-26" },
+      title: "Advanced PDF"
+    });
+  };
+</script>
+
+
+
+</body>
+</html>
