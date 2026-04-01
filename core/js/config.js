@@ -79,17 +79,17 @@ export function resolveAssets(root = document) {
     });
 
     // Fix IMAGES
-root.querySelectorAll("img[src]").forEach(img => {
+    root.querySelectorAll("img[src]").forEach(img => {
 
-    if (img.dataset.resolved) return;
+        if (img.dataset.resolved) return;
 
-    const src = img.getAttribute("src");
+        const src = img.getAttribute("src");
 
-    if (!src || src.startsWith("http") || src.startsWith("data:")) return;
+        if (!src || src.startsWith("http") || src.startsWith("data:")) return;
 
-    img.src = path(src);
-    img.dataset.resolved = "true";
-});
+        img.src = path(src);
+        img.dataset.resolved = "true";
+    });
 }
 
 // ===============================
@@ -119,8 +119,17 @@ export const CONFIG = {
             footer: path('/ems/partials/footer.html'),
         }
     },
+    // ===============================
+    // PDF CONFIG (🔥 ADD HERE)
+    // ===============================
+    PDF: {
+        css: path('/core/pdf/pdf.css'),
+        favicon: path('/assets/images/favicon/favicon.png') // ✅ add this
+    },
 
+    // ===============================
     // APP PAGE WISE ALERTS
+    // ===============================
     ALERTS: {
         main: {
             home: {
@@ -147,7 +156,7 @@ Stay tuned! 🚀`,
                 type: "success"
             },
             syllabusBuilder: {
-                message: "🛠️ Syllabus Builder PDF Generator under development",
+                message: "",
                 type: "success"
             }
         }
@@ -155,7 +164,7 @@ Stay tuned! 🚀`,
 
 
 
-// ===============================
+    // ===============================
     // APP PAGE WISE MODULE PATHS
     // ===============================
     MODULES: {

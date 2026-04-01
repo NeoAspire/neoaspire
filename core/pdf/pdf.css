@@ -1,0 +1,360 @@
+/* ===============================
+   1. PAGE SETUP (A4 PRINT)
+=============================== */
+@page {
+  size: A4;
+  margin: 0;
+  padding: 10mm; /* inner page spacing */
+}
+
+/* ===============================
+   2. GLOBAL BASE (DEFAULT)
+=============================== */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 12pt;
+  line-height: 1.5;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  counter-reset: page;
+}
+
+
+/* ===============================
+   3. PRINT SETTINGS
+=============================== */
+@media print {
+
+  /* Force exact A4 size + white paper */
+  html, body {
+    width: 210mm;
+    height: 297mm;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Force color rendering */
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* Remove default spacing */
+  body {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Clean page container */
+  .page-split {
+    margin: 0 !important;
+    border: none !important;
+    box-shadow: none !important;    
+  }
+
+  /* Prevent extra last page gap */
+  .page-split:last-child {
+    page-break-after: avoid !important;
+    margin-bottom: 0 !important;
+  }
+  
+
+  /* Hide UI elements */
+  .toolbar,
+  .btn-print,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Remove preview styling */
+  body.preview-mode .page-split {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+}
+
+
+/* ===============================
+   4. TOOLBAR (UI)
+=============================== */
+.no-print {
+  text-align: center;
+  padding: 10px;
+}
+
+
+/* ===============================
+   5. PAGE CONTAINER (A4 BLOCK)
+=============================== */
+.page-split {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+
+  padding: 5px 25px;
+
+  background:  #ffffff;;
+  color: black;
+
+  box-sizing: border-box;
+  page-break-after: always;
+  position: relative;
+  top: 0;
+}
+
+/* Remove break on last page */
+.page-split:last-child {
+  page-break-after: auto;
+}
+
+
+/* ===============================
+   6. HEADER
+=============================== */
+.header {
+  position: running(header);
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.header h2 {
+  margin: 0;
+  padding: 0;
+  font-size: 18pt;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.header .address {
+  margin: 2px 0;
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: black;
+  text-transform: uppercase;
+}
+
+.header .meta {
+  margin-top: 3px;
+  font-size: 10.5pt;
+  font-weight: 500;
+  color: black;
+}
+
+/* Header underline */
+.header::after {
+  content: "";
+  display: block;
+  width: 60%;
+  margin: 6px auto 0;
+  border-bottom: 1px solid #999;
+}
+
+
+/* ===============================
+   7. FOOTER
+=============================== */
+.footer {
+  position: fixed;
+  bottom: 10mm;
+  width: 100%;
+  text-align: center;
+  font-size: 10pt;
+  color: #666;
+}
+
+
+/* ===============================
+   8. CONTENT AREA
+=============================== */
+.page-content {
+  margin-top: 10mm;
+  margin-bottom: 15mm;
+}
+
+
+/* ===============================
+   9. SYLLABUS STRUCTURE
+=============================== */
+.pdf-exam {
+  margin-top: 10px;
+}
+
+.pdf-exam h2 {
+  border-bottom: 1px solid #000;
+  padding-bottom: 3px;
+  margin-bottom: 6px;
+}
+
+.pdf-subject {
+  margin: 8px 0;
+}
+
+.pdf-subject h3 {
+  font-size: 13pt;
+  margin-bottom: 4px;
+}
+
+.pdf-subject ul {
+  margin: 4px 0 10px 18px;
+  padding: 0;
+}
+
+.pdf-subject li {
+  margin: 3px 0;
+}
+
+
+/* ===============================
+   10. TABLES
+=============================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0;
+  page-break-inside: auto;
+}
+
+thead {
+  display: table-header-group; /* repeat header */
+}
+
+tr {
+  page-break-inside: avoid;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 6px;
+  font-size: 11pt;
+}
+
+th {
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+
+/* ===============================
+   11. PAGE BREAK CONTROL
+=============================== */
+.avoid-break {
+  page-break-inside: avoid;
+}
+
+.force-break {
+  page-break-before: always;
+}
+
+
+/* ===============================
+   12. WATERMARK
+=============================== */
+.watermark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-size: 60pt;
+  color: rgba(0, 0, 0, 0.06);
+  pointer-events: none;
+}
+
+
+/* ===============================
+   13. TYPOGRAPHY
+=============================== */
+h1, h2, h3 {
+  margin: 10px 0;
+}
+
+p {
+  margin: 6px 0;
+}
+
+
+/* ===============================
+   14. IMAGES
+=============================== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ===============================
+   15. PREVIEW MODE (SCREEN)
+=============================== */
+body.preview-mode {
+  background: #e5e5e5;
+  padding: 20px 0;
+}
+
+.preview-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* A4 preview simulation */
+body.preview-mode .page-split {
+  width: 794px;
+  min-height: 1123px;
+
+  margin: 0 auto;
+
+  box-shadow: 0 0 10px rgba(0,0,0,0.15);
+  border-radius: 4px;
+}
+
+/* Disable breaks in preview */
+.preview-mode .page-split {
+  page-break-after: auto;
+}
+
+.preview-mode .header,
+.preview-mode .footer {
+  position: relative;
+}
+
+
+/* ===============================
+   16. PRINT BUTTON (UI)
+=============================== */
+.toolbar {
+  display: flex;
+  justify-content: center;
+  margin: 15px 0;
+}
+
+.btn-print {
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  padding: 10px 18px;
+  font-size: 13pt;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: all 0.2s ease;
+}
+
+.btn-print:hover {
+  background: #1558b0;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.btn-print:active {
+  transform: scale(0.98);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.btn-print:focus {
+  outline: 2px solid #90caf9;
+  outline-offset: 2px;
+}
