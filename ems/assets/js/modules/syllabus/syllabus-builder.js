@@ -140,7 +140,18 @@ async function initSyllabusBuilder() {
       generatePDF({
         contentId: "pdf-temp-content",
         mode: "basic",
-        title: `${DOM.schoolName.value || "School"} Syllabus`
+        title: `${DOM.schoolName.value || "School"} Syllabus`,
+        data: {
+    header: `
+      <h2>${DOM.schoolName.value || ""}</h2>
+      <p class="address">${DOM.schoolAddress.value || ""}</p>
+      <p class="meta">
+        ${DOM.sessionSelect.selectedOptions[0]?.text || ""} |
+        ${DOM.classSelect.selectedOptions[0]?.text || ""}
+      </p>
+    `,
+    footer: ` `
+  }
       });
 
       setTimeout(() => tempDiv.remove(), 1000);
@@ -285,7 +296,7 @@ function getPDFContent() {
   if (!selectedExams.length || !selectedSubjects.length) {
     return "<p>No content to export</p>";
   }
-
+/*
   let html = `
     <div class="header">
       <h2>${DOM.schoolName.value || "N/A"}</h2>
@@ -296,17 +307,32 @@ function getPDFContent() {
       </p>
     </div>
   `;
+  */
+let html = ``;
 
   selectedExams.forEach(exam => {
     const examId = exam.value;
     const examName = exam.parentElement.textContent.trim();
-
+/*
     html += `
       <div class="pdf-exam">
         <h2>${examName}</h2>
         ${selectedSubjects.map(sub => createPDFSubject(sub, examId)).join("")}
       </div>
     `;
+*/
+/*
+    html += `
+  <h2 class="exam-title">${examName}</h2>
+  ${selectedSubjects.map(sub => createPDFSubject(sub, examId)).join("")}
+`;*/
+
+html += `
+  <div class="pdf-exam avoid-break">
+    <h2 class="exam-title">${examName}</h2>
+    ${selectedSubjects.map(sub => createPDFSubject(sub, examId)).join("")}
+  </div>
+`;
   });
 
   return html;
@@ -317,7 +343,7 @@ function getPDFContent() {
       const subjectName = subjectEl.parentElement.textContent.trim();
       const chapters = document.querySelector(`input[name="chapters-${examId}-${subjectId}"]`)?.value || "N/A";
       const tables = document.querySelector(`input[name="tables-${examId}-${subjectId}"]`)?.value || "";
-      return `<div class="pdf-subject" avoid-break>
+      return `<div class="pdf-subject avoid-break">
       <h3>${subjectName}</h3>
       <ul>${chapters.split(";").map(ch => `<li>${ch.trim()}</li>`).join("")}</ul>
       ${tables ? `<p>Tables: ${tables}</p>` : ""}

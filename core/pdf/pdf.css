@@ -74,6 +74,50 @@ body {
   }
 }
 
+/* ===============================
+   FIX: EXAM FLOW (IMPORTANT)
+=============================== */
+
+/* ❌ Stop exam title from jumping to new page */
+.exam-title,
+.pdf-exam h2 {
+  page-break-before: avoid !important;
+  break-before: avoid !important;
+}
+
+/* ❌ Keep title attached to next content */
+.exam-title {
+  page-break-after: avoid !important;
+  break-after: avoid !important;
+}
+
+/* ✅ Allow normal flow */
+.pdf-exam {
+  page-break-inside: auto !important;
+  break-inside: auto !important;
+}
+
+/* ❌ Prevent subject splitting badly */
+/*
+.pdf-subject {
+  page-break-inside: avoid;
+  break-inside: avoid;
+} */
+/* ===============================
+   BASIC MODE FLOW FIX
+=============================== */
+
+/* Allow subject to split naturally in BASIC mode */
+body:not(.paginator-mode) .pdf-subject {
+  page-break-inside: auto !important;
+  break-inside: auto !important;
+}
+
+/* Keep heading with content */
+body:not(.paginator-mode) .pdf-subject h3 {
+  page-break-after: avoid;
+  break-after: avoid;
+}
 
 /* ===============================
    4. TOOLBAR (UI)
@@ -94,7 +138,7 @@ body {
 
   padding: 5px 25px;
 
-  background:  #ffffff;;
+  background:  #e21a1a;;
   color: black;
 
   box-sizing: border-box;
@@ -170,7 +214,7 @@ body {
 =============================== */
 .page-content {
   margin-top: 10mm;
-  margin-bottom: 15mm;
+  margin-bottom: 10mm;
 }
 
 
@@ -357,4 +401,30 @@ body.preview-mode .page-split {
 .btn-print:focus {
   outline: 2px solid #90caf9;
   outline-offset: 2px;
+}
+
+/* ===============================
+   ADVANCED MODE FIX (FINAL)
+=============================== */
+
+body.paginator-mode .pdf-exam {
+  break-inside: auto !important;
+  page-break-inside: auto !important;
+}
+
+body.paginator-mode .exam-title,
+body.paginator-mode .pdf-exam h2 {
+  break-before: auto !important;   /* 🔥 allow natural flow */
+  page-break-before: auto !important;
+}
+
+body.paginator-mode .exam-title {
+  break-after: avoid !important;
+  page-break-after: avoid !important;
+}
+
+/* Prevent ugly subject splits */
+body.paginator-mode .pdf-subject {
+  break-inside: avoid;
+  page-break-inside: avoid;
 }

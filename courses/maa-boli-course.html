@@ -7,16 +7,20 @@
     <title>Punjabi | ਮਾਂ ਬੋਲੀ: ਸਾਡੀ ਪਛਾਣ | NeoAspire</title>
 
     <!-- Main CSS of Neoaspire Website -->
-   <link rel="stylesheet" href="../assets/css/main.css"> 
+    <link rel="stylesheet" href="../assets/css/main.css">
     <!-- Page Specific CSS -->
     <link rel="stylesheet" href="./css/course-page.css">
+    <!--maa-boli-course CSS-->
+    <link rel="stylesheet" href="./css/maa-boli-course.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../assets/images/favicon/favicon.png">
     <!-- CORE JS -->
     <script type="module" src="../core/js/index.js"></script>
     <!-- Page Specific JS -->
     <script type="module" src="./js/course-page.js"></script>
-
+    <!-- Sound JS -->
+    <script type="module" src="./js/sounds.js" defer></script>
+ 
 </head>
 
 <body data-app="main" data-page="maa-boli-course">
@@ -28,7 +32,7 @@
     <!-- Main Content -->
     <main>
         <section class="aside-container">
-            <button class="menu-toggle-course" id="menuToggle">☰ Learn HTML</button>
+            <button class="menu-toggle-course" id="menuToggle">☰ ਮਾਂ ਬੋਲੀ: ਸਾਡੀ ਪਛਾਣ</button>
 
             <!-- Sidebar Navigation -->
 
@@ -45,8 +49,7 @@
                 <!-- LEVEL 1: Alphabet -->
                 <h3>Level 1: Gurmukhi Alphabet</h3>
                 <a href="#punjabi-varnmala">Punjabi Varnmala</a>
-                <a href="#punjabi-vowels">Laga Matra (Vowels)</a>
-                <a href="#punjabi-consonants">Consonants</a>
+                <a href="#punjabi-laga-matra">Laga Matra</a>
                 <a href="#punjabi-pronunciation">Pronunciation Practice</a>
                 <a href="#punjabi-writing">Writing Practice</a>
 
@@ -338,6 +341,287 @@
                 </section>
 
                 <!-- LEVEL 1: Alphabet -->
+                <!-- Punjabi Varnmala -->
+                <section class="content-section" id="punjabi-varnmala">
+
+                    <h2>Gurmukhi Alphabet / ਗੁਰਮੁਖੀ ਵਰਣਮਾਲਾ</h2>
+
+                    <p>
+                        The Gurmukhi alphabet (Punjabi Varnmala) is the foundation of the Punjabi language.
+                        It includes vowels (Swar) and consonants (Vyanjan) used to form words.<br>
+                        ਗੁਰਮੁਖੀ ਵਰਣਮਾਲਾ ਪੰਜਾਬੀ ਭਾਸ਼ਾ ਦੀ ਬੁਨਿਆਦ ਹੈ।
+                        ਇਸ ਵਿੱਚ ਸਵਰ ਅਤੇ ਵਿਆੰਜਨ ਸ਼ਾਮਲ ਹਨ ਜੋ ਸ਼ਬਦ ਬਣਾਉਣ ਲਈ ਵਰਤੇ ਜਾਂਦੇ ਹਨ।
+                    </p>
+
+                    <h3>Types of Letters / ਅੱਖਰਾਂ ਦੇ ਪ੍ਰਕਾਰ</h3>
+
+                    <ul>
+                        <li><strong>Vowels (Swar)</strong> – ਸਵਰ (ਅ, ਆ, ਇ, ਈ...)</li>
+                        <li><strong>Consonants (Vyanjan)</strong> – ਵਿਆੰਜਨ (ਕ, ਖ, ਗ, ਘ...)</li>
+                    </ul>
+
+                    <h3>Punjabi Vowels / ਸਵਰ</h3>
+
+                    <div class="alphabet-box">
+
+                        <span>ਓ</span> <span> ਅ </span> <span>ੲ</span>
+                    </div>
+
+                    <h3>Punjabi Consonants / ਵਿਆੰਜਨ</h3>
+
+
+                    <div class="alphabet-box">
+                        <span> - </span> <span> - </span> <span> - </span> <span>ਸ</span> <span>ਹ</span> <br>
+                        <span>ਕ</span> <span>ਖ</span> <span>ਗ</span> <span>ਘ</span> <span>ਙ</span><br>
+                        <span>ਚ</span> <span>ਛ</span> <span>ਜ</span> <span>ਝ</span> <span>ਞ</span><br>
+                        <span>ਟ</span> <span>ਠ</span> <span>ਡ</span> <span>ਢ</span> <span>ਣ</span><br>
+                        <span>ਤ</span> <span>ਥ</span> <span>ਦ</span> <span>ਧ</span> <span>ਨ</span><br>
+                        <span>ਪ</span> <span>ਫ</span> <span>ਬ</span> <span>ਭ</span> <span>ਮ</span><br>
+                        <span>ਯ</span> <span>ਰ</span> <span>ਲ</span> <span>ਵ</span> <span>ੜ</span><br>
+                    </div>
+
+                    <h3>Examples / ਉਦਾਹਰਨ</h3>
+
+                    <ul>
+                        <li>ਕ → ਕਮਲ (Lotus)</li>
+                        <li>ਗ → ਗਾਂ (Cow)</li>
+                        <li>ਪ → ਪਾਣੀ (Water)</li>
+                        <li>ਮ → ਮਾਂ (Mother)</li>
+                    </ul>
+
+                    <h3>Tips to Learn / ਸਿੱਖਣ ਲਈ ਸੁਝਾਅ</h3>
+
+                    <ul>
+                        <li>Practice writing daily / ਹਰ ਰੋਜ਼ ਲਿਖਣ ਦਾ ਅਭਿਆਸ ਕਰੋ</li>
+                        <li>Speak letters aloud / ਅੱਖਰ ਉੱਚੀ ਆਵਾਜ਼ ਨਾਲ ਬੋਲੋ</li>
+                        <li>Use charts and flashcards / ਚਾਰਟ ਅਤੇ ਕਾਰਡ ਵਰਤੋ</li>
+                    </ul>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task / ਅਭਿਆਸ</h3>
+                        <ul>
+                            <li>Write all vowels 2 times / ਸਾਰੇ ਸਵਰ 2 ਵਾਰੀ ਲਿਖੋ</li>
+                            <li>Write any 10 consonants / ਕੋਈ ਵੀ 10 ਵਿਆੰਜਨ ਲਿਖੋ</li>
+                            <li>Make 3 simple words / 3 ਸਧਾਰਣ ਸ਼ਬਦ ਬਣਾਓ</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Laga Matra -->
+                <section class="content-section" id="punjabi-laga-matra">
+
+                    <h2>Laga Matra / ਲਾਗਾ ਮਾਤਰਾ</h2>
+
+                    <p>
+                        Laga Matras are vowel signs used with consonants to change their sound.
+                        They are essential for forming correct Punjabi words.<br>
+                        ਲਾਗਾ ਮਾਤਰਾਂ ਉਹ ਨਿਸ਼ਾਨ ਹਨ ਜੋ ਵਿਆੰਜਨਾਂ ਨਾਲ ਲੱਗ ਕੇ ਉਨ੍ਹਾਂ ਦੀ ਧੁਨੀ ਬਦਲਦੇ ਹਨ।
+                        ਇਹ ਸਹੀ ਸ਼ਬਦ ਬਣਾਉਣ ਲਈ ਬਹੁਤ ਜ਼ਰੂਰੀ ਹਨ।
+                    </p>
+
+                    <h3>List of Laga Matras / ਮਾਤਰਾਂ ਦੀ ਸੂਚੀ</h3>
+
+                    <div class="matra-box">
+
+                        <div class="matra-item">
+                            <span>ਾ <small>ਕੰਨਾ (Kanna)</small></span>
+                            <p>ਕਾ</p>
+                        </div>
+
+                        <div class="matra-item">
+                            <span>ਿ <small>ਸਿਹਾਰੀ (Sihari)</small></span>
+                            <p>ਕਿ</p>
+                        </div>
+
+                        <div class="matra-item">
+                            <span>ੀ <small>ਬਿਹਾਰੀ (Bihari)</small></span>
+                            <p>ਕੀ</p>
+                        </div>
+
+                        <div class="matra-item">
+                            <span>ੁ <small>ਔਂਕੜ (Aunkar)</small></span>
+                            <p>ਕੁ</p>
+                        </div>
+
+                        <div class="matra-item">
+                            <span>ੂ <small>ਦੁਲੈਂਕੜ (Dulainkar)</small></span>
+                            <p>ਕੂ</p>
+                        </div>
+
+                        <div class="matra-item">
+                            <span>ੇ <small>ਲਾਂ (Laan)</small></span>
+                            <p>ਕੇ</p>
+                        </div>
+
+                        <div class="matra-item">
+                            <span>ੈ <small>ਦੁਲਾਂ (Dulaan)</small></span>
+                            <p>ਕੈ</p>
+                        </div>
+
+                        <div class="matra-item">
+                            <span>ੋ <small>ਹੋੜਾ (Hora)</small></span>
+                            <p>ਕੋ</p>
+                        </div>
+
+                        <div class="matra-item">
+                            <span>ੌ <small>ਕਨੌੜਾ (Kanora)</small></span>
+                            <p>ਕੌ</p>
+                        </div>
+
+                    </div>
+
+                    <h3>Examples / ਉਦਾਹਰਨ</h3>
+
+                    <ul>
+                        <li>ਕ + ਾ → ਕਾ</li>
+                        <li>ਕ + ਿ → ਕਿ</li>
+                        <li>ਕ + ੀ → ਕੀ</li>
+                        <li>ਕ + ੁ → ਕੁ</li>
+                        <li>ਕ + ੇ → ਕੇ</li>
+                    </ul>
+
+                    <h3>Why Laga Matra is Important / ਮਾਤਰਾ ਕਿਉਂ ਜ਼ਰੂਰੀ ਹੈ</h3>
+
+                    <ul>
+                        <li>Changes meaning of words / ਸ਼ਬਦਾਂ ਦਾ ਅਰਥ ਬਦਲਦਾ ਹੈ</li>
+                        <li>Improves pronunciation / ਉਚਾਰਣ ਸੁਧਾਰਦਾ ਹੈ</li>
+                        <li>Essential for reading and writing / ਪੜ੍ਹਨ-ਲਿਖਣ ਲਈ ਜ਼ਰੂਰੀ</li>
+                    </ul>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task / ਅਭਿਆਸ</h3>
+                        <ul>
+                            <li>Write 5 words using ਮਾਤਰਾ / 5 ਮਾਤਰਾ ਵਾਲੇ ਸ਼ਬਦ ਲਿਖੋ</li>
+                            <li>Practice reading aloud / ਉੱਚੀ ਆਵਾਜ਼ ਨਾਲ ਪੜ੍ਹੋ</li>
+                            <li>Make combinations with ਕ, ਗ, ਪ / ਕ, ਗ, ਪ ਨਾਲ ਸ਼ਬਦ ਬਣਾਓ</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Pronunciation Practice -->
+                <section class="content-section" id="punjabi-pronunciation">
+
+                    <h2>Pronunciation Practice / ਉਚਾਰਣ ਅਭਿਆਸ</h2>
+
+                    <p>
+                        Practice correct pronunciation of Punjabi letters and words by listening and repeating.
+                        This helps improve speaking skills and confidence.<br>
+                        ਪੰਜਾਬੀ ਅੱਖਰਾਂ ਅਤੇ ਸ਼ਬਦਾਂ ਦਾ ਸਹੀ ਉਚਾਰਣ ਕਰਨ ਲਈ ਸੁਣੋ ਅਤੇ ਦੁਹਰਾਓ।
+                        ਇਸ ਨਾਲ ਬੋਲਣ ਦੇ ਹੁਨਰ ਅਤੇ ਵਿਸ਼ਵਾਸ ਵਿੱਚ ਸੁਧਾਰ ਹੁੰਦਾ ਹੈ।
+                    </p>
+
+                    <h3>Letter Practice / ਅੱਖਰ ਅਭਿਆਸ</h3>
+
+                    <div class="pronunciation-box">
+                        <span data-sound="uda">ਓ</span><span data-sound="ada">ਅ</span>
+                        <span data-sound="edi">ੲ</span><span data-sound="sasa">ਸ</span>
+                        <span data-sound="haha">ਹ</span> 
+
+                        <span data-sound="kaka">ਕ</span><span data-sound="khakha">ਖ</span>
+                        <span data-sound="gaga">ਗ</span><span data-sound="ghagha">ਘ</span>
+                        <span data-sound="angaa">ਙ</span>
+
+                        <span data-sound="chacha">ਚ</span><span data-sound="chhachha">ਛ</span>
+                        <span data-sound="jaja">ਜ</span><span data-sound="jhajha">ਝ</span>
+                        <span data-sound="janja">ਞ</span>
+
+                        <span data-sound="tainka">ਟ</span><span data-sound="thatha">ਠ</span>
+                        <span data-sound="dada">ਡ</span><span data-sound="dhadha">ਢ</span>
+                        <span data-sound="nana">ਣ</span>
+
+                        <span data-sound="tata">ਤ</span><span data-sound="thathaa">ਥ</span>
+                        <span data-sound="dadaa">ਦ</span><span data-sound="dhadhaa">ਧ</span>
+                        <span data-sound="nanaa">ਨ</span>
+
+                        <span data-sound="papa">ਪ</span><span data-sound="phapha">ਫ</span>
+                        <span data-sound="baba">ਬ</span><span data-sound="bhabha">ਭ</span>
+                        <span data-sound="mama">ਮ</span>
+
+                        <span data-sound="yeya">ਯ</span><span data-sound="rara">ਰ</span>
+                        <span data-sound="lala">ਲ</span><span data-sound="vawa">ਵ</span>
+                        <span data-sound="dhara">ੜ</span>
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="practice-controls">
+                        <button class="btn-primary" id="playAll">🔊 Play All</button>
+                    </div>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task / ਅਭਿਆਸ</h3>
+                        <ul>
+                            <li>Listen and repeat each letter / ਹਰ ਅੱਖਰ ਸੁਣੋ ਅਤੇ ਦੁਹਰਾਓ</li>
+                            <li>Practice daily for 10 minutes / ਹਰ ਰੋਜ਼ 10 ਮਿੰਟ ਅਭਿਆਸ ਕਰੋ</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Writing Practice -->
+                 <!-- Writing Practice -->
+<section class="content-section" id="punjabi-writing">
+
+    <h2>Writing Practice / ਲਿਖਣ ਅਭਿਆਸ</h2>
+
+    <p>
+        Practice writing Punjabi letters, words, and sentences to improve handwriting and accuracy.<br>
+        ਪੰਜਾਬੀ ਅੱਖਰਾਂ, ਸ਼ਬਦਾਂ ਅਤੇ ਵਾਕਾਂ ਨੂੰ ਲਿਖਣ ਦਾ ਅਭਿਆਸ ਕਰੋ ਤਾਂ ਜੋ ਲਿਖਣ ਦੀ ਸੁੰਦਰਤਾ ਅਤੇ ਸਹੀਪਣ ਵਿੱਚ ਸੁਧਾਰ ਆ ਸਕੇ।
+    </p>
+
+    <!-- Letter Writing -->
+    <h3>Letter Writing / ਅੱਖਰ ਲਿਖਾਈ</h3>
+
+    <div class="writing-box">
+        <span>ਅ</span><span>ਆ</span><span>ਇ</span><span>ਈ</span>
+        <span>ਉ</span><span>ਊ</span><span>ਏ</span><span>ਐ</span>
+        <span>ਓ</span><span>ਔ</span>
+    </div>
+
+    <!-- Word Writing -->
+    <h3>Word Practice / ਸ਼ਬਦ ਅਭਿਆਸ</h3>
+
+    <div class="writing-words">
+        <p>ਕਮਲ ✏️ ________</p>
+        <p>ਘਰ ✏️ ________</p>
+        <p>ਪਾਣੀ ✏️ ________</p>
+        <p>ਬੱਚਾ ✏️ ________</p>
+    </div>
+
+    <!-- Sentence Writing -->
+    <h3>Sentence Writing / ਵਾਕ ਅਭਿਆਸ</h3>
+
+    <div class="writing-sentences">
+        <p>ਮੇਰਾ ਨਾਮ ________ ਹੈ।</p>
+        <p>ਮੈਂ ਸਕੂਲ ਜਾਂਦਾ/ਜਾਂਦੀ ਹਾਂ।</p>
+        <p>ਇਹ ਮੇਰਾ ਘਰ ਹੈ।</p>
+    </div>
+
+ 
+     <!-- Controls -->
+<div class="practice-controls">
+  <button class="btn-primary">
+    ✍️ Start Practice! Write letters and words now.
+  </button>
+</div>
+
+
+    <!-- Practice Task -->
+    <div class="practice-box">
+        <h3>🎯 Practice Task / ਅਭਿਆਸ</h3>
+        <ul>
+            <li>Write each letter 5 times / ਹਰ ਅੱਖਰ 5 ਵਾਰ ਲਿਖੋ</li>
+            <li>Complete all words and sentences / ਸਾਰੇ ਸ਼ਬਦ ਅਤੇ ਵਾਕ ਪੂਰੇ ਕਰੋ</li>
+            <li>Practice daily for 10 minutes / ਹਰ ਰੋਜ਼ 10 ਮਿੰਟ ਅਭਿਆਸ ਕਰੋ</li>
+        </ul>
+    </div>
+
+</section>
+
                 <!-- LEVEL 2: Words -->
                 <!-- LEVEL 3: Grammar -->
                 <!-- LEVEL 4: Speaking -->
