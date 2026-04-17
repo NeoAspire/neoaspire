@@ -25,7 +25,7 @@ document.querySelectorAll('.pronunciation-box span').forEach(letter => {
 
     const sound = letter.dataset.sound;
     currentAudio = new Audio(`./sounds/${sound}.mp3`);
-
+   
     letter.classList.add("active");
 
     currentAudio.play().catch(err => console.log(err));
