@@ -7,7 +7,7 @@
     <title>Learn JavaScript | Neoaspire</title>
 
     <!-- Main CSS of Neoaspire Website -->
-   <link rel="stylesheet" href="../assets/css/main.css"> 
+    <link rel="stylesheet" href="../assets/css/main.css">
     <!-- Page Specific CSS -->
     <link rel="stylesheet" href="./css/course-page.css">
     <!-- Favicon -->
@@ -16,7 +16,7 @@
     <script type="module" src="../core/js/index.js"></script>
     <!-- Page Specific JS -->
     <script type="module" src="./js/course-page.js"></script>
-    
+
 </head>
 
 <body data-app="main" data-page="js-course">
@@ -57,7 +57,7 @@
                 <!-- LEVEL 3: Functions & Data Structures -->
                 <h3>Functions & Data Structures</h3>
                 <a href="#functions">Functions</a>
-                <a href="#function-parameters">Parameters & Return</a>
+                <a href="#parameters-return">Parameters & Return</a>
                 <a href="#scope">Scope</a>
                 <a href="#this-keyword">this Keyword</a>
                 <a href="#arrays">Arrays</a>
@@ -79,8 +79,8 @@
                 <a href="#dom-manipulation">DOM Manipulation</a>
                 <a href="#events">Events</a>
                 <a href="#event-listeners">Event Listeners</a>
-                <a href="#event-bubbling">Event Bubbling & Capturing</a>
-                <a href="#forms-validation">Form Validation</a>
+                <a href="#event-bubbling-capturing">Event Bubbling & Capturing</a>
+                <a href="#form-validation">Form Validation</a>
 
                 <!-- LEVEL 6: Modern JavaScript (ES6+) -->
                 <h3>Modern JavaScript</h3>
@@ -90,7 +90,7 @@
                 <a href="#destructuring">Destructuring</a>
                 <a href="#spread-operator">Spread Operator</a>
                 <a href="#modules">Modules</a>
-                <a href="#classes">Classes (OOP)</a>
+                <a href="#classes-oop">Classes (OOP)</a>
 
                 <!-- LEVEL 7: Asynchronous JavaScript -->
                 <h3>Asynchronous JavaScript</h3>
@@ -973,21 +973,3772 @@ while (number > 0) {
 
                 </section>
 
+                <!-- LEVEL 3: Functions & Data Structures -->
+
+                <!-- Functions -->
+                <section class="content-section" id="functions">
+
+                    <h2>Functions</h2>
+
+                    <p>
+                        A function is a reusable block of code designed to perform a specific task.
+                        It helps in organizing code and avoiding repetition.
+                    </p>
+
+                    <h3>Basic Syntax</h3>
+
+                    <pre><code>
+                function functionName() {
+                    // code
+                }
+                    </code></pre>
+
+                    <h3>Example</h3>
+
+                    <pre><code>
+                function greet() {
+                    console.log("Hello World");
+                }
+                
+                greet();
+                    </code></pre>
+
+                    <h3>Function with Parameters</h3>
+
+                    <pre><code>
+                function add(a, b) {
+                    return a + b;
+                }
+                
+                console.log(add(5, 3));
+                    </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;script&gt;
+                
+                function countdown(start) {
+                    while (start > 0) {
+                        console.log(start);
+                        start--;
+                    }
+                }
+                
+                countdown(5);
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a function to print numbers from 1 to 10.</li>
+                            <li>Create a function to check if a number is even or odd.</li>
+                            <li>Create a function that takes name as input and prints greeting.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Parameters & Return -->
+                <section class="content-section" id="parameters-return">
+
+                    <h2>Parameters & Return</h2>
+
+                    <p>
+                        Parameters are values passed into a function, and a return statement sends a result back.
+                        This makes functions more dynamic and reusable.
+                    </p>
+
+                    <h3>Basic Syntax</h3>
+
+                    <pre><code>
+                function functionName(parameter1, parameter2) {
+                    return value;
+                }
+                    </code></pre>
+
+                    <h3>Example</h3>
+
+                    <pre><code>
+                function multiply(a, b) {
+                    return a * b;
+                }
+                
+                let result = multiply(4, 5);
+                console.log(result);
+                    </code></pre>
+
+                    <h3>Without Return (Only Parameters)</h3>
+
+                    <pre><code>
+                function greet(name) {
+                    console.log("Hello " + name);
+                }
+                
+                greet("Raman");
+                    </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;script&gt;
+                
+                function checkEvenOdd(num) {
+                    if (num % 2 === 0) {
+                        return "Even";
+                    } else {
+                        return "Odd";
+                    }
+                }
+                
+                let number = 7;
+                console.log(checkEvenOdd(number));
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a function that adds two numbers and returns result.</li>
+                            <li>Create a function to find square of a number.</li>
+                            <li>Create a function that returns the largest of two numbers.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Scope -->
+                <section class="content-section" id="scope">
+
+                    <h2>Scope</h2>
+
+                    <p>
+                        Scope determines where variables can be accessed in your code.
+                        JavaScript mainly has three types of scope: Global, Function, and Block scope.
+                    </p>
+
+                    <h3>Global Scope</h3>
+
+                    <pre><code>
+                let name = "Raman";
+                
+                function showName() {
+                    console.log(name);
+                }
+                
+                showName(); // Accessible everywhere
+                    </code></pre>
+
+                    <h3>Function Scope</h3>
+
+                    <pre><code>
+                function test() {
+                    let message = "Hello";
+                    console.log(message);
+                }
+                
+                test();
+                // console.log(message); // Error (not accessible outside)
+                    </code></pre>
+
+                    <h3>Block Scope (let & const)</h3>
+
+                    <pre><code>
+                if (true) {
+                    let x = 10;
+                    const y = 20;
+                    console.log(x, y);
+                }
+                
+                // console.log(x, y); // Error (block scope)
+                    </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;script&gt;
+                
+                let globalVar = "I am global";
+                
+                function demoScope() {
+                    let functionVar = "I am inside function";
+                
+                    if (true) {
+                        let blockVar = "I am inside block";
+                        console.log(globalVar);
+                        console.log(functionVar);
+                        console.log(blockVar);
+                    }
+                
+                    // console.log(blockVar); // Error
+                }
+                
+                demoScope();
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a global variable and use it inside a function.</li>
+                            <li>Create a function variable and try accessing it outside.</li>
+                            <li>Create a block variable using let and test its scope.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- this Keyword -->
+                <section class="content-section" id="this-keyword">
+
+                    <h2>this Keyword</h2>
+
+                    <p>
+                        The <b>this</b> keyword refers to the object that is currently executing the function.
+                        Its value depends on how and where the function is called.
+                    </p>
+
+                    <h3>Global Context</h3>
+
+                    <pre><code>
+                console.log(this); // Refers to global object (window in browser)
+                    </code></pre>
+
+                    <h3>Inside an Object Method</h3>
+
+                    <pre><code>
+                let person = {
+                    name: "Raman",
+                    greet: function() {
+                        console.log(this.name);
+                    }
+                };
+                
+                person.greet(); // "Raman"
+                    </code></pre>
+
+                    <h3>Inside a Function</h3>
+
+                    <pre><code>
+                function show() {
+                    console.log(this);
+                }
+                
+                show(); // Global object (or undefined in strict mode)
+                    </code></pre>
+
+                    <h3>Arrow Function Behavior</h3>
+
+                    <pre><code>
+                let user = {
+                    name: "Raman",
+                    greet: () => {
+                        console.log(this.name);
+                    }
+                };
+                
+                user.greet(); // undefined (arrow functions don’t have their own this)
+                    </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;script&gt;
+                
+                let student = {
+                    name: "Raman",
+                    age: 20,
+                    showDetails: function() {
+                        console.log(this.name, this.age);
+                    }
+                };
+                
+                student.showDetails();
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create an object and print its properties using <b>this</b>.</li>
+                            <li>Test <b>this</b> inside a normal function.</li>
+                            <li>Test <b>this</b> inside an arrow function and observe difference.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Arrays -->
+                <section class="content-section" id="arrays">
+
+                    <h2>Arrays</h2>
+
+                    <p>
+                        An array is a collection of multiple values stored in a single variable.
+                        It allows you to store and manage lists of data easily.
+                    </p>
+
+                    <h3>Basic Syntax</h3>
+
+                    <pre><code>
+                let arrayName = [value1, value2, value3];
+                    </code></pre>
+
+                    <h3>Example</h3>
+
+                    <pre><code>
+                let fruits = ["Apple", "Banana", "Mango"];
+                
+                console.log(fruits[0]); // Apple
+                console.log(fruits[1]); // Banana
+                    </code></pre>
+
+                    <h3>Common Array Methods</h3>
+
+                    <pre><code>
+                let numbers = [1, 2, 3];
+                
+                numbers.push(4);     // Add at end
+                numbers.pop();       // Remove from end
+                numbers.unshift(0);  // Add at beginning
+                numbers.shift();     // Remove from beginning
+                
+                console.log(numbers);
+                    </code></pre>
+
+                    <h3>Looping Through Array</h3>
+
+                    <pre><code>
+                let items = ["A", "B", "C"];
+                
+                for (let i = 0; i < items.length; i++) {
+                    console.log(items[i]);
+                }
+                    </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;script&gt;
+                
+                let students = ["Raman", "Simran", "Aman"];
+                
+                // Add new student
+                students.push("Karan");
+                
+                // Print all students
+                for (let i = 0; i < students.length; i++) {
+                    console.log(students[i]);
+                }
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create an array of 5 numbers and print them.</li>
+                            <li>Add and remove elements using push() and pop().</li>
+                            <li>Find the length of an array.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Array Methods -->
+                <section class="content-section" id="array-methods">
+
+                    <h2>Array Methods</h2>
+
+                    <p>
+                        Array methods are built-in functions that help you perform operations on arrays
+                        like adding, removing, searching, and transforming data.
+                    </p>
+
+                    <h3>Adding & Removing Elements</h3>
+
+                    <pre><code>
+                let arr = [1, 2, 3];
+                
+                arr.push(4);     // Add at end → [1,2,3,4]
+                arr.pop();       // Remove last → [1,2,3]
+                arr.unshift(0);  // Add at start → [0,1,2,3]
+                arr.shift();     // Remove first → [1,2,3]
+                    </code></pre>
+
+                    <h3>Searching Methods</h3>
+
+                    <pre><code>
+                let fruits = ["Apple", "Banana", "Mango"];
+                
+                console.log(fruits.includes("Banana")); // true
+                console.log(fruits.indexOf("Mango"));   // 2
+                    </code></pre>
+
+                    <h3>Transforming Arrays</h3>
+
+                    <pre><code>
+                let numbers = [1, 2, 3, 4];
+                
+                let doubled = numbers.map(num => num * 2);
+                console.log(doubled); // [2,4,6,8]
+                    </code></pre>
+
+                    <h3>Filtering Data</h3>
+
+                    <pre><code>
+                let nums = [10, 15, 20, 25];
+                
+                let filtered = nums.filter(n => n > 15);
+                console.log(filtered); // [20,25]
+                    </code></pre>
+
+                    <h3>Loop Alternative (forEach)</h3>
+
+                    <pre><code>
+                let items = ["A", "B", "C"];
+                
+                items.forEach(item => {
+                    console.log(item);
+                });
+                    </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;script&gt;
+                
+                let marks = [40, 55, 70, 85];
+                
+                // Add new marks
+                marks.push(90);
+                
+                // Filter passed students
+                let passed = marks.filter(m => m >= 50);
+                
+                // Double marks
+                let updated = marks.map(m => m * 2);
+                
+                console.log("Original:", marks);
+                console.log("Passed:", passed);
+                console.log("Updated:", updated);
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create an array and use push() & pop().</li>
+                            <li>Use map() to square numbers.</li>
+                            <li>Use filter() to get numbers greater than 10.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Objects -->
+                <section class="content-section" id="objects">
+
+                    <h2>Objects</h2>
+
+                    <p>
+                        An object is a collection of key-value pairs used to store related data.
+                        It allows you to represent real-world entities in your code.
+                    </p>
+
+                    <h3>Basic Syntax</h3>
+
+                    <pre><code>
+                let objectName = {
+                    key1: value1,
+                    key2: value2
+                };
+                    </code></pre>
+
+                    <h3>Example</h3>
+
+                    <pre><code>
+                let student = {
+                    name: "Raman",
+                    age: 20,
+                    course: "Computer Science"
+                };
+                
+                console.log(student.name);
+                console.log(student.age);
+                    </code></pre>
+
+                    <h3>Adding & Updating Properties</h3>
+
+                    <pre><code>
+                let user = {
+                    name: "Aman"
+                };
+                
+                user.age = 25;           // Add property
+                user.name = "Raman";     // Update property
+                
+                console.log(user);
+                    </code></pre>
+
+                    <h3>Object Methods</h3>
+
+                    <pre><code>
+                let person = {
+                    name: "Raman",
+                    greet: function() {
+                        console.log("Hello " + this.name);
+                    }
+                };
+                
+                person.greet();
+                    </code></pre>
+
+                    <h3>Looping Through Object</h3>
+
+                    <pre><code>
+                let car = {
+                    brand: "BMW",
+                    model: "X5",
+                    year: 2023
+                };
+                
+                for (let key in car) {
+                    console.log(key + ": " + car[key]);
+                }
+                    </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;script&gt;
+                
+                let product = {
+                    name: "Laptop",
+                    price: 50000,
+                    brand: "HP"
+                };
+                
+                // Add new property
+                product.stock = 10;
+                
+                // Update price
+                product.price = 45000;
+                
+                // Display details
+                for (let key in product) {
+                    console.log(key + ": " + product[key]);
+                }
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create an object for a student with name, class, and marks.</li>
+                            <li>Add a new property to the object.</li>
+                            <li>Create a method inside object and call it.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Object Methods -->
+                <section class="content-section" id="object-methods">
+
+                    <h2>Object Methods</h2>
+
+                    <p>
+                        Object methods are functions stored as properties inside an object.
+                        They allow objects to perform actions using their own data.
+                    </p>
+
+                    <h3>Basic Syntax</h3>
+
+                    <pre><code>
+                let obj = {
+                    methodName: function() {
+                        // code
+                    }
+                };
+                    </code></pre>
+
+                    <h3>Example</h3>
+
+                    <pre><code>
+                let person = {
+                    name: "Raman",
+                    greet: function() {
+                        console.log("Hello " + this.name);
+                    }
+                };
+                
+                person.greet();
+                    </code></pre>
+
+                    <h3>Using <code>this</code> Keyword</h3>
+
+                    <pre><code>
+                let car = {
+                    brand: "BMW",
+                    showBrand: function() {
+                        console.log(this.brand);
+                    }
+                };
+                
+                car.showBrand();
+                    </code></pre>
+
+                    <h3>Shorthand Method Syntax (ES6)</h3>
+
+                    <pre><code>
+                let user = {
+                    name: "Aman",
+                    greet() {
+                        console.log("Hi " + this.name);
+                    }
+                };
+                
+                user.greet();
+                    </code></pre>
+
+                    <h3>Object with Multiple Methods</h3>
+
+                    <pre><code>
+                let calculator = {
+                    add(a, b) {
+                        return a + b;
+                    },
+                    subtract(a, b) {
+                        return a - b;
+                    }
+                };
+                
+                console.log(calculator.add(5, 3));
+                console.log(calculator.subtract(5, 3));
+                    </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;script&gt;
+                
+                let student = {
+                    name: "Raman",
+                    marks: 80,
+                
+                    showDetails() {
+                        console.log(this.name + " scored " + this.marks);
+                    },
+                
+                    updateMarks(newMarks) {
+                        this.marks = newMarks;
+                    }
+                };
+                
+                student.showDetails();
+                student.updateMarks(90);
+                student.showDetails();
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create an object with a method to print your name.</li>
+                            <li>Create a calculator object with add and multiply methods.</li>
+                            <li>Create an object that updates and displays data using methods.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- LEVEL 4: Built-in & Advanced Core -->
+
+                <!-- String Methods -->
+                <section class="content-section" id="string-methods">
+
+                    <h2>String Methods</h2>
+
+                    <p>
+                        String methods are built-in functions used to manipulate and work with text.
+                        They help in searching, modifying, and formatting strings.
+                    </p>
+
+                    <h3>Basic Example</h3>
+
+                    <pre><code>
+                let text = "Hello World";
+                
+                console.log(text.length);   // 11
+                console.log(text.toUpperCase()); // HELLO WORLD
+                    </code></pre>
+
+                    <h3>Common String Methods</h3>
+
+                    <pre><code>
+                let str = "JavaScript";
+                
+                // Convert case
+                str.toLowerCase();
+                str.toUpperCase();
+                
+                // Find text
+                str.includes("Script"); 
+                str.indexOf("Script");
+                
+                // Extract part
+                str.slice(0, 4); // Java
+                
+                // Replace text
+                str.replace("Java", "Type");
+                    </code></pre>
+
+                    <h3>Trimming Spaces</h3>
+
+                    <pre><code>
+                let name = "  Raman  ";
+                
+                console.log(name.trim()); // "Raman"
+                    </code></pre>
+
+                    <h3>Splitting String</h3>
+
+                    <pre><code>
+                let data = "apple,banana,mango";
+                
+                let fruits = data.split(",");
+                console.log(fruits);
+                    </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;script&gt;
+                
+                let message = "  welcome to javascript  ";
+                
+                // Clean text
+                message = message.trim();
+                
+                // Convert to uppercase
+                let upper = message.toUpperCase();
+                
+                // Replace word
+                let newMessage = message.replace("javascript", "coding");
+                
+                // Split into words
+                let words = message.split(" ");
+                
+                console.log("Original:", message);
+                console.log("Uppercase:", upper);
+                console.log("Replaced:", newMessage);
+                console.log("Words:", words);
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a string and convert it to uppercase.</li>
+                            <li>Check if a word exists using includes().</li>
+                            <li>Split a sentence into words.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Math Object -->
+                <section class="content-section" id="math-object">
+
+                    <h2>Math Object</h2>
+
+                    <p>
+                        The Math object in JavaScript provides built-in methods and properties
+                        for performing mathematical operations like rounding, finding powers,
+                        square roots, and generating random numbers.
+                    </p>
+
+                    <h3>Basic Examples</h3>
+
+                    <pre><code>
+            console.log(Math.PI);      // 3.141592653589793
+            console.log(Math.sqrt(16)); // 4
+                </code></pre>
+
+                    <h3>Common Math Methods</h3>
+
+                    <pre><code>
+            // Rounding numbers
+            Math.round(4.6); // 5
+            Math.floor(4.9); // 4
+            Math.ceil(4.1);  // 5
+            
+            // Power & square root
+            Math.pow(2, 3);  // 8
+            Math.sqrt(25);   // 5
+            
+            // Absolute value
+            Math.abs(-10);   // 10
+            
+            // Min & Max
+            Math.min(1, 5, 3); // 1
+            Math.max(1, 5, 3); // 5
+                </code></pre>
+
+                    <h3>Random Numbers</h3>
+
+                    <pre><code>
+            // Random number between 0 and 1
+            Math.random();
+            
+            // Random number between 1 and 10
+            let randomNum = Math.floor(Math.random() * 10) + 1;
+            console.log(randomNum);
+                </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;body&gt;
+            
+            &lt;script&gt;
+            
+            // Generate random number 1–100
+            let num = Math.floor(Math.random() * 100) + 1;
+            
+            // Square and square root
+            let square = Math.pow(num, 2);
+            let root = Math.sqrt(num);
+            
+            console.log("Number:", num);
+            console.log("Square:", square);
+            console.log("Square Root:", root);
+            
+            &lt;/script&gt;
+            
+            &lt;/body&gt;
+            &lt;/html&gt;
+                </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Generate a random number between 1–50.</li>
+                            <li>Find square root of a number.</li>
+                            <li>Find maximum number from a list.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Date Object -->
+                <section class="content-section" id="date-object">
+
+                    <h2>Date Object</h2>
+
+                    <p>
+                        The Date object in JavaScript is used to work with dates and times.
+                        It allows you to get current date, time, and perform date calculations.
+                    </p>
+
+                    <h3>Creating Date</h3>
+
+                    <pre><code>
+// Current date and time
+let now = new Date();
+
+// Specific date
+let customDate = new Date("2025-01-01");
+
+console.log(now);
+console.log(customDate);
+    </code></pre>
+
+                    <h3>Getting Date Values</h3>
+
+                    <pre><code>
+let today = new Date();
+
+console.log(today.getFullYear()); // Year
+console.log(today.getMonth());    // Month (0-11)
+console.log(today.getDate());     // Day
+
+console.log(today.getHours());
+console.log(today.getMinutes());
+console.log(today.getSeconds());
+    </code></pre>
+
+                    <h3>Setting Date Values</h3>
+
+                    <pre><code>
+let d = new Date();
+
+d.setFullYear(2030);
+d.setMonth(11); // December
+d.setDate(25);
+
+console.log(d);
+    </code></pre>
+
+                    <h3>Formatting Date</h3>
+
+                    <pre><code>
+let date = new Date();
+
+console.log(date.toDateString());
+console.log(date.toLocaleDateString());
+console.log(date.toLocaleTimeString());
+    </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+
+&lt;script&gt;
+
+let now = new Date();
+
+// Display current date
+console.log("Today:", now.toDateString());
+
+// Display time
+console.log("Time:", now.toLocaleTimeString());
+
+// Add 5 days
+now.setDate(now.getDate() + 5);
+console.log("After 5 days:", now.toDateString());
+
+&lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Display current date and time.</li>
+                            <li>Show only year, month, and day separately.</li>
+                            <li>Add 10 days to current date.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Error Handling (try...catch) -->
+                <section class="content-section" id="error-handling">
+
+                    <h2>Error Handling (try...catch)</h2>
+
+                    <p>
+                        Error handling allows you to manage runtime errors in your code.
+                        The <b>try...catch</b> statement lets you handle errors gracefully
+                        without stopping the entire program.
+                    </p>
+
+                    <h3>Basic Syntax</h3>
+
+                    <pre><code>
+            try {
+                // code that may cause error
+            } catch (error) {
+                // handle error
+            }
+                </code></pre>
+
+                    <h3>Example</h3>
+
+                    <pre><code>
+            try {
+                let x = y; // y is not defined
+            } catch (error) {
+                console.log("Error occurred:", error.message);
+            }
+                </code></pre>
+
+                    <h3>Using finally</h3>
+
+                    <pre><code>
+            try {
+                console.log("Try block");
+            } catch (error) {
+                console.log("Catch block");
+            } finally {
+                console.log("Always runs");
+            }
+                </code></pre>
+
+                    <h3>Throwing Custom Errors</h3>
+
+                    <pre><code>
+            function checkAge(age) {
+                if (age < 18) {
+                    throw "You must be 18+";
+                }
+                return "Access granted";
+            }
+            
+            try {
+                console.log(checkAge(16));
+            } catch (err) {
+                console.log(err);
+            }
+                </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;body&gt;
+            
+            &lt;script&gt;
+            
+            function divide(a, b) {
+                try {
+                    if (b === 0) {
+                        throw "Cannot divide by zero";
+                    }
+                    return a / b;
+                } catch (err) {
+                    console.log("Error:", err);
+                } finally {
+                    console.log("Execution completed");
+                }
+            }
+            
+            console.log(divide(10, 2));
+            console.log(divide(10, 0));
+            
+            &lt;/script&gt;
+            
+            &lt;/body&gt;
+            &lt;/html&gt;
+                </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Handle an undefined variable error using try...catch.</li>
+                            <li>Create a function that throws error if input is negative.</li>
+                            <li>Use finally block to display a message.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- LEVEL 5: DOM & Browser -->
+
+                <!-- DOM Introduction -->
+                <section class="content-section" id="dom-introduction">
+
+                    <h2>DOM Introduction</h2>
+
+                    <p>
+                        DOM (Document Object Model) represents the structure of an HTML document.
+                        It allows JavaScript to access, modify, and control HTML elements dynamically.
+                    </p>
+
+                    <h3>What is DOM?</h3>
+
+                    <pre><code>
+                // HTML is converted into a tree structure
+                
+                document → html → body → elements
+                
+                // JavaScript can access elements using DOM
+                document.getElementById("idName");
+                    </code></pre>
+
+                    <h3>Selecting Elements</h3>
+
+                    <pre><code>
+                // By ID
+                document.getElementById("demo");
+                
+                // By Class
+                document.getElementsByClassName("box");
+                
+                // By Tag
+                document.getElementsByTagName("p");
+                
+                // Modern Method
+                document.querySelector(".box");
+                document.querySelectorAll("p");
+                    </code></pre>
+
+                    <h3>Changing Content</h3>
+
+                    <pre><code>
+                let el = document.getElementById("demo");
+                
+                el.innerHTML = "Hello World";
+                    </code></pre>
+
+                    <h3>Changing Style</h3>
+
+                    <pre><code>
+                let el = document.getElementById("demo");
+                
+                el.style.color = "red";
+                el.style.fontSize = "20px";
+                    </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;h2 id="title"&gt;Original Text&lt;/h2&gt;
+                &lt;button onclick="changeText()"&gt;Click Me&lt;/button&gt;
+                
+                &lt;script&gt;
+                
+                function changeText() {
+                    let element = document.getElementById("title");
+                    element.innerHTML = "Text Changed!";
+                    element.style.color = "blue";
+                }
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Select an element using getElementById and change text.</li>
+                            <li>Change color of a paragraph using JavaScript.</li>
+                            <li>Use querySelector to select a class and modify it.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- DOM Selectors -->
+                <section class="content-section" id="dom-selectors">
+
+                    <h2>DOM Selectors</h2>
+
+                    <p>
+                        DOM selectors are used to select and access HTML elements using JavaScript.
+                        They allow you to target specific elements to modify content, style, or behavior.
+                    </p>
+
+                    <h3>Basic Selectors</h3>
+
+                    <pre><code>
+                // Select by ID
+                document.getElementById("idName");
+                
+                // Select by Class
+                document.getElementsByClassName("className");
+                
+                // Select by Tag
+                document.getElementsByTagName("p");
+                    </code></pre>
+
+                    <h3>Modern Selectors</h3>
+
+                    <pre><code>
+                // Select first matching element
+                document.querySelector(".box");
+                
+                // Select all matching elements
+                document.querySelectorAll(".box");
+                    </code></pre>
+
+                    <h3>Example</h3>
+
+                    <pre><code>
+                let title = document.getElementById("heading");
+                let items = document.querySelectorAll(".item");
+                
+                title.innerHTML = "Updated Heading";
+                
+                items.forEach(el => {
+                    el.style.color = "green";
+                });
+                    </code></pre>
+
+                    <h3>Difference (Single vs Multiple)</h3>
+
+                    <pre><code>
+                // Single element
+                document.querySelector("#id");
+                
+                // Multiple elements (NodeList)
+                document.querySelectorAll(".class");
+                    </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;h2 id="heading"&gt;Hello&lt;/h2&gt;
+                &lt;p class="text"&gt;Paragraph 1&lt;/p&gt;
+                &lt;p class="text"&gt;Paragraph 2&lt;/p&gt;
+                
+                &lt;button onclick="changeStyle()"&gt;Change Style&lt;/button&gt;
+                
+                &lt;script&gt;
+                
+                function changeStyle() {
+                    let heading = document.getElementById("heading");
+                    let paras = document.querySelectorAll(".text");
+                
+                    heading.style.color = "blue";
+                
+                    paras.forEach(p => {
+                        p.style.fontSize = "18px";
+                    });
+                }
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Select an element by ID and change its text.</li>
+                            <li>Select multiple elements using querySelectorAll.</li>
+                            <li>Change style of all selected elements.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- DOM Manipulation -->
+                <section class="content-section" id="dom-manipulation">
+
+                    <h2>DOM Manipulation</h2>
+
+                    <p>
+                        DOM Manipulation allows you to dynamically change HTML elements using JavaScript.
+                        You can update content, styles, attributes, and even create or remove elements.
+                    </p>
+
+                    <h3>Changing Content</h3>
+
+                    <pre><code>
+                let el = document.getElementById("demo");
+                
+                el.innerHTML = "New Content";
+                el.textContent = "Only Text";
+                    </code></pre>
+
+                    <h3>Changing Styles</h3>
+
+                    <pre><code>
+                let el = document.getElementById("demo");
+                
+                el.style.color = "red";
+                el.style.backgroundColor = "yellow";
+                    </code></pre>
+
+                    <h3>Changing Attributes</h3>
+
+                    <pre><code>
+                let img = document.getElementById("myImage");
+                
+                img.src = "new-image.jpg";
+                img.alt = "Updated Image";
+                    </code></pre>
+
+                    <h3>Creating & Adding Elements</h3>
+
+                    <pre><code>
+                let newEl = document.createElement("p");
+                newEl.textContent = "I am new element";
+                
+                document.body.appendChild(newEl);
+                    </code></pre>
+
+                    <h3>Removing Elements</h3>
+
+                    <pre><code>
+                let el = document.getElementById("demo");
+                
+                el.remove();
+                    </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;h2 id="title"&gt;Hello World&lt;/h2&gt;
+                &lt;button onclick="updateContent()"&gt;Update&lt;/button&gt;
+                &lt;button onclick="addElement()"&gt;Add&lt;/button&gt;
+                
+                &lt;script&gt;
+                
+                function updateContent() {
+                    let el = document.getElementById("title");
+                    el.innerHTML = "Content Updated!";
+                    el.style.color = "green";
+                }
+                
+                function addElement() {
+                    let newPara = document.createElement("p");
+                    newPara.textContent = "New Paragraph Added!";
+                    document.body.appendChild(newPara);
+                }
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Change text and color of an element.</li>
+                            <li>Create a new element and add it to the page.</li>
+                            <li>Remove an existing element using JavaScript.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Events -->
+                <section class="content-section" id="events">
+
+                    <h2>Events</h2>
+
+                    <p>
+                        Events are actions that occur in the browser, such as clicks, typing, or page loading.
+                        JavaScript can respond to these events to make web pages interactive.
+                    </p>
+
+                    <h3>Common Events</h3>
+
+                    <pre><code>
+                // Mouse Events
+                onclick
+                onmouseover
+                onmouseout
+                
+                // Keyboard Events
+                onkeydown
+                onkeyup
+                
+                // Form Events
+                onsubmit
+                onchange
+                    </code></pre>
+
+                    <h3>Inline Event Example</h3>
+
+                    <pre><code>
+                &lt;button onclick="showMessage()"&gt;Click Me&lt;/button&gt;
+                
+                &lt;script&gt;
+                function showMessage() {
+                    alert("Button Clicked!");
+                }
+                &lt;/script&gt;
+                    </code></pre>
+
+                    <h3>addEventListener Method</h3>
+
+                    <pre><code>
+                let btn = document.getElementById("btn");
+                
+                btn.addEventListener("click", function() {
+                    console.log("Button clicked");
+                });
+                    </code></pre>
+
+                    <h3>Event Object</h3>
+
+                    <pre><code>
+                document.addEventListener("click", function(event) {
+                    console.log(event.target);
+                });
+                    </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;button id="btn"&gt;Click Me&lt;/button&gt;
+                &lt;p id="text"&gt;Hello&lt;/p&gt;
+                
+                &lt;script&gt;
+                
+                let button = document.getElementById("btn");
+                let text = document.getElementById("text");
+                
+                button.addEventListener("click", function() {
+                    text.innerHTML = "Button Clicked!";
+                    text.style.color = "blue";
+                });
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a button and handle click event.</li>
+                            <li>Change text on mouseover event.</li>
+                            <li>Capture keyboard input using keydown event.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Event Listeners -->
+                <section class="content-section" id="event-listeners">
+
+                    <h2>Event Listeners</h2>
+
+                    <p>
+                        Event listeners allow you to attach JavaScript functions to HTML elements.
+                        They listen for specific events (like clicks or key presses) and execute code when those events
+                        occur.
+                    </p>
+
+                    <h3>Basic Syntax</h3>
+
+                    <pre><code>
+                                element.addEventListener("event", function() {
+                                    // code to run
+                                });
+                                    </code></pre>
+
+                    <h3>Example</h3>
+
+                    <pre><code>
+                                let btn = document.getElementById("btn");
+                                
+                                btn.addEventListener("click", function() {
+                                    console.log("Button clicked");
+                                });
+                                    </code></pre>
+
+                    <h3>Multiple Events on Same Element</h3>
+
+                    <pre><code>
+                                let box = document.getElementById("box");
+                                
+                                box.addEventListener("mouseover", function() {
+                                    console.log("Mouse over");
+                                });
+                                
+                                box.addEventListener("mouseout", function() {
+                                    console.log("Mouse out");
+                                });
+                                    </code></pre>
+
+                    <h3>Using Named Function</h3>
+
+                    <pre><code>
+                                function handleClick() {
+                                    console.log("Clicked!");
+                                }
+                                
+                                btn.addEventListener("click", handleClick);
+                                    </code></pre>
+
+                    <h3>Removing Event Listener</h3>
+
+                    <pre><code>
+                                function showMessage() {
+                                    console.log("Hello");
+                                }
+                                
+                                btn.addEventListener("click", showMessage);
+                                
+                                // Remove event
+                                btn.removeEventListener("click", showMessage);
+                                    </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                                &lt;!DOCTYPE html&gt;
+                                &lt;html&gt;
+                                &lt;body&gt;
+                                
+                                &lt;button id="btn"&gt;Click Me&lt;/button&gt;
+                                &lt;div id="box" style="width:100px;height:100px;background:gray;"&gt;&lt;/div&gt;
+                                
+                                &lt;script&gt;
+                                
+                                let btn = document.getElementById("btn");
+                                let box = document.getElementById("box");
+                                
+                                function changeColor() {
+                                    box.style.background = "green";
+                                }
+                                
+                                btn.addEventListener("click", changeColor);
+                                
+                                box.addEventListener("mouseover", function() {
+                                    box.style.background = "blue";
+                                });
+                                
+                                box.addEventListener("mouseout", function() {
+                                    box.style.background = "gray";
+                                });
+                                
+                                &lt;/script&gt;
+                                
+                                &lt;/body&gt;
+                                &lt;/html&gt;
+                                    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Add a click event listener to a button.</li>
+                            <li>Change element color on mouseover and mouseout.</li>
+                            <li>Remove an event listener after one click.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Event Bubbling & Capturing -->
+                <section class="content-section" id="event-bubbling-capturing">
+
+                    <h2>Event Bubbling & Capturing</h2>
+
+                    <p>
+                        Event propagation in JavaScript defines how events travel through the DOM.
+                        There are two main phases: <b>Bubbling</b> (child → parent) and <b>Capturing</b> (parent →
+                        child).
+                    </p>
+
+                    <h3>Event Bubbling (Default)</h3>
+
+                    <pre><code>
+                            // Event moves from child to parent
+                            
+                            document.getElementById("child").addEventListener("click", function() {
+                                console.log("Child clicked");
+                            });
+                            
+                            document.getElementById("parent").addEventListener("click", function() {
+                                console.log("Parent clicked");
+                            });
+                                </code></pre>
+
+                    <h3>Event Capturing</h3>
+
+                    <pre><code>
+                            // Use true as third parameter
+                            
+                            document.getElementById("parent").addEventListener("click", function() {
+                                console.log("Parent (capturing)");
+                            }, true);
+                            
+                            document.getElementById("child").addEventListener("click", function() {
+                                console.log("Child (capturing)");
+                            }, true);
+                                </code></pre>
+
+                    <h3>Stopping Propagation</h3>
+
+                    <pre><code>
+                            document.getElementById("child").addEventListener("click", function(event) {
+                                event.stopPropagation();
+                                console.log("Only child event runs");
+                            });
+                                </code></pre>
+
+                    <h3>Example</h3>
+
+                    <pre><code>
+                            let parent = document.getElementById("parent");
+                            let child = document.getElementById("child");
+                            
+                            parent.addEventListener("click", () => {
+                                console.log("Parent clicked");
+                            });
+                            
+                            child.addEventListener("click", () => {
+                                console.log("Child clicked");
+                            });
+                                </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                            &lt;!DOCTYPE html&gt;
+                            &lt;html&gt;
+                            &lt;body&gt;
+                            
+                            &lt;div id="parent" style="padding:30px;background:lightblue;"&gt;
+                                Parent
+                                &lt;div id="child" style="padding:30px;background:lightgreen;"&gt;
+                                    Child
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                            
+                            &lt;script&gt;
+                            
+                            let parent = document.getElementById("parent");
+                            let child = document.getElementById("child");
+                            
+                            // Bubbling
+                            parent.addEventListener("click", () => {
+                                console.log("Parent clicked (Bubbling)");
+                            });
+                            
+                            child.addEventListener("click", (e) => {
+                                console.log("Child clicked (Bubbling)");
+                                // e.stopPropagation(); // Uncomment to stop
+                            });
+                            
+                            // Capturing
+                            parent.addEventListener("click", () => {
+                                console.log("Parent clicked (Capturing)");
+                            }, true);
+                            
+                            child.addEventListener("click", () => {
+                                console.log("Child clicked (Capturing)");
+                            }, true);
+                            
+                            &lt;/script&gt;
+                            
+                            &lt;/body&gt;
+                            &lt;/html&gt;
+                                </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create parent-child elements and observe bubbling.</li>
+                            <li>Enable capturing and compare output order.</li>
+                            <li>Use stopPropagation() to stop event flow.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Form Validation -->
+                <section class="content-section" id="form-validation">
+
+                    <h2>Form Validation</h2>
+
+                    <p>
+                        Form validation ensures that user input is correct and complete before submitting a form.
+                        It helps improve data accuracy and user experience.
+                    </p>
+
+                    <h3>Basic Validation Example</h3>
+
+                    <pre><code>
+                function validateForm() {
+                    let name = document.getElementById("name").value;
+                
+                    if (name === "") {
+                        alert("Name is required");
+                        return false;
+                    }
+                }
+                    </code></pre>
+
+                    <h3>HTML Required Attribute</h3>
+
+                    <pre><code>
+                &lt;input type="text" required&gt;
+                    </code></pre>
+
+                    <h3>Validating Email</h3>
+
+                    <pre><code>
+                function validateEmail(email) {
+                    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                    return pattern.test(email);
+                }
+                    </code></pre>
+
+                    <h3>Displaying Error Messages</h3>
+
+                    <pre><code>
+                let error = document.getElementById("error");
+                
+                if (name === "") {
+                    error.textContent = "Name cannot be empty";
+                }
+                    </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;form onsubmit="return validateForm()"&gt;
+                
+                    Name: &lt;input type="text" id="name"&gt;&lt;br&gt;&lt;br&gt;
+                    Email: &lt;input type="text" id="email"&gt;&lt;br&gt;&lt;br&gt;
+                
+                    &lt;p id="error" style="color:red;"&gt;&lt;/p&gt;
+                
+                    &lt;button type="submit"&gt;Submit&lt;/button&gt;
+                
+                &lt;/form&gt;
+                
+                &lt;script&gt;
+                
+                function validateForm() {
+                    let name = document.getElementById("name").value;
+                    let email = document.getElementById("email").value;
+                    let error = document.getElementById("error");
+                
+                    error.textContent = "";
+                
+                    if (name === "") {
+                        error.textContent = "Name is required";
+                        return false;
+                    }
+                
+                    let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+                
+                    if (!pattern.test(email)) {
+                        error.textContent = "Invalid email format";
+                        return false;
+                    }
+                
+                    return true;
+                }
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Validate a required input field.</li>
+                            <li>Check valid email format.</li>
+                            <li>Display custom error messages on screen.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- LEVEL 6: Modern JavaScript (ES6+) -->
+
+                <!-- Let and Const -->
+                <section class="content-section" id="let-const">
+
+                    <h2>Let and Const</h2>
+
+                    <p>
+                        <b>let</b> and <b>const</b> are modern ways to declare variables in JavaScript.
+                        They provide better scope control and help avoid common errors compared to <b>var</b>.
+                    </p>
+
+                    <h3>let Keyword</h3>
+
+                    <pre><code>
+                let name = "Raman";
+                
+                name = "Aman"; // Allowed (can be updated)
+                
+                console.log(name);
+                    </code></pre>
+
+                    <h3>const Keyword</h3>
+
+                    <pre><code>
+                const pi = 3.14;
+                
+                // pi = 3.141; ❌ Error (cannot reassign)
+                
+                console.log(pi);
+                    </code></pre>
+
+                    <h3>Block Scope</h3>
+
+                    <pre><code>
+                if (true) {
+                    let a = 10;
+                    const b = 20;
+                    console.log(a, b);
+                }
+                
+                // console.log(a, b); ❌ Error (block scope)
+                    </code></pre>
+
+                    <h3>Difference Between let and const</h3>
+
+                    <pre><code>
+                // let → can be updated
+                let x = 5;
+                x = 10;
+                
+                // const → cannot be reassigned
+                const y = 5;
+                // y = 10; ❌ Error
+                    </code></pre>
+
+                    <h3>Using const with Objects & Arrays</h3>
+
+                    <pre><code>
+                const user = {
+                    name: "Raman"
+                };
+                
+                // Allowed: modifying properties
+                user.name = "Aman";
+                
+                // Not allowed: reassigning object
+                // user = {}; ❌ Error
+                    </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;script&gt;
+                
+                let count = 1;
+                count = 2;
+                
+                const city = "Delhi";
+                
+                if (true) {
+                    let inside = "Block Variable";
+                    console.log(inside);
+                }
+                
+                // const object example
+                const product = {
+                    name: "Mobile",
+                    price: 10000
+                };
+                
+                product.price = 12000;
+                
+                console.log(count);
+                console.log(city);
+                console.log(product);
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a variable using let and update its value.</li>
+                            <li>Create a constant and try reassigning it.</li>
+                            <li>Use const with an object and modify its properties.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Arrow Functions -->
+                <section class="content-section" id="arrow-functions">
+
+                    <h2>Arrow Functions</h2>
+
+                    <p>
+                        Arrow functions are a shorter and modern way to write functions in JavaScript.
+                        They use the <b>=></b> syntax and provide a cleaner and more concise code style.
+                    </p>
+
+                    <h3>Basic Syntax</h3>
+
+                    <pre><code>
+                // Traditional function
+                function add(a, b) {
+                    return a + b;
+                }
+                
+                // Arrow function
+                const add = (a, b) => {
+                    return a + b;
+                };
+                    </code></pre>
+
+                    <h3>Short Syntax (Implicit Return)</h3>
+
+                    <pre><code>
+                const multiply = (a, b) => a * b;
+                
+                console.log(multiply(3, 4));
+                    </code></pre>
+
+                    <h3>Single Parameter</h3>
+
+                    <pre><code>
+                const greet = name => {
+                    console.log("Hello " + name);
+                };
+                    </code></pre>
+
+                    <h3>No Parameters</h3>
+
+                    <pre><code>
+                const sayHello = () => {
+                    console.log("Hello World");
+                };
+                    </code></pre>
+
+                    <h3>Arrow Function & this</h3>
+
+                    <pre><code>
+                let user = {
+                    name: "Raman",
+                    greet: function() {
+                        console.log(this.name); // Works
+                
+                        const inner = () => {
+                            console.log(this.name); // Inherits from parent
+                        };
+                
+                        inner();
+                    }
+                };
+                
+                user.greet();
+                    </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;script&gt;
+                
+                // Simple arrow function
+                const square = num => num * num;
+                
+                // Array with arrow function
+                let numbers = [1, 2, 3, 4];
+                
+                let squares = numbers.map(n => n * n);
+                
+                console.log("Square of 5:", square(5));
+                console.log("Squares Array:", squares);
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Convert a normal function into an arrow function.</li>
+                            <li>Create an arrow function to find cube of a number.</li>
+                            <li>Use arrow function inside map() to double array values.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Template Literals -->
+                <section class="content-section" id="template-literals">
+
+                    <h2>Template Literals</h2>
+
+                    <p>
+                        Template literals are a modern way to work with strings in JavaScript.
+                        They use backticks (<b>`</b>) instead of quotes and allow embedding variables
+                        and expressions using <b>${ }</b>.
+                    </p>
+
+                    <h3>Basic Syntax</h3>
+
+                    <pre><code>
+                        let name = "Raman";
+                        
+                        let message = `Hello ${name}`;
+                        
+                        console.log(message);
+                            </code></pre>
+
+                    <h3>Multi-line Strings</h3>
+
+                    <pre><code>
+                        let text = `This is line 1
+                        This is line 2
+                        This is line 3`;
+                        
+                        console.log(text);
+                            </code></pre>
+
+                    <h3>Expressions Inside Template</h3>
+
+                    <pre><code>
+                        let a = 5;
+                        let b = 10;
+                        
+                        console.log(`Sum is ${a + b}`);
+                            </code></pre>
+
+                    <h3>Using with Functions</h3>
+
+                    <pre><code>
+                        function greet(name) {
+                            return `Welcome ${name}`;
+                        }
+                        
+                        console.log(greet("Raman"));
+                            </code></pre>
+
+                    <h3>Comparison with Normal Strings</h3>
+
+                    <pre><code>
+                        // Old way
+                        let oldMsg = "Hello " + name + "!";
+                        
+                        // Modern way
+                        let newMsg = `Hello ${name}!`;
+                            </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                        &lt;!DOCTYPE html&gt;
+                        &lt;html&gt;
+                        &lt;body&gt;
+                        
+                        &lt;script&gt;
+                        
+                        let user = "Raman";
+                        let age = 20;
+                        
+                        // Create message
+                        let message = `My name is ${user} and I am ${age} years old.`;
+                        
+                        // Multi-line example
+                        let info = `User Details:
+                        Name: ${user}
+                        Age: ${age}`;
+                        
+                        console.log(message);
+                        console.log(info);
+                        
+                        &lt;/script&gt;
+                        
+                        &lt;/body&gt;
+                        &lt;/html&gt;
+                            </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a template string using variables.</li>
+                            <li>Write a multi-line string using backticks.</li>
+                            <li>Embed an expression inside a template literal.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Destructuring -->
+                <section class="content-section" id="destructuring">
+
+                    <h2>Destructuring</h2>
+
+                    <p>
+                        Destructuring is a modern JavaScript feature that allows you to extract values
+                        from arrays and objects into separate variables in a clean and concise way.
+                    </p>
+
+                    <h3>Array Destructuring</h3>
+
+                    <pre><code>
+                            let numbers = [10, 20, 30];
+                            
+                            let [a, b, c] = numbers;
+                            
+                            console.log(a); // 10
+                            console.log(b); // 20
+                                </code></pre>
+
+                    <h3>Skipping Values</h3>
+
+                    <pre><code>
+                            let arr = [1, 2, 3];
+                            
+                            let [x, , z] = arr;
+                            
+                            console.log(x); // 1
+                            console.log(z); // 3
+                                </code></pre>
+
+                    <h3>Object Destructuring</h3>
+
+                    <pre><code>
+                            let user = {
+                                name: "Raman",
+                                age: 20
+                            };
+                            
+                            let { name, age } = user;
+                            
+                            console.log(name);
+                            console.log(age);
+                                </code></pre>
+
+                    <h3>Renaming Variables</h3>
+
+                    <pre><code>
+                            let student = {
+                                name: "Aman"
+                            };
+                            
+                            let { name: studentName } = student;
+                            
+                            console.log(studentName);
+                                </code></pre>
+
+                    <h3>Default Values</h3>
+
+                    <pre><code>
+                            let person = {
+                                name: "Raman"
+                            };
+                            
+                            let { name, city = "Delhi" } = person;
+                            
+                            console.log(city); // Delhi
+                                </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                            &lt;!DOCTYPE html&gt;
+                            &lt;html&gt;
+                            &lt;body&gt;
+                            
+                            &lt;script&gt;
+                            
+                            // Array destructuring
+                            let fruits = ["Apple", "Banana", "Mango"];
+                            let [f1, f2, f3] = fruits;
+                            
+                            // Object destructuring
+                            let product = {
+                                name: "Laptop",
+                                price: 50000
+                            };
+                            
+                            let { name, price } = product;
+                            
+                            console.log(f1, f2, f3);
+                            console.log(name, price);
+                            
+                            &lt;/script&gt;
+                            
+                            &lt;/body&gt;
+                            &lt;/html&gt;
+                                </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Extract values from an array using destructuring.</li>
+                            <li>Destructure an object and print its properties.</li>
+                            <li>Use default values in object destructuring.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Spread Operator -->
+                <section class="content-section" id="spread-operator">
+
+                    <h2>Spread Operator (...)</h2>
+
+                    <p>
+                        The spread operator (<b>...</b>) is used to expand elements of an array,
+                        object, or iterable into individual elements. It helps in copying,
+                        merging, and passing values easily.
+                    </p>
+
+                    <h3>Array Spread</h3>
+
+                    <pre><code>
+                            let arr1 = [1, 2, 3];
+                            
+                            let arr2 = [...arr1, 4, 5];
+                            
+                            console.log(arr2); // [1,2,3,4,5]
+                                </code></pre>
+
+                    <h3>Copying Arrays</h3>
+
+                    <pre><code>
+                            let original = [10, 20, 30];
+                            
+                            let copy = [...original];
+                            
+                            console.log(copy);
+                                </code></pre>
+
+                    <h3>Merging Arrays</h3>
+
+                    <pre><code>
+                            let a = [1, 2];
+                            let b = [3, 4];
+                            
+                            let merged = [...a, ...b];
+                            
+                            console.log(merged); // [1,2,3,4]
+                                </code></pre>
+
+                    <h3>Object Spread</h3>
+
+                    <pre><code>
+                            let user = {
+                                name: "Raman",
+                                age: 20
+                            };
+                            
+                            let updatedUser = {
+                                ...user,
+                                city: "Delhi"
+                            };
+                            
+                            console.log(updatedUser);
+                                </code></pre>
+
+                    <h3>Passing Arguments</h3>
+
+                    <pre><code>
+                            function sum(a, b, c) {
+                                return a + b + c;
+                            }
+                            
+                            let nums = [1, 2, 3];
+                            
+                            console.log(sum(...nums));
+                                </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                            &lt;!DOCTYPE html&gt;
+                            &lt;html&gt;
+                            &lt;body&gt;
+                            
+                            &lt;script&gt;
+                            
+                            // Combine arrays
+                            let fruits = ["Apple", "Banana"];
+                            let moreFruits = ["Mango", "Orange"];
+                            
+                            let allFruits = [...fruits, ...moreFruits];
+                            
+                            // Copy object
+                            let product = {
+                                name: "Mobile",
+                                price: 10000
+                            };
+                            
+                            let newProduct = {
+                                ...product,
+                                price: 12000
+                            };
+                            
+                            console.log(allFruits);
+                            console.log(newProduct);
+                            
+                            &lt;/script&gt;
+                            
+                            &lt;/body&gt;
+                            &lt;/html&gt;
+                                </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Copy an array using spread operator.</li>
+                            <li>Merge two arrays into one.</li>
+                            <li>Update object properties using spread.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Modules -->
+                <section class="content-section" id="modules">
+
+                    <h2>Modules</h2>
+
+                    <p>
+                        JavaScript modules allow you to split your code into separate files.
+                        This helps in organizing code, improving readability, and reusing functionality.
+                    </p>
+
+                    <h3>Exporting from a File</h3>
+
+                    <pre><code>
+                            // file: math.js
+                            
+                            export function add(a, b) {
+                                return a + b;
+                            }
+                            
+                            export const pi = 3.14;
+                                </code></pre>
+
+                    <h3>Importing in Another File</h3>
+
+                    <pre><code>
+                            // file: main.js
+                            
+                            import { add, pi } from "./math.js";
+                            
+                            console.log(add(2, 3));
+                            console.log(pi);
+                                </code></pre>
+
+                    <h3>Default Export</h3>
+
+                    <pre><code>
+                            // file: greet.js
+                            
+                            export default function greet(name) {
+                                return "Hello " + name;
+                            }
+                                </code></pre>
+
+                    <h3>Import Default</h3>
+
+                    <pre><code>
+                            import greet from "./greet.js";
+                            
+                            console.log(greet("Raman"));
+                                </code></pre>
+
+                    <h3>Using Modules in HTML</h3>
+
+                    <pre><code>
+                            &lt;script type="module" src="main.js"&gt;&lt;/script&gt;
+                                </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+                            // math.js
+                            export function multiply(a, b) {
+                                return a * b;
+                            }
+                            
+                            // main.js
+                            import { multiply } from "./math.js";
+                            
+                            console.log(multiply(4, 5));
+                                </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a module file and export a function.</li>
+                            <li>Import and use that function in another file.</li>
+                            <li>Try default export and import.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Classes (OOP) -->
+                <section class="content-section" id="classes-oop">
+
+                    <h2>Classes (OOP)</h2>
+
+                    <p>
+                        Classes in JavaScript are used to create objects using a blueprint.
+                        They help organize code using Object-Oriented Programming (OOP) concepts
+                        like properties, methods, and inheritance.
+                    </p>
+
+                    <h3>Basic Syntax</h3>
+
+                    <pre><code>
+            class ClassName {
+                constructor(parameter) {
+                    this.property = parameter;
+                }
+            
+                methodName() {
+                    // code
+                }
+            }
+                </code></pre>
+
+                    <h3>Example</h3>
+
+                    <pre><code>
+            class Person {
+                constructor(name, age) {
+                    this.name = name;
+                    this.age = age;
+                }
+            
+                greet() {
+                    console.log("Hello " + this.name);
+                }
+            }
+            
+            let p1 = new Person("Raman", 20);
+            p1.greet();
+                </code></pre>
+
+                    <h3>Inheritance</h3>
+
+                    <pre><code>
+            class Student extends Person {
+                constructor(name, age, course) {
+                    super(name, age);
+                    this.course = course;
+                }
+            
+                showCourse() {
+                    console.log(this.course);
+                }
+            }
+            
+            let s1 = new Student("Aman", 22, "IT");
+            s1.greet();
+            s1.showCourse();
+                </code></pre>
+
+                    <h3>Getters & Setters</h3>
+
+                    <pre><code>
+            class User {
+                constructor(name) {
+                    this._name = name;
+                }
+            
+                get name() {
+                    return this._name;
+                }
+            
+                set name(value) {
+                    this._name = value;
+                }
+            }
+            
+            let u = new User("Raman");
+            console.log(u.name);
+            
+            u.name = "Aman";
+            console.log(u.name);
+                </code></pre>
+
+                    <h3>Complete Practice Code</h3>
+
+                    <pre><code>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;body&gt;
+            
+            &lt;script&gt;
+            
+            class Product {
+                constructor(name, price) {
+                    this.name = name;
+                    this.price = price;
+                }
+            
+                showDetails() {
+                    console.log(this.name + " costs " + this.price);
+                }
+            }
+            
+            class DiscountProduct extends Product {
+                constructor(name, price, discount) {
+                    super(name, price);
+                    this.discount = discount;
+                }
+            
+                finalPrice() {
+                    return this.price - this.discount;
+                }
+            }
+            
+            let item = new DiscountProduct("Laptop", 50000, 5000);
+            
+            item.showDetails();
+            console.log("Final Price:", item.finalPrice());
+            
+            &lt;/script&gt;
+            
+            &lt;/body&gt;
+            &lt;/html&gt;
+                </code></pre>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a class with constructor and method.</li>
+                            <li>Create a child class using inheritance.</li>
+                            <li>Add a getter and setter in a class.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- LEVEL 7: Asynchronous JavaScript -->
+                
+                <!-- Callbacks -->
+                <section class="content-section" id="callbacks">
+                
+                    <h2>Callbacks</h2>
+                
+                    <p>
+                        A callback is a function passed as an argument to another function.
+                        It is executed after the completion of a task, helping handle asynchronous operations.
+                    </p>
+                
+                    <h3>Basic Syntax</h3>
+                
+                    <pre><code>
+                function mainFunction(callback) {
+                    // do something
+                    callback();
+                }
+                    </code></pre>
+                
+                    <h3>Example</h3>
+                
+                    <pre><code>
+                function greet(name, callback) {
+                    console.log("Hello " + name);
+                    callback();
+                }
+                
+                function sayBye() {
+                    console.log("Goodbye!");
+                }
+                
+                greet("Raman", sayBye);
+                    </code></pre>
+                
+                    <h3>Callback with Anonymous Function</h3>
+                
+                    <pre><code>
+                function processUser(callback) {
+                    console.log("Processing user...");
+                    callback();
+                }
+                
+                processUser(function() {
+                    console.log("User processed!");
+                });
+                    </code></pre>
+                
+                    <h3>Callback with setTimeout</h3>
+                
+                    <pre><code>
+                setTimeout(function() {
+                    console.log("Executed after 2 seconds");
+                }, 2000);
+                    </code></pre>
+                
+                    <h3>Complete Practice Code</h3>
+                
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;script&gt;
+                
+                function fetchData(callback) {
+                    console.log("Fetching data...");
+                    
+                    setTimeout(function() {
+                        console.log("Data received");
+                        callback();
+                    }, 2000);
+                }
+                
+                fetchData(function() {
+                    console.log("Processing complete");
+                });
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a function that accepts a callback.</li>
+                            <li>Pass an anonymous function as callback.</li>
+                            <li>Use setTimeout with a callback.</li>
+                        </ul>
+                    </div>
+                
+                </section>
+
+                <!-- Promises -->
+                <section class="content-section" id="promises">
+                
+                    <h2>Promises</h2>
+                
+                    <p>
+                        A Promise is used to handle asynchronous operations in JavaScript.
+                        It represents a value that may be available now, later, or never.
+                    </p>
+                
+                    <h3>Promise States</h3>
+                
+                    <pre><code>
+                // Pending → Initial state
+                // Fulfilled → Operation successful
+                // Rejected → Operation failed
+                    </code></pre>
+                
+                    <h3>Basic Syntax</h3>
+                
+                    <pre><code>
+                let promise = new Promise(function(resolve, reject) {
+                    // async task
+                
+                    if (success) {
+                        resolve("Success");
+                    } else {
+                        reject("Error");
+                    }
+                });
+                    </code></pre>
+                
+                    <h3>Using .then() and .catch()</h3>
+                
+                    <pre><code>
+                let myPromise = new Promise((resolve, reject) => {
+                    resolve("Data received");
+                });
+                
+                myPromise
+                    .then(result => console.log(result))
+                    .catch(error => console.log(error));
+                    </code></pre>
+                
+                    <h3>Example with setTimeout</h3>
+                
+                    <pre><code>
+                let fetchData = new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve("Data loaded");
+                    }, 2000);
+                });
+                
+                fetchData.then(data => console.log(data));
+                    </code></pre>
+                
+                    <h3>Handling Errors</h3>
+                
+                    <pre><code>
+                let check = new Promise((resolve, reject) => {
+                    let success = false;
+                
+                    if (success) {
+                        resolve("All good");
+                    } else {
+                        reject("Something went wrong");
+                    }
+                });
+                
+                check
+                    .then(res => console.log(res))
+                    .catch(err => console.log(err));
+                    </code></pre>
+                
+                    <h3>Complete Practice Code</h3>
+                
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;script&gt;
+                
+                function getData() {
+                    return new Promise((resolve, reject) => {
+                        console.log("Fetching data...");
+                
+                        setTimeout(() => {
+                            let success = true;
+                
+                            if (success) {
+                                resolve("Data fetched successfully");
+                            } else {
+                                reject("Error fetching data");
+                            }
+                        }, 2000);
+                    });
+                }
+                
+                getData()
+                    .then(data => {
+                        console.log(data);
+                    })
+                    .catch(err => {
+                        console.log(err);
+                    });
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a simple Promise that resolves after 2 seconds.</li>
+                            <li>Handle success using .then().</li>
+                            <li>Handle error using .catch().</li>
+                        </ul>
+                    </div>
+                
+                </section>
+
+                <!-- Async / Await -->
+                <section class="content-section" id="async-await">
+                
+                    <h2>Async / Await</h2>
+                
+                    <p>
+                        Async/Await is a modern way to handle asynchronous operations in JavaScript.
+                        It makes asynchronous code look and behave like synchronous code, improving readability.
+                    </p>
+                
+                    <h3>Basic Syntax</h3>
+                
+                    <pre><code>
+                                // async function always returns a Promise
+                                async function functionName() {
+                                    let result = await promise;
+                                }
+                                    </code></pre>
+                
+                    <h3>Example</h3>
+                
+                    <pre><code>
+                                function getData() {
+                                    return new Promise(resolve => {
+                                        setTimeout(() => {
+                                            resolve("Data received");
+                                        }, 2000);
+                                    });
+                                }
+                                
+                                async function fetchData() {
+                                    let data = await getData();
+                                    console.log(data);
+                                }
+                                
+                                fetchData();
+                                    </code></pre>
+                
+                    <h3>Handling Errors (try...catch)</h3>
+                
+                    <pre><code>
+                                async function loadData() {
+                                    try {
+                                        let result = await Promise.reject("Error occurred");
+                                        console.log(result);
+                                    } catch (err) {
+                                        console.log(err);
+                                    }
+                                }
+                                
+                                loadData();
+                                    </code></pre>
+                
+                    <h3>Multiple Await</h3>
+                
+                    <pre><code>
+                                async function showData() {
+                                    let a = await Promise.resolve(10);
+                                    let b = await Promise.resolve(20);
+                                
+                                    console.log(a + b);
+                                }
+                                
+                                showData();
+                                    </code></pre>
+                
+                    <h3>Complete Practice Code</h3>
+                
+                    <pre><code>
+                                &lt;!DOCTYPE html&gt;
+                                &lt;html&gt;
+                                &lt;body&gt;
+                                
+                                &lt;script&gt;
+                                
+                                function fetchUser() {
+                                    return new Promise(resolve => {
+                                        setTimeout(() => {
+                                            resolve("User data loaded");
+                                        }, 2000);
+                                    });
+                                }
+                                
+                                async function loadUser() {
+                                    console.log("Loading...");
+                                
+                                    try {
+                                        let user = await fetchUser();
+                                        console.log(user);
+                                    } catch (err) {
+                                        console.log("Error:", err);
+                                    }
+                                }
+                                
+                                loadUser();
+                                
+                                &lt;/script&gt;
+                                
+                                &lt;/body&gt;
+                                &lt;/html&gt;
+                                    </code></pre>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create an async function that waits for a Promise.</li>
+                            <li>Handle errors using try...catch.</li>
+                            <li>Use multiple await statements.</li>
+                        </ul>
+                    </div>
+                
+                </section>
+                
+                <!-- Fetch API -->
+                <section class="content-section" id="fetch-api">
+                
+                    <h2>Fetch API</h2>
+                
+                    <p>
+                        The Fetch API is used to make network requests to servers.
+                        It allows you to fetch data from APIs and work with it in your application.
+                    </p>
+                
+                    <h3>Basic Syntax</h3>
+                
+                    <pre><code>
+                                fetch("url")
+                                    .then(response => response.json())
+                                    .then(data => {
+                                        console.log(data);
+                                    })
+                                    .catch(error => console.log(error));
+                                    </code></pre>
+                
+                    <h3>Example</h3>
+                
+                    <pre><code>
+                                fetch("https://jsonplaceholder.typicode.com/users")
+                                    .then(res => res.json())
+                                    .then(users => {
+                                        console.log(users);
+                                    });
+                                    </code></pre>
+                
+                    <h3>Using Async/Await</h3>
+                
+                    <pre><code>
+                                async function getUsers() {
+                                    try {
+                                        let response = await fetch("https://jsonplaceholder.typicode.com/users");
+                                        let data = await response.json();
+                                        console.log(data);
+                                    } catch (error) {
+                                        console.log(error);
+                                    }
+                                }
+                                
+                                getUsers();
+                                    </code></pre>
+                
+                    <h3>POST Request</h3>
+                
+                    <pre><code>
+                                fetch("https://jsonplaceholder.typicode.com/posts", {
+                                    method: "POST",
+                                    headers: {
+                                        "Content-Type": "application/json"
+                                    },
+                                    body: JSON.stringify({
+                                        title: "Hello",
+                                        body: "World"
+                                    })
+                                })
+                                .then(res => res.json())
+                                .then(data => console.log(data));
+                                    </code></pre>
+                
+                    <h3>Complete Practice Code</h3>
+                
+                    <pre><code>
+                                &lt;!DOCTYPE html&gt;
+                                &lt;html&gt;
+                                &lt;body&gt;
+                                
+                                &lt;button onclick="loadData()"&gt;Load Users&lt;/button&gt;
+                                
+                                &lt;ul id="list"&gt;&lt;/ul&gt;
+                                
+                                &lt;script&gt;
+                                
+                                async function loadData() {
+                                    let list = document.getElementById("list");
+                                    list.innerHTML = "Loading...";
+                                
+                                    try {
+                                        let res = await fetch("https://jsonplaceholder.typicode.com/users");
+                                        let data = await res.json();
+                                
+                                        list.innerHTML = "";
+                                
+                                        data.forEach(user => {
+                                            let li = document.createElement("li");
+                                            li.textContent = user.name;
+                                            list.appendChild(li);
+                                        });
+                                
+                                    } catch (err) {
+                                        list.innerHTML = "Error loading data";
+                                    }
+                                }
+                                
+                                &lt;/script&gt;
+                                
+                                &lt;/body&gt;
+                                &lt;/html&gt;
+                                    </code></pre>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Fetch data from a public API.</li>
+                            <li>Display fetched data in HTML.</li>
+                            <li>Handle errors using try...catch.</li>
+                        </ul>
+                    </div>
+                
+                </section>
+                
+                <!-- JSON -->
+                <section class="content-section" id="json">
+                
+                    <h2>JSON (JavaScript Object Notation)</h2>
+                
+                    <p>
+                        JSON is a lightweight data format used to store and exchange data between a server and a client.
+                        It looks similar to JavaScript objects but is written as a string.
+                    </p>
+                
+                    <h3>JSON Syntax</h3>
+                
+                    <pre><code>
+                        {
+                            "name": "Raman",
+                            "age": 20,
+                            "city": "Delhi"
+                        }
+                            </code></pre>
+                
+                    <h3>Convert Object to JSON (stringify)</h3>
+                
+                    <pre><code>
+                        let obj = {
+                            name: "Raman",
+                            age: 20
+                        };
+                        
+                        let jsonData = JSON.stringify(obj);
+                        
+                        console.log(jsonData);
+                            </code></pre>
+                
+                    <h3>Convert JSON to Object (parse)</h3>
+                
+                    <pre><code>
+                        let jsonString = '{"name":"Raman","age":20}';
+                        
+                        let obj = JSON.parse(jsonString);
+                        
+                        console.log(obj.name);
+                            </code></pre>
+                
+                    <h3>Example</h3>
+                
+                    <pre><code>
+                        let user = {
+                            name: "Aman",
+                            city: "Mumbai"
+                        };
+                        
+                        // Convert to JSON
+                        let data = JSON.stringify(user);
+                        
+                        // Convert back to object
+                        let newUser = JSON.parse(data);
+                        
+                        console.log(newUser);
+                            </code></pre>
+                
+                    <h3>Using JSON with Fetch</h3>
+                
+                    <pre><code>
+                        fetch("https://jsonplaceholder.typicode.com/users")
+                            .then(res => res.json()) // Converts JSON to JS object
+                            .then(data => console.log(data));
+                            </code></pre>
+                
+                    <h3>Complete Practice Code</h3>
+                
+                    <pre><code>
+                        &lt;!DOCTYPE html&gt;
+                        &lt;html&gt;
+                        &lt;body&gt;
+                        
+                        &lt;script&gt;
+                        
+                        // JavaScript object
+                        let student = {
+                            name: "Raman",
+                            marks: 85
+                        };
+                        
+                        // Convert to JSON
+                        let jsonData = JSON.stringify(student);
+                        console.log("JSON:", jsonData);
+                        
+                        // Convert back to object
+                        let parsedData = JSON.parse(jsonData);
+                        console.log("Object:", parsedData);
+                        
+                        &lt;/script&gt;
+                        
+                        &lt;/body&gt;
+                        &lt;/html&gt;
+                            </code></pre>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Convert an object into JSON string.</li>
+                            <li>Parse JSON string into object.</li>
+                            <li>Fetch data from API and log JSON.</li>
+                        </ul>
+                    </div>
+                
+                </section>
+
+                 <!-- LEVEL 8: Browser Storage -->
+
+                <!-- Local Storage -->
+                <section class="content-section" id="local-storage">
+                
+                    <h2>Local Storage</h2>
+                
+                    <p>
+                        Local Storage is a web storage feature that allows you to store data
+                        in the browser permanently (until manually cleared).
+                        It stores data as key-value pairs.
+                    </p>
+                
+                    <h3>Basic Syntax</h3>
+                
+                    <pre><code>
+                // Store data
+                localStorage.setItem("key", "value");
+                
+                // Get data
+                localStorage.getItem("key");
+                
+                // Remove item
+                localStorage.removeItem("key");
+                
+                // Clear all data
+                localStorage.clear();
+                    </code></pre>
+                
+                    <h3>Example</h3>
+                
+                    <pre><code>
+                // Save data
+                localStorage.setItem("username", "Raman");
+                
+                // Get data
+                let user = localStorage.getItem("username");
+                console.log(user);
+                    </code></pre>
+                
+                    <h3>Storing Objects (JSON)</h3>
+                
+                    <pre><code>
+                let user = {
+                    name: "Raman",
+                    age: 20
+                };
+                
+                // Convert to JSON before storing
+                localStorage.setItem("user", JSON.stringify(user));
+                
+                // Convert back to object
+                let data = JSON.parse(localStorage.getItem("user"));
+                console.log(data.name);
+                    </code></pre>
+                
+                    <h3>Removing Data</h3>
+                
+                    <pre><code>
+                localStorage.removeItem("username");
+                    </code></pre>
+                
+                    <h3>Complete Practice Code</h3>
+                
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;input type="text" id="name" placeholder="Enter name"&gt;
+                &lt;button onclick="saveData()"&gt;Save&lt;/button&gt;
+                &lt;button onclick="loadData()"&gt;Load&lt;/button&gt;
+                
+                &lt;p id="output"&gt;&lt;/p&gt;
+                
+                &lt;script&gt;
+                
+                function saveData() {
+                    let name = document.getElementById("name").value;
+                    localStorage.setItem("name", name);
+                }
+                
+                function loadData() {
+                    let name = localStorage.getItem("name");
+                    document.getElementById("output").innerText = name;
+                }
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Store and retrieve a value using localStorage.</li>
+                            <li>Store an object using JSON.</li>
+                            <li>Remove a specific item from storage.</li>
+                        </ul>
+                    </div>
+                
+                </section>
+                
+                <!-- Session Storage -->
+                <section class="content-section" id="session-storage">
+                
+                    <h2>Session Storage</h2>
+                
+                    <p>
+                        Session Storage is used to store data temporarily in the browser.
+                        The data is available only for the duration of the page session
+                        and gets cleared when the browser tab is closed.
+                    </p>
+                
+                    <h3>Basic Syntax</h3>
+                
+                    <pre><code>
+                                // Store data
+                                sessionStorage.setItem("key", "value");
+                                
+                                // Get data
+                                sessionStorage.getItem("key");
+                                
+                                // Remove item
+                                sessionStorage.removeItem("key");
+                                
+                                // Clear all data
+                                sessionStorage.clear();
+                                    </code></pre>
+                
+                    <h3>Example</h3>
+                
+                    <pre><code>
+                                // Save data
+                                sessionStorage.setItem("username", "Raman");
+                                
+                                // Get data
+                                let user = sessionStorage.getItem("username");
+                                console.log(user);
+                                    </code></pre>
+                
+                    <h3>Storing Objects (JSON)</h3>
+                
+                    <pre><code>
+                                let user = {
+                                    name: "Raman",
+                                    age: 20
+                                };
+                                
+                                // Convert to JSON
+                                sessionStorage.setItem("user", JSON.stringify(user));
+                                
+                                // Convert back to object
+                                let data = JSON.parse(sessionStorage.getItem("user"));
+                                console.log(data.name);
+                                    </code></pre>
+                
+                    <h3>Difference: Local vs Session Storage</h3>
+                
+                    <pre><code>
+                                // localStorage → permanent (until cleared)
+                                // sessionStorage → temporary (cleared when tab closes)
+                                    </code></pre>
+                
+                    <h3>Complete Practice Code</h3>
+                
+                    <pre><code>
+                                &lt;!DOCTYPE html&gt;
+                                &lt;html&gt;
+                                &lt;body&gt;
+                                
+                                &lt;input type="text" id="name" placeholder="Enter name"&gt;
+                                &lt;button onclick="saveData()"&gt;Save&lt;/button&gt;
+                                &lt;button onclick="loadData()"&gt;Load&lt;/button&gt;
+                                
+                                &lt;p id="output"&gt;&lt;/p&gt;
+                                
+                                &lt;script&gt;
+                                
+                                function saveData() {
+                                    let name = document.getElementById("name").value;
+                                    sessionStorage.setItem("name", name);
+                                }
+                                
+                                function loadData() {
+                                    let name = sessionStorage.getItem("name");
+                                    document.getElementById("output").innerText = name;
+                                }
+                                
+                                &lt;/script&gt;
+                                
+                                &lt;/body&gt;
+                                &lt;/html&gt;
+                                    </code></pre>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Store and retrieve data using sessionStorage.</li>
+                            <li>Store an object using JSON.</li>
+                            <li>Compare localStorage and sessionStorage behavior.</li>
+                        </ul>
+                    </div>
+                
+                </section>
+                
+                <!-- Cookies -->
+                <section class="content-section" id="cookies">
+                
+                    <h2>Cookies</h2>
+                
+                    <p>
+                        Cookies are small pieces of data stored in the browser.
+                        They are used to store user information like login sessions,
+                        preferences, and tracking data.
+                    </p>
+                
+                    <h3>Basic Syntax</h3>
+                
+                    <pre><code>
+                // Set cookie
+                document.cookie = "username=Raman";
+                
+                // Read cookies
+                console.log(document.cookie);
+                    </code></pre>
+                
+                    <h3>Setting Expiry Date</h3>
+                
+                    <pre><code>
+                let date = new Date();
+                date.setTime(date.getTime() + (24 * 60 * 60 * 1000)); // 1 day
+                
+                document.cookie = "user=Raman; expires=" + date.toUTCString();
+                    </code></pre>
+                
+                    <h3>Adding Path</h3>
+                
+                    <pre><code>
+                document.cookie = "theme=dark; path=/";
+                    </code></pre>
+                
+                    <h3>Deleting Cookie</h3>
+                
+                    <pre><code>
+                document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    </code></pre>
+                
+                    <h3>Example Functions</h3>
+                
+                    <pre><code>
+                function setCookie(name, value) {
+                    document.cookie = name + "=" + value + "; path=/";
+                }
+                
+                function getCookie() {
+                    return document.cookie;
+                }
+                    </code></pre>
+                
+                    <h3>Complete Practice Code</h3>
+                
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;input type="text" id="name" placeholder="Enter name"&gt;
+                &lt;button onclick="saveCookie()"&gt;Save&lt;/button&gt;
+                &lt;button onclick="showCookie()"&gt;Show&lt;/button&gt;
+                
+                &lt;p id="output"&gt;&lt;/p&gt;
+                
+                &lt;script&gt;
+                
+                function saveCookie() {
+                    let name = document.getElementById("name").value;
+                    document.cookie = "username=" + name + "; path=/";
+                }
+                
+                function showCookie() {
+                    document.getElementById("output").innerText = document.cookie;
+                }
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Set a cookie with name and value.</li>
+                            <li>Display cookies in console or page.</li>
+                            <li>Delete a cookie using expiry date.</li>
+                        </ul>
+                    </div>
+                
+                </section>
+                
+                 <!-- LEVEL 9: Projects -->
+
+                <!-- Mini Projects -->
+                <section class="content-section" id="mini-projects">
+                
+                    <h2>Mini Projects</h2>
+                
+                    <p>
+                        Mini projects help you apply your JavaScript knowledge in real-world scenarios.
+                        They improve problem-solving skills and build confidence in coding.
+                    </p>
+                
+                    <h3>Beginner Projects</h3>
+                
+                    <pre><code>
+                // 1. Counter App
+                // Increase / Decrease number using buttons
+                
+                // 2. Color Changer
+                // Change background color on button click
+                
+                // 3. Number Guessing Game
+                // Generate random number and guess it
+                    </code></pre>
+                
+                    <h3>Intermediate Projects</h3>
+                
+                    <pre><code>
+                // 1. To-Do List App
+                // Add, delete, mark tasks complete
+                
+                // 2. Calculator
+                // Perform basic arithmetic operations
+                
+                // 3. Form Validation
+                // Validate inputs with error messages
+                    </code></pre>
+                
+                    <h3>Advanced Projects</h3>
+                
+                    <pre><code>
+                // 1. Weather App
+                // Fetch API + display weather data
+                
+                // 2. User Directory
+                // Fetch users and display in cards
+                
+                // 3. Notes App
+                // Store notes using localStorage
+                    </code></pre>
+                
+                    <h3>Example (Simple Counter)</h3>
+                
+                    <pre><code>
+                let count = 0;
+                
+                function increase() {
+                    count++;
+                    console.log(count);
+                }
+                
+                function decrease() {
+                    count--;
+                    console.log(count);
+                }
+                    </code></pre>
+                
+                    <h3>Complete Practice Code</h3>
+                
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;h2 id="count"&gt;0&lt;/h2&gt;
+                
+                &lt;button onclick="increase()"&gt;+&lt;/button&gt;
+                &lt;button onclick="decrease()"&gt;-&lt;/button&gt;
+                
+                &lt;script&gt;
+                
+                let count = 0;
+                
+                function increase() {
+                    count++;
+                    document.getElementById("count").innerText = count;
+                }
+                
+                function decrease() {
+                    count--;
+                    document.getElementById("count").innerText = count;
+                }
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a working counter app.</li>
+                            <li>Build a simple calculator.</li>
+                            <li>Develop a to-do list using DOM.</li>
+                        </ul>
+                    </div>
+                
+                </section>
+
+                <!-- Final Project -->
+                <section class="content-section" id="final-project">
+                
+                    <h2>Final Project</h2>
+                
+                    <p>
+                        The final project is your opportunity to apply everything you’ve learned.
+                        It combines concepts like DOM manipulation, events, APIs, storage, and modern JavaScript.
+                    </p>
+                
+                    <h3>Project Idea: Smart Student Manager</h3>
+                
+                    <pre><code>
+                // Features:
+                // Add student details
+                // Display student list
+                // Edit & delete student
+                // Store data using localStorage
+                // Search students
+                    </code></pre>
+                
+                    <h3>Key Concepts Used</h3>
+                
+                    <pre><code>
+                // DOM Manipulation
+                // Event Handling
+                // Arrays & Objects
+                // Local Storage
+                // Functions & Loops
+                    </code></pre>
+                
+                    <h3>Basic Structure</h3>
+                
+                    <pre><code>
+                &lt;input type="text" id="name" placeholder="Enter Name"&gt;
+                &lt;button onclick="addStudent()"&gt;Add&lt;/button&gt;
+                
+                &lt;ul id="list"&gt;&lt;/ul&gt;
+                    </code></pre>
+                
+                    <h3>Example Logic</h3>
+                
+                    <pre><code>
+                let students = [];
+                
+                function addStudent() {
+                    let name = document.getElementById("name").value;
+                
+                    students.push(name);
+                    displayStudents();
+                }
+                
+                function displayStudents() {
+                    let list = document.getElementById("list");
+                    list.innerHTML = "";
+                
+                    students.forEach((student, index) => {
+                        let li = document.createElement("li");
+                        li.textContent = student;
+                        list.appendChild(li);
+                    });
+                }
+                    </code></pre>
+                
+                    <h3>Complete Practice Code</h3>
+                
+                    <pre><code>
+                &lt;!DOCTYPE html&gt;
+                &lt;html&gt;
+                &lt;body&gt;
+                
+                &lt;h2&gt;Student Manager&lt;/h2&gt;
+                
+                &lt;input type="text" id="name" placeholder="Enter Name"&gt;
+                &lt;button onclick="addStudent()"&gt;Add Student&lt;/button&gt;
+                
+                &lt;ul id="list"&gt;&lt;/ul&gt;
+                
+                &lt;script&gt;
+                
+                let students = JSON.parse(localStorage.getItem("students")) || [];
+                
+                function addStudent() {
+                    let name = document.getElementById("name").value;
+                
+                    if (name === "") return;
+                
+                    students.push(name);
+                    localStorage.setItem("students", JSON.stringify(students));
+                
+                    displayStudents();
+                }
+                
+                function displayStudents() {
+                    let list = document.getElementById("list");
+                    list.innerHTML = "";
+                
+                    students.forEach((student, index) => {
+                        let li = document.createElement("li");
+                        li.textContent = student;
+                        list.appendChild(li);
+                    });
+                }
+                
+                // Load data on start
+                displayStudents();
+                
+                &lt;/script&gt;
+                
+                &lt;/body&gt;
+                &lt;/html&gt;
+                    </code></pre>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Final Challenge</h3>
+                        <ul>
+                            <li>Add delete button for each student.</li>
+                            <li>Add edit/update feature.</li>
+                            <li>Add search functionality.</li>
+                            <li>Improve UI with CSS styling.</li>
+                        </ul>
+                    </div>
+                
+                </section>
+
                 <!-- Course Completion Section -->
                 <section class="course-complete">
+                  <!--
                     <h1>🚧 Coming Soon!</h1>
                     <p>
                         This course content is currently under development.<br>
                         Stay tuned — exciting lessons are on the way!
                     </p>
-                    <!--
+                -->
+                    
                     <h1>🎉 Course Completed!</h1>
                     <p>Congratulations! You’ve successfully finished this course.</p>
-                -->
+                    
                     <div class="completion-actions">
                         <a href="index.html" class="btn btn-outline">Explore More Courses</a>
                     </div>
-                
+
                 </section>
 
                 <!-- Navigation Buttons -->
@@ -1006,6 +4757,7 @@ while (number > 0) {
     <footer id="footer-container">
         <!-- Footer content will be loaded here -->
     </footer>
+
 </body>
 
 </html>

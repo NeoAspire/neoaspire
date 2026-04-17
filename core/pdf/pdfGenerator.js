@@ -28,16 +28,20 @@ export function generatePDF({
   const content = el.innerHTML;
   let finalHTML = content;
 
-  // BASIC MODE → use content as-is
+  // 🔥 RESET MODES FIRST
+  document.body.classList.remove("paginator-mode");
+
+  // BASIC MODE 
   if (mode === "basic") {
     finalHTML = content;
   }
 
    // ADVANCED MODE → paginate automatically for A4
   if (mode === "advanced") {
+     document.body.classList.add("paginator-mode"); 
     finalHTML = paginate(content, data);
   }
 
-  openPreview(finalHTML, title);
+  openPreview(finalHTML, title, mode, data);
 }
 
