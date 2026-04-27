@@ -1,0 +1,324 @@
+[
+  {
+    "class": "9",
+    "subject": "Information Technology",
+    "title": "Information Technology (402)",
+    "resources": [
+      {
+        "category": "Curriculum",
+        "items": [
+          {
+            "id": "it9-syllabus",
+            "name": "CBSE Syllabus",
+            "view": "https://cbseacademic.nic.in/skill-education-curriculum.html",
+            "download": false
+          }
+        ]
+      },
+      {
+        "category": "Study Material",
+        "items": [
+          {
+            "id": "it9-part-a",
+            "name": "Part A: Employability Skills",
+            "pdf": "https://cbseacademic.nic.in/web_material/Curriculum21/publication/secondary/Employability_Skills_IX.pdf",
+            "download": false,
+            "paid": true,
+            "price": 50
+          },
+          {
+            "id": "it9-part-b",
+            "name": "Part B: Subject Specific Skills",
+            "pdf": "https://cbseacademic.nic.in/web_material/Curriculum25/publication/secondary/402_IT_IX.pdf",
+            "download": false,
+            "paid": false,
+            "price": 50
+          }
+        ]
+      },
+      {
+        "category": "Exam Prep",
+        "items": [
+          {
+            "id": "it9-pyq",
+            "name": "PART A Chapter-wise PYQs",
+            "pdf": "",
+            "download": false,
+            "paid": false,
+            "price": 30
+          },
+          {
+            "id": "it9-pyq",
+            "name": "PART B Chapter-wise PYQs",
+            "pdf": "",
+            "download": false,
+            "paid": false,
+            "price": 30
+          },
+          {
+            "id": "it10-sample-papers",
+            "name": "Sample Test Papers",
+            "pdf": "url4",
+            "paid": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "class": "10",
+    "subject": "Information Technology",
+    "title": "Information Technology (402)",
+    "resources": [
+      {
+        "category": "Curriculum",
+        "items": [
+          {
+            "id": "it10-syllabus",
+            "name": "CBSE Syllabus",
+            "view": "https://cbseacademic.nic.in/skill-education-curriculum.html",
+            "download": false
+          }
+        ]
+      },
+      {
+        "category": "Study Material",
+        "items": [
+          {
+            "id": "it10-part-a",
+            "name": "Part A: Employability Skills",
+            "pdf": "https://cbseacademic.nic.in/web_material/Curriculum21/publication/secondary/Employability_Skills10.pdf",
+            "download": false,
+            "paid": true,
+            "price": 50
+          },
+          {
+            "id": "it10-part-b",
+            "name": "Part B: Subject Specific Skills",
+            "pdf": "https://cbseacademic.nic.in/web_material/Curriculum25/publication/secondary/402_IT_X.pdf",
+            "download": false,
+            "paid": false,
+            "price": 50
+          }
+        ]
+      },
+      {
+        "category": "Exam Prep",
+        "items": [
+          {
+            "id": "it10-pyq",
+            "name": "PART A Chapter-wise PYQs",
+            "pdf": "https://drive.google.com/file/d/1ZjU7D7P7xW_Lbt_e5xXBYErmygrQhK6D/view?usp=drive_link",
+            "download": "https://drive.google.com/file/d/1IuWB-kQ9SjUndDNEuLmd1y3WRSrvThpZ/view?usp=drive_link",
+            "paid": false,
+            "price": 30
+          },
+          {
+            "id": "it10-pyq",
+            "name": "PART B Chapter-wise PYQs",
+            "pdf": "https://drive.google.com/file/d/1PAWN609MJ98EcZgdC92QGKgL7UEJ1zQp/view?usp=drive_link",
+            "download": "https://drive.google.com/file/d/1kPS8hxXgTOTqkvanTRAVQF235cQGdhWb/view?usp=drive_link",
+            "paid": false,
+            "price": 30
+          },
+          {
+            "id": "it10-sample-papers",
+            "name": "Sample Test Papers",
+            "pdf": "url4",
+            "paid": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "class": "10",
+    "subject": "Mathematics",
+    "title": "Mathematics (041)",
+    "resources": [
+       {
+        "category": "Curriculum",
+        "items": [
+          {
+            "id": "math10-syllabus",
+            "name": "CBSE Syllabus",
+            "view": "https://cbseacademic.nic.in/curriculum_2027.html",
+            "download": false
+          }
+        ]
+      },
+      {
+        "category": "Practice",
+        "items": [
+          {
+            "id": "math10-formula-premium",
+            "name": "Formula Sheet ",
+            "pdf": "https://drive.google.com/file/d/1YYvZmvnBj9Q4mtg7CzbRkWNW5FzyHV2L/view?usp=drive_link",
+            "download": "https://drive.google.com/file/d/1Y66GhgUcdmsC7IlGhQQRuHbRL0OtRMGp/view?usp=drive_link",
+            "paid": false,
+            "price": 20
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "class": "10",
+    "subject": "Science",
+    "title": "Science (082)",
+    "resources": [
+         {
+        "category": "Curriculum",
+        "items": [
+          {
+            "id": "science10-syllabus",
+            "name": "CBSE Syllabus",
+            "view": "https://cbseacademic.nic.in/curriculum_2027.html",
+            "download": false
+          }
+        ]
+      },
+      {
+        "category": "Exam Prep",
+        "items": [
+          {
+            "id": "science10-pyq",
+            "name": "Chapter-wise PYQs",
+            "pdf": "https://drive.google.com/file/d/1PllxEZ-sqx2Zl3KcedgtJmqAXDX-19Bz/view?usp=drive_link",
+            "download": "https://drive.google.com/file/d/1BefVGRFPbWYL9BIJVGRC7mGvw47UNNS8/view?usp=drive_link",
+            "paid": false,
+            "price": 30
+          },
+          {
+            "id": "science10-sample-papers",
+            "name": "Sample Test Papers",
+            "pdf": "url4",
+            "paid": false
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "class": "11",
+    "subject": "Web Application",
+    "title": "Web Application (803)",
+    "resources": [
+      {
+        "category": "Curriculum",
+        "items": [
+          {
+            "id": "webapp11-syllabus",
+            "name": "CBSE Syllabus",
+            "view": "https://cbseacademic.nic.in/skill-education-curriculum.html",
+            "download": false
+          }
+        ]
+      },
+        {
+        "category": "Study Material",
+        "items": [
+          {
+            "id": "webapp11-part-a",
+            "name": "Part A: Employability Skills",
+            "pdf": "https://cbseacademic.nic.in/web_material/Curriculum21/publication/srsec/Employability_Skills_XI.pdf",
+            "download": false,
+            "paid": true,
+            "price": 50
+          },
+          {
+            "id": "webapp11-part-b",
+            "name": "Part B: Subject Specific Skills",
+            "pdf": "https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/803-WebApplication-XI.pdf",
+            "download": false,
+            "paid": false,
+            "price": 50
+          }
+        ]
+      },
+      {
+        "category": "Exam Prep",
+        "items": [
+          {
+            "id": "webapp11-pyq",
+            "name": "PART A Chapter-wise PYQs",
+            "pdf": "https://drive.google.com/file/d/1GsRhn4TjxF3mIKTKnBDasSHjdvOXxE7y/view?usp=drive_link",
+            "download": "https://drive.google.com/file/d/17LXBCFaazK9rGpEJZRz4cbbtT38pgik0/view?usp=drive_link",
+            "paid": false,
+            "price": 30
+          },
+          {
+            "id": "webapp11-pyq",
+            "name": "PART B Chapter-wise PYQs",
+            "pdf": "https://drive.google.com/file/d/1YpWVkkx6fbrO9Y1znEhs_Qj0r1B1trKF/view?usp=drive_link",
+            "download": "https://drive.google.com/file/d/1hVx8FZ_rKr6LsvltPTPI4kWQJ4qaBKiQ/view?usp=drive_link",
+            "paid": false,
+            "price": 30
+          }
+        ]
+      }
+    ]
+  },
+
+  {
+    "class": "12",
+    "subject": "Web Application",
+    "title": "Web Application (803)",
+    "resources": [
+      {
+        "category": "Curriculum",
+        "items": [
+          {
+            "id": "webapp12-syllabus",
+            "name": "CBSE Syllabus",
+            "view": "https://cbseacademic.nic.in/skill-education-curriculum.html",
+            "download": false
+          }
+        ]
+      },
+      {
+        "category": "Study Material",
+        "items": [
+          {
+            "id": "webapp12-part-a",
+            "name": "Part A: Employability Skills",
+            "pdf": "https://cbseacademic.nic.in/web_material/Curriculum21/publication/srsec/Employability_Skills_XII.pdf",
+            "download": false,
+            "paid": true,
+            "price": 50
+          },
+          {
+            "id": "webapp12-part-b",
+            "name": "Part B: Subject Specific Skills",
+            "pdf": "https://cbseacademic.nic.in/web_material/Curriculum26/publication/srsec/803-WebApplication-XII.pdf",
+            "download": false,
+            "paid": false,
+            "price": 50
+          }
+        ]
+      },
+      {
+        "category": "Exam Prep",
+        "items": [
+          {
+            "id": "webapp12-pyq",
+            "name": "PART A Chapter-wise PYQs",
+            "pdf": "",
+            "download": false,
+            "paid": false,
+            "price": 30
+          },
+          {
+            "id": "webapp12-pyq",
+            "name": "PART B Chapter-wise PYQs",
+            "pdf": "",
+            "download": false,
+            "paid": false,
+            "price": 30
+          }
+        ]
+      }
+    ]
+  }
+]
