@@ -172,10 +172,10 @@ function displayBlueprint(data) {
         <h2>Class ${data.class} - ${data.subject}</h2>
 
         <div class="blueprint-meta">
-            <div class="meta-box"><span>Session</span>${data.session}</div>
-            <div class="meta-box"><span>Subject Code</span>${data.subject_code}</div>
-            <div class="meta-box"><span>Maximum Marks</span>${data.maximum_marks}</div>
-            <div class="meta-box"><span>Time</span>${data.time}</div>
+            <div class="meta-box"><span>Session: ${data.session}</span></div>
+            <div class="meta-box"><span>Subject Code: ${data.subject_code}</span></div>
+            <div class="meta-box"><span>Maximum Marks: ${data.maximum_marks}</span></div>
+            <div class="meta-box"><span>Time: ${data.time}</span></div>
         </div>
     </div>
 

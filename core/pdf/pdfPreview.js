@@ -141,7 +141,7 @@ export function openPreview(content, title, mode = "basic", data = {}) {
 
       <div class="no-print toolbar">
         <button onclick="window.print()" class="btn-print">
-          🖨 Print / Save PDF
+           Print / Save PDF
         </button>
       </div>
 

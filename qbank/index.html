@@ -7,13 +7,15 @@
     <title>Question Bank | Neoaspire</title>
 
     <!-- Main CSS of Neoaspire Website -->
-    <link rel="stylesheet" href="../assets/css/main.css"> 
+    <link rel="stylesheet" href="../assets/css/main.css">
     <!-- Page Specific CSS -->
-     <link rel="stylesheet" href="./css/qbank.css">
+    <link rel="stylesheet" href="./css/qbank.css">
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../assets/images/favicon/favicon.png">
     <!-- CORE JS -->
     <script type="module" src="../core/js/index.js"></script>
+    <!-- Page Specific JS -->
+    <script type="module" src="./js/qbank.js">  </script>
 
 </head>
 
@@ -38,196 +40,83 @@
             </div>
         </section>
 
+        <!-- Search and Filter Controls -->
 
-        <!-- QBANK SECTION -->
-        <section class="qbank-section">
+        <section class="qbank-controls">
 
-            <!-- Class 9 IT (402) -->
-            <div class="subject-card">
-                <div class="dropdown">
-                    <button class="dropbtn">Class 9 IT (402)</button>
-                    <div class="dropdown-content">
-                        <a href="" class="openPdf" data-pdf="#">
-                            🔒 Coming Soon!
-                        </a>
-                    </div>
-                </div>
+            <!-- Class Filter -->
+            <select id="classFilter">
+                <option value="all">All Classes</option>
+            </select>
+
+            <!-- Subject Filter -->
+            <select id="subjectFilter">
+                <option value="all">All Subjects</option>
+            </select>
+
+            <!-- Search -->
+            <div class="search-wrapper">
+                <input type="text" id="searchInput" placeholder="🔍 Search subjects or resources...">
+                <div id="searchSuggestions" class="search-suggestions"></div>
             </div>
 
-            <!-- Class 10 IT (402) -->
-            <div class="subject-card">
-                <div class="dropdown">
-                    <button class="dropbtn">Class 10 IT (402)</button>
-                    <div class="dropdown-content">
-                        <a href="#" class="openPdf"
-                            data-pdf="https://drive.google.com/file/d/1ZjU7D7P7xW_Lbt_e5xXBYErmygrQhK6D/preview">
-                            🔒 Employability Skills Part A
-                        </a>
-                        <a href="#" class="openPdf"
-                            data-pdf="https://drive.google.com/file/d/1PAWN609MJ98EcZgdC92QGKgL7UEJ1zQp/preview">
-                            🔒 Information Technology Part B
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Class 10 Maths (041) -->
-            <div class="subject-card">
-                <div class="dropdown">
-                    <button class="dropbtn">Class 10 Maths</button>
-                    <div class="dropdown-content">
-                        <a href="#" class="openPdf"
-                            data-pdf="https://drive.google.com/file/d/1Y66GhgUcdmsC7IlGhQQRuHbRL0OtRMGp/preview">
-                            🔒 Formulas Chapter Wise
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Class 10 Science (086) -->
-            <div class="subject-card">
-                <div class="dropdown">
-                    <button class="dropbtn">Class 10 Science</button>
-                    <div class="dropdown-content">
-                        <a href="#" class="openPdf"
-                            data-pdf="https://drive.google.com/file/d/1PllxEZ-sqx2Zl3KcedgtJmqAXDX-19Bz/preview">
-                            🔒 Study Material Preview
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Class 11 Web Application (803) -->
-            <div class="subject-card">
-                <div class="dropdown">
-                    <button class="dropbtn">Class 11 Web Application (803)</button>
-                    <div class="dropdown-content">
-                        <a href="#" class="openPdf"
-                            data-pdf="https://drive.google.com/file/d/1GsRhn4TjxF3mIKTKnBDasSHjdvOXxE7y/preview">
-                            🔒 Employability Skills Part A
-                        </a>
-                        <a href="#" class="openPdf"
-                            data-pdf="https://drive.google.com/file/d/1YpWVkkx6fbrO9Y1znEhs_Qj0r1B1trKF/preview">
-                            🔒 Web Application Part B
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Class 12 Web Application (803) -->
-            <div class="subject-card">
-                <div class="dropdown">
-                    <button class="dropbtn">Class 12 Web Application (803)</button>
-                    <div class="dropdown-content">
-                        <a href="" class="openPdf" data-pdf="#">
-                            🔒 Coming Soon!
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Full-screen PDF modal -->
-            <div id="pdfModal" class="modal">
-                <span class="close">&times;</span>
-                <iframe id="pdfPreview" src="" frameborder="0"></iframe>
-                <div id="payment-section" style="display:none;">
-                    <p>To download the full PDF, please pay first:</p>
-                    <!-- New: Separate download link after payment -->
-                    <button id="payButton">Pay & Download</button>
-                </div>
-            </div>
+            <!-- Reset -->
+            <button id="resetAllFilters" class="reset-btn">🔄 Reset</button>
 
         </section>
 
+        <!-- 🔥 QBank Section JSON WILL RENDER HERE -->
+        <section class="qbank-section" id="qbankContainer">
+            <!-- Dynamic content from JSON -->
+        </section>
+
     </main>
+
+    <!-- No Results Message -->
+    <div id="noResultsModal" class="premium-modal">
+        <div class="premium-modal-box">
+
+            <!-- Icon -->
+            <div class="modal-icon">🔍</div>
+
+            <!-- Title -->
+            <h2>No Results Found</h2>
+
+            <!-- Message -->
+            <p>We couldn’t find anything matching your search.</p>
+
+            <!-- Suggestions -->
+            <div class="suggestions">
+                <span>Try:</span>
+                <button class="suggestion-chip">Mathematics</button>
+                <button class="suggestion-chip">IT</button>
+                <button class="suggestion-chip">Web</button>
+            </div>
+
+            <!-- Actions -->
+            <div class="modal-actions">
+                <button id="resetFilters" class="primary-btn">Reset Filters</button>
+                <button id="closeModal" class="secondary-btn">Close</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div id="paymentModal" class="payment-modal">
+  <div class="modal-content">
+    <h3 id="paymentTitle">Complete Payment</h3>
+    
+    <p id="paymentMessage">Proceed to payment</p>
+
+    <button id="payNowBtn">Pay Now</button>
+  </div>
+</div>
 
     <!-- Footer -->
     <footer id="footer-container">
         <!-- Footer content will be loaded here -->
     </footer>
-    <script>
-
-        // ================= PDF MODAL =================
-
-const modal = document.getElementById('pdfModal');
-const pdfPreview = document.getElementById('pdfPreview');
-const paymentSection = document.getElementById('payment-section');
-const payButton = document.getElementById('payButton');
-const closeBtn = modal.querySelector('.close');
-
-// Open PDF
-document.querySelectorAll('.openPdf').forEach(link => {
-    link.addEventListener('click', e => {
-        e.preventDefault();
-        const pdfUrl = link.dataset.pdf;
-        if (!pdfUrl || pdfUrl === "#") return; // skip "Coming Soon"
-
-        pdfPreview.src = pdfUrl;
-        paymentSection.style.display = 'none';
-        modal.classList.add('active');
-
-        setTimeout(() => {
-            paymentSection.style.display = 'block';
-        }, 2000);
-    });
-});
-
-// Pay & Download
-payButton.addEventListener('click', () => {
-    window.location.href = "../payments/payments.html";
-});
-
-// Close modal
-closeBtn.addEventListener('click', () => {
-    modal.classList.remove('active');
-    pdfPreview.src = '';
-});
-
-// Close modal on outside click
-window.addEventListener('click', e => {
-    if (e.target === modal) {
-        modal.classList.remove('active');
-        pdfPreview.src = '';
-    }
-});
-
-
-        // ================= DROPDOWN =================
-
-        document.querySelectorAll(".dropbtn").forEach(button => {
-            button.addEventListener("click", function (e) {
-                e.stopPropagation();
-
-                const dropdown = this.closest(".dropdown");
-                const card = this.closest(".subject-card");
-
-                // Close all dropdowns first
-                document.querySelectorAll(".dropdown").forEach(d => {
-                    d.classList.remove("active");
-                });
-
-                document.querySelectorAll(".subject-card").forEach(c => {
-                    c.classList.remove("active-card");
-                });
-
-                // Toggle current
-                dropdown.classList.toggle("active");
-                card.classList.toggle("active-card");
-            });
-        });
-
-        // Close when clicking outside
-        document.addEventListener("click", () => {
-            document.querySelectorAll(".dropdown").forEach(d => {
-                d.classList.remove("active");
-            });
-
-            document.querySelectorAll(".subject-card").forEach(c => {
-                c.classList.remove("active-card");
-            });
-        });
-
-    </script>
 
 </body>
 
