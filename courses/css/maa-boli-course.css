@@ -138,6 +138,51 @@
 }
 
 /* ===============================
+   COMMON WORD GRID 
+=============================== */
+
+.word-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+  margin: var(--space-md) 0;
+}
+
+/* Common item style */
+.word-grid span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: var(--space-sm) var(--space-md);
+  min-width: 110px;
+
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  cursor: pointer;
+  transition: var(--transition-normal);
+}
+
+/* Hover effect */
+.word-grid span:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+/* Active (when clicked / playing sound) */
+.word-grid span.active {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+/* ===============================
    WRITING PRACTICE BOX
 =============================== */
 .writing-box {
