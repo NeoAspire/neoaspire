@@ -147,6 +147,11 @@ Stay tuned! 🚀`,
                 message: "📘 Blueprint viewer Ready",
                 type: "warning",
                 duration: 1000
+            },
+            "maa-boli-course": {
+                "message": "📚 Welcome to Maa Boli: ਸਾਡੀ ਪਛਾਣ — Start learning Punjabi today! 🙏 Please share your suggestions. If you find any mistakes or feel updates are needed, kindly let us know.",
+                "type": "success",
+                "duration": 5000
             }
         },
 
