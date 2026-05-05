@@ -114,10 +114,16 @@ export const CONFIG = {
             footer: path('/partials/footer.html'),
         },
 
+        courses: {
+            header: path('/courses/partials/header.html'),
+            footer: path('/courses/partials/footer.html'),
+        },
+
         ems: {
             header: path('/ems/partials/header.html'),
             footer: path('/ems/partials/footer.html'),
         }
+
     },
     // ===============================
     // PDF CONFIG (🔥 ADD HERE)
