@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Learn Access | Neoaspire</title>
- 
-      <!-- Main CSS of Neoaspire Website -->
+
+    <!-- Main CSS of Neoaspire Website -->
     <link rel="stylesheet" href="../assets/css/main.css">
     <!-- Page Specific CSS -->
     <link rel="stylesheet" href="./css/course-page.css">
@@ -16,10 +16,10 @@
     <script type="module" src="../core/js/index.js"></script>
     <!-- Page Specific JS -->
     <script type="module" src="./js/course-page.js"></script>
-    
+
 </head>
 
-<body data-app="main" data-page="access-course">
+<body data-app="courses" data-page="access-course">
     <!-- Header -->
     <header id="header-container">
         <!-- Header content will be loaded here -->
@@ -30,21 +30,21 @@
         <section class="aside-container">
             <button class="menu-toggle-course" id="menuToggle">☰ Learn Access</button>
             <aside>
-        
+
                 <h2>Learn Access</h2>
-            
+
                 <!-- LEVEL 0: Basics -->
                 <h3>Level 0: Basics</h3>
                 <a href="#intro-access">Introduction</a>
                 <a href="#features">Features of Access</a>
                 <a href="#uses">Uses of MS Access</a>
-            
+
                 <!-- LEVEL 1: Getting Started -->
                 <h3>Level 1: Getting Started</h3>
                 <a href="#interface">Interface Overview</a>
                 <a href="#create-db">Create Database</a>
                 <a href="#save-open">Save & Open Database</a>
-            
+
                 <!-- LEVEL 2: Tables -->
                 <h3>Level 2: Tables</h3>
                 <a href="#tables-intro">What is a Table?</a>
@@ -52,44 +52,39 @@
                 <a href="#data-types">Data Types</a>
                 <a href="#primary-key">Primary Key</a>
                 <a href="#table-relationships">Relationships</a>
-            
+
                 <!-- LEVEL 3: Queries -->
                 <h3>Level 3: Queries</h3>
                 <a href="#queries-intro">What is Query?</a>
                 <a href="#select-query">Select Query</a>
                 <a href="#action-query">Action Query</a>
                 <a href="#criteria">Using Criteria</a>
-            
+
                 <!-- LEVEL 4: Forms -->
                 <h3>Level 4: Forms</h3>
                 <a href="#forms-intro">What is Form?</a>
                 <a href="#create-form">Create Form</a>
                 <a href="#form-design">Form Design</a>
-            
+
                 <!-- LEVEL 5: Reports -->
                 <h3>Level 5: Reports</h3>
                 <a href="#reports-intro">What is Report?</a>
                 <a href="#create-report">Create Report</a>
                 <a href="#formatting-reports">Formatting Reports</a>
-            
+
                 <!-- LEVEL 6: Advanced -->
                 <h3>Level 6: Advanced</h3>
                 <a href="#macros">Macros</a>
-                <a href="#vba">Intro to VBA</a>
+                <a href="#intro-vba">Intro to VBA</a>
                 <a href="#automation">Automation</a>
-                <a href="#security">Database Security</a>
-            
+                <a href="#database-security">Database Security</a>
+
                 <!-- LEVEL 7: Real Projects -->
                 <h3>Level 7: Projects</h3>
-                <a href="#student-db">Student Management System</a>
-                <a href="#inventory">Inventory System</a>
-                <a href="#billing">Billing Software</a>
-            
-                <!-- Practice & Test -->
-                <h3>Practice & Test</h3>
-                <a href="#practice-exercise">Practice Exercise</a>
-                <a href="#mcqs">MCQs</a>
-                <a href="#final-test">Final Test</a>
+                <a href="#student-management-system">Student Management System</a>
+                <a href="#inventory-system">Inventory System</a>
+                <a href="#billing-software">Billing Software</a>
+
             </aside>
 
             <article>
@@ -98,12 +93,15 @@
                 <!-- Introduction -->
                 <section class="content-section" id="intro-access">
                     <h2>Introduction to Microsoft Access</h2>
-                    <p>Microsoft Access is a Database Management System (DBMS) used to store, manage, and analyze large amounts of
-                        structured data. It is part of the Microsoft Office suite and is widely used for business applications.</p>
-                
-                    <p>Unlike Excel, which is used for calculations and analysis, Access is designed for handling relational databases
+                    <p>Microsoft Access is a Database Management System (DBMS) used to store, manage, and analyze large
+                        amounts of
+                        structured data. It is part of the Microsoft Office suite and is widely used for business
+                        applications.</p>
+
+                    <p>Unlike Excel, which is used for calculations and analysis, Access is designed for handling
+                        relational databases
                         with multiple tables.</p>
-                
+
                     <p><b>Key features of Microsoft Access include:</b></p>
                     <ul>
                         <li>Creating and managing databases</li>
@@ -126,9 +124,9 @@
                         It combines the power of a database with a user-friendly interface, making it suitable
                         for beginners as well as professionals.
                     </p>
-                
+
                     <h3>Core Features of MS Access</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -187,9 +185,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Feature Explanation</h3>
-                
+
                     <ul>
                         <li><strong>Tables</strong> are the foundation where all data is stored.</li>
                         <li><strong>Queries</strong> help you search and analyze data quickly.</li>
@@ -198,9 +196,9 @@
                         <li><strong>Relationships</strong> reduce data duplication.</li>
                         <li><strong>Macros & VBA</strong> automate tasks and improve efficiency.</li>
                     </ul>
-                
+
                     <h3>Example Scenario</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -229,9 +227,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Complete Example</h3>
-                
+
                     <pre><code>
                 Example: Student Database
                 
@@ -248,9 +246,9 @@
                 Report:
                 - Student Result Report
                     </code></pre>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Use proper table structure with primary keys.</li>
                         <li>Avoid duplicate data by using relationships.</li>
@@ -262,22 +260,22 @@
 
                 <!-- Uses of MS Access -->
                 <section class="content-section" id="uses">
-                
+
                     <h2>Uses of MS Access</h2>
-                
+
                     <p>
                         Microsoft Access is widely used to <strong>store, manage, and analyze data</strong>
                         in an organized way. It is suitable for small to medium-sized applications
                         where efficient data handling is required.
                     </p>
-                
+
                     <p>
                         It is commonly used in schools, offices, businesses, and personal projects
                         to simplify data management tasks.
                     </p>
-                
+
                     <h3>Common Uses of MS Access</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -321,9 +319,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Real-Life Applications</h3>
-                
+
                     <ul>
                         <li><strong>School Management System</strong> – Manage students, teachers, and results.</li>
                         <li><strong>Billing Software</strong> – Generate invoices and maintain sales records.</li>
@@ -331,9 +329,9 @@
                         <li><strong>Inventory System</strong> – Monitor stock levels and product details.</li>
                         <li><strong>Customer Database</strong> – Store and manage client information.</li>
                     </ul>
-                
+
                     <h3>Example Scenario</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -358,9 +356,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Advantages of Using MS Access</h3>
-                
+
                     <ul>
                         <li>Easy to use for beginners</li>
                         <li>Reduces manual work</li>
@@ -368,9 +366,9 @@
                         <li>Saves time with automation</li>
                         <li>Provides organized data storage</li>
                     </ul>
-                
+
                     <h3>Complete Example</h3>
-                
+
                     <pre><code>
                 Example: School Database
                 
@@ -384,9 +382,9 @@
                 - Track performance
                 - Generate report cards
                     </code></pre>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Design your database before creating it.</li>
                         <li>Use proper table relationships.</li>
@@ -394,27 +392,27 @@
                         <li>Use forms for data entry.</li>
                         <li>Use reports for presentation.</li>
                     </ul>
-                
+
                 </section>
 
                 <!-- LEVEL 1: Getting Started -->
                 <!-- Interface Overview -->
                 <section class="content-section" id="interface">
-                
+
                     <h2>MS Access Interface Overview</h2>
-                
+
                     <p>
                         The Microsoft Access interface is designed to help users easily create, manage,
                         and interact with databases using a graphical environment.
                     </p>
-                
+
                     <p>
                         Understanding the interface is important before working with tables, queries,
                         forms, and reports.
                     </p>
-                
+
                     <h3>Main Components of MS Access Interface</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -458,18 +456,19 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Interface Explanation</h3>
-                
+
                     <ul>
                         <li><strong>Ribbon</strong> contains all tools required to work with database objects.</li>
-                        <li><strong>Navigation Pane</strong> helps you quickly switch between tables, queries, and forms.</li>
+                        <li><strong>Navigation Pane</strong> helps you quickly switch between tables, queries, and
+                            forms.</li>
                         <li><strong>Work Area</strong> is where you perform all actions like editing data.</li>
                         <li><strong>Quick Access Toolbar</strong> saves time with frequently used commands.</li>
                     </ul>
-                
+
                     <h3>Tabbed Interface</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -498,9 +497,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Example Workflow</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -529,9 +528,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Visual Layout (Conceptual)</h3>
-                
+
                     <pre><code>
                 -----------------------------------------------------
                 | Title Bar                                          |
@@ -546,16 +545,16 @@
                 | Status Bar                                         |
                 -----------------------------------------------------
                     </code></pre>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Familiarize yourself with the Ribbon tabs.</li>
                         <li>Use Navigation Pane to manage objects efficiently.</li>
                         <li>Save your work regularly using Quick Access Toolbar.</li>
                         <li>Organize database objects with proper naming.</li>
                     </ul>
-                
+
                     <!-- Practice Task -->
                     <div class="practice-box">
                         <h3>🎯 Practice Task</h3>
@@ -566,27 +565,27 @@
                             <li>Try using the Create tab to add a table.</li>
                         </ul>
                     </div>
-                
+
                 </section>
 
                 <!-- Create Database -->
                 <section class="content-section" id="create-db">
-                
+
                     <h2>Create a Database in MS Access</h2>
-                
+
                     <p>
                         A database is a structured collection of data. In Microsoft Access,
                         creating a database is the first step before working with tables, queries,
                         forms, and reports.
                     </p>
-                
+
                     <p>
                         MS Access allows you to create a <strong>blank database</strong> or use
                         <strong>pre-designed templates</strong>.
                     </p>
-                
+
                     <h3>Steps to Create a New Database</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -619,29 +618,29 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Understanding Database File</h3>
-                
+
                     <ul>
                         <li>MS Access database files are saved with <strong>.accdb</strong> extension.</li>
                         <li>Example: <code>school_database.accdb</code></li>
                         <li>This file contains all tables, queries, forms, and reports.</li>
                     </ul>
-                
+
                     <h3>Creating Database Using Template</h3>
-                
+
                     <p>
                         MS Access provides ready-made templates for common tasks.
                     </p>
-                
+
                     <ul>
                         <li>Click on a template (e.g., Student, Inventory, Contacts)</li>
                         <li>Enter file name</li>
                         <li>Click <strong>Create</strong></li>
                     </ul>
-                
+
                     <h3>Example Workflow</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -662,9 +661,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Visual Steps (Conceptual)</h3>
-                
+
                     <pre><code>
                 Step 1: Open MS Access
                 Step 2: Select "Blank Database"
@@ -673,9 +672,9 @@
                 
                 Result → Database Ready to Use
                     </code></pre>
-                
+
                     <h3>Complete Example</h3>
-                
+
                     <pre><code>
                 Database Name: SchoolDB.accdb
                 
@@ -686,16 +685,16 @@
                 Next Step:
                 - Create tables and define fields
                     </code></pre>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Use meaningful database names (e.g., SchoolDB, InventoryDB).</li>
                         <li>Save your database in an organized folder.</li>
                         <li>Avoid using spaces or special characters in file names.</li>
                         <li>Take backup of important databases regularly.</li>
                     </ul>
-                
+
                     <!-- Practice Task -->
                     <div class="practice-box">
                         <h3>🎯 Practice Task</h3>
@@ -706,29 +705,29 @@
                             <li>Explore the interface after creation.</li>
                         </ul>
                     </div>
-                
+
                 </section>
 
                 <!-- Save & Open Database -->
                 <section class="content-section" id="save-open">
-                
+
                     <h2>Save & Open Database in MS Access</h2>
-                
+
                     <p>
                         Saving and opening a database are essential operations in Microsoft Access.
                         Proper saving ensures that your data is secure, while opening allows you
                         to continue working on existing databases.
                     </p>
-                
+
                     <h3>Saving a Database</h3>
-                
+
                     <p>
                         When you create a database in MS Access, it is automatically saved.
                         However, you should save changes regularly while working.
                     </p>
-                
+
                     <h4>Steps to Save a Database</h4>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -753,28 +752,28 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Save As (Creating a Copy)</h3>
-                
+
                     <p>
                         The <strong>Save As</strong> option allows you to create a duplicate
                         of your database with a new name or location.
                     </p>
-                
+
                     <ul>
                         <li>Go to <strong>File → Save As</strong></li>
                         <li>Choose new name or location</li>
                         <li>Click <strong>Save</strong></li>
                     </ul>
-                
+
                     <h3>Opening an Existing Database</h3>
-                
+
                     <p>
                         You can open a previously saved database to continue your work.
                     </p>
-                
+
                     <h4>Steps to Open a Database</h4>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -803,16 +802,16 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Opening Recent Databases</h3>
-                
+
                     <ul>
                         <li>Go to <strong>File → Recent</strong></li>
                         <li>Select your recently used database</li>
                     </ul>
-                
+
                     <h3>File Types in MS Access</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -833,9 +832,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Example Workflow</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -860,9 +859,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Complete Example</h3>
-                
+
                     <pre><code>
                 Database: StudentDB.accdb
                 
@@ -871,16 +870,16 @@
                 - Create backup as StudentDB_Backup.accdb
                 - Open database later to continue work
                     </code></pre>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Save your work frequently to avoid data loss.</li>
                         <li>Keep backup copies using "Save As".</li>
                         <li>Store databases in organized folders.</li>
                         <li>Avoid editing the same file on multiple systems without backup.</li>
                     </ul>
-                
+
                     <!-- Practice Task -->
                     <div class="practice-box">
                         <h3>🎯 Practice Task</h3>
@@ -891,27 +890,27 @@
                             <li>Close and reopen the database.</li>
                         </ul>
                     </div>
-                
+
                 </section>
 
                 <!-- LEVEL 2: Tables -->
                 <!-- What is a Table? -->
                 <section class="content-section" id="tables-intro">
-                
+
                     <h2>What is a Table in MS Access?</h2>
-                
+
                     <p>
                         A <strong>table</strong> is the most basic and important component of a database.
                         It is used to store data in an organized format using <strong>rows and columns</strong>.
                     </p>
-                
+
                     <p>
                         Each table represents a specific type of data, such as students, employees,
                         or products.
                     </p>
-                
+
                     <h3>Structure of a Table</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -940,9 +939,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Example Table</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -966,18 +965,18 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Key Points</h3>
-                
+
                     <ul>
                         <li>Tables store all data in a database.</li>
                         <li>Each column has a specific <strong>data type</strong>.</li>
                         <li>Each row represents a unique record.</li>
                         <li>Tables can be connected using relationships.</li>
                     </ul>
-                
+
                     <h3>Real-Life Example</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1002,9 +1001,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Complete Example</h3>
-                
+
                     <pre><code>
                 Table: Students
                 
@@ -1017,16 +1016,16 @@
                 1, Rahul, 10
                 2, Simran, 9
                     </code></pre>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Use clear and meaningful field names.</li>
                         <li>Do not store multiple values in one field.</li>
                         <li>Keep data organized and structured.</li>
                         <li>Avoid duplicate records.</li>
                     </ul>
-                
+
                     <!-- Practice Task -->
                     <div class="practice-box">
                         <h3>🎯 Practice Task</h3>
@@ -1037,22 +1036,22 @@
                             <li>Identify fields and records.</li>
                         </ul>
                     </div>
-                
+
                 </section>
 
                 <!-- Create Table -->
                 <section class="content-section" id="create-table">
-                
+
                     <h2>Create a Table in MS Access</h2>
-                
+
                     <p>
                         Creating a table is the first step in storing data inside a database.
                         In MS Access, you can create tables using different methods depending
                         on your requirement.
                     </p>
-                
+
                     <h3>Methods to Create a Table</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1076,11 +1075,11 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Method 1: Create Table using Datasheet View</h3>
-                
+
                     <h4>Steps</h4>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1117,11 +1116,11 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Method 2: Create Table using Design View</h3>
-                
+
                     <h4>Steps</h4>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1158,9 +1157,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Example Table Design</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1185,9 +1184,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Datasheet vs Design View</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1216,9 +1215,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Complete Example</h3>
-                
+
                     <pre><code>
                 Table Name: Students
                 
@@ -1233,16 +1232,16 @@
                 - Save table
                 - Enter data in Datasheet View
                     </code></pre>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Always define correct data types.</li>
                         <li>Use Design View for better control.</li>
                         <li>Set a Primary Key to uniquely identify records.</li>
                         <li>Use meaningful field names.</li>
                     </ul>
-                
+
                     <!-- Practice Task -->
                     <div class="practice-box">
                         <h3>🎯 Practice Task</h3>
@@ -1253,22 +1252,22 @@
                             <li>Set ID as Primary Key.</li>
                         </ul>
                     </div>
-                
+
                 </section>
 
                 <!-- Data Types -->
                 <section class="content-section" id="data-types">
-                
+
                     <h2>Data Types in MS Access</h2>
-                
+
                     <p>
                         Data types define the kind of data that can be stored in a table field.
                         Choosing the correct data type is important for accurate data storage
                         and efficient database performance.
                     </p>
-                
+
                     <h3>Common Data Types in MS Access</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1327,9 +1326,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Explanation of Data Types</h3>
-                
+
                     <ul>
                         <li><strong>Short Text</strong> is used for names and small text values.</li>
                         <li><strong>Number</strong> is used for calculations.</li>
@@ -1337,9 +1336,9 @@
                         <li><strong>Date/Time</strong> helps track events and records.</li>
                         <li><strong>Yes/No</strong> is useful for status fields.</li>
                     </ul>
-                
+
                     <h3>Example Table with Data Types</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1378,9 +1377,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Choosing the Right Data Type</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1409,18 +1408,18 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Common Mistakes</h3>
-                
+
                     <ul>
                         <li>Using Number for phone numbers (should be Short Text).</li>
                         <li>Not setting AutoNumber for ID field.</li>
                         <li>Using wrong data type causing errors in queries.</li>
                         <li>Storing large text in Short Text instead of Long Text.</li>
                     </ul>
-                
+
                     <h3>Complete Example</h3>
-                
+
                     <pre><code>
                 Table: Students
                 
@@ -1431,16 +1430,16 @@
                 - Fees → Currency
                 - AdmissionDate → Date/Time
                     </code></pre>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Always choose the correct data type before entering data.</li>
                         <li>Use AutoNumber for primary key fields.</li>
                         <li>Use Currency instead of Number for money values.</li>
                         <li>Avoid changing data types after data entry.</li>
                     </ul>
-                
+
                     <!-- Practice Task -->
                     <div class="practice-box">
                         <h3>🎯 Practice Task</h3>
@@ -1451,35 +1450,35 @@
                             <li>Identify wrong data types and correct them.</li>
                         </ul>
                     </div>
-                
+
                 </section>
 
                 <!-- Primary Key -->
                 <section class="content-section" id="primary-key">
-                
+
                     <h2>Primary Key in MS Access</h2>
-                
+
                     <p>
                         A <strong>Primary Key</strong> is a field (or combination of fields) that
                         uniquely identifies each record in a table.
                     </p>
-                
+
                     <p>
                         It ensures that no two records have the same value, making data accurate
                         and preventing duplication.
                     </p>
-                
+
                     <h3>Key Characteristics of Primary Key</h3>
-                
+
                     <ul>
                         <li>Each record must have a <strong>unique value</strong>.</li>
                         <li>Primary Key <strong>cannot be NULL</strong> (empty).</li>
                         <li>There can be only <strong>one primary key</strong> per table.</li>
                         <li>It helps in creating <strong>relationships</strong> between tables.</li>
                     </ul>
-                
+
                     <h3>Example Table</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1503,9 +1502,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Types of Primary Keys</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1529,11 +1528,11 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>How to Set Primary Key</h3>
-                
+
                     <h4>Steps (Design View)</h4>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1562,22 +1561,22 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>AutoNumber as Primary Key</h3>
-                
+
                     <p>
                         The most common way to create a primary key is by using
                         <strong>AutoNumber</strong>, which automatically generates unique values.
                     </p>
-                
+
                     <pre><code>
                 Field: ID
                 Data Type: AutoNumber
                 Primary Key: Yes
                     </code></pre>
-                
+
                     <h3>Real-Life Example</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1602,27 +1601,27 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Why Primary Key is Important</h3>
-                
+
                     <ul>
                         <li>Prevents duplicate records</li>
                         <li>Ensures data integrity</li>
                         <li>Helps link tables (relationships)</li>
                         <li>Improves database performance</li>
                     </ul>
-                
+
                     <h3>Common Mistakes</h3>
-                
+
                     <ul>
                         <li>Not setting any primary key ❌</li>
                         <li>Using duplicate values ❌</li>
                         <li>Using editable fields like Name as primary key ❌</li>
                         <li>Not using AutoNumber for unique ID ❌</li>
                     </ul>
-                
+
                     <h3>Complete Example</h3>
-                
+
                     <pre><code>
                 Table: Students
                 
@@ -1634,16 +1633,16 @@
                 Result:
                 Each student has a unique ID
                     </code></pre>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Always use a primary key in every table.</li>
                         <li>Prefer AutoNumber for simplicity.</li>
                         <li>Keep primary key stable (do not change frequently).</li>
                         <li>Avoid using meaningful data like names as keys.</li>
                     </ul>
-                
+
                     <!-- Practice Task -->
                     <div class="practice-box">
                         <h3>🎯 Practice Task</h3>
@@ -1654,35 +1653,35 @@
                             <li>Create a composite key example.</li>
                         </ul>
                     </div>
-                
+
                 </section>
 
                 <!-- Relationships -->
                 <section class="content-section" id="table-relationships">
-                
+
                     <h2>Relationships in MS Access</h2>
-                
+
                     <p>
                         A <strong>relationship</strong> is a connection between two or more tables
                         based on a common field. It allows data to be shared and linked efficiently.
                     </p>
-                
+
                     <p>
                         Relationships help reduce data duplication and maintain data consistency
                         across the database.
                     </p>
-                
+
                     <h3>Why Relationships are Important</h3>
-                
+
                     <ul>
                         <li>Eliminate duplicate data</li>
                         <li>Improve data accuracy</li>
                         <li>Make database more organized</li>
                         <li>Enable powerful queries and reports</li>
                     </ul>
-                
+
                     <h3>Types of Relationships</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1711,9 +1710,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Example Tables</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1738,9 +1737,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Primary Key vs Foreign Key</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1761,11 +1760,11 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>How to Create Relationships</h3>
-                
+
                     <h4>Steps</h4>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1798,20 +1797,20 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Referential Integrity</h3>
-                
+
                     <p>
                         Referential integrity ensures that relationships between tables remain consistent.
                     </p>
-                
+
                     <ul>
                         <li>You cannot add a record in child table without matching parent record</li>
                         <li>You cannot delete a parent record if related child records exist</li>
                     </ul>
-                
+
                     <h3>Visual Diagram (Conceptual)</h3>
-                
+
                     <pre><code>
                 Students Table           Marks Table
                 --------------           ------------
@@ -1819,9 +1818,9 @@
                 Name                    Subject
                 Class                   Marks
                     </code></pre>
-                
+
                     <h3>Real-Life Example</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1846,18 +1845,18 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Common Mistakes</h3>
-                
+
                     <ul>
                         <li>Not setting primary key before creating relationship ❌</li>
                         <li>Using different data types for related fields ❌</li>
                         <li>Not enforcing referential integrity ❌</li>
                         <li>Creating unnecessary relationships ❌</li>
                     </ul>
-                
+
                     <h3>Complete Example</h3>
-                
+
                     <pre><code>
                 Tables:
                 Students (ID, Name)
@@ -1869,16 +1868,16 @@
                 Result:
                 One student can have multiple marks
                     </code></pre>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Always define primary key before relationships.</li>
                         <li>Use same data type for related fields.</li>
                         <li>Enable referential integrity.</li>
                         <li>Keep relationships simple and meaningful.</li>
                     </ul>
-                
+
                     <!-- Practice Task -->
                     <div class="practice-box">
                         <h3>🎯 Practice Task</h3>
@@ -1889,36 +1888,36 @@
                             <li>Create a one-to-many relationship.</li>
                         </ul>
                     </div>
-                
+
                 </section>
 
                 <!-- LEVEL 3: Queries -->
                 <!-- What is Query? -->
                 <section class="content-section" id="queries-intro">
-                
+
                     <h2>What is a Query in MS Access?</h2>
-                
+
                     <p>
                         A <strong>query</strong> is used to retrieve specific data from one or more tables
                         based on given conditions.
                     </p>
-                
+
                     <p>
                         It allows you to <strong>search, filter, sort, and analyze data</strong>
                         without modifying the original data stored in tables.
                     </p>
-                
+
                     <h3>Why Queries are Used</h3>
-                
+
                     <ul>
                         <li>Find specific records quickly</li>
                         <li>Filter data based on conditions</li>
                         <li>Perform calculations</li>
                         <li>Combine data from multiple tables</li>
                     </ul>
-                
+
                     <h3>Example Table</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1947,13 +1946,13 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Query Example</h3>
-                
+
                     <p>
                         Suppose you want to find students who scored more than 80 marks.
                     </p>
-                
+
                     <pre><code>
                 Condition:
                 Marks > 80
@@ -1962,9 +1961,9 @@
                 Rahul (85)
                 Simran (92)
                     </code></pre>
-                
+
                     <h3>Types of Queries</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -1993,26 +1992,26 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>How Query Works</h3>
-                
+
                     <ul>
                         <li>Select table(s)</li>
                         <li>Choose fields</li>
                         <li>Apply conditions (criteria)</li>
                         <li>View filtered result</li>
                     </ul>
-                
+
                     <h3>Visual Concept</h3>
-                
+
                     <pre><code>
                 Table → Apply Condition → Result
                 
                 Students Table → Marks > 80 → Filtered Records
                     </code></pre>
-                
+
                     <h3>Real-Life Examples</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2037,9 +2036,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Complete Example</h3>
-                
+
                     <pre><code>
                 Query Name: HighMarks
                 
@@ -2051,16 +2050,16 @@
                 Output:
                 Shows only students scoring above 80
                     </code></pre>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Use meaningful query names.</li>
                         <li>Avoid unnecessary fields in queries.</li>
                         <li>Use criteria carefully to get correct results.</li>
                         <li>Test query before using in reports.</li>
                     </ul>
-                
+
                     <!-- Practice Task -->
                     <div class="practice-box">
                         <h3>🎯 Practice Task</h3>
@@ -2071,26 +2070,26 @@
                             <li>Observe how query does not change original table.</li>
                         </ul>
                     </div>
-                
+
                 </section>
 
                 <!-- Select Query -->
                 <section class="content-section" id="select-query">
-                
+
                     <h2>Select Query in MS Access</h2>
-                
+
                     <p>
                         A <strong>Select Query</strong> is the most commonly used query in MS Access.
                         It is used to <strong>retrieve and display data</strong> from one or more tables
                         based on specific conditions.
                     </p>
-                
+
                     <p>
                         It does <strong>not modify</strong> the original data — it only shows filtered results.
                     </p>
-                
+
                     <h3>Features of Select Query</h3>
-                
+
                     <ul>
                         <li>Displays selected data from tables</li>
                         <li>Filters records using criteria</li>
@@ -2098,9 +2097,9 @@
                         <li>Performs calculations</li>
                         <li>Combines data from multiple tables</li>
                     </ul>
-                
+
                     <h3>Steps to Create a Select Query</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2137,9 +2136,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Example Table</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2168,9 +2167,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Query Example (Using Criteria)</h3>
-                
+
                     <pre><code>
                 Field: Marks
                 Criteria: >80
@@ -2179,9 +2178,9 @@
                 Rahul (85)
                 Simran (92)
                     </code></pre>
-                
+
                     <h3>Sorting Data</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2198,23 +2197,23 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Using Multiple Conditions</h3>
-                
+
                     <pre><code>
                 Marks > 70 AND Class = 10
                     </code></pre>
-                
+
                     <h3>SQL View Example</h3>
-                
+
                     <pre><code>
                 SELECT Name, Marks
                 FROM Students
                 WHERE Marks > 80;
                     </code></pre>
-                
+
                     <h3>Output Result</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2235,9 +2234,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Real-Life Examples</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2262,25 +2261,25 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Common Mistakes</h3>
-                
+
                     <ul>
                         <li>Using wrong criteria (e.g., text instead of number) ❌</li>
                         <li>Not selecting correct fields ❌</li>
                         <li>Forgetting to run the query ❌</li>
                         <li>Confusing AND / OR conditions ❌</li>
                     </ul>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Use meaningful query names.</li>
                         <li>Test queries with small data first.</li>
                         <li>Use criteria carefully.</li>
                         <li>Avoid selecting unnecessary fields.</li>
                     </ul>
-                
+
                     <!-- Practice Task -->
                     <div class="practice-box">
                         <h3>🎯 Practice Task</h3>
@@ -2291,25 +2290,25 @@
                             <li>Sort results in descending order.</li>
                         </ul>
                     </div>
-                
+
                 </section>
 
                 <!-- Action Query -->
                 <section class="content-section" id="action-query">
-                
+
                     <h2>Action Query in MS Access</h2>
-                
+
                     <p>
                         An <strong>Action Query</strong> is used to <strong>modify data</strong> in a table.
                         Unlike Select Query, it performs actions such as inserting, updating, or deleting records.
                     </p>
-                
+
                     <p>
                         ⚠️ Action Queries directly change data, so they must be used carefully.
                     </p>
-                
+
                     <h3>Types of Action Queries</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2343,9 +2342,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Example Table</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2374,39 +2373,39 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Insert Query Example</h3>
-                
+
                     <pre><code>
                 INSERT INTO Students (Name, Marks)
                 VALUES ("Amit", 88);
                     </code></pre>
-                
+
                     <h3>Update Query Example</h3>
-                
+
                     <pre><code>
                 UPDATE Students
                 SET Marks = 90
                 WHERE Name = "Rahul";
                     </code></pre>
-                
+
                     <h3>Delete Query Example</h3>
-                
+
                     <pre><code>
                 DELETE FROM Students
                 WHERE Marks < 75;
                     </code></pre>
-                
+
                     <h3>Make Table Query Example</h3>
-                
+
                     <pre><code>
                 SELECT * INTO TopStudents
                 FROM Students
                 WHERE Marks > 80;
                     </code></pre>
-                
+
                     <h3>Steps to Create Action Query</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2443,17 +2442,17 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>⚠️ Warning (Important)</h3>
-                
+
                     <ul>
                         <li>Action Queries <strong>permanently change data</strong></li>
                         <li>Deleted records <strong>cannot be recovered</strong></li>
                         <li>Always take a backup before running queries</li>
                     </ul>
-                
+
                     <h3>Real-Life Examples</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2478,25 +2477,25 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Common Mistakes</h3>
-                
+
                     <ul>
                         <li>Running query without checking conditions ❌</li>
                         <li>Deleting all records accidentally ❌</li>
                         <li>Not taking backup ❌</li>
                         <li>Using wrong criteria ❌</li>
                     </ul>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Always test query as Select Query first.</li>
                         <li>Take backup before running action query.</li>
                         <li>Use proper conditions to avoid data loss.</li>
                         <li>Run queries on small data first.</li>
                     </ul>
-                
+
                     <!-- Practice Task -->
                     <div class="practice-box">
                         <h3>🎯 Practice Task</h3>
@@ -2507,34 +2506,34 @@
                             <li>Test queries carefully.</li>
                         </ul>
                     </div>
-                
+
                 </section>
 
                 <!-- Using Criteria -->
                 <section class="content-section" id="criteria">
-                
+
                     <h2>Using Criteria in MS Access</h2>
-                
+
                     <p>
                         <strong>Criteria</strong> are conditions used in queries to filter and display
                         specific records from a table.
                     </p>
-                
+
                     <p>
                         They help you retrieve only the data you need instead of showing the entire table.
                     </p>
-                
+
                     <h3>Why Use Criteria?</h3>
-                
+
                     <ul>
                         <li>Filter data based on conditions</li>
                         <li>Find specific records quickly</li>
                         <li>Reduce unnecessary data</li>
                         <li>Improve query accuracy</li>
                     </ul>
-                
+
                     <h3>Example Table</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2567,9 +2566,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Basic Criteria Examples</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2598,9 +2597,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Using AND & OR Conditions</h3>
-                
+
                     <pre><code>
                 Marks > 80 AND Class = 10
                 → Both conditions must be true
@@ -2608,9 +2607,9 @@
                 Marks > 80 OR Class = 9
                 → Any one condition can be true
                     </code></pre>
-                
+
                     <h3>Text Criteria</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2639,32 +2638,32 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Date Criteria</h3>
-                
+
                     <pre><code>
                 #01-01-2025#
                 &gt;#01-01-2025#
                 Between #01-01-2025# And #31-12-2025#
                     </code></pre>
-                
+
                     <h3>SQL Example</h3>
-                
+
                     <pre><code>
                 SELECT * FROM Students
                 WHERE Marks > 80 AND Class = 10;
                     </code></pre>
-                
+
                     <h3>Visual Concept</h3>
-                
+
                     <pre><code>
                 Table → Apply Criteria → Filtered Result
                 
                 Students → Marks > 80 → Selected Records
                     </code></pre>
-                
+
                     <h3>Real-Life Examples</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2689,25 +2688,25 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Common Mistakes</h3>
-                
+
                     <ul>
                         <li>Using wrong symbols (&gt;, &lt;, =) ❌</li>
                         <li>Forgetting quotes in text criteria ❌</li>
                         <li>Confusing AND with OR ❌</li>
                         <li>Wrong date format ❌</li>
                     </ul>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Test criteria with small data first.</li>
                         <li>Use AND for strict filtering.</li>
                         <li>Use OR for broader results.</li>
                         <li>Always verify query results.</li>
                     </ul>
-                
+
                     <!-- Practice Task -->
                     <div class="practice-box">
                         <h3>🎯 Practice Task</h3>
@@ -2718,36 +2717,36 @@
                             <li>Test different criteria combinations.</li>
                         </ul>
                     </div>
-                
+
                 </section>
 
                 <!-- LEVEL 4: Forms -->
                 <!-- What is Form? -->
                 <section class="content-section" id="forms-intro">
-                
+
                     <h2>What is a Form in MS Access?</h2>
-                
+
                     <p>
                         A <strong>Form</strong> is a user-friendly interface used to
                         <strong>enter, view, and manage data</strong> in a database.
                     </p>
-                
+
                     <p>
                         Instead of working directly with tables, forms provide a clean
                         and organized way to interact with data.
                     </p>
-                
+
                     <h3>Why Use Forms?</h3>
-                
+
                     <ul>
                         <li>Easy data entry for users</li>
                         <li>Improves data accuracy</li>
                         <li>Provides better user interface</li>
                         <li>Controls how data is displayed</li>
                     </ul>
-                
+
                     <h3>Table vs Form</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2776,9 +2775,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Example Form Fields</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2807,9 +2806,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Visual Concept</h3>
-                
+
                     <pre><code>
                 Form Layout:
                 
@@ -2824,9 +2823,9 @@
                 |   Save   |   Cancel    |
                 -------------------------
                     </code></pre>
-                
+
                     <h3>Types of Forms</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2851,9 +2850,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Real-Life Examples</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2878,9 +2877,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Complete Example</h3>
-                
+
                     <pre><code>
                 Form Name: StudentForm
                 
@@ -2893,16 +2892,16 @@
                 Function:
                 - Enter and edit student data easily
                     </code></pre>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Keep form simple and clean.</li>
                         <li>Use labels for all fields.</li>
                         <li>Group related fields together.</li>
                         <li>Use validation to prevent wrong data.</li>
                     </ul>
-                
+
                     <!-- Practice Task -->
                     <div class="practice-box">
                         <h3>🎯 Practice Task</h3>
@@ -2913,25 +2912,25 @@
                             <li>Test data entry using the form.</li>
                         </ul>
                     </div>
-                
+
                 </section>
-                
+
                 <!-- Create Form -->
                 <section class="content-section" id="create-form">
-                
+
                     <h2>Create a Form in MS Access</h2>
-                
+
                     <p>
                         Creating a form allows you to build a <strong>user-friendly interface</strong>
                         for entering and managing data in a database.
                     </p>
-                
+
                     <p>
                         MS Access provides multiple ways to create forms depending on your needs.
                     </p>
-                
+
                     <h3>Methods to Create a Form</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2960,11 +2959,11 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Method 1: Create Form using Auto Form</h3>
-                
+
                     <h4>Steps</h4>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -2997,11 +2996,11 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Method 2: Create Form using Form Wizard</h3>
-                
+
                     <h4>Steps</h4>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3034,11 +3033,11 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Method 3: Create Form using Design View</h3>
-                
+
                     <h4>Steps</h4>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3071,9 +3070,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Example Form</h3>
-                
+
                     <pre><code>
                 Form Name: StudentForm
                 
@@ -3085,9 +3084,9 @@
                 Layout:
                 Simple column form with labels and input fields
                     </code></pre>
-                
+
                     <h3>Form Controls</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3120,9 +3119,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Visual Concept</h3>
-                
+
                     <pre><code>
                 -------------------------
                 | Student Form          |
@@ -3134,16 +3133,16 @@
                 | Save | Delete | Exit  |
                 -------------------------
                     </code></pre>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Use Form Wizard for quick creation.</li>
                         <li>Use Design View for customization.</li>
                         <li>Keep layout clean and simple.</li>
                         <li>Use proper labels for fields.</li>
                     </ul>
-                
+
                     <!-- Practice Task -->
                     <div class="practice-box">
                         <h3>🎯 Practice Task</h3>
@@ -3154,35 +3153,35 @@
                             <li>Customize form using Design View.</li>
                         </ul>
                     </div>
-                
+
                 </section>
-                
+
                 <!-- Form Design -->
                 <section class="content-section" id="form-design">
-                
+
                     <h2>Form Design in MS Access</h2>
-                
+
                     <p>
                         <strong>Form Design</strong> allows you to create and customize forms
                         with full control over layout, appearance, and functionality.
                     </p>
-                
+
                     <p>
                         It is used to build professional-looking user interfaces for data entry
                         and management.
                     </p>
-                
+
                     <h3>Why Use Form Design?</h3>
-                
+
                     <ul>
                         <li>Create fully customized forms</li>
                         <li>Control layout and appearance</li>
                         <li>Add buttons and controls</li>
                         <li>Improve user experience</li>
                     </ul>
-                
+
                     <h3>Main Sections of Form Design</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3207,9 +3206,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Common Form Controls</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3246,9 +3245,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Steps to Design a Form</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3281,9 +3280,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Form Properties</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3316,9 +3315,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Example Layout</h3>
-                
+
                     <pre><code>
                 -----------------------------
                 | Student Form              |
@@ -3331,43 +3330,43 @@
                 | Save | Delete | Exit      |
                 -----------------------------
                     </code></pre>
-                
+
                     <h3>Design Tips</h3>
-                
+
                     <ul>
                         <li>Align controls neatly</li>
                         <li>Use consistent fonts and colors</li>
                         <li>Group related fields together</li>
                         <li>Use meaningful labels</li>
                     </ul>
-                
+
                     <h3>Advanced Features</h3>
-                
+
                     <ul>
                         <li>Add navigation buttons</li>
                         <li>Use conditional formatting</li>
                         <li>Add images and logos</li>
                         <li>Create calculated fields</li>
                     </ul>
-                
+
                     <h3>Common Mistakes</h3>
-                
+
                     <ul>
                         <li>Overcrowded form layout ❌</li>
                         <li>Missing labels ❌</li>
                         <li>Poor alignment ❌</li>
                         <li>No validation rules ❌</li>
                     </ul>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Keep form simple and clean.</li>
                         <li>Test form before final use.</li>
                         <li>Use validation to ensure correct data.</li>
                         <li>Design for user convenience.</li>
                     </ul>
-                
+
                     <!-- Practice Task -->
                     <div class="practice-box">
                         <h3>🎯 Practice Task</h3>
@@ -3378,36 +3377,36 @@
                             <li>Align controls properly.</li>
                         </ul>
                     </div>
-                
+
                 </section>
 
                 <!-- LEVEL 5: Reports -->
                 <!-- What is Report? -->
                 <section class="content-section" id="reports-intro">
-                
+
                     <h2>What is a Report in MS Access?</h2>
-                
+
                     <p>
                         A <strong>Report</strong> is used to present data in a
                         <strong>formatted and printable layout</strong>.
                     </p>
-                
+
                     <p>
                         Reports are mainly used to display summarized information
                         for analysis, sharing, and printing.
                     </p>
-                
+
                     <h3>Why Use Reports?</h3>
-                
+
                     <ul>
                         <li>Display data in a professional format</li>
                         <li>Summarize large data easily</li>
                         <li>Prepare print-ready documents</li>
                         <li>Improve data presentation</li>
                     </ul>
-                
+
                     <h3>Table vs Query vs Report</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3440,9 +3439,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Example Report</h3>
-                
+
                     <pre><code>
                 -------------------------------
                 | Student Report              |
@@ -3455,18 +3454,18 @@
                 | Total Students: 2          |
                 -------------------------------
                     </code></pre>
-                
+
                     <h3>Features of Reports</h3>
-                
+
                     <ul>
                         <li>Grouping of data</li>
                         <li>Sorting records</li>
                         <li>Adding totals and calculations</li>
                         <li>Custom layouts and formatting</li>
                     </ul>
-                
+
                     <h3>Types of Reports</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3491,9 +3490,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Real-Life Examples</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3518,9 +3517,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Report Sections</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3549,9 +3548,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Complete Example</h3>
-                
+
                     <pre><code>
                 Report Name: StudentReport
                 
@@ -3566,16 +3565,16 @@
                 - Grouped by Class
                 - Total marks calculated
                     </code></pre>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Keep report layout clean and readable.</li>
                         <li>Use headings and labels clearly.</li>
                         <li>Add totals where needed.</li>
                         <li>Preview before printing.</li>
                     </ul>
-                
+
                     <!-- Practice Task -->
                     <div class="practice-box">
                         <h3>🎯 Practice Task</h3>
@@ -3586,25 +3585,25 @@
                             <li>Preview the report.</li>
                         </ul>
                     </div>
-                
+
                 </section>
-                
+
                 <!-- Create Report -->
                 <section class="content-section" id="create-report">
-                
+
                     <h2>Create a Report in MS Access</h2>
-                
+
                     <p>
                         Creating a report allows you to present data in a
                         <strong>structured, formatted, and printable layout</strong>.
                     </p>
-                
+
                     <p>
                         MS Access provides multiple methods to create reports based on your requirements.
                     </p>
-                
+
                     <h3>Methods to Create a Report</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3633,11 +3632,11 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Method 1: Create Report using Auto Report</h3>
-                
+
                     <h4>Steps</h4>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3670,11 +3669,11 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Method 2: Create Report using Report Wizard</h3>
-                
+
                     <h4>Steps</h4>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3711,11 +3710,11 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Method 3: Create Report using Design View</h3>
-                
+
                     <h4>Steps</h4>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3748,9 +3747,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Example Report</h3>
-                
+
                     <pre><code>
                 Report Name: StudentReport
                 
@@ -3764,9 +3763,9 @@
                 - Sorted by Marks
                 - Total marks displayed
                     </code></pre>
-                
+
                     <h3>Report Controls</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3795,9 +3794,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Visual Concept</h3>
-                
+
                     <pre><code>
                 --------------------------------
                 | Student Report               |
@@ -3810,16 +3809,16 @@
                 | Total Students: 2            |
                 --------------------------------
                     </code></pre>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Use Report Wizard for quick setup.</li>
                         <li>Use Design View for customization.</li>
                         <li>Keep layout clean and readable.</li>
                         <li>Preview before printing.</li>
                     </ul>
-                
+
                     <!-- Practice Task -->
                     <div class="practice-box">
                         <h3>🎯 Practice Task</h3>
@@ -3830,34 +3829,34 @@
                             <li>Customize layout in Design View.</li>
                         </ul>
                     </div>
-                
+
                 </section>
-                
+
                 <!-- Formatting Reports -->
                 <section class="content-section" id="formatting-reports">
-                
+
                     <h2>Formatting Reports in MS Access</h2>
-                
+
                     <p>
                         <strong>Formatting Reports</strong> means improving the appearance of a report
                         to make it more <strong>readable, professional, and visually appealing</strong>.
                     </p>
-                
+
                     <p>
                         Proper formatting helps users understand data easily and enhances presentation quality.
                     </p>
-                
+
                     <h3>Why Formatting is Important</h3>
-                
+
                     <ul>
                         <li>Improves readability</li>
                         <li>Makes reports professional</li>
                         <li>Highlights important data</li>
                         <li>Prepares reports for printing</li>
                     </ul>
-                
+
                     <h3>Common Formatting Options</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3890,9 +3889,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Formatting Sections</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3921,9 +3920,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Steps to Format a Report</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -3956,9 +3955,9 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Example Before and After Formatting</h3>
-                
+
                     <pre><code>
                 Before:
                 Name Marks Result
@@ -3971,28 +3970,28 @@
                 | Raman  | 85    | Pass        |
                 --------------------------------
                     </code></pre>
-                
+
                     <h3>Conditional Formatting</h3>
-                
+
                     <p>
                         Conditional formatting highlights data based on conditions.
                     </p>
-                
+
                     <pre><code>
                 If Marks &lt; 40 → Show in Red
                 If Marks &gt; 80 → Show in Green
                     </code></pre>
-                
+
                     <h3>Adding Logo and Title</h3>
-                
+
                     <ul>
                         <li>Insert logo in Report Header</li>
                         <li>Add report title using Label control</li>
                         <li>Align properly for professional look</li>
                     </ul>
-                
+
                     <h3>Real-Life Examples</h3>
-                
+
                     <div class="table-wrapper">
                         <table>
                             <thead>
@@ -4017,25 +4016,25 @@
                             </tbody>
                         </table>
                     </div>
-                
+
                     <h3>Common Mistakes</h3>
-                
+
                     <ul>
                         <li>Using too many colors ❌</li>
                         <li>Poor alignment ❌</li>
                         <li>Overcrowded layout ❌</li>
                         <li>Small unreadable font ❌</li>
                     </ul>
-                
+
                     <h3>Best Practices</h3>
-                
+
                     <ul>
                         <li>Keep design simple and clean.</li>
                         <li>Use consistent font style.</li>
                         <li>Highlight only important data.</li>
                         <li>Always preview before printing.</li>
                     </ul>
-                
+
                     <!-- Practice Task -->
                     <div class="practice-box">
                         <h3>🎯 Practice Task</h3>
@@ -4046,25 +4045,1313 @@
                             <li>Use conditional formatting for marks.</li>
                         </ul>
                     </div>
+
+                </section>
+
+                <!-- LEVEL 6: Advanced -->
+                <!-- Macros -->
+                <section class="content-section" id="macros">
+
+                    <h2>Macros in MS Access</h2>
+
+                    <p>
+                        <strong>Macros</strong> in MS Access are tools used to <strong>automate tasks</strong>
+                        and perform actions without writing code.
+                    </p>
+
+                    <p>
+                        They help save time by executing a series of commands automatically.
+                    </p>
+
+                    <h3>Why Macros are Important</h3>
+
+                    <ul>
+                        <li>Automates repetitive tasks</li>
+                        <li>Improves efficiency</li>
+                        <li>Reduces human errors</li>
+                        <li>No programming knowledge required</li>
+                    </ul>
+
+                    <h3>Common Macro Actions</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Action</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>OpenForm</td>
+                                    <td>Opens a form</td>
+                                </tr>
+                                <tr>
+                                    <td>OpenReport</td>
+                                    <td>Opens a report</td>
+                                </tr>
+                                <tr>
+                                    <td>Close</td>
+                                    <td>Closes an object</td>
+                                </tr>
+                                <tr>
+                                    <td>RunQuery</td>
+                                    <td>Executes a query</td>
+                                </tr>
+                                <tr>
+                                    <td>MessageBox</td>
+                                    <td>Displays a message</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Types of Macros</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Standalone Macro</td>
+                                    <td>Created independently and reused</td>
+                                </tr>
+                                <tr>
+                                    <td>Embedded Macro</td>
+                                    <td>Attached to forms or reports</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Steps to Create a Macro</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Step</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Go to <strong>Create</strong> tab</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Click on <strong>Macro</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Select an action (e.g., OpenForm)</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Set required arguments</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Save and run the macro</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Example of a Macro</h3>
+
+                    <pre><code>
+                Action: OpenForm
+                Form Name: StudentForm
+                
+                Action: MessageBox
+                Message: "Form Opened Successfully"
+                    </code></pre>
+
+                    <h3>Using Macros in Forms</h3>
+
+                    <ul>
+                        <li>Attach macro to a button</li>
+                        <li>Use On Click event</li>
+                        <li>Automate form navigation</li>
+                    </ul>
+
+                    <h3>Real-Life Examples</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Scenario</th>
+                                    <th>Macro Use</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>School</td>
+                                    <td>Open student report on button click</td>
+                                </tr>
+                                <tr>
+                                    <td>Office</td>
+                                    <td>Auto-run reports daily</td>
+                                </tr>
+                                <tr>
+                                    <td>Business</td>
+                                    <td>Show confirmation messages</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Common Mistakes</h3>
+
+                    <ul>
+                        <li>Incorrect action selection ❌</li>
+                        <li>Missing arguments ❌</li>
+                        <li>Not saving macro ❌</li>
+                        <li>Overusing macros ❌</li>
+                    </ul>
+
+                    <h3>Best Practices</h3>
+
+                    <ul>
+                        <li>Use meaningful macro names</li>
+                        <li>Keep macros simple</li>
+                        <li>Test before use</li>
+                        <li>Use comments for clarity</li>
+                    </ul>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a macro to open a form.</li>
+                            <li>Add a message box action.</li>
+                            <li>Attach macro to a button.</li>
+                            <li>Run and test the macro.</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Intro to VBA -->
+                <section class="content-section" id="intro-vba">
+
+                    <h2>Introduction to VBA (Visual Basic for Applications)</h2>
+
+                    <p>
+                        <strong>VBA (Visual Basic for Applications)</strong> is a programming language used in
+                        MS Access and other Microsoft Office applications to create <strong>advanced
+                            automation</strong>.
+                    </p>
+
+                    <p>
+                        Unlike macros, VBA allows you to write <strong>custom code</strong> to perform complex
+                        operations.
+                    </p>
+
+                    <h3>Why Learn VBA?</h3>
+
+                    <ul>
+                        <li>Automates complex tasks</li>
+                        <li>Provides more control than macros</li>
+                        <li>Creates dynamic applications</li>
+                        <li>Handles errors efficiently</li>
+                    </ul>
+
+                    <h3>Macros vs VBA</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Macros</th>
+                                    <th>VBA</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ease of Use</td>
+                                    <td>Easy</td>
+                                    <td>Requires coding</td>
+                                </tr>
+                                <tr>
+                                    <td>Flexibility</td>
+                                    <td>Limited</td>
+                                    <td>Very High</td>
+                                </tr>
+                                <tr>
+                                    <td>Error Handling</td>
+                                    <td>Basic</td>
+                                    <td>Advanced</td>
+                                </tr>
+                                <tr>
+                                    <td>Automation</td>
+                                    <td>Simple tasks</td>
+                                    <td>Complex tasks</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Opening VBA Editor</h3>
+
+                    <ul>
+                        <li>Press <strong>Alt + F11</strong></li>
+                        <li>Or go to <strong>Database Tools → Visual Basic</strong></li>
+                    </ul>
+
+                    <h3>Basic Structure of VBA Code</h3>
+
+                    <pre><code>
+                Sub HelloMessage()
+                
+                    MsgBox "Welcome to VBA!"
+                
+                End Sub
+                    </code></pre>
+
+                    <h3>Common VBA Elements</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Element</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Sub Procedure</td>
+                                    <td>Block of code that performs a task</td>
+                                </tr>
+                                <tr>
+                                    <td>Function</td>
+                                    <td>Returns a value</td>
+                                </tr>
+                                <tr>
+                                    <td>Variables</td>
+                                    <td>Stores data</td>
+                                </tr>
+                                <tr>
+                                    <td>MsgBox</td>
+                                    <td>Displays a message box</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Example: Button Click Event</h3>
+
+                    <pre><code>
+                Private Sub btnClick_Click()
+                
+                    MsgBox "Button Clicked!"
+                
+                End Sub
+                    </code></pre>
+
+                    <h3>Using VBA in Forms</h3>
+
+                    <ul>
+                        <li>Open form in Design View</li>
+                        <li>Select a button</li>
+                        <li>Go to Event tab</li>
+                        <li>Choose "On Click"</li>
+                        <li>Select "Code Builder"</li>
+                    </ul>
+
+                    <h3>Real-Life Examples</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Scenario</th>
+                                    <th>VBA Use</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>School</td>
+                                    <td>Validate student marks</td>
+                                </tr>
+                                <tr>
+                                    <td>Office</td>
+                                    <td>Automate reports generation</td>
+                                </tr>
+                                <tr>
+                                    <td>Business</td>
+                                    <td>Control data entry process</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Common Mistakes</h3>
+
+                    <ul>
+                        <li>Syntax errors ❌</li>
+                        <li>Incorrect variable names ❌</li>
+                        <li>Forgetting End Sub ❌</li>
+                        <li>Not testing code ❌</li>
+                    </ul>
+
+                    <h3>Best Practices</h3>
+
+                    <ul>
+                        <li>Use meaningful variable names</li>
+                        <li>Write clean and simple code</li>
+                        <li>Comment your code</li>
+                        <li>Test step-by-step</li>
+                    </ul>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Open VBA Editor</li>
+                            <li>Create a simple MsgBox program</li>
+                            <li>Attach code to a button</li>
+                            <li>Run and test it</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Automation -->
+                <section class="content-section" id="automation">
+
+                    <h2>Automation in MS Access</h2>
+
+                    <p>
+                        <strong>Automation</strong> means using tools like <strong>Macros</strong> and
+                        <strong>VBA</strong> to perform tasks automatically without manual effort.
+                    </p>
+
+                    <p>
+                        It helps in saving time, reducing errors, and improving efficiency in database operations.
+                    </p>
+
+                    <h3>Why Automation is Important</h3>
+
+                    <ul>
+                        <li>Saves time by reducing manual work</li>
+                        <li>Improves accuracy</li>
+                        <li>Handles repetitive tasks easily</li>
+                        <li>Enhances productivity</li>
+                    </ul>
+
+                    <h3>Tools Used for Automation</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Tool</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Macros</td>
+                                    <td>Automates simple tasks without coding</td>
+                                </tr>
+                                <tr>
+                                    <td>VBA</td>
+                                    <td>Handles complex automation using code</td>
+                                </tr>
+                                <tr>
+                                    <td>Queries</td>
+                                    <td>Automatically process and filter data</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Types of Automation</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Event-Based</td>
+                                    <td>Button click opens a form</td>
+                                </tr>
+                                <tr>
+                                    <td>Time-Based</td>
+                                    <td>Daily report generation</td>
+                                </tr>
+                                <tr>
+                                    <td>Data-Based</td>
+                                    <td>Validation of entered data</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Steps to Implement Automation</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Step</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Identify repetitive task</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Choose tool (Macro or VBA)</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Create automation logic</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Test automation</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Deploy and monitor</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Example of Automation</h3>
+
+                    <pre><code>
+                Task: Open Report Automatically
+                
+                Using Macro:
+                Action: OpenReport
+                Report Name: SalesReport
+                
+                Using VBA:
+                DoCmd.OpenReport "SalesReport"
+                    </code></pre>
+
+                    <h3>Automation in Forms</h3>
+
+                    <ul>
+                        <li>Auto-fill fields</li>
+                        <li>Validate user input</li>
+                        <li>Trigger actions on button click</li>
+                    </ul>
+
+                    <h3>Real-Life Examples</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Scenario</th>
+                                    <th>Automation Use</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>School</td>
+                                    <td>Auto-generate student reports</td>
+                                </tr>
+                                <tr>
+                                    <td>Office</td>
+                                    <td>Schedule report creation</td>
+                                </tr>
+                                <tr>
+                                    <td>Business</td>
+                                    <td>Automatic invoice generation</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Common Mistakes</h3>
+
+                    <ul>
+                        <li>Choosing wrong tool ❌</li>
+                        <li>Not testing automation ❌</li>
+                        <li>Over-complicating tasks ❌</li>
+                        <li>Ignoring error handling ❌</li>
+                    </ul>
+
+                    <h3>Best Practices</h3>
+
+                    <ul>
+                        <li>Start with simple automation</li>
+                        <li>Use macros for basic tasks</li>
+                        <li>Use VBA for complex logic</li>
+                        <li>Always test before final use</li>
+                    </ul>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a macro to open a report</li>
+                            <li>Write VBA code to show a message</li>
+                            <li>Automate a form action</li>
+                            <li>Test automation process</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Database Security -->
+                <section class="content-section" id="database-security">
+
+                    <h2>Database Security in MS Access</h2>
+
+                    <p>
+                        <strong>Database Security</strong> refers to protecting your database from
+                        <strong>unauthorized access, misuse, and data loss</strong>.
+                    </p>
+
+                    <p>
+                        It ensures that only authorized users can view or modify the data.
+                    </p>
+
+                    <h3>Why Database Security is Important</h3>
+
+                    <ul>
+                        <li>Protects sensitive information</li>
+                        <li>Prevents unauthorized access</li>
+                        <li>Maintains data integrity</li>
+                        <li>Avoids data loss or corruption</li>
+                    </ul>
+
+                    <h3>Common Security Features</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Password Protection</td>
+                                    <td>Set password to open database</td>
+                                </tr>
+                                <tr>
+                                    <td>Encryption</td>
+                                    <td>Protects data by converting it into secure format</td>
+                                </tr>
+                                <tr>
+                                    <td>User Permissions</td>
+                                    <td>Control who can view/edit data</td>
+                                </tr>
+                                <tr>
+                                    <td>Backup</td>
+                                    <td>Create copies to prevent data loss</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Types of Security</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Physical Security</td>
+                                    <td>Protecting computers and devices</td>
+                                </tr>
+                                <tr>
+                                    <td>Logical Security</td>
+                                    <td>Passwords and user access control</td>
+                                </tr>
+                                <tr>
+                                    <td>Network Security</td>
+                                    <td>Protecting data during sharing</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Steps to Apply Security in MS Access</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Step</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Open database</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Go to <strong>File → Info</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Select <strong>Encrypt with Password</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Set a strong password</td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Backup database regularly</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Example of Security</h3>
+
+                    <pre><code>
+                User Login System:
+                
+                Username: Admin
+                Password: ****
+                
+                Access:
+                ✔ View Data
+                ✔ Edit Data
+                ✖ Delete Records (Restricted)
+                    </code></pre>
+
+                    <h3>Best Security Practices</h3>
+
+                    <ul>
+                        <li>Use strong passwords</li>
+                        <li>Encrypt database files</li>
+                        <li>Take regular backups</li>
+                        <li>Limit user permissions</li>
+                        <li>Avoid sharing database publicly</li>
+                    </ul>
+
+                    <h3>Common Mistakes</h3>
+
+                    <ul>
+                        <li>Using weak passwords ❌</li>
+                        <li>No backup ❌</li>
+                        <li>Giving full access to all users ❌</li>
+                        <li>Ignoring encryption ❌</li>
+                    </ul>
+
+                    <h3>Real-Life Examples</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Scenario</th>
+                                    <th>Security Use</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>School</td>
+                                    <td>Protect student records</td>
+                                </tr>
+                                <tr>
+                                    <td>Office</td>
+                                    <td>Restrict employee data access</td>
+                                </tr>
+                                <tr>
+                                    <td>Bank</td>
+                                    <td>Secure financial information</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Set password for a database</li>
+                            <li>Create a backup file</li>
+                            <li>Plan user access levels</li>
+                            <li>Test database security</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- LEVEL 7: Real Projects -->
+                <!-- Student Management System -->
+                <section class="content-section" id="student-management-system">
+
+                    <h2>Student Management System (Real Project)</h2>
+
+                    <p>
+                        A <strong>Student Management System</strong> is a complete database project used to
+                        <strong>store, manage, and organize student information</strong>.
+                    </p>
+
+                    <p>
+                        This project combines all concepts of MS Access like
+                        <strong>Tables, Queries, Forms, Reports, Macros, and VBA</strong>.
+                    </p>
+
+                    <h3>Project Objectives</h3>
+
+                    <ul>
+                        <li>Store student details</li>
+                        <li>Manage marks and results</li>
+                        <li>Generate reports</li>
+                        <li>Automate tasks</li>
+                    </ul>
+
+                    <h3>Database Structure</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Table Name</th>
+                                    <th>Fields</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Students</td>
+                                    <td>StudentID, Name, Class, Section, Phone</td>
+                                </tr>
+                                <tr>
+                                    <td>Marks</td>
+                                    <td>MarkID, StudentID, Subject, Marks</td>
+                                </tr>
+                                <tr>
+                                    <td>Subjects</td>
+                                    <td>SubjectID, SubjectName</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Relationships</h3>
+
+                    <ul>
+                        <li>Students → Marks (One-to-Many)</li>
+                        <li>Subjects → Marks (One-to-Many)</li>
+                    </ul>
+
+                    <h3>Forms to Create</h3>
+
+                    <ul>
+                        <li>Student Entry Form</li>
+                        <li>Marks Entry Form</li>
+                        <li>Search Student Form</li>
+                    </ul>
+
+                    <h3>Queries to Use</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Query</th>
+                                    <th>Purpose</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Total Marks</td>
+                                    <td>Calculate total marks</td>
+                                </tr>
+                                <tr>
+                                    <td>Result Query</td>
+                                    <td>Pass/Fail logic</td>
+                                </tr>
+                                <tr>
+                                    <td>Top Students</td>
+                                    <td>Find highest scorers</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Reports to Generate</h3>
+
+                    <ul>
+                        <li>Student Report Card</li>
+                        <li>Class-wise Result Report</li>
+                        <li>Topper List</li>
+                    </ul>
+
+                    <h3>Automation Features</h3>
+
+                    <ul>
+                        <li>Auto calculate total marks</li>
+                        <li>Auto result (Pass/Fail)</li>
+                        <li>Open forms using buttons</li>
+                    </ul>
+
+                    <h3>Example VBA Code</h3>
+
+                    <pre><code>
+Private Sub btnCalculate_Click()
+
+    If Me.Marks &lt; 40 Then
+        Me.Result = "Fail"
+    Else
+        Me.Result = "Pass"
+    End If
+
+End Sub
+    </code></pre>
+
+                    <h3>Sample Output</h3>
+
+                    <pre><code>
+-----------------------------------------
+| Name   | Subject | Marks | Result     |
+-----------------------------------------
+| Raman  | Math    | 85    | Pass       |
+-----------------------------------------
+    </code></pre>
+
+                    <h3>Real-Life Use</h3>
+
+                    <ul>
+                        <li>Schools manage student records</li>
+                        <li>Teachers track performance</li>
+                        <li>Generate report cards easily</li>
+                    </ul>
+
+                    <h3>Common Mistakes</h3>
+
+                    <ul>
+                        <li>Wrong relationships ❌</li>
+                        <li>Duplicate data ❌</li>
+                        <li>Poor form design ❌</li>
+                        <li>No validation ❌</li>
+                    </ul>
+
+                    <h3>Best Practices</h3>
+
+                    <ul>
+                        <li>Use primary keys properly</li>
+                        <li>Normalize data</li>
+                        <li>Validate inputs</li>
+                        <li>Test each module</li>
+                    </ul>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Project Task</h3>
+                        <ul>
+                            <li>Create all tables with proper fields</li>
+                            <li>Define relationships</li>
+                            <li>Design forms for data entry</li>
+                            <li>Create queries and reports</li>
+                            <li>Add automation using macros/VBA</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- Inventory System -->
+                <section class="content-section" id="inventory-system">
+                
+                    <h2>Inventory Management System (Real Project)</h2>
+                
+                    <p>
+                        An <strong>Inventory Management System</strong> is a database project used to
+                        <strong>track, manage, and control stock of products</strong> in a business.
+                    </p>
+                
+                    <p>
+                        It helps businesses monitor <strong>stock levels, purchases, and sales</strong> efficiently.
+                    </p>
+                
+                    <h3>Project Objectives</h3>
+                
+                    <ul>
+                        <li>Manage product stock</li>
+                        <li>Track purchases and sales</li>
+                        <li>Avoid stock shortage or overstock</li>
+                        <li>Generate inventory reports</li>
+                    </ul>
+                
+                    <h3>Database Structure</h3>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Table Name</th>
+                                    <th>Fields</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Products</td>
+                                    <td>ProductID, ProductName, Category, Price, StockQty</td>
+                                </tr>
+                                <tr>
+                                    <td>Suppliers</td>
+                                    <td>SupplierID, SupplierName, Phone</td>
+                                </tr>
+                                <tr>
+                                    <td>Purchases</td>
+                                    <td>PurchaseID, ProductID, Quantity, Date</td>
+                                </tr>
+                                <tr>
+                                    <td>Sales</td>
+                                    <td>SaleID, ProductID, Quantity, Date</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Relationships</h3>
+                
+                    <ul>
+                        <li>Products → Purchases (One-to-Many)</li>
+                        <li>Products → Sales (One-to-Many)</li>
+                        <li>Suppliers → Purchases (One-to-Many)</li>
+                    </ul>
+                
+                    <h3>Forms to Create</h3>
+                
+                    <ul>
+                        <li>Product Entry Form</li>
+                        <li>Purchase Entry Form</li>
+                        <li>Sales Entry Form</li>
+                    </ul>
+                
+                    <h3>Queries to Use</h3>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Query</th>
+                                    <th>Purpose</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Stock Calculation</td>
+                                    <td>Available stock = Purchases - Sales</td>
+                                </tr>
+                                <tr>
+                                    <td>Low Stock</td>
+                                    <td>Identify products with low quantity</td>
+                                </tr>
+                                <tr>
+                                    <td>Sales Report</td>
+                                    <td>Track sold items</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Reports to Generate</h3>
+                
+                    <ul>
+                        <li>Stock Report</li>
+                        <li>Purchase Report</li>
+                        <li>Sales Report</li>
+                    </ul>
+                
+                    <h3>Automation Features</h3>
+                
+                    <ul>
+                        <li>Auto update stock quantity</li>
+                        <li>Alert for low stock</li>
+                        <li>Open forms using buttons</li>
+                    </ul>
+                
+                    <h3>Example VBA Code</h3>
+                
+                    <pre><code>
+                Private Sub btnUpdateStock_Click()
+                
+                    Me.StockQty = Me.PurchaseQty - Me.SaleQty
+                
+                End Sub
+                    </code></pre>
+                
+                    <h3>Sample Output</h3>
+                
+                    <pre><code>
+                ----------------------------------------------
+                | Product   | Stock | Status                 |
+                ----------------------------------------------
+                | Pen       | 50    | Available              |
+                | Notebook  | 5     | Low Stock ⚠           |
+                ----------------------------------------------
+                    </code></pre>
+                
+                    <h3>Real-Life Use</h3>
+                
+                    <ul>
+                        <li>Shops manage product stock</li>
+                        <li>Warehouses track inventory</li>
+                        <li>Businesses analyze sales</li>
+                    </ul>
+                
+                    <h3>Common Mistakes</h3>
+                
+                    <ul>
+                        <li>Incorrect stock calculation ❌</li>
+                        <li>No backup ❌</li>
+                        <li>Duplicate entries ❌</li>
+                        <li>Poor relationships ❌</li>
+                    </ul>
+                
+                    <h3>Best Practices</h3>
+                
+                    <ul>
+                        <li>Use proper relationships</li>
+                        <li>Validate data entry</li>
+                        <li>Automate calculations</li>
+                        <li>Regularly update stock</li>
+                    </ul>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Project Task</h3>
+                        <ul>
+                            <li>Create all inventory tables</li>
+                            <li>Define relationships</li>
+                            <li>Design forms for entry</li>
+                            <li>Create stock queries</li>
+                            <li>Generate reports</li>
+                        </ul>
+                    </div>
                 
                 </section>
-    
-     
+
+                <!-- Billing Software -->
+                <section class="content-section" id="billing-software">
+                
+                    <h2>Billing Software (Real Project)</h2>
+                
+                    <p>
+                        <strong>Billing Software</strong> is a database system used to
+                        <strong>generate invoices, manage sales, and calculate totals automatically</strong>.
+                    </p>
+                
+                    <p>
+                        It is widely used in shops, businesses, and service centers for fast and accurate billing.
+                    </p>
+                
+                    <h3>Project Objectives</h3>
+                
+                    <ul>
+                        <li>Create and print invoices</li>
+                        <li>Calculate total amount automatically</li>
+                        <li>Apply tax and discounts</li>
+                        <li>Maintain sales records</li>
+                    </ul>
+                
+                    <h3>Database Structure</h3>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Table Name</th>
+                                    <th>Fields</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Customers</td>
+                                    <td>CustomerID, Name, Phone</td>
+                                </tr>
+                                <tr>
+                                    <td>Products</td>
+                                    <td>ProductID, ProductName, Price</td>
+                                </tr>
+                                <tr>
+                                    <td>Invoices</td>
+                                    <td>InvoiceID, CustomerID, Date, TotalAmount</td>
+                                </tr>
+                                <tr>
+                                    <td>InvoiceDetails</td>
+                                    <td>DetailID, InvoiceID, ProductID, Quantity, Price</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Relationships</h3>
+                
+                    <ul>
+                        <li>Customers → Invoices (One-to-Many)</li>
+                        <li>Invoices → InvoiceDetails (One-to-Many)</li>
+                        <li>Products → InvoiceDetails (One-to-Many)</li>
+                    </ul>
+                
+                    <h3>Forms to Create</h3>
+                
+                    <ul>
+                        <li>Customer Entry Form</li>
+                        <li>Product Entry Form</li>
+                        <li>Invoice Form (Main Billing Screen)</li>
+                    </ul>
+                
+                    <h3>Queries to Use</h3>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Query</th>
+                                    <th>Purpose</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Invoice Total</td>
+                                    <td>Calculate total bill amount</td>
+                                </tr>
+                                <tr>
+                                    <td>Sales Report</td>
+                                    <td>Track daily/monthly sales</td>
+                                </tr>
+                                <tr>
+                                    <td>Customer History</td>
+                                    <td>View past purchases</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Reports to Generate</h3>
+                
+                    <ul>
+                        <li>Invoice Print Report</li>
+                        <li>Daily Sales Report</li>
+                        <li>Monthly Revenue Report</li>
+                    </ul>
+                
+                    <h3>Automation Features</h3>
+                
+                    <ul>
+                        <li>Auto calculate total amount</li>
+                        <li>Auto apply tax (GST)</li>
+                        <li>Auto generate invoice number</li>
+                    </ul>
+                
+                    <h3>Example VBA Code</h3>
+                
+                    <pre><code>
+                Private Sub btnCalculateTotal_Click()
+                
+                    Me.TotalAmount = Me.Quantity * Me.Price
+                
+                End Sub
+                    </code></pre>
+                
+                    <h3>Sample Output (Invoice)</h3>
+                
+                    <pre><code>
+                --------------------------------------------
+                Invoice No: 101
+                Customer: Raman
+                --------------------------------------------
+                | Product   | Qty | Price | Total          |
+                --------------------------------------------
+                | Pen       | 2   | 10    | 20             |
+                | Notebook  | 1   | 50    | 50             |
+                --------------------------------------------
+                Total Amount: 70
+                --------------------------------------------
+                    </code></pre>
+                
+                    <h3>Real-Life Use</h3>
+                
+                    <ul>
+                        <li>Retail shops generate bills</li>
+                        <li>Businesses track sales</li>
+                        <li>Service providers create invoices</li>
+                    </ul>
+                
+                    <h3>Common Mistakes</h3>
+                
+                    <ul>
+                        <li>Wrong calculations ❌</li>
+                        <li>No tax handling ❌</li>
+                        <li>Duplicate invoices ❌</li>
+                        <li>Poor form design ❌</li>
+                    </ul>
+                
+                    <h3>Best Practices</h3>
+                
+                    <ul>
+                        <li>Validate input fields</li>
+                        <li>Use auto numbering</li>
+                        <li>Apply proper tax rules</li>
+                        <li>Backup data regularly</li>
+                    </ul>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Project Task</h3>
+                        <ul>
+                            <li>Create all billing tables</li>
+                            <li>Design invoice form</li>
+                            <li>Apply total calculation</li>
+                            <li>Generate invoice report</li>
+                            <li>Test billing system</li>
+                        </ul>
+                    </div>
+                
+                </section>
+
                 <!-- Course Completion Section -->
                 <section class="course-complete">
+                    <!--
                     <h1>🚧 Coming Soon!</h1>
                     <p>
                         This course content is currently under development.<br>
                         Stay tuned — exciting lessons are on the way!
                     </p>
-                    <!--
+                -->
+                    
                     <h1>🎉 Course Completed!</h1>
                     <p>Congratulations! You’ve successfully finished this course.</p>
-                -->
+                
                     <div class="completion-actions">
                         <a href="index.html" class="btn btn-outline">Explore More Courses</a>
                     </div>
-                
+
                 </section>
 
                 <!-- Navigation Buttons -->
