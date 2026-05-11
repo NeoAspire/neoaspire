@@ -7,7 +7,7 @@
     <title>Learn Python | Neoaspire</title>
 
     <!-- Main CSS of Neoaspire Website -->
-    <link rel="stylesheet" href="../assets/css/main.css"> 
+    <link rel="stylesheet" href="../assets/css/main.css">
     <!-- Page Specific CSS -->
     <link rel="stylesheet" href="./css/course-page.css">
     <!-- Favicon -->
@@ -29,30 +29,2591 @@
     <main>
         <section class="aside-container">
             <button class="menu-toggle-course" id="menuToggle">☰ Learn Python</button>
+            <!-- Sidebar Navigation -->
             <aside>
                 <h2>Learn Python</h2>
-                <a href="#intro-python">Introduction</a>
+
+                <!-- FOUNDATION -->
+                <h3>Foundation</h3>
+                <a href="#intro-python">Introduction to Python</a>
+                <a href="#install-python">Install Python & Setup</a>
+                <a href="#first-program">First Program</a>
+                <a href="#python-syntax">Python Syntax</a>
+
+                <!-- BEGINNER -->
+                <h3>Beginner</h3>
+                <a href="#variables">Variables</a>
+                <a href="#data-types">Data Types</a>
+                <a href="#input-output">Input & Output</a>
+                <a href="#operators">Operators</a>
+
+                <!-- INTERMEDIATE -->
+                <h3>Intermediate</h3>
+                <a href="#if-else">If Else Conditions</a>
+                <a href="#loops">Loops (for, while)</a>
+                <a href="#lists">Lists</a>
+                <a href="#tuples-sets">Tuples & Sets</a>
+                <a href="#dictionaries">Dictionaries</a>
+
+                <!-- ADVANCED -->
+                <h3>Advanced</h3>
+                <a href="#functions">Functions</a>
+                <a href="#modules">Modules & Packages</a>
+                <a href="#file-handling">File Handling</a>
+                <a href="#exception-handling">Exception Handling</a>
+
+                <!-- EXPERT -->
+                <h3>Expert</h3>
+                <a href="#oops">OOP (Classes & Objects)</a>
+                <a href="#inheritance">Inheritance</a>
+                <a href="#polymorphism">Polymorphism</a>
+                <a href="#decorators">Decorators</a>
+                <a href="#generators">Generators</a>
+
+                <!-- PROFESSIONAL -->
+                <h3>Professional</h3>
+                <a href="#database">Database (MySQL)</a>
+                <a href="#api">Working with APIs</a>
+                <a href="#automation">Automation Scripts</a>
+                <a href="#web-dev">Web Development (Django)</a>
+
+                <!-- DATA SCIENCE -->
+                <h3>Data Science</h3>
+                <a href="#numpy">NumPy</a>
+                <a href="#pandas">Pandas</a>
+                <a href="#matplotlib">Matplotlib</a>
+                <a href="#machine-learning">Machine Learning Basics</a>
+
+                <!-- PROJECTS -->
+                <h3>Projects</h3>
+                <a href="#project-calculator">Calculator App</a>
+                <a href="#project-todo">To-Do App</a>
+                <a href="#project-student-system">Student Management System</a>
+                <a href="#project-blog">Blog Website</a>
+                <a href="#project-automation">Automation Tool</a>
 
             </aside>
+
             <article>
-                <!-- Introduction -->
+                <!-- FOUNDATION -->
+                <!-- Introduction to Python -->
                 <section class="content-section" id="intro-python">
+
                     <h2>Introduction to Python</h2>
-                    <p>Python is a high-level, interpreted programming language known for its simplicity and
-                        readability. It is widely used in web development, data science, artificial intelligence, and
-                        automation.</p>
-                    <p>Python supports multiple programming paradigms including procedural, object-oriented, and
-                        functional programming. It has a large standard library and a vibrant community of developers.
+
+                    <p>
+                        <strong>Python</strong> is a powerful and easy-to-learn programming language used for web
+                        development,
+                        automation, data science, artificial intelligence, and more.
                     </p>
-                    <p><b>Key features of Python include:</b></p>
+
+                    <p>
+                        It is beginner-friendly and widely used by professionals to build real-world applications.
+                    </p>
+
+                    <h3>Why Learn Python?</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Easy Syntax</td>
+                                    <td>Simple and readable like English</td>
+                                </tr>
+                                <tr>
+                                    <td>Versatile</td>
+                                    <td>Used in web, AI, automation, apps</td>
+                                </tr>
+                                <tr>
+                                    <td>High Demand</td>
+                                    <td>Popular in jobs and freelancing</td>
+                                </tr>
+                                <tr>
+                                    <td>Large Community</td>
+                                    <td>Lots of tutorials and support available</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Steps to Run Your First Python Program</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Step</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Install Python on your system</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Open code editor (VS Code)</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Create a new file <strong>hello.py</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Write and run the program</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Example</h3>
+
+                    <pre><code>
+print("Hello, World!")
+    </code></pre>
+
+                    <h3>Where Python is Used</h3>
+
                     <ul>
-                        <li>Simple and readable syntax</li>
-                        <li>Interpreted language for rapid development</li>
-                        <li>Extensive standard library</li>
-                        <li>Support for multiple programming paradigms</li>
-                        <li>Large and active community</li>
+                        <li>Web Development</li>
+                        <li>Automation & Scripting</li>
+                        <li>Game Development</li>
+                        <li>Data Science & AI</li>
+                        <li>Desktop Applications</li>
                     </ul>
+
+                    <h3>Important Concepts</h3>
+
+                    <ul>
+                        <li>Python is an interpreted language</li>
+                        <li>No need to compile code</li>
+                        <li>Indentation is important</li>
+                    </ul>
+
+                    <h3>Tips</h3>
+
+                    <ul>
+                        <li>Practice daily</li>
+                        <li>Start with small programs</li>
+                        <li>Focus on logic building</li>
+                    </ul>
+
+                    <h3>Common Mistakes</h3>
+
+                    <ul>
+                        <li>Ignoring indentation ❌</li>
+                        <li>Copy-paste without understanding ❌</li>
+                        <li>Not practicing enough ❌</li>
+                    </ul>
+
                 </section>
+
+                <!-- Install Python & Setup -->
+                <section class="content-section" id="install-python">
+
+                    <h2>Install Python & Setup</h2>
+
+                    <p>
+                        To start programming in <strong>Python</strong>, you first need to install it on your computer
+                        and set up a proper development environment.
+                    </p>
+
+                    <p>
+                        This section will guide you step-by-step to install Python and configure your system correctly.
+                    </p>
+
+                    <h3>System Requirements</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Requirement</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Operating System</td>
+                                    <td>Windows / macOS / Linux</td>
+                                </tr>
+                                <tr>
+                                    <td>RAM</td>
+                                    <td>Minimum 4 GB</td>
+                                </tr>
+                                <tr>
+                                    <td>Storage</td>
+                                    <td>At least 500 MB free space</td>
+                                </tr>
+                                <tr>
+                                    <td>Internet</td>
+                                    <td>Required for download and setup</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Steps to Install Python</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Step</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Go to official Python website</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Download latest version</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Run installer</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Check <strong>"Add Python to PATH"</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Click <strong>Install Now</strong></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Verify Installation</h3>
+
+                    <p>After installation, check if Python is installed correctly:</p>
+
+                    <pre><code>
+python --version
+    </code></pre>
+
+                    <p>If installed properly, it will display the Python version.</p>
+
+                    <h3>Install Code Editor (VS Code)</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Step</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Download VS Code</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Install the software</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Open VS Code</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Install Python extension</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Steps to Run Python in VS Code</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Step</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Open VS Code</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Create new file <strong>main.py</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Write Python code</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Click Run ▶️ button</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Example</h3>
+
+                    <pre><code>
+print("Python is installed successfully!")
+    </code></pre>
+
+                    <h3>Important Concepts</h3>
+
+                    <ul>
+                        <li><strong>PATH</strong> allows Python to run from any folder</li>
+                        <li><strong>.py files</strong> are Python program files</li>
+                        <li><strong>Interpreter</strong> runs Python code line by line</li>
+                    </ul>
+
+                    <h3>Tips</h3>
+
+                    <ul>
+                        <li>Always install latest Python version</li>
+                        <li>Use VS Code for better experience</li>
+                        <li>Keep your setup clean and organized</li>
+                    </ul>
+
+                    <h3>Common Mistakes</h3>
+
+                    <ul>
+                        <li>Not adding Python to PATH ❌</li>
+                        <li>Installing wrong version ❌</li>
+                        <li>Forgetting to install extension in VS Code ❌</li>
+                    </ul>
+
+                </section>
+
+                <!-- First Program -->
+                <section class="content-section" id="first-program">
+
+                    <h2>First Python Program</h2>
+
+                    <p>
+                        Writing your first program is the beginning of your journey in <strong>Python</strong>.
+                        It helps you understand how code works and how output is displayed.
+                    </p>
+
+                    <p>
+                        The most common first program is the <strong>Hello World</strong> program.
+                    </p>
+
+                    <h3>Basic Syntax of Python Program</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Concept</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>print()</td>
+                                    <td>Used to display output on screen</td>
+                                </tr>
+                                <tr>
+                                    <td>Quotes</td>
+                                    <td>Text must be inside " " or ' '</td>
+                                </tr>
+                                <tr>
+                                    <td>Case Sensitivity</td>
+                                    <td>Python is case-sensitive (Print ≠ print)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Steps to Write First Program</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Step</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Open VS Code</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Create a new file <strong>hello.py</strong></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Write Python code</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>Run the program</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Example</h3>
+
+                    <pre><code>
+print("Hello, World!")
+    </code></pre>
+
+                    <h3>Output</h3>
+
+                    <pre><code>
+Hello, World!
+    </code></pre>
+
+                    <h3>More Examples</h3>
+
+                    <pre><code>
+print("Welcome to Python")
+print("My name is Mohit")
+print(10 + 5)
+    </code></pre>
+
+                    <h3>When to Use print()</h3>
+
+                    <ul>
+                        <li>Displaying messages to user</li>
+                        <li>Showing output of calculations</li>
+                        <li>Debugging code</li>
+                    </ul>
+
+                    <h3>Important Concepts</h3>
+
+                    <ul>
+                        <li>Python executes code line by line</li>
+                        <li>Each print() statement runs separately</li>
+                        <li>No semicolon required at end</li>
+                    </ul>
+
+                    <h3>Tips</h3>
+
+                    <ul>
+                        <li>Always use correct spelling: <strong>print</strong></li>
+                        <li>Use quotes for text</li>
+                        <li>Run code frequently to test</li>
+                    </ul>
+
+                    <h3>Common Mistakes</h3>
+
+                    <ul>
+                        <li>Using Print instead of print ❌</li>
+                        <li>Forgetting quotes ❌</li>
+                        <li>Missing parentheses ❌</li>
+                    </ul>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Write a program to print your name</li>
+                            <li>Print your school or college name</li>
+                            <li>Print any number calculation (e.g., 20 + 30)</li>
+                            <li>Try printing 3 lines of text</li>
+                        </ul>
+                    </div>
+
+                </section>
+                
+                <!-- Python Syntax -->
+                <section class="content-section" id="python-syntax">
+
+                    <h2>Python Syntax</h2>
+
+                    <p>
+                        <strong>Python Syntax</strong> refers to the set of rules that define how Python programs are
+                        written and executed.
+                        It is simple, clean, and easy to understand compared to other programming languages.
+                    </p>
+
+                    <p>
+                        Learning syntax is important because even a small mistake can cause errors in your program.
+                    </p>
+
+                    <h3>Basic Syntax Rules</h3>
+
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rule</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Indentation</td>
+                                    <td>Spaces are used to define blocks of code</td>
+                                </tr>
+                                <tr>
+                                    <td>Case Sensitive</td>
+                                    <td>Variables and keywords are case-sensitive</td>
+                                </tr>
+                                <tr>
+                                    <td>No Semicolon</td>
+                                    <td>No need to end lines with ;</td>
+                                </tr>
+                                <tr>
+                                    <td>Statements</td>
+                                    <td>Each line is a statement executed by Python</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <h3>Indentation Example</h3>
+
+                    <pre><code>
+if 5 > 2:
+    print("5 is greater than 2")
+    </code></pre>
+
+                    <p>
+                        Indentation is mandatory in Python. Without proper indentation, code will give an error.
+                    </p>
+
+                    <h3>Case Sensitivity Example</h3>
+
+                    <pre><code>
+name = "Mohit"
+Name = "Kumar"
+
+print(name)
+print(Name)
+    </code></pre>
+
+                    <h3>Multiple Statements</h3>
+
+                    <pre><code>
+print("Hello")
+print("Welcome to Python")
+print("Learning Syntax")
+    </code></pre>
+
+                    <h3>Comments in Python</h3>
+
+                    <p>Comments are used to explain code and are ignored during execution.</p>
+
+                    <pre><code>
+# This is a single-line comment
+
+print("Hello")  # This is an inline comment
+    </code></pre>
+
+                    <h3>When to Follow Syntax Rules</h3>
+
+                    <ul>
+                        <li>Writing any Python program</li>
+                        <li>Using conditions and loops</li>
+                        <li>Defining functions</li>
+                        <li>Working with classes</li>
+                    </ul>
+
+                    <h3>Important Concepts</h3>
+
+                    <ul>
+                        <li>Indentation replaces curly braces { }</li>
+                        <li>Each block must have same indentation</li>
+                        <li>Python code is easy to read due to clean syntax</li>
+                    </ul>
+
+                    <h3>Tips</h3>
+
+                    <ul>
+                        <li>Use 4 spaces for indentation</li>
+                        <li>Keep code clean and readable</li>
+                        <li>Use comments to explain logic</li>
+                    </ul>
+
+                    <h3>Common Mistakes</h3>
+
+                    <ul>
+                        <li>Wrong indentation ❌</li>
+                        <li>Mixing tabs and spaces ❌</li>
+                        <li>Using wrong case in variables ❌</li>
+                    </ul>
+
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Write an if statement with correct indentation</li>
+                            <li>Create 2 variables with different cases</li>
+                            <li>Add comments in your program</li>
+                            <li>Run code and fix syntax errors</li>
+                        </ul>
+                    </div>
+
+                </section>
+
+                <!-- BEGINNER -->
+                <!-- Variables -->
+                <section class="content-section" id="variables">
+                
+                    <h2>Variables in Python</h2>
+                
+                    <p>
+                        A <strong>variable</strong> is used to store data in a program.
+                        It acts like a container that holds values such as numbers, text, or other data.
+                    </p>
+                
+                    <p>
+                        In Python, you do not need to declare the type of a variable. It is automatically assigned.
+                    </p>
+                
+                    <h3>Creating Variables</h3>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Example</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>x = 10</td>
+                                    <td>Stores integer value</td>
+                                </tr>
+                                <tr>
+                                    <td>name = "Mohit"</td>
+                                    <td>Stores text (string)</td>
+                                </tr>
+                                <tr>
+                                    <td>price = 99.5</td>
+                                    <td>Stores decimal (float)</td>
+                                </tr>
+                                <tr>
+                                    <td>is_active = True</td>
+                                    <td>Stores boolean value</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Rules for Naming Variables</h3>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Rule</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Must start with letter or underscore</td>
+                                    <td>name, _value</td>
+                                </tr>
+                                <tr>
+                                    <td>Cannot start with number</td>
+                                    <td>❌ 1name</td>
+                                </tr>
+                                <tr>
+                                    <td>No spaces allowed</td>
+                                    <td>❌ my name</td>
+                                </tr>
+                                <tr>
+                                    <td>Use meaningful names</td>
+                                    <td>student_name</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Example</h3>
+                
+                    <pre><code>
+                name = "Mohit"
+                age = 20
+                marks = 85.5
+                
+                print(name)
+                print(age)
+                print(marks)
+                    </code></pre>
+                
+                    <h3>Multiple Assignment</h3>
+                
+                    <pre><code>
+                x, y, z = 10, 20, 30
+                print(x, y, z)
+                    </code></pre>
+                
+                    <h3>Changing Variable Value</h3>
+                
+                    <pre><code>
+                x = 5
+                x = 10   # value changed
+                print(x)
+                    </code></pre>
+                
+                    <h3>When to Use Variables</h3>
+                
+                    <ul>
+                        <li>Storing user input</li>
+                        <li>Performing calculations</li>
+                        <li>Saving data for reuse</li>
+                        <li>Building programs and applications</li>
+                    </ul>
+                
+                    <h3>Important Concepts</h3>
+                
+                    <ul>
+                        <li>Variables do not need type declaration</li>
+                        <li>Value can be changed anytime</li>
+                        <li>Variable names should be meaningful</li>
+                    </ul>
+                
+                    <h3>Tips</h3>
+                
+                    <ul>
+                        <li>Use clear names like <strong>student_name</strong></li>
+                        <li>Follow lowercase naming style</li>
+                        <li>Avoid using reserved keywords</li>
+                    </ul>
+                
+                    <h3>Common Mistakes</h3>
+                
+                    <ul>
+                        <li>Using numbers at start ❌</li>
+                        <li>Using spaces in names ❌</li>
+                        <li>Confusing uppercase/lowercase ❌</li>
+                    </ul>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create variables for name, age, and marks</li>
+                            <li>Print all variables</li>
+                            <li>Change value of one variable</li>
+                            <li>Use multiple assignment</li>
+                        </ul>
+                    </div>
+                
+                </section>
+                
+                <!-- Data Types -->
+                <section class="content-section" id="data-types">
+                
+                    <h2>Data Types in Python</h2>
+                
+                    <p>
+                        <strong>Data Types</strong> define the type of value a variable can hold.
+                        Python automatically detects the data type based on the value assigned.
+                    </p>
+                
+                    <p>
+                        Understanding data types is important for performing operations correctly in programs.
+                    </p>
+                
+                    <h3>Common Data Types</h3>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Data Type</th>
+                                    <th>Example</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>int</td>
+                                    <td>10</td>
+                                    <td>Whole numbers</td>
+                                </tr>
+                                <tr>
+                                    <td>float</td>
+                                    <td>10.5</td>
+                                    <td>Decimal numbers</td>
+                                </tr>
+                                <tr>
+                                    <td>str</td>
+                                    <td>"Hello"</td>
+                                    <td>Text or string</td>
+                                </tr>
+                                <tr>
+                                    <td>bool</td>
+                                    <td>True / False</td>
+                                    <td>Boolean values</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Example</h3>
+                
+                    <pre><code>
+                x = 10          # int
+                y = 5.5         # float
+                name = "Mohit"  # string
+                is_active = True  # boolean
+                
+                print(x)
+                print(y)
+                print(name)
+                print(is_active)
+                    </code></pre>
+                
+                    <h3>Checking Data Type</h3>
+                
+                    <p>You can check the type of a variable using <strong>type()</strong> function.</p>
+                
+                    <pre><code>
+                x = 10
+                print(type(x))
+                    </code></pre>
+                
+                    <h3>Type Conversion</h3>
+                
+                    <p>Convert one data type into another using built-in functions.</p>
+                
+                    <pre><code>
+                x = 10
+                y = float(x)   # convert int to float
+                
+                print(y)
+                    </code></pre>
+                
+                    <h3>When to Use Data Types</h3>
+                
+                    <ul>
+                        <li>Performing calculations (int, float)</li>
+                        <li>Working with text (string)</li>
+                        <li>Making decisions (boolean)</li>
+                        <li>Storing structured data</li>
+                    </ul>
+                
+                    <h3>Important Concepts</h3>
+                
+                    <ul>
+                        <li>Python is dynamically typed</li>
+                        <li>Same variable can store different data types</li>
+                        <li>Operations depend on data type</li>
+                    </ul>
+                
+                    <h3>Tips</h3>
+                
+                    <ul>
+                        <li>Use correct data type for correct operation</li>
+                        <li>Use type() to debug issues</li>
+                        <li>Convert types carefully</li>
+                    </ul>
+                
+                    <h3>Common Mistakes</h3>
+                
+                    <ul>
+                        <li>Mixing string and number ❌</li>
+                        <li>Wrong type conversion ❌</li>
+                        <li>Assuming type without checking ❌</li>
+                    </ul>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create variables of all data types</li>
+                            <li>Use type() to check each variable</li>
+                            <li>Convert int to float</li>
+                            <li>Try converting string to number</li>
+                        </ul>
+                    </div>
+                
+                </section>
+                
+                <!-- Input & Output -->
+                <section class="content-section" id="input-output">
+                
+                    <h2>Input & Output in Python</h2>
+                
+                    <p>
+                        <strong>Input</strong> allows users to enter data into a program, while
+                        <strong>Output</strong> displays the result on the screen.
+                    </p>
+                
+                    <p>
+                        Python provides simple functions like <strong>input()</strong> and <strong>print()</strong>
+                        to handle user interaction.
+                    </p>
+                
+                    <h3>Output using print()</h3>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Example</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>print("Hello")</td>
+                                    <td>Displays text on screen</td>
+                                </tr>
+                                <tr>
+                                    <td>print(10 + 5)</td>
+                                    <td>Displays result of calculation</td>
+                                </tr>
+                                <tr>
+                                    <td>print("Hi", "Mohit")</td>
+                                    <td>Prints multiple values</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Input using input()</h3>
+                
+                    <p>
+                        The <strong>input()</strong> function takes user input as a string.
+                    </p>
+                
+                    <pre><code>
+                name = input("Enter your name: ")
+                print("Hello", name)
+                    </code></pre>
+                
+                    <h3>Example Program</h3>
+                
+                    <pre><code>
+                name = input("Enter your name: ")
+                age = input("Enter your age: ")
+                
+                print("Name:", name)
+                print("Age:", age)
+                    </code></pre>
+                
+                    <h3>Type Conversion with Input</h3>
+                
+                    <p>
+                        Since input() returns a string, you need to convert it for calculations.
+                    </p>
+                
+                    <pre><code>
+                num1 = int(input("Enter first number: "))
+                num2 = int(input("Enter second number: "))
+                
+                sum = num1 + num2
+                print("Sum is:", sum)
+                    </code></pre>
+                
+                    <h3>Formatted Output</h3>
+                
+                    <pre><code>
+                name = "Mohit"
+                age = 20
+                
+                print(f"My name is {name} and I am {age} years old")
+                    </code></pre>
+                
+                    <h3>When to Use Input & Output</h3>
+                
+                    <ul>
+                        <li>Taking user details</li>
+                        <li>Performing calculations</li>
+                        <li>Building interactive programs</li>
+                        <li>Displaying results clearly</li>
+                    </ul>
+                
+                    <h3>Important Concepts</h3>
+                
+                    <ul>
+                        <li>input() always returns string</li>
+                        <li>Use int() or float() for numbers</li>
+                        <li>print() displays output instantly</li>
+                    </ul>
+                
+                    <h3>Tips</h3>
+                
+                    <ul>
+                        <li>Use clear prompts in input()</li>
+                        <li>Always convert input when needed</li>
+                        <li>Use f-strings for clean output</li>
+                    </ul>
+                
+                    <h3>Common Mistakes</h3>
+                
+                    <ul>
+                        <li>Not converting input to number ❌</li>
+                        <li>Forgetting quotes in print ❌</li>
+                        <li>Confusing string with number ❌</li>
+                    </ul>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Take name input and print greeting</li>
+                            <li>Take two numbers and print sum</li>
+                            <li>Use f-string for formatted output</li>
+                            <li>Create simple calculator using input()</li>
+                        </ul>
+                    </div>
+                
+                </section>
+                
+                <!-- Operators -->
+                <section class="content-section" id="operators">
+                
+                    <h2>Operators in Python</h2>
+                
+                    <p>
+                        <strong>Operators</strong> are symbols used to perform operations on variables and values.
+                        They are used for calculations, comparisons, and logical decisions.
+                    </p>
+                
+                    <p>
+                        Python provides different types of operators for different purposes.
+                    </p>
+                
+                    <h3>Types of Operators</h3>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Example</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Arithmetic</td>
+                                    <td>+, -, *, /</td>
+                                    <td>Used for calculations</td>
+                                </tr>
+                                <tr>
+                                    <td>Comparison</td>
+                                    <td>==, !=, >, << /td>
+                                    <td>Compare values</td>
+                                </tr>
+                                <tr>
+                                    <td>Logical</td>
+                                    <td>and, or, not</td>
+                                    <td>Combine conditions</td>
+                                </tr>
+                                <tr>
+                                    <td>Assignment</td>
+                                    <td>=, +=, -=</td>
+                                    <td>Assign values to variables</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Arithmetic Operators</h3>
+                
+                    <pre><code>
+                x = 10
+                y = 5
+                
+                print(x + y)   # Addition
+                print(x - y)   # Subtraction
+                print(x * y)   # Multiplication
+                print(x / y)   # Division
+                print(x % y)   # Modulus
+                    </code></pre>
+                
+                    <h3>Comparison Operators</h3>
+                
+                    <pre><code>
+                x = 10
+                y = 5
+                
+                print(x > y)
+                print(x == y)
+                print(x != y)
+                    </code></pre>
+                
+                    <h3>Logical Operators</h3>
+                
+                    <pre><code>
+                x = 10
+                
+                print(x > 5 and x < 20)
+                print(x > 5 or x > 20)
+                print(not(x > 5))
+                    </code></pre>
+                
+                    <h3>Assignment Operators</h3>
+                
+                    <pre><code>
+                x = 10
+                x += 5   # x = x + 5
+                x -= 3   # x = x - 3
+                
+                print(x)
+                    </code></pre>
+                
+                    <h3>Example Program</h3>
+                
+                    <pre><code>
+                num1 = 20
+                num2 = 10
+                
+                print("Addition:", num1 + num2)
+                print("Is num1 greater?", num1 > num2)
+                    </code></pre>
+                
+                    <h3>When to Use Operators</h3>
+                
+                    <ul>
+                        <li>Performing calculations</li>
+                        <li>Making decisions</li>
+                        <li>Updating variable values</li>
+                        <li>Combining conditions</li>
+                    </ul>
+                
+                    <h3>Important Concepts</h3>
+                
+                    <ul>
+                        <li>Operators follow precedence rules</li>
+                        <li>Comparison operators return True or False</li>
+                        <li>Logical operators combine conditions</li>
+                    </ul>
+                
+                    <h3>Tips</h3>
+                
+                    <ul>
+                        <li>Use parentheses for clarity</li>
+                        <li>Understand operator precedence</li>
+                        <li>Use logical operators carefully</li>
+                    </ul>
+                
+                    <h3>Common Mistakes</h3>
+                
+                    <ul>
+                        <li>Using = instead of == ❌</li>
+                        <li>Wrong operator precedence ❌</li>
+                        <li>Confusing logical conditions ❌</li>
+                    </ul>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Perform all arithmetic operations</li>
+                            <li>Compare two numbers</li>
+                            <li>Use logical operators in conditions</li>
+                            <li>Update variable using assignment operators</li>
+                        </ul>
+                    </div>
+                
+                </section>
+
+                <!-- INTERMEDIATE -->
+                <!-- If Else Conditions -->
+                <section class="content-section" id="if-else">
+                
+                    <h2>If Else Conditions in Python</h2>
+                
+                    <p>
+                        <strong>If Else statements</strong> are used to make decisions in a program.
+                        They allow your code to execute different blocks based on conditions.
+                    </p>
+                
+                    <p>
+                        Conditions return either <strong>True</strong> or <strong>False</strong>, and based on that,
+                        Python decides which block of code to run.
+                    </p>
+                
+                    <h3>Basic If Statement</h3>
+                
+                    <pre><code>
+                age = 18
+                
+                if age >= 18:
+                    print("You are eligible to vote")
+                    </code></pre>
+                
+                    <h3>If Else Statement</h3>
+                
+                    <pre><code>
+                age = 16
+                
+                if age >= 18:
+                    print("Eligible")
+                else:
+                    print("Not Eligible")
+                    </code></pre>
+                
+                    <h3>If Elif Else Statement</h3>
+                
+                    <pre><code>
+                marks = 75
+                
+                if marks >= 90:
+                    print("Grade A")
+                elif marks >= 60:
+                    print("Grade B")
+                else:
+                    print("Grade C")
+                    </code></pre>
+                
+                    <h3>Nested If Statement</h3>
+                
+                    <pre><code>
+                age = 20
+                citizen = True
+                
+                if age >= 18:
+                    if citizen:
+                        print("Eligible to vote")
+                    </code></pre>
+                
+                    <h3>Comparison Operators Used</h3>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Operator</th>
+                                    <th>Meaning</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>==</td>
+                                    <td>Equal to</td>
+                                </tr>
+                                <tr>
+                                    <td>!=</td>
+                                    <td>Not equal to</td>
+                                </tr>
+                                <tr>
+                                    <td>&gt;</td>
+                                    <td>Greater than</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;</td>
+                                    <td>Less than</td>
+                                </tr>
+                                <tr>
+                                    <td>&gt;=</td>
+                                    <td>Greater than or equal</td>
+                                </tr>
+                                <tr>
+                                    <td>&lt;=</td>
+                                    <td>Less than or equal</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Example Program</h3>
+                
+                    <pre><code>
+                num = int(input("Enter a number: "))
+                
+                if num % 2 == 0:
+                    print("Even Number")
+                else:
+                    print("Odd Number")
+                    </code></pre>
+                
+                    <h3>When to Use If Else</h3>
+                
+                    <ul>
+                        <li>Making decisions in programs</li>
+                        <li>Validating user input</li>
+                        <li>Creating conditions in games</li>
+                        <li>Controlling program flow</li>
+                    </ul>
+                
+                    <h3>Important Concepts</h3>
+                
+                    <ul>
+                        <li>Indentation is required</li>
+                        <li>Condition must return True or False</li>
+                        <li>elif is used for multiple conditions</li>
+                    </ul>
+                
+                    <h3>Tips</h3>
+                
+                    <ul>
+                        <li>Keep conditions simple and clear</li>
+                        <li>Use logical operators for complex conditions</li>
+                        <li>Test all possible cases</li>
+                    </ul>
+                
+                    <h3>Common Mistakes</h3>
+                
+                    <ul>
+                        <li>Missing indentation ❌</li>
+                        <li>Using = instead of == ❌</li>
+                        <li>Wrong condition logic ❌</li>
+                    </ul>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Check if a number is positive or negative</li>
+                            <li>Create a grade system using marks</li>
+                            <li>Check if a number is even or odd</li>
+                            <li>Use nested if for login validation</li>
+                        </ul>
+                    </div>
+                
+                </section>
+                
+                <!-- Loops (for, while) -->
+                <section class="content-section" id="loops">
+                
+                    <h2>Loops in Python (for, while)</h2>
+                
+                    <p>
+                        <strong>Loops</strong> are used to repeat a block of code multiple times.
+                        They help reduce repetition and make programs efficient.
+                    </p>
+                
+                    <p>
+                        Python mainly provides two types of loops: <strong>for loop</strong> and <strong>while loop</strong>.
+                    </p>
+                
+                    <h3>Types of Loops</h3>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Loop</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>for loop</td>
+                                    <td>Used when number of iterations is known</td>
+                                </tr>
+                                <tr>
+                                    <td>while loop</td>
+                                    <td>Used when condition-based repetition is required</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>For Loop Example</h3>
+                
+                    <pre><code>
+                for i in range(1, 6):
+                    print(i)
+                    </code></pre>
+                
+                    <p>This loop prints numbers from 1 to 5.</p>
+                
+                    <h3>While Loop Example</h3>
+                
+                    <pre><code>
+                i = 1
+                
+                while i <= 5:
+                    print(i)
+                    i += 1
+                    </code></pre>
+                
+                    <p>This loop runs until the condition becomes false.</p>
+                
+                    <h3>Break Statement</h3>
+                
+                    <p>Used to stop the loop immediately.</p>
+                
+                    <pre><code>
+                for i in range(1, 10):
+                    if i == 5:
+                        break
+                    print(i)
+                    </code></pre>
+                
+                    <h3>Continue Statement</h3>
+                
+                    <p>Skips current iteration and continues with next.</p>
+                
+                    <pre><code>
+                for i in range(1, 6):
+                    if i == 3:
+                        continue
+                    print(i)
+                    </code></pre>
+                
+                    <h3>Nested Loops</h3>
+                
+                    <pre><code>
+                for i in range(1, 4):
+                    for j in range(1, 4):
+                        print(i, j)
+                    </code></pre>
+                
+                    <h3>Example Program</h3>
+                
+                    <pre><code>
+                # Print multiplication table of 5
+                for i in range(1, 11):
+                    print("5 x", i, "=", 5 * i)
+                    </code></pre>
+                
+                    <h3>When to Use Loops</h3>
+                
+                    <ul>
+                        <li>Repeating tasks</li>
+                        <li>Iterating over data</li>
+                        <li>Generating patterns</li>
+                        <li>Processing lists and collections</li>
+                    </ul>
+                
+                    <h3>Important Concepts</h3>
+                
+                    <ul>
+                        <li>Infinite loop occurs if condition never becomes false</li>
+                        <li>range() is commonly used with for loop</li>
+                        <li>Loops can be nested</li>
+                    </ul>
+                
+                    <h3>Tips</h3>
+                
+                    <ul>
+                        <li>Use for loop when iterations are fixed</li>
+                        <li>Use while loop for conditions</li>
+                        <li>Be careful with infinite loops</li>
+                    </ul>
+                
+                    <h3>Common Mistakes</h3>
+                
+                    <ul>
+                        <li>Forgetting to update variable in while loop ❌</li>
+                        <li>Wrong range values ❌</li>
+                        <li>Creating infinite loops ❌</li>
+                    </ul>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Print numbers from 1 to 10 using for loop</li>
+                            <li>Print numbers using while loop</li>
+                            <li>Create multiplication table</li>
+                            <li>Use break and continue in loop</li>
+                        </ul>
+                    </div>
+                
+                </section>
+                
+                <!-- Lists -->
+                <section class="content-section" id="lists">
+                
+                    <h2>Lists in Python</h2>
+                
+                    <p>
+                        A <strong>list</strong> is a collection of items stored in a single variable.
+                        It is one of the most commonly used data structures in Python.
+                    </p>
+                
+                    <p>
+                        Lists can store multiple values of different data types and are ordered and changeable.
+                    </p>
+                
+                    <h3>Creating a List</h3>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Example</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>numbers = [1, 2, 3]</td>
+                                    <td>List of integers</td>
+                                </tr>
+                                <tr>
+                                    <td>names = ["Ram", "Shyam"]</td>
+                                    <td>List of strings</td>
+                                </tr>
+                                <tr>
+                                    <td>mixed = [10, "Raman", 5.5]</td>
+                                    <td>Mixed data types</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Accessing List Elements</h3>
+                
+                    <pre><code>
+                students = ["Ram", "Shyam", "Aman"]
+                
+                print(students[0])   # First element
+                print(students[1])   # Second element
+                    </code></pre>
+                
+                    <h3>Negative Indexing</h3>
+                
+                    <pre><code>
+                print(students[-1])  # Last element
+                    </code></pre>
+                
+                    <h3>List Operations</h3>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Operation</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Add Item</td>
+                                    <td>list.append("New")</td>
+                                </tr>
+                                <tr>
+                                    <td>Insert Item</td>
+                                    <td>list.insert(1, "Item")</td>
+                                </tr>
+                                <tr>
+                                    <td>Remove Item</td>
+                                    <td>list.remove("Ram")</td>
+                                </tr>
+                                <tr>
+                                    <td>Delete Item</td>
+                                    <td>del list[0]</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Example Program</h3>
+                
+                    <pre><code>
+                fruits = ["Apple", "Banana", "Mango"]
+                
+                fruits.append("Orange")
+                fruits.remove("Banana")
+                
+                print(fruits)
+                    </code></pre>
+                
+                    <h3>Looping Through List</h3>
+                
+                    <pre><code>
+                for item in fruits:
+                    print(item)
+                    </code></pre>
+                
+                    <h3>When to Use Lists</h3>
+                
+                    <ul>
+                        <li>Storing multiple values</li>
+                        <li>Managing collections of data</li>
+                        <li>Working with user input lists</li>
+                        <li>Building applications</li>
+                    </ul>
+                
+                    <h3>Important Concepts</h3>
+                
+                    <ul>
+                        <li>Lists are ordered and indexed</li>
+                        <li>Lists are mutable (can be changed)</li>
+                        <li>Allow duplicate values</li>
+                    </ul>
+                
+                    <h3>Tips</h3>
+                
+                    <ul>
+                        <li>Use meaningful list names</li>
+                        <li>Use loops to process lists</li>
+                        <li>Keep lists organized</li>
+                    </ul>
+                
+                    <h3>Common Mistakes</h3>
+                
+                    <ul>
+                        <li>Index out of range ❌</li>
+                        <li>Removing non-existing item ❌</li>
+                        <li>Confusing list with string ❌</li>
+                    </ul>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a list of 5 numbers</li>
+                            <li>Add and remove elements</li>
+                            <li>Print all elements using loop</li>
+                            <li>Access first and last element</li>
+                        </ul>
+                    </div>
+                
+                </section>
+                
+                <!-- Tuples & Sets -->
+                <section class="content-section" id="tuples-sets">
+                
+                    <h2>Tuples & Sets in Python</h2>
+                
+                    <p>
+                        <strong>Tuples</strong> and <strong>Sets</strong> are important data structures in Python
+                        used to store collections of data.
+                    </p>
+                
+                    <p>
+                        While both store multiple values, they have different properties and use cases.
+                    </p>
+                
+                    <h3>Tuple (Immutable Collection)</h3>
+                
+                    <p>
+                        A <strong>tuple</strong> is an ordered collection of items that cannot be changed after creation.
+                    </p>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Ordered</td>
+                                    <td>Items maintain order</td>
+                                </tr>
+                                <tr>
+                                    <td>Immutable</td>
+                                    <td>Cannot be changed</td>
+                                </tr>
+                                <tr>
+                                    <td>Allows Duplicates</td>
+                                    <td>Same values allowed</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Tuple Example</h3>
+                
+                    <pre><code>
+                colors = ("Red", "Green", "Blue")
+                
+                print(colors[0])
+                    </code></pre>
+                
+                    <h3>Set (Unordered Collection)</h3>
+                
+                    <p>
+                        A <strong>set</strong> is an unordered collection of unique items.
+                        It does not allow duplicate values.
+                    </p>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Feature</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Unordered</td>
+                                    <td>No fixed order</td>
+                                </tr>
+                                <tr>
+                                    <td>No Duplicates</td>
+                                    <td>Unique values only</td>
+                                </tr>
+                                <tr>
+                                    <td>Mutable</td>
+                                    <td>Can add or remove items</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Set Example</h3>
+                
+                    <pre><code>
+                numbers = {1, 2, 3, 3, 4}
+                
+                print(numbers)  # Duplicate removed
+                    </code></pre>
+                
+                    <h3>Set Operations</h3>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Operation</th>
+                                    <th>Example</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Add Item</td>
+                                    <td>set.add(5)</td>
+                                </tr>
+                                <tr>
+                                    <td>Remove Item</td>
+                                    <td>set.remove(2)</td>
+                                </tr>
+                                <tr>
+                                    <td>Union</td>
+                                    <td>set1 | set2</td>
+                                </tr>
+                                <tr>
+                                    <td>Intersection</td>
+                                    <td>set1 & set2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Example Program</h3>
+                
+                    <pre><code>
+                set1 = {1, 2, 3}
+                set2 = {3, 4, 5}
+                
+                print("Union:", set1 | set2)
+                print("Intersection:", set1 & set2)
+                    </code></pre>
+                
+                    <h3>When to Use Tuples & Sets</h3>
+                
+                    <ul>
+                        <li>Tuple → When data should not change</li>
+                        <li>Set → When you need unique values</li>
+                        <li>Set → Removing duplicates from list</li>
+                        <li>Tuple → Fixed data like coordinates</li>
+                    </ul>
+                
+                    <h3>Important Concepts</h3>
+                
+                    <ul>
+                        <li>Tuple uses ( ) and Set uses { }</li>
+                        <li>Set does not maintain order</li>
+                        <li>Tuple is faster than list</li>
+                    </ul>
+                
+                    <h3>Tips</h3>
+                
+                    <ul>
+                        <li>Use tuple for fixed data</li>
+                        <li>Use set for unique elements</li>
+                        <li>Convert list to set to remove duplicates</li>
+                    </ul>
+                
+                    <h3>Common Mistakes</h3>
+                
+                    <ul>
+                        <li>Trying to change tuple ❌</li>
+                        <li>Expecting ordered data in set ❌</li>
+                        <li>Confusing {} with dictionary ❌</li>
+                    </ul>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a tuple and access elements</li>
+                            <li>Create a set with duplicate values</li>
+                            <li>Perform union and intersection</li>
+                            <li>Convert list into set</li>
+                        </ul>
+                    </div>
+                
+                </section>
+                
+                <!-- Dictionaries -->
+                <section class="content-section" id="dictionaries">
+                
+                    <h2>Dictionaries in Python</h2>
+                
+                    <p>
+                        A <strong>dictionary</strong> is a collection of data stored in <strong>key-value pairs</strong>.
+                        It is used to store related information in a structured way.
+                    </p>
+                
+                    <p>
+                        Dictionaries are unordered, changeable, and do not allow duplicate keys.
+                    </p>
+                
+                    <h3>Creating a Dictionary</h3>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Example</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>student = {"name": "Raman", "age": 20}</td>
+                                    <td>Basic dictionary</td>
+                                </tr>
+                                <tr>
+                                    <td>data = {"a": 1, "b": 2}</td>
+                                    <td>Key-value pairs</td>
+                                </tr>
+                                <tr>
+                                    <td>mixed = {"name": "Raman", "marks": 85.5}</td>
+                                    <td>Mixed data types</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Accessing Values</h3>
+                
+                    <pre><code>
+                                student = {"name": "Raman", "age": 20}
+                                
+                                print(student["name"])
+                                print(student.get("age"))
+                                    </code></pre>
+                
+                    <h3>Adding & Updating Items</h3>
+                
+                    <pre><code>
+                                student["marks"] = 90   # Add new key
+                                student["age"] = 21     # Update value
+                                    </code></pre>
+                
+                    <h3>Removing Items</h3>
+                
+                    <pre><code>
+                                student.pop("age")
+                                del student["name"]
+                                    </code></pre>
+                
+                    <h3>Dictionary Methods</h3>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Method</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>keys()</td>
+                                    <td>Returns all keys</td>
+                                </tr>
+                                <tr>
+                                    <td>values()</td>
+                                    <td>Returns all values</td>
+                                </tr>
+                                <tr>
+                                    <td>items()</td>
+                                    <td>Returns key-value pairs</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Looping Through Dictionary</h3>
+                
+                    <pre><code>
+                                for key, value in student.items():
+                                    print(key, ":", value)
+                                    </code></pre>
+                
+                    <h3>Example Program</h3>
+                
+                    <pre><code>
+                                student = {
+                                    "name": "Raman",
+                                    "age": 20,
+                                    "marks": 85
+                                }
+                                
+                                print("Name:", student["name"])
+                                print("Marks:", student["marks"])
+                                    </code></pre>
+                
+                    <h3>When to Use Dictionaries</h3>
+                
+                    <ul>
+                        <li>Storing structured data</li>
+                        <li>Managing user details</li>
+                        <li>Working with APIs and JSON data</li>
+                        <li>Building real-world applications</li>
+                    </ul>
+                
+                    <h3>Important Concepts</h3>
+                
+                    <ul>
+                        <li>Keys must be unique</li>
+                        <li>Values can be any data type</li>
+                        <li>Access using key, not index</li>
+                    </ul>
+                
+                    <h3>Tips</h3>
+                
+                    <ul>
+                        <li>Use meaningful keys</li>
+                        <li>Use get() to avoid errors</li>
+                        <li>Keep data structured</li>
+                    </ul>
+                
+                    <h3>Common Mistakes</h3>
+                
+                    <ul>
+                        <li>Using duplicate keys ❌</li>
+                        <li>Accessing non-existing key ❌</li>
+                        <li>Confusing dictionary with list ❌</li>
+                    </ul>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a student dictionary</li>
+                            <li>Add and update values</li>
+                            <li>Loop through dictionary</li>
+                            <li>Use keys(), values(), items()</li>
+                        </ul>
+                    </div>
+                
+                </section>
+                
+                <!-- ADVANCED -->
+                <!-- Functions -->
+                <section class="content-section" id="functions">
+                
+                    <h2>Functions in Python</h2>
+                
+                    <p>
+                        A <strong>function</strong> is a block of code that performs a specific task.
+                        It helps in reusing code and makes programs more organized.
+                    </p>
+                
+                    <p>
+                        Instead of writing the same code again and again, you can define a function and call it whenever needed.
+                    </p>
+                
+                    <h3>Creating a Function</h3>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Keyword</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>def</td>
+                                    <td>Used to define a function</td>
+                                </tr>
+                                <tr>
+                                    <td>()</td>
+                                    <td>Used to pass parameters</td>
+                                </tr>
+                                <tr>
+                                    <td>return</td>
+                                    <td>Returns value from function</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Basic Function Example</h3>
+                
+                    <pre><code>
+                def greet():
+                    print("Hello, Welcome!")
+                
+                greet()
+                    </code></pre>
+                
+                    <h3>Function with Parameters</h3>
+                
+                    <pre><code>
+                def greet(name):
+                    print("Hello", name)
+                
+                greet("Raman")
+                    </code></pre>
+                
+                    <h3>Function with Return Value</h3>
+                
+                    <pre><code>
+                def add(a, b):
+                    return a + b
+                
+                result = add(10, 5)
+                print(result)
+                    </code></pre>
+                
+                    <h3>Default Parameters</h3>
+                
+                    <pre><code>
+                def greet(name="User"):
+                    print("Hello", name)
+                
+                greet()
+                greet("Raman")
+                    </code></pre>
+                
+                    <h3>Lambda Function</h3>
+                
+                    <pre><code>
+                add = lambda a, b: a + b
+                print(add(3, 4))
+                    </code></pre>
+                
+                    <h3>Example Program</h3>
+                
+                    <pre><code>
+                def square(num):
+                    return num * num
+                
+                print(square(5))
+                    </code></pre>
+                
+                    <h3>When to Use Functions</h3>
+                
+                    <ul>
+                        <li>Reusing code</li>
+                        <li>Organizing large programs</li>
+                        <li>Improving readability</li>
+                        <li>Breaking complex problems into smaller parts</li>
+                    </ul>
+                
+                    <h3>Important Concepts</h3>
+                
+                    <ul>
+                        <li>Function must be defined before calling</li>
+                        <li>Parameters receive input values</li>
+                        <li>Return sends output back</li>
+                    </ul>
+                
+                    <h3>Tips</h3>
+                
+                    <ul>
+                        <li>Use meaningful function names</li>
+                        <li>Keep functions small and simple</li>
+                        <li>Avoid repeating code</li>
+                    </ul>
+                
+                    <h3>Common Mistakes</h3>
+                
+                    <ul>
+                        <li>Forgetting to call function ❌</li>
+                        <li>Missing return statement ❌</li>
+                        <li>Wrong number of arguments ❌</li>
+                    </ul>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create a function to add two numbers</li>
+                            <li>Create a function with default parameter</li>
+                            <li>Use lambda to multiply two numbers</li>
+                            <li>Create function to calculate square</li>
+                        </ul>
+                    </div>
+                
+                </section>
+                
+                <!-- Modules & Packages -->
+                <section class="content-section" id="modules">
+                
+                    <h2>Modules & Packages in Python</h2>
+                
+                    <p>
+                        <strong>Modules</strong> and <strong>Packages</strong> help organize Python code into reusable files and
+                        folders.
+                        They make programs more structured and easier to manage.
+                    </p>
+                
+                    <p>
+                        Instead of writing all code in one file, you can split it into multiple modules.
+                    </p>
+                
+                    <h3>What is a Module?</h3>
+                
+                    <p>
+                        A <strong>module</strong> is a file that contains Python code (functions, variables, classes).
+                        It has a <strong>.py</strong> extension.
+                    </p>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Example</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>math.py</td>
+                                    <td>Custom module file</td>
+                                </tr>
+                                <tr>
+                                    <td>import math</td>
+                                    <td>Built-in module</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Using Built-in Modules</h3>
+                
+                    <pre><code>
+                import math
+                
+                print(math.sqrt(16))
+                print(math.pi)
+                    </code></pre>
+                
+                    <h3>Import Specific Functions</h3>
+                
+                    <pre><code>
+                from math import sqrt
+                
+                print(sqrt(25))
+                    </code></pre>
+                
+                    <h3>Create Your Own Module</h3>
+                
+                    <pre><code>
+                # file: mymodule.py
+                def greet(name):
+                    print("Hello", name)
+                    </code></pre>
+                
+                    <pre><code>
+                # main file
+                import mymodule
+                
+                mymodule.greet("Raman")
+                    </code></pre>
+                
+                    <h3>What is a Package?</h3>
+                
+                    <p>
+                        A <strong>package</strong> is a folder that contains multiple modules.
+                        It helps organize large projects.
+                    </p>
+                
+                    <h3>Package Structure Example</h3>
+                
+                    <pre><code>
+                myproject/
+                │
+                ├── main.py
+                ├── utils/
+                │   ├── __init__.py
+                │   ├── math_utils.py
+                │   └── string_utils.py
+                    </code></pre>
+                
+                    <h3>Import from Package</h3>
+                
+                    <pre><code>
+                from utils.math_utils import add
+                
+                print(add(5, 3))
+                    </code></pre>
+                
+                    <h3>When to Use Modules & Packages</h3>
+                
+                    <ul>
+                        <li>Organizing large projects</li>
+                        <li>Reusing code</li>
+                        <li>Separating logic into files</li>
+                        <li>Building scalable applications</li>
+                    </ul>
+                
+                    <h3>Important Concepts</h3>
+                
+                    <ul>
+                        <li>Module = Single file</li>
+                        <li>Package = Folder of modules</li>
+                        <li>Use import to access modules</li>
+                    </ul>
+                
+                    <h3>Tips</h3>
+                
+                    <ul>
+                        <li>Keep modules small and focused</li>
+                        <li>Use meaningful names</li>
+                        <li>Organize code logically</li>
+                    </ul>
+                
+                    <h3>Common Mistakes</h3>
+                
+                    <ul>
+                        <li>Wrong import path ❌</li>
+                        <li>Missing __init__.py in package ❌</li>
+                        <li>Naming conflict with built-in modules ❌</li>
+                    </ul>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Use math module to calculate square root</li>
+                            <li>Create your own module</li>
+                            <li>Import and use custom function</li>
+                            <li>Create a simple package structure</li>
+                        </ul>
+                    </div>
+                
+                </section>
+                
+                <!-- File Handling -->
+                <section class="content-section" id="file-handling">
+                
+                    <h2>File Handling in Python</h2>
+                
+                    <p>
+                        <strong>File Handling</strong> allows you to create, read, write, and manage files.
+                        It is useful for storing data permanently instead of losing it after program execution.
+                    </p>
+                
+                    <p>
+                        Python provides built-in functions to work with files easily.
+                    </p>
+                
+                    <h3>Opening a File</h3>
+                
+                    <p>
+                        Use the <strong>open()</strong> function to open a file.
+                    </p>
+                
+                    <pre><code>
+                file = open("data.txt", "r")
+                    </code></pre>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Mode</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>"r"</td>
+                                    <td>Read file</td>
+                                </tr>
+                                <tr>
+                                    <td>"w"</td>
+                                    <td>Write (overwrite file)</td>
+                                </tr>
+                                <tr>
+                                    <td>"a"</td>
+                                    <td>Append (add data)</td>
+                                </tr>
+                                <tr>
+                                    <td>"x"</td>
+                                    <td>Create new file</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Reading a File</h3>
+                
+                    <pre><code>
+                file = open("data.txt", "r")
+                print(file.read())
+                file.close()
+                    </code></pre>
+                
+                    <h3>Writing to a File</h3>
+                
+                    <pre><code>
+                file = open("data.txt", "w")
+                file.write("Hello Python")
+                file.close()
+                    </code></pre>
+                
+                    <h3>Appending to a File</h3>
+                
+                    <pre><code>
+                file = open("data.txt", "a")
+                file.write("\nNew Line Added")
+                file.close()
+                    </code></pre>
+                
+                    <h3>Using with Statement (Best Practice)</h3>
+                
+                    <pre><code>
+                with open("data.txt", "r") as file:
+                    print(file.read())
+                    </code></pre>
+                
+                    <p>
+                        The <strong>with</strong> statement automatically closes the file.
+                    </p>
+                
+                    <h3>Example Program</h3>
+                
+                    <pre><code>
+                with open("student.txt", "w") as file:
+                    file.write("Name: Raman\nMarks: 90")
+                
+                with open("student.txt", "r") as file:
+                    print(file.read())
+                    </code></pre>
+                
+                    <h3>When to Use File Handling</h3>
+                
+                    <ul>
+                        <li>Saving user data</li>
+                        <li>Storing logs</li>
+                        <li>Reading configuration files</li>
+                        <li>Working with large datasets</li>
+                    </ul>
+                
+                    <h3>Important Concepts</h3>
+                
+                    <ul>
+                        <li>Always close files after use</li>
+                        <li>Use correct mode (r, w, a)</li>
+                        <li>File path must be correct</li>
+                    </ul>
+                
+                    <h3>Tips</h3>
+                
+                    <ul>
+                        <li>Use <strong>with</strong> for safe file handling</li>
+                        <li>Check file existence before reading</li>
+                        <li>Use newline (\n) for formatting</li>
+                    </ul>
+                
+                    <h3>Common Mistakes</h3>
+                
+                    <ul>
+                        <li>Forgetting to close file ❌</li>
+                        <li>Wrong file mode ❌</li>
+                        <li>File not found error ❌</li>
+                    </ul>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Create and write data to a file</li>
+                            <li>Read file content</li>
+                            <li>Append new data</li>
+                            <li>Use with statement</li>
+                        </ul>
+                    </div>
+                
+                </section>
+                
+                <!-- Exception Handling -->
+                <section class="content-section" id="exception-handling">
+                
+                    <h2>Exception Handling in Python</h2>
+                
+                    <p>
+                        <strong>Exception Handling</strong> is used to handle errors in a program.
+                        It prevents the program from crashing and allows smooth execution.
+                    </p>
+                
+                    <p>
+                        Errors that occur during program execution are called <strong>exceptions</strong>.
+                    </p>
+                
+                    <h3>Common Errors</h3>
+                
+                    <div class="table-wrapper">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Error</th>
+                                    <th>Description</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ZeroDivisionError</td>
+                                    <td>Dividing by zero</td>
+                                </tr>
+                                <tr>
+                                    <td>ValueError</td>
+                                    <td>Invalid input type</td>
+                                </tr>
+                                <tr>
+                                    <td>IndexError</td>
+                                    <td>Invalid list index</td>
+                                </tr>
+                                <tr>
+                                    <td>FileNotFoundError</td>
+                                    <td>File not found</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                
+                    <h3>Basic Try-Except</h3>
+                
+                    <pre><code>
+                try:
+                    x = int(input("Enter number: "))
+                    print(10 / x)
+                except:
+                    print("Error occurred")
+                    </code></pre>
+                
+                    <h3>Handling Specific Exceptions</h3>
+                
+                    <pre><code>
+                try:
+                    x = int(input("Enter number: "))
+                    print(10 / x)
+                
+                except ZeroDivisionError:
+                    print("Cannot divide by zero")
+                
+                except ValueError:
+                    print("Invalid input")
+                    </code></pre>
+                
+                    <h3>Using Else Block</h3>
+                
+                    <pre><code>
+                try:
+                    x = 5
+                    print(x)
+                
+                except:
+                    print("Error")
+                
+                else:
+                    print("No error occurred")
+                    </code></pre>
+                
+                    <h3>Using Finally Block</h3>
+                
+                    <pre><code>
+                try:
+                    file = open("data.txt", "r")
+                
+                except FileNotFoundError:
+                    print("File not found")
+                
+                finally:
+                    print("Execution completed")
+                    </code></pre>
+                
+                    <h3>Raising Exceptions</h3>
+                
+                    <pre><code>
+                age = -5
+                
+                if age < 0:
+                    raise ValueError("Age cannot be negative")
+                    </code></pre>
+                
+                    <h3>Example Program</h3>
+                
+                    <pre><code>
+                try:
+                    num1 = int(input("Enter number: "))
+                    num2 = int(input("Enter number: "))
+                    print(num1 / num2)
+                
+                except Exception as e:
+                    print("Error:", e)
+                    </code></pre>
+                
+                    <h3>When to Use Exception Handling</h3>
+                
+                    <ul>
+                        <li>Handling user input errors</li>
+                        <li>Working with files</li>
+                        <li>Preventing program crashes</li>
+                        <li>Building robust applications</li>
+                    </ul>
+                
+                    <h3>Important Concepts</h3>
+                
+                    <ul>
+                        <li>try → risky code</li>
+                        <li>except → handle error</li>
+                        <li>else → runs if no error</li>
+                        <li>finally → always runs</li>
+                    </ul>
+                
+                    <h3>Tips</h3>
+                
+                    <ul>
+                        <li>Handle specific exceptions</li>
+                        <li>Avoid using bare except</li>
+                        <li>Use finally for cleanup tasks</li>
+                    </ul>
+                
+                    <h3>Common Mistakes</h3>
+                
+                    <ul>
+                        <li>Using only except without type ❌</li>
+                        <li>Ignoring errors silently ❌</li>
+                        <li>Wrong indentation ❌</li>
+                    </ul>
+                
+                    <!-- Practice Task -->
+                    <div class="practice-box">
+                        <h3>🎯 Practice Task</h3>
+                        <ul>
+                            <li>Handle division by zero</li>
+                            <li>Handle invalid input</li>
+                            <li>Use finally block</li>
+                            <li>Raise custom exception</li>
+                        </ul>
+                    </div>
+                
+                </section>
+           
+            
 
                 <!-- Course Completion Section -->
                 <section class="course-complete">
@@ -68,7 +2629,7 @@
                     <div class="completion-actions">
                         <a href="index.html" class="btn btn-outline">Explore More Courses</a>
                     </div>
-                
+
                 </section>
 
                 <!-- Navigation Buttons -->
