@@ -119,6 +119,11 @@ export const CONFIG = {
             footer: path('/courses/partials/footer.html'),
         },
 
+        games: {
+            header: path('/games/partials/header.html'),
+            footer: path('/games/partials/footer.html'),
+        },
+
         ems: {
             header: path('/ems/partials/header.html'),
             footer: path('/ems/partials/footer.html'),
@@ -139,11 +144,12 @@ export const CONFIG = {
     ALERTS: {
         main: {
             home: {
-                message: `👋 Welcome to NeoAspire! Learn HTML, CSS, JS, and more.
+               message: `👋 Welcome to NeoAspire! Learn HTML, CSS, JS, and more.
 Online classes are coming soon.
 Stay tuned! 🚀`,
                 type: "info",
                 duration: 5000
+                
             },
             about: {
                 message: "",
