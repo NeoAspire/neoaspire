@@ -66,6 +66,21 @@ const homeEntryIndex = {
     blue: 37
 };
 
+// ✅ SAFE ZONES (no kill allowed)
+const safeZones = [
+    { r: 6, c: 1 },   // Red start
+    { r: 1, c: 8 },   // Green start
+    { r: 8, c: 13 },  // Yellow start
+    { r: 13, c: 6 },   // Blue start
+
+     // ⭐ PATH SAFE ZONES
+    { r: 8, c: 2 },
+    { r: 2, c: 6 },
+    { r: 6, c: 12 },
+    { r: 13, c: 8 }
+
+];
+
 // Home paths (6 cells each)
 const homePath = {
     blue: [
@@ -261,6 +276,15 @@ function initBoard() {
                 ) {
                     cell.classList.add("red-path");
                 }
+            }
+            // ⭐ SAFE ZONE DESIGN (ADD HERE)
+            if (
+                (row === 8 && col === 2) ||
+                (row === 2 && col === 6) ||
+                (row === 6 && col === 12) ||
+                (row === 13 && col === 8)
+            ) {
+                cell.classList.add("safe-zone");
             }
 
             board.appendChild(cell);
@@ -470,8 +494,18 @@ function drawTokens() {
             let cell = document.getElementById("board").children[cellIndex];
 
             let t = document.createElement("div");
-            t.classList.add("token");
-            t.style.background = token.color;
+            t.classList.add("token", token.color);
+            // ✅ Assign position class (VERY IMPORTANT)
+            // 🔥 Remove all position classes first
+            t.classList.remove("pos-0", "pos-1", "pos-2", "pos-3", "center-pos");
+
+            if (group.length === 1) {
+                // ✅ Only one token → center it
+                t.classList.add("center-pos");
+            } else {
+                // ✅ Multiple tokens → spread them
+                t.classList.add(`pos-${i}`);
+            }
 
 
             // 🎯 Offset logic
@@ -512,25 +546,39 @@ function drawTokens() {
     });
 }
 
+//================= CHECK SAFE CELL =================
+function isSafeCell(positionIndex) {
+    if (positionIndex < 0) return false;
+
+    let pos = path[positionIndex];
+
+    return safeZones.some(
+        safe => safe.r === pos.r && safe.c === pos.c
+    );
+}
+
 // ================= CHECK FOR KILL =================
 function checkForKill(movedToken) {
 
     // ❌ Don't kill inside home path
     if (movedToken.inHomePath) return;
 
+    // ✅ SAFE ZONE CHECK
+    if (isSafeCell(movedToken.position)) return;
+
     tokens.forEach(token => {
 
         // Skip self
         if (token === movedToken) return;
-
         // Skip same color
         if (token.color === movedToken.color) return;
-
         // Skip tokens in home
         if (token.position === -1) return;
-
         // Skip tokens already in home path
         if (token.inHomePath) return;
+
+        // ❌ Don't kill if OTHER token is also on safe zone
+        if (isSafeCell(token.position)) return;
 
         // ✅ Same board position
         if (token.position === movedToken.position) {
