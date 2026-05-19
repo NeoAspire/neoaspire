@@ -20,6 +20,15 @@ COLORS, SPACINGS, FONTS, ETC
   --color-bg-warm: #FDF4ED;         /* optional warm section */
   --color-white: #FFFFFF;
 
+
+/* ========== HEADER SYSTEM TOKENS ========== */
+
+--color-header-bg: linear-gradient(135deg, #475569, #334155);
+--color-footer-bg: linear-gradient(135deg, #334155, #475569);
+
+--color-header-text: var(--color-text-white);
+--color-header-link-hover: rgba(255, 255, 255, 0.08);
+
   /* ========== TEXT COLORS ========== */
   --color-text-primary: #111827;
   --color-text-secondary: #6B7280;

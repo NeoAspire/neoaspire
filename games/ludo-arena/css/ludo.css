@@ -1,0 +1,346 @@
+/* ================= GLOBAL ================= */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #F9FAFB;
+  color: #111827;
+  text-align: center;
+}
+
+/* ================= START SCREEN ================= */
+.start-screen {
+  position: fixed;
+  inset: 0;
+  background: #F9FAFB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 40px;
+}
+
+.start-screen h1 {
+  font-size: 36px;
+  color: #EC611B;
+}
+
+/* INPUTS */
+#playerInputs {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.start-screen input,
+.start-screen select {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+  width: 240px;
+  background: #FFFFFF;
+  color: #111827;
+  font-size: 16px;
+}
+
+/* BUTTON */
+.start-screen button {
+  padding: 12px 25px;
+  background: #EC611B;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.start-screen button:hover {
+  background: #d65313;
+}
+
+/* ================= GAME LAYOUT ================= */
+#gameContainer {
+  padding: 20px;
+}
+
+/* TOP BAR */
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: #FFFFFF;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+/* ================= BOARD ================= */
+#board {
+  display: grid;
+  grid-template-columns: repeat(15, 36px);
+  grid-template-rows: repeat(15, 36px);
+  gap: 0;
+  margin: 30px auto;
+  width: max-content;
+  border: 4px solid #111827;
+  border-radius: 1px;
+  overflow: hidden;
+  background: white;
+  position: relative;
+}
+
+/* ================= CELL ================= */
+.cell {
+  width: 36px;
+  height: 36px;
+  box-sizing: border-box;
+  border: 1px solid #E5E7EB;
+}
+
+/* ================= PATH ================= */
+
+.path {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+}
+
+/* Make colored paths more visible */
+.red-path { background: #ef4444 !important; }
+.green-path { background: #10B981 !important; }
+.blue-path { background: #3b82f6 !important; }
+.yellow-path { background: #f59e0b !important; }
+
+
+/* ================= CORNER COLOR AREAS ================= */
+/* ================= HOME (WHITE BASE) ================= */
+.red-home,
+.green-home,
+.blue-home,
+.yellow-home {
+  background: white;
+}
+
+/* ================= CORNER CELLS ================= */
+.red-corner { background: #EF4444 !important; }
+.green-corner { background: #10B981 !important; }
+.blue-corner { background: #3B82F6 !important; }
+.yellow-corner { background: #F59E0B !important; }
+
+
+/* ================= 
+CENTER TRIANGLE 
+================= */
+.center-big {
+  position: absolute;
+  width: calc(36px * 3);
+  height: calc(36px * 3);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  z-index: 10;
+}
+
+/* TRIANGLES */
+.triangle {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* 🔺 TOP (GREEN) */
+.green-tri {
+  background: #10B981;
+  clip-path: polygon(50% 50%, 0% 0%, 100% 0%);
+}
+
+/* ▶ RIGHT (YELLOW) */
+.yellow-tri {
+  background: #F59E0B;
+  clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
+}
+
+/* 🔻 BOTTOM (BLUE) */
+.blue-tri {
+  background: #3B82F6;
+  clip-path: polygon(50% 50%, 0% 100%, 100% 100%);
+}
+
+/* ◀ LEFT (RED) */
+.red-tri {
+  background: #EF4444;
+  clip-path: polygon(50% 50%, 0% 0%, 0% 100%);
+}
+
+/* ================= CONTROLS ================= */
+.controls {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 320px;
+  margin: 20px auto;
+}
+
+.controls button {
+  padding: 12px 30px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background: #3B82F6;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.controls button:hover {
+  background: #2563EB;
+}
+
+/* STATUS */
+
+#status {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  padding: 10px 16px;
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #ffffff, #f3f4f6);
+  border: 1px solid #e5e7eb;
+
+  box-shadow: 
+    0 4px 8px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.6);
+
+  min-width: 160px;
+  text-align: center;
+
+  transition: all 0.3s ease;
+}
+
+#status.blue {
+  color: #2563eb;
+  border-left: 5px solid #3b82f6;
+}
+
+#status.red {
+  color: #dc2626;
+  border-left: 5px solid #ef4444;
+}
+
+#status.green {
+  color: #059669;
+  border-left: 5px solid #10b981;
+}
+
+#status.yellow {
+  color: #d97706;
+  border-left: 5px solid #f59e0b;
+}
+
+/* 3D Dice */
+
+.dice-container {
+  width: 50px;
+  height: 50px;
+  margin: auto;
+  perspective: 800px;
+  cursor: pointer;
+
+  filter: drop-shadow(0 15px 20px rgba(0,0,0,0.4));
+}
+
+.dice-container:hover .dice-cube {
+  transform: scale(1.05);
+}
+
+.dice-cube {
+  width: 50%;
+  height: 50%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 1s ease;
+}
+
+.face {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+
+  background: linear-gradient(145deg, #ffffff, #dcdcdc); /* 🔥 light effect */
+  border-radius: 16px;
+  border: 1px solid #bbb;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding: 12px;
+
+  box-shadow:
+ inset -6px -6px 12px rgba(0,0,0,0.25),
+    inset 6px 6px 12px rgba(255,255,255,0.8),
+    0 10px 20px rgba(0,0,0,0.25);
+
+     backdrop-filter: blur(2px);
+}
+
+/* Position faces */
+.front  { transform: rotateY(0deg) translateZ(30px); }
+.back   { transform: rotateY(180deg) translateZ(30px); }
+.right  { transform: rotateY(90deg) translateZ(30px); }
+.left   { transform: rotateY(-90deg) translateZ(30px); }
+.top    { transform: rotateX(90deg) translateZ(30px); }
+.bottom { transform: rotateX(-90deg) translateZ(30px); }
+
+.dot {
+  width: 10px;
+  height: 10px;
+
+  background: radial-gradient(circle at 30% 30%, #444, #000);
+  border-radius: 50%;
+
+   box-shadow:
+    inset 1px 1px 2px rgba(255,255,255,0.4),
+    inset -2px -2px 4px rgba(0,0,0,0.6),
+    0 2px 3px rgba(0,0,0,0.4);
+
+  justify-self: center;
+  align-self: center;
+}
+
+/* Positions */
+.tl { grid-area: 1 / 1; }
+.tr { grid-area: 1 / 3; }
+.bl { grid-area: 3 / 1; }
+.br { grid-area: 3 / 3; }
+.ml { grid-area: 2 / 1; }
+.mr { grid-area: 2 / 3; }
+.center { grid-area: 2 / 2; }
+
+/* ================= TOKENS ================= */
+.token {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin: auto;
+  margin-top: 8px;
+  box-shadow: 0 0 4px rgba(0,0,0,0.4);
+  border: 2px solid #111827;
+  
+  position: relative;
+  pointer-events: auto;
+  cursor: pointer;
+  z-index: 30;
+}
+
+.token.selected {
+  outline: 3px solid black;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

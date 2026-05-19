@@ -15,7 +15,7 @@ body {
 
 /* ================= HERO ================= */
 .game-hero {
-    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
     color: var(--color-white);
     padding: var(--space-lg) var(--space-sm);
     text-align: center;
@@ -112,7 +112,7 @@ body {
 }
 
 .featured-card {
-    background: var(--color-dark);
+    background: linear-gradient(135deg, #475569, #334155);
     color: var(--color-white);
     padding: var(--space-lg);
     border-radius: var(--radius-lg);
