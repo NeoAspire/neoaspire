@@ -138,6 +138,98 @@ body {
     inset 0 3px 6px rgba(0,0,0,0.2);
 }
 
+/* ================= TOP CONTROLS (PRO DESIGN) ================= */
+.top-controls {
+  display: flex;
+  gap: 10px;
+}
+
+/* Base Button Style */
+.top-controls button {
+  position: relative;
+  padding: 8px 14px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.3);
+
+  background: linear-gradient(135deg, #ffffff, #e5e7eb);
+  color: #111827;
+
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+  overflow: hidden;
+
+  backdrop-filter: blur(6px);
+
+  box-shadow:
+    0 4px 8px rgba(0,0,0,0.15),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+
+  transition: all 0.25s ease;
+}
+
+/* Glow border effect */
+.top-controls button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 1px;
+
+  background: linear-gradient(135deg, #ec611b, #3b82f6);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Hover effect */
+.top-controls button:hover {
+  transform: translateY(-2px) scale(1.03);
+
+  background: linear-gradient(135deg, #ec611b, #d65313);
+  color: #fff;
+
+  box-shadow:
+    0 8px 16px rgba(0,0,0,0.25),
+    0 0 10px rgba(236, 97, 27, 0.5);
+}
+
+/* Glow appears */
+.top-controls button:hover::before {
+  opacity: 1;
+}
+
+/* Click effect */
+.top-controls button:active {
+  transform: scale(0.95);
+
+  box-shadow:
+    inset 0 3px 6px rgba(0,0,0,0.3);
+}
+
+/* 🎵 SOUND BUTTON ACTIVE STATE */
+#soundBtn {
+  background: linear-gradient(135deg, #10B981, #059669);
+  color: white;
+}
+
+#soundBtn:hover {
+  background: linear-gradient(135deg, #059669, #047857);
+}
+
+/* 🔇 When OFF (you can toggle class in JS later) */
+#soundBtn.off {
+  background: linear-gradient(135deg, #9ca3af, #6b7280);
+  color: white;
+}
+
 /* ================= BOARD ================= */
 #board {
   display: grid;

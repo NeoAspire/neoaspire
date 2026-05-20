@@ -8,6 +8,44 @@ window.onload = () => {
 let selectedToken = null;
 let currentDice = 0;
 
+// ================= SOUND SYSTEM =================
+let soundEnabled = true;
+
+// ✅ Toggle sound on/off
+function toggleSound() {
+    soundEnabled = !soundEnabled;
+
+    const btn = document.getElementById("soundBtn");
+
+    if (soundEnabled) {
+        btn.textContent = "🔊 Sound ON";
+        btn.classList.remove("off");
+    } else {
+        btn.textContent = "🔇 Sound OFF";
+        btn.classList.add("off");
+    }
+}
+
+// ✅ Play sound by ID with safety checks
+function playSound(id, duration = null) {
+    if (!soundEnabled) return;
+
+    const sound = document.getElementById(id);
+    if (sound) {
+       sound.pause();          // stop previous
+        sound.currentTime = 0;  // restart
+        sound.play().catch(() => {});
+
+          // ⏱️ Stop sound early
+        if (duration !== null) {
+            setTimeout(() => {
+                sound.pause();
+                sound.currentTime = 0;
+            }, duration);
+        }
+    }
+}
+
 // ================= GAME DATA =================
 
 // Main path (52 cells)
@@ -77,8 +115,7 @@ const safeZones = [
     { r: 8, c: 2 },
     { r: 2, c: 6 },
     { r: 6, c: 12 },
-    { r: 13, c: 8 }
-
+    { r: 12, c: 8 }
 ];
 
 // Home paths (6 cells each)
@@ -100,6 +137,14 @@ const homePath = {
         { r: 7, c: 10 }, { r: 7, c: 9 }, { r: 7, c: 8 }
     ]
 };
+
+// Final cells (where tokens must reach to win)
+const finalCells = [
+    { r: 8, c: 7 },
+    { r: 7, c: 6 },
+    { r: 6, c: 7 },
+    { r: 7, c: 8 }
+];
 
 
 // Tokens (4 per player for now)
@@ -282,7 +327,7 @@ function initBoard() {
                 (row === 8 && col === 2) ||
                 (row === 2 && col === 6) ||
                 (row === 6 && col === 12) ||
-                (row === 13 && col === 8)
+                (row === 12 && col === 8)
             ) {
                 cell.classList.add("safe-zone");
             }
@@ -593,6 +638,17 @@ function checkForKill(movedToken) {
     });
 }
 
+// ================= CHECK FINISH =================
+function isTokenFinished(token) {
+    return token.inHomePath &&
+           token.homeStep === homePath[token.color].length - 1;
+}
+
+function isPlayerFinished(color) {
+    let playerTokens = tokens.filter(t => t.color === color);
+    return playerTokens.every(t => isTokenFinished(t));
+}
+
 // ================= MOVE SELECTED TOKEN =================
 
 function moveSelectedToken() {
@@ -674,6 +730,7 @@ function moveSelectedToken() {
                 (token.position + currentDice) % path.length;
 
             // 🎯 Check if token crosses home entry
+
             let entry = homeEntryIndex[token.color];
             let prevPos = token.position;
             let move = currentDice;
@@ -681,29 +738,21 @@ function moveSelectedToken() {
 
             let nextPos = (prevPos + move) % pathLen;
 
-            // ✅ Detect if player completed at least one full round
-            let completedRound = token.steps + move >= pathLen;
-
-            // ✅ Check crossing entry point
+            // ✅ Check crossing entry point directly
             let crossedHome = false;
             let stepsIntoHome = 0;
 
-            if (completedRound) {
+            // Case 1: normal crossing
+            if (prevPos < entry && nextPos >= entry) {
+                crossedHome = true;
+                stepsIntoHome = nextPos - entry - 1;
+            }
 
-                // Case 1: normal crossing
-                if (prevPos < entry && (prevPos + move) >= entry) {
+            // Case 2: wrap-around crossing
+            else if (prevPos > nextPos) {
+                if (entry <= nextPos || entry > prevPos) {
                     crossedHome = true;
-                    stepsIntoHome = (prevPos + move) - entry - 1;
-                }
-
-                // Case 2: wrap-around crossing
-                else if ((prevPos + move) >= pathLen) {
-                    let wrapped = (prevPos + move) % pathLen;
-
-                    if (wrapped >= entry) {
-                        crossedHome = true;
-                        stepsIntoHome = wrapped - entry - 1;
-                    }
+                    stepsIntoHome = (nextPos - entry + pathLen) % pathLen - 1;
                 }
             }
 
@@ -716,11 +765,8 @@ function moveSelectedToken() {
                 token.homeStep = stepsIntoHome;
                 token.position = -2;
 
-                token.steps += move;
-            }
-            else {
+            } else {
                 token.position = nextPos;
-                token.steps += move;
             }
 
         }
@@ -735,8 +781,6 @@ function moveSelectedToken() {
     // 🔥 Check token kill
     checkForKill(token);
     drawTokens();
-
-
 
     // ✅ EXTRA TURN ON 6
     if (diceValue === 6) {
@@ -783,8 +827,22 @@ function rollDice() {
 
     const cube = document.getElementById("diceCube");
 
-    // 🎲 random dice
+    // 🎲 Generate random dice number
     currentDice = Math.floor(Math.random() * 6) + 1;
+
+    // 🔊 START ROLL SOUND
+    playSound("diceRoll"); 
+
+    // 🎯 Stop roll sound and play HIT
+setTimeout(() => {
+    const roll = document.getElementById("diceRoll");
+    if (roll) {
+        roll.pause();
+        roll.currentTime = 0;
+    }
+
+    playSound("diceHit");
+}, 700); // match animation timing
 
     // 🎬 random spin (for realism)
     let x = Math.floor(Math.random() * 4) * 360;
@@ -804,10 +862,11 @@ function rollDice() {
     cube.style.transform = `rotateX(${x}deg) rotateY(${y}deg) ${finalRotation[currentDice]}`;
 
     updateStatus("(Rolled: " + currentDice + ")");
+    
 
     // ⏳ Delay logic to match animation
     setTimeout(() => {
-        handleDiceLogic();
+      handleDiceLogic();
     }, 1000);
 }
 
@@ -885,21 +944,27 @@ function handleDiceLogic() {
 // ================= NEXT TURN =================
 function nextTurn() {
 
-    // ✅ RESET EVERYTHING (CRITICAL)
+    // reset
     selectedToken = null;
     currentDice = 0;
 
     document.querySelectorAll(".token").forEach(el => el.classList.remove("selected"));
 
-    // 👉 CHANGE PLAYER
-    currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
+    let attempts = 0;
 
-    // ✅ FORCE UI REFRESH
-    drawTokens();   // 🔥 THIS LINE FIXES YOUR ISSUE
+    do {
+        currentPlayerIndex = (currentPlayerIndex + 1) % players.length;
+        attempts++;
 
+        // safety (avoid infinite loop)
+        if (attempts > players.length) break;
+
+    } while (isPlayerFinished(players[currentPlayerIndex].color));
+
+    drawTokens();
     updateStatus();
 
-    // 🤖 Computer auto turn
+    // 🤖 auto turn
     if (players[currentPlayerIndex].isComputer) {
         setTimeout(rollDice, 1000);
     }
@@ -914,3 +979,4 @@ function restartGame() {
 window.startGame = startGame;
 window.rollDice = rollDice;
 window.restartGame = restartGame;
+window.toggleSound = toggleSound;
