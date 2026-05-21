@@ -19,31 +19,45 @@
 <body>
 
   <!-- ================= START SCREEN ================= -->
-  <div id="startScreen" class="start-screen">
-    <a href="../index.html">
-      <h1>🎲 Neo Ludo Arena</h1>
-    </a>
-    <p>Enter players and start your battle!</p>
+<div id="startScreen" class="start-screen">
 
-    <label>Game Mode:</label>
-    <select id="gameMode">
-      <option value="1">1 Player (vs Computer)</option>
-      <option value="2">2 Players</option>
-      <option value="3">3 Players</option>
-      <option value="4">4 Players</option>
-    </select>
+  <div class="start-card">
 
+    <h1 class="title">🎲 Neo Ludo Arena</h1>
+    <p class="subtitle">Choose your game mode</p>
 
-    <div id="playerInputs">
-      <input type="text" placeholder="Enter Player 1 Name" id="p1">
-      <input type="text" placeholder="Enter Player 2 Name" id="p2">
-      <input type="text" placeholder="Enter Player 3 Name" id="p3">
-      <input type="text" placeholder="Enter Player 4 Name" id="p4">
+    <div class="mode-grid">
+
+      <div class="mode-card" onclick="selectMode(1)">
+        <div class="icon">🤖</div>
+        <h3>Single Player</h3>
+        <p>Play against AI</p>
+      </div>
+
+      <div class="mode-card" onclick="selectMode(2)">
+        <div class="icon">👥</div>
+        <h3>2 Players</h3>
+        <p>Head-to-head match</p>
+      </div>
+
+      <div class="mode-card" onclick="selectMode(3)">
+        <div class="icon">👨‍👩‍👧</div>
+        <h3>3 Players</h3>
+        <p>Fun with friends</p>
+      </div>
+
+      <div class="mode-card" onclick="selectMode(4)">
+        <div class="icon">👨‍👩‍👧‍👦</div>
+        <h3>4 Players</h3>
+        <p>Full table chaos</p>
+      </div>
+
     </div>
-
-
-    <button onclick="startGame()">🚀 Start Game</button>
+    
+  <a href="../index.html" class="btn-back">← Back to Games</a>
   </div>
+
+</div>
 
   <!-- ================= GAME AREA ================= -->
   <div id="gameContainer" style="display: none;">

@@ -8,55 +8,122 @@ body {
 }
 
 /* ================= START SCREEN ================= */
+/* ===== BACKGROUND ===== */
 .start-screen {
-  position: fixed;
-  inset: 0;
-  background: #F9FAFB;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 24px;
-  padding: 40px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', sans-serif;
+
+    /* 🎨 Soft colorful gradient */
+    background: linear-gradient(135deg, #fef9c3, #dbeafe, #fce7f3);
 }
 
-.start-screen h1 {
-  font-size: 36px;
-  color: #EC611B;
+/* ===== CARD CONTAINER ===== */
+.start-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    width: 420px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-/* INPUTS */
-#playerInputs {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+/* ===== TITLE ===== */
+.title {
+    font-size: 32px;
+    color: #1e293b;
+    margin-bottom: 10px;
 }
 
-.start-screen input,
-.start-screen select {
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #E5E7EB;
-  width: 240px;
-  background: #FFFFFF;
-  color: #111827;
-  font-size: 16px;
+/* ===== SUBTITLE ===== */
+.subtitle {
+    color: #64748b;
+    margin-bottom: 30px;
+    font-size: 14px;
 }
 
-/* BUTTON */
-.start-screen button {
-  padding: 12px 25px;
-  background: #EC611B;
-  border: none;
-  color: white;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
+/* ===== GRID ===== */
+.mode-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
 }
 
-.start-screen button:hover {
-  background: #d65313;
+/* ===== CARD BASE ===== */
+.mode-card {
+    border-radius: 14px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background: #f8fafc;
+}
+
+/* 🎨 DIFFERENT COLORS FOR EACH CARD */
+.mode-card:nth-child(1) {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+}
+
+.mode-card:nth-child(2) {
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+}
+
+.mode-card:nth-child(3) {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+}
+
+.mode-card:nth-child(4) {
+    background: linear-gradient(135deg, #fce7f3, #fbcfe8);
+}
+
+/* ===== ICON ===== */
+.mode-card .icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* ===== TEXT ===== */
+.mode-card h3 {
+    color: #1e293b;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.mode-card p {
+    color: #475569;
+    font-size: 12px;
+}
+
+/* ===== HOVER EFFECT ===== */
+.mode-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ===== CLICK EFFECT ===== */
+.mode-card:active {
+    transform: scale(0.96);
+}
+
+/* ===== BACK LINK ===== */
+.btn-back {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #3B82F6;
+    background: #eef2ff;
+    transition: all 0.3s ease;
+    border: 1px solid #dbeafe;
+}
+
+.btn-back:hover {
+    background: #3B82F6;
+    color: white;
+    transform: translateY(-2px);
 }
 
 /* ================= GAME LAYOUT ================= */
@@ -229,6 +296,78 @@ body {
   background: linear-gradient(135deg, #9ca3af, #6b7280);
   color: white;
 }
+
+/* ================= HOME TEXT ================= */
+.home-text {
+    position: absolute;
+
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+
+    padding: 2px;
+    border-radius: 10px;
+
+    text-align: center;
+    min-width: 80px;
+
+    pointer-events: none;
+
+    /* 🔥 Glass UI effect */
+    backdrop-filter: blur(6px);
+    background: rgba(255, 255, 255, 0.15);
+
+    /* Soft border */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    /* Shadow for depth */
+    box-shadow:
+        0 4px 8px rgba(0,0,0,0.25),
+        inset 0 1px 0 rgba(255,255,255,0.3);
+
+    /* Text */
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+
+    transition: all 0.3s ease;
+}
+
+/* Position in each home */
+.red-label {
+    top: 1px;
+    bottom: auto !important;
+    left: 40px;
+    background: linear-gradient(135deg, #ef4444, #b91c1c);
+}
+
+.green-label {
+    top: 1px;
+    bottom: auto !important;
+    right: 40px;
+    background: linear-gradient(135deg, #10b981, #047857);
+}
+
+.blue-label {
+    bottom: 1px;
+    top: auto !important;
+    left: 40px;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.yellow-label {
+    bottom: 1px;
+    top: auto !important;
+    right: 40px;
+    background: linear-gradient(135deg, #f59e0b, #b45309);
+}
+/* Hover effect */
+.home-text:hover {
+    transform: scale(1.05);
+    box-shadow:
+        0 6px 14px rgba(0,0,0,0.35),
+        0 0 10px rgba(255,255,255,0.3);
+}
+
 
 /* ================= BOARD ================= */
 #board {
