@@ -1,4 +1,5 @@
 /* ================= GLOBAL ================= */
+/*
 body {
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
@@ -6,18 +7,48 @@ body {
   color: #111827;
   text-align: center;
 }
+*/
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #F9FAFB;
+  color: #111827;
+  text-align: center;
+  min-height: 100vh;
+}
+
+
+/* =================  LINKS ================= */
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 /* ================= START SCREEN ================= */
-/* ===== BACKGROUND ===== */
+/*
 .start-screen {
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Segoe UI', sans-serif;
-
-    /* 🎨 Soft colorful gradient */
     background: linear-gradient(135deg, #fef9c3, #dbeafe, #fce7f3);
+}
+*/
+
+.start-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#startScreen {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
 }
 
 /* ===== CARD CONTAINER ===== */
@@ -62,17 +93,14 @@ body {
 
 /* 🎨 DIFFERENT COLORS FOR EACH CARD */
 .mode-card:nth-child(1) {
-    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+background: linear-gradient(135deg, #dbeafe, #bfdbfe);
 }
-
 .mode-card:nth-child(2) {
     background: linear-gradient(135deg, #dcfce7, #bbf7d0);
 }
-
 .mode-card:nth-child(3) {
     background: linear-gradient(135deg, #fef3c7, #fde68a);
 }
-
 .mode-card:nth-child(4) {
     background: linear-gradient(135deg, #fce7f3, #fbcfe8);
 }
@@ -110,7 +138,6 @@ body {
 .btn-back {
     display: inline-block;
     margin-top: 20px;
-    text-decoration: none;
     padding: 8px 16px;
     border-radius: 8px;
     font-size: 14px;
@@ -126,9 +153,56 @@ body {
     transform: translateY(-2px);
 }
 
+/* ================= MAIN GAME AREA ================= */
+/*
+.game-area {
+  position: relative;
+  width: 90vw;
+  max-width: 420px;
+  margin: auto;
+}
+*/
+
+.game-area {
+  position: relative;
+
+  width: min(92vmin, 420px);
+  height: min(92vmin, 420px);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin: auto;
+}
+
+
 /* ================= GAME LAYOUT ================= */
+/*
 #gameContainer {
   padding: 5px;
+  position: relative;
+}
+*/
+
+#gameContainer {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 12px;
+
+  height: 100vh;   /* ✅ IMPORTANT FIX */
+  width: 100%;
 }
 
 /* ================= TOP BAR (PRO STYLE LIKE CONTROLS) ================= */
@@ -136,14 +210,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   width: 90vw;
   max-width: 420px;
   margin: 20px auto;
   padding: 12px 16px;
-
   border-radius: 14px;
-  /* Same soft gradient as status */
   background: linear-gradient(135deg, #ffffff, #f3f4f6);
   border: 1px solid #e5e7eb;
 
@@ -300,7 +371,6 @@ body {
 /* ================= HOME TEXT ================= */
 .home-text {
     position: absolute;
-
     font-weight: 700;
     font-size: 14px;
     letter-spacing: 0.5px;
@@ -370,10 +440,10 @@ body {
 
 
 /* ================= BOARD ================= */
+/*
 #board {
   display: grid;
 
-  /* 🔥 Responsive size */
   width: 90vw;
   max-width: 420px;
   aspect-ratio: 1 / 1;
@@ -388,6 +458,15 @@ body {
   overflow: hidden;
   background: white;
   position: relative;
+}
+*/
+
+#board {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(15, 1fr);
+  grid-template-rows: repeat(15, 1fr);
 }
 
 /* ================= PATH ================= */
@@ -466,7 +545,6 @@ CENTER TRIANGLE
 
 /* ================= CONTROLS ================= */
 .controls {
-  margin-top: 15px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -536,26 +614,89 @@ CENTER TRIANGLE
 
 /* 3D Dice */
 
+/* 🎲 Dice dynamic positions */
 .dice-container {
-  width: 50px;
-  height: 50px;
-  margin: auto;
+  position: absolute; /* 🔥 IMPORTANT */
+  width: 70px;
+  height: 70px;
   perspective: 800px;
   cursor: pointer;
-
-  filter: drop-shadow(0 15px 20px rgba(0,0,0,0.4));
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
 }
 
 .dice-container:hover .dice-cube {
   transform: scale(1.05);
 }
 
+/* 3D Dice */
+
+/* 🔴 RED → top-left */
+.dice-red {
+  top: -25px;
+  left: -25px;
+}
+
+/* 🟢 GREEN → top-right */
+.dice-green {
+  top: -25px;
+  right: -25px;
+}
+
+/* 🟡 YELLOW → bottom-right */
+.dice-yellow {
+  bottom: -25px;
+  right: -25px;
+}
+
+/* 🔵 BLUE → bottom-left */
+.dice-blue {
+  bottom: -25px;
+  left: -25px;
+}
+
+.dice-zone {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  z-index: 50;
+}
+
+/* Perfect corner alignment */
+.top-left {
+  top: 0;
+  left: 0;
+  transform: translate(-70%, -70%);
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+  transform: translate(70%, -70%);
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+  transform: translate(-70%, 70%);
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+  transform: translate(70%, 70%);
+}
+
+
 .dice-cube {
-  width: 50%;
-  height: 50%;
+  width: 50px;
+  height: 50px;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform 1s ease;
+  transition: transform 0.8s ease;
 }
 
 .face {
@@ -742,10 +883,117 @@ CENTER TRIANGLE
   opacity: 0.8;
 }
 
-/* =================  LINKS ================= */
-a {
-  text-decoration: none;
-  color: inherit;
+/* GAME MESSAGE*/
+.game-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+
+    background: rgba(17, 24, 39, 0.95);
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 12px;
+
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.game-message.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.game-message.success {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.game-message.warning {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+/* PLAYER COLOR THEMES */
+.game-message.red {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+.game-message.green {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.game-message.blue {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+.game-message.yellow {
+    background: linear-gradient(135deg, #ca8a04, #facc15);
+    color: #111; /* better contrast */
+}
+
+/* CONTROLS */
+.floating-controls {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.fab {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  background: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: 0.2s;
+}
+
+.fab:active {
+  transform: scale(0.9);
+}
+
+.fab.sound {
+  background: #10b981;
+  color: white;
+}
+
+.fab.restart {
+  background: #ef4444;
+  color: white;
+}
+
+/* Mobile adjustment */
+@media (max-width: 600px) {
+  .floating-controls {
+    top: 8px;
+    right: 8px;
+  }
+
+  .fab {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+
+@media (max-height: 700px) {
+  #gameContainer {
+    justify-content: space-around;
+  }
 }
 
 /* ================= RESPONSIVE DESIGN (MOBILE OPTIMIZATION) ================= */

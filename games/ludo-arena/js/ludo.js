@@ -8,6 +8,8 @@ window.onload = () => {
 let selectedToken = null;
 let currentDice = 0;
 let gameOver = false;
+let finishedPlayers = [];
+
 
 // ================= SOUND SYSTEM =================
 let soundEnabled = true;
@@ -45,6 +47,23 @@ function playSound(id, duration = null) {
             }, duration);
         }
     }
+}
+
+// ================= GAME MESSAGE =================
+function showGameMessage(text, type = "warning") {
+    const msg = document.getElementById("gameMessage");
+
+    // 🎯 Get current player color
+    let playerColor = players[currentPlayerIndex]?.color || "red";
+
+    msg.innerText = text;
+
+    // ✅ Apply dynamic color + type
+    msg.className = `game-message show ${playerColor} ${type}`;
+
+    setTimeout(() => {
+        msg.classList.remove("show");
+    }, 1500);
 }
 
 // ================= GAME DATA =================
@@ -147,6 +166,12 @@ const finalCells = [
     { r: 7, c: 8 }
 ];
 
+const dicePositionMap = {
+    red: "dice-red",       // 🔴 top-left
+    green: "dice-green",   // 🟢 top-right
+    yellow: "dice-yellow", // 🟡 bottom-right
+    blue: "dice-blue"      // 🔵 bottom-left
+};
 
 // Tokens (4 per player for now)
 let tokens = [];
@@ -332,51 +357,49 @@ function initBoard() {
             ) {
                 cell.classList.add("safe-zone");
             }
-               
+
             board.appendChild(cell);
         }
     }
 }
 
 // ============ PLAYER NAMES ============
+
 function addPlayerNames() {
     const board = document.getElementById("board");
 
-    // Remove old labels
     document.querySelectorAll(".home-text").forEach(el => el.remove());
 
-    function hasColor(color) {
-        return players.some(p => p.color === color);
-    }
-
-    if (hasColor("red")) {
+    function createPlayerLabel(color, className) {
         let el = document.createElement("div");
-        el.classList.add("home-text", "red-label");
-        el.innerText = getPlayerNameByColor("red");
+        el.classList.add("home-text", className);
+
+        el.innerHTML = `
+            <span class="player-name">${getPlayerNameByColor(color)}</span>
+            <span class="player-status" id="status-${color}"></span>
+        `;
+
         board.appendChild(el);
     }
 
-    if (hasColor("green")) {
-        let el = document.createElement("div");
-        el.classList.add("home-text", "green-label");
-        el.innerText = getPlayerNameByColor("green");
-        board.appendChild(el);
+    if (players.some(p => p.color === "red")) {
+        createPlayerLabel("red", "red-label");
     }
 
-    if (hasColor("blue")) {
-        let el = document.createElement("div");
-        el.classList.add("home-text", "blue-label");
-        el.innerText = getPlayerNameByColor("blue");
-        board.appendChild(el);
+    if (players.some(p => p.color === "green")) {
+        createPlayerLabel("green", "green-label");
     }
 
-    if (hasColor("yellow")) {
-        let el = document.createElement("div");
-        el.classList.add("home-text", "yellow-label");
-        el.innerText = getPlayerNameByColor("yellow");
-        board.appendChild(el);
+    if (players.some(p => p.color === "blue")) {
+        createPlayerLabel("blue", "blue-label");
+    }
+
+    if (players.some(p => p.color === "yellow")) {
+        createPlayerLabel("yellow", "yellow-label");
     }
 }
+
+
 
 // ================= 
 // CENTER 
@@ -402,6 +425,7 @@ function addCenter() {
 // ================= INPUT HANDLER =================
 function setupInputHandler() {
     const gameMode = document.getElementById("gameMode");
+    if (!gameMode) return; // ✅ prevent crash
 
     const inputs = [
         document.getElementById("p1"),
@@ -571,8 +595,9 @@ function startGame() {
     initBoard();
     addCenter();
     addPlayerNames();
-    updateStatus();
     drawTokens();
+    updateStatus();
+
 
     // 🤖 If computer starts
     if (players[currentPlayerIndex].isComputer) {
@@ -672,7 +697,7 @@ function drawTokens() {
                     if (players[currentPlayerIndex].isComputer) return;
 
                     if (currentDice === 0) {
-                        alert("Roll dice first!");
+                        showGameMessage("🎲 Roll dice first!", "warning");
                         return;
                     }
 
@@ -733,6 +758,11 @@ function checkForKill(movedToken) {
         // ✅ Same board position
         if (token.position === movedToken.position) {
 
+            // 🔊 PLAY KILL SOUND
+            playSound("tokenKill");
+
+            showGameMessage("💥 Token Killed!", "danger");
+
             // 🔥 Send killed token back home
             token.position = -1;
             token.inHomePath = false;
@@ -757,16 +787,26 @@ function isPlayerFinished(color) {
 // ================= DECLARE WINNER =================
 function declareWinner(color) {
 
-    gameOver = true;
-
     let player = players.find(p => p.color === color);
 
-    setTimeout(() => {
-        alert("🏆 " + player.name + " Wins the Game!");
-    }, 200);
+    // ✅ Add to finished list
+    if (!finishedPlayers.includes(color)) {
+        finishedPlayers.push(color);
+    }
 
-    selectedToken = null;
-    currentDice = 0;
+    // 🎉 Show ranking (not game over)
+    alert("🏆 " + player.name + " finished!");
+
+    // ✅ Check if only 1 player left
+    let remainingPlayers = players.filter(p => !finishedPlayers.includes(p.color));
+
+    if (remainingPlayers.length === 1) {
+        gameOver = true;
+
+        setTimeout(() => {
+            alert("🎯 Game Over!\nLast player: " + remainingPlayers[0].name);
+        }, 200);
+    }
 }
 
 // ================= ANIMATE MOVE =================
@@ -780,6 +820,9 @@ function animateMove(token, steps, callback) {
             callback(); // done moving
             return;
         }
+
+        // 🔊 PLAY MOVE SOUND (each step)
+        playSound("tokenMove", 150); // 150ms short tick
 
         // 🚶 NORMAL PATH
         if (!token.inHomePath) {
@@ -802,6 +845,12 @@ function animateMove(token, steps, callback) {
         else {
             if (token.homeStep < homePath[token.color].length - 1) {
                 token.homeStep++;
+
+                // 🎉 TOKEN JUST REACHED FINAL CELL
+                if (token.homeStep === homePath[token.color].length - 1) {
+                    playSound("finishSound"); // 🔥 PLAY FINISH SOUND
+                    showGameMessage("🏁 Token Finished!", "success"); // optional UI
+                }
             }
         }
 
@@ -845,6 +894,8 @@ function moveSelectedToken() {
             token.inHomePath = false;
             token.homeStep = 0;
 
+            playSound("enterSound"); // 🔥 SOUND HERE
+
             drawTokens();
 
             updateStatus("(Extra Turn - Roll Again)");
@@ -885,18 +936,63 @@ function moveSelectedToken() {
 
 
 // ================= STATUS =================
+
 function updateStatus() {
+
+    // remove highlight
+    document.querySelectorAll(".home-text").forEach(el => {
+        el.classList.remove("active-player");
+    });
+
+    // clear all statuses
+    ["red", "green", "blue", "yellow"].forEach(color => {
+        let el = document.getElementById("status-" + color);
+        if (el) el.innerText = "";
+    });
+
     let player = players[currentPlayerIndex];
-    let status = document.getElementById("status");
+    let color = player.color;
 
-    // Reset classes
-    status.className = "";
+    let statusEl = document.getElementById("status-" + color);
 
-    // Add color class
-    status.classList.add(player.color);
+    if (statusEl && finishedPlayers.includes(color)) {
+        statusEl.innerText = " 🏁 Finished";
+        return; // 🚫 stop further execution
+    }
 
-    // Set text
-    status.innerText = player.name + " Turn";
+    if (statusEl) {
+        statusEl.innerText = " 🎲 ";
+
+        // highlight active player
+        let parent = statusEl.closest(".home-text");
+        if (parent) parent.classList.add("active-player");
+    }
+
+    updateDicePosition();
+}
+
+// ================= DICE POSITION =================
+function updateDicePosition() {
+    const dice = document.getElementById("dice");
+    let color = players[currentPlayerIndex].color;
+
+    // ✅ Reset classes
+    dice.className = "dice-container";
+
+    // ✅ Apply correct position
+    if (color === "red") dice.classList.add("top-left");
+    if (color === "green") dice.classList.add("top-right");
+    if (color === "blue") dice.classList.add("bottom-left");
+    if (color === "yellow") dice.classList.add("bottom-right");
+
+    // ✅ Control click
+    if (currentDice === 0) {
+        dice.style.pointerEvents = "auto";
+        dice.style.opacity = "1";
+    } else {
+        dice.style.pointerEvents = "none";
+        dice.style.opacity = "0.6";
+    }
 }
 
 // ================= DICE =================
@@ -907,10 +1003,11 @@ function rollDice() {
 
     if (gameOver) return;
 
-    if (currentDice !== 0) {
-        alert("Move token first!");
-        return;
-    }
+    // ❌ stop double click
+    if (currentDice !== 0) return;
+
+    // 🔒 disable dice after roll
+    document.getElementById("dice").style.pointerEvents = "none";
 
     const cube = document.getElementById("diceCube");
 
@@ -949,7 +1046,6 @@ function rollDice() {
     cube.style.transform = `rotateX(${x}deg) rotateY(${y}deg) ${finalRotation[currentDice]}`;
 
     updateStatus("(Rolled: " + currentDice + ")");
-
 
     // ⏳ Delay logic to match animation
     setTimeout(() => {
@@ -1013,13 +1109,29 @@ function handleDiceLogic() {
         return;
     }
 
-    // 👤 HUMAN AUTO MOVE (optional)
+    // 👤 HUMAN PLAYER LOGIC
+
+    // ❌ No move → auto next player
+    if (movableTokens.length === 0) {
+        updateStatus("(No move possible)");
+        currentDice = 0;
+        setTimeout(nextTurn, 1000);
+        return;
+    }
+
+    // ✅ Only ONE token → auto move (like Ludo King)
     if (movableTokens.length === 1) {
         setTimeout(() => {
             selectedToken = movableTokens[0].i;
             moveSelectedToken();
-        }, 300);
+        }, 400);
+        return;
     }
+
+    // ✅ MULTIPLE OPTIONS → WAIT FOR PLAYER CLICK
+    updateStatus("(Select a token)");
+
+
 }
 
 // ================= NEXT TURN =================
@@ -1031,6 +1143,8 @@ function nextTurn() {
     selectedToken = null;
     currentDice = 0;
 
+
+    document.getElementById("dice").style.pointerEvents = "auto";
     document.querySelectorAll(".token").forEach(el => el.classList.remove("selected"));
 
     let attempts = 0;
@@ -1042,7 +1156,7 @@ function nextTurn() {
         // safety (avoid infinite loop)
         if (attempts > players.length) break;
 
-    } while (isPlayerFinished(players[currentPlayerIndex].color));
+    } while (finishedPlayers.includes(players[currentPlayerIndex].color));
 
     drawTokens();
     updateStatus();
@@ -1051,6 +1165,8 @@ function nextTurn() {
     if (players[currentPlayerIndex].isComputer) {
         setTimeout(rollDice, 1000);
     }
+
+
 }
 
 // ================= RESTART =================

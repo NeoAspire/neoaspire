@@ -19,50 +19,53 @@
 <body>
 
   <!-- ================= START SCREEN ================= -->
-<div id="startScreen" class="start-screen">
+  <div id="startScreen" class="start-screen">
 
-  <div class="start-card">
+    <div class="start-card">
 
-    <h1 class="title">🎲 Neo Ludo Arena</h1>
-    <p class="subtitle">Choose your game mode</p>
+      <h1 class="title">🎲 Neo Ludo Arena</h1>
+      <p class="subtitle">Choose your game mode</p>
 
-    <div class="mode-grid">
+      <div class="mode-grid">
 
-      <div class="mode-card" onclick="selectMode(1)">
-        <div class="icon">🤖</div>
-        <h3>Single Player</h3>
-        <p>Play against AI</p>
+        <div class="mode-card" onclick="selectMode(1)">
+          <div class="icon">🤖</div>
+          <h3>Single Player</h3>
+          <p>Play against AI</p>
+        </div>
+
+        <div class="mode-card" onclick="selectMode(2)">
+          <div class="icon">👥</div>
+          <h3>2 Players</h3>
+          <p>Head-to-head match</p>
+        </div>
+
+        <div class="mode-card" onclick="selectMode(3)">
+          <div class="icon">👨‍👩‍👧</div>
+          <h3>3 Players</h3>
+          <p>Fun with friends</p>
+        </div>
+
+        <div class="mode-card" onclick="selectMode(4)">
+          <div class="icon">👨‍👩‍👧‍👦</div>
+          <h3>4 Players</h3>
+          <p>Full table chaos</p>
+        </div>
+
       </div>
 
-      <div class="mode-card" onclick="selectMode(2)">
-        <div class="icon">👥</div>
-        <h3>2 Players</h3>
-        <p>Head-to-head match</p>
-      </div>
-
-      <div class="mode-card" onclick="selectMode(3)">
-        <div class="icon">👨‍👩‍👧</div>
-        <h3>3 Players</h3>
-        <p>Fun with friends</p>
-      </div>
-
-      <div class="mode-card" onclick="selectMode(4)">
-        <div class="icon">👨‍👩‍👧‍👦</div>
-        <h3>4 Players</h3>
-        <p>Full table chaos</p>
-      </div>
-
+      <a href="../index.html" class="btn-back">← Back to Games</a>
     </div>
-    
-  <a href="../index.html" class="btn-back">← Back to Games</a>
-  </div>
 
-</div>
+  </div>
 
   <!-- ================= GAME AREA ================= -->
   <div id="gameContainer" style="display: none;">
 
+    <div class="game-wrapper">
+
     <!-- TOP BAR -->
+     <!--
     <div class="top-bar">
       <h2>Neo Ludo Arena</h2>
       <div class="top-controls">
@@ -70,18 +73,26 @@
         <button onclick="restartGame()">🔄 Restart</button>
       </div>
     </div>
+  -->
 
-    <!-- BOARD -->
-    <div id="board"></div>
+    <!-- ✅ GAME AREA WRAPPER (IMPORTANT) -->
+    <div class="game-area">
 
-    <!-- CONTROLS -->
-    <div class="controls">
+      <!-- 🎯 DICE ZONES  -->
+      <div class="dice-zone top-left"></div>
+      <div class="dice-zone top-right"></div>
+      <div class="dice-zone bottom-left"></div>
+      <div class="dice-zone bottom-right"></div>
 
-      <!-- Game Status Left -->
-      <p id="status">Waiting for player...</p>
+      <!-- BOARD -->
+      <div id="board"></div>
 
-      <!-- Dice Display -->
-      <div class="dice-container" onclick="rollDice()">
+      <!-- CENTER MESSAGE -->
+      <div id="gameMessage" class="game-message hidden"></div>
+
+      <!-- ✅ DICE  -->
+      <div id="dice" class="dice-container dice-red" onclick="rollDice()">
+
         <div id="diceCube" class="dice-cube">
 
           <div class="face front">
@@ -102,7 +113,6 @@
             <span class="dot tr"></span>
             <span class="dot bl"></span>
             <span class="dot br"></span>
-
           </div>
 
           <div class="face left">
@@ -125,15 +135,28 @@
           </div>
 
         </div>
+
       </div>
 
-    </div>
+    </div> <!-- END GAME AREA -->
+    </div> <!--  game-wrapper CLOSES -->
 
-    <!-- SOUND EFFECT -->
-    <audio id="diceRoll" src="./sounds/dice-roll.mp3"></audio>
-    <audio id="diceHit" src="./sounds/dice-h1it.mp3"></audio>
-
+     <!-- FLOATING CONTROLS (ADD HERE ✅) -->
+  <div class="floating-controls">
+    <button onclick="toggleSound()" id="soundBtn" class="fab sound">🔊</button>
+    <button onclick="restartGame()" class="fab restart">🔄</button>
   </div>
+
+        <!-- SOUND EFFECT -->
+    <audio id="diceRoll" src="./sounds/dice-roll.mp3"></audio>
+    <audio id="diceHit" src="./sounds/dice-hit.mp3"></audio>
+    <audio id="enterSound" src="sounds/Punjabi-Aa-Gaye-Oye.mp3" 
+    preload="auto"></audio>
+    <audio id="tokenMove" src="sounds/move.mp3"></audio>
+    <audio id="tokenKill" src="sounds/Passe-Hatt-Ja.mp3"></audio>
+    <audio id="finishSound" src="sounds/Dabda Kithe Aa.mp3"></audio>
+
+  </div> <!-- gameConatiner ends -->
 
 </body>
 
