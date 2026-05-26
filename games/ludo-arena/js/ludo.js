@@ -1,14 +1,26 @@
 // ================= INIT =================
+
 window.onload = () => {
     initBoard();
     addCenter();
     setupInputHandler();
+
+    // ✅ preload sounds
+    ["diceRoll", "diceHit", "tokenMove", "tokenKill", "finishSound", "enterSound"]
+        .forEach(id => {
+            const s = document.getElementById(id);
+
+            if (s) {
+                s.load();
+            }
+        });
 };
 
 let selectedToken = null;
 let currentDice = 0;
 let gameOver = false;
 let finishedPlayers = [];
+let isRolling = false;
 
 
 // ================= SOUND SYSTEM =================
@@ -21,10 +33,10 @@ function toggleSound() {
     const btn = document.getElementById("soundBtn");
 
     if (soundEnabled) {
-        btn.textContent = "🔊 Sound ON";
+        btn.textContent = "🔊 ";
         btn.classList.remove("off");
     } else {
-        btn.textContent = "🔇 Sound OFF";
+        btn.textContent = "🔇";
         btn.classList.add("off");
     }
 }
@@ -181,7 +193,6 @@ let currentPlayerIndex = 0;
 // ================= 
 // BOARD 
 // =================
-
 function initBoard() {
     const board = document.getElementById("board");
     board.innerHTML = "";
@@ -364,7 +375,6 @@ function initBoard() {
 }
 
 // ============ PLAYER NAMES ============
-
 function addPlayerNames() {
     const board = document.getElementById("board");
 
@@ -399,12 +409,9 @@ function addPlayerNames() {
     }
 }
 
-
-
 // ================= 
 // CENTER 
 // =================
-
 function addCenter() {
     const board = document.getElementById("board");
 
@@ -521,7 +528,6 @@ function selectMode(mode) {
     startGame();
 }
 
-
 // ================= START GAME =================
 function startGame() {
     const mode = parseInt(document.getElementById("gameMode").value);
@@ -582,7 +588,8 @@ function startGame() {
                 homeIndex: i,
                 steps: 0,
                 inHomePath: false,
-                homeStep: 0
+                homeStep: 0,
+                finished: false
             });
         }
     });
@@ -627,6 +634,7 @@ function drawTokens() {
         if (token.position === -1) {
             pos = homePositions[token.color][token.homeIndex];
         } else if (token.position === -2) {
+
             // ✅ SAFETY CHECK
             if (
                 token.homeStep === undefined ||
@@ -670,10 +678,11 @@ function drawTokens() {
 
             let t = document.createElement("div");
             t.classList.add("token", token.color);
-            // ✅ Assign position class (VERY IMPORTANT)
-            // 🔥 Remove all position classes first
+
+            // 🔥 Remove old position classes 
             t.classList.remove("pos-0", "pos-1", "pos-2", "pos-3", "center-pos");
 
+             // ✅ Positioning
             if (group.length === 1) {
                 // ✅ Only one token → center it
                 t.classList.add("center-pos");
@@ -682,19 +691,30 @@ function drawTokens() {
                 t.classList.add(`pos-${i}`);
             }
 
-
-            // 🎯 Offset logic
+                  // 🎯 Offset logic
 
             let count = group.length;
 
+            // =============================
+            // 🚫 FINAL CELL CHECK
+            // =============================
+            let isFinal = isInFinalCell(token);
 
-            // ✅ CLICK LOGIC (same as before)
+            if (isFinal) {
+                t.style.opacity = "0.6";     // faded look
+                t.style.cursor = "default";  // not clickable
+            }
+
+    
+            // ✅ CLICK LOGIC 
             if (!players[currentPlayerIndex].isComputer && token.color === players[currentPlayerIndex].color) {
                 t.style.cursor = "pointer";
 
                 t.onclick = () => {
 
                     if (players[currentPlayerIndex].isComputer) return;
+
+                    if (isInFinalCell(token)) return; // 🔒 double safety  
 
                     if (currentDice === 0) {
                         showGameMessage("🎲 Roll dice first!", "warning");
@@ -706,6 +726,20 @@ function drawTokens() {
                     if (clickedToken.color !== players[currentPlayerIndex].color) return;
 
                     if (clickedToken.position === -1 && currentDice !== 6) return;
+
+                    // 🚫 Can't move from home without 6
+                    if (clickedToken.position === -1 && currentDice !== 6) return;
+
+                    // 🚫 BLOCK invalid home path move
+                    if (clickedToken.inHomePath) {
+                        let maxStep = homePath[clickedToken.color].length - 1;
+                        let remaining = maxStep - clickedToken.homeStep;
+
+                        if (currentDice > remaining) {
+                            showGameMessage("❌ Invalid move! Choose another token", "warning");
+                            return;
+                        }
+                    }
 
                     selectedToken = index;
 
@@ -719,6 +753,14 @@ function drawTokens() {
             cell.appendChild(t);
         });
     });
+}
+
+// ================= CHECK FINAL CELL =================
+function isInFinalCell(token) {
+    if (!token.inHomePath) return false;
+
+    let finalIndex = homePath[token.color].length - 1;
+    return token.homeStep === finalIndex;
 }
 
 //================= CHECK SAFE CELL =================
@@ -795,7 +837,7 @@ function declareWinner(color) {
     }
 
     // 🎉 Show ranking (not game over)
-    alert("🏆 " + player.name + " finished!");
+    showGameMessage("🏆 " + player.name + " finished!");
 
     // ✅ Check if only 1 player left
     let remainingPlayers = players.filter(p => !finishedPlayers.includes(p.color));
@@ -804,13 +846,24 @@ function declareWinner(color) {
         gameOver = true;
 
         setTimeout(() => {
-            alert("🎯 Game Over!\nLast player: " + remainingPlayers[0].name);
+            showGameMessage("🎯 Game Over!\nLast player: " + remainingPlayers[0].name);
         }, 200);
     }
 }
 
 // ================= ANIMATE MOVE =================
 function animateMove(token, steps, callback) {
+
+     // 🛑 BLOCK overshoot in home path (strict rule)
+    if (token.inHomePath) {
+        let maxStep = homePath[token.color].length - 1;
+        let remaining = maxStep - token.homeStep;
+
+        if (steps > remaining) {
+            callback(); // ❌ no movement
+            return;
+        }
+    }
 
     let stepCount = 0;
 
@@ -848,6 +901,8 @@ function animateMove(token, steps, callback) {
 
                 // 🎉 TOKEN JUST REACHED FINAL CELL
                 if (token.homeStep === homePath[token.color].length - 1) {
+                    token.finished = true;
+
                     playSound("finishSound"); // 🔥 PLAY FINISH SOUND
                     showGameMessage("🏁 Token Finished!", "success"); // optional UI
                 }
@@ -855,7 +910,6 @@ function animateMove(token, steps, callback) {
         }
 
         stepCount++;
-
         drawTokens(); // redraw each step
 
         setTimeout(stepMove, 250); // ⏱️ speed (adjust: 150 fast / 300 slow)
@@ -931,12 +985,11 @@ function moveSelectedToken() {
         }
 
         setTimeout(nextTurn, 500);
+        isRolling = false;
     });
 }
 
-
 // ================= STATUS =================
-
 function updateStatus() {
 
     // remove highlight
@@ -961,7 +1014,7 @@ function updateStatus() {
     }
 
     if (statusEl) {
-        statusEl.innerText = " 🎲 ";
+        statusEl.innerText = " ";
 
         // highlight active player
         let parent = statusEl.closest(".home-text");
@@ -969,23 +1022,72 @@ function updateStatus() {
     }
 
     updateDicePosition();
+    updateTurnIndicator();
+}
+
+// ================= PLAYER TURN INDICATOR  =================
+function updateTurnIndicator(extraText = "") {
+    const el = document.getElementById("turnIndicator");
+    const text = document.getElementById("turnText");
+
+    if (!el || !text) return;
+
+    let player = players[currentPlayerIndex];
+
+    // 🎨 Remove old color classes
+    el.classList.remove("red", "green", "blue", "yellow");
+
+    // 🎨 Add current player color
+    el.classList.add(player.color);
+
+    // 🧠 Set text
+    text.innerText = `${player.name}'s Turn ${extraText}`;
 }
 
 // ================= DICE POSITION =================
+
 function updateDicePosition() {
+
     const dice = document.getElementById("dice");
+
     let color = players[currentPlayerIndex].color;
 
-    // ✅ Reset classes
-    dice.className = "dice-container";
+    let targetBox;
 
-    // ✅ Apply correct position
-    if (color === "red") dice.classList.add("top-left");
-    if (color === "green") dice.classList.add("top-right");
-    if (color === "blue") dice.classList.add("bottom-left");
-    if (color === "yellow") dice.classList.add("bottom-right");
+    if (color === "red") {
+        targetBox = document.querySelector(".top-left");
+    }
 
-    // ✅ Control click
+    if (color === "green") {
+        targetBox = document.querySelector(".top-right");
+    }
+
+    if (color === "blue") {
+        targetBox = document.querySelector(".bottom-left");
+    }
+
+    if (color === "yellow") {
+        targetBox = document.querySelector(".bottom-right");
+    }
+
+    // ✅ move dice into current player box
+    targetBox.appendChild(dice);
+
+    
+dice.onclick = rollDice;
+
+dice.addEventListener("click", function (e) {
+
+    e.stopPropagation();
+
+    if (!isRolling) {
+        rollDice();
+    }
+
+});
+
+
+    // ✅ enable / disable
     if (currentDice === 0) {
         dice.style.pointerEvents = "auto";
         dice.style.opacity = "1";
@@ -996,44 +1098,23 @@ function updateDicePosition() {
 }
 
 // ================= DICE =================
-
-let autoMoveTriggered = false;
-
 function rollDice() {
 
     if (gameOver) return;
-
-    // ❌ stop double click
+    if (isRolling) return;
     if (currentDice !== 0) return;
 
-    // 🔒 disable dice after roll
-    document.getElementById("dice").style.pointerEvents = "none";
+    isRolling = true;
 
+    const dice = document.getElementById("dice");
     const cube = document.getElementById("diceCube");
 
-    // 🎲 Generate random dice number
+    dice.style.pointerEvents = "none";
+
+    // 🎲 generate dice number
     currentDice = Math.floor(Math.random() * 6) + 1;
 
-    // 🔊 START ROLL SOUND
-    playSound("diceRoll");
-
-    // 🎯 Stop roll sound and play HIT
-    setTimeout(() => {
-        const roll = document.getElementById("diceRoll");
-        if (roll) {
-            roll.pause();
-            roll.currentTime = 0;
-        }
-
-        playSound("diceHit");
-    }, 700); // match animation timing
-
-    // 🎬 random spin (for realism)
-    let x = Math.floor(Math.random() * 4) * 360;
-    let y = Math.floor(Math.random() * 4) * 360;
-
-    // 🎯 final rotation per face
-    let finalRotation = {
+    const finalRotation = {
         1: "rotateX(0deg) rotateY(0deg)",
         2: "rotateX(-90deg) rotateY(0deg)",
         3: "rotateY(90deg)",
@@ -1042,15 +1123,51 @@ function rollDice() {
         6: "rotateX(180deg)"
     };
 
-    // 🎬 Apply animation
-    cube.style.transform = `rotateX(${x}deg) rotateY(${y}deg) ${finalRotation[currentDice]}`;
+    // 🎲 random spin values
+    let randomX = 1440 + Math.floor(Math.random() * 720);
+    let randomY = 1440 + Math.floor(Math.random() * 720);
 
+    // ✅ force browser repaint FIRST
+    cube.offsetHeight;
+
+    // ✅ use requestAnimationFrame for smooth start
+    requestAnimationFrame(() => {
+
+        playSound("diceRoll");
+
+        cube.style.transition = "transform 1s ease-out";
+
+        cube.style.transform =
+            `rotateX(${randomX}deg) rotateY(${randomY}deg)`;
+
+    });
+
+    // ⏳ settle on final face
+    setTimeout(() => {
+
+        cube.style.transition = "transform 0.35s ease-out";
+        cube.style.transform = finalRotation[currentDice];
+
+        const roll = document.getElementById("diceRoll");
+
+        if (roll) {
+            roll.pause();
+            roll.currentTime = 0;
+        }
+
+        playSound("diceHit");
+
+    }, 1000);
+
+    updateStatus();
     updateStatus("(Rolled: " + currentDice + ")");
 
-    // ⏳ Delay logic to match animation
     setTimeout(() => {
+
+        isRolling = false;
         handleDiceLogic();
-    }, 1000);
+
+    }, 1400);
 }
 
 // ================= DICE LOGIC =================
@@ -1060,7 +1177,7 @@ function handleDiceLogic() {
 
     let playerTokens = tokens
         .map((t, i) => ({ t, i }))
-        .filter(obj => obj.t.color === player.color);
+        .filter(obj => obj.t.color === player.color && !obj.t.finished);
 
     let movableTokens = playerTokens.filter(obj => {
 
@@ -1072,8 +1189,10 @@ function handleDiceLogic() {
             return false;
 
         if (t.inHomePath) {
-            let newStep = t.homeStep + currentDice;
-            return newStep < homePath[t.color].length;
+            let maxStep = homePath[t.color].length - 1;
+            let remaining = maxStep - t.homeStep;
+
+            return currentDice <= remaining; // ✅ only allow valid moves
         }
 
         return true;
@@ -1081,7 +1200,7 @@ function handleDiceLogic() {
 
     // ❌ No move
     if (movableTokens.length === 0) {
-        updateStatus("(No move possible)");
+        updateStatus("(No move)");
         currentDice = 0;
         setTimeout(nextTurn, 1000);
         return;
@@ -1129,6 +1248,7 @@ function handleDiceLogic() {
     }
 
     // ✅ MULTIPLE OPTIONS → WAIT FOR PLAYER CLICK
+    updateStatus();
     updateStatus("(Select a token)");
 
 
@@ -1142,6 +1262,7 @@ function nextTurn() {
     // reset
     selectedToken = null;
     currentDice = 0;
+    isRolling = false;
 
 
     document.getElementById("dice").style.pointerEvents = "auto";

@@ -59,104 +59,133 @@
 
   </div>
 
-  <!-- ================= GAME AREA ================= -->
+  <!-- ================= GAME CONTAINER ================= -->
   <div id="gameContainer" style="display: none;">
 
     <div class="game-wrapper">
 
-    <!-- TOP BAR -->
-     <!--
-    <div class="top-bar">
-      <h2>Neo Ludo Arena</h2>
-      <div class="top-controls">
-        <button onclick="toggleSound()" id="soundBtn">🔊 Sound ON</button>
-        <button onclick="restartGame()">🔄 Restart</button>
-      </div>
-    </div>
-  -->
+      <!-- ================= LUDO WRAPPER ================= -->
+      <div class="ludo-wrapper">
 
-    <!-- ✅ GAME AREA WRAPPER (IMPORTANT) -->
-    <div class="game-area">
-
-      <!-- 🎯 DICE ZONES  -->
-      <div class="dice-zone top-left"></div>
-      <div class="dice-zone top-right"></div>
-      <div class="dice-zone bottom-left"></div>
-      <div class="dice-zone bottom-right"></div>
-
-      <!-- BOARD -->
-      <div id="board"></div>
-
-      <!-- CENTER MESSAGE -->
-      <div id="gameMessage" class="game-message hidden"></div>
-
-      <!-- ✅ DICE  -->
-      <div id="dice" class="dice-container dice-red" onclick="rollDice()">
-
-        <div id="diceCube" class="dice-cube">
-
-          <div class="face front">
-            <span class="dot center"></span>
-          </div>
-
-          <div class="face back">
-            <span class="dot tl"></span>
-            <span class="dot tr"></span>
-            <span class="dot bl"></span>
-            <span class="dot br"></span>
-            <span class="dot ml"></span>
-            <span class="dot mr"></span>
-          </div>
-
-          <div class="face right">
-            <span class="dot tl"></span>
-            <span class="dot tr"></span>
-            <span class="dot bl"></span>
-            <span class="dot br"></span>
-          </div>
-
-          <div class="face left">
-            <span class="dot tl"></span>
-            <span class="dot center"></span>
-            <span class="dot br"></span>
-          </div>
-
-          <div class="face top">
-            <span class="dot tl"></span>
-            <span class="dot tr"></span>
-          </div>
-
-          <div class="face bottom">
-            <span class="dot tl"></span>
-            <span class="dot tr"></span>
-            <span class="dot bl"></span>
-            <span class="dot br"></span>
-            <span class="dot center"></span>
-          </div>
-
+        <!-- ================= PLAYER BOXES ================= -->
+        <!-- 🔴 P2 (TOP LEFT) -->
+        <div class="dice-box red-player corner top-left">
         </div>
 
-      </div>
+        <!-- 🟢 P3 (TOP RIGHT) -->
+        <div class="dice-box green-player corner top-right">
+        </div>
 
-    </div> <!-- END GAME AREA -->
-    </div> <!--  game-wrapper CLOSES -->
+        <!-- ✅ GAME AREA -->
+        <div class="game-area">
 
-     <!-- FLOATING CONTROLS (ADD HERE ✅) -->
-  <div class="floating-controls">
-    <button onclick="toggleSound()" id="soundBtn" class="fab sound">🔊</button>
-    <button onclick="restartGame()" class="fab restart">🔄</button>
-  </div>
+          <!-- 🟢 TURN INDICATOR (ADD HERE) -->
+          <div id="turnIndicator">
+            <span id="turnText">Player Turn</span>
+          </div>
 
-        <!-- SOUND EFFECT -->
+          <!-- BOARD -->
+          <div id="board"></div>
+
+          <!-- CENTER MESSAGE -->
+          <div id="gameMessage" class="game-message hidden"></div>
+
+          <!-- 🔵 P1 (BOTTOM LEFT) -->
+          <div class="dice-box blue-player corner bottom-left">
+
+            <div class="player-label"></div>
+
+            <!-- SINGLE MOVING DICE -->
+            <div id="dice" class="dice-container" onclick="rollDice()">
+
+              <div id="diceCube" class="dice-cube">
+
+                <div class="face front">
+                  <span class="dot center"></span>
+                </div>
+
+                <div class="face back">
+                  <span class="dot tl"></span>
+                  <span class="dot tr"></span>
+                  <span class="dot bl"></span>
+                  <span class="dot br"></span>
+                  <span class="dot ml"></span>
+                  <span class="dot mr"></span>
+                </div>
+
+                <div class="face right">
+                  <span class="dot tl"></span>
+                  <span class="dot tr"></span>
+                  <span class="dot bl"></span>
+                  <span class="dot br"></span>
+                </div>
+
+                <div class="face left">
+                  <span class="dot tl"></span>
+                  <span class="dot center"></span>
+                  <span class="dot br"></span>
+                </div>
+
+                <div class="face top">
+                  <span class="dot tl"></span>
+                  <span class="dot tr"></span>
+                </div>
+
+                <div class="face bottom">
+                  <span class="dot tl"></span>
+                  <span class="dot tr"></span>
+                  <span class="dot bl"></span>
+                  <span class="dot br"></span>
+                  <span class="dot center"></span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- 🟡 P4 (BOTTOM RIGHT) -->
+          <div class="dice-box yellow-player corner bottom-right">
+          </div>
+
+        </div> <!-- Game Area Ends -->
+
+            <!-- FLOATING CONTROLS -->
+    <div class="floating-controls">
+      <button onclick="toggleSound()" id="soundBtn" class="fab sound">🔊</button>
+      <button onclick="restartGame()" class="fab restart">🔄</button>
+    </div>
+
+      </div> <!--  Ludo Wrapper Ends -->
+    </div> <!-- Game Wrapper Ends -->
+
+    <!-- SOUND EFFECT -->
     <audio id="diceRoll" src="./sounds/dice-roll.mp3"></audio>
     <audio id="diceHit" src="./sounds/dice-hit.mp3"></audio>
-    <audio id="enterSound" src="sounds/Punjabi-Aa-Gaye-Oye.mp3" 
-    preload="auto"></audio>
+    <audio id="enterSound" src="sounds/Punjabi-Aa-Gaye-Oye.mp3" preload="auto"></audio>
     <audio id="tokenMove" src="sounds/move.mp3"></audio>
     <audio id="tokenKill" src="sounds/Passe-Hatt-Ja.mp3"></audio>
     <audio id="finishSound" src="sounds/Dabda Kithe Aa.mp3"></audio>
 
-  </div> <!-- gameConatiner ends -->
+  </div> <!-- Game Conatiner Ends -->
+
+
+  <!-- ================= GAME MESSAGE ================= -->
+  <div id="gameMessage" class="game-message"></div>
+
+  <!-- ================= AUDIO ================= -->
+
+  <!-- Dice -->
+  <audio id="diceRoll" src="sounds/dice-roll.mp3"></audio>
+  <audio id="diceHit" src="sounds/dice-hit.mp3"></audio>
+
+  <!-- Token -->
+  <audio id="tokenMove" src="sounds/token-move.mp3"></audio>
+  <audio id="tokenKill" src="sounds/token-kill.mp3"></audio>
+  <audio id="enterSound" src="sounds/token-enter.mp3"></audio>
+  <audio id="finishSound" src="sounds/finish.mp3"></audio>
 
 </body>
 
