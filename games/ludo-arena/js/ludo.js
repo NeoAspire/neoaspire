@@ -190,6 +190,33 @@ let tokens = [];
 let players = [];
 let currentPlayerIndex = 0;
 
+// ================= HOME PLACEHOLDERS =================
+function createHomeContainer(board, color) {
+
+    const home = document.createElement("div");
+
+    home.className = `home-container ${color}-home-container`;
+
+    home.innerHTML = `
+        <div class="home-inner ${color}-inner">
+
+            <!-- placeholders -->
+            <div class="placeholder-layer">
+                <div class="token-slot"></div>
+                <div class="token-slot"></div>
+                <div class="token-slot"></div>
+                <div class="token-slot"></div>
+            </div>
+
+            <!-- tokens -->
+            <div class="token-layer"></div>
+
+        </div>
+    `;
+
+    board.appendChild(home);
+}
+
 // ================= 
 // BOARD 
 // =================
@@ -197,12 +224,22 @@ function initBoard() {
     const board = document.getElementById("board");
     board.innerHTML = "";
 
+    createHomeContainer(board, "red");
+createHomeContainer(board, "green");
+createHomeContainer(board, "blue");
+createHomeContainer(board, "yellow");
+
     for (let row = 0; row < 15; row++) {
         for (let col = 0; col < 15; col++) {
 
-            let cell = document.createElement("div");
-            cell.classList.add("cell");
+          //  let cell = document.createElement("div");
+       //     cell.classList.add("cell");
 
+let cell = document.createElement("div");
+cell.classList.add("cell");
+
+// ✅ UNIQUE CELL ID
+cell.id = `cell-${row}-${col}`;
 
             // HOMES
             if (row < 6 && col < 6) {
@@ -673,8 +710,10 @@ function drawTokens() {
 
             let { token, index, pos } = obj;
 
-            let cellIndex = pos.r * 15 + pos.c;
-            let cell = document.getElementById("board").children[cellIndex];
+         //   let cellIndex = pos.r * 15 + pos.c;
+         //   let cell = document.getElementById("board").children[cellIndex];
+
+            let cell = document.getElementById(`cell-${pos.r}-${pos.c}`);
 
             let t = document.createElement("div");
             t.classList.add("token", token.color);
@@ -707,6 +746,7 @@ function drawTokens() {
 
     
             // ✅ CLICK LOGIC 
+            /*
             if (!players[currentPlayerIndex].isComputer && token.color === players[currentPlayerIndex].color) {
                 t.style.cursor = "pointer";
 
@@ -749,8 +789,90 @@ function drawTokens() {
                     moveSelectedToken();
                 };
             }
+            */
+            // ================= CLICK LOGIC =================
+const isMyTurn = token.color === players[currentPlayerIndex].color;
 
-            cell.appendChild(t);
+if (!players[currentPlayerIndex].isComputer && isMyTurn) {
+
+    t.style.cursor = "pointer";
+
+    t.onclick = () => {
+
+        if (players[currentPlayerIndex].isComputer) return;
+        if (isInFinalCell(token)) return;
+
+        if (currentDice === 0) {
+            showGameMessage("🎲 Roll dice first!", "warning");
+            return;
+        }
+
+        let clickedToken = tokens[index];
+
+        if (clickedToken.position === -1 && currentDice !== 6) return;
+
+        if (clickedToken.inHomePath) {
+            let maxStep = homePath[clickedToken.color].length - 1;
+            let remaining = maxStep - clickedToken.homeStep;
+
+            if (currentDice > remaining) {
+                showGameMessage("❌ Invalid move!", "warning");
+                return;
+            }
+        }
+
+        selectedToken = index;
+
+        document.querySelectorAll(".token").forEach(el => el.classList.remove("selected"));
+        t.classList.add("selected");
+
+        moveSelectedToken();
+    };
+
+} else {
+    // 🚫 disable other players tokens
+    t.style.pointerEvents = "none";
+    t.style.cursor = "default";
+}
+            //cell.appendChild(t);
+
+            // ✅ keep placeholders visible
+            /*
+const tokenLayer = cell.querySelector(".token-layer");
+
+if (tokenLayer) {
+    tokenLayer.appendChild(t);
+} else {
+    cell.appendChild(t);
+}
+*/
+// ================= HOME TOKENS =================
+if (token.position === -1) {
+
+    // find correct home container
+    const homeContainer = document.querySelector(`.${token.color}-home-container`);
+
+    if (homeContainer) {
+
+        const tokenLayer = homeContainer.querySelector(".token-layer");
+
+        // position inside placeholder
+        t.classList.add(`home-token-${token.homeIndex}`);
+
+        tokenLayer.appendChild(t);
+    }
+
+} else {
+
+    // ================= BOARD TOKENS =================
+    const tokenLayer = cell.querySelector(".token-layer");
+
+    if (tokenLayer) {
+        tokenLayer.appendChild(t);
+    } else {
+        cell.appendChild(t);
+    }
+}
         });
     });
 }
@@ -918,6 +1040,7 @@ function animateMove(token, steps, callback) {
     stepMove();
 }
 
+
 // ================= MOVE SELECTED TOKEN =================
 function moveSelectedToken() {
 
@@ -934,9 +1057,12 @@ function moveSelectedToken() {
 
     let color = token.color;
 
-    // ✅ FIX: define once
+    // ✅ save dice value
     let diceValue = currentDice;
     currentDice = 0;
+
+    // ✅ NEW: extra turn tracker
+    let earnedExtraTurn = false;
 
     // 🏠 OUT OF HOME
     if (token.position === -1) {
@@ -948,9 +1074,12 @@ function moveSelectedToken() {
             token.inHomePath = false;
             token.homeStep = 0;
 
-            playSound("enterSound"); // 🔥 SOUND HERE
+            playSound("enterSound");
 
             drawTokens();
+
+            // ✅ rolling 6 gives extra turn
+            earnedExtraTurn = true;
 
             updateStatus("(Extra Turn - Roll Again)");
 
@@ -967,23 +1096,69 @@ function moveSelectedToken() {
     // 🚶 MOVE
     animateMove(token, diceValue, () => {
 
-        checkForKill(token);
-        drawTokens();
+        // =============================
+        // 💥 CHECK KILL
+        // =============================
+        let oldPositions = tokens.map(t => ({
+            token: t,
+            pos: t.position
+        }));
 
-        if (isPlayerFinished(token.color)) {
-            declareWinner(token.color);
-            return;
+        checkForKill(token);
+
+        // ✅ detect if someone got killed
+        let killed = oldPositions.some(obj =>
+            obj.token !== token &&
+            obj.pos !== -1 &&
+            obj.token.position === -1
+        );
+
+        if (killed) {
+            earnedExtraTurn = true;
+          //  showGameMessage("🔥 Extra Turn for Kill!", "success");
         }
 
+        drawTokens();
+
+        // =============================
+        // 🏁 TOKEN FINISHED
+        // =============================
+        if (isTokenFinished(token)) {
+            earnedExtraTurn = true;
+            showGameMessage("🏁 Extra Turn for Finish!", "success");
+        }
+
+        // =============================
+        // 🏆 PLAYER FINISHED
+        // =============================
+        if (isPlayerFinished(token.color)) {
+            declareWinner(token.color);
+        }
+
+        // =============================
+        // 🎲 ROLLING 6
+        // =============================
         if (diceValue === 6) {
+            earnedExtraTurn = true;
+        }
+
+        // =============================
+        // 🔁 HANDLE EXTRA TURN
+        // =============================
+        if (earnedExtraTurn) {
+
             updateStatus("(Extra Turn - Roll Again)");
 
             if (players[currentPlayerIndex].isComputer) {
                 setTimeout(rollDice, 800);
             }
+
             return;
         }
 
+        // =============================
+        // ➡️ NORMAL NEXT TURN
+        // =============================
         setTimeout(nextTurn, 500);
         isRolling = false;
     });

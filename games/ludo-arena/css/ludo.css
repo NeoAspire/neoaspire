@@ -143,13 +143,28 @@ background: linear-gradient(135deg, #dbeafe, #bfdbfe);
   padding: 12px;
   gap: 12px;
 }
-
+/*
 .game-area,
 .ludo-wrapper {
   position: relative;
   width: min(92vmin, 420px);
   height: min(92vmin, 420px);
   margin: auto;
+}
+*/
+/* ================= MAIN BOARD SIZE ================= */
+
+.game-area,
+.ludo-wrapper {
+    position: relative;
+
+    /* PERFECT UNIVERSAL SIZE */
+    width: min(88vw, calc(100vh - 140px), 760px);
+    height: min(88vw, calc(100vh - 140px), 760px);
+
+    aspect-ratio: 1 / 1;
+
+    margin: auto;
 }
 
 /* ================= BOARD ================= */
@@ -212,10 +227,241 @@ background: linear-gradient(135deg, #dbeafe, #bfdbfe);
   transition: transform 0.8s ease;
 }
 
+/* ================= HOME TOKEN PLACEHOLDERS ================= */
+/*
+.home-container {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+*/
+
+.home-container {
+    position: absolute;
+
+    width: 20%;
+    height: 20%;
+
+    min-width: 60px;
+    min-height: 60px;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* positions */
+/*
+.red-home-container {
+    top: 40px;
+    left: 40px;
+}
+
+.green-home-container {
+    top: 40px;
+    right: 40px;
+}
+
+.blue-home-container {
+    bottom: 40px;
+    left: 40px;
+}
+
+.yellow-home-container {
+    bottom: 40px;
+    right: 40px;
+}
+*/
+/* inner box */
+
+.red-home-container {
+    top: 10%;
+    left: 10%;
+}
+
+.green-home-container {
+    top: 10%;
+    right: 10%;
+}
+
+.blue-home-container {
+    bottom: 10%;
+    left: 10%;
+}
+
+.yellow-home-container {
+    bottom: 10%;
+    right: 10%;
+}
+
+.home-inner {
+    width: 78%;
+    height: 78%;
+    position: relative;
+
+     display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* both layers */
+
+.placeholder-layer,
+.token-layer {
+    position: absolute;
+    inset: 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+      place-items: center;
+    /* PERFECT RESPONSIVE SPACING */
+    gap: clamp(8px, 10%, 22px);
+
+    width: 100%;
+    height: 100%;
+}
+
+
+/* ================= PLACEHOLDER COLORS ================= */
+
+/* 🔴 RED HOME */
+.red-home-container .token-slot {
+    background: rgba(239, 68, 68, 0.15);
+    border: 3px dashed rgba(239, 68, 68, 0.7);
+
+    box-shadow:
+        inset 0 0 8px rgba(239, 68, 68, 0.25),
+        0 0 6px rgba(239, 68, 68, 0.2);
+}
+
+/* 🟢 GREEN HOME */
+.green-home-container .token-slot {
+    background: rgba(16, 185, 129, 0.15);
+    border: 3px dashed rgba(16, 185, 129, 0.7);
+
+    box-shadow:
+        inset 0 0 8px rgba(16, 185, 129, 0.25),
+        0 0 6px rgba(16, 185, 129, 0.2);
+}
+
+/* 🔵 BLUE HOME */
+.blue-home-container .token-slot {
+    background: rgba(59, 130, 246, 0.15);
+    border: 3px dashed rgba(59, 130, 246, 0.7);
+
+    box-shadow:
+        inset 0 0 8px rgba(59, 130, 246, 0.25),
+        0 0 6px rgba(59, 130, 246, 0.2);
+}
+
+/* 🟡 YELLOW HOME */
+.yellow-home-container .token-slot {
+    background: rgba(245, 158, 11, 0.18);
+    border: 3px dashed rgba(245, 158, 11, 0.75);
+
+    box-shadow:
+        inset 0 0 8px rgba(245, 158, 11, 0.25),
+        0 0 6px rgba(245, 158, 11, 0.2);
+}
+
+/* token layer */
+
+.token-layer {
+    z-index: 5;
+}
+
+/* ================= HOME TOKENS ================= */
+
+/* IMPORTANT */
+.home-container .token {
+
+    position: relative !important;
+/*
+    width: 72% !important;
+    height: 72% !important;
+    */
+
+        width: clamp(22px, 65%, 42px) !important;
+    height: clamp(22px, 65%, 42px) !important;
+
+    min-width: 18px;
+    min-height: 18px;
+
+    max-width: 48px;
+    max-height: 48px;
+
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+
+    align-self: center;
+    justify-self: center;
+
+    margin: 0;
+}
+
+/* fixed positions */
+
+.home-token-0 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.home-token-1 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.home-token-2 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.home-token-3 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* disable board offsets inside home */
+
+.home-container .token.center-pos,
+.home-container .token.pos-0,
+.home-container .token.pos-1,
+.home-container .token.pos-2,
+.home-container .token.pos-3 {
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+}
+
+
+
 /* ================= TOKENS ================= */
 .token {
   width: 40%;
   height: 40%;
+    min-width: 14px;
+  min-height: 14px;
+
+  max-width: 34px;
+  max-height: 34px;
+
   border-radius: 50%;
   position: absolute;
   cursor: pointer;
@@ -414,6 +660,7 @@ background: linear-gradient(135deg, #dbeafe, #bfdbfe);
   z-index: 999;
 }
 
+/*
 .fab {
   width: 45px;
   height: 45px;
@@ -428,12 +675,8 @@ background: linear-gradient(135deg, #dbeafe, #bfdbfe);
   pointer-events: auto;
 }
 
-.fab:active {
-  transform: scale(0.9);
-}
-
 .fab.sound {
-  top: -55px;           /* above board center */
+  top: -55px;           /* above board center *//*
   left: 50%;
   transform: translateX(-50%);
   background: #10b981;
@@ -441,11 +684,48 @@ background: linear-gradient(135deg, #dbeafe, #bfdbfe);
 }
 
 .fab.restart {
-  bottom: -55px;        /* below board center */
+  bottom: -55px;        /* below board center *//*
   left: 50%;
   transform: translateX(-50%);
   background: #ef4444;
   color: white;
+}
+*/
+/* ================= FLOATING BUTTONS ================= */
+
+.fab {
+    width: clamp(38px, 6vw, 45px);
+    height: clamp(38px, 6vw, 45px);
+
+    border-radius: 50%;
+    border: none;
+
+    font-size: clamp(14px, 2vw, 18px);
+
+    cursor: pointer;
+
+    position: absolute;
+    pointer-events: auto;
+
+    z-index: 500;
+}
+
+.fab.sound {
+    top: clamp(-50px, -6vw, -55px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.fab.restart {
+    bottom: clamp(-50px, -6vw, -55px);
+    left: 50%;
+    background: #ef4444;
+    transform: translateX(-50%);
+}
+
+.fab.sound:active,
+.fab.restart:active {
+    transform: translateX(-50%) scale(0.9);
 }
 
 /* 🎵 SOUND BUTTON ACTIVE STATE */
@@ -464,131 +744,103 @@ background: linear-gradient(135deg, #dbeafe, #bfdbfe);
   color: white;
 }
 
+
 /* ================= HOME TEXT ================= */
+
 .home-text {
     position: absolute;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 0.5px;
 
-    padding: 2px;
-    border-radius: 10px;
+    font-weight: 700;
+
+    /* RESPONSIVE FONT */
+    font-size: clamp(10px, 1vw, 14px);
+
+    /* RESPONSIVE PADDING */
+    padding:
+        clamp(4px, 0.5vw, 7px)
+        clamp(10px, 1.2vw, 16px);
+
+    min-width: clamp(65px, 7vw, 95px);
+
+    border-radius: 999px;
 
     text-align: center;
-    min-width: 80px;
 
     pointer-events: none;
 
-    /* 🔥 Glass UI effect */
-    backdrop-filter: blur(6px);
-    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
 
-    /* Soft border */
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255,255,255,0.25);
 
-    /* Shadow for depth */
     box-shadow:
-        0 4px 8px rgba(0,0,0,0.25),
-        inset 0 1px 0 rgba(255,255,255,0.3);
-
-    /* Text */
-    color: #ffffff;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
-
-    transition: all 0.3s ease;
-}
-
-/* Position in each home */
-.red-label {
-    top: 1px;
-    bottom: auto !important;
-    left: 40px;
-    background: linear-gradient(135deg, #ef4444, #b91c1c);
-}
-
-.green-label {
-    top: 1px;
-    bottom: auto !important;
-    right: 40px;
-    background: linear-gradient(135deg, #10b981, #047857);
-}
-
-.blue-label {
-    bottom: 1px;
-    top: auto !important;
-    left: 40px;
-    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-}
-
-.yellow-label {
-    bottom: 1px;
-    top: auto !important;
-    right: 40px;
-    background: linear-gradient(135deg, #f59e0b, #b45309);
-}
-/* Hover effect */
-.home-text:hover {
-    transform: scale(1.05);
-    box-shadow:
-        0 6px 14px rgba(0,0,0,0.35),
-        0 0 10px rgba(255,255,255,0.3);
-}
-
-/* PLAYER TURN INDICATOR */
-#turnIndicator {
-    position: absolute;
-    padding: 8px 14px;
-    border-radius: 999px;
-
-    font-size: 12px;
-    font-weight: 700;
+        0 4px 12px rgba(0,0,0,0.22),
+        inset 0 1px 0 rgba(255,255,255,0.25);
 
     color: #fff;
+
+    text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+
+    z-index: 100;
+
+    transition: all 0.25s ease;
+
+    white-space: nowrap;
+}
+
+/* ================= FIXED GRID-BASED HOME LABELS ================= */
+
+.red-label,
+.green-label,
+.blue-label,
+.yellow-label {
+    position: absolute;
+
+    font-weight: 700;
+    font-size: clamp(9px, 1vw, 14px);
+
+    padding: 6px 12px;
+    border-radius: 999px;
+
+    min-width: 70px;
+
     text-align: center;
+    white-space: nowrap;
 
-    z-index: 9999;
+    color: #fff;
 
-    transform: scale(0.9);
-    transition: all 0.35s ease;
+    z-index: 100;
 
-    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    transform: translate(-50%, -50%);
 }
 
-/* 🔥 ACTIVE POP EFFECT */
-#turnIndicator.show {
-    transform: translateX(-50%) scale(1);
-    box-shadow:
-        0 10px 25px rgba(0,0,0,0.5),
-        0 0 15px rgba(255,255,255,0.25);
-}
-
-#turnIndicator.red {
-    top: -50px;
-    left: 18%;
+/* 🔴 RED */
+.red-label {
+    top: 3%;     /* row alignment */
+    left: 20%;
     background: linear-gradient(135deg, #ef4444, #b91c1c);
-    box-shadow: 0 0 18px rgba(239, 68, 68, 0.8);
 }
 
-#turnIndicator.green {
-   top: -50px;
-    right: 18%;
+/* 🟢 GREEN */
+.green-label {
+    top: 3%;
+    left: 80%;
     background: linear-gradient(135deg, #10b981, #047857);
-    box-shadow: 0 0 18px rgba(16, 185, 129, 0.8);
 }
 
-#turnIndicator.blue {
-  bottom: -50px;
-    left: 18%;
+/* 🔵 BLUE */
+.blue-label {
+    top: 96.5%;
+    left: 20%;
     background: linear-gradient(135deg, #3b82f6, #1d4ed8);
-    box-shadow: 0 0 18px rgba(59, 130, 246, 0.8);
 }
 
-#turnIndicator.yellow {
-    bottom: -50px;
-    right: 18%;
+/* 🟡 YELLOW */
+.yellow-label {
+    top: 96.5%;
+    left: 80%;
     background: linear-gradient(135deg, #f59e0b, #b45309);
-    box-shadow: 0 0 18px rgba(245, 158, 11, 0.8);
 }
+
 
 /* ================= CORNER CELLS ================= */
 .red-corner { background: #EF4444 !important; }
@@ -684,7 +936,7 @@ background: linear-gradient(135deg, #dbeafe, #bfdbfe);
 }
 
 /* ================= CORNER DICE ROLL PLAYER BOXES ================= */
-
+/*
 .corner {
   position: absolute;
 
@@ -710,53 +962,84 @@ background: linear-gradient(135deg, #dbeafe, #bfdbfe);
 
   transition: 0.25s ease;
 }
-
-/* 🔴 TOP LEFT */
+ 🔴 TOP LEFT 
 .top-left {
   top: -75px;
   left: 5px;
 }
 
-/* 🟢 TOP RIGHT */
+ 🟢 TOP RIGHT 
 .top-right {
   top: -75px;
   right: 5px;
 }
 
-/* 🔵 BOTTOM LEFT */
+🔵 BOTTOM LEFT 
 .bottom-left {
   bottom: -75px;
   left: 5px;
 }
 
-/* 🟡 BOTTOM RIGHT */
+🟡 BOTTOM RIGHT 
 .bottom-right {
   bottom: -75px;
   right: 5px;
 }
+*/
+/* ================= GRID ALIGNED CORNER PLAYER BOXES ================= */
 
+.corner {
+    position: absolute;
 
-/* PERFECT CORNER ALIGNMENT */
-.dice-red {
-  top: -30px;
-  left: -30px;
+    width: clamp(52px, 9vw, 82px);
+    height: clamp(52px, 9vw, 82px);
+
+    border-radius: clamp(12px, 2vw, 18px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: clamp(10px, 1.3vw, 14px);
+    font-weight: 700;
+
+    z-index: 300;
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition: all 0.25s ease;
+
+    box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+
+    backdrop-filter: blur(6px);
+
+    transform: translate(-50%, -50%);
 }
 
-.dice-green {
-  top: -30px;
-  right: -30px;
+/* 🔴 row 2.5 col 2.5 */
+.top-left {
+    top: -7%;
+    left: 7%;
 }
 
-.dice-blue {
-  bottom: -30px;
-  left: -30px;
+/* 🟢 row 2.5 col 12.5 */
+.top-right {
+    top: -7%;
+    left: 93%;
 }
 
-.dice-yellow {
-  bottom: -30px;
-  right: -30px;
+/* 🔵 row 12.5 col 2.5 */
+.bottom-left {
+    top: 107%;
+    left: 7%;
 }
 
+/* 🟡 row 12.5 col 12.5 */
+.bottom-right {
+    top: 107%;
+    left: 93%;
+}
 
 /* ================= DICE ================= */
 
@@ -934,4 +1217,17 @@ background: linear-gradient(135deg, #dbeafe, #bfdbfe);
   .fab.restart {
     bottom: -55px;
   }
+}
+
+
+/* ================= VERY SMALL HEIGHT SCREENS ================= */
+
+@media (max-height: 700px) {
+
+    .game-area,
+    .ludo-wrapper {
+        width: min(84vw, calc(100vh - 100px));
+        height: min(84vw, calc(100vh - 100px));
+    }
+
 }
