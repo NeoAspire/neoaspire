@@ -22,7 +22,6 @@ let gameOver = false;
 let finishedPlayers = [];
 let isRolling = false;
 
-
 // ================= SOUND SYSTEM =================
 let soundEnabled = true;
 
@@ -42,6 +41,7 @@ function toggleSound() {
 }
 
 // ✅ Play sound by ID with safety checks
+/*
 function playSound(id, duration = null) {
     if (!soundEnabled) return;
 
@@ -58,6 +58,41 @@ function playSound(id, duration = null) {
                 sound.currentTime = 0;
             }, duration);
         }
+    }
+}
+*/
+function playSound(id, duration = null) {
+
+    if (!soundEnabled) return;
+
+    const sound = document.getElementById(id);
+
+    if (!sound) return;
+
+    // ✅ iPhone-safe playback
+    try {
+
+        sound.currentTime = 0;
+
+        const playPromise = sound.play();
+
+        if (playPromise !== undefined) {
+            playPromise.catch(() => {});
+        }
+
+        // ⏱️ optional stop
+        if (duration !== null) {
+
+            setTimeout(() => {
+
+                sound.pause();
+                sound.currentTime = 0;
+
+            }, duration);
+        }
+
+    } catch (e) {
+        console.log(e);
     }
 }
 
@@ -744,52 +779,6 @@ function drawTokens() {
                 t.style.cursor = "default";  // not clickable
             }
 
-    
-            // ✅ CLICK LOGIC 
-            /*
-            if (!players[currentPlayerIndex].isComputer && token.color === players[currentPlayerIndex].color) {
-                t.style.cursor = "pointer";
-
-                t.onclick = () => {
-
-                    if (players[currentPlayerIndex].isComputer) return;
-
-                    if (isInFinalCell(token)) return; // 🔒 double safety  
-
-                    if (currentDice === 0) {
-                        showGameMessage("🎲 Roll dice first!", "warning");
-                        return;
-                    }
-
-                    let clickedToken = tokens[index];
-
-                    if (clickedToken.color !== players[currentPlayerIndex].color) return;
-
-                    if (clickedToken.position === -1 && currentDice !== 6) return;
-
-                    // 🚫 Can't move from home without 6
-                    if (clickedToken.position === -1 && currentDice !== 6) return;
-
-                    // 🚫 BLOCK invalid home path move
-                    if (clickedToken.inHomePath) {
-                        let maxStep = homePath[clickedToken.color].length - 1;
-                        let remaining = maxStep - clickedToken.homeStep;
-
-                        if (currentDice > remaining) {
-                            showGameMessage("❌ Invalid move! Choose another token", "warning");
-                            return;
-                        }
-                    }
-
-                    selectedToken = index;
-
-                    document.querySelectorAll(".token").forEach(el => el.classList.remove("selected"));
-                    t.classList.add("selected");
-
-                    moveSelectedToken();
-                };
-            }
-            */
             // ================= CLICK LOGIC =================
 const isMyTurn = token.color === players[currentPlayerIndex].color;
 
@@ -834,18 +823,7 @@ if (!players[currentPlayerIndex].isComputer && isMyTurn) {
     t.style.pointerEvents = "none";
     t.style.cursor = "default";
 }
-            //cell.appendChild(t);
-
-            // ✅ keep placeholders visible
-            /*
-const tokenLayer = cell.querySelector(".token-layer");
-
-if (tokenLayer) {
-    tokenLayer.appendChild(t);
-} else {
-    cell.appendChild(t);
-}
-*/
+           
 // ================= HOME TOKENS =================
 if (token.position === -1) {
 
@@ -997,7 +975,7 @@ function animateMove(token, steps, callback) {
         }
 
         // 🔊 PLAY MOVE SOUND (each step)
-        playSound("tokenMove", 150); // 150ms short tick
+        playSound("tokenMove"); // 150ms short tick
 
         // 🚶 NORMAL PATH
         if (!token.inHomePath) {

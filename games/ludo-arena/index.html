@@ -178,7 +178,9 @@
   <audio id="diceHit" src="sounds/dice-hit.mp3"></audio>
 
   <!-- Token -->
-  <audio id="tokenMove" src="sounds/token-move.mp3"></audio>
+  <audio id="tokenMove" preload="auto" playsinline>
+    <source src="sounds/token-move.mp3" type="audio/mpeg">
+</audio>
   <audio id="tokenKill" src="sounds/token-kill.mp3"></audio>
   <audio id="enterSound" src="sounds/token-enter.mp3"></audio>
   <audio id="finishSound" src="sounds/finish.mp3"></audio>
