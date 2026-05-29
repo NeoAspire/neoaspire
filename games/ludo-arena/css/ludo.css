@@ -1,0 +1,1483 @@
+/* ================= RESET & GLOBAL ================= */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: radial-gradient(circle at 20% 20%, #dbeafe, transparent 40%),
+        radial-gradient(circle at 80% 30%, #dcfce7, transparent 40%),
+        radial-gradient(circle at 50% 80%, #fef3c7, transparent 40%),
+        #f8fafc;
+    overflow: hidden;
+    color: #111827;
+    text-align: center;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ================= START SCREEN ================= */
+.start-screen,
+#startScreen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.start-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    width: 420px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+    font-size: 32px;
+    color: #1e293b;
+}
+
+.subtitle {
+    color: #64748b;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+/* ===== GRID ===== */
+.mode-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+/* ===== CARD BASE ===== */
+.mode-card {
+    border-radius: 14px;
+    padding: 20px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    background: #f8fafc;
+}
+
+/* 🎨 DIFFERENT COLORS FOR EACH CARD */
+.mode-card:nth-child(1) {
+    background: linear-gradient(135deg, #dbeafe, #bfdbfe);
+}
+
+.mode-card:nth-child(2) {
+    background: linear-gradient(135deg, #dcfce7, #bbf7d0);
+}
+
+.mode-card:nth-child(3) {
+    background: linear-gradient(135deg, #fef3c7, #fde68a);
+}
+
+.mode-card:nth-child(4) {
+    background: linear-gradient(135deg, #fce7f3, #fbcfe8);
+}
+
+/* ===== ICON ===== */
+.mode-card .icon {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+/* ===== TEXT ===== */
+.mode-card h3 {
+    color: #1e293b;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.mode-card p {
+    color: #475569;
+    font-size: 12px;
+}
+
+/* ===== HOVER EFFECT ===== */
+.mode-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== CLICK EFFECT ===== */
+.mode-card:active {
+    transform: scale(0.96);
+}
+
+/* ===== BACK LINK ===== */
+.btn-back {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #3B82F6;
+    background: #eef2ff;
+    transition: all 0.3s ease;
+    border: 1px solid #dbeafe;
+}
+
+.btn-back:hover {
+    background: #3B82F6;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* ================= GAME LAYOUT ================= */
+#gameContainer {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding: 12px;
+    gap: 12px;
+}
+
+/* ================= MAIN BOARD SIZE ================= */
+.game-area,
+.ludo-wrapper {
+    position: relative;
+
+    /* PERFECT UNIVERSAL SIZE */
+    width: min(92vw, 92vh, 760px);
+    height: min(92vw, 92vh, 760px);
+
+    aspect-ratio: 1 / 1;
+
+    margin: auto;
+    /* ✅ 15x15 board cell size */
+    --cell: calc(100% / 15);
+}
+
+/* ================= BOARD ================= */
+#board {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+}
+
+/* Cells */
+.cell {
+    border: none;
+    position: relative;
+}
+
+/* Paths */
+.path {
+    background: #fff;
+    border: 1px solid #d1d5db;
+}
+
+.red-path {
+    background: #ef4444 !important;
+}
+
+.green-path {
+    background: #10B981 !important;
+}
+
+.blue-path {
+    background: #3b82f6 !important;
+}
+
+.yellow-path {
+    background: #f59e0b !important;
+}
+
+/* ================= HOME & CENTER ================= */
+.red-home,
+.green-home,
+.blue-home,
+.yellow-home {
+    background: white;
+}
+
+/* Center triangle */
+.center-big {
+    position: absolute;
+    width: 20%;
+    height: 20%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* ================= DICE ================= */
+.dice-container {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ================= HOME TOKEN PLACEHOLDERS ================= */
+
+.home-container {
+    position: absolute;
+
+    width: 20%;
+    height: 20%;
+    min-width: 60px;
+    min-height: 60px;
+
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* inner box */
+.red-home-container {
+    top: 10%;
+    left: 10%;
+}
+
+.green-home-container {
+    top: 10%;
+    right: 10%;
+}
+
+.blue-home-container {
+    bottom: 10%;
+    left: 10%;
+}
+
+.yellow-home-container {
+    bottom: 10%;
+    right: 10%;
+}
+
+.home-inner {
+    width: 78%;
+    height: 78%;
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+/* both layers */
+.placeholder-layer,
+.token-layer {
+    position: absolute;
+    inset: 0;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+
+    place-items: center;
+    /* PERFECT RESPONSIVE SPACING */
+    gap: clamp(18px, 22%, 40px);
+
+    width: 100%;
+    height: 100%;
+}
+
+/* ================= PLACEHOLDER COLORS ================= */
+/* 🔴 RED HOME */
+.red-home-container .token-slot {
+    background: rgba(239, 68, 68, 0.15);
+    border: 3px dashed rgba(239, 68, 68, 0.7);
+
+    box-shadow:
+        inset 0 0 8px rgba(239, 68, 68, 0.25),
+        0 0 6px rgba(239, 68, 68, 0.2);
+}
+
+/* 🟢 GREEN HOME */
+.green-home-container .token-slot {
+    background: rgba(16, 185, 129, 0.15);
+    border: 3px dashed rgba(16, 185, 129, 0.7);
+
+    box-shadow:
+        inset 0 0 8px rgba(16, 185, 129, 0.25),
+        0 0 6px rgba(16, 185, 129, 0.2);
+}
+
+/* 🔵 BLUE HOME */
+.blue-home-container .token-slot {
+    background: rgba(59, 130, 246, 0.15);
+    border: 3px dashed rgba(59, 130, 246, 0.7);
+
+    box-shadow:
+        inset 0 0 8px rgba(59, 130, 246, 0.25),
+        0 0 6px rgba(59, 130, 246, 0.2);
+}
+
+/* 🟡 YELLOW HOME */
+.yellow-home-container .token-slot {
+    background: rgba(245, 158, 11, 0.18);
+    border: 3px dashed rgba(245, 158, 11, 0.75);
+
+    box-shadow:
+        inset 0 0 8px rgba(245, 158, 11, 0.25),
+        0 0 6px rgba(245, 158, 11, 0.2);
+}
+
+/* token layer */
+.token-layer {
+    z-index: 5;
+}
+
+/* ================= HOME TOKENS ================= */
+.home-container .token {
+    position: relative !important;
+
+    width: clamp(22px, 65%, 42px) !important;
+    height: clamp(22px, 65%, 42px) !important;
+    min-width: 18px;
+    min-height: 18px;
+    max-width: 48px;
+    max-height: 48px;
+
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+
+    align-self: center;
+    justify-self: center;
+
+    margin: 0;
+}
+
+/* fixed positions */
+.home-token-0 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.home-token-1 {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.home-token-2 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.home-token-3 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* disable board offsets inside home */
+.home-container .token.center-pos,
+.home-container .token.pos-0,
+.home-container .token.pos-1,
+.home-container .token.pos-2,
+.home-container .token.pos-3 {
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+
+    transform: none !important;
+}
+
+/* ================= TOKENS ================= */
+.token {
+    width: 40%;
+    height: 40%;
+    min-width: 14px;
+    min-height: 14px;
+
+    max-width: 34px;
+    max-height: 34px;
+
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    transition: 0.25s;
+
+    /* 🔥 BASE LOOK (white body like Ludo King) */
+    background: radial-gradient(circle at 30% 30%, #ffffff, #e5e7eb);
+
+    border: 3px solid #111827;
+
+    box-shadow:
+        inset 0 3px 6px rgba(0, 0, 0, 0.25),
+        0 6px 10px rgba(0, 0, 0, 0.35);
+
+    z-index: 10;
+}
+
+.token.red {
+    border-color: #ef4444;
+}
+
+.token.green {
+    border-color: #10b981;
+}
+
+.token.blue {
+    border-color: #3b82f6;
+}
+
+.token.yellow {
+    border-color: #f59e0b;
+}
+
+.token::before {
+    content: "";
+    position: absolute;
+
+    width: 50%;
+    height: 50%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+}
+
+/* 🎯 INNER COLORS */
+.token.red::before {
+    background: radial-gradient(circle, #ff6b6b, #b91c1c);
+}
+
+.token.green::before {
+    background: radial-gradient(circle, #34d399, #047857);
+}
+
+.token.blue::before {
+    background: radial-gradient(circle, #60a5fa, #1d4ed8);
+}
+
+.token.yellow::before {
+    background: radial-gradient(circle, #fcd34d, #b45309);
+}
+
+.token::after {
+    content: "";
+    position: absolute;
+
+    top: 6px;
+    left: 8px;
+
+    width: 35%;
+    height: 35%;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+
+    filter: blur(2px);
+}
+
+.token:hover {
+    transform: scale(1.15) translateY(-2px);
+}
+
+.token.selected {
+    box-shadow:
+        0 0 0 3px white,
+        0 0 0 6px #111827,
+        0 0 15px rgba(255, 255, 255, 0.9);
+}
+
+/* ================= STATUS ================= */
+#status {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    padding: 10px 16px;
+    border-radius: 12px;
+
+    background: linear-gradient(135deg, #ffffff, #f3f4f6);
+    border: 1px solid #e5e7eb;
+
+    box-shadow:
+        0 4px 8px rgba(0, 0, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+    min-width: 160px;
+    text-align: center;
+
+    transition: all 0.3s ease;
+}
+
+#status.blue {
+    color: #2563eb;
+    border-left: 5px solid #3b82f6;
+}
+
+#status.red {
+    color: #dc2626;
+    border-left: 5px solid #ef4444;
+}
+
+#status.green {
+    color: #059669;
+    border-left: 5px solid #10b981;
+}
+
+#status.yellow {
+    color: #d97706;
+    border-left: 5px solid #f59e0b;
+}
+
+/* ================= GAME MESSAGE ================= */
+.game-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.8);
+
+    background: rgba(17, 24, 39, 0.95);
+    color: #fff;
+    padding: 16px 28px;
+    border-radius: 12px;
+
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all 0.3s ease;
+    z-index: 999;
+}
+
+.game-message.show {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.game-message.success {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.game-message.warning {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+/* PLAYER COLOR THEMES */
+.game-message.red {
+    background: linear-gradient(135deg, #dc2626, #ef4444);
+}
+
+.game-message.green {
+    background: linear-gradient(135deg, #16a34a, #22c55e);
+}
+
+.game-message.blue {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+}
+
+.game-message.yellow {
+    background: linear-gradient(135deg, #ca8a04, #facc15);
+    color: #111;
+    /* better contrast */
+}
+
+/* ================= FLOATING CONTROLS ================= */
+.floating-controls {
+    position: absolute;
+    inset: 0;
+    /* cover full board area */
+    pointer-events: none;
+    /* allow clicks only on buttons */
+    z-index: 999;
+}
+
+/* ================= FLOATING BUTTONS ================= */
+.fab {
+    width: clamp(38px, 6vw, 45px);
+    height: clamp(38px, 6vw, 45px);
+
+    border-radius: 50%;
+    border: none;
+
+    font-size: clamp(14px, 2vw, 18px);
+
+    cursor: pointer;
+
+    position: absolute;
+    pointer-events: auto;
+
+    z-index: 500;
+}
+
+/* ================= GRID BASED FAB POSITIONS ================= */
+/* 🔊 SOUND BUTTON */
+.fab.sound {
+    left: calc(var(--cell) * 7.5);
+    top: calc(var(--cell) * -1.5);
+
+    transform: translateX(-50%);
+}
+
+/* 🔄 RESTART BUTTON */
+.fab.restart {
+    left: calc(var(--cell) * 7.5);
+    top: calc(var(--cell) * 15.2);
+
+    background: #ef4444;
+
+    transform: translateX(-50%);
+}
+
+.fab.sound:active,
+.fab.restart:active {
+    transform: translateX(-50%) scale(0.9);
+}
+
+/* 🎵 SOUND BUTTON ACTIVE STATE */
+#soundBtn {
+    background: linear-gradient(135deg, #10B981, #059669);
+    color: white;
+}
+
+#soundBtn:hover {
+    background: linear-gradient(135deg, #059669, #047857);
+}
+
+/* 🔇 When OFF (you can toggle class in JS later) */
+#soundBtn.off {
+    background: linear-gradient(135deg, #9ca3af, #6b7280);
+    color: white;
+}
+
+/* ================= HOME TEXT ================= */
+.home-text {
+    position: absolute;
+
+    font-weight: 700;
+
+    /* RESPONSIVE FONT */
+    font-size: clamp(10px, 1vw, 14px);
+
+    /* RESPONSIVE PADDING */
+    padding:
+        clamp(4px, 0.5vw, 7px) clamp(10px, 1.2vw, 16px);
+
+    min-width: clamp(65px, 7vw, 95px);
+    border-radius: 999px;
+    text-align: center;
+    pointer-events: none;
+    backdrop-filter: blur(8px);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    z-index: 100;
+
+    transition: all 0.25s ease;
+    white-space: nowrap;
+}
+
+/* ================= FIXED GRID-BASED HOME LABELS ================= */
+.red-label,
+.green-label,
+.blue-label,
+.yellow-label {
+    position: absolute;
+
+    font-weight: 700;
+    font-size: clamp(9px, 1vw, 14px);
+
+    padding: 6px 12px;
+    border-radius: 999px;
+
+    min-width: 70px;
+
+    text-align: center;
+    white-space: nowrap;
+
+    color: #fff;
+
+    z-index: 100;
+
+    transform: translate(-50%, -50%);
+}
+
+/* 🔴 RED */
+.red-label {
+    top: 3%;
+    /* row alignment */
+    left: 20%;
+    background: linear-gradient(135deg, #ef4444, #b91c1c);
+}
+
+/* 🟢 GREEN */
+.green-label {
+    top: 3%;
+    left: 80%;
+    background: linear-gradient(135deg, #10b981, #047857);
+}
+
+/* 🔵 BLUE */
+.blue-label {
+    top: 96.5%;
+    left: 20%;
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+/* 🟡 YELLOW */
+.yellow-label {
+    top: 96.5%;
+    left: 80%;
+    background: linear-gradient(135deg, #f59e0b, #b45309);
+}
+
+/* ================= PLAYER TURN INDICATOR ================= */
+#turnIndicator {
+    position: absolute;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    /* prevent huge growth on large screens */
+    min-width: auto;
+    width: max-content;
+
+    /* controlled padding */
+    padding: 5px 10px;
+
+    border-radius: 999px;
+
+    font-size: clamp(9px, 0.85vw, 13px);
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: #fff;
+    white-space: nowrap;
+    transform: translateX(-50%);
+    z-index: 9999;
+    overflow: hidden;
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+
+    animation: turnFloat 2s ease-in-out infinite;
+}
+
+/* glowing overlay */
+#turnIndicator::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(120deg,
+            rgba(255, 255, 255, 0.18),
+            rgba(255, 255, 255, 0.04),
+            rgba(255, 255, 255, 0.18));
+    z-index: 0;
+}
+
+/* text */
+#turnText {
+    position: relative;
+    z-index: 2;
+    display: block;
+}
+
+/* =========================================
+   PLAYER TURN POSITIONS
+========================================= */
+/* 🔴 RED */
+#turnIndicator.red {
+    left: calc(var(--cell) * 3.8);
+    top: calc(var(--cell) * -1.25);
+    background: linear-gradient(135deg, #ef4444, #b91c1c);
+}
+
+/* 🟢 GREEN */
+#turnIndicator.green {
+    left: calc(var(--cell) * 11.2);
+    top: calc(var(--cell) * -1.25);
+    background: linear-gradient(135deg, #10b981, #047857);
+}
+
+/* 🔵 BLUE */
+#turnIndicator.blue {
+    left: calc(var(--cell) * 3.8);
+    top: calc(var(--cell) * 15.55);
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+/* 🟡 YELLOW */
+#turnIndicator.yellow {
+    left: calc(var(--cell) * 11.2);
+    top: calc(var(--cell) * 15.55);
+    background: linear-gradient(135deg, #f59e0b, #b45309);
+}
+
+/* =========================================
+   FLOAT ANIMATION
+========================================= */
+@keyframes turnFloat {
+    0% {
+        transform: translateX(-50%) translateY(0px);
+    }
+
+    50% {
+        transform: translateX(-50%) translateY(-2px);
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(0px);
+    }
+}
+
+/* ================= CORNER CELLS ================= */
+.red-corner {
+    background: #EF4444 !important;
+}
+
+.green-corner {
+    background: #10B981 !important;
+}
+
+.blue-corner {
+    background: #3B82F6 !important;
+}
+
+.yellow-corner {
+    background: #F59E0B !important;
+}
+
+/* TRIANGLES */
+.triangle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+/* 🔺 TOP (GREEN) */
+.green-tri {
+    background: #10B981;
+    clip-path: polygon(50% 50%, 0% 0%, 100% 0%);
+}
+
+/* ▶ RIGHT (YELLOW) */
+.yellow-tri {
+    background: #F59E0B;
+    clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
+}
+
+/* 🔻 BOTTOM (BLUE) */
+.blue-tri {
+    background: #3B82F6;
+    clip-path: polygon(50% 50%, 0% 100%, 100% 100%);
+}
+
+/* ◀ LEFT (RED) */
+.red-tri {
+    background: #EF4444;
+    clip-path: polygon(50% 50%, 0% 0%, 0% 100%);
+}
+
+/* ================= CONTROLS ================= */
+.controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 90vw;
+    max-width: 420px;
+    margin: 20px auto;
+}
+
+.controls button {
+    padding: 12px 30px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: none;
+    background: #3B82F6;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.controls button:hover {
+    background: #2563EB;
+}
+
+/* ================= DICE ROLL BOX COLORS ================= */
+.red-player {
+    background: linear-gradient(135deg, #ef4444, #b91c1c);
+    color: white;
+}
+
+.green-player {
+    background: linear-gradient(135deg, #10b981, #047857);
+    color: white;
+}
+
+.yellow-player {
+    background: linear-gradient(135deg, #f59e0b, #b45309);
+    color: white;
+}
+
+.blue-player {
+    background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+    color: white;
+}
+
+/* ================= ACTIVE PLAYER ================= */
+.dice-box.active {
+    transform: scale(1.1);
+    border: 2px solid white;
+    box-shadow: 0 0 18px rgba(255, 255, 255, 0.7);
+}
+
+/* ================= GRID ALIGNED CORNER PLAYER BOXES ================= */
+.corner {
+    position: absolute;
+
+    width: calc(var(--cell) * 2);
+    height: calc(var(--cell) * 2);
+    min-width: 42px;
+    min-height: 42px;
+    max-width: 82px;
+    max-height: 82px;
+
+    border-radius: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    transform: translate(-50%, -50%);
+    z-index: 500;
+}
+
+/* 🔴 RED */
+.top-left {
+    left: calc(var(--cell) * 1);
+    top: calc(var(--cell) * -0.95);
+}
+
+/* 🟢 GREEN */
+.top-right {
+    left: calc(var(--cell) * 14);
+    top: calc(var(--cell) * -0.95);
+}
+
+/* 🔵 BLUE */
+.bottom-left {
+    left: calc(var(--cell) * 1);
+    top: calc(var(--cell) * 16);
+}
+
+/* 🟡 YELLOW */
+.bottom-right {
+    left: calc(var(--cell) * 14);
+    top: calc(var(--cell) * 16);
+}
+
+/* ================= DICE ================= */
+#dice {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+#diceCube {
+    transform-style: preserve-3d;
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+}
+
+/* =========================================================
+   PERFECT RESPONSIVE DICE
+========================================================= */
+.dice-cube {
+    /* responsive to parent corner box */
+    width: 70%;
+    height: 70%;
+
+    min-width: 28px;
+    min-height: 28px;
+
+    max-width: 42px;
+    max-height: 42px;
+
+    position: relative;
+
+    transform-style: preserve-3d;
+    transform-origin: center center;
+    transition: transform 0.8s ease;
+}
+
+/* DICE FACE */
+.face {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(145deg, #ffffff, #dcdcdc);
+    border-radius: clamp(6px, 1vw, 12px);
+    border: 1px solid #bbb;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    padding: clamp(3px, 8%, 8px);
+    box-sizing: border-box;
+
+    box-shadow:
+        inset -4px -4px 8px rgba(0, 0, 0, 0.22),
+        inset 4px 4px 8px rgba(255, 255, 255, 0.8),
+        0 6px 14px rgba(0, 0, 0, 0.22);
+}
+
+/* ================= 3D FACE POSITIONS ================= */
+.front {
+    transform: rotateY(0deg) translateZ(21px);
+}
+
+.back {
+    transform: rotateY(180deg) translateZ(21px);
+}
+
+.right {
+    transform: rotateY(90deg) translateZ(21px);
+}
+
+.left {
+    transform: rotateY(-90deg) translateZ(21px);
+}
+
+.top {
+    transform: rotateX(90deg) translateZ(21px);
+}
+
+.bottom {
+    transform: rotateX(-90deg) translateZ(21px);
+}
+
+/* DOTS */
+.dot {
+    width: 18%;
+    height: 18%;
+
+    min-width: 4px;
+    min-height: 4px;
+
+    max-width: 7px;
+    max-height: 7px;
+}
+
+/* REMOVE ALL OLD POSITION RULES */
+.bottom-left #dice,
+.top-left #dice,
+.top-right #dice,
+.bottom-right #dice {
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+}
+
+/* ================= DICE FACES ================= */
+.dot {
+    width: 7px;
+    height: 7px;
+
+    background: radial-gradient(circle at 30% 30%, #444, #000);
+    border-radius: 50%;
+
+    box-shadow:
+        inset 1px 1px 2px rgba(255, 255, 255, 0.35),
+        inset -1px -1px 2px rgba(0, 0, 0, 0.5),
+        0 2px 3px rgba(0, 0, 0, 0.4);
+
+    justify-self: center;
+    align-self: center;
+}
+
+/* Positions */
+.tl {
+    grid-area: 1 / 1;
+}
+
+.tr {
+    grid-area: 1 / 3;
+}
+
+.bl {
+    grid-area: 3 / 1;
+}
+
+.br {
+    grid-area: 3 / 3;
+}
+
+.ml {
+    grid-area: 2 / 1;
+}
+
+.mr {
+    grid-area: 2 / 3;
+}
+
+.center {
+    grid-area: 2 / 2;
+}
+
+/* ================= HOVER EFFECT ================= */
+.token.center-pos:hover {
+    transform: translate(-50%, -50%) scale(1.15);
+}
+
+/* ✅ CENTER POSITION (for single token) */
+.token.center-pos {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    right: auto !important;
+    bottom: auto !important;
+}
+
+/* 4 positions inside one cell */
+.token.pos-0 {
+    top: 8%;
+    left: 8%;
+}
+
+/* top-left */
+.token.pos-1 {
+    top: 8%;
+    right: 8%;
+}
+
+/* top-right */
+.token.pos-2 {
+    bottom: 8%;
+    left: 8%;
+}
+
+/* bottom-left */
+.token.pos-3 {
+    bottom: 8%;
+    right: 8%;
+}
+
+/* ================= SAFE ZONE DESIGN ================= */
+.safe-zone {
+    position: relative;
+    background: radial-gradient(circle, #ffffff, #e5e7eb) !important;
+    border: 0px dashed #111827;
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.1),
+        0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* ⭐ Add star icon */
+.safe-zone::after {
+    content: "★";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    color: #111827;
+    opacity: 0.8;
+}
+
+/* ================= CONFETTI ================= */
+
+.confetti {
+    position: fixed;
+
+    width: 10px;
+    height: 10px;
+
+    top: -20px;
+
+    border-radius: 2px;
+
+    z-index: 99999;
+
+    animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh) rotate(720deg);
+
+        opacity: 0;
+    }
+}
+
+/* =========================================================
+   UNIVERSAL RESPONSIVE FIX
+========================================================= */
+/* Prevent horizontal overflow */
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ================= GAME WRAPPER ================= */
+.game-wrapper {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: clamp(8px, 2vw, 20px);
+    box-sizing: border-box;
+}
+
+/* ================= MAIN BOARD ================= */
+.game-area,
+.ludo-wrapper {
+    position: relative;
+
+    /* PERFECT SCALING */
+    width: min(92vw, 92vh, 760px);
+    height: min(92vw, 92vh, 760px);
+    aspect-ratio: 1 / 1;
+    margin: auto;
+    /* IMPORTANT */
+    flex-shrink: 0;
+}
+
+/* ================= TOKENS ================= */
+.token {
+    width: clamp(14px, 38%, 34px);
+    height: clamp(14px, 38%, 34px);
+    min-width: 14px;
+    min-height: 14px;
+    max-width: 34px;
+    max-height: 34px;
+}
+
+/* ================= HOME TOKENS ================= */
+.home-container .token {
+    width: clamp(18px, 58%, 40px) !important;
+    height: clamp(18px, 58%, 40px) !important;
+}
+
+/* ================= HOME LABELS ================= */
+.red-label,
+.green-label,
+.blue-label,
+.yellow-label {
+    font-size: clamp(8px, 1vw, 13px);
+    min-width: clamp(52px, 8vw, 90px);
+    padding:
+        clamp(4px, 0.5vw, 6px) clamp(8px, 1vw, 12px);
+}
+
+/* ================= FLOATING BUTTONS ================= */
+.fab {
+    width: clamp(34px, 6vw, 45px);
+    height: clamp(34px, 6vw, 45px);
+    font-size: clamp(13px, 2vw, 18px);
+}
+
+/* =========================================================
+   MOBILE FIXES
+========================================================= */
+@media (max-width: 600px) {
+
+    .game-area,
+    .ludo-wrapper {
+        width: min(96vw, 96vh);
+        height: min(96vw, 96vh);
+    }
+
+    .corner {
+        width: 52px;
+        height: 52px;
+    }
+    
+    /* smaller token inside crowded cells */
+    .cell .token {
+        width: 32%;
+        height: 32%;
+        min-width: 10px;
+        min-height: 10px;
+    }
+
+    /* spread tokens more */
+    .token.pos-0 {
+        top: 2%;
+        left: 2%;
+    }
+
+    .token.pos-1 {
+        top: 2%;
+        right: 2%;
+    }
+
+    .token.pos-2 {
+        bottom: 2%;
+        left: 2%;
+    }
+
+    .token.pos-3 {
+        bottom: 2%;
+        right: 2%;
+    }
+
+    /* single token still centered properly */
+    .token.center-pos {
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* =========================================================
+   VERY SMALL HEIGHT DEVICES
+========================================================= */
+@media (max-height: 700px) {
+
+    .game-area,
+    .ludo-wrapper {
+        width: min(82vw, 82vh);
+        height: min(82vw, 82vh);
+    }
+
+    #turnIndicator {
+        font-size: 10px;
+    }
+
+    .corner {
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* =========================================================
+   LARGE DESKTOPS / 4K
+========================================================= */
+@media (min-width: 1600px) {
+
+    .game-area,
+    .ludo-wrapper {
+        width: min(70vh, 900px);
+        height: min(70vh, 900px);
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+
+    .corner {
+        width: calc(var(--cell) * 1.7);
+        height: calc(var(--cell) * 1.7);
+
+        max-width: 66px;
+        max-height: 66px;
+    }
+
+    .dice-cube {
+        width: 65%;
+        height: 65%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .home-container .token {
+
+        width: clamp(18px, 22%, 26px) !important;
+        height: clamp(18px, 22%, 26px) !important;
+
+        min-width: 18px;
+        min-height: 18px;
+
+        max-width: 26px;
+        max-height: 26px;
+    }
+
+    .placeholder-layer,
+    .token-layer {
+        gap: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    #turnIndicator {
+        min-width: 65px;
+        font-size: 9px;
+        padding: 4px 8px;
+    }
+
+    #turnIndicator.red,
+    #turnIndicator.green {
+        top: calc(var(--cell) * -1.05);
+    }
+
+    #turnIndicator.blue,
+    #turnIndicator.yellow {
+        top: calc(var(--cell) * 16.05);
+    }
+
+    .corner {
+        width: 44px;
+        height: 44px;
+    }
+
+    .dot {
+        width: 4px;
+        height: 4px;
+    }
+}

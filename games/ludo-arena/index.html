@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Neo Ludo Arena 🎲</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/ludo.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="./images/LudoArena.jpeg" type="image/png">
+
+  <!-- JS -->
+  <script type="module" src="js/main.js"></script>
+</head>
+
+<body data-app="games" data-page="ludo-arena">
+
+  <!-- ================= START SCREEN ================= -->
+  <div id="startScreen" class="start-screen">
+
+    <div class="start-card">
+
+      <h1 class="title">🎲 Neo Ludo Arena</h1>
+      <p class="subtitle">Choose your game mode</p>
+
+      <div class="mode-grid">
+
+        <div class="mode-card" onclick="selectMode(1)">
+          <div class="icon">🤖</div>
+          <h3>Single Player</h3>
+          <p>Play against AI</p>
+        </div>
+
+        <div class="mode-card" onclick="selectMode(2)">
+          <div class="icon">👥</div>
+          <h3>2 Players</h3>
+          <p>Head-to-head match</p>
+        </div>
+
+        <div class="mode-card" onclick="selectMode(3)">
+          <div class="icon">👨‍👩‍👧</div>
+          <h3>3 Players</h3>
+          <p>Fun with friends</p>
+        </div>
+
+        <div class="mode-card" onclick="selectMode(4)">
+          <div class="icon">👨‍👩‍👧‍👦</div>
+          <h3>4 Players</h3>
+          <p>Full table chaos</p>
+        </div>
+
+      </div>
+
+      <a href="../index.html" class="btn-back">← Back to Games</a>
+    </div>
+
+  </div>
+
+  <!-- ================= GAME CONTAINER ================= -->
+  <div id="gameContainer" style="display: none;">
+
+    <div class="game-wrapper">
+
+      <!-- ================= LUDO WRAPPER ================= -->
+      <div class="ludo-wrapper">
+
+        <!-- ================= PLAYER BOXES ================= -->
+        <!-- 🔴 P2 (TOP LEFT) -->
+        <div class="dice-box red-player corner top-left">
+        </div>
+
+        <!-- 🟢 P3 (TOP RIGHT) -->
+        <div class="dice-box green-player corner top-right">
+        </div>
+
+        <!-- ✅ GAME AREA -->
+        <div class="game-area">
+
+          <!-- 🟢 TURN INDICATOR (ADD HERE) -->
+          <div id="turnIndicator">
+            <span id="turnText">Player Turn</span>
+          </div>
+
+          <!-- BOARD -->
+          <div id="board"></div>
+
+          <!-- CENTER MESSAGE -->
+          <div id="gameMessage" class="game-message hidden"></div>
+
+          <!-- 🔵 P1 (BOTTOM LEFT) -->
+          <div class="dice-box blue-player corner bottom-left">
+
+            <div class="player-label"></div>
+
+            <!-- SINGLE MOVING DICE -->
+            <div id="dice" class="dice-container">
+
+              <div id="diceCube" class="dice-cube">
+
+                <div class="face front">
+                  <span class="dot center"></span>
+                </div>
+
+                <div class="face back">
+                  <span class="dot tl"></span>
+                  <span class="dot tr"></span>
+                  <span class="dot bl"></span>
+                  <span class="dot br"></span>
+                  <span class="dot ml"></span>
+                  <span class="dot mr"></span>
+                </div>
+
+                <div class="face right">
+                  <span class="dot tl"></span>
+                  <span class="dot tr"></span>
+                  <span class="dot bl"></span>
+                  <span class="dot br"></span>
+                </div>
+
+                <div class="face left">
+                  <span class="dot tl"></span>
+                  <span class="dot center"></span>
+                  <span class="dot br"></span>
+                </div>
+
+                <div class="face top">
+                  <span class="dot tl"></span>
+                  <span class="dot tr"></span>
+                </div>
+
+                <div class="face bottom">
+                  <span class="dot tl"></span>
+                  <span class="dot tr"></span>
+                  <span class="dot bl"></span>
+                  <span class="dot br"></span>
+                  <span class="dot center"></span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- 🟡 P4 (BOTTOM RIGHT) -->
+          <div class="dice-box yellow-player corner bottom-right">
+          </div>
+
+        </div> <!-- Game Area Ends -->
+
+        <!-- FLOATING CONTROLS -->
+        <div class="floating-controls">
+          <button onclick="toggleSound()" id="soundBtn" class="fab sound">🔊</button>
+          <button onclick="restartGame()" class="fab restart">🔄</button>
+        </div>
+
+      </div> <!--  Ludo Wrapper Ends -->
+    </div> <!-- Game Wrapper Ends -->
+
+
+    <!-- SOUND EFFECTS -->
+    <audio id="diceRoll" src="./sounds/dice-roll.mp3" preload="auto" playsinline webkit-playsinline>
+    </audio>
+    <audio id="diceHit" src="./sounds/dice-hit.mp3" preload="auto" playsinline webkit-playsinline>
+    </audio>
+    <audio id="enterSound" src="sounds/Punjabi-Aa-Gaye-Oye.mp3" preload="auto" playsinline webkit-playsinline>
+    </audio>
+    <audio id="tokenMove" src="sounds/move.mp3" preload="auto" playsinline webkit-playsinline>
+    </audio>
+    <audio id="tokenKill" src="sounds/Passe-Hatt-Ja.mp3" preload="auto" playsinline webkit-playsinline>
+    </audio>
+    <audio id="finishSound" src="sounds/Dabda Kithe Aa.mp3" preload="auto" playsinline webkit-playsinline>
+    </audio>
+
+  </div> <!-- Game Conatiner Ends -->
+
+</body>
+
+</html>

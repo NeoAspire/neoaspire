@@ -11,10 +11,12 @@ MAIN CSS (Master File)
 @import url('./base/theme.css');        /* Light/Dark theme */
 
 
-/* ===== LAYOUT ===== */
-@import url('./modules/layout.css');    /* Grid, header, footer */
+/* ===== LAYOUT FRAMEWORK Header & Footer from Core===== */
+@import url('../../core/css/layout.css');    /* Grid, header, footer */
+
 /* ===== FROM CORE ===== */
 @import url('../../core/css/alertmsg.css'); /* Alert Message */
+@import url('../../core/css/ads.css');      /* Ads System */
 
 
 /* ===== COMPONENTS ===== */

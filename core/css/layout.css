@@ -35,7 +35,7 @@ header {
     position: sticky;
     top: 0;
     width: 100%;
-    background: var(--color-dark);
+    background: var(--color-header-bg);
     color: var(--color-white);
     padding: var(--space-sm) var(--space-md);
     display: flex;
@@ -231,7 +231,7 @@ header nav {
 ========================================= */
 footer {
     grid-area: footer;
-    background: var(--color-dark);
+    background: var(--color-footer-bg);
     color: var(--color-white);
     text-align: center;
     padding: var(--space-xs) var(--space-sm); /* Increased vertical padding for better breathing room */

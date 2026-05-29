@@ -139,14 +139,21 @@ export const CONFIG = {
     },
 
     // ===============================
+// ADSENSE CONFIG
+// ===============================
+ADSENSE: {
+    client: "ca-pub-5933325662413662"
+},
+
+    // ===============================
     // APP PAGE WISE ALERTS
     // ===============================
     ALERTS: {
         main: {
             home: {
-               message: `👋 Welcome to NeoAspire! Learn HTML, CSS, JS, and more.
+               message: /*`👋 Welcome to NeoAspire! Learn HTML, CSS, JS, and more.
 Online classes are coming soon.
-Stay tuned! 🚀`,
+Stay tuned! 🚀`*/"",
                 type: "info",
                 duration: 5000
                 
@@ -179,6 +186,41 @@ Stay tuned! 🚀`,
         }
     },
 
+// ===============================
+// ADS CONFIG
+// ===============================
+ADS: {
+
+    // 🌍 all apps
+    global: [
+        {
+            id: "adsense-top",
+            type: "adsense",
+            slot: "6441869006",
+            location: "#top-ad",
+            delay: 1000
+        }
+    ],
+
+    main: {
+
+        // 📦 only main app
+        global: [],
+
+        // 📄 page specific
+        home: [],
+        about: [],
+    },
+
+    games: {
+        global: [],
+        
+         // specific game pages
+         "tic-tac-toe": [],
+         "ludo-arena": [],
+    }
+
+},
 
 
     // ===============================
