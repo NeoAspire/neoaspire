@@ -7,7 +7,7 @@ import {
     drawTokens, updateStatus, showGameMessage,
     addPlayerNames, initBoard, addCenter, isInFinalCell
 } from "./ui.js";
-import { playSound } from "./main.js";
+import { playSound, stopSound } from "./main.js";
 
 // ================= SHARED STATE =================
 // Single source of truth — import `state` anywhere you need it
@@ -163,42 +163,24 @@ export function rollDice() {
     const randomX = 360 + Math.floor(Math.random() * 180);
     const randomY = 360 + Math.floor(Math.random() * 180);
 
-    // cube.offsetHeight; // force repaint
+    // ✅ iOS FIX: sound outside rAF
+stopSound("diceRoll");
+playSound("diceRoll");
 
 requestAnimationFrame(() => {
-
-    // stop previous roll sound first
-    const roll = document.getElementById("diceRoll");
-
-    if (roll) {
-        roll.pause();
-        roll.currentTime = 0;
-    }
-
-    playSound("diceRoll");
-
     cube.style.transition = "transform 0.45s linear";
     cube.style.transform =
         `rotateX(${randomX}deg) rotateY(${randomY}deg)`;
 });
 
 setTimeout(() => {
-
     cube.style.transition = "transform 0.35s linear";
     cube.style.transform = finalRotation[state.currentDice];
 
-    // stop rolling sound EXACTLY before hit
-    const roll = document.getElementById("diceRoll");
-
-    if (roll) {
-        roll.pause();
-        roll.currentTime = 0;
-    }
-
+    // ✅ already outside rAF, just clean up the manual DOM code
+    stopSound("diceRoll");
     playSound("diceHit");
-
 }, 450);
-
 
     updateStatus();
 
