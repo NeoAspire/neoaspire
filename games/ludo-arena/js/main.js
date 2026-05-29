@@ -23,16 +23,30 @@ export function toggleSound() {
     }
 }
 
-// Play Sound
+// ================= PLAY SOUND SYSTEM =================
 const audioPools = {};
+const SINGLE_INSTANCE_SOUNDS = ["diceRoll", "diceHit"];
 
 export function playSound(id) {
+
+    if (!soundEnabled) return;
 
     const original = document.getElementById(id);
 
     if (!original) return;
 
-    // Create pool once
+    // dice sounds should NEVER overlap
+  if (SINGLE_INSTANCE_SOUNDS.includes(id)){
+
+        original.pause();
+        original.currentTime = 0;
+
+        original.play().catch(() => {});
+
+        return;
+    }
+
+    // pooled sounds for token movement etc
     if (!audioPools[id]) {
 
         audioPools[id] = [];
@@ -47,7 +61,6 @@ export function playSound(id) {
         }
     }
 
-    // Find free audio
     const sound =
         audioPools[id].find(a => a.paused || a.ended);
 
@@ -57,6 +70,27 @@ export function playSound(id) {
 
     sound.play().catch(() => {});
 }
+
+export function stopSound(id) {
+
+    const original = document.getElementById(id);
+
+    if (original) {
+
+        original.pause();
+        original.currentTime = 0;
+    }
+
+    if (audioPools[id]) {
+
+        audioPools[id].forEach(sound => {
+
+            sound.pause();
+            sound.currentTime = 0;
+        });
+    }
+}
+
 
 // ================= RESTART =================
 export function restartGame() {

@@ -165,27 +165,40 @@ export function rollDice() {
 
     // cube.offsetHeight; // force repaint
 
-    requestAnimationFrame(() => {
-        const roll = document.getElementById("diceRoll");
+requestAnimationFrame(() => {
 
-        if (roll) {
-            roll.pause();
-            roll.currentTime = 0;
-        }
-        playSound("diceRoll");
-        cube.style.transition = "transform 0.45s linear";
-        cube.style.transform = `rotateX(${randomX}deg) rotateY(${randomY}deg)`;
-    });
+    // stop previous roll sound first
+    const roll = document.getElementById("diceRoll");
 
-    setTimeout(() => {
-        cube.style.transition = "transform 0.35s linear";
-        cube.style.transform = finalRotation[state.currentDice];
+    if (roll) {
+        roll.pause();
+        roll.currentTime = 0;
+    }
 
-        const roll = document.getElementById("diceRoll");
-        if (roll) { roll.pause(); roll.currentTime = 0; }
+    playSound("diceRoll");
 
-        playSound("diceHit");
-    }, 550);
+    cube.style.transition = "transform 0.45s linear";
+    cube.style.transform =
+        `rotateX(${randomX}deg) rotateY(${randomY}deg)`;
+});
+
+setTimeout(() => {
+
+    cube.style.transition = "transform 0.35s linear";
+    cube.style.transform = finalRotation[state.currentDice];
+
+    // stop rolling sound EXACTLY before hit
+    const roll = document.getElementById("diceRoll");
+
+    if (roll) {
+        roll.pause();
+        roll.currentTime = 0;
+    }
+
+    playSound("diceHit");
+
+}, 450);
+
 
     updateStatus();
 
