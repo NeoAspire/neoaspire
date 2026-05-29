@@ -36,12 +36,20 @@ export function playSound(id) {
     if (!original) return;
 
     // dice sounds should NEVER overlap
-  if (SINGLE_INSTANCE_SOUNDS.includes(id)){
+    if (SINGLE_INSTANCE_SOUNDS.includes(id)) {
 
-        original.pause();
-        original.currentTime = 0;
+        try {
 
-        original.play().catch(() => {});
+            original.pause();
+            // safer for iOS/WebKit
+            original.currentTime = 0;
+            const p = original.play();
+
+            if (p !== undefined) {
+                p.catch(() => { });
+            }
+
+        } catch (e) { }
 
         return;
     }
@@ -68,7 +76,7 @@ export function playSound(id) {
 
     sound.currentTime = 0;
 
-    sound.play().catch(() => {});
+    sound.play().catch(() => { });
 }
 
 export function stopSound(id) {
