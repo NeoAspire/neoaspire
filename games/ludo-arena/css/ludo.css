@@ -1350,6 +1350,40 @@ body {
         width: 52px;
         height: 52px;
     }
+    
+    /* smaller token inside crowded cells */
+    .cell .token {
+        width: 32%;
+        height: 32%;
+        min-width: 10px;
+        min-height: 10px;
+    }
+
+    /* spread tokens more */
+    .token.pos-0 {
+        top: 2%;
+        left: 2%;
+    }
+
+    .token.pos-1 {
+        top: 2%;
+        right: 2%;
+    }
+
+    .token.pos-2 {
+        bottom: 2%;
+        left: 2%;
+    }
+
+    .token.pos-3 {
+        bottom: 2%;
+        right: 2%;
+    }
+
+    /* single token still centered properly */
+    .token.center-pos {
+        transform: translate(-50%, -50%);
+    }
 }
 
 /* =========================================================

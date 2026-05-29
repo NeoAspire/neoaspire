@@ -129,7 +129,7 @@ export function startGame() {
             updateStatus();
 
             if (state.players[state.currentPlayerIndex].isComputer) {
-                setTimeout(rollDice, 800);
+                setTimeout(rollDice, 1400);
             }
         });
     });
@@ -163,9 +163,15 @@ export function rollDice() {
     const randomX = 360 + Math.floor(Math.random() * 180);
     const randomY = 360 + Math.floor(Math.random() * 180);
 
-   // cube.offsetHeight; // force repaint
+    // cube.offsetHeight; // force repaint
 
     requestAnimationFrame(() => {
+        const roll = document.getElementById("diceRoll");
+
+        if (roll) {
+            roll.pause();
+            roll.currentTime = 0;
+        }
         playSound("diceRoll");
         cube.style.transition = "transform 0.45s linear";
         cube.style.transform = `rotateX(${randomX}deg) rotateY(${randomY}deg)`;
@@ -218,15 +224,197 @@ export function handleDiceLogic() {
         return;
     }
 
-    // 🤖 Computer
+    // 🤖 Smart Computer
     if (player.isComputer) {
+
         setTimeout(() => {
-            const choice = movableTokens.length === 1
-                ? movableTokens[0]
-                : movableTokens[Math.floor(Math.random() * movableTokens.length)];
-            state.selectedToken = choice.i;
+
+            let bestChoice = movableTokens[0];
+            let bestScore = -999;
+
+            movableTokens.forEach(obj => {
+
+                const token = obj.t;
+
+                let score = 0;
+
+                // ================= SIMULATE MOVE =================
+                let futurePosition = token.position;
+                let futureHomeStep = token.homeStep;
+                let futureInHome = token.inHomePath;
+                let futureSteps = token.steps;
+
+                if (token.position === -1 && currentDice === 6) {
+
+                    futurePosition = startIndex[token.color];
+                    futureSteps = 1;
+
+                } else {
+
+                    for (let i = 0; i < currentDice; i++) {
+
+                        // normal path
+                        if (!futureInHome) {
+
+                            const entry = homeEntryIndex[token.color];
+
+                            // enter home path
+                            if (
+                                futurePosition === entry &&
+                                futureSteps >= path.length
+                            ) {
+
+                                futureInHome = true;
+                                futurePosition = -2;
+                                futureHomeStep = 0;
+
+                            } else {
+
+                                futurePosition =
+                                    (futurePosition + 1) % path.length;
+
+                                futureSteps++;
+                            }
+
+                        } else {
+
+                            // home path movement
+                            if (
+                                futureHomeStep <
+                                homePath[token.color].length - 1
+                            ) {
+                                futureHomeStep++;
+                            }
+                        }
+                    }
+                }
+                // ================= PRIORITIES =================
+
+                // 🏁 Finish token immediately
+                if (
+                    futureInHome &&
+                    futureHomeStep === homePath[token.color].length - 1
+                ) {
+                    score += 1000;
+                }
+
+                // 🛣 Enter home path
+                if (
+                    !token.inHomePath &&
+                    futureInHome
+                ) {
+                    score += 250;
+                }
+
+                // 🚀 Strongly prefer advanced tokens
+                score += futureSteps * 5;
+
+                // 🎯 Extra boost near finish
+                if (futureSteps > 45) score += 180;
+                else if (futureSteps > 35) score += 120;
+                else if (futureSteps > 25) score += 70;
+
+                // 💥 Kill enemy
+                state.tokens.forEach(enemy => {
+
+                    if (enemy.color === token.color) return;
+                    if (enemy.position === -1) return;
+                    if (enemy.inHomePath) return;
+
+                    if (
+                        !futureInHome &&
+                        futurePosition === enemy.position
+                    ) {
+                        score += 350;
+
+                        // kill advanced enemy = huge reward
+                        score += enemy.steps * 3;
+                    }
+                });
+
+                // 🛡 Safe zone bonus
+                if (!futureInHome && isSafeCell(futurePosition)) {
+                    score += 80;
+                }
+
+                // 🧱 Stack with own token
+                const friendlyStack = state.tokens.some(t =>
+                    t !== token &&
+                    t.color === token.color &&
+                    !t.inHomePath &&
+                    t.position === futurePosition
+                );
+
+                if (friendlyStack) {
+                    score += 90;
+                }
+
+                // ⚠ Danger detection
+                let danger = 0;
+
+                state.tokens.forEach(enemy => {
+
+                    if (enemy.color === token.color) return;
+                    if (enemy.position === -1) return;
+                    if (enemy.inHomePath) return;
+
+                    const dist =
+                        (futurePosition - enemy.position + path.length) % path.length;
+
+                    // enemy can kill next turn
+                    if (dist > 0 && dist <= 6) {
+
+                        danger += 1;
+
+                        // advanced token more valuable
+                        if (token.steps > 35) {
+                            score -= 120;
+                        } else {
+                            score -= 60;
+                        }
+                    }
+                });
+
+                // 🚫 avoid risky overcrowding
+                const sameCellCount = state.tokens.filter(t =>
+                    t.color === token.color &&
+                    t.position === futurePosition
+                ).length;
+
+                if (sameCellCount >= 2) {
+                    score -= 40;
+                }
+
+                // 🎲 Prefer leaving home early game
+                const activeTokens = state.tokens.filter(t =>
+                    t.color === token.color &&
+                    t.position !== -1
+                ).length;
+
+                if (
+                    token.position === -1 &&
+                    currentDice === 6
+                ) {
+
+                    if (activeTokens < 2) {
+                        score += 180;
+                    } else {
+                        score += 70;
+                    }
+                }
+                // Save best
+                if (score > bestScore) {
+                    bestScore = score;
+                    bestChoice = obj;
+                }
+            });
+
+            state.selectedToken = bestChoice.i;
+
             moveSelectedToken();
-        }, 600);
+
+        }, 1200);
+
         return;
     }
 
@@ -309,7 +497,7 @@ export function moveSelectedToken() {
             updateStatus();
 
             if (state.players[state.currentPlayerIndex].isComputer) {
-                setTimeout(rollDice, 800);
+                setTimeout(rollDice, 1600);
             }
         }
         return;
@@ -353,8 +541,8 @@ export function moveSelectedToken() {
         // ✅ if player already finished,
         // declareWinner() will handle nextTurn()
         if (!state.finishedPlayers.includes(token.color)) {
-    setTimeout(nextTurn, 500);
-}
+            setTimeout(nextTurn, 900);
+        }
         state.isRolling = false;
     });
 }
@@ -398,7 +586,7 @@ function animateMove(token, steps, callback) {
 
         stepCount++;
         drawTokens();
-        setTimeout(stepMove, 250);
+        setTimeout(stepMove, 320);
     }
 
     stepMove();
@@ -575,6 +763,6 @@ export function nextTurn() {
     updateStatus();
 
     if (state.players[state.currentPlayerIndex].isComputer) {
-        setTimeout(rollDice, 1000);
+        setTimeout(rollDice, 1600);
     }
 }

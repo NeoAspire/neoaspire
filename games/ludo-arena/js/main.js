@@ -23,18 +23,39 @@ export function toggleSound() {
     }
 }
 
+// Play Sound
+const audioPools = {};
+
 export function playSound(id) {
 
-    const sound = document.getElementById(id);
+    const original = document.getElementById(id);
+
+    if (!original) return;
+
+    // Create pool once
+    if (!audioPools[id]) {
+
+        audioPools[id] = [];
+
+        for (let i = 0; i < 5; i++) {
+
+            const clone = original.cloneNode();
+
+            clone.preload = "auto";
+
+            audioPools[id].push(clone);
+        }
+    }
+
+    // Find free audio
+    const sound =
+        audioPools[id].find(a => a.paused || a.ended);
 
     if (!sound) return;
 
-    // iPhone Safari fix
-    const clone = sound.cloneNode();
+    sound.currentTime = 0;
 
-    clone.volume = sound.volume;
-
-    clone.play().catch(() => {});
+    sound.play().catch(() => {});
 }
 
 // ================= RESTART =================
