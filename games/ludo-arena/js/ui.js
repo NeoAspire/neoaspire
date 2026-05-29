@@ -3,7 +3,7 @@
 
 import { path, homePath, homePositions, safeZones } from "./data.js";
 import { state } from "./game.js";
-import { playSound } from "./main.js";
+import { playSound } from "./audioEngine.js";
 
 // ================= BOARD =================
 export function initBoard() {

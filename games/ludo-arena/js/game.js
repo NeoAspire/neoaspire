@@ -7,7 +7,7 @@ import {
     drawTokens, updateStatus, showGameMessage,
     addPlayerNames, initBoard, addCenter, isInFinalCell
 } from "./ui.js";
-import { playSound, stopSound } from "./main.js";
+import { playSound } from "./audioEngine.js";
 
 // ================= SHARED STATE =================
 // Single source of truth — import `state` anywhere you need it
@@ -164,7 +164,6 @@ export function rollDice() {
     const randomY = 360 + Math.floor(Math.random() * 180);
 
     // ✅ iOS FIX: sound outside rAF
-stopSound("diceRoll");
 playSound("diceRoll");
 
 requestAnimationFrame(() => {
@@ -178,9 +177,8 @@ setTimeout(() => {
     cube.style.transform = finalRotation[state.currentDice];
 
     // ✅ already outside rAF, just clean up the manual DOM code
-    stopSound("diceRoll");
-    playSound("diceHit");
-}, 450);
+      playSound("diceHit");
+ }, 450);
 
     updateStatus();
 
@@ -534,7 +532,7 @@ export function moveSelectedToken() {
             return;
         }
         // ✅ if player already finished,
-        // declareWinner() will handle nextTurn()
+       
         if (!state.finishedPlayers.includes(token.color)) {
             setTimeout(nextTurn, 900);
         }
@@ -556,6 +554,7 @@ function animateMove(token, steps, callback) {
         if (stepCount >= steps) { callback(); return; }
 
         playSound("tokenMove");
+       // playFastSound("tokenMove");
 
         if (!token.inHomePath) {
             const nextPos = (token.position + 1) % path.length;
