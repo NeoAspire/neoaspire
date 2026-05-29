@@ -832,14 +832,14 @@ a {
 /* 🔵 BLUE */
 #turnIndicator.blue {
     left: calc(var(--cell) * 3.8);
-    top: calc(var(--cell) * 15.50);
+    top: calc(var(--cell) * 15.55);
     background: linear-gradient(135deg, #3b82f6, #1d4ed8);
 }
 
 /* 🟡 YELLOW */
 #turnIndicator.yellow {
     left: calc(var(--cell) * 11.2);
-    top: calc(var(--cell) * 15.50);
+    top: calc(var(--cell) * 15.55);
     background: linear-gradient(135deg, #f59e0b, #b45309);
 }
 
@@ -978,7 +978,7 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    
+
 
     transform: translate(-50%, -50%);
     z-index: 500;
@@ -1017,7 +1017,7 @@ a {
     align-items: center;
     justify-content: center;
 
-     position: relative;
+    position: relative;
 }
 
 /* =========================================================
@@ -1060,9 +1060,9 @@ a {
     box-sizing: border-box;
 
     box-shadow:
-        inset -4px -4px 8px rgba(0,0,0,0.22),
-        inset 4px 4px 8px rgba(255,255,255,0.8),
-        0 6px 14px rgba(0,0,0,0.22);
+        inset -4px -4px 8px rgba(0, 0, 0, 0.22),
+        inset 4px 4px 8px rgba(255, 255, 255, 0.8),
+        0 6px 14px rgba(0, 0, 0, 0.22);
 }
 
 /* ================= 3D FACE POSITIONS ================= */
@@ -1176,26 +1176,26 @@ a {
 
 /* 4 positions inside one cell */
 .token.pos-0 {
-    top: 2px;
-    left: 2px;
+    top: 8%;
+    left: 8%;
 }
 
 /* top-left */
 .token.pos-1 {
-    top: 2px;
-    right: 2px;
+    top: 8%;
+    right: 8%;
 }
 
 /* top-right */
 .token.pos-2 {
-    bottom: 2px;
-    left: 2px;
+    bottom: 8%;
+    left: 8%;
 }
 
 /* bottom-left */
 .token.pos-3 {
-    bottom: 2px;
-    right: 2px;
+    bottom: 8%;
+    right: 8%;
 }
 
 /* ================= SAFE ZONE DESIGN ================= */
@@ -1218,6 +1218,38 @@ a {
     font-size: 16px;
     color: #111827;
     opacity: 0.8;
+}
+
+/* ================= CONFETTI ================= */
+
+.confetti {
+    position: fixed;
+
+    width: 10px;
+    height: 10px;
+
+    top: -20px;
+
+    border-radius: 2px;
+
+    z-index: 99999;
+
+    animation: confettiFall linear forwards;
+}
+
+@keyframes confettiFall {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(110vh) rotate(720deg);
+
+        opacity: 0;
+    }
 }
 
 /* =========================================================
@@ -1296,6 +1328,7 @@ body {
    MOBILE FIXES
 ========================================================= */
 @media (max-width: 600px) {
+
     .game-area,
     .ludo-wrapper {
         width: min(96vw, 96vh);
@@ -1312,6 +1345,7 @@ body {
    VERY SMALL HEIGHT DEVICES
 ========================================================= */
 @media (max-height: 700px) {
+
     .game-area,
     .ludo-wrapper {
         width: min(82vw, 82vh);
@@ -1327,10 +1361,12 @@ body {
         height: 48px;
     }
 }
+
 /* =========================================================
    LARGE DESKTOPS / 4K
 ========================================================= */
 @media (min-width: 1600px) {
+
     .game-area,
     .ludo-wrapper {
         width: min(70vh, 900px);
@@ -1355,19 +1391,21 @@ body {
 }
 
 @media (min-width: 1024px) {
-
     .home-container .token {
 
-        width: 30px !important;
-        height: 30px !important;
+        width: clamp(18px, 22%, 26px) !important;
+        height: clamp(18px, 22%, 26px) !important;
 
-        max-width: 30px;
-        max-height: 30px;
+        min-width: 18px;
+        min-height: 18px;
+
+        max-width: 26px;
+        max-height: 26px;
     }
 
     .placeholder-layer,
     .token-layer {
-        gap: 18px;
+        gap: 16px;
     }
 }
 

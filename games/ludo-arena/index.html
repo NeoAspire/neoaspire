@@ -13,7 +13,7 @@
   <link rel="icon" href="./images/LudoArena.jpeg" type="image/png">
 
   <!-- JS -->
-  <script type="module" src="./js/ludo.js" defer></script>
+  <script type="module" src="js/main.js"></script>
 </head>
 
 <body>
@@ -96,7 +96,7 @@
             <div class="player-label"></div>
 
             <!-- SINGLE MOVING DICE -->
-            <div id="dice" class="dice-container" onclick="rollDice()">
+            <div id="dice" class="dice-container">
 
               <div id="diceCube" class="dice-cube">
 
@@ -152,11 +152,11 @@
 
         </div> <!-- Game Area Ends -->
 
-            <!-- FLOATING CONTROLS -->
-    <div class="floating-controls">
-      <button onclick="toggleSound()" id="soundBtn" class="fab sound">🔊</button>
-      <button onclick="restartGame()" class="fab restart">🔄</button>
-    </div>
+        <!-- FLOATING CONTROLS -->
+        <div class="floating-controls">
+          <button onclick="toggleSound()" id="soundBtn" class="fab sound">🔊</button>
+          <button onclick="restartGame()" class="fab restart">🔄</button>
+        </div>
 
       </div> <!--  Ludo Wrapper Ends -->
     </div> <!-- Game Wrapper Ends -->
@@ -170,20 +170,6 @@
     <audio id="finishSound" src="sounds/Dabda Kithe Aa.mp3"></audio>
 
   </div> <!-- Game Conatiner Ends -->
-
-  <!-- ================= AUDIO ================= -->
-
-  <!-- Dice -->
-  <audio id="diceRoll" src="sounds/dice-roll.mp3"></audio>
-  <audio id="diceHit" src="sounds/dice-hit.mp3"></audio>
-
-  <!-- Token -->
-  <audio id="tokenMove" preload="auto" playsinline>
-    <source src="sounds/token-move.mp3" type="audio/mpeg">
-</audio>
-  <audio id="tokenKill" src="sounds/token-kill.mp3"></audio>
-  <audio id="enterSound" src="sounds/token-enter.mp3"></audio>
-  <audio id="finishSound" src="sounds/finish.mp3"></audio>
 
 </body>
 

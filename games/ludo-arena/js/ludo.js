@@ -41,26 +41,7 @@ function toggleSound() {
 }
 
 // ✅ Play sound by ID with safety checks
-/*
-function playSound(id, duration = null) {
-    if (!soundEnabled) return;
 
-    const sound = document.getElementById(id);
-    if (sound) {
-        sound.pause();          // stop previous
-        sound.currentTime = 0;  // restart
-        sound.play().catch(() => { });
-
-        // ⏱️ Stop sound early
-        if (duration !== null) {
-            setTimeout(() => {
-                sound.pause();
-                sound.currentTime = 0;
-            }, duration);
-        }
-    }
-}
-*/
 function playSound(id, duration = null) {
 
     if (!soundEnabled) return;
@@ -266,9 +247,6 @@ createHomeContainer(board, "yellow");
 
     for (let row = 0; row < 15; row++) {
         for (let col = 0; col < 15; col++) {
-
-          //  let cell = document.createElement("div");
-       //     cell.classList.add("cell");
 
 let cell = document.createElement("div");
 cell.classList.add("cell");
@@ -668,20 +646,31 @@ function startGame() {
 
     currentPlayerIndex = 0;
 
-    document.getElementById("startScreen").style.display = "none";
-    document.getElementById("gameContainer").style.display = "block";
+document.getElementById("startScreen").style.display = "none";
+document.getElementById("gameContainer").style.display = "block";
+
+// ✅ wait for layout render
+requestAnimationFrame(() => {
 
     initBoard();
     addCenter();
     addPlayerNames();
-    drawTokens();
-    updateStatus();
 
+    // ✅ second frame ensures CSS/grid fully calculated
+    requestAnimationFrame(() => {
 
-    // 🤖 If computer starts
-    if (players[currentPlayerIndex].isComputer) {
-        setTimeout(rollDice, 1000);
-    }
+        drawTokens();
+        updateStatus();
+
+        // 🤖 computer auto turn
+        if (players[currentPlayerIndex].isComputer) {
+            setTimeout(rollDice, 800);
+        }
+
+    });
+
+});
+
 }
 
 // ================= UTILS =================
@@ -921,6 +910,7 @@ function isTokenFinished(token) {
         token.homeStep === homePath[token.color].length - 1;
 }
 
+// ================= CHECK PLAYER FINISH =================
 function isPlayerFinished(color) {
     let playerTokens = tokens.filter(t => t.color === color);
     return playerTokens.every(t => isTokenFinished(t));
@@ -1103,7 +1093,7 @@ function moveSelectedToken() {
         // =============================
         if (isTokenFinished(token)) {
             earnedExtraTurn = true;
-            showGameMessage("🏁 Extra Turn for Finish!", "success");
+          //  showGameMessage("🏁 Extra Turn for Finish!", "success");
         }
 
         // =============================
@@ -1277,8 +1267,10 @@ function rollDice() {
     };
 
     // 🎲 random spin values
-    let randomX = 1440 + Math.floor(Math.random() * 720);
-    let randomY = 1440 + Math.floor(Math.random() * 720);
+    
+
+    let randomX = 360 + Math.floor(Math.random() * 360);
+    let randomY = 360 + Math.floor(Math.random() * 360);
 
     // ✅ force browser repaint FIRST
     cube.offsetHeight;
@@ -1288,7 +1280,7 @@ function rollDice() {
 
         playSound("diceRoll");
 
-        cube.style.transition = "transform 1s ease-out";
+        cube.style.transition = "transform 0.55s ease-out";
 
         cube.style.transform =
             `rotateX(${randomX}deg) rotateY(${randomY}deg)`;
@@ -1310,7 +1302,7 @@ function rollDice() {
 
         playSound("diceHit");
 
-    }, 1000);
+    }, 550);
 
     updateStatus();
     updateStatus("(Rolled: " + currentDice + ")");
@@ -1320,7 +1312,7 @@ function rollDice() {
         isRolling = false;
         handleDiceLogic();
 
-    }, 1400);
+    }, 850);
 }
 
 // ================= DICE LOGIC =================

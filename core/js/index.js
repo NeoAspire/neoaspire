@@ -3,6 +3,8 @@
 import { loadLayout } from "./layout.js";
 import { CONFIG, path } from "./config.js";
 import { showAlert } from "./alertmsg.js";
+import { createAdSlots } from "./ads-layout.js";
+import { loadAds } from "./ads.js";
 
 console.log("🚀 Neoaspire index.js loaded");
 
@@ -17,8 +19,8 @@ function initAnalytics() {
     script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
     document.head.appendChild(script);
 
-      window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
     window.gtag = gtag;
 
     gtag('js', new Date());
@@ -31,13 +33,13 @@ function initAnalytics() {
 // GLOBAL EVENT TRACKING
 // ===============================
 function initEventTracking() {
-     document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
 
         const el = e.target.closest('a, button');
         if (!el) return;
 
         const page = el.dataset.page || "unknown";
-         const app = el.dataset.app || document.body.dataset.app || "main";
+        const app = el.dataset.app || document.body.dataset.app || "main";
 
         if (typeof gtag === 'function') {
             gtag('event', 'click', {
@@ -64,7 +66,7 @@ async function loadModules() {
     if (modules.length === 0) return;
 
     const results = await Promise.allSettled(
-    modules.map(p => import(path(p)))
+        modules.map(p => import(path(p)))
     );
 
     results.forEach((res, i) => {
@@ -84,7 +86,7 @@ async function loadModules() {
 function showPageAlert() {
     const app = document.body.dataset.app || "main";
     const page = document.body.dataset.page;
-    const appAlerts = CONFIG.ALERTS?.[app];   
+    const appAlerts = CONFIG.ALERTS?.[app];
 
     if (appAlerts && appAlerts[page]) {
         const alert = appAlerts[page];
@@ -94,20 +96,33 @@ function showPageAlert() {
             type: alert.type || "info",
             duration: alert.duration !== undefined ? alert.duration : 3000
         });
-        
+
     }
 }
 
 // ===============================
 // MAIN INIT
 // ===============================
-function init() {
+async function init() {
     initAnalytics();        // ✅ MUST CALL
     initEventTracking();    // ✅ Tracking
 
-    loadLayout();
+    await loadLayout();
+
+    const app = document.body.dataset.app || "main";
+    const page = document.body.dataset.page;
+
+    const hasAds = CONFIG.ADS?.[app]?.[page]?.length;
+
+    if (hasAds) {
+        const ads = CONFIG.ADS?.[app]?.[page] || [];
+        createAdSlots(ads);
+        loadAds();
+    }
+
+
     loadModules();
-        // ✅ Show alert AFTER everything loads
+    // ✅ Show alert AFTER everything loads
     setTimeout(showPageAlert, 200);
 
 }

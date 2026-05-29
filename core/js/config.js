@@ -139,14 +139,21 @@ export const CONFIG = {
     },
 
     // ===============================
+// ADSENSE CONFIG
+// ===============================
+ADSENSE: {
+    client: "ca-pub-5933325662413662"
+},
+
+    // ===============================
     // APP PAGE WISE ALERTS
     // ===============================
     ALERTS: {
         main: {
             home: {
-               message: `👋 Welcome to NeoAspire! Learn HTML, CSS, JS, and more.
+               message: /*`👋 Welcome to NeoAspire! Learn HTML, CSS, JS, and more.
 Online classes are coming soon.
-Stay tuned! 🚀`,
+Stay tuned! 🚀`*/"",
                 type: "info",
                 duration: 5000
                 
@@ -179,7 +186,36 @@ Stay tuned! 🚀`,
         }
     },
 
+// ===============================
+// ADS CONFIG
+// ===============================
+ADS: {
+    main: {
+        home: [
+              /*{
+                id: "test-ad",
+                type: "html",
 
+                html: `
+                    <div class="promo-box">
+                        🚀 TEST AD WORKING SUCCESSFULLY
+                    </div>
+                `,
+
+                location: "#top-ad",
+                delay: 1000
+            }*/
+            
+            {
+                id: "adsense-top",
+                type: "adsense",
+                slot: "6441869006",
+                location: "#top-ad",
+                delay: 2000
+            }, 
+        ],
+    },
+},
 
     // ===============================
     // APP PAGE WISE MODULE PATHS

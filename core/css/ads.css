@@ -1,0 +1,36 @@
+#ad-top,
+#ad-middle,
+#ad-bottom,
+#top-ad,
+#middle-ad,
+#bottom-ad {
+    width: 100%;
+    margin: 20px auto;
+    text-align: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+/* Hide empty containers */
+#ad-top:empty,
+#ad-middle:empty,
+#ad-bottom:empty,
+#top-ad:empty,
+#middle-ad:empty,
+#bottom-ad:empty {
+    display: none;
+}
+
+/* Adsense auto responsive */
+.adsbygoogle {
+    display: block !important;
+    max-width: 100%;
+}
+
+.affiliate-ad {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 12px;
+    display: block;
+    margin: auto;
+}
