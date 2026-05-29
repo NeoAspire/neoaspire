@@ -23,26 +23,18 @@ export function toggleSound() {
     }
 }
 
-export function playSound(id, duration = null) {
-    if (!soundEnabled) return;
+export function playSound(id) {
 
     const sound = document.getElementById(id);
+
     if (!sound) return;
 
-    try {
-        sound.currentTime = 0;
-        const playPromise = sound.play();
-        if (playPromise !== undefined) playPromise.catch(() => { });
+    // iPhone Safari fix
+    const clone = sound.cloneNode();
 
-        if (duration !== null) {
-            setTimeout(() => {
-                sound.pause();
-                sound.currentTime = 0;
-            }, duration);
-        }
-    } catch (e) {
-        console.warn("Sound error:", e);
-    }
+    clone.volume = sound.volume;
+
+    clone.play().catch(() => {});
 }
 
 // ================= RESTART =================

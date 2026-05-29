@@ -160,19 +160,19 @@ export function rollDice() {
         6: "rotateX(180deg)"
     };
 
-    const randomX = 360 + Math.floor(Math.random() * 360);
-    const randomY = 360 + Math.floor(Math.random() * 360);
+    const randomX = 360 + Math.floor(Math.random() * 180);
+    const randomY = 360 + Math.floor(Math.random() * 180);
 
-    cube.offsetHeight; // force repaint
+   // cube.offsetHeight; // force repaint
 
     requestAnimationFrame(() => {
         playSound("diceRoll");
-        cube.style.transition = "transform 0.55s ease-out";
+        cube.style.transition = "transform 0.45s linear";
         cube.style.transform = `rotateX(${randomX}deg) rotateY(${randomY}deg)`;
     });
 
     setTimeout(() => {
-        cube.style.transition = "transform 0.35s ease-out";
+        cube.style.transition = "transform 0.35s linear";
         cube.style.transform = finalRotation[state.currentDice];
 
         const roll = document.getElementById("diceRoll");
@@ -348,11 +348,13 @@ export function moveSelectedToken() {
             if (state.players[state.currentPlayerIndex].isComputer) {
                 setTimeout(rollDice, 800);
             }
-
             return;
         }
-
-        setTimeout(nextTurn, 500);
+        // ✅ if player already finished,
+        // declareWinner() will handle nextTurn()
+        if (!state.finishedPlayers.includes(token.color)) {
+    setTimeout(nextTurn, 500);
+}
         state.isRolling = false;
     });
 }
