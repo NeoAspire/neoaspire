@@ -8,7 +8,15 @@ export function loadAds() {
     const app = document.body.dataset.app || "main";
     const page = document.body.dataset.page;
 
-    const ads = CONFIG.ADS?.[app]?.[page] || [];
+    const rootGlobalAds = CONFIG.ADS?.global || [];
+    const appGlobalAds = CONFIG.ADS?.[app]?.global || [];
+    const pageAds = CONFIG.ADS?.[app]?.[page] || [];
+
+    const ads = [
+        ...rootGlobalAds,
+        ...appGlobalAds,
+        ...pageAds
+    ];
 
     ads.forEach(ad => {
 
@@ -45,22 +53,35 @@ export function loadAds() {
 
                         const ins = container.querySelector(".adsbygoogle");
 
-                        const status = ins?.getAttribute("data-ad-status");
-
-                        // Google returned no ad
-                        if (status === "unfilled") {
-
-                            container.style.display = "none";
+                        if (!ins) {
+                            container.remove();
+                            return;
                         }
 
-                    }, 3000);
+                        const status = ins.getAttribute("data-ad-status");
+
+                        // Explicit unfilled
+                        if (status === "unfilled") {
+                            container.remove();
+                            return;
+                        }
+
+                        // No visible ad rendered
+                        const height = ins.offsetHeight;
+                        const width = ins.offsetWidth;
+
+                        if (height < 20 || width < 20) {
+                            container.remove();
+                        }
+
+                    }, 1500);
 
                 } catch (e) {
 
                     console.error("Adsense Error:", e);
 
                     // Hide failed ad container
-                    container.style.display = "none";
+                    container.remove();
                 }
             }
 

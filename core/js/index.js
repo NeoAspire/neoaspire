@@ -112,13 +112,20 @@ async function init() {
     const app = document.body.dataset.app || "main";
     const page = document.body.dataset.page;
 
-    const hasAds = CONFIG.ADS?.[app]?.[page]?.length;
+const rootGlobalAds = CONFIG.ADS?.global || [];
+const appGlobalAds = CONFIG.ADS?.[app]?.global || [];
+const pageAds = CONFIG.ADS?.[app]?.[page] || [];
 
-    if (hasAds) {
-        const ads = CONFIG.ADS?.[app]?.[page] || [];
-        createAdSlots(ads);
-        loadAds();
-    }
+const ads = [
+    ...rootGlobalAds,
+    ...appGlobalAds,
+    ...pageAds
+];
+
+if (ads.length) {
+    createAdSlots(ads);
+    loadAds();
+}
 
 
     loadModules();

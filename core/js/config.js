@@ -190,32 +190,38 @@ Stay tuned! 🚀`*/"",
 // ADS CONFIG
 // ===============================
 ADS: {
+
+    // 🌍 all apps
+    global: [
+        {
+            id: "adsense-top",
+            type: "adsense",
+            slot: "6441869006",
+            location: "#top-ad",
+            delay: 1000
+        }
+    ],
+
     main: {
-        home: [
-              /*{
-                id: "test-ad",
-                type: "html",
 
-                html: `
-                    <div class="promo-box">
-                        🚀 TEST AD WORKING SUCCESSFULLY
-                    </div>
-                `,
+        // 📦 only main app
+        global: [],
 
-                location: "#top-ad",
-                delay: 1000
-            }*/
-            
-            {
-                id: "adsense-top",
-                type: "adsense",
-                slot: "6441869006",
-                location: "#top-ad",
-                delay: 2000
-            }, 
-        ],
+        // 📄 page specific
+        home: [],
+        about: [],
     },
+
+    games: {
+        global: [],
+        
+         // specific game pages
+         "tic-tac-toe": [],
+         "ludo-arena": [],
+    }
+
 },
+
 
     // ===============================
     // APP PAGE WISE MODULE PATHS
