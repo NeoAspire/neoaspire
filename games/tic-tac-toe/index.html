@@ -26,244 +26,41 @@
     <!-- Android Icon -->
     <link rel="icon" type="image/png" sizes="192x192" href="./images/icon-192.png">
 
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/tic-tac-toe.css">
 
-    <!-- STYLES -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: #f0f2f5;
-            margin: 0;
-        }
+    <!-- JS -->
+    <script type="module" src="./js/tic-tac-toe.js"></script>
 
-        .container {
-            text-align: center;
-        }
-
-.btn-back-inline {
-    display: inline-block;
-    margin-top: 8px;
-    margin-bottom: 15px;
-    
-    font-size: 14px;
-    font-weight: 500;
-    text-decoration: none;
-
-    color: #2563eb;
-    background: #eff6ff;
-    padding: 6px 12px;
-    border-radius: 6px;
-
-    border: 1px solid #bfdbfe;
-    transition: all 0.25s ease;
-}
-
-.btn-back-inline:hover {
-    background: #2563eb;
-    color: #fff;
-}
-
-        .mode-select button {
-            margin: 5px;
-            padding: 10px 15px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        #status {
-            margin: 15px 0;
-            font-size: 1.4rem;
-            font-weight: bold;
-        }
-
-        .board {
-            display: grid;
-            grid-template-columns: repeat(3, 100px);
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .cell {
-            width: 100px;
-            height: 100px;
-            border: 2px solid black;
-            background: purple;
-            color: white;
-            font-size: 2.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .cell.taken {
-            cursor: not-allowed;
-        }
-
-        #resetBtn {
-            padding: 10px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        button {
-            background-color: purple;
-            border: 2px solid black;
-            border-radius: 5px;
-            color: white;
-            display: inline-flex;
-        }
-
-        button:hover {
-            background-color: #6a0dad;
-        }
-
-        h1 {
-            color: #6a0dad;
-            background-color: #dfcef3;
-            padding: 10px;
-            border-radius: 8px;
-        }
-
-        .gamemode {
-            color: #6a0dad;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-
-        /* ===== POPUP ===== */
-        .popup {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .popup-content {
-            background: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            min-width: 250px;
-        }
-
-        .popup-content h2 {
-            margin-bottom: 20px;
-        }
-
-        .popup-content button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        /* ===== Andriod Install Button ===== */
-        #installBtn {
-            display: none;
-            padding: 10px 20px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            gap: 8px;
-        }
-
-        #installBtn:hover {
-            transform: scale(1.05);
-        }
-
-        #installBtn:active {
-            transform: scale(0.98);
-        }
-
-        .install-icon {
-            width: 20px;
-            height: 20px;
-            stroke: currentColor;
-        }
-
-        /* iOS Install Banner */
-        #iosInstallBanner {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background: white;
-            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
-            padding: 12px 15px;
-            z-index: 9999;
-            animation: slideUp 0.4s ease;
-        }
-
-        .ios-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 14px;
-        }
-
-        #iosInstallBanner button {
-            background: purple;
-            color: white;
-            border: none;
-            padding: 6px 14px;
-            border-radius: 6px;
-            cursor: pointer;
-        }
-
-        @keyframes slideUp {
-            from {
-                transform: translateY(100%);
-            }
-
-            to {
-                transform: translateY(0);
-            }
-        }
-    </style>
 </head>
 
 <body data-app="games" data-page="tic-tac-toe">
 
     <div class="container">
-        
-        <h1>Neo Tic Tac Toe</h1>
-         <a href="../index.html" class="btn-back">← Back to Games</a>
-
-        <!-- Install Button -->
-        <button id="installBtn" title="Install app">
-            <svg class="install-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 12c0-4.97-4.03-9-9-9S3 7.03 3 12s4.03 9 9 9m6-9c-2-4-6-7-6-7s-4 3-6 7"></path>
-                <path d="M12 17v4"></path>
-            </svg>
-            Install App
-        </button>
+       
+        <h1>Tic Tac Toe</h1>
 
         <!-- iOS Install Banner -->
         <div id="iosInstallBanner">
             <div class="ios-content">
                 <span>
                     Install <b>Tic Tac Toe</b><br>
-                    Tap <b>Share</b> ⬆️ then <b>Add to Home Screen</b>
+                    Tap <b>Share</b> ⬆️ and select <b>Add to Home Screen</b>
+                    for a full-screen app experience.
                 </span>
                 <button onclick="closeIosBanner()">OK</button>
             </div>
         </div>
 
+        <!-- STATUS DISPLAY -->
+        <div id="status" class="gamemode">Select Game Mode</div>
+
         <!-- MODE SELECTION -->
-        <div class="mode-select">
+        <div class="controls">
             <button onclick="selectMode('PVP')">👥 2 Players</button>
             <button onclick="selectMode('PVC')">🤖 vs Computer</button>
         </div>
-        <!-- STATUS DISPLAY -->
-        <div id="status" class="gamemode">Select Game Mode</div>
+
         <!-- GAME BOARD -->
         <div class="board">
             <div class="cell" data-index="0"></div>
@@ -278,352 +75,38 @@
         </div>
 
         <!-- RESET BUTTON -->
-        <button id="resetBtn">Restart Game</button>
+        <div class="controls">
+            <button id="soundToggle">🔊 Sound ON</button>
+            <button id="resetBtn">🔄 Restart Game</button>
+        </div>
+
+        <a href="../index.html" class="btn-back-inline">← Back to Games</a>
+        </div>
+
     </div>
+    </div> <!--Container Ends -->
 
     <!-- POPUP -->
     <div id="popup" class="popup">
         <div class="popup-content">
             <h2 id="popupMessage"></h2>
             <button onclick="closePopup()">Play Again</button>
-        </div>
-    </div>
-
-    <script>
-        // GAME LOGIC
-        // DOM Elements
-        const cells = document.querySelectorAll('.cell');
-        const statusText = document.getElementById('status');
-        const popup = document.getElementById('popup');
-        const popupMessage = document.getElementById('popupMessage');
-
-        // Game Variables
-        let currentPlayer = "X";
-        let gameState = ["", "", "", "", "", "", "", "", ""];
-        let gameActive = false;
-        let gameMode = "";
-
-        // Winning Conditions
-        const winningConditions = [
-            [0, 1, 2], [3, 4, 5], [6, 7, 8],
-            [0, 3, 6], [1, 4, 7], [2, 5, 8],
-            [0, 4, 8], [2, 4, 6]
-        ];
-        // Functions Selection Mode
-        function selectMode(mode) {
-            gameMode = mode;
-            restartGame();
-            gameActive = true;
-            statusText.innerText = "Player X's Turn";
-        }
-        // Handle Cell Clicks
-        function handleCellClick(e) {
-            const index = e.target.dataset.index;
-
-            if (!gameActive || gameState[index] !== "") return;
-
-            makeMove(index, currentPlayer);
-            checkResult();
-
-            if (gameMode === "PVC" && gameActive && currentPlayer === "O") {
-                setTimeout(computerMove, 500);
-            }
-        }
-        // Make Move
-        function makeMove(index, player) {
-            gameState[index] = player;
-            cells[index].innerText = player;
-            cells[index].classList.add("taken");
-        }
-        // Computer Move Logic
-        function computerMove() {
-            // 1️⃣ Try to WIN
-            let move = findBestMove("O");
-            if (move !== null) {
-                makeMove(move, "O");
-                checkResult();
-                return;
-            }
-
-            // 2️⃣ Try to BLOCK Player X
-            move = findBestMove("X");
-            if (move !== null) {
-                makeMove(move, "O");
-                checkResult();
-                return;
-            }
-
-            // 3️⃣ Take CENTER if free
-            if (gameState[4] === "") {
-                makeMove(4, "O");
-                checkResult();
-                return;
-            }
-
-            // 4️⃣ Take a CORNER
-            const corners = [0, 2, 6, 8].filter(i => gameState[i] === "");
-            if (corners.length > 0) {
-                makeMove(corners[Math.floor(Math.random() * corners.length)], "O");
-                checkResult();
-                return;
-            }
-
-            // 5️⃣ Take ANY remaining spot
-            const emptyCells = gameState
-                .map((v, i) => v === "" ? i : null)
-                .filter(v => v !== null);
-
-            makeMove(emptyCells[0], "O");
-            checkResult();
-        }
-        // Find Best Move for WIN or BLOCK
-        function findBestMove(player) {
-            for (let condition of winningConditions) {
-                const [a, b, c] = condition;
-                const line = [gameState[a], gameState[b], gameState[c]];
-
-                if (
-                    line.filter(v => v === player).length === 2 &&
-                    line.includes("")
-                ) {
-                    if (gameState[a] === "") return a;
-                    if (gameState[b] === "") return b;
-                    if (gameState[c] === "") return c;
-                }
-            }
-            return null;
-        }
-
-        // Check Game Result
-        function checkResult() {
-            for (let condition of winningConditions) {
-                const [a, b, c] = condition;
-
-                if (gameState[a] &&
-                    gameState[a] === gameState[b] &&
-                    gameState[a] === gameState[c]) {
-
-                    gameActive = false;
-                    // Delay popup to ensure last move is rendered
-                    setTimeout(() => {
-                        showPopup(`🎉 Player ${currentPlayer} Wins!`);
-                    }, 1000);
-                    return;
-                }
-            }
-
-            if (!gameState.includes("")) {
-                gameActive = false;
-                // Delay popup to ensure last move is rendered
-                setTimeout(() => {
-                    showPopup("😐 It's a Draw!");
-                }, 1000);
-                return;
-            }
-
-            currentPlayer = currentPlayer === "X" ? "O" : "X";
-            statusText.innerText = `Player ${currentPlayer}'s Turn`;
-        }
-
-        // Popup Functions
-        function showPopup(message) {
-            popupMessage.innerText = message;
-            popup.style.display = "flex";
-        }
-        // Close Popup
-        function closePopup() {
-            popup.style.display = "none";
-            restartGame();
-        }
-        // Restart Game
-        function restartGame() {
-            currentPlayer = "X";
-            gameState = ["", "", "", "", "", "", "", "", ""];
-            gameActive = false;
-            statusText.innerText = "Select Game Mode";
-            cells.forEach(cell => {
-                cell.innerText = "";
-                cell.classList.remove("taken");
-            });
-        }
-        // Event Listeners
-        cells.forEach(cell => cell.addEventListener("click", handleCellClick));
-        document.getElementById("resetBtn").addEventListener("click", restartGame);
-    </script>
-
-    <!-- SERVICE WORKER REGISTRATION -->
-    <script>
-        if ("serviceWorker" in navigator) {
-            navigator.serviceWorker.register("/games/tic-tac-toe/service-worker.js")
-                .then(() => console.log("Service Worker Registered"));
-        }
-
-        // PWA INSTALL HANDLER
-        let installPrompt = null;
-        const installButton = document.getElementById('installBtn');
-
-        // ===== DEVICE DETECTION =====
-        const DeviceDetector = {
-            // Detect if Android device
-            isAndroid() {
-                return /Android/i.test(navigator.userAgent);
-            },
-
-            // Detect if iOS device
-            isIOS() {
-                return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            },
-
-            // Detect if Safari browser
-            isSafari() {
-                return /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent) && !/Edge/.test(navigator.userAgent);
-            },
-
-            // Detect if Edge browser
-            isEdge() {
-                return /Edg/.test(navigator.userAgent);
-            },
-
-            // Detect if Chrome browser
-            isChrome() {
-                return /Chrome/.test(navigator.userAgent) && !/Edg/.test(navigator.userAgent);
-            },
-
-            // Get browser type
-            getBrowser() {
-                if (this.isEdge()) return 'edge';
-                if (this.isChrome()) return 'chrome';
-                if (this.isSafari()) return 'safari';
-                if (/Firefox/.test(navigator.userAgent)) return 'firefox';
-                return 'unknown';
-            },
-            isTablet() {
-                const ua = navigator.userAgent;
-                return /iPad|Android(?!.*Mobile)/.test(ua) || (navigator.maxTouchPoints > 2);
-            },
-
-            // Detect if mobile phone
-            isMobilePhone() {
-                return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) && !this.isTablet();
-            },
-
-            // Detect if desktop
-            isDesktop() {
-                return !this.isMobilePhone() && !this.isTablet();
-            },
-
-            // Get device type
-            getDeviceType() {
-                if (this.isMobilePhone()) return 'mobile';
-                if (this.isTablet()) return 'tablet';
-                return 'desktop';
-            },
-
-            // Get OS type
-            getOS() {
-                if (this.isAndroid()) return 'android';
-                if (this.isIOS()) return 'ios';
-                if (/Windows/i.test(navigator.userAgent)) return 'windows';
-                if (/Mac/i.test(navigator.userAgent)) return 'macos';
-                if (/Linux/i.test(navigator.userAgent)) return 'linux';
-                return 'unknown';
-            }
-        };
-
-        // Log device info for debugging
-        console.log(`📱 Device: ${DeviceDetector.getDeviceType()}`);
-        console.log(`🖥️ OS: ${DeviceDetector.getOS()}`);
-        console.log(`🌐 Browser: ${DeviceDetector.getBrowser()}`);
-
-        // ===== INSTALL BUTTON HANDLER =====
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            installPrompt = e;
-            
-            // Show install button for installable PWAs (Android Chrome, Edge, etc.)
-            if (installButton) {
-                installButton.style.display = 'inline-flex';
-                console.log('✅ Install prompt available');
-            }
-        });
-
-        if (installButton) {
-            installButton.addEventListener('click', async () => {
-                if (installPrompt) {
-                    // Standard PWA install
-                    installPrompt.prompt();
-                    const { outcome } = await installPrompt.userChoice;
-                    console.log(`User response to install prompt: ${outcome}`);
-                    if (outcome === 'accepted') {
-                        installPrompt = null;
-                        installButton.style.display = 'none';
-                    }
-                } else if (DeviceDetector.isEdge()) {
-                    // Edge browser instructions (Windows/macOS)
-                    if (DeviceDetector.isDesktop()) {
-                        alert('🌐 Install Tic Tac Toe on Edge:\n\n1. Click the "Install" button (⬇️) in the address bar\n2. Click "Install" in the popup');
-                    }
-                } else if (DeviceDetector.isAndroid()) {
-                    // Fallback for Android Chrome without beforeinstallprompt
-                    if (DeviceDetector.isMobilePhone()) {
-                        alert('📲 Install Tic Tac Toe on your Phone:\n\n1. Tap the menu button (⋮)\n2. Select "Add to home screen"\n3. Tap "Add"');
-                    } else if (DeviceDetector.isTablet()) {
-                        alert('📱 Install Tic Tac Toe on your Tablet:\n\n1. Tap the menu button (⋮)\n2. Select "Add to home screen"\n3. Tap "Add"');
-                    }
-                } else if (DeviceDetector.isIOS() && DeviceDetector.isSafari()) {
-                    // iOS Safari - show banner instead of alert
-                    showIosBanner();
-                } else if (DeviceDetector.isDesktop()) {
-                    // Desktop instructions
-                    alert('💻 Install Tic Tac Toe on Desktop:\n\nYour browser will prompt you to install the app automatically.');
-                }
-            });
-        }
-
-        window.addEventListener('appinstalled', () => {
-            console.log('🎉 App installed successfully!');
-            if (installButton) {
-                installButton.style.display = 'none';
-            }
-        });
-
-        // ===== iOS SAFARI BANNER =====
-        function showIosBanner() {
-            const iosBanner = document.getElementById('iosInstallBanner');
-            if (iosBanner) {
-                iosBanner.style.display = 'flex';
-                console.log('📱 Showing iOS Safari install banner');
-            }
-        }
-
-        function closeIosBanner() {
-            const iosBanner = document.getElementById('iosInstallBanner');
-            if (iosBanner) {
-                iosBanner.style.display = 'none';
-                // Store that user closed the banner (don't show again this session)
-                sessionStorage.setItem('iosBannerClosed', 'true');
-                console.log('iOS Safari banner closed');
-            }
-        }
-
-        // Auto-show banner for iOS Safari on page load
-        if (DeviceDetector.isIOS() && DeviceDetector.isSafari() && !sessionStorage.getItem('iosBannerClosed')) {
-            // Check if not already installed
-            if (window.navigator.standalone !== true) {
-                setTimeout(() => {
-                    showIosBanner();
-                }, 500);
-            }
-        }
-
-        // Log app installation state
-        if (window.navigator.standalone === true) {
-            console.log('📲 App is running in standalone mode');
-        }
         
 
-    </script>
+    <!-- SOUND -->
+    <audio id="moveSound" preload="auto">
+        <source src="./sounds/move.mp3" type="audio/mpeg">
+    </audio>
 
+    <audio id="winSound" preload="auto">
+        <source src="./sounds/win.mp3" type="audio/mpeg">
+    </audio>
+
+    <audio id="drawSound" preload="auto">
+        <source src="./sounds/draw.mp3" type="audio/mpeg">
+    </audio>
+    <!-- Winner Confetti -->
+    <div id="confetti-container"></div>
 </body>
 
 </html>
