@@ -1,4 +1,4 @@
-const CACHE_NAME = "tic-tac-toe-v1";
+const CACHE_NAME = "tic-tac-toe-v5";
 
 const FILES_TO_CACHE = [
   "/games/tic-tac-toe/",
