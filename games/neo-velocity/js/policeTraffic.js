@@ -4,7 +4,7 @@ import { gameState }  from "./gameState.js";
 import { worldSpeed }  from "./speed.js";
 import { enemyCar, enemyCar2 } from "./traffic.js";
 import { playSound, stopSound, isPlaying } from "./audio.js";
-import {trafficSpeedBoost} from "./level.js";
+import {getBoost} from "./level.js";
 /* =========================
    ELEMENTS
 ========================= */
@@ -57,7 +57,7 @@ function movePoliceCar() {
     if (!gameState.running) return;
 
     const trafficCars = document.querySelectorAll(".enemy-car");
-    const boost = trafficSpeedBoost || 0;
+    const boost = getBoost() || 0;
     let policeSpeed = worldSpeed > 0 ? worldSpeed + 3 + (boost * 0.5) : 0;
 
     /* SMART SLOWDOWN behind traffic */

@@ -1,15 +1,18 @@
 // MAIN.JS
 
-import "./ui.js";
-import "./controls.js";
-import "./traffic.js";
+// MAIN.JS — order matters
+import "./gameState.js";  // ✅ first
+import "./audio.js";      // ✅ second  
+import "./level.js";      // ✅ before traffic
+import "./speed.js";      // ✅ before traffic
+import "./traffic.js";    // ✅ after level + speed
 import "./policeTraffic.js";
-import "./speed.js";
+import "./controls.js";
 import "./collision.js";
 import "./score.js";
 import "./road.js";
 import "./finish.js";
-import "./level.js";
+import "./ui.js";         // ✅ last
 
 
 window.addEventListener("load", () => {

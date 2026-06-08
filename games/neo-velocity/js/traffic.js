@@ -2,7 +2,7 @@
 
 import { gameState }         from "./gameState.js";
 import { worldSpeed }        from "./speed.js";
-import { trafficSpeedBoost } from "./level.js";  // ✅ import boost
+import { getBoost } from "./level.js";  // ✅ import boost
 
 export const enemyCar  = document.querySelector(".enemy-car");
 export const enemyCar2 = document.querySelector(".enemy-car-2");
@@ -51,7 +51,7 @@ function moveEnemyCars() {
     const effectiveSpeed = Math.max(minCrawl, worldSpeed);
 
     // ✅ trafficSpeedBoost added here
-    const boost = trafficSpeedBoost || 0;
+    const boost = getBoost() || 0;
 
     /* CAR 1 */
     enemyPosition  += effectiveSpeed + enemySpeed1 + boost;

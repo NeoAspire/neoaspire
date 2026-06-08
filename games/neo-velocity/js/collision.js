@@ -4,7 +4,7 @@ import { gameState, stopGame, resumeGame } from "./gameState.js";
 import { playSound, stopSound }            from "./audio.js";
 import { resetTrafficPositions }           from "./traffic.js";
 import { resetPolicePosition }             from "./policeTraffic.js";
-import { resetSpeed }                       from "./speed.js";
+import { resetSpeed, worldSpeed }                       from "./speed.js";
 
 /* =========================
    ELEMENTS
@@ -63,6 +63,9 @@ function checkCollision() {
     requestAnimationFrame(checkCollision);
     if (!gameState.running) return;
 
+        if (worldSpeed <= 0) return
+
+        
     const playerRect = getHitbox(playerCar);
 
     enemyCars.forEach((car) => {
@@ -154,7 +157,7 @@ if (continueBtn) {
         playerCar.style.transition = "none";
         playerCar.style.transform  = "translateX(-50%)";
         playerCar.style.left       = "50%";
-        playerCar.style.bottom     = "30px";
+        playerCar.style.bottom     = "";
         playerCar.style.opacity    = "0";
 
         // Fade in

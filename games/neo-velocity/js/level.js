@@ -1,7 +1,5 @@
 // LEVEL.JS
 
-import { gameState } from "./gameState.js";
-
 /* =========================
    LEVEL CONFIG
 ========================= */
@@ -20,6 +18,16 @@ export const LEVELS = [
 
 export let currentLevel      = 0;
 export let trafficSpeedBoost = 0;
+
+/* =========================
+   GETTERS
+   Use these instead of
+   importing variables directly
+   — works reliably on iOS
+========================= */
+
+export function getBoost()        { return trafficSpeedBoost; }
+export function getCurrentLevel() { return currentLevel;      }
 
 /* =========================
    HUD + MESSAGE ELEMENTS
@@ -110,7 +118,7 @@ export function resetLevel() {
 
 export function initLevel() {
     if (levelDisplay) {
-        levelDisplay.textContent = "LVL 1";
+        levelDisplay.textContent = "1";
     }
     showLevelBanner("🏎️ Level 1 — GO!");
 }

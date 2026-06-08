@@ -2,7 +2,7 @@
 
 import { gameState } from "./gameState.js";
 import { setVolume, setRate } from "./audio.js";
-import {currentLevel} from "./level.js";
+import {getCurrentLevel} from "./level.js";
 
 /* =========================
    GAME SPEED
@@ -97,7 +97,7 @@ else {
 
 /* CLAMP — max speed increases per level */
 const maxSpeedMap = [8, 10, 12, 13, 15];
-const maxSpeed    = maxSpeedMap[currentLevel] || 15;
+const maxSpeed    = maxSpeedMap[getCurrentLevel()] || 15;
 
 worldSpeed = Math.min(maxSpeed, Math.max(0, worldSpeed));
 

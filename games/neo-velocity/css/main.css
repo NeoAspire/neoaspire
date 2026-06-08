@@ -137,7 +137,7 @@ body {
     position: absolute;
     width: clamp(70px, 18vw, 110px);
     height: clamp(120px, 30vw, 190px);
-    bottom: clamp(20px, 4vh, 30px);
+    bottom: clamp(80px, 12vh, 120px);
     left: 50%;
     transform: translateX(-50%);
     transition: left 0.08s linear;
