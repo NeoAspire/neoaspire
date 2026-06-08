@@ -35,33 +35,6 @@
             "price": 50
           }
         ]
-      },
-      {
-        "category": "Exam Prep",
-        "items": [
-          {
-            "id": "it9-pyq",
-            "name": "PART A Chapter-wise PYQs",
-            "pdf": "",
-            "download": false,
-            "paid": false,
-            "price": 30
-          },
-          {
-            "id": "it9-pyq",
-            "name": "PART B Chapter-wise PYQs",
-            "pdf": "",
-            "download": false,
-            "paid": false,
-            "price": 30
-          },
-          {
-            "id": "it10-sample-papers",
-            "name": "Sample Test Papers",
-            "pdf": "url4",
-            "paid": false
-          }
-        ]
       }
     ]
   },
@@ -120,12 +93,6 @@
             "download": "https://drive.google.com/file/d/1kPS8hxXgTOTqkvanTRAVQF235cQGdhWb/view?usp=drive_link",
             "paid": false,
             "price": 30
-          },
-          {
-            "id": "it10-sample-papers",
-            "name": "Sample Test Papers",
-            "pdf": "url4",
-            "paid": false
           }
         ]
       }
@@ -188,12 +155,6 @@
             "download": "https://drive.google.com/file/d/1BefVGRFPbWYL9BIJVGRC7mGvw47UNNS8/view?usp=drive_link",
             "paid": false,
             "price": 30
-          },
-          {
-            "id": "science10-sample-papers",
-            "name": "Sample Test Papers",
-            "pdf": "url4",
-            "paid": false
           }
         ]
       }
@@ -297,28 +258,8 @@
             "price": 50
           }
         ]
-      },
-      {
-        "category": "Exam Prep",
-        "items": [
-          {
-            "id": "webapp12-pyq",
-            "name": "PART A Chapter-wise PYQs",
-            "pdf": "",
-            "download": false,
-            "paid": false,
-            "price": 30
-          },
-          {
-            "id": "webapp12-pyq",
-            "name": "PART B Chapter-wise PYQs",
-            "pdf": "",
-            "download": false,
-            "paid": false,
-            "price": 30
-          }
-        ]
       }
+   
     ]
   }
 ]

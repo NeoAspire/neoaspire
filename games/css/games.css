@@ -148,8 +148,9 @@ body {
 
 .game-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 220px));
     gap: var(--space-lg);
+     justify-content: center;
 }
 
 /* ================= GAME CARD ================= */
@@ -234,14 +235,14 @@ body {
     pointer-events: none; /* ⭐ CRITICAL FIX */
 }
 
-/* ================= FILTER SYSTEM ================= */
-.hidden {
-    opacity: 0;
-    transform: scale(0.9);
-    pointer-events: none;
-    height: 0;
-    padding: 0;
-    margin: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
+/* ================= NO GAMES MESSAGE ================= */
+.no-games-message{
+```
+margin-top: 2rem;
+text-align: center;
+font-size: 1.2rem;
+color: #666;
+opacity: 0.9;
+```
 }
+

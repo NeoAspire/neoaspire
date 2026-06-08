@@ -68,7 +68,7 @@ function initHamburger() {
 
     const nav =
         document.querySelector('.nav-links') ||
-        document.querySelector('.ems-nav');
+        document.querySelector('.neoapps-nav');
 
     if (!btn || !nav) return;
 

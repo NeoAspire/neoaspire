@@ -156,19 +156,19 @@
 		<priority>1</priority>
 	</url>
 	<url>
-		<loc>https://www.neoaspire.in/ems\dashboard\</loc>
+		<loc>https://www.neoaspire.in/neoapps\dashboard\</loc>
 		<lastmod>2026-04-01-T21:57:10+06:30</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1</priority>
 	</url>
 	<url>
-		<loc>https://www.neoaspire.in/ems\coming-soon</loc>
+		<loc>https://www.neoaspire.in/neoapps\coming-soon</loc>
 		<lastmod>2026-05-11-T21:16:57+06:30</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1</priority>
 	</url>
 	<url>
-		<loc>https://www.neoaspire.in/ems\</loc>
+		<loc>https://www.neoaspire.in/neoapps\</loc>
 		<lastmod>2026-03-29-T20:34:19+06:30</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1</priority>
@@ -181,7 +181,7 @@
 		<priority>1</priority>
 	</url>
 	<url>
-		<loc>https://www.neoaspire.in/ems\modules\syllabus\</loc>
+		<loc>https://www.neoaspire.in/neoapps\modules\syllabus\</loc>
 		<lastmod>2026-04-01-T21:57:10+06:30</lastmod>
 		<changefreq>daily</changefreq>
 		<priority>1</priority>

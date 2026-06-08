@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NeoVelocity 🏎️ | Neoaspire Games</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="./assets/images/logo/neovelocity-logo-v1.png" type="image/png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/animations.css">
+
+    <!-- JS -->
+    <script type="module" src="./js/main.js"></script>
+
+</head>
+
+<body tabindex="0">
+    <!-- ========================= -->
+    <!-- GAME CONTAINER -->
+    <!-- ========================= -->
+    <main class="game-container">
+
+        <!-- BACK TO GAMES -->
+        <a href="../index.html" class="back-btn">
+            ← Back to Games
+        </a>
+
+        <!-- ROAD / GAME AREA -->
+        <section class="game-area">
+
+            <!-- ROAD -->
+            <div class="road">
+
+                <!-- ROAD LINES -->
+                <div class="road-lines"></div>
+                <!-- FINISH LINE -->
+                <div class="finish-line"></div>
+
+                <!-- PLAYER CAR -->
+                <div class="player-car">
+                    <img src="./assets/images/cars/player/nv-player-car-sport-v1.png" alt="Player Car">
+                </div>
+
+                <!-- ENEMY CAR -->
+                <div class="enemy-car">
+                    <img src="./assets/images/cars/enemy/nv-enemy-car-sport-v1.png" alt="Enemy Car">
+                </div>
+
+                <div class="enemy-car enemy-car-2">
+                    <img src="./assets/images/cars/enemy/nv-enemy-car-sport-v2.png" alt="Enemy Car">
+                </div>
+
+                <div class="enemy-car enemy-police">
+                    <img src="./assets/images/cars/enemy/nv-enemy-police-car-v1.png" alt="Police Car">
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- ========================= -->
+        <!-- TOP UI -->
+        <!-- ========================= -->
+
+        <header class="top-ui">
+
+            <!-- GAME HUD -->
+            <div class="game-hud">
+
+                <!-- SCORE DISPLAY -->
+                <div class="hud-item">
+                    <span class="hud-label">SCORE</span>
+                    <strong class="hud-value">0</strong>
+                </div>
+
+                <!-- SPEED DISPLAY -->
+                <div class="hud-item">
+                    <span class="hud-label">KM/H</span>
+                    <strong class="hud-value">0</strong>
+                </div>
+
+                <!-- DISTANCE DISPLAY -->
+                <div class="hud-item">
+                    <span class="hud-label">DISTANCE</span>
+                    <strong class="km-display">0.00 KM</strong>
+                </div>
+
+            </div>
+
+        </header>
+        <!-- ========================= -->
+        <!-- START SCREEN -->
+        <!-- ========================= -->
+        <section class="start-screen">
+            <h1>NeoVelocity</h1>
+            <p>
+                High-Speed Futuristic Racing
+            </p>
+            <button class="play-btn">
+                Start Race
+            </button>
+        </section>
+
+        <!-- ===================== -->
+        <!-- CONTINUE SCREEN -->
+        <!-- ===================== -->
+
+        <div class="continue-screen">
+
+            <div class="continue-card">
+
+                <h2>💥 Crashed!</h2>
+
+                <p class="continue-sub">Chances remaining</p>
+
+                <div class="hearts-display">❤️❤️❤️</div>
+
+                <button class="continue-btn">▶ Continue</button>
+
+                <p class="no-chances-text" style="display:none;">
+                    No more chances!
+                </p>
+
+                <p class="final-score-text"></p>
+
+            </div>
+
+        </div>
+
+        <!-- ========================= -->
+        <!-- GAME OVER SCREEN -->
+        <!-- ========================= -->
+        <section class="game-over-screen">
+            <h2>RACE TERMINATED</h2>
+            <button class="restart-btn">
+                Restart Race
+            </button>
+        </section>
+
+        <!-- ========================= -->
+        <!-- FINISH SCREEN -->
+        <!-- ========================= -->
+        <div class="finish-text" style="display:none;"></div>
+
+    </main>
+</body>
+
+</html>

@@ -124,9 +124,9 @@ export const CONFIG = {
             footer: path('/games/partials/footer.html'),
         },
 
-        ems: {
-            header: path('/ems/partials/header.html'),
-            footer: path('/ems/partials/footer.html'),
+        neoapps: {
+            header: path('/neoapps/partials/header.html'),
+            footer: path('/neoapps/partials/footer.html'),
         }
 
     },
@@ -174,9 +174,9 @@ Stay tuned! 🚀`*/"",
             }
         },
 
-        ems: {
+        neoapps: {
             dashboard: {
-                message: "📊 EMS Dashboard Loaded!",
+                message: "📊 Dashboard Loaded!",
                 type: "success"
             },
             syllabusBuilder: {
@@ -230,8 +230,8 @@ ADS: {
         main: {
             // blueprints: ["/qbank/js/blueprints-loader.js"]
         },
-        ems: {
-            syllabusBuilder: ["/ems/assets/js/modules/syllabus/syllabus-builder.js"]
+        neoapps: {
+            syllabusBuilder: ["/neoapps/assets/js/modules/syllabus/syllabus-builder.js"]
         }
     }
 };

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syllabus | Neoaspire Core</title>
+
+     <!-- Main CSS OF Exam Management System -->
+    <link rel="stylesheet" href="../../assets/css/main.css"> 
+    
+   <!-- Page Specific CSS -->
+    <link rel="stylesheet" href="../../assets/css/pages/syllabus-builder.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../../assets/images/favicon/favicon.png">
+
+    <!-- CORE JS -->
+    <script type="module" src="../../../core/js/index.js"></script>
+
+    <!-- Page Specific JS -->
+  <script type="module" src="../../assets/js/modules/syllabus/syllabus-builder.js"></script>
+
+    <!-- Load html2pdf.js library first -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script> -->
+
+
+</head>
+
+<body data-app="neoapps" data-page="syllabusBuilder">
+
+    <!-- HEADER -->
+    <header class="neoapps-header" id="header-container">
+        <!-- Dashboard Header Here -->
+    </header>
+
+    <!-- ===============================
+         MAIN CONTENT: Syllabus Builder
+         =============================== -->
+    <main>
+        <section class="syllabus-builder">
+
+            <h1>Syllabus Builder</h1>
+
+            <!-- ===============================
+                 Syllabus Form
+                 =============================== -->
+            <form id="syllabusForm">
+
+                <!-- School Name -->
+                <div class="form-group">
+                    <label for="schoolName">School Name</label>
+                    <input type="text" id="schoolName" placeholder="Enter School Name" required>
+                </div>
+
+                <!-- School Address -->
+                <div class="form-group">
+                    <label for="schoolAddress">Address</label>
+                    <input type="text" id="schoolAddress" placeholder="Enter School Address" required>
+                </div>
+
+                <!-- Academic Session -->
+                <div class="form-group">
+                    <label for="session">Session</label>
+                    <select id="session" required>
+                        <option value="">Select Session</option>
+                    </select>
+                </div>
+
+                <!-- Class Selection (hidden initially) -->
+                <div class="form-group u-hidden" id="classGroup">
+                    <label for="classSelect">Class</label>
+                    <select id="classSelect" required>
+                        <option value="">Select Class</option>
+                    </select>
+                </div>
+
+                <!-- Subjects Selection (hidden initially) -->
+                <div class="form-group u-hidden" id="subjectGroup">
+                    <label>Subjects</label>
+                    <div id="subjectContainer" class="checkbox-group">
+                        <!-- Subjects checkboxes will load dynamically -->
+                    </div>
+                </div>
+
+                <!-- Exam Types Selection (hidden initially) -->
+                <div class="form-group u-hidden" id="examTypeGroup">
+                    <label>Exam Type</label>
+                    <div id="examTypeContainer" class="checkbox-group">
+                        <!-- Exam Type checkboxes will load dynamically -->
+                    </div>
+                </div>
+
+                <!-- Chapters & Tables Input (Dynamic) -->
+                <div id="syllabusDetails">
+                    <!-- Dynamic input fields per subject & exam will appear here -->
+                </div>
+
+                <!-- ===============================
+                     Live Syllabus Preview
+                     =============================== -->
+                <div id="syllabusPreview" class="syllabus-preview u-hidden">
+                    <h3>📄 Syllabus Preview</h3>
+                    <div id="previewContent">
+                        <!-- Live preview content will render here -->
+                    </div>
+                </div>
+
+                <!-- ===============================
+                     PDF Download Button
+                     =============================== -->
+                <div class="download-wrapper">
+                    <button type="button" id="downloadPdf" class="btn-primary">
+                        Download PDF
+                    </button>
+                </div>
+
+            </form>
+        </section>
+    </main>
+
+</body>
+</html>

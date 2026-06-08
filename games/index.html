@@ -22,7 +22,7 @@
     <!-- HEADER -->
     <header id="header-container"></header>
 
-     <main>
+    <main>
 
         <!-- HERO -->
         <section class="game-hero">
@@ -50,6 +50,7 @@
         </section>
 
         <!-- FEATURED -->
+        <!--
         <section class="featured">
             <h2>Featured Game</h2>
 
@@ -64,7 +65,7 @@
 
                 <button class="btn-play">Play Now</button>
             </div>
-        </section>
+        </section> -->
 
         <!-- GAMES -->
         <section class="game-section" id="gamesSection">
@@ -85,7 +86,7 @@
 
                 <!-- NEO LUDO ARENA -->
                 <div class="game-card" data-category="strategy">
-                         <div class="game-thumb">
+                    <div class="game-thumb">
                         <img src="./ludo-arena/images/LudoArena.jpeg" alt="Ludo Arena"
                             onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#EC611B,#3B82F6)'">
                     </div>
@@ -94,61 +95,75 @@
                     <a href="./ludo-arena/index.html" class="btn-play">Play</a>
                 </div>
 
-                <!-- RACING -->
+                <!-- NEO VELOCITY -->
                 <div class="game-card" data-category="racing">
-                       <div class="game-thumb">
-                        <img src="" alt="Speed Racer"
+
+                    <div class="game-thumb">
+                        <img src="./neo-velocity/assets/images/logo/neovelocity-logo-v1.png" alt="NeoVelocity"
                             onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#EC611B,#3B82F6)'">
                     </div>
-                    <h3>Speed Racer</h3>
-                    <p>High-speed racing game</p>
-                    <a href="./racing/index.html" class="btn-play">Play</a>
+                    <h3>Neo Velocity 🏎️</h3>
+                    <p>High-speed futuristic racing game</p>
+                    <a href="./neo-velocity/index.html" class="btn-play">Play</a>
                 </div>
 
-                <!-- PUZZLE -->
-                <div class="game-card" data-category="puzzle">
-                    <div class="game-thumb">
-                        <img src="" alt="Math Quest"
-                            onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#EC611B,#3B82F6)'">
-                    </div>
-                    <h3>Math Quest</h3>
-                    <p>Learn with puzzles</p>
-                    <a href="/games/math-quest/index.html" class="btn-play">Play</a>
-                </div>
-
-                <!-- MEMORY -->
-                <div class="game-card" data-category="puzzle">
-                    <div class="game-thumb">
-                        <img src="" alt="Memory Flip"
-                            onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#EC611B,#3B82F6)'">
-                    </div>
-                    <h3>Memory Flip</h3>
-                    <p>Boost your brain power</p>
-                    <a href="/games/memory-flip/index.html" class="btn-play">Play</a>
-                </div>
 
             </div>
+
+            <!-- No Games Message -->
+            <p id="noGamesMessage" class="no-games-message" style="display:none;">
+                🚫 No games available in this category yet.
+            </p>
         </section>
 
     </main>
 
     <footer id="footer-container"></footer>
 
-<script>
-function filterGames(category) {
-    const games = document.querySelectorAll(".game-card");
+    <!-- FILTER GAMES SCRIPT -->
+    <script>
+        function filterGames(category) {
 
-    games.forEach(game => {
-        const gameCategory = game.getAttribute("data-category");
+            const games = document.querySelectorAll(".game-card");
+            const noGamesMessage = document.getElementById("noGamesMessage");
+            const categoryCards = document.querySelectorAll(".category-card");
 
-        if (category === "all" || gameCategory === category) {
-            game.classList.remove("hidden");
-        } else {
-            game.classList.add("hidden");
+            let visibleCount = 0;
+
+            /* ACTIVE CATEGORY */
+            categoryCards.forEach(card => {
+                card.classList.remove("active");
+            });
+
+            event.target.classList.add("active");
+
+            /* FILTER GAMES */
+            games.forEach(game => {
+
+                const gameCategory = game.getAttribute("data-category");
+
+                if (category === "all" || gameCategory === category) {
+
+                    game.style.display = "block";
+                    visibleCount++;
+
+                } else {
+
+                    game.style.display = "none";
+                }
+            });
+
+            /* SHOW / HIDE MESSAGE */
+            if (visibleCount === 0) {
+
+                noGamesMessage.style.display = "block";
+
+            } else {
+
+                noGamesMessage.style.display = "none";
+            }
         }
-    });
-}
-</script>
+    </script>
 
 </body>
 

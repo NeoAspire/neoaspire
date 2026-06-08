@@ -3,7 +3,7 @@ import { path } from "../../core/js/config.js";
    FILTER CONFIG (CONTROL UI)
 ========================= */
 const FILTER_CONFIG = {
-    classes: ["9", "10"],
+    classes: ["10"],
 
     subjects: {
         "1": ["english", "evs", "hindi", "math", "punjabi", "art-craft", "general-knowledge", "moral-science"],
@@ -46,9 +46,9 @@ async function initBlueprintPage() {
 
     try {
 
-        classesData = await loadJSON(path('/ems/data/academic/classes.json'));
-        subjectsData = await loadJSON(path('/ems/data/academic/subjects.json'));
-        classSubjectMap = await loadJSON(path('/ems/data/academic/class-subjects.json'));
+        classesData = await loadJSON(path('/neoapps/data/academic/classes.json'));
+        subjectsData = await loadJSON(path('/neoapps/data/academic/subjects.json'));
+        classSubjectMap = await loadJSON(path('/neoapps/data/academic/class-subjects.json'));
 
         const classSelect = document.getElementById("classFilter");
         const subjectSelect = document.getElementById("subjectFilter");
@@ -134,7 +134,7 @@ function loadBlueprint() {
         return;
     }
 
-    const blueprintPath = path(`/ems/data/blueprints/class${classValue}/${subjectValue}.json`);
+    const blueprintPath = path(`/neoapps/data/blueprints/class${classValue}/${subjectValue}.json`);
 
     console.log("Loading:", blueprintPath);
 

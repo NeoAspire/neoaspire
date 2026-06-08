@@ -1,0 +1,97 @@
+/* ========================= */
+/* ROAD LINES HIGH SPEED */
+/* ========================= */
+
+.high-speed {
+    filter: blur(0.8px) brightness(1.15); /* ✅ fixed: was invalid syntax */
+    opacity: 0.9;
+}
+
+/* ========================= */
+/* START SCREEN HIDE */
+/* ========================= */
+
+.hide-start {
+    animation: fadeOutStart 0.7s ease forwards;
+    pointer-events: none; /* ✅ prevent clicks during fade */
+}
+
+@keyframes fadeOutStart {
+    0%   { opacity: 1; visibility: visible; }
+    100% { opacity: 0; visibility: hidden;  }
+}
+
+/* ========================= */
+/* CRASH SHAKE */
+/* ========================= */
+
+@keyframes crashShake {
+    0%   { transform: translate(0);       }
+    20%  { transform: translate(-8px, 4px); }
+    40%  { transform: translate(8px, -4px); }
+    60%  { transform: translate(-6px, 2px); }
+    80%  { transform: translate(6px, -2px); }
+    100% { transform: translate(0);       }
+}
+
+/* ========================= */
+/* ENGINE BOUNCE */
+/* ========================= */
+
+@keyframes engineBounce {
+    0%   { transform: rotate(180deg) translateY(0px);  }
+    50%  { transform: rotate(180deg) translateY(-2px); }
+    100% { transform: rotate(180deg) translateY(0px);  }
+}
+
+/* ========================= */
+/* SPEED SHAKE */
+/* ========================= */
+
+.speed-shake {
+    animation: speedShake 0.08s infinite;
+}
+
+@keyframes speedShake {
+    0%   { transform: translateX(0px);  }
+    25%  { transform: translateX(1px);  }
+    50%  { transform: translateX(-1px); }
+    75%  { transform: translateX(1px);  }
+    100% { transform: translateX(0px);  }
+}
+
+/* ========================= */
+/* CONFETTI */
+/* ========================= */
+
+.confetti {
+    position: fixed;
+    top: -20px;
+    width: clamp(8px, 2vw, 12px);   /* ✅ scales on all screens */
+    height: clamp(8px, 2vw, 12px);
+    border-radius: 2px;
+    animation: confettiFall linear forwards;
+    z-index: 999;
+    pointer-events: none;
+}
+
+@keyframes confettiFall {
+    0%   { transform: translateY(0)    rotate(0deg);   opacity: 1; }
+    100% { transform: translateY(110vh) rotate(720deg); opacity: 0; }
+}
+
+/* ========================= */
+/* REDUCE MOTION (accessibility) */
+/* ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hide-start      { animation: none; opacity: 0; visibility: hidden; }
+    .speed-shake     { animation: none; }
+    .player-car img  { animation: none; }
+    .confetti        { animation: none; display: none; }
+
+    @keyframes crashShake {
+        0%, 100% { transform: translate(0); }
+    }
+}
