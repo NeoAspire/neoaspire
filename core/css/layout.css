@@ -248,6 +248,10 @@ footer nav {
 }
 
 footer a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    vertical-align: middle;
     color: var(--color-white);
     font-size: var(--font-size-sm);
     font-weight: var(--font-weight-medium);
@@ -284,3 +288,17 @@ footer p {
     line-height: var(--line-height-md);
 }
 
+footer span {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+    margin-top: var(--space-xs);
+}
+
+
+.social-icon{
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    position: relative;
+    top: 1px;
+}

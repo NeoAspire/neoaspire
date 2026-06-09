@@ -51,6 +51,21 @@ export async function loadLayout() {
             resolveAssets(footerContainer);
         }
 
+        // ✅ SET COPYRIGHT YEAR
+        const fiscalYear =
+            footerContainer.querySelector('#fiscal-year');
+
+        if (fiscalYear) {
+
+            const startYear = 2025;
+            const currentYear = new Date().getFullYear();
+
+            fiscalYear.textContent =
+                currentYear > startYear
+                    ? `${startYear}–${currentYear}`
+                    : `${startYear}`;
+        }
+
         // ✅ Load the page-specific JS AFTER header/footer
         loadPageScript();
 
