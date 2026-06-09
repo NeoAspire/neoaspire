@@ -58,7 +58,9 @@ function movePoliceCar() {
 
     const trafficCars = document.querySelectorAll(".enemy-car");
     const boost = getBoost() || 0;
-    let policeSpeed = worldSpeed > 0 ? worldSpeed + 3 + (boost * 0.5) : 0;
+   
+    let policeSpeed =
+    Math.max(2, worldSpeed + 3 + (boost * 0.5));
 
     /* SMART SLOWDOWN behind traffic */
     trafficCars.forEach((car) => {
@@ -68,7 +70,7 @@ function movePoliceCar() {
         const trafficTop  = car.getBoundingClientRect().top;
         const policeTop   = policeCar.getBoundingClientRect().top;
         if (policeLane === trafficLane && trafficTop > policeTop && (trafficTop - policeTop) < 260) {
-            policeSpeed = worldSpeed - 0.5;
+            policeSpeed = Math.max(1.5, worldSpeed - 0.5);
         }
     });
 
@@ -82,8 +84,40 @@ function movePoliceCar() {
 
     // Only chase when police is on screen
     if (policeY > -200 && policeY < window.innerHeight) {
-        const newLeft = policeLeft + diff * 0.02; // slow smooth chase
-        policeCar.style.left = newLeft + "%";
+  // =========================
+// SMART CHASE WITHOUT OVERLAP
+// =========================
+
+let canMove = true;
+
+trafficCars.forEach((car) => {
+
+    if (car === policeCar) return;
+
+    const trafficLeft = parseFloat(car.style.left);
+    const trafficTop  = car.getBoundingClientRect().top;
+    const policeTop   = policeCar.getBoundingClientRect().top;
+
+    // block steering into nearby traffic
+    if (
+        Math.abs(trafficLeft - policeLeft) < 12 &&
+        Math.abs(trafficTop - policeTop) < 180
+    ) {
+        canMove = false;
+    }
+});
+
+if (canMove) {
+
+    const newLeft = policeLeft + diff * 0.02;
+
+    // road boundaries
+    const clampedLeft =
+        Math.max(2, Math.min(74, newLeft));
+
+    policeCar.style.left =
+        clampedLeft + "%";
+}
     }
 
     /* SIREN */

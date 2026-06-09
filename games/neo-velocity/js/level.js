@@ -85,7 +85,7 @@ export function levelUp() {
 
         // ✅ update HUD
         if (levelDisplay) {
-            levelDisplay.textContent = "LVL " + LEVELS[currentLevel].level;
+            levelDisplay.textContent = LEVELS[currentLevel].level;
         }
 
         return true;
@@ -104,7 +104,7 @@ export function resetLevel() {
     trafficSpeedBoost = LEVELS[0].boost;
 
     if (levelDisplay) {
-        levelDisplay.textContent = "LVL 1";
+        levelDisplay.textContent = "1";
     }
 
     // ✅ show level 1 banner on reset
